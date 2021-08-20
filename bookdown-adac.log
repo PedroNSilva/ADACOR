@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.8.7)  17 AUG 2021 03:07
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.8.7)  20 AUG 2021 10:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -882,141 +882,103 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 3.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 3.
-[3] [4])
+)
 \tf@toc=\write4
 \openout4 = `bookdown-adac.toc'.
 
-[5] [6
+[3] [4
 
-] [7] [8
+] [5] [6
 
 ]
 Cap\'{\i }tulo 1.
-[9] [10] [11]
+[7] [8] [9]
 
-LaTeX Warning: Reference `tab:epas' on page 12 undefined on input line 210.
-
-
-LaTeX Warning: Reference `tab:epas' on page 12 undefined on input line 213.
+LaTeX Warning: Reference `tab:epas' on page 10 undefined on input line 209.
 
 
-LaTeX Warning: Reference `tab:epas' on page 12 undefined on input line 214.
+LaTeX Warning: Reference `tab:epas' on page 10 undefined on input line 218.
+
+[10]
+Overfull \hbox (206.70009pt too wide) in paragraph at lines 224--237
+ [][] 
+ []
+
+
+LaTeX Warning: Reference `tab:epas' on page 11 undefined on input line 241.
+
+[11]
+
+Package natbib Warning: Citation `Pessoa1998' on page 12 undefined on input lin
+e 268.
+
+
+LaTeX Warning: Reference `refinf' on page 12 undefined on input line 272.
+
+
+LaTeX Warning: Reference `refinf' on page 12 undefined on input line 274.
 
 [12]
 
-LaTeX Warning: Reference `tab:epas' on page 13 undefined on input line 216.
+LaTeX Warning: Reference `capplanamo' on page 13 undefined on input line 276.
 
 
-LaTeX Warning: Reference `tab:epas' on page 13 undefined on input line 247.
+LaTeX Warning: Reference `epa' on page 13 undefined on input line 279.
 
 
-LaTeX Warning: Reference `tab:epas' on page 13 undefined on input line 258.
+LaTeX Warning: Reference `ajmodpar' on page 13 undefined on input line 281.
 
 
-Underfull \hbox (badness 1472) in paragraph at lines 281--283
-[]\TU/lmr/bx/n/10 Apresentar uma coleção de métodos e recursos computa-
- []
-
-[13] [14]
-Underfull \hbox (badness 2050) in paragraph at lines 354--364
-[]\TU/lmr/m/n/10 O Capítulo []6[] trata da obtenção de \TU/lmr/m/it/10 Estimado
-res de Máxima Pseudo-
- []
+LaTeX Warning: Reference `modreg' on page 13 undefined on input line 283.
 
 
-Underfull \hbox (badness 1028) in paragraph at lines 354--364
-\TU/lmr/m/it/10 Verossimilhança (EMPV) \TU/lmr/m/n/10 e da respectiva matriz de
- covariância para os
- []
+LaTeX Warning: Reference `modlog' on page 13 undefined on input line 285.
 
-[15]
+[13]
 
-LaTeX Warning: Reference `estimacao-de-densidades' on page 16 undefined on inpu
-t line 376.
+LaTeX Warning: Reference `testqualajust' on page 14 undefined on input line 287
+.
 
 
-LaTeX Warning: Reference `modelos-hierarquicos' on page 16 undefined on input l
-ine 381.
+LaTeX Warning: Reference `testetab2' on page 14 undefined on input line 287.
 
 
-LaTeX Warning: Reference `nao-resposta' on page 16 undefined on input line 394.
+LaTeX Warning: Reference `graficos' on page 14 undefined on input line 303.
 
 
+LaTeX Warning: Reference `estimacao-de-densidades' on page 14 undefined on inpu
+t line 305.
 
-LaTeX Warning: Reference `diagnostico-de-ajuste-de-modelo' on page 16 undefined
- on input line 402.
 
-[16] [17] [18]
-Cap\'{\i }tulo 2.
-[19
+LaTeX Warning: Reference `cdf' on page 14 undefined on input line 308.
 
-] [20
 
-]
-Cap\'{\i }tulo 3.
-[21] [22
+LaTeX Warning: Reference `cdf' on page 14 undefined on input line 310.
 
-]
-Cap\'{\i }tulo 4.
-[23] [24
 
-]
-Cap\'{\i }tulo 5.
-[25] [26
+LaTeX Warning: Reference `modelos-hierarquicos' on page 14 undefined on input l
+ine 312.
 
-]
-Cap\'{\i }tulo 6.
-[27] [28
+[14] [15] (./bookdown-adac.bbl [16] [17
 
-]
-Cap\'{\i }tulo 7.
-[29] [30
+])
 
-]
-Cap\'{\i }tulo 8.
+Package natbib Warning: There were undefined citations.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[31] [32]
-Cap\'{\i }tulo 9.
-[33
-
-] [34
-
-]
-Cap\'{\i }tulo 10.
-[35] [36
-
-]
-Cap\'{\i }tulo 11.
-[37] [38
-
-]
-Cap\'{\i }tulo 12.
-[39] [40
-
-]
-Cap\'{\i }tulo 13.
-[41] [42
-
-]
-Cap\'{\i }tulo 14.
-(./bookdown-adac.bbl [43] [44
-
-] [45]) [46] (./bookdown-adac.aux)
+[18] (./bookdown-adac.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `bookdown-adac.out' has not changed.
-(rerunfilecheck)             Checksum: DC2E6BB3745611E0E97CE62B2D48B70C;11749.
+(rerunfilecheck)             Checksum: E98AE9B81A87D091C895764AD9408BAC;715.
  ) 
 Here is how much of TeX's memory you used:
- 17432 strings out of 478475
- 310240 string characters out of 5857695
- 796994 words of memory out of 5000000
- 37503 multiletter control sequences out of 15000+600000
- 409889 words of font info for 81 fonts, out of 8000000 for 9000
+ 17338 strings out of 478475
+ 307964 string characters out of 5857695
+ 787580 words of memory out of 5000000
+ 37410 multiletter control sequences out of 15000+600000
+ 409881 words of font info for 80 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,8n,120p,755b,488s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,8n,120p,1054b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on bookdown-adac.pdf (46 pages).
+Output written on bookdown-adac.pdf (18 pages).
