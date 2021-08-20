@@ -25,9 +25,9 @@ language:
     
     exe: "Exercício "
     
-    proof: "Prova. "
+    proof: "Prova "
 
-    remark: "Observação. "
+    remark: "Observação "
 
   ui:
     

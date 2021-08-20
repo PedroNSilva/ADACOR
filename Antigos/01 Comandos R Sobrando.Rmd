@@ -1,0 +1,294 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+<center>
+```{r, results="asis", echo=FALSE}
+cat("<table>",paste0("<caption>", "(#tab:tab01a)", "Tamanhos da amostra de setores e domicílios por macrorregião", "</caption>"),"</table>", sep ="\n")
+```
+----------
+ Macrorregião Setores Domicílios 
+------------- ------- ----------
+Norte            201      3.015
+ 
+Nordeste         617      9.255 
+ 
+Sudeste          863     12.945 
+ 
+Sul              337      5.055 
+ 
+Centro-Oeste     196      2.940
+ 
+Total          2.214     33.210
+----------
+</center>
+
+<center>
+```{r, results="asis", echo=FALSE}
+cat("<table>",paste0("<caption>", "(#tab:tab01b)", "Resumos da distribuição dos pesos de domicílios por macrorregião", "</caption>"),"</table>", sep ="\n")
+```
+----------
+ Macrorregião  Mínimo  Quartil1  Mediana  Quartil3  Máximo 
+------------- ------- --------- -------- --------- -------
+Sudeste        1,80    1.957     2.898    4.359     82.627
+Nordeste     103,80    1.283     2.057    3.314     40.118
+Sul           35,96    1.814     2.583    3.583     27.993
+Norte         19,96    1.028     1.756    2.706    118.715
+Centro-Oeste 140,83    1.153     2.401    3.640     29.029
+Brasil         1,80    1.546     2.470    3.636    118.715
+----------
+</center>
+
+```{r, echo=FALSE}
+# library(survey)
+# ticdom2019_dom <- readRDS(file="./data/ticdom2019_dom.rds")
+# summary(weights(ticdom2019_dom))
+```
+
+```{r, numset, echo=FALSE}
+estrat <- data.frame (
+ Estrato_Geográfico =
+ c("Região Metropolitana de Fortaleza", "Região Metropolitana de Recife", 
+   "Região Metropolitana de Salvador", "Restante Nordeste Urbano", 
+   "Restante Nordeste Rural", "Região Metropolitana de Belo Horizonte", 
+   "Região Metropolitana do Rio de Janeiro", "Região Metropolitana de São Paulo",
+   "Restante Sudeste Urbano", "Restante Sudeste Rural", "Total"),
+ População = c(2263, 2309,2186,15057,23711,3283, 10420, 14931, 25855, 
+               12001, 112016), 
+ Amostra = c(62, 61, 61, 61, 33, 62, 61, 61, 61,31,554)
+    )
+knitr::kable(estrat, booktabs = TRUE, align= "lrr",
+             format.args= list(big.mark = '.'),
+  caption = "Número de setores na população e na amostra, por estrato geográfico"
+  )
+```
+
+
+
+```{r message=FALSE, warning=FALSE, dispesos, echo=FALSE}
+# leitura dos dados
+library(tidyverse)
+library(anamco)
+ppv <- transform(ppv,
+                 regiao=factor(regiao,  
+                               labels = c("Nordeste", "Sudeste")))
+regiao <- group_by(ppv, regiao) %>%
+          summarise(Minimo=min(pesof),
+                    Quartil_1    =quantile(pesof, 0.25),
+                    Mediana=quantile(pesof, 0.50),
+                    Quartil_3    =quantile(pesof, 0.75),
+                    Maximo=max(pesof))
+global <- summarise(ppv,
+                    Minimo=min(pesof),
+                    Quartil_1    =quantile(pesof, 0.25),
+                    Mediana=quantile(pesof, 0.50),
+                    Quartil_3    =quantile(pesof, 0.75),
+                    Maximo=max(pesof))
+global <- transform(global, 
+                    regiao=factor("3", labels=c("Nordeste+Sudeste")))
+resumo_pesos <- data.frame(rbind(regiao, global))
+names(resumo_pesos) <- c("Região", "Mínimo", "Quartil 1",
+                         "Mediana", "Quartil 3", "Máximo")
+knitr::kable(resumo_pesos , booktabs = TRUE, 
+             align = "lrrrrr",
+             format.args= list(big.mark = '.'),
+             caption = "Resumos da distribuição dos pesos da amostra da PPV")
+```
+
+
+```{r,epas, echo=FALSE}
+epas <- data.frame(
+"Parâmetro" = c("1.", "2.", "3.", "4.", "5.", "6.", "7.",
+  "8.", "9.", "10.", "11.","12."),  
+Estimativa = c(3.62, 10.70, 1208123, 1174220,4792344, 11.87, 10.87, 10817590, 10804511,709145,1.39,0.53),
+"Erro Padrão"=c(0.05, 1.15, 146681, 127982, 318877, 1.18, 0.67, 322947, 323182, 87363, 0.03, 0.01),
+"EPA"= c(2.64, 2.97, 3.37,2.64, 4.17,2.46, 3.86, 2.02, 3.02, 2.03, 1.26, 1.99 )
+)
+knitr::kable(epas, booktabs=TRUE, align = "crrr",
+             format.args= list(big.mark = '.', decimal.mark=","),
+caption="Estimativas de Efeitos de Plano Amostral (EPAs)
+para variáveis selecionadas da PPV - Região Sudeste"
+)
+
+```
+
+## Laboratório de R do Capítulo 1. {#epa}
+
+```{example, label= "exe12"}
+Utilização do pacote `survey` do R para estimar alguns totais e razões com dados da 
+PPV apresentados na Tabela \@ref(tab:epas)
+```
+Os exemplos a seguir utilizam dados da Pesquisa de Padrões de Vida ( _PPV_ ) do IBGE, 
+cujo plano amostral encontra-se descrito no Exemplo \@ref(exm:distppv). 
+Os dados da _PPV_ que usamos aqui estão disponíveis no arquivo (data frame) `ppv` 
+do pacote `anamco`. 
+
+```{r, eval=FALSE}
+# instalação da library anamco
+library(devtools)
+install_github("djalmapessoa/anamco")
+```
+
+```{r, message=FALSE, warning=FALSE}
+# Leitura dos dados
+library(anamco)
+ppv_dat <- ppv
+# Características dos dados da PPV
+dim(ppv_dat)
+names(ppv_dat)
+```
+Inicialmente, adicionamos quatro variáveis de interesse por meio de transformação
+das variáveis existentes no data frame `ppv_dat`, a saber:
+
+- analf1 - indicador de analfabeto na faixa etária de 7 a 14 anos;
+- analf2 - indicador de analfabeto na faixa etária acima de 14 anos;
+- faixa1 - indicador de idade entre 7 e 14 anos;
+- faixa2 - indicador de idade acima de 14 anos;
+
+```{r}
+# Adiciona variáveis ao arquivo ppv_dat
+ppv_dat <- transform(ppv_dat, 
+analf1 = ((v04a01 == 2 | v04a02 == 2) & (v02a08 >= 7 & v02a08 <= 14)) * 1, 
+analf2 = ((v04a01 == 2 | v04a02 == 2) & (v02a08 >14)) * 1, 
+faixa1 = (v02a08 >= 7 & v02a08 <= 14) *1, 
+faixa2 = (v02a08 > 14) * 1)
+#str(ppv_dat)
+```
+
+A seguir, mostramos como utilizar o pacote `survey` [@R-survey] do R para obter 
+algumas estimativas da Tabela \@ref(tab:epas). Os dados da pesquisa estão contidos
+no data frame `ppv_dat`, que contém as variáveis que caracterizam o plano amostral:
+
+- **estratof** - identifica os estratos de seleção;
+- **nsetor** - identifica as unidades primárias de amostragem ou conglomerados;
+- **pesof** - identifica os pesos do plano amostral.
+
+O passo fundamental para utilização do pacote `survey` [@R-survey] é criar um 
+objeto que guarde as informações relevantes sobre a estrutura do plano amostral
+junto dos dados. Isso é feito por meio da função `svydesign()`.
+As variáveis que definem estratos, conglomerados e pesos na _PPV_ são `estratof`, 
+`nsetor` e `pesof` respectivamente. O objeto de desenho amostral que é criado após
+a execução da função (aqui chamado `ppv_plan`) incorpora as informações da estrutura 
+do plano amostral adotado na _PPV_.
+
+```{r, message=FALSE, warning=FALSE}
+# Carrega o pacote survey
+library(survey)
+# Cria objeto contendo dados e metadados sobre a estrutura do plano amostral
+ppv_plan <- svydesign(ids = ~nsetor, strata = ~estratof, data = ppv_dat, 
+                      nest = TRUE, weights = ~pesof)
+```
+
+Como todos os exemplos a seguir serão relativos a estimativas para a 
+Região Sudeste, vamos criar um objeto de desenho restrito a essa região para 
+facilitar as análises.
+
+
+```{r}
+ppv_se_plan <- subset(ppv_plan, regiao == "Sudeste")
+```
+
+Para exemplificar as análises descritivas de interesse, vamos estimar algumas 
+características da população, descritas na Tabela \@ref(tab:epas). Os totais das 
+variáveis `analf1` e `analf2` para a região Sudeste fornecem os resultados 
+mostrados nas linhas 4 e 5 da Tabela \@ref(tab:epas):
+
+- total de analfabetos nas faixas etárias de 7 a 14 anos (`analf1`) e 
+- total de analfabetos acima de 14 anos (`analf2`).
+
+
+```{r}
+svytotal(~analf1, ppv_se_plan, deff = TRUE)
+svytotal(~analf2, ppv_se_plan, deff = TRUE)
+```
+
+-  percentual de analfabetos nas faixas etárias consideradas, que fornece os 
+resultados nas linhas 6 e 7 da Tabela \@ref(tab:epas):
+
+```{r}
+svyratio(~analf1, ~faixa1, ppv_se_plan)
+svyratio(~analf2, ~faixa2, ppv_se_plan)
+```
+
+Uma alternativa para obter estimativa por domínios é utilizar a função
+`svyby()` do pacote `survey` [@R-survey]. Assim, poderíamos estimar os totais 
+da variável `analf1` para as regiões **Nordeste** e **Sudeste** da seguinte forma:
+
+```{r}
+svyby(~analf1, ~regiao, ppv_plan, svytotal, deff = TRUE)
+```
+
+Observe que as estimativas de totais e desvios padrão obtidas coincidem com 
+as Tabela \@ref(tab:epas), porém as estimativas de Efeitos de Plano Amostral (EPA) 
+são distintas. Uma explicação detalhada para essa diferença será apresentada no 
+capítulo 4, após a discussão do conceito de Efeito de Plano Amostral e de métodos
+para sua estimação.
+
+## Laboratório de R do Capítulo 1 - Extra. 
+
+Uma nova geração de usuários do R terá notado que o código fornecido no exemplo \@ref(exm:exe12)
+não usa alguns recursos mais modernos disponíveis no sistema. Para mostrar como
+se poderia tirar proveito de alguns desses recursos, replicamos aqui as mesmas 
+análises usando ferramentas do pacote `srvyr`. A principal utilidade deste pacote
+é permitir que variáveis derivadas e transformações das variáveis existentes sejam
+feitas depois que é criado um objeto do tipo que contém os dados e os metadados
+sobre a estrutura do plano amostral (como é o caso do objeto `ppv_plan`).
+
+```{example, label= "exe13"}
+Exemplo \@ref(exm:distppv) usando o pacote `srvyr`
+```
+- Carrega o pacote `srvyr`:
+
+```{r, message=FALSE, warning=FALSE}
+library(srvyr)
+```
+
+- Cria objeto de desenho:
+```{r}
+ppv_plan <- ppv_dat %>% 
+            as_survey_design(strata = estratof, ids = nsetor, nest = TRUE, 
+                             weights = pesof)
+```
+
+Vamos criar novamente as variáveis derivadas necessárias, mas observe que, 
+desta vez, estas variáveis estão sendo adicionadas ao objeto que já contém 
+os dados e as informações (metadados) sobre a estrutura do plano amostral.
+
+```{r}
+ppv_plan <- ppv_plan %>% 
+            mutate(
+analf1 = as.numeric((v04a01 == 2 | v04a02 == 2) & (v02a08 >= 7 & v02a08 <= 14)), 
+analf2 = as.numeric((v04a01 == 2 | v04a02 == 2) & (v02a08 >14)), 
+faixa1 = as.numeric(v02a08 >= 7 & v02a08 <= 14), 
+faixa2 = as.numeric(v02a08 > 14)   
+)
+```
+
+- Estimar a taxa de analfabetos por região para as faixas etárias de 7-14 anos e mais de 14 anos.
+
+```{r message=FALSE, warning=FALSE}
+result1 <- ppv_plan %>%  
+           group_by(regiao) %>% 
+           summarise(
+           taxa_analf1 = 100*survey_ratio(analf1, faixa1),
+           taxa_analf2 = 100*survey_ratio(analf2, faixa2)  
+           )
+result1$regiao <- c("Nordeste","Sudeste")
+knitr::kable(as.data.frame(result1), booktabs = TRUE, row.names = FALSE, digits = 1,
+             align = "crrrr", format.args= list(decimal.mark=","),
+caption = "Porcentagem de analfabetos para faixas etárias 7-14 anos e mais de 14 anos")
+```
+O Capítulo \@ref(nao-resposta) trata da não resposta e suas consequências sobre a análise de dados. As abordagens de tratamento usuais, reponderação e imputação, são descritas de maneira resumida, com apresentação de alguns exemplos ilustrativos, e referências à ampla literatura existente sobre o assunto. Em seguida destacamos a importância de considerar os efeitos da não-resposta e dos tratamentos compensatórios aplicados nas análises dos dados resultantes, destacando em particular as ferramentas disponíveis para a estimação de variâncias na presença de dados incompletos tratados mediante reponderação e/ou imputação.
+
+O Capítulo \@ref(diagnostico-de-ajuste-de-modelo) trata de assunto ainda emergente: diagnósticos do ajuste de modelos quando os dados foram obtidos de amostras complexas. A literatura sobre o assunto ainda é incipiente, mas o assunto é importante, e procura-se estimular sua investigação com a revisão do estado da arte no assunto.
+	
+O Capítulo \@ref(agregdesag) discute algumas formas alternativas de analisar dados de pesquisas amostrais complexas, contrapondo algumas abordagens distintas à que demos preferência nos capítulos anteriores, para dar aos leitores condições de apreciar de forma crítica o material apresentado no restante deste livro. Entre as abordagens discutidas, há duas principais: a denominada _análise desagregada_, e a abordagem denominada _obtenção do modelo amostral_ proposta por [@PKR]. 
+
+A chamada _análise desagregada_ incorpora explicitamente na análise vários aspectos do plano amostral utilizado, através do emprego de modelos hierárquicos [@bryk]. Em contraste, a abordagem adotada nos oito primeiros capítulos é denominada _análise agregada_, e procura *eliminar* da análise efeitos tais como conglomeração induzida pelo plano amostral, considerando tais efeitos como *ruídos* ou fatores de perturbação que *atrapalham* o emprego dos procedimentos clássicos de estimação, ajuste de modelos e teste de hipóteses.
+
+A abordagem de _obtenção do modelo amostral_ parte de um modelo de superpopulação formulado para descrever propriedades da população de interesse (de onde foi extraída a amostra a ser analisada), e procura derivar o _modelo amostral_ (ou que valeria para as observações da amostra obtida), considerando modelos para as probabilidades de inclusão dadas as variáveis auxiliares e
+as variáveis resposta de interesse. Uma vez obtidos tais _modelos amostrais_, seu ajuste prossegue por métodos convencionais tais como _Máxima Verossimilhança (MV)_ ou mesmo _Markov Chain Monte Carlo (MCMC)_.
+
+Por último, no Capítulo \@ref(pacotes), listamos alguns pacotes computacionais
+especializados disponíveis para a análise de dados de pesquisas amostrais complexas. Sem pretender ser exaustiva ou detalhada, essa revisão dos pacotes procura também apresentar suas características mais importantes. Alguns destes programas podem seradquiridos gratuitamente via _internet_, nos endereços fornecidos de seus produtores. Com isto, pretendemos indicar aos leitores o caminho mais curto para permitir a implementação prática das técnicas e métodos aqui discutidos.
