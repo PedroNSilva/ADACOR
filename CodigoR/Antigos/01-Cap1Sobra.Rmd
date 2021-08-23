@@ -1,3 +1,18 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+output:
+  bookdown::gitbook: default
+  bookdown::pdf_book:
+    includes:
+      in_header: preamble.tex
+    latex_engine: xelatex
+    citation_package: natbib
+    keep_tex: yes
+  bookdown::epub_book: default
+---
+
 
 ```{example, label = "exe14"}
 Utilização do pacote survey do R para estimar taxa de desocupação para um trimestre na  PNADC 

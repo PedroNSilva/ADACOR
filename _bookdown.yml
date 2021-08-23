@@ -1,4 +1,4 @@
-book_filename: "bookdown-adac"
+book_filename: "bookdown-adacor"
 before_chapter_script: "script1.R"
 after_chapter_script: "script2.R"
 language:
@@ -36,7 +36,7 @@ language:
 
 output_dir: "docs"
 
-rmd_files: ["index.Rmd", "01-Cap1.Rmd", "15-references.Rmd"]
+rmd_files: ["index.Rmd", "01-Cap01.Rmd", "15-references.Rmd"]
 clean: [packages.bib, bookdown.bbl]
 new_session: yes
 delete_merged_file: TRUE

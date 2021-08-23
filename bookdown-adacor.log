@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.8.7)  20 AUG 2021 10:19
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.8.7)  23 AUG 2021 05:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**bookdown-adac.tex
-(./bookdown-adac.tex
+**bookdown-adacor.tex
+(./bookdown-adacor.tex
 LaTeX2e <2021-06-01> patch level 1
 L3 programming layer <2021-07-12> (c:/Users/User/AppData/Roaming/TinyTeX/texmf-
 dist/tex/latex/base/book.cls
@@ -516,8 +516,8 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibsep=\skip63
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count313
-) (./bookdown-adac.aux)
-\openout1 = `bookdown-adac.aux'.
+) (./bookdown-adacor.aux)
+\openout1 = `bookdown-adacor.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
 LaTeX Font Info:    ... okay on input line 84.
@@ -824,9 +824,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 84.
 LaTeX Info: Redefining \pageref on input line 84.
 LaTeX Info: Redefining \nameref on input line 84.
-(./bookdown-adac.out) (./bookdown-adac.out)
+(./bookdown-adacor.out) (./bookdown-adacor.out)
 \@outlinefile=\write3
-\openout3 = `bookdown-adac.out'.
+\openout3 = `bookdown-adacor.out'.
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
 (Font)              scaled to size 12.0pt on input line 86.
@@ -865,7 +865,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [2
 
-] (./bookdown-adac.toc
+] (./bookdown-adacor.toc
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
 (Font)              scaled to size 7.0pt on input line 3.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
@@ -884,7 +884,7 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 3.
 )
 \tf@toc=\write4
-\openout4 = `bookdown-adac.toc'.
+\openout4 = `bookdown-adacor.toc'.
 
 [3] [4
 
@@ -959,26 +959,26 @@ LaTeX Warning: Reference `cdf' on page 14 undefined on input line 310.
 LaTeX Warning: Reference `modelos-hierarquicos' on page 14 undefined on input l
 ine 312.
 
-[14] [15] (./bookdown-adac.bbl [16] [17
+[14] [15] (./bookdown-adacor.bbl [16] [17
 
 ])
 
 Package natbib Warning: There were undefined citations.
 
-[18] (./bookdown-adac.aux)
+[18] (./bookdown-adacor.aux)
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `bookdown-adac.out' has not changed.
+Package rerunfilecheck Info: File `bookdown-adacor.out' has not changed.
 (rerunfilecheck)             Checksum: E98AE9B81A87D091C895764AD9408BAC;715.
  ) 
 Here is how much of TeX's memory you used:
  17338 strings out of 478475
- 307964 string characters out of 5857695
- 787580 words of memory out of 5000000
+ 308014 string characters out of 5857695
+ 787586 words of memory out of 5000000
  37410 multiletter control sequences out of 15000+600000
  409881 words of font info for 80 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,8n,120p,1054b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,8n,120p,1056b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on bookdown-adac.pdf (18 pages).
+Output written on bookdown-adacor.pdf (18 pages).

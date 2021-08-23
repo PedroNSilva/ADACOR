@@ -1,32 +1,28 @@
-
 --- 
+lang: pt-BR
 title: "Análise de Dados Amostrais"
 author: "Pedro Luis do Nascimento Silva e Djalma G. C. Pessoa e Antonio José Ribeiro Dias e Zélia Magalhães Bianchini e Sonia Albieri"
-date: "`r Sys.Date()`"
-
+date: '`r format(Sys.time(), "%d de %B de %Y, %X")`'
+summary_depth: 3
+summary_float:
+   collapsed: false
 site: bookdown::bookdown_site
 
 output:
-  bookdown::gitbook: default
-  bookdown::pdf_book:
-    includes:
-      in_header: preamble.tex
-    latex_engine: xelatex
-    citation_package: natbib
-    keep_tex: yes
-  bookdown::epub_book: default
- 
- 
-documentclass: book
+   bookdown::gitbook: default
+documentclass: book          
+
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
+csl: Modified-apa.csl
+suppress-bibliography: false
 link-citations: yes
 github-repo: PedroNSilva/ADACOR
 cover-image: "Figuras/capa.png"
 description: "Análise de dados de pesquisas amostrais."
 ---
 
-# Prefácio {-}
+# Bem-vindo {-}
 
 Uma preocupação básica de toda instituição produtora de informações estatísticas é com a utilização ''correta'' de seus dados. Isso pode ser intrepretado de várias formas, algumas delas com reflexos até na confiança do público e na
 própria sobrevivência do órgão. Do nosso ponto de vista, enfatizamos um aspecto
