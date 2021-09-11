@@ -1,90 +1,84 @@
 <!DOCTYPE html>
-<html >
-
+<html lang="pt-BR" xml:lang="pt-BR">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Análise de Dados Amostrais Complexos</title>
-  <meta name="description" content="Análise de dados de pesquisas amostrais complexas.">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 1 Referencial para Inferência | Análise de Dados Amostrais</title>
+  <meta name="description" content="Análise de dados de pesquisas amostrais." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Análise de Dados Amostrais Complexos" />
+  <meta property="og:title" content="Capítulo 1 Referencial para Inferência | Análise de Dados Amostrais" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="Figuras/capa.png" />
-  <meta property="og:description" content="Análise de dados de pesquisas amostrais complexas." />
-  <meta name="github-repo" content="djalmapessoa/adac" />
+  <meta property="og:image" content="/Figuras/capa.png" />
+  <meta property="og:description" content="Análise de dados de pesquisas amostrais." />
+  <meta name="github-repo" content="PedroNSilva/ADACOR" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Análise de Dados Amostrais Complexos" />
+  <meta name="twitter:title" content="Capítulo 1 Referencial para Inferência | Análise de Dados Amostrais" />
   
-  <meta name="twitter:description" content="Análise de dados de pesquisas amostrais complexas." />
-  <meta name="twitter:image" content="Figuras/capa.png" />
+  <meta name="twitter:description" content="Análise de dados de pesquisas amostrais." />
+  <meta name="twitter:image" content="/Figuras/capa.png" />
 
-<meta name="author" content="Djalma Pessoa e Pedro Nascimento Silva">
+<meta name="author" content="Djalma G. C. Pessoa, Pedro Luis do Nascimento Silva," />
+<meta name="author" content="Antonio José Ribeiro Dias, Zélia Magalhães Bianchini e Sonia Albieri" />
 
 
-<meta name="date" content="2018-05-01">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduc.html">
-<link rel="next" href="capplanamo.html">
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="referências.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
 
 
 
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 </head>
@@ -99,115 +93,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimentos"><i class="fa fa-check"></i>Agradecimentos</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="introduc.html"><a href="introduc.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
-<li class="chapter" data-level="1.1" data-path="introduc.html"><a href="introduc.html#motivacao"><i class="fa fa-check"></i><b>1.1</b> Motivação</a></li>
-<li class="chapter" data-level="1.2" data-path="introduc.html"><a href="introduc.html#objetivos-do-livro"><i class="fa fa-check"></i><b>1.2</b> Objetivos do Livro</a></li>
-<li class="chapter" data-level="1.3" data-path="introduc.html"><a href="introduc.html#estrutura-do-livro"><i class="fa fa-check"></i><b>1.3</b> Estrutura do Livro</a></li>
-<li class="chapter" data-level="1.4" data-path="introduc.html"><a href="introduc.html#epa"><i class="fa fa-check"></i><b>1.4</b> Laboratório de R do Capítulo 1.</a></li>
-<li class="chapter" data-level="1.5" data-path="introduc.html"><a href="introduc.html#laboratorio-de-r-do-capitulo-1---extra."><i class="fa fa-check"></i><b>1.5</b> Laboratório de R do Capítulo 1 - Extra.</a></li>
+<li class="chapter" data-level="1" data-path="refinf.html"><a href="refinf.html"><i class="fa fa-check"></i><b>1</b> Referencial para Inferência</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="refinf.html"><a href="refinf.html#classic"><i class="fa fa-check"></i><b>1.1</b> Modelagem - Primeiras Ideias</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="refinf.html"><a href="refinf.html#abordagem-1---modelagem-clássica"><i class="fa fa-check"></i><b>1.1.1</b> Abordagem 1 - Modelagem Clássica</a></li>
+<li class="chapter" data-level="1.1.2" data-path="refinf.html"><a href="refinf.html#abordagem-2---amostragem-probabilística"><i class="fa fa-check"></i><b>1.1.2</b> Abordagem 2 - Amostragem Probabilística</a></li>
+<li class="chapter" data-level="1.1.3" data-path="refinf.html"><a href="refinf.html#discussão-das-abordagens-1-e-2"><i class="fa fa-check"></i><b>1.1.3</b> Discussão das Abordagens 1 e 2</a></li>
+<li class="chapter" data-level="1.1.4" data-path="refinf.html"><a href="refinf.html#modelsuperpop"><i class="fa fa-check"></i><b>1.1.4</b> Abordagem 3 - Modelagem de Superpopulação</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="refinf.html"><a href="refinf.html"><i class="fa fa-check"></i><b>2</b> Referencial para Inferência</a><ul>
-<li class="chapter" data-level="2.1" data-path="refinf.html"><a href="refinf.html#classic"><i class="fa fa-check"></i><b>2.1</b> Modelagem - Primeiras Ideias</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="refinf.html"><a href="refinf.html#abordagem-1---modelagem-classica"><i class="fa fa-check"></i><b>2.1.1</b> Abordagem 1 - Modelagem Clássica</a></li>
-<li class="chapter" data-level="2.1.2" data-path="refinf.html"><a href="refinf.html#abordagem-2---amostragem-probabilistica"><i class="fa fa-check"></i><b>2.1.2</b> Abordagem 2 - Amostragem Probabilística</a></li>
-<li class="chapter" data-level="2.1.3" data-path="refinf.html"><a href="refinf.html#discussao-das-abordagens-1-e-2"><i class="fa fa-check"></i><b>2.1.3</b> Discussão das Abordagens 1 e 2</a></li>
-<li class="chapter" data-level="2.1.4" data-path="refinf.html"><a href="refinf.html#modelsuperpop"><i class="fa fa-check"></i><b>2.1.4</b> Abordagem 3 - Modelagem de Superpopulação</a></li>
+<li class="chapter" data-level="1.2" data-path="refinf.html"><a href="refinf.html#fontes-de-variação"><i class="fa fa-check"></i><b>1.2</b> Fontes de Variação</a></li>
+<li class="chapter" data-level="1.3" data-path="refinf.html"><a href="refinf.html#modelos-de-superpopulação"><i class="fa fa-check"></i><b>1.3</b> Modelos de Superpopulação</a></li>
+<li class="chapter" data-level="1.4" data-path="refinf.html"><a href="refinf.html#planamo"><i class="fa fa-check"></i><b>1.4</b> Planejamento Amostral</a></li>
+<li class="chapter" data-level="1.5" data-path="refinf.html"><a href="refinf.html#inform"><i class="fa fa-check"></i><b>1.5</b> Planos Amostrais Informativos e Ignoráveis</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="refinf.html"><a href="refinf.html#fontes-de-variacao"><i class="fa fa-check"></i><b>2.2</b> Fontes de Variação</a></li>
-<li class="chapter" data-level="2.3" data-path="refinf.html"><a href="refinf.html#modelos-de-superpopulacao"><i class="fa fa-check"></i><b>2.3</b> Modelos de Superpopulação</a></li>
-<li class="chapter" data-level="2.4" data-path="refinf.html"><a href="refinf.html#planamo"><i class="fa fa-check"></i><b>2.4</b> Planejamento Amostral</a></li>
-<li class="chapter" data-level="2.5" data-path="refinf.html"><a href="refinf.html#inform"><i class="fa fa-check"></i><b>2.5</b> Planos Amostrais Informativos e Ignoráveis</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="capplanamo.html"><a href="capplanamo.html"><i class="fa fa-check"></i><b>3</b> Estimação Baseada no Plano Amostral</a><ul>
-<li class="chapter" data-level="3.1" data-path="capplanamo.html"><a href="capplanamo.html#estimatotais"><i class="fa fa-check"></i><b>3.1</b> Estimação de Totais</a></li>
-<li class="chapter" data-level="3.2" data-path="capplanamo.html"><a href="capplanamo.html#por-que-estimar-variancias"><i class="fa fa-check"></i><b>3.2</b> Por que Estimar Variâncias</a></li>
-<li class="chapter" data-level="3.3" data-path="capplanamo.html"><a href="capplanamo.html#taylor"><i class="fa fa-check"></i><b>3.3</b> Linearização de Taylor para Estimar variâncias</a></li>
-<li class="chapter" data-level="3.4" data-path="capplanamo.html"><a href="capplanamo.html#metodo-do-conglomerado-primario"><i class="fa fa-check"></i><b>3.4</b> Método do Conglomerado Primário</a></li>
-<li class="chapter" data-level="3.5" data-path="capplanamo.html"><a href="capplanamo.html#metodos-de-replicacao"><i class="fa fa-check"></i><b>3.5</b> Métodos de Replicação</a></li>
-<li class="chapter" data-level="3.6" data-path="capplanamo.html"><a href="capplanamo.html#laboratorio-de-r"><i class="fa fa-check"></i><b>3.6</b> Laboratório de R</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="introduc.html"><a href="introduc.html#epa"><i class="fa fa-check"></i><b>4</b> Efeitos do Plano Amostral</a><ul>
-<li class="chapter" data-level="4.1" data-path="epa.html"><a href="epa.html"><i class="fa fa-check"></i><b>4.1</b> Introdução</a></li>
-<li class="chapter" data-level="4.2" data-path="epa.html"><a href="epa.html#efeito-do-plano-amostral-epa-de-kish"><i class="fa fa-check"></i><b>4.2</b> Efeito do Plano Amostral (EPA) de Kish</a></li>
-<li class="chapter" data-level="4.3" data-path="epa.html"><a href="epa.html#efeito-do-plano-amostral-ampliado"><i class="fa fa-check"></i><b>4.3</b> Efeito do Plano Amostral Ampliado</a></li>
-<li class="chapter" data-level="4.4" data-path="epa.html"><a href="epa.html#icth"><i class="fa fa-check"></i><b>4.4</b> Intervalos de Confiança e Testes de Hipóteses</a></li>
-<li class="chapter" data-level="4.5" data-path="epa.html"><a href="epa.html#efeitos-multivariados-de-plano-amostral"><i class="fa fa-check"></i><b>4.5</b> Efeitos Multivariados de Plano Amostral</a></li>
-<li class="chapter" data-level="4.6" data-path="epa.html"><a href="epa.html#laboratorio-de-r-1"><i class="fa fa-check"></i><b>4.6</b> Laboratório de R</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="ajmodpar.html"><a href="ajmodpar.html"><i class="fa fa-check"></i><b>5</b> Ajuste de Modelos Paramétricos</a><ul>
-<li class="chapter" data-level="5.1" data-path="ajmodpar.html"><a href="ajmodpar.html#modpar1"><i class="fa fa-check"></i><b>5.1</b> Introdução</a></li>
-<li class="chapter" data-level="5.2" data-path="ajmodpar.html"><a href="ajmodpar.html#metodo-de-maxima-verossimilhanca-mv"><i class="fa fa-check"></i><b>5.2</b> Método de Máxima Verossimilhança (MV)</a></li>
-<li class="chapter" data-level="5.3" data-path="ajmodpar.html"><a href="ajmodpar.html#ponderacao-de-dados-amostrais"><i class="fa fa-check"></i><b>5.3</b> Ponderação de Dados Amostrais</a></li>
-<li class="chapter" data-level="5.4" data-path="ajmodpar.html"><a href="ajmodpar.html#modpar3"><i class="fa fa-check"></i><b>5.4</b> Método de Máxima Pseudo-Verossimilhança</a></li>
-<li class="chapter" data-level="5.5" data-path="ajmodpar.html"><a href="ajmodpar.html#robustez-do-procedimento-mpv"><i class="fa fa-check"></i><b>5.5</b> Robustez do Procedimento MPV</a></li>
-<li class="chapter" data-level="5.6" data-path="ajmodpar.html"><a href="ajmodpar.html#desvantagens-da-inferencia-de-aleatorizacao"><i class="fa fa-check"></i><b>5.6</b> Desvantagens da Inferência de Aleatorização</a></li>
-<li class="chapter" data-level="5.7" data-path="ajmodpar.html"><a href="ajmodpar.html#laboratorio-de-r-2"><i class="fa fa-check"></i><b>5.7</b> Laboratório de R</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="modreg.html"><a href="modreg.html"><i class="fa fa-check"></i><b>6</b> Modelos de Regressão</a><ul>
-<li class="chapter" data-level="6.1" data-path="modreg.html"><a href="modreg.html#modlinear"><i class="fa fa-check"></i><b>6.1</b> Modelo de Regressão Linear Normal</a><ul>
-<li class="chapter" data-level="6.1.1" data-path="modreg.html"><a href="modreg.html#especificacao-do-modelo"><i class="fa fa-check"></i><b>6.1.1</b> Especificação do Modelo</a></li>
-<li class="chapter" data-level="6.1.2" data-path="modreg.html"><a href="modreg.html#pseudo-parametros-do-modelo"><i class="fa fa-check"></i><b>6.1.2</b> Pseudo-parâmetros do Modelo</a></li>
-<li class="chapter" data-level="6.1.3" data-path="modreg.html"><a href="modreg.html#estimadores-de-mpv-dos-parametros-do-modelo"><i class="fa fa-check"></i><b>6.1.3</b> Estimadores de MPV dos Parâmetros do Modelo</a></li>
-<li class="chapter" data-level="6.1.4" data-path="modreg.html"><a href="modreg.html#estimacao-da-variancia-de-estimadores-de-mpv"><i class="fa fa-check"></i><b>6.1.4</b> Estimação da Variância de Estimadores de MPV</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="modreg.html"><a href="modreg.html#modlogist"><i class="fa fa-check"></i><b>6.2</b> Modelo de Regressão Logística</a></li>
-<li class="chapter" data-level="6.3" data-path="modreg.html"><a href="modreg.html#teste-de-hipoteses"><i class="fa fa-check"></i><b>6.3</b> Teste de Hipóteses</a></li>
-<li class="chapter" data-level="6.4" data-path="modreg.html"><a href="modreg.html#laboratorio-de-r-3"><i class="fa fa-check"></i><b>6.4</b> Laboratório de R</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="testqualajust.html"><a href="testqualajust.html"><i class="fa fa-check"></i><b>7</b> Testes de Qualidade de Ajuste</a><ul>
-<li class="chapter" data-level="7.1" data-path="testqualajust.html"><a href="testqualajust.html#introducao-1"><i class="fa fa-check"></i><b>7.1</b> Introdução</a></li>
-<li class="chapter" data-level="7.2" data-path="testqualajust.html"><a href="testqualajust.html#teste-para-uma-proporcao"><i class="fa fa-check"></i><b>7.2</b> Teste para uma Proporção</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="testqualajust.html"><a href="testqualajust.html#correcao-de-estatisticas-classicas"><i class="fa fa-check"></i><b>7.2.1</b> Correção de Estatísticas Clássicas</a></li>
-<li class="chapter" data-level="7.2.2" data-path="testqualajust.html"><a href="testqualajust.html#estatistica-de-wald"><i class="fa fa-check"></i><b>7.2.2</b> Estatística de Wald</a></li>
-</ul></li>
-<li class="chapter" data-level="7.3" data-path="testqualajust.html"><a href="testqualajust.html#teste-para-varias-proporcoes"><i class="fa fa-check"></i><b>7.3</b> Teste para Várias Proporções</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="testqualajust.html"><a href="testqualajust.html#estatistica-de-wald-baseada-no-plano-amostral"><i class="fa fa-check"></i><b>7.3.1</b> Estatística de Wald Baseada no Plano Amostral</a></li>
-<li class="chapter" data-level="7.3.2" data-path="testqualajust.html"><a href="testqualajust.html#situacoes-instaveis"><i class="fa fa-check"></i><b>7.3.2</b> Situações Instáveis</a></li>
-<li class="chapter" data-level="7.3.3" data-path="testqualajust.html"><a href="testqualajust.html#raoscott"><i class="fa fa-check"></i><b>7.3.3</b> Estatística de Pearson com Ajuste de Rao-Scott</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="testqualajust.html"><a href="testqualajust.html#laboratorio-de-r-4"><i class="fa fa-check"></i><b>7.4</b> Laboratório de R</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="testetab2.html"><a href="testetab2.html"><i class="fa fa-check"></i><b>8</b> Testes em Tabelas de Duas Entradas</a><ul>
-<li class="chapter" data-level="8.1" data-path="testetab2.html"><a href="testetab2.html#introducao-2"><i class="fa fa-check"></i><b>8.1</b> Introdução</a></li>
-<li class="chapter" data-level="8.2" data-path="testetab2.html"><a href="testetab2.html#tabelas22"><i class="fa fa-check"></i><b>8.2</b> Tabelas 2x2</a><ul>
-<li class="chapter" data-level="8.2.1" data-path="testetab2.html"><a href="testetab2.html#teste-de-independencia"><i class="fa fa-check"></i><b>8.2.1</b> Teste de Independência</a></li>
-<li class="chapter" data-level="8.2.2" data-path="testetab2.html"><a href="testetab2.html#teste-de-homogeneidade"><i class="fa fa-check"></i><b>8.2.2</b> Teste de Homogeneidade</a></li>
-<li class="chapter" data-level="8.2.3" data-path="testetab2.html"><a href="testetab2.html#efeitos-de-plano-amostral-nas-celas"><i class="fa fa-check"></i><b>8.2.3</b> Efeitos de Plano Amostral nas Celas</a></li>
-</ul></li>
-<li class="chapter" data-level="8.3" data-path="testetab2.html"><a href="testetab2.html#tabelas-de-duas-entradas-caso-geral"><i class="fa fa-check"></i><b>8.3</b> Tabelas de Duas Entradas (Caso Geral)</a><ul>
-<li class="chapter" data-level="8.3.1" data-path="testetab2.html"><a href="testetab2.html#teste-de-homogeneidade-1"><i class="fa fa-check"></i><b>8.3.1</b> Teste de Homogeneidade</a></li>
-<li class="chapter" data-level="8.3.2" data-path="testetab2.html"><a href="testetab2.html#teste-de-independencia-1"><i class="fa fa-check"></i><b>8.3.2</b> Teste de Independência</a></li>
-<li class="chapter" data-level="8.3.3" data-path="testetab2.html"><a href="testetab2.html#estatistica-de-wald-baseada-no-plano-amostral-1"><i class="fa fa-check"></i><b>8.3.3</b> Estatística de Wald Baseada no Plano Amostral</a></li>
-<li class="chapter" data-level="8.3.4" data-path="testetab2.html"><a href="testetab2.html#estatistica-de-pearson-com-ajuste-de-rao-scott"><i class="fa fa-check"></i><b>8.3.4</b> Estatística de Pearson com Ajuste de Rao-Scott</a></li>
-</ul></li>
-<li class="chapter" data-level="8.4" data-path="testetab2.html"><a href="testetab2.html#laboratorio-de-r-5"><i class="fa fa-check"></i><b>8.4</b> Laboratório de R</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="estimacao-de-densidades.html"><a href="estimacao-de-densidades.html"><i class="fa fa-check"></i><b>9</b> Estimação de densidades</a><ul>
-<li class="chapter" data-level="9.1" data-path="estimacao-de-densidades.html"><a href="estimacao-de-densidades.html#introducao-3"><i class="fa fa-check"></i><b>9.1</b> Introdução</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="modelos-hierarquicos.html"><a href="modelos-hierarquicos.html"><i class="fa fa-check"></i><b>10</b> Modelos Hierárquicos</a><ul>
-<li class="chapter" data-level="10.1" data-path="modelos-hierarquicos.html"><a href="modelos-hierarquicos.html#introducao-4"><i class="fa fa-check"></i><b>10.1</b> Introdução</a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="nao-resposta.html"><a href="nao-resposta.html"><i class="fa fa-check"></i><b>11</b> Não-Resposta</a><ul>
-<li class="chapter" data-level="11.1" data-path="nao-resposta.html"><a href="nao-resposta.html#introducao-5"><i class="fa fa-check"></i><b>11.1</b> Introdução</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="diagnostico-de-ajuste-de-modelo.html"><a href="diagnostico-de-ajuste-de-modelo.html"><i class="fa fa-check"></i><b>12</b> Diagnóstico de ajuste de modelo</a><ul>
-<li class="chapter" data-level="12.1" data-path="diagnostico-de-ajuste-de-modelo.html"><a href="diagnostico-de-ajuste-de-modelo.html#introducao-6"><i class="fa fa-check"></i><b>12.1</b> Introdução</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="agregdesag.html"><a href="agregdesag.html"><i class="fa fa-check"></i><b>13</b> Agregação vs. Desagregação</a><ul>
-<li class="chapter" data-level="13.1" data-path="agregdesag.html"><a href="agregdesag.html#introducao-7"><i class="fa fa-check"></i><b>13.1</b> Introdução</a></li>
-<li class="chapter" data-level="13.2" data-path="agregdesag.html"><a href="agregdesag.html#modelagem-da-estrutura-populacional"><i class="fa fa-check"></i><b>13.2</b> Modelagem da Estrutura Populacional</a></li>
-<li class="chapter" data-level="13.3" data-path="agregdesag.html"><a href="agregdesag.html#modelos-hierarquicos-1"><i class="fa fa-check"></i><b>13.3</b> Modelos Hierárquicos</a></li>
-<li class="chapter" data-level="13.4" data-path="agregdesag.html"><a href="agregdesag.html#analise-desagregada-pros-e-contras"><i class="fa fa-check"></i><b>13.4</b> Análise Desagregada: Prós e Contras</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="pacotes.html"><a href="pacotes.html"><i class="fa fa-check"></i><b>14</b> Pacotes para Analisar Dados Amostrais</a><ul>
-<li class="chapter" data-level="14.1" data-path="pacotes.html"><a href="pacotes.html#introducao-8"><i class="fa fa-check"></i><b>14.1</b> Introdução</a></li>
-<li class="chapter" data-level="14.2" data-path="pacotes.html"><a href="pacotes.html#pacotes-computacionais"><i class="fa fa-check"></i><b>14.2</b> Pacotes Computacionais</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referências</a></li>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
 </ul>
 
       </nav>
@@ -217,7 +121,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Análise de Dados Amostrais Complexos</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Análise de Dados Amostrais</a>
           </h1>
         </div>
 
@@ -225,62 +129,118 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="refinf" class="section level1">
-<h1><span class="header-section-number">Capítulo 2</span> Referencial para Inferência</h1>
-<div id="classic" class="section level2">
-<h2><span class="header-section-number">2.1</span> Modelagem - Primeiras Ideias</h2>
-<p>Com o objetivo de dar uma primeira ideia sobre o assunto a ser tratado neste livro vamos considerar, numa situação simples, algumas abordagens alternativas para modelagem e análise estatística.</p>
-<div id="abordagem-1---modelagem-classica" class="section level3">
-<h3><span class="header-section-number">2.1.1</span> Abordagem 1 - Modelagem Clássica</h3>
-<p>Seja <span class="math inline">\(Y\)</span> um vetor <span class="math inline">\(P \times 1\)</span> de variáveis de pesquisa (ou de interesse), e sejam <span class="math inline">\(n\)</span> vetores de observações destas variáveis para uma amostra de unidades de interesse denotados por <span class="math inline">\(y_1, \ldots ,y_n\)</span>. Em Inferência Estatística, a abordagem que aqui chamamos de <em>Modelagem clássica</em> considera <span class="math inline">\(y_1, \ldots ,y_n\)</span> como valores (realizações) de vetores de variáveis aleatórias <span class="math inline">\(Y_1, \ldots ,Y_n\)</span>.</p>
-<p>Podemos formular modelos bastante sofisticados para a distribuição conjunta destes vetores aleatórios, mas para simplificar a discussão, vamos inicialmente supor que <span class="math inline">\(Y_1, \ldots ,Y_n\)</span> são vetores aleatórios independentes e identicamente distribuídos (IID), com a mesma distribuição de <span class="math inline">\(Y\)</span>, caracterizada pela função de densidade ou de frequência <span class="math inline">\(f(y;\theta)\)</span>, onde <span class="math inline">\(\theta \in \Theta\)</span> é o parâmetro (um vetor de dimensão <span class="math inline">\(K \times 1\)</span>) indexador da distribuição <span class="math inline">\(f\)</span>, e <span class="math inline">\(\Theta\)</span> é o espaço paramétrico. A partir das observações <span class="math inline">\(y_1, \ldots ,y_n\)</span>, são feitas inferências a respeito do parâmetro <span class="math inline">\(\theta\)</span>.</p>
-<p>Uma representação gráfica esquemática dessa abordagem é apresentada na Figura <a href="refinf.html#fig:modclas">2.1</a>, e uma descrição esquemática resumida é apresentada na Tabela <a href="refinf.html#tab:modelclass">2.1</a>.</p>
-<div class="figure"><span id="fig:modclas"></span>
+<div id="refinf" class="section level1" number="1">
+<h1><span class="header-section-number">Capítulo 1</span> Referencial para Inferência</h1>
+<div id="classic" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Modelagem - Primeiras Ideias</h2>
+<p>Com o objetivo de dar uma primeira ideia sobre o assunto a ser tratado neste
+livro vamos considerar, numa situação simples, algumas abordagens alternativas
+para modelagem e análise estatística.</p>
+<div id="abordagem-1---modelagem-clássica" class="section level3" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Abordagem 1 - Modelagem Clássica</h3>
+<p>Seja <span class="math inline">\(Y\)</span> um vetor <span class="math inline">\(P \times 1\)</span> de variáveis de pesquisa (ou de interesse), e
+sejam <span class="math inline">\(n\)</span> vetores de observações destas variáveis para uma amostra de unidades
+de interesse denotados por <span class="math inline">\(y_1, \ldots ,y_n\)</span>. Em Inferência Estatística, a
+abordagem que aqui chamamos de <em>Modelagem clássica</em> considera <span class="math inline">\(y_1, \ldots ,y_n\)</span>
+como valores (realizações) de vetores de variáveis aleatórias
+<span class="math inline">\(Y_1, \ldots ,Y_n\)</span>.</p>
+<p>Podemos formular modelos bastante sofisticados para a distribuição conjunta
+destes vetores aleatórios, mas para simplificar a discussão, vamos inicialmente
+supor que <span class="math inline">\(Y_1, \ldots ,Y_n\)</span> são vetores aleatórios independentes e
+identicamente distribuídos (IID), com a mesma distribuição de <span class="math inline">\(Y\)</span>, caracterizada
+pela função de densidade ou de frequência <span class="math inline">\(f(y;\theta)\)</span>, onde
+<span class="math inline">\(\theta \in \Theta\)</span> é o parâmetro (um vetor de dimensão <span class="math inline">\(K \times 1\)</span>) indexador
+da distribuição <span class="math inline">\(f\)</span>, e <span class="math inline">\(\Theta\)</span> é o espaço paramétrico. A partir das observações
+<span class="math inline">\(y_1, \ldots ,y_n\)</span>, são feitas inferências a respeito do parâmetro <span class="math inline">\(\theta\)</span>.</p>
+<p>Uma representação gráfica esquemática dessa abordagem é apresentada na Figura
+<a href="refinf.html#fig:modclas">1.1</a>, e uma descrição esquemática resumida é apresentada na Tabela
+<a href="refinf.html#tab:modelclass">1.1</a>.</p>
+<div class="figure"><span style="display:block;" id="fig:modclas"></span>
 <img src="Figuras/Figura2.1.png" alt="Representação esquemática da Modelagem Clássica"  />
 <p class="caption">
-Figura 2.1: Representação esquemática da Modelagem Clássica
+Figura 1.1: Representação esquemática da Modelagem Clássica
 </p>
 </div>
-<table style="width:94%;">
-<caption><span id="tab:modelclass">Tabela 2.1: </span> Representação esquemática da abordagem <em>Modelagem Clássica</em>.</caption>
-<colgroup>
-<col width="30%" />
-<col width="63%" />
-</colgroup>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:modelclass">Tabela 1.1: </span>Representação esquemática da abordagem Modelagem Clássica
+</caption>
 <tbody>
-<tr class="odd">
-<td align="left">Dados Amostrais</td>
-<td align="left"><span class="math inline">\(Y_1=y_1, \ldots, Y_n=y_n\)</span></td>
+<tr>
+<td style="text-align:left;width: 4.5cm; ">
+Dados Amostrais
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(Y_1=y_1,\ldots, Y_n=y_n\)</span>
+</td>
 </tr>
-<tr class="even">
-<td align="left">Modelo Paramétrico/ Hipóteses</td>
-<td align="left"><span class="math inline">\(Y_1, \ldots ,Y_n\)</span> variáveis aleatórias IID com distribuição <span class="math inline">\(f(y,\theta)\)</span>, onde <span class="math inline">\(\theta \in \Theta\)</span></td>
+<tr>
+<td style="text-align:left;width: 4.5cm; ">
+Modelo Paramétrico/ Hipóteses
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(Y_1, \ldots ,Y_n \text{ variáveis aleatórias IID com distribuição }f(y,\theta),\text{ onde }\theta \in \Theta\)</span>
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Objetivo</td>
-<td align="left">Inferir sobre <span class="math inline">\(\theta\)</span> usando as observações <span class="math inline">\(y_1, \ldots ,y_n\)</span></td>
+<tr>
+<td style="text-align:left;width: 4.5cm; ">
+Objetivo
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{Inferir sobre }\theta\text{ usando as observações } y_1, \ldots ,y_n\)</span>
+</td>
 </tr>
 </tbody>
 </table>
-<p>Do ponto de vista matemático, o parâmetro <span class="math inline">\(\theta\)</span> serve para indexar os elementos da família de distribuições <span class="math inline">\(\left\{f\left( y;\theta \right);\theta \in \Theta \right\}\)</span>. Na prática, as questões relevantes da pesquisa são traduzidas em termos de perguntas sobre o valor ou região a que pertence o parâmetro <span class="math inline">\(\theta\)</span>, e a inferência sobre <span class="math inline">\(\theta\)</span> a partir dos dados ajuda a responder tais questões.</p>
-<p>Esta abordagem é útil em estudos analíticos tais como, por exemplo, na investigação da natureza da associação entre variáveis (modelos de regressão linear ou logística, modelos log-lineares, etc.). Vários exemplos discutidos ao longo dos Capítulos <a href="modreg.html#modreg">6</a>, <a href="testqualajust.html#testqualajust">7</a> e <a href="testetab2.html#testetab2">8</a> ilustram situações deste tipo. No Capítulo <a href="estimacao-de-densidades.html#estimacao-de-densidades">9</a> o foco vai ser a estimação não paramétrica da forma da função <span class="math inline">\(f(y;\theta)\)</span>.</p>
-<p>Inferência sob modelos do tipo descrito nesta seção forma o conteúdo de um curso introdutório de inferência estatística. Mais detalhes podem ser consultados, por exemplo, em <span class="citation">(Casella and Berger <a href="#ref-Casella">2010</a>)</span> e <span class="citation">(Magalhães and Lima <a href="#ref-Marcos">2015</a>)</span>.</p>
+<p>Do ponto de vista matemático, o parâmetro <span class="math inline">\(\theta\)</span> serve para indexar os
+elementos da família de distribuições
+<span class="math inline">\(\left\{f\left( y;\theta \right);\theta \in \Theta \right\}\)</span>. Na prática, as
+questões relevantes da pesquisa são traduzidas em termos de perguntas sobre o
+valor ou região a que pertence o parâmetro <span class="math inline">\(\theta\)</span>, e a inferência sobre
+<span class="math inline">\(\theta\)</span> a partir dos dados ajuda a responder tais questões.</p>
+<p>Esta abordagem é útil em estudos analíticos tais como, por exemplo, na
+investigação da natureza da associação entre variáveis (modelos de regressão
+linear ou logística, modelos log-lineares, etc.). Vários exemplos discutidos ao
+longo dos Capítulos <a href="#modreg"><strong>??</strong></a>, <a href="#testqualajust"><strong>??</strong></a> e <a href="#testetab2"><strong>??</strong></a>
+ilustram situações deste tipo. No Capítulo <a href="#estimacao-de-densidades"><strong>??</strong></a> o foco
+vai ser a estimação não paramétrica da forma da função <span class="math inline">\(f(y;\theta)\)</span>.</p>
+<p>Inferência sob modelos do tipo descrito nesta seção forma o conteúdo de um curso
+introdutório de inferência estatística. Mais detalhes podem ser consultados, por
+exemplo, em <span class="citation">(<a href="#ref-Casella" role="doc-biblioref">Casella e Berger, 2010</a>)</span> e <span class="citation">(<a href="#ref-Marcos" role="doc-biblioref">Magalhães e Lima, 2015</a>)</span>.</p>
 </div>
-<div id="abordagem-2---amostragem-probabilistica" class="section level3">
-<h3><span class="header-section-number">2.1.2</span> Abordagem 2 - Amostragem Probabilística</h3>
-<p>A abordagem adotada pelos praticantes de <em>Amostragem Probabilística</em> (amostristas) considera uma população finita <span class="math inline">\(U=\{1, \ldots ,N\}\)</span>, da qual é selecionada uma amostra <span class="math inline">\(a=\left\{ i_{1}, \ldots ,i_{n}\right\}\)</span>, segundo um plano amostral caracterizado por <span class="math inline">\(p\left( a\right)\)</span>, probabilidade de ser selecionada a amostra <span class="math inline">\(a\)</span>, suposta calculável para todas as possíveis amostras. Os valores <span class="math inline">\(y_{1}, \ldots ,y_{N}\)</span> das variáveis de interesse <span class="math inline">\(Y\)</span> na <em>população finita</em> são considerados fixos, porém desconhecidos.</p>
-<p>A partir dos valores observados na amostra <span class="math inline">\(a\)</span>, denotados por <span class="math inline">\(y_{i_1}, \ldots, y_{i_n}\)</span>, são feitas inferências a respeito de funções dos valores populacionais, digamos <span class="math inline">\(g\left( y_{1}, \ldots , y_{N}\right)\)</span>. Os valores de tais funções são quantidades descritivas populacionais (QDPs), também denominadas <em>parâmetros da população finita</em> pelos amostristas. Em geral, o objetivo desta abordagem é fazer estudos descritivos utilizando funções <span class="math inline">\(g\)</span> particulares, tais como totais <span class="math inline">\(g\left( y_{1}, \ldots , y_{N}\right) = \sum_{i=1}^{N} y_{i}\)</span> , médias <span class="math inline">\(g\left( y_{1}, \ldots , y_{N}\right) = N^{-1}\sum_{i=1}^{N} y_{i}\)</span>, proporções, razões, etc. Uma descrição esquemática resumida dessa abordagem é apresentada na Tabela <a href="refinf.html#tab:modelamo">2.2</a>, e uma representação gráfica resumida na Figura <a href="refinf.html#fig:modamo">2.2</a>.</p>
-<div class="figure"><span id="fig:modamo"></span>
+<div id="abordagem-2---amostragem-probabilística" class="section level3" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Abordagem 2 - Amostragem Probabilística</h3>
+<p>A abordagem adotada pelos praticantes de <em>Amostragem Probabilística</em>
+(amostristas) considera uma população finita <span class="math inline">\(U=\{1, \ldots ,N\}\)</span>, da qual é
+selecionada uma amostra <span class="math inline">\(a=\left\{ i_{1}, \ldots ,i_{n}\right\}\)</span>, segundo um
+plano amostral caracterizado por <span class="math inline">\(p\left( a\right)\)</span>, probabilidade de ser
+selecionada a amostra <span class="math inline">\(a\)</span>, suposta calculável para todas as possíveis amostras.
+Os valores <span class="math inline">\(y_{1}, \ldots ,y_{N}\)</span> das variáveis de interesse <span class="math inline">\(Y\)</span> na <em>população
+finita</em> são considerados fixos, porém desconhecidos.</p>
+<p>A partir dos valores observados na amostra <span class="math inline">\(a\)</span>, denotados por
+<span class="math inline">\(y_{i_1}, \ldots, y_{i_n}\)</span>, são feitas inferências a respeito de funções dos
+valores populacionais, digamos <span class="math inline">\(g\left( y_{1}, \ldots , y_{N}\right)\)</span>. Os
+valores de tais funções são quantidades descritivas populacionais (QDPs), também
+denominadas <em>parâmetros da população finita</em> pelos amostristas. Em geral, o
+objetivo desta abordagem é fazer estudos descritivos utilizando funções <span class="math inline">\(g\)</span>
+particulares, tais como totais
+<span class="math inline">\(g\left( y_{1}, \ldots , y_{N}\right) = \sum_{i=1}^{N} y_{i}\)</span> , médias
+<span class="math inline">\(g\left( y_{1}, \ldots , y_{N}\right) = N^{-1}\sum_{i=1}^{N} y_{i}\)</span>, proporções,
+razões, etc. Uma descrição esquemática resumida dessa abordagem é apresentada na
+Tabela <a href="refinf.html#tab:modelamo">1.2</a>, e uma representação gráfica resumida na Figura
+<a href="refinf.html#fig:modamo">1.2</a>.</p>
+<div class="figure"><span style="display:block;" id="fig:modamo"></span>
 <img src="Figuras/Figura2.2.png" alt="Amostragem Probabilística"  />
 <p class="caption">
-Figura 2.2: Amostragem Probabilística
+Figura 1.2: Amostragem Probabilística
 </p>
 </div>
-<table style="width:94%;">
-<caption><span id="tab:modelamo">Tabela 2.2: </span> Representação esquemática da abordagem <em>Amostragem Probabilística</em>.</caption>
+<table>
+<caption><span id="tab:modelamo">Tabela 1.2: </span> Representação esquemática da abordagem <em>Amostragem
+Probabilística</em></caption>
 <colgroup>
-<col width="30%" />
-<col width="63%" />
+<col width="31%" />
+<col width="68%" />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -288,174 +248,549 @@ Figura 2.2: Amostragem Probabilística
 <td align="left"><span class="math inline">\(Y_1=y_{i_1}, \ldots, Y_n=y_{i_n}\)</span></td>
 </tr>
 <tr class="even">
-<td align="left">Hipóteses/Modelo Hipóteses</td>
-<td align="left">extraídos de <span class="math inline">\(y_1, \ldots , y_N\)</span> segundo <span class="math inline">\(p(a)\)</span></td>
+<td align="left">Hipóteses/ Modelo
+Hipóteses</td>
+<td align="left"><span class="math inline">\(\text{Dados extraídos de }y_1,\ldots, y_N \text{ segundo }p(a)\)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">Objetivo</td>
-<td align="left">Inferir sobre funções <span class="math inline">\(g(y_1, \ldots , y_N)\)</span> usando <span class="math inline">\(y_{i_1}, \ldots, y_{i_n}\)</span></td>
+<td align="left"><span class="math inline">\(\text{Inferir sobre funções }g(y_1, \ldots , y_N) \text{ usando }y_{i_1}, \ldots, y_{i_n}\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>Esta abordagem é largamente empregada na produção de estatísticas públicas e oficiais, por agências e instituições de muitos países. Uma das alegadas vantagens dessa abordagem é o fato de que as distribuições de referência usadas para inferência são controladas pelos amostristas que planejam as pesquisas por amostragem, e portanto, a inferência pode ser considerada não paramétrica e não dependente de modelos que precisariam ser especificados pelo analista.</p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:modelamo">Tabela 1.2: </span>Representação esquemática da abordagem <em>Amostragem Probabilística</em>
+</caption>
+<tbody>
+<tr>
+<td style="text-align:left;width: 4.5cm; ">
+Dados Amostrais
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(Y_1=y_{i_1}, \ldots, Y_n=y_{i_n}\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 4.5cm; ">
+Modelo Paramétrico/ Hipóteses
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{Dados extraídos de }y_1,\ldots, y_N \text{ segundo }p(a)\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 4.5cm; ">
+Objetivo
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{Inferir sobre funções }g(y_1, \ldots , y_N)\text{ usando }y_{i_1}, \ldots, y_{i_n}\)</span>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Esta abordagem é largamente empregada na produção de estatísticas públicas e
+oficiais, por agências e instituições de muitos países. Uma das alegadas
+vantagens dessa abordagem é o fato de que as distribuições de referência usadas
+para inferência são controladas pelos amostristas que planejam as pesquisas por
+amostragem, e portanto, a inferência pode ser considerada não paramétrica e não
+dependente de modelos que precisariam ser especificados pelo analista.</p>
 </div>
-<div id="discussao-das-abordagens-1-e-2" class="section level3">
-<h3><span class="header-section-number">2.1.3</span> Discussão das Abordagens 1 e 2</h3>
-<p>A primeira abordagem ( <em>Modelagem Clássica</em> ), nos termos descritos, foi inicialmente proposta para dados de medidas na Física e Astronomia, onde em geral o pesquisador tem relativo controle sobre os experimentos, e onde faz sentido falar em replicação ou repetição do experimento. Neste contexto, a ideia de aleatoriedade é geralmente introduzida para modelar os erros (não controláveis) do processo de medição, e as distribuições de estatísticas de interesse são derivadas a partir da <em>distribuição do modelo</em> especificado.</p>
-<p>A segunda abordagem ( <em>Amostragem Probabilística</em> ) é utilizada principalmente no contexto de estudos socioeconômicos observacionais, para levantamento de dados por agências governamentais produtoras de informações estatísticas. Nesta abordagem, a aleatoriedade é introduzida pelo pesquisador no processo para obtenção dos dados, através do <em>planejamento amostral</em> <span class="math inline">\(p(a)\)</span> utilizado <span class="citation">(Neyman <a href="#ref-Neyman">1934</a>)</span> e as distribuições das estatísticas de interesse são derivadas a partir dessa <em>distribuição de aleatorização</em>.</p>
-<p>Os planos amostrais podem ser complexos, gerando observações afetadas pelas características i) a iv) mencionadas no Capítulo <a href="introduc.html#introduc">1</a>. Os dados obtidos são utilizados principalmente para descrição da população finita, mediante o cálculo de estimativas de <em>parâmetros descritivos</em> usuais tais como totais, médias, proporções, razões, etc. Sob a abordagem de <em>Amostragem Probabilística</em>, os pontos i) a iv) do Capítulo <a href="introduc.html#introduc">1</a> são devidamente considerados tanto na estimação dos parâmetros descritivos como também na estimação de variâncias dos estimadores, permitindo a inferência pontual e por intervalos de confiança baseada na distribuição assintótica normal dos estimadores habitualmente considerados.</p>
-<p>A abordagem de <em>Amostragem Probabilística</em> é essencialmente não-paramétrica, pois não supõe uma distribuição paramétrica particular para as observações da amostra. Por outro lado, essa abordagem tem a desvantagem de fazer inferências restritas à particular população finita considerada.</p>
-<p>Apesar da abordagem de <em>Amostragem Probabilística</em> ter sido inicialmente concebida e aplicada para problemas de inferência descritiva sobre populações finitas, é cada vez mais comum, porém, a utilização dos dados obtidos através de pesquisas amostrais complexas para fins analíticos, com a aplicação de métodos de análise desenvolvidos e apropriados para a abordagem de <em>Modelagem Clássica</em>. Nesse contexto, é relevante considerar algumas questões de interesse.</p>
+<div id="discussão-das-abordagens-1-e-2" class="section level3" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> Discussão das Abordagens 1 e 2</h3>
+<p>A primeira abordagem ( <em>Modelagem Clássica</em> ), nos termos descritos, foi
+inicialmente proposta para dados de medidas na Física e Astronomia, onde em
+geral o pesquisador tem relativo controle sobre os experimentos, e onde faz
+sentido falar em replicação ou repetição do experimento. Neste contexto, a ideia
+de aleatoriedade é geralmente introduzida para modelar os erros (não
+controláveis) do processo de medição, e as distribuições de estatísticas de
+interesse são derivadas a partir da <em>distribuição do modelo</em> especificado.</p>
+<p>A segunda abordagem ( <em>Amostragem Probabilística</em> ) é utilizada principalmente
+no contexto de estudos socioeconômicos observacionais, para levantamento de
+dados por agências governamentais produtoras de informações estatísticas. Nesta
+abordagem, a aleatoriedade é introduzida pelo pesquisador no processo para
+obtenção dos dados, através do <em>planejamento amostral</em> <span class="math inline">\(p(a)\)</span> utilizado
+<span class="citation">(<a href="#ref-Neyman" role="doc-biblioref">Neyman, 1934</a>)</span> e as distribuições das estatísticas de interesse são derivadas a
+partir dessa <em>distribuição de aleatorização</em>.</p>
+<p>Os planos amostrais podem ser complexos, gerando observações afetadas pelas
+características i) a iv) mencionadas no Capítulo <a href="#introduc"><strong>??</strong></a>. Os dados
+obtidos são utilizados principalmente para descrição da população finita,
+mediante o cálculo de estimativas de <em>parâmetros descritivos</em> usuais tais como
+totais, médias, proporções, razões, etc. Sob a abordagem de <em>Amostragem
+Probabilística</em>, os pontos i) a iv) do Capítulo <a href="#introduc"><strong>??</strong></a> são devidamente
+considerados tanto na estimação dos parâmetros descritivos como também na
+estimação de variâncias dos estimadores, permitindo a inferência pontual e por
+intervalos de confiança baseada na distribuição assintótica normal dos
+estimadores habitualmente considerados.</p>
+<p>A abordagem de <em>Amostragem Probabilística</em> é essencialmente não-paramétrica,
+pois não supõe uma distribuição paramétrica particular para as observações da
+amostra. Por outro lado, essa abordagem tem a desvantagem de fazer inferências
+restritas à particular população finita considerada.</p>
+<p>Apesar da abordagem de <em>Amostragem Probabilística</em> ter sido inicialmente
+concebida e aplicada para problemas de inferência descritiva sobre populações
+finitas, é cada vez mais comum, porém, a utilização dos dados obtidos através de
+pesquisas amostrais complexas para fins analíticos, com a aplicação de métodos
+de análise desenvolvidos e apropriados para a abordagem de <em>Modelagem Clássica</em>.
+Nesse contexto, é relevante considerar algumas questões de interesse.</p>
 <ul>
-<li><p>É adequado aplicar métodos de análise da <em>Modelagem Clássica</em>, concebidos para observações IID, aos dados obtidos através de pesquisas amostrais complexas?</p></li>
-<li><p>Em caso negativo, seria possível corrigir estes métodos, tornando-os aplicáveis para tratar dados amostrais complexos?</p></li>
-<li><p>Ou seria mais adequado fazer uso analítico dos dados dentro da abordagem de <em>Amostragem Probabilística</em>? E neste caso, como fazer isto, visto que nesta abordagem não é especificado um modelo para a distribuição das variáveis de pesquisa <em>na população</em>?</p></li>
+<li><p>É adequado aplicar métodos de análise da <em>Modelagem Clássica</em>, concebidos
+para observações IID, aos dados obtidos através de pesquisas amostrais
+complexas?</p></li>
+<li><p>Em caso negativo, seria possível corrigir estes métodos, tornando-os
+aplicáveis para tratar dados amostrais complexos?</p></li>
+<li><p>Ou seria mais adequado fazer uso analítico dos dados dentro da abordagem de
+<em>Amostragem Probabilística</em>? E neste caso, como fazer isto, visto que nesta
+abordagem não é especificado um modelo para a distribuição das variáveis de
+pesquisa <em>na população</em>?</p></li>
 </ul>
-<p>Além destas questões, também é de interesse a questão da robustez da inferência, traduzida nas seguintes perguntas.</p>
+<p>Além destas questões, também é de interesse a questão da robustez da inferência,
+traduzida nas seguintes perguntas.</p>
 <ul>
-<li><p>O que acontece quando o modelo adotado na <em>Modelagem Clássica</em> não é verdadeiro?</p></li>
-<li>Neste caso, qual a interpretação dos parâmetros na <em>Modelagem Clássica</em>?</li>
-<li><p>Ainda neste caso, as quantidades descritivas populacionais da <em>Amostragem Probabilística</em> poderiam ter alguma utilidade ou interpretação?</p></li>
+<li><p>O que acontece quando o modelo adotado na <em>Modelagem Clássica</em> não é
+verdadeiro?</p></li>
+<li><p>Neste caso, qual a interpretação dos parâmetros na <em>Modelagem Clássica</em>?</p></li>
+<li><p>Ainda neste caso, as quantidades descritivas populacionais da <em>Amostragem
+Probabilística</em> poderiam ter alguma utilidade ou interpretação?</p></li>
 </ul>
-<p>O objeto deste livro é exatamente discutir respostas para as questões aqui enumeradas. Para isso, vamos considerar uma abordagem que propõe um modelo parametrizado como na <em>Modelagem Clássica</em>, mas formulado para descrever os dados da população, e não os da amostra. Além disso, essa abordagem incorpora na análise os pontos i) a iii) do Capítulo <a href="introduc.html#introduc">1</a> mediante aproveitamento da estrutura do planejamento amostral, como feito habitualmente na <em>Amostragem Probabilística</em>. Essa abordagem, denominada de <em>Modelagem de Superpopulação</em>, foi primeiro proposta em <span class="citation">(<span class="citeproc-not-found" data-reference-id="Brewer1963"><strong>???</strong></span>)</span> e <span class="citation">(Royall <a href="#ref-royall">1970</a>)</span>, e é bem descrita, por exemplo, em <span class="citation">(Binder <a href="#ref-binder83">1983</a>)</span> e <span class="citation">(Valliant and Royall <a href="#ref-valliant">2000</a>)</span>.</p>
+<p>O objeto deste livro é exatamente discutir respostas para as questões aqui
+enumeradas. Para isso, vamos considerar uma abordagem que propõe um modelo
+parametrizado como na <em>Modelagem Clássica</em>, mas formulado para descrever os
+dados da população, e não os da amostra. Além disso, essa abordagem incorpora na
+análise os pontos i) a iii) do Capítulo <a href="#introduc"><strong>??</strong></a> mediante aproveitamento
+da estrutura do planejamento amostral, como feito habitualmente na <em>Amostragem
+Probabilística</em>. Essa abordagem, denominada de <em>Modelagem de Superpopulação</em>,
+foi primeiro proposta em <span class="citation">(<a href="#ref-Brewer1963" role="doc-biblioref"><strong>Brewer1963?</strong></a>)</span> e <span class="citation">(<a href="#ref-royall" role="doc-biblioref">Royall, 1970</a>)</span>, e é bem descrita, por
+exemplo, em <span class="citation">(<a href="#ref-binder83" role="doc-biblioref">Binder, 1983</a>)</span> e <span class="citation">(<a href="#ref-valliant" role="doc-biblioref">Valliant e Royall, 2000</a>)</span>.</p>
 </div>
-<div id="modelsuperpop" class="section level3">
-<h3><span class="header-section-number">2.1.4</span> Abordagem 3 - Modelagem de Superpopulação</h3>
-<p>Nesta abordagem, os valores <span class="math inline">\(y_{1}, \ldots ,y_{N}\)</span> das variáveis de interesse <span class="math inline">\(Y\)</span> na população finita são considerados observações ou realizações dos vetores aleatórios <span class="math inline">\(Y_{1}, \ldots , Y_{N}\)</span>, supostos IID com distribuição <span class="math inline">\(f(y;\theta)\)</span>, onde <span class="math inline">\(\theta \in \Theta\)</span>. Este modelo é denominado <code>Modelo de Superpopulação</code>. Note que, em contraste com o que se faz na <em>Modelagem Clássica</em>, o modelo probabilístico é aqui especificado para descrever o mecanismo aleatório que gera a <em>população</em>, não a amostra. Na maioria das aplicações práticas, a população de interesse, embora considerada finIta, jamais será observada por inteiro. Não obstante, ao formular o modelo para descrever propriedades da população, nossas perguntas e respostas descritas em termos de valores ou regiões para o parâmetro <span class="math inline">\(\theta\)</span> passam a se referir à população de interesse ou a populações similares, quer existam ao mesmo tempo, quer se refiram a estados futuros (ou passados) da mesma população. Vale realçar também que pesquisas por amostragem “consistem em selecionar parte de uma população para observar, de modo que seja possível estimar alguma coisa sobre toda a população”, conforme <span class="citation">(Thompson <a href="#ref-thompson">1992</a>)</span>.</p>
-<p>Utilizando um plano amostral definido por <span class="math inline">\(p(a)\)</span>, obtemos os valores das variáveis de pesquisa na amostra <span class="math inline">\(y_{i_1}, \ldots , y_{i_n}\)</span>. A partir de <span class="math inline">\(y_{i_1}, \ldots , y_{i_n}\)</span>, em geral não considerados como observações de vetores aleatórios IID, queremos fazer inferência sobre o parâmetro <span class="math inline">\(\theta\)</span>, considerando os pontos i) a iii) do Capítulo 1. Veja uma representação gráfica resumida desta abordagem na Figura <a href="refinf.html#fig:modsup">2.3</a>.</p>
-<div class="figure"><span id="fig:modsup"></span>
+<div id="modelsuperpop" class="section level3" number="1.1.4">
+<h3><span class="header-section-number">1.1.4</span> Abordagem 3 - Modelagem de Superpopulação</h3>
+<p>Nesta abordagem, os valores <span class="math inline">\(y_{1}, \ldots ,y_{N}\)</span> das variáveis de interesse
+<span class="math inline">\(Y\)</span> na população finita são considerados observações ou realizações dos vetores
+aleatórios <span class="math inline">\(Y_{1}, \ldots , Y_{N}\)</span>, supostos IID com distribuição <span class="math inline">\(f(y;\theta)\)</span>,
+onde <span class="math inline">\(\theta \in \Theta\)</span>. Este modelo é denominado <code>Modelo de Superpopulação</code>.
+Note que, em contraste com o que se faz na <em>Modelagem Clássica</em>, o modelo
+probabilístico é aqui especificado para descrever o mecanismo aleatório que gera
+a <em>população</em>, não a amostra. Na maioria das aplicações práticas, a população de
+interesse, embora considerada finIta, jamais será observada por inteiro. Não
+obstante, ao formular o modelo para descrever propriedades da população, nossas
+perguntas e respostas descritas em termos de valores ou regiões para o parâmetro
+<span class="math inline">\(\theta\)</span> passam a se referir à população de interesse ou a populações similares,
+quer existam ao mesmo tempo, quer se refiram a estados futuros (ou passados) da
+mesma população. Vale realçar também que pesquisas por amostragem “consistem em
+selecionar parte de uma população para observar, de modo que seja possível
+estimar alguma coisa sobre toda a população”, conforme <span class="citation">(<a href="#ref-thompson" role="doc-biblioref">Thompson, 1992</a>)</span>.</p>
+<p>Utilizando um plano amostral definido por <span class="math inline">\(p(a)\)</span>, obtemos os valores das
+variáveis de pesquisa na amostra <span class="math inline">\(y_{i_1}, \ldots , y_{i_n}\)</span>. A partir de
+<span class="math inline">\(y_{i_1}, \ldots , y_{i_n}\)</span>, em geral não considerados como observações de
+vetores aleatórios IID, queremos fazer inferência sobre o parâmetro <span class="math inline">\(\theta\)</span>,
+considerando os pontos i) a iii) do Capítulo 1. Veja uma representação gráfica
+resumida desta abordagem na Figura <a href="refinf.html#fig:modsup">1.3</a>.</p>
+<div class="figure"><span style="display:block;" id="fig:modsup"></span>
 <img src="Figuras/Figura2.3.png" alt="Modelagem de Superpopulação"  />
 <p class="caption">
-Figura 2.3: Modelagem de Superpopulação
+Figura 1.3: Modelagem de Superpopulação
 </p>
 </div>
-<p>Adotando o <em>Modelo de Superpopulação</em> e considerando métodos usuais disponíveis na <em>Modelagem Clássica</em>, podemos utilizar funções de <span class="math inline">\(y_{1}, \ldots ,y_{N}\)</span> , digamos <span class="math inline">\(g( y_{1}, \ldots , y_{N})\)</span>, para fazer inferência sobre <span class="math inline">\(\theta\)</span>. Desta forma, definimos estatísticas <span class="math inline">\(\left( y_{1},\ldots ,y_{N}\right)\)</span> (no sentido da <em>Modelagem Clássica</em>) que são quantidades descritivas populacionais (parâmetros populacionais no contexto da <em>Amostragem Probabilística</em>), que passam a ser os novos parâmetros-alvo. O passo seguinte é utilizar métodos disponíveis na <em>Amostragem Probabilística</em> para fazer inferência sobre <span class="math inline">\(g\left( y_{1}, \ldots , y_{N}\right)\)</span> baseada em <span class="math inline">\(y_{i_1},\ldots ,y_{i_n}\)</span>. Note que não é possível basear a inferência nos valores populacionais <span class="math inline">\(y_{1}, \ldots , y_{N}\)</span>, já que estes não são conhecidos ou observados. Este último passo adiciona a informação sobre o plano amostral utilizado, contida em <span class="math inline">\(p(a)\)</span>, à informação estrutural contida no modelo <span class="math inline">\(\left\{ f\left( y; \theta \right) ;\theta \in \Theta\right\}\)</span>. Uma representação esquemática dessa abordagem é apresentada na Tabela <a href="refinf.html#tab:modelsuperpop">2.3</a>.</p>
-<table style="width:94%;">
-<caption><span id="tab:modelsuperpop">Tabela 2.3: </span> Representação esquemática da <em>Modelagem de Superpopulação</em>.</caption>
-<colgroup>
-<col width="30%" />
-<col width="63%" />
-</colgroup>
+<p>Adotando o <em>Modelo de Superpopulação</em> e considerando métodos usuais disponíveis
+na <em>Modelagem Clássica</em>, podemos utilizar funções de <span class="math inline">\(y_{1}, \ldots ,y_{N}\)</span> ,
+digamos <span class="math inline">\(g( y_{1}, \ldots , y_{N})\)</span>, para fazer inferência sobre <span class="math inline">\(\theta\)</span>. Desta
+forma, definimos estatísticas <span class="math inline">\(\left( y_{1},\ldots ,y_{N}\right)\)</span> (no sentido da
+<em>Modelagem Clássica</em>) que são quantidades descritivas populacionais (parâmetros
+populacionais no contexto da <em>Amostragem Probabilística</em>), que passam a ser os
+novos parâmetros-alvo. O passo seguinte é utilizar métodos disponíveis na
+<em>Amostragem Probabilística</em> para fazer inferência sobre
+<span class="math inline">\(g\left( y_{1}, \ldots , y_{N}\right)\)</span> baseada em <span class="math inline">\(y_{i_1},\ldots ,y_{i_n}\)</span>.
+Note que não é possível basear a inferência nos valores populacionais
+<span class="math inline">\(y_{1}, \ldots , y_{N}\)</span>, já que estes não são conhecidos ou observados. Este
+último passo adiciona a informação sobre o plano amostral utilizado, contida em
+<span class="math inline">\(p(a)\)</span>, à informação estrutural contida no modelo
+<span class="math inline">\(\left\{ f\left( y; \theta \right) ;\theta \in \Theta\right\}\)</span>. Uma
+representação esquemática dessa abordagem é apresentada na Tabela
+<a href="refinf.html#tab:modelsuperpop">1.3</a>.</p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:modelsuperpop">Tabela 1.3: </span>Representação esquemática da Modelagem de Superpopulação
+</caption>
 <tbody>
-<tr class="odd">
-<td align="left">Dados Amostrais</td>
-<td align="left"><span class="math inline">\(Y_1=y_{i_1},\ldots,Y_n=y_{i_n}\)</span></td>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Dados Amostrais
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(Y_1=y_{i_1},\ldots,Y_n=y_{i_n}\)</span>
+</td>
 </tr>
-<tr class="even">
-<td align="left">População e esquema de seleção</td>
-<td align="left">Extraídos de <span class="math inline">\(y_1,\dots,y_N\)</span> segundo <span class="math inline">\(p(a)\)</span></td>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+População e esquema de seleção
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{Extraídos de } y_1,\dots,y_N \text{ segundo } p(a)\)</span>
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Modelo para população</td>
-<td align="left"><span class="math inline">\(Y_1, \dots, Y_N\)</span> variáveis aleatórias IID com distribuição <span class="math inline">\(f(y,\theta)\)</span>, onde <span class="math inline">\(\theta \in \Theta\)</span></td>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Modelo para população
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(Y_1,\dots, Y_N \text{ variáveis aleatórias IID com distribuição } f(y,\theta),\text { onde } \theta \in \Theta\)</span>
+</td>
 </tr>
-<tr class="even">
-<td align="left">Parâmetro-alvo</td>
-<td align="left">associar <span class="math inline">\(\theta \longleftrightarrow g\left(Y_{1}, \ldots , Y_{N}\right)\)</span></td>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Parâmetro-alvo
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{Associar } \theta\Leftrightarrow g\left (Y_{1},\ldots,Y_{N}\right)\)</span>
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Objetivo</td>
-<td align="left">Inferir sobre <span class="math inline">\(g\left( Y_{1}, \ldots , Y_{N}\right)\)</span> partir de <span class="math inline">\(y_{i_1},\ldots,y_{i_n}\)</span> usando <span class="math inline">\(p\left( a\right)\)</span></td>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Objetivo
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{Inferir sobre }g\left( Y_{1}, \ldots ,Y_{N}\right)\text{ partir de }y_{i_1}, \ldots,y_{i_n} \text{ usando } p\left( a\right)\)</span>
+</td>
 </tr>
 </tbody>
 </table>
-<p>A descrição da abordagem adotada neste livro foi apresentada de maneira propositalmente simplificada e vaga nesta seção, mas será aprofundada ao longo do texto. Admitiremos que o leitor esteja familiarizado com a <em>Modelagem Clássica</em> e com as noções básicas da <em>Amostragem Probabilística</em>. A título de recordação, serão apresentados no Capítulo <a href="refinf.html#planamo">2.4</a> alguns resultados básicos da <em>Amostragem Probabilística</em>. A ênfase do texto, porém, será na apresentação da <em>Modelagem de Superpopulação</em>, sendo para isto apresentados os elementos indispensáveis das abordagens de <em>Modelagem Clássica</em> e da <em>Amostragem Probabilística</em>.</p>
-<p>Ao construir e ajustar modelos a partir de dados de pesquisas amostrais <em>complexas</em>, tais como as executadas pelo IBGE e outras instituições similares, o usuário precisa incorporar as informações sobre pesos e sobre a estrutura dos planos amostrais utilizados. Em geral, ao publicar os resultados das pesquisas, os pesos são considerados, sendo possível produzir estimativas pontuais <em>corretas</em> utilizando os pacotes tradicionais. Por outro lado, para construir intervalos de confiança e testar hipóteses sobre parâmetros de modelos, seria preciso o conhecimento das estimativas de variâncias e covariâncias das estimativas, obtidas levando em conta a estrutura do plano amostral utilizado. Mesmo conhecendo o plano amostral, geralmente não é simples incorporar pesos e plano amostral na análise sem o uso de pacotes especializados, ou de rotinas específicas já agora disponíveis em alguns dos pacotes mais comumente utilizados (por exemplo, SAS, Stata, SPSS, ou R entre outros). Tais pacotes especializados ou rotinas específicas utilizam, em geral, métodos aproximados para estimar matrizes de covariância. Entre esses métodos, destacam-se o de Máxima Pseudo-Verossimilhança, a Linearização, o método do Conglomerado Primário, e métodos de reamostragem, que serão descritos mais adiante.</p>
-<p>Em outras palavras, o uso dos pacotes usuais para analisar dados produzidos por pesquisas com planos amostrais complexos, tal como o uso de muitos remédios, pode ter contra-indicações. Cabe ao usuário <em>ler a bula</em> e identificar situações em que o uso de tais pacotes pode ser inadequado, e buscar opções de rotinas específicas ou de pacotes especializados capazes de incorporar adequadamente a estrutura do plano amostral nas análises.</p>
-<p>Ao longo deste livro faremos uso intensivo do pacote <code>survey</code> disponível no R, mas o leitor encontrará funcionalidade semelhante em vários outros pacotes. Nossa escolha se deveu a dois fatores principais: primeiro ao fato do pacote R ser aberto, livre e gratuito, dispensando o usuário de custos de licenciamento, bem como possibilitando aos interessados o acesso ao código fonte e à capacidade de modificar as rotinas de análise, caso necessário. O segundo fator é de natureza mais técnica, porém transitória. No presente momento, o pacote <code>survey</code> é a coleção de rotinas mais completa e genérica existente para análise de dados amostrais complexos, dispondo de funções capazes de ajustar os modelos usuais, mas também de ajustar modelos não convencionais, mediante a maximização numérica de verossimilhanças especificadas pelo usuário. Sabemos, entretanto, que muitos usuários habituados à facilidade de uso de pacotes com interfaces gráficas do tipo <em>aponte e clique</em> terão dificuldade adicional de adaptar-se à linguagem de comandos utilizada pelo pacote R, mas acreditamos que os benefícios do aprendizado desta nova ferramenta compensarão largamente os custos adicionais do aprendizado.</p>
-<p>O emprego de ferramentas de análise como o pacote <code>survey</code> permitirá aos usuários focar sua atenção mais na seleção, análise e interpretação dos modelos ajustados do que nas dificuldades técnicas envolvidas nos cálculos correspondentes. É com este espírito que escrevemos este texto, que busca apresentar os métodos, ilustrando seu uso com exemplos reais, e orientando sobre o uso adequado das ferramentas de modelagem e análise disponíveis no sistema R.</p>
+<p>A descrição da abordagem adotada neste livro foi apresentada de maneira
+propositalmente simplificada e vaga nesta seção, mas será aprofundada ao longo
+do texto. Admitiremos que o leitor esteja familiarizado com a <em>Modelagem
+Clássica</em> e com as noções básicas da <em>Amostragem Probabilística</em>. A título de
+recordação, serão apresentados no Capítulo <a href="refinf.html#planamo">1.4</a> alguns resultados
+básicos da <em>Amostragem Probabilística</em>. A ênfase do texto, porém, será na
+apresentação da <em>Modelagem de Superpopulação</em>, sendo para isto apresentados os
+elementos indispensáveis das abordagens de <em>Modelagem Clássica</em> e da <em>Amostragem
+Probabilística</em>.</p>
+<p>Ao construir e ajustar modelos a partir de dados de pesquisas amostrais
+<em>complexas</em>, tais como as executadas pelo IBGE e outras instituições similares,
+o usuário precisa incorporar as informações sobre pesos e sobre a estrutura dos
+planos amostrais utilizados. Em geral, ao publicar os resultados das pesquisas,
+os pesos são considerados, sendo possível produzir estimativas pontuais
+<em>corretas</em> utilizando os pacotes tradicionais. Por outro lado, para construir
+intervalos de confiança e testar hipóteses sobre parâmetros de modelos, seria
+preciso o conhecimento das estimativas de variâncias e covariâncias das
+estimativas, obtidas levando em conta a estrutura do plano amostral utilizado.
+Mesmo conhecendo o plano amostral, geralmente não é simples incorporar pesos e
+plano amostral na análise sem o uso de pacotes especializados, ou de rotinas
+específicas já agora disponíveis em alguns dos pacotes mais comumente utilizados
+(por exemplo, SAS, Stata, SPSS, ou R entre outros). Tais pacotes especializados
+ou rotinas específicas utilizam, em geral, métodos aproximados para estimar
+matrizes de covariância. Entre esses métodos, destacam-se o de Máxima
+Pseudo-Verossimilhança, a Linearização, o método do Conglomerado Primário, e
+métodos de reamostragem, que serão descritos mais adiante.</p>
+<p>Em outras palavras, o uso dos pacotes usuais para analisar dados produzidos por
+pesquisas com planos amostrais complexos, tal como o uso de muitos remédios,
+pode ter contra-indicações. Cabe ao usuário <em>ler a bula</em> e identificar situações
+em que o uso de tais pacotes pode ser inadequado, e buscar opções de rotinas
+específicas ou de pacotes especializados capazes de incorporar adequadamente a
+estrutura do plano amostral nas análises.</p>
+<p>Ao longo deste livro faremos uso intensivo do pacote <code>survey</code> disponível no R,
+mas o leitor encontrará funcionalidade semelhante em vários outros pacotes.
+Nossa escolha se deveu a dois fatores principais: primeiro ao fato do pacote R
+ser aberto, livre e gratuito, dispensando o usuário de custos de licenciamento,
+bem como possibilitando aos interessados o acesso ao código fonte e à capacidade
+de modificar as rotinas de análise, caso necessário. O segundo fator é de
+natureza mais técnica, porém transitória. No presente momento, o pacote <code>survey</code>
+é a coleção de rotinas mais completa e genérica existente para análise de dados
+amostrais complexos, dispondo de funções capazes de ajustar os modelos usuais,
+mas também de ajustar modelos não convencionais, mediante a maximização numérica
+de verossimilhanças especificadas pelo usuário. Sabemos, entretanto, que muitos
+usuários habituados à facilidade de uso de pacotes com interfaces gráficas do
+tipo <em>aponte e clique</em> terão dificuldade adicional de adaptar-se à linguagem de
+comandos utilizada pelo pacote R, mas acreditamos que os benefícios do
+aprendizado desta nova ferramenta compensarão largamente os custos adicionais do
+aprendizado.</p>
+<p>O emprego de ferramentas de análise como o pacote <code>survey</code> permitirá aos
+usuários focar sua atenção mais na seleção, análise e interpretação dos modelos
+ajustados do que nas dificuldades técnicas envolvidas nos cálculos
+correspondentes. É com este espírito que escrevemos este texto, que busca
+apresentar os métodos, ilustrando seu uso com exemplos reais, e orientando sobre
+o uso adequado das ferramentas de modelagem e análise disponíveis no sistema R.</p>
 </div>
 </div>
-<div id="fontes-de-variacao" class="section level2">
-<h2><span class="header-section-number">2.2</span> Fontes de Variação</h2>
-<p>Esta seção estabelece o referencial para inferência em pesquisas amostrais que será usado no restante deste texto. <span class="citation">(Cassel, Särndal, and Wretman <a href="#ref-cassel">1977</a>)</span> sugerem que um referencial para inferência poderia considerar três fontes de aleatoriedade (incerteza, variação), incluindo:</p>
+<div id="fontes-de-variação" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Fontes de Variação</h2>
+<p>Esta seção estabelece o referencial para inferência em pesquisas amostrais que
+será usado no restante deste texto. <span class="citation">(<a href="#ref-cassel" role="doc-biblioref">Cassel et al., 1977</a>)</span> sugerem que um referencial para
+inferência poderia considerar três fontes de aleatoriedade (incerteza,
+variação), incluindo:</p>
 <ol style="list-style-type: decimal">
-<li><p><em>Modelo de Superpopulação</em>, que descreve o processo subjacente que, por hipótese, gera as medidas verdadeiras para todas as unidades da população considerada;</p></li>
-<li><p><em>Processo de Medição</em>, que diz respeito aos instrumentos e métodos usados para obter as medidas de qualquer unidade da população;</p></li>
-<li><p><em>Planejamento Amostral</em>, que estabelece o mecanismo pelo qual unidades da população são selecionadas para participar da amostra da pesquisa ou estudo.</p></li>
+<li><p><em>Modelo de Superpopulação</em>, que descreve o processo subjacente que, por
+hipótese, gera as medidas verdadeiras para todas as unidades da população
+considerada;</p></li>
+<li><p><em>Processo de Medição</em>, que diz respeito aos instrumentos e métodos usados
+para obter as medidas de qualquer unidade da população;</p></li>
+<li><p><em>Planejamento Amostral</em>, que estabelece o mecanismo pelo qual unidades da
+população são selecionadas para participar da amostra da pesquisa ou estudo.</p></li>
 </ol>
 <p>Uma quarta fonte de incerteza que precisa ser acrescentada às anteriores é o</p>
 <ol start="4" style="list-style-type: decimal">
-<li><em>Mecanismo de resposta</em>, ou seja, o mecanismo que controla se valores de medições de unidades selecionadas para a amostra são obtidos / observados ou não.</li>
+<li><em>Mecanismo de resposta</em>, ou seja, o mecanismo que controla se valores de
+medições de unidades selecionadas para a amostra são obtidos / observados ou
+não.</li>
 </ol>
-<p>Para concentrar o foco nas questões de maior interesse deste texto, as fontes (2) e (4) não serão consideradas no referencial adotado para a maior parte dos capítulos. Para o tratamento das dificuldades causadas por não resposta, a fonte (4) será considerada no capítulo onze. Assim sendo, exceto onde explicitamente indicado, de agora em diante admitiremos que não há <em>erros de medição</em>, implicando que os valores observados de quaisquer variáveis de interesse serão considerados valores corretos ou verdadeiros. Admitiremos ainda que há <em>resposta completa</em>, implicando que os valores de quaisquer variáveis de interesse estão disponíveis para todos os elementos da amostra selecionada depois que a pesquisa foi realizada. Hipóteses semelhantes são adotadas, por exemplo, em <span class="citation">(Binder <a href="#ref-binder83">1983</a>)</span> e <span class="citation">(Montanari <a href="#ref-Mont87">1987</a>)</span>.</p>
-<p>Portanto, o referencial aqui adotado considera apenas duas fontes alternativas de variação: o <em>Modelo de Superpopulação</em> (1) e o <em>Plano Amostral</em> (3). Estas fontes alternativas de variação, descritas nesta seção apenas de forma esquemática, são discutidas com maiores detalhes a seguir.</p>
-<p>A fonte de variação (1) será considerada porque usos analíticos das pesquisas são amplamente discutidos neste texto, os quais só têm sentido quando é especificado um modelo estocástico para o processo subjacente que gera as medidas na população. A fonte de variação (3) será considerada porque a atenção será focalizada na análise de dados obtidos através de pesquisas amostrais complexas. Aqui a discussão se restringirá a planos amostrais aleatorizados ou de <em>Amostragem Probabilística</em>, não sendo considerados métodos intencionais ou outros métodos não-aleatórios algumas vezes usados para seleção de amostras.</p>
+<p>Para concentrar o foco nas questões de maior interesse deste texto, as fontes
+(2) e (4) não serão consideradas no referencial adotado para a maior parte dos
+capítulos. Para o tratamento das dificuldades causadas por não resposta, a fonte
+(4) será considerada no capítulo onze. Assim sendo, exceto onde explicitamente
+indicado, de agora em diante admitiremos que não há <em>erros de medição</em>,
+implicando que os valores observados de quaisquer variáveis de interesse serão
+considerados valores corretos ou verdadeiros. Admitiremos ainda que há <em>resposta
+completa</em>, implicando que os valores de quaisquer variáveis de interesse estão
+disponíveis para todos os elementos da amostra selecionada depois que a pesquisa
+foi realizada. Hipóteses semelhantes são adotadas, por exemplo, em <span class="citation">(<a href="#ref-binder83" role="doc-biblioref">Binder, 1983</a>)</span> e
+<span class="citation">(<a href="#ref-Mont87" role="doc-biblioref">Montanari, 1987</a>)</span>.</p>
+<p>Portanto, o referencial aqui adotado considera apenas duas fontes alternativas
+de variação: o <em>Modelo de Superpopulação</em> (1) e o <em>Plano Amostral</em> (3). Estas
+fontes alternativas de variação, descritas nesta seção apenas de forma
+esquemática, são discutidas com maiores detalhes a seguir.</p>
+<p>A fonte de variação (1) será considerada porque usos analíticos das pesquisas
+são amplamente discutidos neste texto, os quais só têm sentido quando é
+especificado um modelo estocástico para o processo subjacente que gera as
+medidas na população. A fonte de variação (3) será considerada porque a atenção
+será focalizada na análise de dados obtidos através de pesquisas amostrais
+complexas. Aqui a discussão se restringirá a planos amostrais aleatorizados ou
+de <em>Amostragem Probabilística</em>, não sendo considerados métodos intencionais ou
+outros métodos não-aleatórios algumas vezes usados para seleção de amostras.</p>
 </div>
-<div id="modelos-de-superpopulacao" class="section level2">
-<h2><span class="header-section-number">2.3</span> Modelos de Superpopulação</h2>
-<p>Seja <span class="math inline">\(\{1, ..., N\}\)</span> um conjunto de rótulos que identificam univocamente os <span class="math inline">\(N\)</span> elementos distintos de uma população-alvo finita <span class="math inline">\(U\)</span>. Sem perda de generalidade tomaremos <span class="math inline">\(U=\{1,...,N\}\)</span>. Uma pesquisa cobrindo <span class="math inline">\(n\)</span> elementos distintos numa amostra <span class="math inline">\(a\)</span>, <span class="math inline">\(a=\{i_{1},...,i_{n}\}\subset U\)</span>, é realizada para medir os valores de <span class="math inline">\(P\)</span> variáveis de interesse da pesquisa, doravante denominadas simplesmente <em>variáveis da pesquisa</em>.</p>
-<p>Denotaremos por <span class="math inline">\(\mathbf{y}_i=(y_{i1},...,y_{iP})^{\prime }\)</span> o vetor <span class="math inline">\(P\times 1\)</span> de valores das variáveis da pesquisa e por <span class="math inline">\(\mathbf{x}_{i}=(x_{i1},...,x_{iQ})^{\prime }\)</span> o vetor <span class="math inline">\(Q\times 1\)</span> de variáveis auxiliares da i-ésima unidade da população, respectivamente, para <span class="math inline">\(i=1,...,N\)</span>. Aqui as variáveis auxiliares são consideradas como variáveis contendo a informação requerida para o planejamento amostral e a estimação a partir da amostra, como se discutirá com mais detalhes adiante. Denote por <span class="math inline">\(\mathbf{y}_{U}\)</span> a matriz <span class="math inline">\(N \times P\)</span> formada empilhando os vetores transpostos das observações das variáveis de pesquisa correspondentes a todas as unidades da população, e por <span class="math inline">\(\mathbf{Y}_{U}\)</span> a correspondente matriz de vetores aleatórios geradores das observações na população.</p>
-<p>Quando se supõe que <span class="math inline">\(\mathbf{y}_1 ,\ldots, \mathbf{y}_N\)</span> são a realização conjunta de vetores aleatórios <span class="math inline">\(\mathbf{Y}_1 ,\ldots, \mathbf{Y}_N\)</span>, a distribuição conjunta de probabilidade de <span class="math inline">\(\mathbf{Y}_1 ,\ldots, \mathbf{Y}_N\)</span> é um <em>Modelo de Superpopulação</em> (marginal), que doravante denotaremos simplesmente por <span class="math inline">\(f(\mathbf{y}_U;\theta)\)</span>, ou de forma abreviada, por <span class="math inline">\(M\)</span>. Esperanças e variâncias definidas com respeito à distribuição do modelo <span class="math inline">\(M\)</span> serão denotadas <span class="math inline">\(E_M\)</span> e <span class="math inline">\(V_M\)</span> respectivamente.</p>
-<p>Analogamente, <span class="math inline">\(\mathbf{x}_1 ,\ldots, \mathbf{x}_N\)</span> pode ser considerada uma realização conjunta de vetores aleatórios <span class="math inline">\(\mathbf{X}_1 ,\ldots, \mathbf{X}_N\)</span>. As matrizes <span class="math inline">\(N \times Q\)</span> formadas empilhando os vetores transpostos das observações das variáveis auxiliares correspondentes a todas as unidades da população, <span class="math inline">\(\mathbf{x}_{U}\)</span>, e a correspondente matriz <span class="math inline">\(\mathbf{X}_{U}\)</span> de vetores aleatórios geradores das variáveis auxiliares na população são definidas de forma análoga às matrizes <span class="math inline">\(\mathbf{y}_{U}\)</span> e <span class="math inline">\(\mathbf{Y}_{U}\)</span>.</p>
-<p>O referencial aqui adotado permite a especificação da distribuição conjunta combinada das variáveis da pesquisa e das variáveis auxiliares. Representamos por <span class="math inline">\(f( \mathbf{y}_U , \mathbf{x}_U ; \mathbf{\eta} )\)</span> a função de densidade de probabilidade conjunta de <span class="math inline">\(( \mathbf{Y}_U , \mathbf{X}_U )\)</span>, onde <span class="math inline">\(\mathbf{\eta}\)</span> é um vetor de parâmetros.</p>
-<p>Um tipo importante de modelo de superpopulação é obtido quando os vetores aleatórios correspondentes às observações de unidades diferentes da população são supostos independentes e identicamente distribuídos (IID). Neste caso, o modelo de superpopulação pode ser escrito como:</p>
-<span class="math display" id="eq:ref2" id="eq:ref1">\[\begin{eqnarray}
+<div id="modelos-de-superpopulação" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Modelos de Superpopulação</h2>
+<p>Seja <span class="math inline">\(\{1, ..., N\}\)</span> um conjunto de rótulos que identificam univocamente os <span class="math inline">\(N\)</span>
+elementos distintos de uma população-alvo finita <span class="math inline">\(U\)</span>. Sem perda de generalidade
+tomaremos <span class="math inline">\(U=\{1,...,N\}\)</span>. Uma pesquisa cobrindo <span class="math inline">\(n\)</span> elementos distintos numa
+amostra <span class="math inline">\(a\)</span>, <span class="math inline">\(a=\{i_{1},...,i_{n}\}\subset U\)</span>, é realizada para medir os valores
+de <span class="math inline">\(P\)</span> variáveis de interesse da pesquisa, doravante denominadas simplesmente
+<em>variáveis da pesquisa</em>.</p>
+<p>Denotaremos por <span class="math inline">\(\mathbf{y}_i=(y_{i1},...,y_{iP})^{\prime }\)</span> o vetor <span class="math inline">\(P\times 1\)</span>
+de valores das variáveis da pesquisa e por
+<span class="math inline">\(\mathbf{x}_{i}=(x_{i1},...,x_{iQ})^{\prime }\)</span> o vetor <span class="math inline">\(Q\times 1\)</span> de variáveis
+auxiliares da i-ésima unidade da população, respectivamente, para <span class="math inline">\(i=1,...,N\)</span>.
+Aqui as variáveis auxiliares são consideradas como variáveis contendo a
+informação requerida para o planejamento amostral e a estimação a partir da
+amostra, como se discutirá com mais detalhes adiante. Denote por
+<span class="math inline">\(\mathbf{y}_{U}\)</span> a matriz <span class="math inline">\(N \times P\)</span> formada empilhando os vetores transpostos
+das observações das variáveis de pesquisa correspondentes a todas as unidades da
+população, e por <span class="math inline">\(\mathbf{Y}_{U}\)</span> a correspondente matriz de vetores aleatórios
+geradores das observações na população.</p>
+<p>Quando se supõe que <span class="math inline">\(\mathbf{y}_1 ,\ldots, \mathbf{y}_N\)</span> são a realização
+conjunta de vetores aleatórios <span class="math inline">\(\mathbf{Y}_1 ,\ldots, \mathbf{Y}_N\)</span>, a
+distribuição conjunta de probabilidade de <span class="math inline">\(\mathbf{Y}_1 ,\ldots, \mathbf{Y}_N\)</span> é
+um <em>Modelo de Superpopulação</em> (marginal), que doravante denotaremos simplesmente
+por <span class="math inline">\(f(\mathbf{y}_U;\theta)\)</span>, ou de forma abreviada, por <span class="math inline">\(M\)</span>. Esperanças e
+variâncias definidas com respeito à distribuição do modelo <span class="math inline">\(M\)</span> serão denotadas
+<span class="math inline">\(E_M\)</span> e <span class="math inline">\(V_M\)</span> respectivamente.</p>
+<p>Analogamente, <span class="math inline">\(\mathbf{x}_1 ,\ldots, \mathbf{x}_N\)</span> pode ser considerada uma
+realização conjunta de vetores aleatórios <span class="math inline">\(\mathbf{X}_1 ,\ldots, \mathbf{X}_N\)</span>.
+As matrizes <span class="math inline">\(N \times Q\)</span> formadas empilhando os vetores transpostos das
+observações das variáveis auxiliares correspondentes a todas as unidades da
+população, <span class="math inline">\(\mathbf{x}_{U}\)</span>, e a correspondente matriz <span class="math inline">\(\mathbf{X}_{U}\)</span> de
+vetores aleatórios geradores das variáveis auxiliares na população são definidas
+de forma análoga às matrizes <span class="math inline">\(\mathbf{y}_{U}\)</span> e <span class="math inline">\(\mathbf{Y}_{U}\)</span>.</p>
+<p>O referencial aqui adotado permite a especificação da distribuição conjunta
+combinada das variáveis da pesquisa e das variáveis auxiliares. Representamos
+por <span class="math inline">\(f( \mathbf{y}_U , \mathbf{x}_U ; \mathbf{\eta} )\)</span> a função de densidade de
+probabilidade conjunta de <span class="math inline">\(( \mathbf{Y}_U , \mathbf{X}_U )\)</span>, onde
+<span class="math inline">\(\mathbf{\eta}\)</span> é um vetor de parâmetros.</p>
+<p>Um tipo importante de modelo de superpopulação é obtido quando os vetores
+aleatórios correspondentes às observações de unidades diferentes da população
+são supostos independentes e identicamente distribuídos (IID). Neste caso, o
+modelo de superpopulação pode ser escrito como:</p>
+<p><span class="math display" id="eq:ref2" id="eq:ref1">\[\begin{eqnarray}
 f \left( \mathbf{y}_U , \mathbf{x}_U ; \mathbf{\eta} \right) 
-&amp;=&amp;\prod_{i\in U} f\left(\mathbf{y}_i , \mathbf{x}_i ; \mathbf{\eta} \right) \tag{2.1} \\
+&amp;=&amp;\prod_{i\in U} f\left(\mathbf{y}_i , \mathbf{x}_i ; \mathbf{\eta} \right) \tag{1.1} \\
 &amp;=&amp;\prod_{i\in U} f\left( \mathbf{y}_i \mathbf{|x}_i ; \mathbf{\lambda} \right) 
-f\left( \mathbf{x}_i ; \mathbf{\phi} \right) \tag{2.2}
-\end{eqnarray}\]</span>
-<p>onde <span class="math inline">\(\mathbf{\lambda}\)</span> e <span class="math inline">\(\mathbf{\phi}\)</span> são vetores de parâmetros.</p>
-<p>Sob <a href="refinf.html#eq:ref2">(2.2)</a>, o modelo marginal correspondente das variáveis da pesquisa seria obtido integrando nas variáveis auxiliares:</p>
-<span class="math display" id="eq:ref3">\[\begin{equation}
-f(\mathbf{y}_U ; \mathbf{\theta}) = f(\mathbf{y}_1 ,\ldots ,\mathbf{y}_N ; \mathbf{\theta}) = \prod_{i\in U} \int f\left( \mathbf{y}_i \mathbf{|x}_i ; \mathbf{\lambda} \right) f\left( \mathbf{x}_i ; \mathbf{\phi} \right) \mathbf{dx}_i = \prod_{i\in U} f\left( \mathbf{y}_i ; \mathbf{\theta} \right) \tag{2.3}
-\end{equation}\]</span>
-<p>onde <span class="math inline">\(f\left( \mathbf{y}_i ; \mathbf{\theta} \right) = \int f\left( \mathbf{y}_i | \mathbf{x}_i ; \mathbf{\lambda} \right) f\left( \mathbf{x}_i ; \mathbf{\phi} \right) \mathbf{dx}_i\)</span> e <span class="math inline">\(\mathbf{\theta =} h\left( \mathbf{\lambda} , \mathbf{\phi} \right)\)</span>.</p>
-<p>Outro tipo especial de modelo de superpopulação é o modelo de população fixa, que supõe que os valores numa população finita são fixos mas desconhecidos. Este modelo pode ser descrito por:</p>
-<span class="math display" id="eq:ref4">\[\begin{equation}
-P\left[ \left( \mathbf{Y}_U , \mathbf{X}_U \right) = \left( \mathbf{y}_U , \mathbf{x}_U \right) \right] = 1 \tag{2.4}
-\end{equation}\]</span>
-<p>ou seja, uma distribuição degenerada é especificada para <span class="math inline">\(\left(\mathbf{Y}_U , \mathbf{X}_U \right)\)</span>.</p>
-<p>Este modelo foi considerado em <span class="citation">(Cassel, Särndal, and Wretman <a href="#ref-cassel">1977</a>)</span>, que o chamaram de <em>abordagem de população fixa</em>, e afirmaram ser esta a abordagem subjacente ao desenvolvimento da teoria da <em>Amostragem Probabilística</em> encontrada nos livros clássicos tais como <span class="citation">(Cochran <a href="#ref-cochran">1977</a>)</span> e outros. Aqui esta abordagem é chamada de <em>abordagem baseada no planejamento amostral</em> ou <em>abordagem de aleatorização</em>, pois neste caso a única fonte de variação (aleatoriedade) é proveniente do planejamento amostral. Em geral, a distribuição conjunta de <span class="math inline">\(\left( \mathbf{Y}_U , \mathbf{X}_U \right)\)</span> não precisa ser degenerada como em <a href="refinf.html#eq:ref4">(2.4)</a>, embora o referencial aqui adotado seja suficientemente geral para permitir considerar esta possibilidade.</p>
-<p>Se todas as unidades da população fossem pesquisadas (ou seja, se fosse executado um censo), os dados observados seriam <span class="math inline">\((\mathbf{y}_1 , \mathbf{x}_1) ,\ldots, (\mathbf{y}_N , \mathbf{x}_N)\)</span>. Sob a hipótese de resposta completa, a única fonte de incerteza seria devida ao fato de que <span class="math inline">\((\mathbf{y}_1 , \mathbf{x}_1) ,\ldots, (\mathbf{y}_N , \mathbf{x}_N)\)</span> é uma realização de <span class="math inline">\(\left( \mathbf{Y}_1 , \mathbf{X}_1 \right) ,\ldots, \left( \mathbf{Y}_N , \mathbf{X}_N \right)\)</span>. Os dados observados poderiam então ser usados para fazer inferências sobre <span class="math inline">\(\mathbf{\eta}, \mathbf{\phi},\mathbf{\lambda}\)</span> ou <span class="math inline">\(\mathbf{\theta}\)</span> usando procedimentos padrões.</p>
-<p>Inferência sobre quaisquer dos parâmetros <span class="math inline">\(\mathbf{\eta},\mathbf{\phi},\mathbf{\lambda}\)</span> ou <span class="math inline">\(\mathbf{\theta}\)</span> do modelo de superpopulação é chamada <em>inferência analítica</em>. Este tipo de inferência só faz sentido quando o modelo de superpopulação não é degenerado como em <a href="refinf.html#eq:ref4">(2.4)</a>. Usualmente seu objetivo é explicar a relação entre variáveis não apenas para a população finita sob análise, mas também para outras populações que poderiam ter sido geradas pelo modelo de superpopulação adotado. Vários exemplos de inferência analítica serão discutidos ao longo deste livro.</p>
-<p>Se o objetivo da inferência é estimar quantidades que fazem sentido somente para a população finita sob análise, tais como funções <span class="math inline">\(g\left( \mathbf{y}_1 ,\ldots, \mathbf{y}_N \right)\)</span> dos valores das variáveis da pesquisa, o modelo de superpopulação não é estritamente necessário, embora possa ser útil. Inferência para tais quantidades, chamadas parâmetros da população finita ou quantidades descritivas populacionais (QDPs), é chamada <em>inferência descritiva</em>.</p>
-<p>Vale notar que a especificação do modelo de superpopulação aqui proposta serve tanto para o caso da abordagem clássica para inferência, como também para o caso da abordagem Bayesiana. Neste caso, a especificação do modelo precisaria ser completada mediante a especificação de distribuições a priori para os parâmetros do modelo.</p>
+f\left( \mathbf{x}_i ; \mathbf{\phi} \right) \tag{1.2}
+\end{eqnarray}\]</span> onde <span class="math inline">\(\mathbf{\lambda}\)</span> e <span class="math inline">\(\mathbf{\phi}\)</span> são vetores de
+parâmetros.</p>
+<p>Sob <a href="refinf.html#eq:ref2">(1.2)</a>, o modelo marginal correspondente das variáveis da pesquisa
+seria obtido integrando nas variáveis auxiliares:</p>
+<p><span class="math display" id="eq:ref3">\[\begin{equation}
+f(\mathbf{y}_U ; \mathbf{\theta}) = f(\mathbf{y}_1 ,\ldots ,\mathbf{y}_N ; \mathbf{\theta}) = \prod_{i\in U} \int f\left( \mathbf{y}_i \mathbf{|x}_i ; \mathbf{\lambda} \right) f\left( \mathbf{x}_i ; \mathbf{\phi} \right) \mathbf{dx}_i = \prod_{i\in U} f\left( \mathbf{y}_i ; \mathbf{\theta} \right) \tag{1.3}
+\end{equation}\]</span> onde
+<span class="math inline">\(f\left( \mathbf{y}_i ; \mathbf{\theta} \right) = \int f\left( \mathbf{y}_i | \mathbf{x}_i ; \mathbf{\lambda} \right) f\left( \mathbf{x}_i ; \mathbf{\phi} \right) \mathbf{dx}_i\)</span>
+e <span class="math inline">\(\mathbf{\theta =} h\left( \mathbf{\lambda} , \mathbf{\phi} \right)\)</span>.</p>
+<p>Outro tipo especial de modelo de superpopulação é o modelo de população fixa,
+que supõe que os valores numa população finita são fixos mas desconhecidos. Este
+modelo pode ser descrito por:</p>
+<p><span class="math display" id="eq:ref4">\[\begin{equation}
+P\left[ \left( \mathbf{Y}_U , \mathbf{X}_U \right) = \left( \mathbf{y}_U , \mathbf{x}_U \right) \right] = 1 \tag{1.4}
+\end{equation}\]</span> ou seja, uma distribuição degenerada é especificada para
+<span class="math inline">\(\left(\mathbf{Y}_U , \mathbf{X}_U \right)\)</span>.</p>
+<p>Este modelo foi considerado em <span class="citation">(<a href="#ref-cassel" role="doc-biblioref">Cassel et al., 1977</a>)</span>, que o chamaram de <em>abordagem de
+população fixa</em>, e afirmaram ser esta a abordagem subjacente ao desenvolvimento
+da teoria da <em>Amostragem Probabilística</em> encontrada nos livros clássicos tais
+como <span class="citation">(<a href="#ref-cochran" role="doc-biblioref">Cochran, 1977</a>)</span> e outros. Aqui esta abordagem é chamada de <em>abordagem baseada no
+planejamento amostral</em> ou <em>abordagem de aleatorização</em>, pois neste caso a única
+fonte de variação (aleatoriedade) é proveniente do planejamento amostral. Em
+geral, a distribuição conjunta de <span class="math inline">\(\left( \mathbf{Y}_U , \mathbf{X}_U \right)\)</span>
+não precisa ser degenerada como em <a href="refinf.html#eq:ref4">(1.4)</a>, embora o referencial aqui
+adotado seja suficientemente geral para permitir considerar esta possibilidade.</p>
+<p>Se todas as unidades da população fossem pesquisadas (ou seja, se fosse
+executado um censo), os dados observados seriam
+<span class="math inline">\((\mathbf{y}_1 , \mathbf{x}_1) ,\ldots, (\mathbf{y}_N , \mathbf{x}_N)\)</span>. Sob a
+hipótese de resposta completa, a única fonte de incerteza seria devida ao fato
+de que <span class="math inline">\((\mathbf{y}_1 , \mathbf{x}_1) ,\ldots, (\mathbf{y}_N , \mathbf{x}_N)\)</span> é
+uma realização de
+<span class="math inline">\(\left( \mathbf{Y}_1 , \mathbf{X}_1 \right) ,\ldots, \left( \mathbf{Y}_N , \mathbf{X}_N \right)\)</span>.
+Os dados observados poderiam então ser usados para fazer inferências sobre
+<span class="math inline">\(\mathbf{\eta}, \mathbf{\phi},\mathbf{\lambda}\)</span> ou <span class="math inline">\(\mathbf{\theta}\)</span> usando
+procedimentos padrões.</p>
+<p>Inferência sobre quaisquer dos parâmetros
+<span class="math inline">\(\mathbf{\eta},\mathbf{\phi},\mathbf{\lambda}\)</span> ou <span class="math inline">\(\mathbf{\theta}\)</span> do modelo de
+superpopulação é chamada <em>inferência analítica</em>. Este tipo de inferência só faz
+sentido quando o modelo de superpopulação não é degenerado como em
+<a href="refinf.html#eq:ref4">(1.4)</a>. Usualmente seu objetivo é explicar a relação entre variáveis não
+apenas para a população finita sob análise, mas também para outras populações
+que poderiam ter sido geradas pelo modelo de superpopulação adotado. Vários
+exemplos de inferência analítica serão discutidos ao longo deste livro.</p>
+<p>Se o objetivo da inferência é estimar quantidades que fazem sentido somente para
+a população finita sob análise, tais como funções
+<span class="math inline">\(g\left( \mathbf{y}_1 ,\ldots, \mathbf{y}_N \right)\)</span> dos valores das variáveis
+da pesquisa, o modelo de superpopulação não é estritamente necessário, embora
+possa ser útil. Inferência para tais quantidades, chamadas parâmetros da
+população finita ou quantidades descritivas populacionais (QDPs), é chamada
+<em>inferência descritiva</em>.</p>
+<p>Vale notar que a especificação do modelo de superpopulação aqui proposta serve
+tanto para o caso da abordagem clássica para inferência, como também para o caso
+da abordagem Bayesiana. Neste caso, a especificação do modelo precisaria ser
+completada mediante a especificação de distribuições a priori para os parâmetros
+do modelo.</p>
 </div>
-<div id="planamo" class="section level2">
-<h2><span class="header-section-number">2.4</span> Planejamento Amostral</h2>
-<p>Embora censos sejam algumas vezes realizados para coletar dados sobre certas populações, a vasta maioria das pesquisas realizadas é de pesquisas amostrais, nas quais apenas uma amostra de elementos da população (usualmente uma pequena parte) é investigada. Neste caso, os dados disponíveis incluem:</p>
+<div id="planamo" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Planejamento Amostral</h2>
+<p>Embora censos sejam algumas vezes realizados para coletar dados sobre certas
+populações, a vasta maioria das pesquisas realizadas é de pesquisas amostrais,
+nas quais apenas uma amostra de elementos da população (usualmente uma pequena
+parte) é investigada. Neste caso, os dados disponíveis incluem:</p>
 <ol style="list-style-type: decimal">
-<li><p>O conjunto de rótulos <span class="math inline">\(a=\left\{ i_1 , \ldots, i_n \right\}\)</span> dos distintos elementos na amostra, onde <span class="math inline">\(n\)</span> <span class="math inline">\(\left( 1 \leq n \leq N \right)\)</span> é o número de elementos na amostra <span class="math inline">\(a\)</span>, também chamado de <em>tamanho da amostra</em>;</p></li>
-<li><p>Os valores na amostra das variáveis da pesquisa <span class="math inline">\(\mathbf{y}_{i_1} ,\ldots, \mathbf{y}_{i_n}\)</span>;</p></li>
-<li><p>Os valores das variáveis auxiliares na população <span class="math inline">\(\mathbf{x}_1 ,\ldots, \mathbf{x}_N\)</span>, quando a informação auxiliar é dita <em>completa</em>; alternativamente, os valores das variáveis auxiliares na amostra <span class="math inline">\(\mathbf{x}_{i_1} ,\ldots, \mathbf{x}_{i_n}\)</span>, mais os totais ou médias destas variáveis na população, quando a informação auxiliar é dita <em>parcial</em>.</p></li>
+<li><p>O conjunto de rótulos <span class="math inline">\(a=\left\{ i_1 , \ldots, i_n \right\}\)</span> dos distintos
+elementos na amostra, onde <span class="math inline">\(n\)</span> <span class="math inline">\(\left( 1 \leq n \leq N \right)\)</span> é o número
+de elementos na amostra <span class="math inline">\(a\)</span>, também chamado de <em>tamanho da amostra</em>;</p></li>
+<li><p>Os valores na amostra das variáveis da pesquisa
+<span class="math inline">\(\mathbf{y}_{i_1} ,\ldots, \mathbf{y}_{i_n}\)</span>;</p></li>
+<li><p>Os valores das variáveis auxiliares na população
+<span class="math inline">\(\mathbf{x}_1 ,\ldots, \mathbf{x}_N\)</span>, quando a informação auxiliar é dita
+<em>completa</em>; alternativamente, os valores das variáveis auxiliares na amostra
+<span class="math inline">\(\mathbf{x}_{i_1} ,\ldots, \mathbf{x}_{i_n}\)</span>, mais os totais ou médias
+destas variáveis na população, quando a informação auxiliar é dita
+<em>parcial</em>.</p></li>
 </ol>
-<p>O mecanismo usado para selecionar a amostra <span class="math inline">\(a\)</span> da população finita <span class="math inline">\(U\)</span> é chamado <em>plano amostral</em>. Uma forma de caracterizá-lo é através da função <span class="math inline">\(p\left( .\right)\)</span>, onde <span class="math inline">\(p(a)\)</span> dá a probabilidade de selecionar a amostra <span class="math inline">\(a\)</span> no conjunto <span class="math inline">\(A\)</span> de todas as amostras possíveis. Só mecanismos amostrais envolvendo alguma forma de seleção probabilística bem definida serão aqui considerados. Portanto, supõe-se que <span class="math inline">\(0 \leq p(a) \leq 1 \; \forall a \in A\)</span> e <span class="math inline">\(\sum_{a \in A} p(a)=1\)</span>.</p>
-<p>Esta caracterização do plano amostral <span class="math inline">\(p(a)\)</span> é bem geral, permitindo que o mecanismo de seleção amostral dependa dos valores das variáveis auxiliares <span class="math inline">\(\mathbf{x}_1 ,\ldots, \mathbf{x}_N\)</span> bem como dos valores das variáveis da pesquisa na população <span class="math inline">\(\mathbf{y}_1 ,\ldots, \mathbf{y}_N\)</span> (amostragem <em>informativa</em>, veja Seção <a href="refinf.html#inform">2.5</a>. Uma notação mais explícita para indicar esta possibilidade envolveria escrever <span class="math inline">\(p(a)\)</span> como <span class="math inline">\(p\left[ a | (\mathbf{y}_U , \mathbf{x}_U ) \right]\)</span>. Tal notação será evitada por razões de simplicidade.</p>
-<p>Denotamos por <span class="math inline">\(I(B)\)</span> a função indicadora que assume o valor 1 quando o evento <span class="math inline">\(B\)</span> ocorre e 0 caso contrário. Seja <span class="math inline">\(\mathbf{\Delta}_a = \left[ I(1 \in a) ,\ldots, I(N \in a)\right]^{\prime}\)</span> um vetor aleatório de indicadores dos elementos incluídos na amostra <span class="math inline">\(a\)</span>. Então o plano amostral pode ser alternativamente caracterizado pela distribuição de probabilidade de <span class="math inline">\(\mathbf{\Delta }_a\)</span> denotada por <span class="math inline">\(f\left[ \mathbf{\delta }_a | \left(\mathbf{y}_U , \mathbf{x}_U \right) \right]\)</span>, onde <span class="math inline">\(\mathbf{\delta }_a\)</span> é qualquer realização particular de <span class="math inline">\(\mathbf{\Delta }_a\)</span> tal que <span class="math inline">\({\mathbf{\delta}_a}^{\prime} \mathbf{1}_N = n\)</span>, e <span class="math inline">\(\mathbf{1}_N\)</span> é o vetor unitário de dimensão <span class="math inline">\(N\)</span>.</p>
-<p>Notação adicional necessária nas seções posteriores será agora introduzida. Denotamos por <span class="math inline">\(\pi_i\)</span> a probabilidade de inclusão da unidade <span class="math inline">\(i\)</span> na amostra <span class="math inline">\(a\)</span>, isto é,</p>
-<span class="math display" id="eq:ref5">\[\begin{equation}
-\pi_i = Pr\left( i \in a \right) = \sum_{a \ni i} p(a)  \tag{2.5}
-\end{equation}\]</span>
-<p>e denotamos por <span class="math inline">\(\pi_{ij}\)</span> a probabilidade de inclusão conjunta na amostra das unidades <span class="math inline">\(i\)</span> e <span class="math inline">\(j\)</span>, dada por</p>
-<span class="math display" id="eq:ref6">\[\begin{equation}
-\pi_{ij} = Pr \left( i \in a , j \in a \right) = \sum_{a \ni i,j} p(a) \tag{2.6}
-\end{equation}\]</span>
-<p>para todo <span class="math inline">\(i \neq j \in U\)</span>, e seja <span class="math inline">\(\pi_{ii} = \pi_{i}\)</span> <span class="math inline">\(\forall i \in U.\)</span></p>
-<p>Uma hipótese básica assumida com relação aos planos amostrais aqui considerados é que <span class="math inline">\(\pi_i &gt; 0\)</span> e <span class="math inline">\(\pi_{ij} &gt; 0\)</span> <span class="math inline">\(\forall i,j \in U.\)</span> A hipótese de <span class="math inline">\(\pi_{ij}\)</span> ser positiva é adotada para simplificar a apresentação de expressões para estimadores de variância dos estimadores dos parâmetros de interesse. Contudo, esta não é uma hipótese crucial, pois há planos amostrais que não a satisfazem e para os quais estão disponíveis aproximações e estimadores satisfatórios das variâncias dos estimadores de totais e de médias.</p>
+<p>O mecanismo usado para selecionar a amostra <span class="math inline">\(a\)</span> da população finita <span class="math inline">\(U\)</span> é
+chamado <em>plano amostral</em>. Uma forma de caracterizá-lo é através da função
+<span class="math inline">\(p\left( .\right)\)</span>, onde <span class="math inline">\(p(a)\)</span> dá a probabilidade de selecionar a amostra <span class="math inline">\(a\)</span>
+no conjunto <span class="math inline">\(A\)</span> de todas as amostras possíveis. Só mecanismos amostrais
+envolvendo alguma forma de seleção probabilística bem definida serão aqui
+considerados. Portanto, supõe-se que <span class="math inline">\(0 \leq p(a) \leq 1 \; \forall a \in A\)</span> e
+<span class="math inline">\(\sum_{a \in A} p(a)=1\)</span>.</p>
+<p>Esta caracterização do plano amostral <span class="math inline">\(p(a)\)</span> é bem geral, permitindo que o
+mecanismo de seleção amostral dependa dos valores das variáveis auxiliares
+<span class="math inline">\(\mathbf{x}_1 ,\ldots, \mathbf{x}_N\)</span> bem como dos valores das variáveis da
+pesquisa na população <span class="math inline">\(\mathbf{y}_1 ,\ldots, \mathbf{y}_N\)</span> (amostragem
+<em>informativa</em>, veja Seção <a href="refinf.html#inform">1.5</a>. Uma notação mais explícita para indicar
+esta possibilidade envolveria escrever <span class="math inline">\(p(a)\)</span> como
+<span class="math inline">\(p\left[ a | (\mathbf{y}_U , \mathbf{x}_U ) \right]\)</span>. Tal notação será evitada
+por razões de simplicidade.</p>
+<p>Denotamos por <span class="math inline">\(I(B)\)</span> a função indicadora que assume o valor 1 quando o evento
+<span class="math inline">\(B\)</span> ocorre e 0 caso contrário. Seja
+<span class="math inline">\(\mathbf{\Delta}_a = \left[ I(1 \in a) ,\ldots, I(N \in a)\right]^{\prime}\)</span> um
+vetor aleatório de indicadores dos elementos incluídos na amostra <span class="math inline">\(a\)</span>. Então o
+plano amostral pode ser alternativamente caracterizado pela distribuição de
+probabilidade de <span class="math inline">\(\mathbf{\Delta }_a\)</span> denotada por
+<span class="math inline">\(f\left[ \mathbf{\delta }_a | \left(\mathbf{y}_U , \mathbf{x}_U \right) \right]\)</span>,
+onde <span class="math inline">\(\mathbf{\delta }_a\)</span> é qualquer realização particular de
+<span class="math inline">\(\mathbf{\Delta }_a\)</span> tal que <span class="math inline">\({\mathbf{\delta}_a}^{\prime} \mathbf{1}_N = n\)</span>, e
+<span class="math inline">\(\mathbf{1}_N\)</span> é o vetor unitário de dimensão <span class="math inline">\(N\)</span>.</p>
+<p>Notação adicional necessária nas seções posteriores será agora introduzida.
+Denotamos por <span class="math inline">\(\pi_i\)</span> a probabilidade de inclusão da unidade <span class="math inline">\(i\)</span> na amostra <span class="math inline">\(a\)</span>,
+isto é,</p>
+<p><span class="math display" id="eq:ref5">\[\begin{equation}
+\pi_i = Pr\left( i \in a \right) = \sum_{a \ni i} p(a)  \tag{1.5}
+\end{equation}\]</span> e denotamos por <span class="math inline">\(\pi_{ij}\)</span> a probabilidade de inclusão conjunta
+na amostra das unidades <span class="math inline">\(i\)</span> e <span class="math inline">\(j\)</span>, dada por</p>
+<p><span class="math display" id="eq:ref6">\[\begin{equation}
+\pi_{ij} = Pr \left( i \in a , j \in a \right) = \sum_{a \ni i,j} p(a) \tag{1.6}
+\end{equation}\]</span> para todo <span class="math inline">\(i \neq j \in U\)</span>, e seja <span class="math inline">\(\pi_{ii} = \pi_{i}\)</span>
+<span class="math inline">\(\forall i \in U.\)</span></p>
+<p>Uma hipótese básica assumida com relação aos planos amostrais aqui considerados
+é que <span class="math inline">\(\pi_i &gt; 0\)</span> e <span class="math inline">\(\pi_{ij} &gt; 0\)</span> <span class="math inline">\(\forall i,j \in U.\)</span> A hipótese de <span class="math inline">\(\pi_{ij}\)</span>
+ser positiva é adotada para simplificar a apresentação de expressões para
+estimadores de variância dos estimadores dos parâmetros de interesse. Contudo,
+esta não é uma hipótese crucial, pois há planos amostrais que não a satisfazem e
+para os quais estão disponíveis aproximações e estimadores satisfatórios das
+variâncias dos estimadores de totais e de médias.</p>
 </div>
-<div id="inform" class="section level2">
-<h2><span class="header-section-number">2.5</span> Planos Amostrais Informativos e Ignoráveis</h2>
-<p>Ao fazer inferência usando dados de pesquisas amostrais precisamos distinguir duas situações que requerem tratamento diferenciado. Uma dessas situações ocorre quando o plano amostral empregado para coletar os dados é <em>informativo</em>, isto é, quando o mecanismo de seleção das unidades amostrais pode depender dos valores das variáveis de pesquisa. Um exemplo típico desta situação é o dos <em>estudos de caso-controle</em>, em que a amostra é selecionada de tal forma que há <em>casos</em> (unidades com determinada condição) e <em>controles</em> (unidades sem essa condição), sendo de interesse a modelagem do indicador de presença ou ausência da condição em função de variáveis preditoras, e sendo esse indicador uma das variáveis de pesquisa, que é considerada no mecanismo de seleção da amostra. Os métodos que discutiremos ao longo deste livro não são adequados, em geral, para esse tipo de situação, e portanto uma hipótese fundamental adotada ao longo deste texto é que os planos amostrais considerados são <em>não-informativos</em>, isto é, não podem depender diretamente dos valores das variáveis da pesquisa. Logo eles satisfazem:</p>
-<span class="math display" id="eq:ref7">\[\begin{equation}
+<div id="inform" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Planos Amostrais Informativos e Ignoráveis</h2>
+<p>Ao fazer inferência usando dados de pesquisas amostrais precisamos distinguir
+duas situações que requerem tratamento diferenciado. Uma dessas situações ocorre
+quando o plano amostral empregado para coletar os dados é <em>informativo</em>, isto é,
+quando o mecanismo de seleção das unidades amostrais pode depender dos valores
+das variáveis de pesquisa. Um exemplo típico desta situação é o dos <em>estudos de
+caso-controle</em>, em que a amostra é selecionada de tal forma que há <em>casos</em>
+(unidades com determinada condição) e <em>controles</em> (unidades sem essa condição),
+sendo de interesse a modelagem do indicador de presença ou ausência da condição
+em função de variáveis preditoras, e sendo esse indicador uma das variáveis de
+pesquisa, que é considerada no mecanismo de seleção da amostra. Os métodos que
+discutiremos ao longo deste livro não são adequados, em geral, para esse tipo de
+situação, e portanto uma hipótese fundamental adotada ao longo deste texto é que
+os planos amostrais considerados são <em>não-informativos</em>, isto é, não podem
+depender diretamente dos valores das variáveis da pesquisa. Logo eles
+satisfazem:</p>
+<p><span class="math display" id="eq:ref7">\[\begin{equation}
 f\left[ \mathbf{\delta }_a | \left( \mathbf{y}_U , \mathbf{x}_U \right)
-\right] = f\left( \mathbf{\delta }_a | \mathbf{x}_U \right) . \tag{2.7}
-\end{equation}\]</span>
-<p>Entre os planos amostrais <em>não-informativos</em>, precisamos ainda distinguir duas outras situações de interesse. Quando o plano amostral é Amostragem Aleatória Simples Com Reposição (AASC), o modelo adotado para a amostra é o mesmo que o modelo adotado para a população antes da amostragem. Quando isto ocorre, o plano amostral é dito <em>ignorável</em>, porque a inferência baseada na amostra utilizando a abordagem DE <em>Modelagem Clássica</em> descrita em <a href="refinf.html#classic">2.1</a> pode prosseguir sem problemas. Entretanto, esquemas amostrais desse tipo são raramente empregados na prática, por razões de eficiência e custo. Em vez disso, são geralmente empregados planos amostrais envolvendo estratificação, conglomeração e probabilidades desiguais de seleção ( <em>amostragem complexa</em> ).</p>
-<p>Com amostragem complexa, porém, os modelos para a população e a amostra podem ser muito diferentes (plano amostral <em>não-ignorável</em>), mesmo que o mecanismo de seleção não dependa das variáveis de pesquisa, mas somente das variáveis auxiliares. Neste caso, ignorar o plano amostral pode viciar a inferência. Veja o Exemplo <a href="refinf.html#exm:nonigno">2.1</a> adiante.</p>
-<p>A definição precisa de ignorabilidade e as condições sob as quais um plano amostral é <em>ignorável</em> para inferência são bastante discutidas na literatura - veja por exemplo <span class="citation">(Sugden and Smith <a href="#ref-Sugden84">1984</a>)</span> ou os Capítulos 1 e 2 de <span class="citation">(Chambers and Skinner <a href="#ref-CHSK2003">2003</a>)</span>. Porém testar a ignorabilidade do plano amostral é muitas vezes complicado. Em caso de dificuldade, o uso dos <em>pesos amostrais</em> tem papel fundamental, como se verá mais adiante.</p>
-<p>Uma forma simples de lidar com os efeitos do plano amostral na estimação pontual de quantidades descritivas populacionais de interesse é incorporar pesos adequados na análise, como se verá no Capítulo <a href="capplanamo.html#capplanamo">3</a>. Essa forma porém, não resolve por si só o problema de estimação da precisão das estimativas pontuais, nem mesmo o caso da estimação pontual de parâmetros em modelos de superpopulação, o que vai requerer métodos específicos discutidos no Capítulo <a href="ajmodpar.html#ajmodpar">5</a>.</p>
-<p>Como incluir os pesos para proteger contra planos amostrais <em>não-ignoráveis</em> e a possibilidade de má especificação do modelo? Uma ideia é modificar os estimadores dos parâmetros de modo que sejam consistentes (em termos da <em>distribuição de aleatorização</em>) para quantidades descritivas da população finita da qual a amostra foi extraída, que por sua vez seriam boas aproximações para os parâmetros dos modelos de interesse. Afirmações probabilísticas são então feitas com respeito à <em>distribuição de aleatorização</em> das estatísticas amostrais <span class="math inline">\(p\)</span> ou com respeito à distribuição mista ou combinada <span class="math inline">\(Mp\)</span>.</p>
-<p>A seguir apresentamos um exemplo com a finalidade de ilustrar uma situação de plano amostral <em>não-ignorável</em>.</p>
+\right] = f\left( \mathbf{\delta }_a | \mathbf{x}_U \right) . \tag{1.7}
+\end{equation}\]</span></p>
+<p>Entre os planos amostrais <em>não-informativos</em>, precisamos ainda distinguir duas
+outras situações de interesse. Quando o plano amostral é Amostragem Aleatória
+Simples Com Reposição (AASC), o modelo adotado para a amostra é o mesmo que o
+modelo adotado para a população antes da amostragem. Quando isto ocorre, o plano
+amostral é dito <em>ignorável</em>, porque a inferência baseada na amostra utilizando a
+abordagem DE <em>Modelagem Clássica</em> descrita em <a href="refinf.html#classic">1.1</a> pode prosseguir sem
+problemas. Entretanto, esquemas amostrais desse tipo são raramente empregados na
+prática, por razões de eficiência e custo. Em vez disso, são geralmente
+empregados planos amostrais envolvendo estratificação, conglomeração e
+probabilidades desiguais de seleção ( <em>amostragem complexa</em> ).</p>
+<p>Com amostragem complexa, porém, os modelos para a população e a amostra podem
+ser muito diferentes (plano amostral <em>não-ignorável</em>), mesmo que o mecanismo de
+seleção não dependa das variáveis de pesquisa, mas somente das variáveis
+auxiliares. Neste caso, ignorar o plano amostral pode viciar a inferência. Veja
+o Exemplo <a href="refinf.html#exm:nonigno">1.1</a> adiante.</p>
+<p>A definição precisa de ignorabilidade e as condições sob as quais um plano
+amostral é <em>ignorável</em> para inferência são bastante discutidas na literatura -
+veja por exemplo <span class="citation">(<a href="#ref-Sugden84" role="doc-biblioref">Sugden e Smith, 1984</a>)</span> ou os Capítulos 1 e 2 de <span class="citation">(<a href="#ref-CHSK2003" role="doc-biblioref">Chambers e Skinner, 2003</a>)</span>. Porém testar
+a ignorabilidade do plano amostral é muitas vezes complicado. Em caso de
+dificuldade, o uso dos <em>pesos amostrais</em> tem papel fundamental, como se verá
+mais adiante.</p>
+<p>Uma forma simples de lidar com os efeitos do plano amostral na estimação pontual
+de quantidades descritivas populacionais de interesse é incorporar pesos
+adequados na análise, como se verá no Capítulo <a href="#capplanamo"><strong>??</strong></a>. Essa forma
+porém, não resolve por si só o problema de estimação da precisão das estimativas
+pontuais, nem mesmo o caso da estimação pontual de parâmetros em modelos de
+superpopulação, o que vai requerer métodos específicos discutidos no Capítulo
+<a href="#ajmodpar"><strong>??</strong></a>.</p>
+<p>Como incluir os pesos para proteger contra planos amostrais <em>não-ignoráveis</em> e a
+possibilidade de má especificação do modelo? Uma ideia é modificar os
+estimadores dos parâmetros de modo que sejam consistentes (em termos da
+<em>distribuição de aleatorização</em>) para quantidades descritivas da população
+finita da qual a amostra foi extraída, que por sua vez seriam boas aproximações
+para os parâmetros dos modelos de interesse. Afirmações probabilísticas são
+então feitas com respeito à <em>distribuição de aleatorização</em> das estatísticas
+amostrais <span class="math inline">\(p\)</span> ou com respeito à distribuição mista ou combinada <span class="math inline">\(Mp\)</span>.</p>
+<p>A seguir apresentamos um exemplo com a finalidade de ilustrar uma situação de
+plano amostral <em>não-ignorável</em>.</p>
 
 <div class="example">
-<span id="exm:nonigno" class="example"><strong>Exemplo 2.1  </strong></span>Efeito da amostragem estratificada simples com alocação desproporcional
+<span id="exm:nonigno" class="example"><strong>Exemplo 1.1  </strong></span>Efeito da amostragem estratificada simples com alocação desproporcional
 </div>
-
-<p>Considere <span class="math inline">\(N\)</span> observações de uma população finita <span class="math inline">\(U\)</span> onde são consideradas de interesse duas variáveis binárias <span class="math inline">\((x_i ; y_i )\)</span>. Suponha que na população os vetores aleatórios <span class="math inline">\((X_i ; Y_i )\)</span> são independentes e identicamente distribuídos com distribuição de probabilidades conjunta dada por:</p>
+<p>Considere <span class="math inline">\(N\)</span> observações de uma população finita <span class="math inline">\(U\)</span> onde são consideradas de
+interesse duas variáveis binárias <span class="math inline">\((x_i ; y_i )\)</span>. Suponha que na população os
+vetores aleatórios <span class="math inline">\((X_i ; Y_i )\)</span> são independentes e identicamente distribuídos
+com distribuição de probabilidades conjunta dada por:</p>
 <table>
-<caption><span id="tab:Tab24">Tabela 2.4: </span> Distribuição de probabilidades conjunta na população <span class="math inline">\(Pr( Y_i = y ; X_i = x )\)</span>.</caption>
+<caption><span id="tab:Tab24">Tabela 1.4: </span> Distribuição de probabilidades conjunta na população
+<span class="math inline">\(Pr( Y_i = y ; X_i = x )\)</span>.</caption>
 <thead>
 <tr class="header">
 <th align="center"></th>
@@ -492,25 +827,49 @@ f\left[ \mathbf{\delta }_a | \left( \mathbf{y}_U , \mathbf{x}_U \right)
 </tbody>
 </table>
 <p>que também pode ser representada por:</p>
-<span class="math display">\[\begin{eqnarray}
+<p><span class="math display">\[\begin{eqnarray}
  f_U (x ; y) &amp;=&amp; Pr( X = x ; Y = y )\\
              &amp; =&amp; \eta_{00}^{(1-x)(1-y)} \times \eta_{01}^{(1-x)y} \times \eta_{10}^{x(1-y)} \times (1 - \eta_{00} - \eta_{01} - \eta_{10})^{xy} \nonumber
-\end{eqnarray}\]</span>
-<p>onde a designação <span class="math inline">\(f_U\)</span> é utilizada para denotar a distribuição <em>na população</em>.</p>
-<p>Note agora que a distribuição marginal da variável <span class="math inline">\(Y\)</span> <em>na população</em> é Bernoulli com parâmetro <span class="math inline">\(1 - \eta_{00} - \eta_{10}\)</span>, ou alternativamente:</p>
-<span class="math display">\[\begin{equation}
+\end{eqnarray}\]</span> onde a designação <span class="math inline">\(f_U\)</span> é utilizada para denotar a distribuição
+<em>na população</em>.</p>
+<p>Note agora que a distribuição marginal da variável <span class="math inline">\(Y\)</span> <em>na população</em> é
+Bernoulli com parâmetro <span class="math inline">\(1 - \eta_{00} - \eta_{10}\)</span>, ou alternativamente:</p>
+<p><span class="math display">\[\begin{equation}
  f_U (y) = Pr( Y = y ) = (\eta_{00} + \eta_{10})^{(1-y)} \times (1 - \eta_{00} - \eta_{10})^y
-\end{equation}\]</span>
-<p>De forma análoga, a distribuição marginal da variável <span class="math inline">\(X\)</span> <em>na população</em> também é Bernoulli, mas com parâmetro <span class="math inline">\(1 - \eta_{00} - \eta_{01}\)</span>, ou alternativamente:</p>
-<span class="math display">\[\begin{equation}
+\end{equation}\]</span></p>
+<p>De forma análoga, a distribuição marginal da variável <span class="math inline">\(X\)</span> <em>na população</em> também
+é Bernoulli, mas com parâmetro <span class="math inline">\(1 - \eta_{00} - \eta_{01}\)</span>, ou alternativamente:</p>
+<p><span class="math display">\[\begin{equation}
  f_U (x) = Pr( X = x ) = (\eta_{00} + \eta_{01})^{(1-x)} \times (1 - \eta_{00} - \eta_{01})^x
-\end{equation}\]</span>
-<p>Seja <span class="math inline">\(N_{xy}\)</span> o número de unidades na população com a combinação de valores observados <span class="math inline">\((x;y)\)</span>, onde <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> tomam valores em <span class="math inline">\(\Omega = \{ 0 ; 1 \}\)</span>. É fácil notar então que o vetor de contagens populacionais <span class="math inline">\(\mathbf{N} = ( N_{00}, N_{01}, N_{10}, N_{11} )^{\prime}\)</span> tem distribuição Multinomial com parâmetros <span class="math inline">\(N\)</span> e <span class="math inline">\(\mathbf{\eta} = (\eta_{00} , \eta_{01} , \eta_{10} , 1 - \eta_{00} - \eta_{01} - \eta_{10} )^{\prime}\)</span>.</p>
-<p>Após observada uma realização do modelo que dê origem a uma população, como seria o caso da realização de um censo na população, a proporção de valores de <span class="math inline">\(y\)</span> iguais a 1 observada no censo seria dada por <span class="math inline">\((N_{+1} / N = 1 - (N_{00} - N_{10})/N\)</span>. E a proporção de valores de <span class="math inline">\(x\)</span> iguais a 1 na população seria igual a <span class="math inline">\((N_{1+} / N = 1 - (N_{00} - N_{01})/N\)</span>.</p>
-<p>Agora suponha que uma amostra estratificada simples <em>com reposição</em> de tamanho <span class="math inline">\(n\)</span> inteiro e par seja selecionada da população, onde os estratos são definidos com base nos valores da variável <span class="math inline">\(x\)</span>, e onde a alocação da amostra nos estratos é dada por <span class="math inline">\(n_0 = n_1 = n/2\)</span>, sendo <span class="math inline">\(n_x\)</span> o tamanho da amostra no estrato correspondente ao valor <span class="math inline">\(x\)</span> usado como índice. Esta alocação é dita <em>alocação igual</em>, pois o tamanho total da amostra é repartido em partes iguais entre os estratos definidos para seleção, e no caso, há apenas dois estratos. A alocação desta amostra será desproporcional exceto no caso em que <span class="math inline">\(N_{0+} = N_{1+}\)</span>.</p>
-<p>Nosso interesse aqui é ilustrar o efeito que uma alocação desproporcional pode causar na análise dos dados amostrais, caso não sejam levadas em conta na análise informações relevantes sobre a estrutura do plano amostral. Para isto, vamos precisar obter a <em>distribuição amostral</em> da variável de interesse <span class="math inline">\(Y\)</span>. Isto pode ser feito em dois passos. Primeiro, note que a distribuição condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span> <em>na população</em> é dada por:</p>
+\end{equation}\]</span></p>
+<p>Seja <span class="math inline">\(N_{xy}\)</span> o número de unidades na população com a combinação de valores
+observados <span class="math inline">\((x;y)\)</span>, onde <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> tomam valores em <span class="math inline">\(\Omega = \{ 0 ; 1 \}\)</span>. É
+fácil notar então que o vetor de contagens populacionais
+<span class="math inline">\(\mathbf{N} = ( N_{00}, N_{01}, N_{10}, N_{11} )^{\prime}\)</span> tem distribuição
+Multinomial com parâmetros <span class="math inline">\(N\)</span> e
+<span class="math inline">\(\mathbf{\eta} = (\eta_{00} , \eta_{01} , \eta_{10} , 1 - \eta_{00} - \eta_{01} - \eta_{10} )^{\prime}\)</span>.</p>
+<p>Após observada uma realização do modelo que dê origem a uma população, como
+seria o caso da realização de um censo na população, a proporção de valores de
+<span class="math inline">\(y\)</span> iguais a 1 observada no censo seria dada por
+<span class="math inline">\((N_{+1} / N = 1 - (N_{00} - N_{10})/N\)</span>. E a proporção de valores de <span class="math inline">\(x\)</span> iguais
+a 1 na população seria igual a <span class="math inline">\((N_{1+} / N = 1 - (N_{00} - N_{01})/N\)</span>.</p>
+<p>Agora suponha que uma amostra estratificada simples <em>com reposição</em> de tamanho
+<span class="math inline">\(n\)</span> inteiro e par seja selecionada da população, onde os estratos são definidos
+com base nos valores da variável <span class="math inline">\(x\)</span>, e onde a alocação da amostra nos estratos
+é dada por <span class="math inline">\(n_0 = n_1 = n/2\)</span>, sendo <span class="math inline">\(n_x\)</span> o tamanho da amostra no estrato
+correspondente ao valor <span class="math inline">\(x\)</span> usado como índice. Esta alocação é dita <em>alocação
+igual</em>, pois o tamanho total da amostra é repartido em partes iguais entre os
+estratos definidos para seleção, e no caso, há apenas dois estratos. A alocação
+desta amostra será desproporcional exceto no caso em que <span class="math inline">\(N_{0+} = N_{1+}\)</span>.</p>
+<p>Nosso interesse aqui é ilustrar o efeito que uma alocação desproporcional pode
+causar na análise dos dados amostrais, caso não sejam levadas em conta na
+análise informações relevantes sobre a estrutura do plano amostral. Para isto,
+vamos precisar obter a <em>distribuição amostral</em> da variável de interesse <span class="math inline">\(Y\)</span>.
+Isto pode ser feito em dois passos. Primeiro, note que a distribuição
+condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span> <em>na população</em> é dada por:</p>
 <table>
-<caption><span id="tab:Tab25">Tabela 2.5: </span> Distribuição de probabilidades condicional de <span class="math inline">\(y\)</span> dado <span class="math inline">\(x\)</span> na população - <span class="math inline">\(Pr( Y_i = y | X_i = x )\)</span>.</caption>
+<caption><span id="tab:Tab25">Tabela 1.5: </span> Distribuição de probabilidades condicional de <span class="math inline">\(y\)</span> dado <span class="math inline">\(x\)</span> na
+população - <span class="math inline">\(Pr( Y_i = y | X_i = x )\)</span>.</caption>
 <thead>
 <tr class="header">
 <th align="center"></th>
@@ -541,28 +900,42 @@ f\left[ \mathbf{\delta }_a | \left( \mathbf{y}_U , \mathbf{x}_U \right)
 </tbody>
 </table>
 <p>ou, alternativamente</p>
-<span class="math display">\[\begin{eqnarray}
+<p><span class="math display">\[\begin{eqnarray}
  f_U (y | x) &amp;=&amp; Pr( Y = y | X = x )\\
              &amp; =&amp; (1-x) \times \frac{\eta_{00}^{(1-y)} \eta_{01}^y}   {\eta_{00}+\eta_{01}} + x \times \frac{\eta_{10}^{(1-y)} (1 - \eta_{00} - \eta_{01} - \eta_{10})^y} {1 - \eta_{00} - \eta_{01}}\nonumber
-\end{eqnarray}\]</span>
-<p>Dado o plano amostral acima descrito, a distribuição marginal de <span class="math inline">\(X\)</span> <em>na amostra</em> é Bernoulli com parâmetro <span class="math inline">\(1/2\)</span>. Isto segue devido ao fato de que a amostra foi alocada igualmente com base nos valores de <span class="math inline">\(x\)</span> na população, e portanto, sempre teremos metade da amostra com valores de <span class="math inline">\(x\)</span> iguais a <span class="math inline">\(0\)</span> e metade com valores iguais a <span class="math inline">\(1\)</span>. Isto pode ser representado como:</p>
-<span class="math display">\[\begin{equation}
+\end{eqnarray}\]</span></p>
+<p>Dado o plano amostral acima descrito, a distribuição marginal de <span class="math inline">\(X\)</span> <em>na
+amostra</em> é Bernoulli com parâmetro <span class="math inline">\(1/2\)</span>. Isto segue devido ao fato de que a
+amostra foi alocada igualmente com base nos valores de <span class="math inline">\(x\)</span> na população, e
+portanto, sempre teremos metade da amostra com valores de <span class="math inline">\(x\)</span> iguais a <span class="math inline">\(0\)</span> e
+metade com valores iguais a <span class="math inline">\(1\)</span>. Isto pode ser representado como:</p>
+<p><span class="math display">\[\begin{equation}
  f_a (x) = Pr( X_i = x | i \in a ) = 1 / 2,\; \forall x \in \Omega \mbox{ e } \forall i \in U
-\end{equation}\]</span>
-<p>onde a designação <span class="math inline">\(f_a\)</span> é utilizada para denotar a distribuição <em>na amostra</em>.</p>
-<p>Podemos usar a informação sobre a distribuição condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span> <em>na população</em> e a informação sobre a distribuição marginal de <span class="math inline">\(X\)</span> <em>na amostra</em> para obter a distribuição marginal de <span class="math inline">\(Y\)</span> <em>na amostra</em>, que é dada por:</p>
-<span class="math display">\[\begin{eqnarray}
+\end{equation}\]</span> onde a designação <span class="math inline">\(f_a\)</span> é utilizada para denotar a distribuição
+<em>na amostra</em>.</p>
+<p>Podemos usar a informação sobre a distribuição condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span> <em>na
+população</em> e a informação sobre a distribuição marginal de <span class="math inline">\(X\)</span> <em>na amostra</em> para
+obter a distribuição marginal de <span class="math inline">\(Y\)</span> <em>na amostra</em>, que é dada por:</p>
+<p><span class="math display">\[\begin{eqnarray}
  f_a (y) &amp;= &amp;Pr( Y_i = y | i \in a )\\ 
 &amp;=&amp; \sum _{x = 0} ^{1} Pr( X_i = x ; Y_i = y | i \in a) \nonumber \\ 
 &amp;=&amp; \sum _{x = 0} ^{1} Pr[ Y_i = y | (X_i = x) e (i \in a)] \times Pr( X_i = x | i \in a) \nonumber\\ 
 &amp;=&amp; \sum _{x = 0} ^{1} Pr( Y_i = y | X_i = x) \times f_a (x) \nonumber \\ 
 &amp;=&amp; \sum _{x = 0} ^{1} f_U ( y | x) f_a (x) \nonumber \\ 
 &amp;=&amp; \frac{1}{2} \times \left[ \frac{\eta_{00}^{(1-y)} \eta_{01}^y} {\eta_{00}+\eta_{01}}+ \frac{\eta_{10}^{(1-y)} (1 - \eta_{00} - \eta_{01} - \eta_{10})^y} {1 - \eta_{00} - \eta_{01}} \right]\nonumber
-\end{eqnarray}\]</span>
-<p>Isto mostra que a distribuição marginal de <span class="math inline">\(Y\)</span> <em>na amostra</em> é diferente da distribuição marginal de <span class="math inline">\(Y\)</span> <em>na população</em>, mesmo quando o plano amostral é especialmente simples e utiliza amostragem aleatória simples com reposição dentro de cada estrato definido pela variável <span class="math inline">\(X\)</span>. Isto ocorre devido à alocação desproporcional da amostra, apesar de a distribuição condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span> na população ser a mesma e que a distribuição condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span> <em>na amostra</em>.</p>
-<p>Um exemplo numérico facilita a compreensão. Se a distribuição conjunta de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> na população é dada por:</p>
+\end{eqnarray}\]</span></p>
+<p>Isto mostra que a distribuição marginal de <span class="math inline">\(Y\)</span> <em>na amostra</em> é diferente da
+distribuição marginal de <span class="math inline">\(Y\)</span> <em>na população</em>, mesmo quando o plano amostral é
+especialmente simples e utiliza amostragem aleatória simples com reposição
+dentro de cada estrato definido pela variável <span class="math inline">\(X\)</span>. Isto ocorre devido à alocação
+desproporcional da amostra, apesar de a distribuição condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span>
+na população ser a mesma e que a distribuição condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span> <em>na
+amostra</em>.</p>
+<p>Um exemplo numérico facilita a compreensão. Se a distribuição conjunta de <span class="math inline">\(X\)</span> e
+<span class="math inline">\(Y\)</span> na população é dada por:</p>
 <table>
-<caption><span id="tab:Tab26">Tabela 2.6: </span> Distribuição de probabilidades conjunta na população <span class="math inline">\(f_U( x ; y )\)</span>.</caption>
+<caption><span id="tab:Tab26">Tabela 1.6: </span> Distribuição de probabilidades conjunta na população
+<span class="math inline">\(f_U( x ; y )\)</span>.</caption>
 <thead>
 <tr class="header">
 <th align="center"></th>
@@ -598,9 +971,87 @@ f\left[ \mathbf{\delta }_a | \left( \mathbf{y}_U , \mathbf{x}_U \right)
 </tr>
 </tbody>
 </table>
-<p>segue-se que a distribuição condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span> <em>na população</em> (e também <em>na amostra</em>) é dada por</p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:Tab26">Tabela 1.6: </span>Distribuição de probabilidades conjunta na população <span class="math inline">\(f_U( x ; y )\)</span>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(y\)</span>
+</th>
+<th style="text-align:center;">
+</th>
+<th style="text-align:center;">
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;width: 2cm; ">
+<span class="math inline">\(x\)</span>
+</td>
+<td style="text-align:center;width: 2cm; ">
+0
+</td>
+<td style="text-align:center;width: 2cm; ">
+1
+</td>
+<td style="text-align:center;width: 2cm; ">
+Total
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 2cm; ">
+0
+</td>
+<td style="text-align:center;width: 2cm; ">
+0,7
+</td>
+<td style="text-align:center;width: 2cm; ">
+0,1
+</td>
+<td style="text-align:center;width: 2cm; ">
+0,8
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 2cm; ">
+1
+</td>
+<td style="text-align:center;width: 2cm; ">
+0,1
+</td>
+<td style="text-align:center;width: 2cm; ">
+0,1
+</td>
+<td style="text-align:center;width: 2cm; ">
+0,2
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 2cm; ">
+Total
+</td>
+<td style="text-align:center;width: 2cm; ">
+0,8
+</td>
+<td style="text-align:center;width: 2cm; ">
+0,2
+</td>
+<td style="text-align:center;width: 2cm; ">
+1
+</td>
+</tr>
+</tbody>
+</table>
+<p>segue-se que a distribuição condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span> <em>na população</em> (e também
+<em>na amostra</em>) é dada por</p>
 <table>
-<caption><span id="tab:Tab27">Tabela 2.7: </span> Distribuição de probabilidades condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span> <em>na população</em> - <span class="math inline">\(f_U( y | x )\)</span>.</caption>
+<caption><span id="tab:Tab27">Tabela 1.7: </span> Distribuição de probabilidades condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span> <em>na
+população</em> - <span class="math inline">\(f_U( y | x )\)</span>.</caption>
 <thead>
 <tr class="header">
 <th align="center"></th>
@@ -611,7 +1062,7 @@ f\left[ \mathbf{\delta }_a | \left( \mathbf{y}_U , \mathbf{x}_U \right)
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center"><span class="math inline">\(x\)</span></td>
+<td align="center"><span class="math inline">\(x\text{/}y\)</span></td>
 <td align="center">0</td>
 <td align="center">1</td>
 <td align="center">Total</td>
@@ -630,9 +1081,72 @@ f\left[ \mathbf{\delta }_a | \left( \mathbf{y}_U , \mathbf{x}_U \right)
 </tr>
 </tbody>
 </table>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:Tab27">Tabela 1.7: </span>Distribuição de probabilidades condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span> <em>na população</em> - <span class="math inline">\(f_U( y | x )\)</span>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(y\)</span>
+</th>
+<th style="text-align:center;">
+</th>
+<th style="text-align:center;">
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;width: 2cm; ">
+<span class="math inline">\(x\text{/}y\)</span>
+</td>
+<td style="text-align:center;width: 2cm; ">
+0
+</td>
+<td style="text-align:center;width: 2cm; ">
+1
+</td>
+<td style="text-align:center;width: 2cm; ">
+Total
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 2cm; ">
+0
+</td>
+<td style="text-align:center;width: 2cm; ">
+0,875
+</td>
+<td style="text-align:center;width: 2cm; ">
+0,125
+</td>
+<td style="text-align:center;width: 2cm; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 2cm; ">
+1
+</td>
+<td style="text-align:center;width: 2cm; ">
+0,500
+</td>
+<td style="text-align:center;width: 2cm; ">
+0,00
+</td>
+<td style="text-align:center;width: 2cm; ">
+1
+</td>
+</tr>
+</tbody>
+</table>
 <p>e que a distribuição marginal de <span class="math inline">\(Y\)</span> <em>na população</em> e <em>na amostra</em> são dadas por</p>
 <table>
-<caption><span id="tab:Tab28">Tabela 2.8: </span> Distribuição de probabilidades marginal de <span class="math inline">\(Y\)</span> <em>na população</em> - <span class="math inline">\(f_U( y )\)</span>.</caption>
+<caption><span id="tab:Tab28">Tabela 1.8: </span> Distribuição de probabilidades marginal de <span class="math inline">\(Y\)</span> <em>na população</em> -
+<span class="math inline">\(f_U( y )\)</span>.</caption>
 <thead>
 <tr class="header">
 <th align="center"><span class="math inline">\(y\)</span></th>
@@ -653,49 +1167,106 @@ f\left[ \mathbf{\delta }_a | \left( \mathbf{y}_U , \mathbf{x}_U \right)
 </tr>
 </tbody>
 </table>
-<p>Assim, inferência sobre a distribuição de <span class="math inline">\(Y\)</span> <em>na população</em> levada a cabo a partir dos dados da amostra observada sem considerar a estrutura do plano amostral seria equivocada, pois a alocação igual da amostra nos estratos levaria à observação de uma proporção maior de valores de <span class="math inline">\(X\)</span> iguais a 1 na amostra (1/2) do que a correspondente proporção existente na população (1/5). Em conseqüência, a proporção de valores de <span class="math inline">\(Y\)</span> iguais a 1 na amostra (0,3125) seria 56% maior que a correspondente proporção <em>na população</em> (0,2).</p>
-<p>Este exemplo é propositalmente simples, envolve apenas duas variáveis com distribuição Bernoulli, mas ilustra bem como a amostragem pode modificar distribuições de variáveis <em>na amostra</em> em relação à correspondente distribuição <em>na população</em>.</p>
-<p>Caso a inferência requerida fosse sobre parâmetros da distribuição condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span>, a amostragem seria <em>ignorável</em>, isto é, <span class="math inline">\(f_a ( y | x) = f_U (y | x)\)</span>. Assim, fica evidenciado também que a noção de que o plano amostral pode ser ignorado depende da inferência desejada. No nosso exemplo, o plano amostral é ignorável para inferência sobre a distribuição condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span>, mas não é ignorável para inferência sobre a distribuição marginal de <span class="math inline">\(Y\)</span>.</p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:Tab28">Tabela 1.8: </span>Distribuição de probabilidades marginal de <span class="math inline">\(Y\)</span> <em>na população</em> - <span class="math inline">\(f_U( y )\)</span>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+<span class="math inline">\(y\)</span>
+</th>
+<th style="text-align:center;">
+0
+</th>
+<th style="text-align:center;">
+1
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;width: 2cm; ">
+<span class="math inline">\(f_U(y)\)</span>
+</td>
+<td style="text-align:center;width: 2cm; ">
+0,8000
+</td>
+<td style="text-align:center;width: 2cm; ">
+0,2000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 2cm; ">
+<span class="math inline">\(f_a(y)\)</span>
+</td>
+<td style="text-align:center;width: 2cm; ">
+0,6875
+</td>
+<td style="text-align:center;width: 2cm; ">
+0,3125
+</td>
+</tr>
+</tbody>
+</table>
+<p>Assim, inferência sobre a distribuição de <span class="math inline">\(Y\)</span> <em>na população</em> levada a cabo a
+partir dos dados da amostra observada sem considerar a estrutura do plano
+amostral seria equivocada, pois a alocação igual da amostra nos estratos levaria
+à observação de uma proporção maior de valores de <span class="math inline">\(X\)</span> iguais a 1 na amostra
+(1/2) do que a correspondente proporção existente na população (1/5). Em
+conseqüência, a proporção de valores de <span class="math inline">\(Y\)</span> iguais a 1 na amostra (0,3125) seria
+56% maior que a correspondente proporção <em>na população</em> (0,2).</p>
+<p>Este exemplo é propositalmente simples, envolve apenas duas variáveis com
+distribuição Bernoulli, mas ilustra bem como a amostragem pode modificar
+distribuições de variáveis <em>na amostra</em> em relação à correspondente distribuição
+<em>na população</em>.</p>
+<p>Caso a inferência requerida fosse sobre parâmetros da distribuição condicional
+de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span>, a amostragem seria <em>ignorável</em>, isto é,
+<span class="math inline">\(f_a ( y | x) = f_U (y | x)\)</span>. Assim, fica evidenciado também que a noção de que
+o plano amostral pode ser ignorado depende da inferência desejada. No nosso
+exemplo, o plano amostral é ignorável para inferência sobre a distribuição
+condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span>, mas não é ignorável para inferência sobre a
+distribuição marginal de <span class="math inline">\(Y\)</span>.</p>
 
 </div>
 </div>
 <h3>Referências</h3>
-<div id="refs" class="references">
-<div id="ref-Casella">
-<p>Casella, G., and R.L. Berger. 2010. <em>Inferência Estatística</em>. São Paulo: Cengage Learning.</p>
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
+<div id="ref-binder83" class="csl-entry">
+Binder, D. A. (1983). On the variances of asymptotically normal estimators from complex surveys. <em>International Statistical Review</em>, <em>51</em>, 279–292.
 </div>
-<div id="ref-Marcos">
-<p>Magalhães, M.N., and A.C.P. Lima. 2015. <em>Noções de Probabilidade E Estatística</em>. 7ª edição, 3ª reimpressão revista. São Paulo: Edusp - Editora da Universidade de São Paulo.</p>
+<div id="ref-Casella" class="csl-entry">
+Casella, G. e Berger, R. L. (2010). <em>Inferência Estatística</em>. Cengage Learning.
 </div>
-<div id="ref-Neyman">
-<p>Neyman, J. 1934. “On the Two Different Aspects of the Representative Method: The Method of Stratified Sampling and the Method of Purposive Selection.” <em>Journal of the Royal Statistical Society A</em> 97: 558–606.</p>
+<div id="ref-cassel" class="csl-entry">
+Cassel, C. M.; Särndal, C.-E. e Wretman, J. H. (1977). <em>Foundations of Inference in Survey Sampling</em>. John Wiley.
 </div>
-<div id="ref-royall">
-<p>Royall, R.M. 1970. “On Finite Population Sampling Theory Under Certain Linear Regression Models.” <em>Biometrika</em> 57 (2). Oxford University Press: 377–87.</p>
+<div id="ref-CHSK2003" class="csl-entry">
+Chambers, R. L. e Skinner, C. J. (Eds.). (2003). <em>Analysis of Survey Data</em>. John Wiley.
 </div>
-<div id="ref-binder83">
-<p>Binder, D. A. 1983. “On the Variances of Asymptotically Normal Estimators from Complex Surveys.” <em>International Statistical Review</em> 51: 279–92.</p>
+<div id="ref-cochran" class="csl-entry">
+Cochran, W. G. (1977). <em>Sampling Techniques</em>. John Wiley.
 </div>
-<div id="ref-valliant">
-<p>Valliant, A.H., R.; Dorfman, and R.M. Royall. 2000. <em>Finite Population Sampling and Inference: A Prediction Approach</em>. 04; QA276. 6, V3.</p>
+<div id="ref-Marcos" class="csl-entry">
+Magalhães, M. N. e Lima, A. C. P. (2015). <em>Noções de Probabilidade e Estatística</em> (7ª edição, 3ª reimpressão revista). Edusp - Editora da Universidade de São Paulo.
 </div>
-<div id="ref-thompson">
-<p>Thompson, S. K. 1992. <em>Sampling</em>. Wiley Series in Probability and Mathematical Statistics. John Wiley; Sons.</p>
+<div id="ref-Mont87" class="csl-entry">
+Montanari, G. E. (1987). Post-sampling efficient <span>QR-prediction</span> in large-sample surveys. <em>International Statistical Review</em>, <em>55</em>, 191–202.
 </div>
-<div id="ref-cassel">
-<p>Cassel, C. M., C-E. Särndal, and J. H Wretman. 1977. <em>Foundations of Inference in Survey Sampling</em>. Nova Iorque: John Wiley.</p>
+<div id="ref-Neyman" class="csl-entry">
+Neyman, J. (1934). On the two different aspects of the representative method: the method of stratified sampling and the method of purposive selection. <em>Journal of the Royal Statistical Society A</em>, <em>97</em>, 558–606.
 </div>
-<div id="ref-Mont87">
-<p>Montanari, G. E. 1987. “Post-Sampling Efficient QR-prediction in Large-Sample Surveys.” <em>International Statistical Review</em> 55: 191–202.</p>
+<div id="ref-royall" class="csl-entry">
+Royall, R. M. (1970). On finite population sampling theory under certain linear regression models. <em>Biometrika</em>, <em>57</em>(2), 377–387.
 </div>
-<div id="ref-cochran">
-<p>Cochran, W. G. 1977. <em>Sampling Techniques</em>. Nova Iorque: John Wiley.</p>
+<div id="ref-Sugden84" class="csl-entry">
+Sugden, R. A. e Smith, T. M. F. (1984). Ignorable and informative designs in survey sampling inference. <em>Biometrika</em>, <em>71</em>, 495–506.
 </div>
-<div id="ref-Sugden84">
-<p>Sugden, R. A., and T. M. F. Smith. 1984. “Ignorable and Informative Designs in Survey Sampling Inference.” <em>Biometrika</em> 71: 495–506.</p>
+<div id="ref-thompson" class="csl-entry">
+Thompson, S. K. (1992). <em>Sampling</em>. John Wiley; Sons.
 </div>
-<div id="ref-CHSK2003">
-<p>Chambers, R.L., and C.J. Skinner, eds. 2003. <em>Analysis of Survey Data</em>. Chichester: John Wiley.</p>
+<div id="ref-valliant" class="csl-entry">
+Valliant, A. H., R.; Dorfman e Royall, R. M. (2000). <em>Finite population sampling and inference: a prediction approach</em>.
 </div>
 </div>
             </section>
@@ -703,17 +1274,18 @@ f\left[ \mathbf{\delta }_a | \left( \mathbf{y}_U , \mathbf{x}_U \right)
           </div>
         </div>
       </div>
-<a href="introduc.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="capplanamo.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="referências.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -721,11 +1293,12 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
+"linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -736,7 +1309,19 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-adac.pdf"],
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-adacor.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
@@ -749,9 +1334,12 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(script.src))
-      script.src  = script.src.replace(/^https?:/, '');
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

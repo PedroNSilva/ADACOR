@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Análise de Dados Amostrais</title>
+  <title>Referências | Análise de Dados Amostrais</title>
   <meta name="description" content="Análise de dados de pesquisas amostrais." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Análise de Dados Amostrais" />
+  <meta property="og:title" content="Referências | Análise de Dados Amostrais" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="/Figuras/capa.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="PedroNSilva/ADACOR" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Análise de Dados Amostrais" />
+  <meta name="twitter:title" content="Referências | Análise de Dados Amostrais" />
   
   <meta name="twitter:description" content="Análise de dados de pesquisas amostrais." />
   <meta name="twitter:image" content="/Figuras/capa.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="refinf.html"/>
 
-<link rel="next" href="refinf.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -129,32 +129,46 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Análise de Dados Amostrais</h1>
-<p class="author"><em>Djalma G. C. Pessoa, Pedro Luis do Nascimento Silva,</em></p>
-<p class="author"><em>Antonio José Ribeiro Dias, Zélia Magalhães Bianchini e Sonia Albieri</em></p>
-<p class="date"><em>11 de setembro de 2021, 17:25:22</em></p>
-</div>
-<div id="bem-vindo" class="section level1 unnumbered">
-<h1>Bem-vindo</h1>
-<p>Uma preocupação básica de toda instituição produtora de informações estatísticas é com a utilização ‘’correta’’ de seus dados. Isso pode ser intrepretado de várias formas, algumas delas com reflexos até na confiança do público e na
-própria sobrevivência do órgão. Do nosso ponto de vista, enfatizamos um aspecto
-técnico particular, mas nem por isso menos importante para os usuários dos dados.</p>
-<p>A revolução da informática com a resultante facilidade de acesso ao computador, criou condições extremamente favoráveis à utilização de dados estatísticos, produzidos por órgãos como o IBGE. Algumas vezes esses dados são utilizados para fins puramente descritivos. Outras vezes, porém, sua utilização é feita para fins analíticos, envolvendo a construção de modelos, quando o objetivo é extrair conclusões aplicáveis também a populações distintas daquela da qual se extraiu a amostra. Neste caso, é comum empregar, sem grandes preocupações, pacotes
-computacionais padrões disponíveis para a seleção e ajuste de modelos. É neste ponto que entra a nossa preocupação com o uso adequado dos dados produzidos pelo IBGE.</p>
-<p>O que torna tais dados especiais para quem pretende usá-los para fins
-analíticos? Esta é a questão básica que será amplamente discutida ao longo deste texto. A mensagem principal que pretendemos transmitir é que certos cuidados precisam ser tomados para utilização correta dos dados de pesquisas amostrais como as que o IBGE realiza.</p>
-<p>O que torna especiais dados como os produzidos pelo IBGE é que estes são obtidos através de pesquisas amostrais complexas de populações finitas que envolvem: <strong>probabilidades distintas de seleção, estratificação e conglomeração das unidades, ajustes para compensar não-resposta e outros ajustes</strong>. Os sistemas
-tradicionais de análise ignoram estes aspectos, podendo produzir estimativas incorretas tanto dos parâmetros como para as variâncias destas estimativas. Quando utilizamos a amostra para estudos analíticos, as opções disponíveis nos pacotes estatísticos usuais para levar em conta os pesos distintos das observações são apropriadas somente para observações independentes e identicamente distribuídas (IID). Além disso, a variabilidade dos pesos produz
-impactos tanto na estimação pontual quanto na estimação das variâncias dessas estimativas, que sofre ainda influência da estratificação e conglomeração.</p>
-<p>O objetivo deste livro é analisar o impacto das simplificações feitas ao utilizar procedimentos e pacotes usuais de análise de dados, e apresentar os ajustes necessários desses procedimentos de modo a incorporar na análise, de forma apropriada, os aspectos aqui ressaltados. Para isto serão apresentados exemplos de análises de dados obtidos em pesquisas amostrais complexas, usando pacotes clássicos e também pacotes estatísticos especializados. A comparação
-dos resultados das análises feitas das duas formas permitirá avaliar o impacto de ignorar o plano amostral na análise dos dados resultantes de pesquisas amostrais complexas.</p>
-<div id="agradecimentos" class="section level2 unnumbered">
-<h2>Agradecimentos</h2>
-<p>A elaboração de um texto como esse não se faz sem a colaboração de muitas pessoas. Em primeiro lugar, agradecemos à Comissão Organizadora do SINAPE por ter propiciado a oportunidade ao selecionar nossa proposta de minicurso. Agradecemos também ao IBGE por ter proporcionado as condições e os meios usados para a produção da monografia, bem como o acesso aos dados detalhados e identificados que utilizamos em vários exemplos.</p>
-<p>No plano pessoal, agradecemos a Zélia Bianchini pela revisão do manuscrito e sugestões que o aprimoraram. Agradecemos a Marcos Paulo de Freitas e Renata Duarte pela ajuda com a computação de vários exemplos. Agradecemos a Waldecir Bianchini, Luiz Pessoa e Marinho Persiano pela colaboração na utilização do processador de textos. Aos demais colegas do Departamento de Metodologia do IBGE, agradecemos o companheirismo e solidariedade nesses meses de trabalho na preparação do manuscrito.</p>
-<p>Finalmente, agradecemos a nossas famílias pela aceitação resignada de nossas ausências e pelo incentivo à conclusão da empreitada.</p>
+<div id="referências" class="section level1 unnumbered">
+<h1>Referências</h1>
 
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
+<div class="csl-entry">
+Binder, D. A. (1983). On the variances of asymptotically normal estimators from complex surveys. <em>International Statistical Review</em>, <em>51</em>, 279–292.
+</div>
+<div class="csl-entry">
+Casella, G. e Berger, R. L. (2010). <em>Inferência Estatística</em>. Cengage Learning.
+</div>
+<div class="csl-entry">
+Cassel, C. M.; Särndal, C.-E. e Wretman, J. H. (1977). <em>Foundations of Inference in Survey Sampling</em>. John Wiley.
+</div>
+<div class="csl-entry">
+Chambers, R. L. e Skinner, C. J. (Eds.). (2003). <em>Analysis of Survey Data</em>. John Wiley.
+</div>
+<div class="csl-entry">
+Cochran, W. G. (1977). <em>Sampling Techniques</em>. John Wiley.
+</div>
+<div class="csl-entry">
+Magalhães, M. N. e Lima, A. C. P. (2015). <em>Noções de Probabilidade e Estatística</em> (7ª edição, 3ª reimpressão revista). Edusp - Editora da Universidade de São Paulo.
+</div>
+<div class="csl-entry">
+Montanari, G. E. (1987). Post-sampling efficient <span>QR-prediction</span> in large-sample surveys. <em>International Statistical Review</em>, <em>55</em>, 191–202.
+</div>
+<div class="csl-entry">
+Neyman, J. (1934). On the two different aspects of the representative method: the method of stratified sampling and the method of purposive selection. <em>Journal of the Royal Statistical Society A</em>, <em>97</em>, 558–606.
+</div>
+<div class="csl-entry">
+Royall, R. M. (1970). On finite population sampling theory under certain linear regression models. <em>Biometrika</em>, <em>57</em>(2), 377–387.
+</div>
+<div class="csl-entry">
+Sugden, R. A. e Smith, T. M. F. (1984). Ignorable and informative designs in survey sampling inference. <em>Biometrika</em>, <em>71</em>, 495–506.
+</div>
+<div class="csl-entry">
+Thompson, S. K. (1992). <em>Sampling</em>. John Wiley; Sons.
+</div>
+<div class="csl-entry">
+Valliant, A. H., R.; Dorfman e Royall, R. M. (2000). <em>Finite population sampling and inference: a prediction approach</em>.
+</div>
 </div>
 </div>
             </section>
@@ -162,8 +176,8 @@ dos resultados das análises feitas das duas formas permitirá avaliar o impacto
           </div>
         </div>
       </div>
+<a href="refinf.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="refinf.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,0 +1,2 @@
+`r if (knitr:::is_html_output()) '# Referências {-}'`
+`r if (knitr:::is_latex_output()) '# Referências {-}'`

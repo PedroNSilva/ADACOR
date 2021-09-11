@@ -1,0 +1,14 @@
+\babel@toc {brazilian}{}
+\contentsline {chapter}{Bem-vindo}{5}{chapter*.2}%
+\contentsline {section}{Agradecimentos}{5}{section*.3}%
+\contentsline {chapter}{\numberline {1}Referencial para Inferência}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Modelagem - Primeiras Ideias}{7}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Abordagem 1 - Modelagem Clássica}{7}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Abordagem 2 - Amostragem Probabilística}{9}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Discussão das Abordagens 1 e 2}{9}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Abordagem 3 - Modelagem de Superpopulação}{10}{subsection.1.1.4}%
+\contentsline {section}{\numberline {1.2}Fontes de Variação}{13}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Modelos de Superpopulação}{14}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Planejamento Amostral}{16}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Planos Amostrais Informativos e Ignoráveis}{17}{section.1.5}%
+\contentsline {chapter}{Referências}{21}{chapter*.4}%
