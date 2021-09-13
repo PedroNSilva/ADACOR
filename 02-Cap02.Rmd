@@ -43,9 +43,7 @@ knitr::include_graphics("Figuras/Figura2.1.png")
 suppressMessages(library(kableExtra))
 
 l1=c('Dados Amostrais','$Y_1=y_1,\\ldots, Y_n=y_n$')
-
 l2=c('Modelo Paramétrico/ Hipóteses','$Y_1, \\ldots ,Y_n \\text{ variáveis aleatórias IID com distribuição }f(y,\\theta),\\text{ onde }\\theta \\in \\Theta$')
-
 l3=c('Objetivo','$\\text{Inferir sobre }\\theta\\text{ usando as observações } y_1, \\ldots ,y_n$')       
 
 tabela=as.data.frame(t(data.frame(l1,l2,l3)))
@@ -53,7 +51,7 @@ tabela=as.data.frame(t(data.frame(l1,l2,l3)))
 names(tabela) <- NULL
 
 knitr::kable(tabela,align= "ll",format.args= list(big.mark = '.',dec=','), escape = F, booktabs=T,
-caption= "Representação esquemática da abordagem Modelagem Clássica",row.names=FALSE)%>% 
+caption= "$\\text{Representação esquemática da abordagem }\\textit{Modelagem Clássica}$",row.names=FALSE)%>% 
 kable_styling(full_width = F,latex_options = 'HOLD_position')%>%column_spec(column=1,width='4.5cm')
 
 ```
@@ -74,7 +72,7 @@ vai ser a estimação não paramétrica da forma da função $f(y;\theta)$.
 
 Inferência sob modelos do tipo descrito nesta seção forma o conteúdo de um curso
 introdutório de inferência estatística. Mais detalhes podem ser consultados, por
-exemplo, em [@Casella] e [@Marcos].
+exemplo, em @Casella e @Marcos.
 
 ### Abordagem 2 - Amostragem Probabilística
 
@@ -114,9 +112,13 @@ tabela=as.data.frame(t(data.frame(l1,l2,l3)))
 names(tabela) <- NULL
 
 knitr::kable(tabela,align= "ll",format.args= list(big.mark = '.',dec=','), escape = F, booktabs=T,
-caption= "Representação esquemática da abordagem Amostragem Probabilística",row.names=FALSE)%>% 
+caption= "$\\text{Representação esquemática da abordagem }\\textit{Amostragem Probabilística}$",row.names=FALSE)%>% 
 kable_styling(full_width = F,latex_options = 'HOLD_position')%>%column_spec(column=1,width='4.5cm')
 
+```
+
+```{r,modamo, echo=FALSE, fig.cap="Representação esquemática da Modelagem Clássica"}
+knitr::include_graphics("Figuras/Figura2.2.png")
 ```
 
 Esta abordagem é largamente empregada na produção de estatísticas públicas e
@@ -141,7 +143,7 @@ no contexto de estudos socioeconômicos observacionais, para levantamento de
 dados por agências governamentais produtoras de informações estatísticas. Nesta
 abordagem, a aleatoriedade é introduzida pelo pesquisador no processo para
 obtenção dos dados, através do *planejamento amostral* $p(a)$ utilizado
-[@Neyman] e as distribuições das estatísticas de interesse são derivadas a
+@Neyman e as distribuições das estatísticas de interesse são derivadas a
 partir dessa *distribuição de aleatorização*.
 
 Os planos amostrais podem ser complexos, gerando observações afetadas pelas
@@ -197,8 +199,8 @@ dados da população, e não os da amostra. Além disso, essa abordagem incorpor
 análise os pontos i) a iii) do Capítulo \@ref(introduc) mediante aproveitamento
 da estrutura do planejamento amostral, como feito habitualmente na *Amostragem
 Probabilística*. Essa abordagem, denominada de *Modelagem de Superpopulação*,
-foi primeiro proposta em [@Brewer1963] e [@royall], e é bem descrita, por
-exemplo, em [@binder83] e [@valliant].
+foi primeiro proposta em @Brewer1963 e @royall, e é bem descrita, por
+exemplo, em @binder83 e @valliant.
 
 ### Abordagem 3 - Modelagem de Superpopulação {#modelsuperpop}
 
@@ -216,7 +218,7 @@ $\theta$ passam a se referir à população de interesse ou a populações simil
 quer existam ao mesmo tempo, quer se refiram a estados futuros (ou passados) da
 mesma população. Vale realçar também que pesquisas por amostragem "consistem em
 selecionar parte de uma população para observar, de modo que seja possível
-estimar alguma coisa sobre toda a população", conforme [@thompson].
+estimar alguma coisa sobre toda a população", conforme @thompson.
 
 Utilizando um plano amostral definido por $p(a)$, obtemos os valores das
 variáveis de pesquisa na amostra $y_{i_1}, \ldots , y_{i_n}$. A partir de
@@ -250,13 +252,9 @@ representação esquemática dessa abordagem é apresentada na Tabela
 suppressMessages(library(kableExtra))
 
 l1=c('Dados Amostrais','$Y_1=y_{i_1},\\ldots,Y_n=y_{i_n}$')
-
 l2=c('População e esquema de seleção','$\\text{Extraídos de } y_1,\\dots,y_N \\text{ segundo } p(a)$')
-
 l3=c('Modelo para população','$Y_1,\\dots, Y_N \\text{ variáveis aleatórias IID com distribuição } f(y,\\theta),\\text { onde } \\theta \\in \\Theta$')
-
 l4=c('Parâmetro-alvo','$\\text{Associar } \\theta\\Leftrightarrow g\\left (Y_{1},\\ldots,Y_{N}\\right)$')
-
 l5=c('Objetivo','$\\text{Inferir sobre }g\\left( Y_{1}, \\ldots ,Y_{N}\\right)\\text{ partir de }y_{i_1}, \\ldots,y_{i_n} \\text{ usando } p\\left( a\\right)$ ')
 
 tabela=as.data.frame(t(data.frame(l1,l2,l3,l4,l5)))
@@ -264,7 +262,7 @@ tabela=as.data.frame(t(data.frame(l1,l2,l3,l4,l5)))
 names(tabela) <- NULL
 
 knitr::kable(tabela,align= "ll",format.args= list(big.mark = '.',dec=','),escape = F, booktabs=T,
-caption= "Representação esquemática da Modelagem de Superpopulação", row.names=FALSE)%>% 
+caption= "$\\text{Representação esquemática da } \\textit{Modelagem de Superpopulação}$", row.names=FALSE)%>% 
 kable_styling(full_width = F,latex_options = 'HOLD_position')%>%column_spec(column=1,width='5cm')
 
 ```
@@ -304,13 +302,13 @@ em que o uso de tais pacotes pode ser inadequado, e buscar opções de rotinas
 específicas ou de pacotes especializados capazes de incorporar adequadamente a
 estrutura do plano amostral nas análises.
 
-Ao longo deste livro faremos uso intensivo do pacote `survey` disponível no R,
+Ao longo deste livro faremos uso intensivo do pacote *survey* disponível no R,
 mas o leitor encontrará funcionalidade semelhante em vários outros pacotes.
 Nossa escolha se deveu a dois fatores principais: primeiro ao fato do pacote R
 ser aberto, livre e gratuito, dispensando o usuário de custos de licenciamento,
 bem como possibilitando aos interessados o acesso ao código fonte e à capacidade
 de modificar as rotinas de análise, caso necessário. O segundo fator é de
-natureza mais técnica, porém transitória. No presente momento, o pacote `survey`
+natureza mais técnica, porém transitória. No presente momento, o pacote *survey*
 é a coleção de rotinas mais completa e genérica existente para análise de dados
 amostrais complexos, dispondo de funções capazes de ajustar os modelos usuais,
 mas também de ajustar modelos não convencionais, mediante a maximização numérica
@@ -321,7 +319,7 @@ comandos utilizada pelo pacote R, mas acreditamos que os benefícios do
 aprendizado desta nova ferramenta compensarão largamente os custos adicionais do
 aprendizado.
 
-O emprego de ferramentas de análise como o pacote `survey` permitirá aos
+O emprego de ferramentas de análise como o pacote *survey* permitirá aos
 usuários focar sua atenção mais na seleção, análise e interpretação dos modelos
 ajustados do que nas dificuldades técnicas envolvidas nos cálculos
 correspondentes. É com este espírito que escrevemos este texto, que busca
@@ -331,7 +329,7 @@ o uso adequado das ferramentas de modelagem e análise disponíveis no sistema R
 ## Fontes de Variação
 
 Esta seção estabelece o referencial para inferência em pesquisas amostrais que
-será usado no restante deste texto. [@cassel] sugerem que um referencial para
+será usado no restante deste texto. @cassel sugerem que um referencial para
 inferência poderia considerar três fontes de aleatoriedade (incerteza,
 variação), incluindo:
 
@@ -360,8 +358,8 @@ implicando que os valores observados de quaisquer variáveis de interesse serão
 considerados valores corretos ou verdadeiros. Admitiremos ainda que há *resposta
 completa*, implicando que os valores de quaisquer variáveis de interesse estão
 disponíveis para todos os elementos da amostra selecionada depois que a pesquisa
-foi realizada. Hipóteses semelhantes são adotadas, por exemplo, em [@binder83] e
-[@Mont87].
+foi realizada. Hipóteses semelhantes são adotadas, por exemplo, em @binder83 e
+@Mont87.
 
 Portanto, o referencial aqui adotado considera apenas duas fontes alternativas
 de variação: o *Modelo de Superpopulação* (1) e o *Plano Amostral* (3). Estas
@@ -451,10 +449,10 @@ P\left[ \left( \mathbf{Y}_U , \mathbf{X}_U \right) = \left( \mathbf{y}_U , \math
 \end{equation} ou seja, uma distribuição degenerada é especificada para
 $\left(\mathbf{Y}_U , \mathbf{X}_U \right)$.
 
-Este modelo foi considerado em [@cassel], que o chamaram de *abordagem de
+Este modelo foi considerado em @cassel, que o chamaram de *abordagem de
 população fixa*, e afirmaram ser esta a abordagem subjacente ao desenvolvimento
 da teoria da *Amostragem Probabilística* encontrada nos livros clássicos tais
-como [@cochran] e outros. Aqui esta abordagem é chamada de *abordagem baseada no
+como @cochran e outros. Aqui esta abordagem é chamada de *abordagem baseada no
 planejamento amostral* ou *abordagem de aleatorização*, pois neste caso a única
 fonte de variação (aleatoriedade) é proveniente do planejamento amostral. Em
 geral, a distribuição conjunta de $\left( \mathbf{Y}_U , \mathbf{X}_U \right)$
@@ -609,7 +607,7 @@ o Exemplo \@ref(exm:nonigno) adiante.
 
 A definição precisa de ignorabilidade e as condições sob as quais um plano
 amostral é *ignorável* para inferência são bastante discutidas na literatura -
-veja por exemplo [@Sugden84] ou os Capítulos 1 e 2 de [@CHSK2003]. Porém testar
+veja por exemplo @Sugden84 ou os Capítulos 1 e 2 de @CHSK2003. Porém testar
 a ignorabilidade do plano amostral é muitas vezes complicado. Em caso de
 dificuldade, o uso dos *pesos amostrais* tem papel fundamental, como se verá
 mais adiante.
@@ -648,11 +646,8 @@ com distribuição de probabilidades conjunta dada por:
 suppressMessages(library(kableExtra))
 
 l1=c('$x/y$','0','1', 'Total')
-
 l2=c('0','$\\eta_{00}$','$\\eta_{01}$','$\\eta_{0+}$')
-
 l3=c('1','$\\eta_{10}$','$\\eta_{11}$','$\\eta_{1+}$')
-
 l4=c('Total','$\\eta_{+0}$','$\\eta_{+1}$','1')
 
 tabela=as.data.frame(t(data.frame(l1,l2,l3,l4)))
@@ -660,7 +655,7 @@ tabela=as.data.frame(t(data.frame(l1,l2,l3,l4)))
 names(tabela) <-NULL
 
 knitr::kable(tabela,align= "cccc",format.args= list(big.mark = '.',dec=','),escape = F, booktabs=T,
-caption= "Distribuição de probabilidades conjunta na população $Pr( Y_i = y ; X_i = x )$", row.names=FALSE)%>% 
+caption= "$\\text{Distribuição de probabilidades conjunta na população }Pr( Y_i = y ; X_i = x )$", row.names=FALSE)%>% 
 kable_styling(full_width = F,latex_options = 'HOLD_position')%>%column_spec(column=1,width='2cm')%>%
 column_spec(column=2,width='2cm')%>%column_spec(column=3,width='2cm')%>%column_spec(column=4,width='2cm')
 ```
@@ -723,9 +718,7 @@ condicional de $Y$ dado $X$ *na população* é dada por:
 suppressMessages(library(kableExtra))
 
 l1=c('$x/y$','0','1', 'Total')
-
 l2=c('0','$\\eta_{00}/\\eta_{0+}$','$\\eta_{01}/\\eta_{0+}$','1')
-
 l3=c('1','$\\eta_{10}/\\eta_{1+}$','$\\eta_{11}/\\eta_{1+}$','1')
 
 tabela=as.data.frame(t(data.frame(l1,l2,l3)))
@@ -733,7 +726,7 @@ tabela=as.data.frame(t(data.frame(l1,l2,l3)))
 names(tabela) <-NULL
 
 knitr::kable(tabela,align= "cccc",format.args= list(big.mark = '.',dec=','),escape = F, booktabs=T,
-caption= "Distribuição de probabilidades condicional de $y$ dado $x$ na população - $Pr( Y_i = y | X_i = x )$", row.names=FALSE)%>% 
+caption= "$\\text{Distribuição de probabilidades condicional de }y\\text{ dado }x\\text{ na população - }Pr( Y_i = y | X_i = x )$", row.names=FALSE)%>% 
 kable_styling(full_width = F,latex_options = 'HOLD_position')%>%column_spec(column=1,width='2cm')%>%
 column_spec(column=2,width='2cm')%>%column_spec(column=3,width='2cm')%>%column_spec(column=4,width='2cm')
 ```
@@ -799,7 +792,7 @@ tabela=as.data.frame(t(data.frame(l1,l2,l3,l4)))
 names(tabela) <-NULL
 
 knitr::kable(tabela,align= "cccc",format.args= list(big.mark = '.',dec=','),escape = F, booktabs=T,
-caption= "Distribuição de probabilidades conjunta na população $f_U( x ; y )$", row.names=FALSE)%>% 
+caption= "$\\text{Distribuição de probabilidades conjunta na população }f_U( x ; y )$", row.names=FALSE)%>% 
 kable_styling(full_width = F,latex_options = 'HOLD_position')%>%column_spec(column=1,width='2cm')%>%
 column_spec(column=2,width='2cm')%>%column_spec(column=3,width='2cm')%>%column_spec(column=4,width='2cm')
 ```
@@ -812,9 +805,7 @@ segue-se que a distribuição condicional de $Y$ dado $X$ *na população* (e ta
 suppressMessages(library(kableExtra))
 
 l1=c('$x/y$','0','1', 'Total')
-
 l2=c('0', '0,875','0,125','1')
-
 l3=c('1','0,500','0,00','1')
 
 tabela=as.data.frame(t(data.frame(l1,l2,l3)))
@@ -822,7 +813,7 @@ tabela=as.data.frame(t(data.frame(l1,l2,l3)))
 names(tabela) <-NULL
 
 knitr::kable(tabela,align= "cccc",format.args= list(big.mark = '.',dec=','),escape = F, booktabs=T,
-caption= "Distribuição de probabilidades condicional de $Y$ dado $X$ na população - $f_U( y | x )$", row.names=FALSE)%>% 
+caption= "$\\text{Distribuição de probabilidades condicional de }Y\\text{ dado }X\\text{ na população - }f_U( y | x )$", row.names=FALSE)%>% 
 kable_styling(full_width = F,latex_options = 'HOLD_position')%>%column_spec(column=1,width='2cm')%>%
 column_spec(column=2,width='2cm')%>%column_spec(column=3,width='2cm')%>%column_spec(column=4,width='2cm')
 ```
@@ -834,7 +825,6 @@ e que a distribuição marginal de $Y$ *na população* e *na amostra* são dada
 suppressMessages(library(kableExtra))
 
 l1=c('$f_U(y)$','0,8000','0,2000')
-
 l2=c('$f_a(y)$','0,6875','0,3125')
 
 tabela=as.data.frame(t(data.frame(l1,l2)))
@@ -842,7 +832,7 @@ tabela=as.data.frame(t(data.frame(l1,l2)))
 names(tabela) <-NULL
 
 knitr::kable(tabela,align= "cccc",format.args= list(big.mark = '.',dec=','),escape = F, booktabs=T,
-caption= "Distribuição de probabilidades marginal de $Y$ na população - $f_U( y )$", row.names=FALSE)%>% 
+caption= "$\\text{Distribuição de probabilidades marginal de }Y\\text{ na população - }f_U( y )$", row.names=FALSE)%>% 
 kable_styling(full_width = F,latex_options = 'HOLD_position')%>%column_spec(column=1,width='2cm')%>%
 column_spec(column=2,width='2cm')%>%column_spec(column=3,width='2cm')
 ```
