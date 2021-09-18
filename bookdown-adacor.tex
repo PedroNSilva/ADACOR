@@ -1,0 +1,1331 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  12pt,
+  brazilian,
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Análise de Dados Amostrais},
+  pdfauthor={Djalma G. C. Pessoa, Pedro Luis do Nascimento Silva,; Antonio José Ribeiro Dias, Zélia Magalhães Bianchini e Sonia Albieri},
+  pdflang={pt-BR},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[left=1.5cm,right=1cm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\ifxetex
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[variant=brazilian]{portuguese}
+\else
+  \usepackage[main=brazilian]{babel}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\fi
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\title{Análise de Dados Amostrais}
+\author{Djalma G. C. Pessoa, Pedro Luis do Nascimento Silva, \and Antonio José Ribeiro Dias, Zélia Magalhães Bianchini e Sonia Albieri}
+\date{17 de setembro de 2021, 20:10:45}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{lemma}{Lema}[chapter]
+\newtheorem{corollary}{Corolário}[chapter]
+\newtheorem{proposition}{Proposição}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definição}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Exemplo}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Observação }
+\newtheorem*{solution}{Solution}
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{bem-vindo}{%
+\chapter*{Bem-vindo}\label{bem-vindo}}
+\addcontentsline{toc}{chapter}{Bem-vindo}
+
+Uma preocupação básica de toda instituição produtora de informações estatísticas é com a utilização `'correta'' de seus dados. Isso pode ser intrepretado de várias formas, algumas delas com reflexos até na confiança do público e na
+própria sobrevivência do órgão. Do nosso ponto de vista, enfatizamos um aspecto
+técnico particular, mas nem por isso menos importante para os usuários dos dados.
+
+A revolução da informática com a resultante facilidade de acesso ao computador, criou condições extremamente favoráveis à utilização de dados estatísticos, produzidos por órgãos como o IBGE. Algumas vezes esses dados são utilizados para fins puramente descritivos. Outras vezes, porém, sua utilização é feita para fins analíticos, envolvendo a construção de modelos, quando o objetivo é extrair conclusões aplicáveis também a populações distintas daquela da qual se extraiu a amostra. Neste caso, é comum empregar, sem grandes preocupações, pacotes
+computacionais padrões disponíveis para a seleção e ajuste de modelos. É neste ponto que entra a nossa preocupação com o uso adequado dos dados produzidos pelo IBGE.
+
+O que torna tais dados especiais para quem pretende usá-los para fins
+analíticos? Esta é a questão básica que será amplamente discutida ao longo deste texto. A mensagem principal que pretendemos transmitir é que certos cuidados precisam ser tomados para utilização correta dos dados de pesquisas amostrais como as que o IBGE realiza.
+
+O que torna especiais dados como os produzidos pelo IBGE é que estes são obtidos através de pesquisas amostrais complexas de populações finitas que envolvem: \textbf{probabilidades distintas de seleção, estratificação e conglomeração das unidades, ajustes para compensar não-resposta e outros ajustes}. Os sistemas
+tradicionais de análise ignoram estes aspectos, podendo produzir estimativas incorretas tanto dos parâmetros como para as variâncias destas estimativas. Quando utilizamos a amostra para estudos analíticos, as opções disponíveis nos pacotes estatísticos usuais para levar em conta os pesos distintos das observações são apropriadas somente para observações independentes e identicamente distribuídas (IID). Além disso, a variabilidade dos pesos produz
+impactos tanto na estimação pontual quanto na estimação das variâncias dessas estimativas, que sofre ainda influência da estratificação e conglomeração.
+
+O objetivo deste livro é analisar o impacto das simplificações feitas ao utilizar procedimentos e pacotes usuais de análise de dados, e apresentar os ajustes necessários desses procedimentos de modo a incorporar na análise, de forma apropriada, os aspectos aqui ressaltados. Para isto serão apresentados exemplos de análises de dados obtidos em pesquisas amostrais complexas, usando pacotes clássicos e também pacotes estatísticos especializados. A comparação
+dos resultados das análises feitas das duas formas permitirá avaliar o impacto de ignorar o plano amostral na análise dos dados resultantes de pesquisas amostrais complexas.
+
+\hypertarget{agradecimentos}{%
+\section*{Agradecimentos}\label{agradecimentos}}
+\addcontentsline{toc}{section}{Agradecimentos}
+
+A elaboração de um texto como esse não se faz sem a colaboração de muitas pessoas. Em primeiro lugar, agradecemos à Comissão Organizadora do SINAPE por ter propiciado a oportunidade ao selecionar nossa proposta de minicurso. Agradecemos também ao IBGE por ter proporcionado as condições e os meios usados para a produção da monografia, bem como o acesso aos dados detalhados e identificados que utilizamos em vários exemplos.
+
+No plano pessoal, agradecemos a Zélia Bianchini pela revisão do manuscrito e sugestões que o aprimoraram. Agradecemos a Marcos Paulo de Freitas e Renata Duarte pela ajuda com a computação de vários exemplos. Agradecemos a Waldecir Bianchini, Luiz Pessoa e Marinho Persiano pela colaboração na utilização do processador de textos. Aos demais colegas do Departamento de Metodologia do IBGE, agradecemos o companheirismo e solidariedade nesses meses de trabalho na preparação do manuscrito.
+
+Finalmente, agradecemos a nossas famílias pela aceitação resignada de nossas ausências e pelo incentivo à conclusão da empreitada.
+
+\hypertarget{introduc}{%
+\chapter{Introdução}\label{introduc}}
+
+\hypertarget{motivauxe7uxe3o}{%
+\section{Motivação}\label{motivauxe7uxe3o}}
+
+Este livro trata de questões e ideias de grande importância para os analistas de dados obtidos através de pesquisas amostrais, tais como as conduzidas por agências produtoras de informações estatísticas oficiais ou públicas. Tais dados são comumente utilizados em análises descritivas envolvendo a obtenção de estimativas para totais, médias, proporções e razões. Nessas análises, em geral, são devidamente incorporados os pesos distintos das observações e a estrutura do plano amostral empregado para obter os dados considerados.
+
+Nas últimas décadas tornou-se muito mais frequente um outro tipo de uso de dados de pesquisas amostrais. Tal uso, denominado secundário e/ou analítico, envolve a construção e ajuste de modelos, geralmente feito por analistas que trabalham fora das agências produtoras dos dados. Neste caso, o foco da análise busca estabelecer a natureza de relações ou associações entre variáveis ou testar hipóteses. Para tais fins, a estatística clássica conta com um vasto arsenal de ferramentas de análise, já incorporadas aos principais sistemas estatísticos disponíveis (tais como MINITAB, R, SAS, SPSS, etc).
+
+Muitas ferramentas de análise convencionais disponíveis nesses sistemas estatísticos geralmente partem de hipóteses básicas sobre as amostras disponíveis que só são válidas quando os dados foram obtidos através de Amostras Aleatórias Simples Com Reposição - AASC. Por exemplo, a hipótese de observações Independentes e Identicamente Distribuídas - IID corresponde justamente ao caso de observações selecionadas por AASC de uma população especificada. Tais hipóteses são geralmente inadequadas para modelar observações provenientes
+pesquisas amostrais de populações finitas, pois desconsideram os seguintes aspectos relevantes dos planos amostrais usualmente empregados nessas pesquisas:
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi})}
+\item
+  probabilidades desiguais de seleção das unidades;
+\item
+  conglomeração das unidades;
+\item
+  estratificação;
+\item
+  calibração ou imputação para não resposta e outros ajustes.
+\end{enumerate}
+
+Em amostragem de populações finitas, a abordagem probabilística emprega pesos para as observações amostrais que dependem das probabilidades de seleção das unidades, que podem ser desiguais. Em consequência, as estimativas pontuais de parâmetros descritivos da população ou mesmo de parâmetros de modelos são influenciadas por pesos distintos das observações.
+
+Além disso, as estimativas de variância (ou da precisão dos estimadores) são influenciadas pela conglomeração, estratificação e pesos ou, no caso de não resposta, também por eventual imputação de dados faltantes ou reponderação das observações disponíveis para compensar a não resposta. Ao ignorar estes aspectos, as ferramentas convencionais dos sistemas estatísticos tradicionais de análise podem produzir estimativas incorretas das variâncias das estimativas pontuais.
+
+O Exemplo \ref{exm:ticdom01} considera o uso de dados de uma pesquisa amostral real, realizada pelo Núcleo de Informação e Coordenação do Ponto BR - NIC.br, para ilustrar como os pontos i) a iv) acima mencionados afetam a inferência sobre quantidades descritivas populacionais tais como
+totais, médias, proporções e razões.
+
+\textbf{\label{exm:ticdom01}} Pesquisa TIC Domicílios 2019 do NIC.br
+
+Os dados deste exemplo são relativos à distribuição dos pesos de domicílios na amostra da Pesquisa TIC Domicílios 2019 do NIC.br - TICDOM 2019. \protect\hyperlink{ref-NICbr2020a}{NIC.br} (\protect\hyperlink{ref-NICbr2020a}{2020}) apresenta os resultados da pesquisa e seu capítulo intitulado `Relatório Metodológico' descreve os métodos e o plano amostral empregado na pesquisa, que foi estratificado e conglomerado em múltiplos estágios, com alocação desproporcional da amostra nos estratos.
+
+As Unidades Primárias de Amostragem - UPAs foram municípios ou setores censitários da Base Operacional Geográfica do IBGE conforme usada para o Censo Demográfico de 2010. A seleção de municípios quando estes eram UPAs foi feita usando Amostragem Sistemática com Probabilidades Proporcionais ao Tamanho - AS-PPT - ver a Seção 10.6 de \protect\hyperlink{ref-Silva2020}{Silva et al.} (\protect\hyperlink{ref-Silva2020}{2020}). A seleção dos setores dentro de cada município também foi feita com AS-PPT. Dentro de cada setor censitário selecionado, quinze domicílios foram selecionados por amostragem aleatória simples sem reposição, após a atualização do cadastro de domicílios do setor.
+
+A amostra da pesquisa foi planejada e dimensionada visando ao fornecimento de estimativas com precisão adequada para as cinco macrorregiões do Brasil. Os tamanhos da amostra planejada de setores e domicílios para as macrorregiões são apresentados na Tabela \ref{tab:numset}.
+
+\begin{table}[H]
+
+\caption{\label{tab:numset}$\text{Tamanhos da amostra de setores e domicílios por macrorregião}$}
+\centering
+\begin{tabular}[t]{lrr}
+\toprule
+Macrorregião & Setores & Domicílios\\
+\midrule
+Norte & 201 & 3.015\\
+Nordeste & 617 & 9.255\\
+Sudeste & 863 & 12.945\\
+Sul & 337 & 5.055\\
+Centro-Oeste & 196 & 2.940\\
+\addlinespace
+Total & 2.214 & 33.210\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A Tabela \ref{tab:tab01b} apresenta um resumo das distribuições dos pesos amostrais dos domicílios pesquisados na TICDOM 2019 para as macrorregiões separadamente e, também, para o conjunto da amostra da pesquisa.
+
+\begin{table}[H]
+
+\caption{\label{tab:tab01b}$\text{Resumos da distribuição dos pesos de domicílios por macrorregião}$}
+\centering
+\begin{tabular}[t]{lrrrrr}
+\toprule
+Macrorregião & Mínimo & Quartil1 & Mediana & Quartil3 & Máximo\\
+\midrule
+Norte & 1,8 & 1.957 & 2.898 & 4.359 & 82.627\\
+Nordeste & 103,8 & 1.283 & 2.057 & 3.314 & 40.118\\
+Sudeste & 36,0 & 1.814 & 2.583 & 3.583 & 27.993\\
+Sul & 20,0 & 1.028 & 1.756 & 2.706 & 118.715\\
+Centro-Oeste & 140,8 & 1.153 & 2.401 & 3.640 & 29.029\\
+\addlinespace
+Total & 1,8 & 1.546 & 2.470 & 3.636 & 118.715\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+No cálculo dos pesos amostrais foram consideradas as probabilidades de inclusão dos domicílios na amostra, bem como as correções de calibração para compensar a
+não resposta. Contudo, a grande variabilidade dos pesos amostrais da TICDOM 2019
+é devida, principalmente, à variabilidade das probabilidades de inclusão na
+amostra, ilustrando desta forma o ponto i) citado anteriormente nesta seção.
+Tal variabilidade é devida à alocação desproporcional da amostra entre os estratos geográficos e ao emprego de contagens defasadas de domicílios nos setores para definir probabilidades de seleção dos mesmos.
+
+Nas análises de dados desta pesquisa, deve-se considerar que há domicílios com pesos muito diferentes. Por exemplo, dividindo-se o maior peso pelo menor encontra-se uma razão da ordem de 66 mil. Os pesos também variam bastante entre as regiões, sendo a razão entre as medianas dos pesos das regiões Norte e Sul igual a 1,65 em função da alocação desproporcional da amostra nas regiões. Os maiores pesos são também muito maiores que os pesos medianos, com essa razão sendo 48 para o conjunto da amostra.
+
+Tais pesos são utilizados para \emph{expandir} os dados, multiplicando-se cada observação pelo seu respectivo peso. Assim, por exemplo, para \emph{estimar}
+quantos domicílios \emph{da população} pertencem a determinado conjunto (\emph{domínio}), basta somar os pesos dos domicílios da amostra que pertencem a este conjunto. É possível ainda incorporar os pesos, de maneira simples e natural, quando se quer estimar medidas descritivas simples da população, tais como totais, médias, proporções, razões, etc. Os métodos para estimação de parâmetros descritivos da população como os aqui citados são cobertos com maior detalhe em \protect\hyperlink{ref-Silva2020}{Silva et al.} (\protect\hyperlink{ref-Silva2020}{2020}).
+
+Por outro lado, quando se quer utilizar a amostra para estudos analíticos, as
+opções padrão disponíveis nos sistemas estatísticos usuais para levar em conta os pesos distintos das observações são apropriadas somente para observações IID. Por exemplo, os procedimentos padrão disponíveis para estimar a média populacional permitem utilizar pesos distintos das observações amostrais, mas tratariam tais pesos como se fossem frequências de observações repetidas na amostra e, portanto, interpretariam a soma dos pesos como tamanho amostral, situação que, na maioria das vezes, geraria inferências incorretas sobre a precisão das estimativas resultantes. Isto ocorre porque o tamanho da amostra é muito menor que a soma dos pesos amostrais usualmente encontrados nos arquivos de microdados de pesquisas disseminados por agências de estatísticas oficiais ou públicas, como é o caso da pesquisa TICDOM 2019 aqui considerada. Em tais pesquisas, a opção mais frequente é disseminar pesos que, quando somados, estimam o total de unidades \emph{da população}.
+
+Além disso, a variabilidade dos pesos para distintas observações amostrais
+produz impactos tanto na estimação pontual quanto na estimação das variâncias dessas estimativas, que sofre ainda influência da conglomeração e da estratificação - pontos ii) e iii) mencionados anteriormente.
+
+Para exemplificar o impacto de ignorar os pesos e o plano amostral ao estimar quantidades descritivas populacionais, tais como totais e proporções, calculamos estimativas de quantidades desses diferentes tipos usando a amostra da TICDOM 2019 juntamente com estimativas das respectivas variâncias. Tais estimativas de variância foram calculadas sob duas estratégias:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  \textbf{considerando Amostragem Aleatória Simples - AAS} e, portanto, ignorando o plano amostral efetivamente adotado na pesquisa; e
+\item
+  \textbf{considerando o plano amostral da pesquisa e os pesos diferentes das unidades.}
+\end{enumerate}
+
+Na Tabela \ref{tab:tab01c} apresentamos as estimativas dos seguintes parâmetros populacionais: porcentagem de domicílios com computador de mesa; porcentagem de domicílios com notebook; porcentagem de domicílios com tablete; porcentagem de domicílios com algum computador (de mesa, notebook ou tablete); total de domicílios com algum computador (de mesa, notebook ou tablete); número médio de computadores por domicílio que tem computador.
+
+A razão entre as estimativas de variância obtidas sob o plano amostral verdadeiro (de fato usado na pesquisa) e sob AAS foi estimada para cada uma das estimativas consideradas usando o pacote \emph{survey} do R, \protect\hyperlink{ref-R-survey}{Lumley} (\protect\hyperlink{ref-R-survey}{2017}). Essa razão fornece uma medida do efeito de ignorar o plano amostral. Os resultados das estimativas pontuais (Est\_por\_AAS e Est\_Verd para as estimativas considerando AAS e o plano amostral verdadeiro, respectivamente), do desvio padrão da estimativa considerando o plano amostral verdadeido (DP\_Est\_Verd) e do Efeito do Plano Amostral - EPA são apresentados na Tabela \ref{tab:tab01c}.
+
+\begin{table}[H]
+
+\caption{\label{tab:tab01c}$\text{Estimativas de parâmetros populacionais e EPAs}$}
+\centering
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{7cm}rrrr}
+\toprule
+Parâmetro & Est\_por\_AAS & Est\_Verd & DP\_Est\_Verd & EPA\\
+\midrule
+Porcentagem de domicílios com computador de mesa & 14,21 & 16,17 & 0,46 & 3,64\\
+Porcentagem de domicílios com notebook & 22,84 & 26,05 & 0,66 & 5,30\\
+Porcentagem de domicílios com tablete & 11,24 & 12,95 & 0,36 & 2,64\\
+Porcentagem de domicílios com computador & 35,34 & 39,36 & 0,67 & 4,38\\
+Total de domicílios com computador (milhões) & 25,10 & 27,95 & 1,37 & 36,90\\
+\addlinespace
+Número médio de computadores por domicílio que tem computador & 1,55 & 1,63 & 0,02 & 3,73\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Os resultados mostram que há diferenças entre as estimativas pontuais dos parâmetros considerados, com uma tendência de subestimar quando se ignoram os pesos e o plano amostral efetivamente usado na pesquisa. As estimativas dos EPAs variam entre 2,64 e 5,30, se deixarmos de fora o EPA maior que 30 observado para a estimativa da contagem de domicílios com computador. Estes valores indicam que ignorar o plano amostral na estimação da precisão levaria também à subestimação dos erros padrão.
+
+Note que as variáveis e parâmetros cujas estimativas foram apresentadas na Tabela \ref{tab:tab01c} não foram escolhidas de forma a acentuar os efeitos ilustrados, mas tão somente para representar distintos parâmetros (totais, médias, proporções) e variáveis de interesse. Os resultados apresentados para as estimativas de EPA ilustram bem o cenário típico em pesquisas amostrais complexas: o impacto do plano amostral sobre a inferência varia conforme
+a variável e o tipo de parâmetro de interesse. Note ainda que todas as estimativas de EPA apresentaram valores superiores a 2.
+
+\hypertarget{objetivos-do-livro}{%
+\section{Objetivos do livro}\label{objetivos-do-livro}}
+
+Este livro tem três objetivos principais:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  Apresentar uma coleção de métodos e recursos computacionais disponíveis no R para análise de dados de pesquisas amostrais, equipando o analista para trabalhar com tais dados, reduzindo assim o risco de inferências incorretas.
+\item
+  Ilustrar e analisar o impacto das simplificações feitas ao utilizar pacotes usuais de análise de dados quando estes são provenientes de pesquisas amostrais complexas.
+\item
+  Ilustrar o potencial analítico de muitas das pesquisas produzidas por agências de estatísticas públicas para responder questões de interesse, mediante uso de ferramentas de análise estatística agora já bastante difundidas, aumentando assim o valor adicionado destas pesquisas.
+\end{enumerate}
+
+Para alcançar tais objetivos, adotamos uma abordagem fortemente ancorada na
+apresentação de exemplos de análises de dados obtidos em pesquisas amostrais, usando os recursos do sistema estatístico R, \url{http://www.r-project.org/}.
+
+A comparação dos resultados de análises feitas das duas formas (considerando ou
+ignorando o plano amostral) permite avaliar o impacto de não se considerar os pontos i) a iv) anteriormente citados. O ponto iv) não é tratado de forma completa neste texto. O leitor interessado na análise de dados sujeitos a não resposta pode consultar \protect\hyperlink{ref-kalton83a}{Kalton} (\protect\hyperlink{ref-kalton83a}{1983}), \protect\hyperlink{ref-LR2002}{Little e Rubin} (\protect\hyperlink{ref-LR2002}{2002}), \protect\hyperlink{ref-Rubin87}{Rubin} (\protect\hyperlink{ref-Rubin87}{1987}), \protect\hyperlink{ref-SSW92}{Särndal et al.} (\protect\hyperlink{ref-SSW92}{1992}), ou \protect\hyperlink{ref-Schafer1997}{Schafer} (\protect\hyperlink{ref-Schafer1997}{1997}), por exemplo.
+
+\hypertarget{estrutura-do-livro}{%
+\section{Estrutura do livro}\label{estrutura-do-livro}}
+
+O livro está organizado em duas partes. A primeira parte representa uma segunda edição atualizada e revisada do conteúdo do livro publicado em 1998 \protect\hyperlink{ref-Pessoa1998}{Pessoa e Silva} (\protect\hyperlink{ref-Pessoa1998}{1998}). A segunda parte é uma coletânea de textos reunidos para cobrir temas não tratados no livro anterior, que foram produzidos por autores convidados, como forma de prestar homenagem ao Prof.~Djalma Pessoa.
+
+A parte 1 é composta por nove capítulos. Este primeiro capítulo discute a motivação para estudar o assunto e apresenta uma ideia geral dos objetivos e da estrutura do livro.
+
+No Capítulo \ref{refinf}, procuramos dar uma visão das diferentes abordagens utilizadas na análise estatística de dados de pesquisas amostrais. Apresentamos um referencial para inferência com ênfase no \emph{Modelo de Superpopulação} que incorpora, de forma natural, tanto uma estrutura estocástica para descrever a geração dos dados populacionais (modelo) como o plano amostral efetivamente utilizado para obter os dados amostrais (plano amostral). As referências básicas para seguir este capítulo são o Capítulo 2 em \protect\hyperlink{ref-Silva}{Silva} (\protect\hyperlink{ref-Silva}{1996}), o Capítulo 1 em \protect\hyperlink{ref-SHS89}{Skinner et al.} (\protect\hyperlink{ref-SHS89}{1989}) e os Capítulos 1 e 2 em \protect\hyperlink{ref-CHSK2003}{Chambers e Skinner} (\protect\hyperlink{ref-CHSK2003}{2003}).
+
+Esse referencial tem evoluído ao longo dos anos como uma forma de permitir a incorporação de ideias e procedimentos de análise e inferência usualmente associados à Estatística Clássica à prática da análise e interpretação de dados provenientes de pesquisas amostrais. Apesar dessa evolução, sua adoção não é livre de controvérsia e uma breve revisão dessa discussão é apresentada no Capítulo \ref{refinf}.
+
+No Capítulo \ref{capplanamo} apresentamos uma revisão sucinta, para recordação, de alguns resultados básicos da Teoria de Amostragem, requeridos nas partes subsequentes do livro. São discutidos os procedimentos básicos para estimação de totais considerando o plano amostral e, em seguida, revistas algumas técnicas para estimação de variâncias que são necessárias e úteis para o caso de estatísticas complexas, tais como razões e outras estatísticas requeridas na inferência analítica com dados amostrais. As referências centrais para este capítulo são os Capítulos 2 e 3 em \protect\hyperlink{ref-SSW92}{Särndal et al.} (\protect\hyperlink{ref-SSW92}{1992}), \protect\hyperlink{ref-Silva2020}{Silva et al.} (\protect\hyperlink{ref-Silva2020}{2020}), \protect\hyperlink{ref-W85}{Wolter} (\protect\hyperlink{ref-W85}{1985}) e \protect\hyperlink{ref-cochran}{Cochran} (\protect\hyperlink{ref-cochran}{1977}).
+
+No Capítulo \ref{epa} introduzimos o conceito de \emph{Efeito do Plano Amostral - EPA}, que permite avaliar o impacto de ignorar a estrutura dos dados populacionais ou do plano amostral sobre a estimativa da variância de um estimador. Para isso, comparamos o estimador da variância apropriado para dados obtidos por Amostragem Aleatória Simples (hipótese de AAS) com o valor esperado deste mesmo estimador sob a distribuição de aleatorização induzida pelo plano amostral efetivamente utilizado (plano amostral verdadeiro). Aqui a referência principal foi o livro \protect\hyperlink{ref-SHS89}{Skinner et al.} (\protect\hyperlink{ref-SHS89}{1989}), complementado com o texto de \protect\hyperlink{ref-lethonen}{Lehtonen e Pahkinen} (\protect\hyperlink{ref-lethonen}{1995}).
+
+No Capítulo \ref{ajmodpar} estudamos a questão do uso de pesos ao analisar dados provenientes de pesquisas amostrais complexas e introduzimos um método geral, denominado \emph{Método de Máxima Pseudo Verossimilhança - MPV}, para incorporar os pesos e o plano amostral na obtenção não só de estimativas de parâmetros dos modelos de interesse mais comuns, como também das variâncias dessas estimativas. As referências básicas utilizadas nesse capítulo foram \protect\hyperlink{ref-SHS89}{Skinner et al.} (\protect\hyperlink{ref-SHS89}{1989}), \protect\hyperlink{ref-Pfeff}{Pfeffermann} (\protect\hyperlink{ref-Pfeff}{1993}), \protect\hyperlink{ref-binder83}{Binder} (\protect\hyperlink{ref-binder83}{1983}) e o Capítulo 6 em \protect\hyperlink{ref-Silva}{Silva} (\protect\hyperlink{ref-Silva}{1996}).
+
+O Capítulo \ref{modreg} trata da obtenção de \emph{Estimadores de Máxima Pseudo Verossimilhança - EMPV} e da respectiva matriz de covariância para os parâmetros em modelos de regressão linear quando os dados vêm de pesquisas amostrais complexas. Apresentamos alguns exemplos de aplicação desse método ilustrando o uso do pacote \emph{survey}, \protect\hyperlink{ref-R-survey}{Lumley} (\protect\hyperlink{ref-R-survey}{2017}), para ajustar modelos de regressão linear. As referências centrais são o Capítulo 6 em \protect\hyperlink{ref-Silva}{Silva} (\protect\hyperlink{ref-Silva}{1996}) e \protect\hyperlink{ref-binder83}{Binder} (\protect\hyperlink{ref-binder83}{1983}).
+
+O Capítulo \ref{modlog} trata da obtenção de \emph{Estimadores de Máxima Pseudo Verossimilhança - EMPV} e da respectiva matriz de covariância para os parâmetros em modelos de regressão logística quando os dados vêm de pesquisas amostrais complexas. Apresentamos alguns exemplos de aplicação desse método ilustrando o uso do pacote \emph{survey}, \protect\hyperlink{ref-R-survey}{Lumley} (\protect\hyperlink{ref-R-survey}{2017}), para ajustar modelos de regressão logística. As referências centrais são o Capítulo 6 em \protect\hyperlink{ref-Silva}{Silva} (\protect\hyperlink{ref-Silva}{1996}) e \protect\hyperlink{ref-binder83}{Binder} (\protect\hyperlink{ref-binder83}{1983}).
+
+Os Capítulos \ref{testqualajust} e \ref{testetab2} tratam da análise de dados
+categóricos, dando ênfase à adaptação dos testes clássicos para proporções, de independência e de homogeneidade em tabelas de contingência, para lidar com dados provenientes de pesquisas amostrais complexas. Apresentamos correções das estatísticas clássicas e também a estatística de Wald baseada no plano amostral. As referências básicas usadas nesses capítulos foram o Capítulo 4 em \protect\hyperlink{ref-SHS89}{Skinner et al.} (\protect\hyperlink{ref-SHS89}{1989}) e o Capítulo 7 em \protect\hyperlink{ref-lethonen}{Lehtonen e Pahkinen} (\protect\hyperlink{ref-lethonen}{1995}). Também são apresentadas as ideias básicas de como efetuar ajuste de modelos log-lineares a dados de frequências em tabelas de múltiplas entradas.
+
+A parte 2 é composta por mais dez capítulos, todos escritos por autores convidados. Todos estes temas foram objeto de avanços importantes tanto no desenvolvimento de métodos como no de ferramentas computacionais para sua implementação no ambiente do sistema R, desde que foi publicado o livro inicial. A seguir, a lista dos dez capítulos da parte 2.
+
+Capítulo 10 - Gráficos
+
+Capítulo 11 - Estimação de funções de densidade
+
+Capítulo 12 - Estimação de funções de distribuição e quantis
+
+Capítulo 13 - Estimação de medidas de desigualdade e pobreza
+
+Capítulo 14 - Modelos multiníveis
+
+Capítulo 15 - Modelos de teoria da resposta ao item
+
+Capítulo 16 - Estimação de fluxos
+
+Capítulo 17 - Modelos de séries temporais
+
+Capítulo 18 - Modelos de redes neurais
+
+Capítulo 19 - Modelos log-lineares para tabelas
+
+O Capítulo \ref{graficos} aborda a elaboração de alguns tipos de gráficos de uso frequente quando os dados elementares provêm de pesquisas amostrais. Entre os gráficos cobertos estão histogramas, boxplots, diagramas de dispersão e gráficos tipo quantil-quantil (qq-plots).
+
+O Capítulo \ref{estimacao-de-densidades} trata da estimação de densidades, ferramenta que tem assumido importância cada dia maior com a maior disponibilidade de microdados de pesquisas amostrais para analistas fora das agências produtoras. Também é apresentada ferramenta para elaboração de gráficos das densidades estimadas.
+
+O Capítulo \ref{cdf} trata da estimação de funções de distribuição empíricas e também de quantis. Também é apresentada ferramenta para elaboração de gráficos das funções de distribuição estimadas.
+
+O Capítulo \ref{cdf} trata da estimação de medidas de desigualdade e pobreza, enfatizando o uso destas em análises baseadas na renda de domicílios ou pessoas. Apresenta os recursos do pacote \texttt{convey} (inserir referência).
+
+O Capítulo \ref{modelos-hierarquicos} trata da estimação e ajuste de modelos hierárquicos ou multiníveis considerando o plano amostral. Modelos hierárquicos têm sido bastante utilizados para explorar situações em que as relações entre variáveis de interesse em uma certa população de unidades elementares (por exemplo, crianças em escolas, pacientes em hospitais, empregados em empresas, moradores em regiões, etc.) são afetadas por efeitos de grupos determinados ao nível de unidades conglomeradas (os grupos). Ajustar e interpretar tais modelos é tarefa mais difícil que o mero ajuste de modelos lineares, mesmo em casos onde os dados são obtidos de forma exaustiva ou por AAS, e ainda mais complicada quando se trata de dados obtidos através de pesquisas com planos amostrais complexos. Diferentes abordagens estão disponíveis para ajuste de modelos hierárquicos nesse caso, e este capítulo apresenta uma revisão de tais abordagens, ilustrando com aplicações a dados de pesquisas amostrais de escolares.
+
+Uma das características que procuramos dar ao livro foi o emprego de exemplos com dados reais, retirados principalmente da experiência do IBGE com pesquisas amostrais complexas. Sem prejuízo na concentração de exemplos que se utilizam de dados de pesquisas do IBGE, incluímos também exemplos que consideram aplicações a dados de pesquisas realizadas por outras instituições. Nas duas décadas desde a primeira edição deste livro foram muitas as iniciativas de realizar pesquisas por amostragem em várias áreas, tendo a educação e a saúde como as mais proeminentes.
+
+Para facilitar a localização e replicação dos exemplos pelos leitores, estes foram em sua maioria introduzidos em seções denominadas \emph{Laboratório} ao final de cada um dos capítulos. Os códigos em R dos exemplos são todos fornecidos, o que torna simples a replicação dos mesmos pelos leitores. Optamos pelo emprego do sistema R que, por ser de acesso livre e gratuito, favorece o amplo acesso aos interessados em replicar nossas análises e também em usar as ferramentas disponíveis para implementar suas próprias análises de interesse com outros conjuntos de dados.
+
+Embora a experiência de fazer inferência analítica com dados de pesquisas amostrais complexas já tenha alguma difusão no Brasil, acreditamos ser fundamental difundir ainda mais essas ideias para alimentar um processo de melhoria do aproveitamento dos dados das inúmeras pesquisas realizadas pelo IBGE e instituições congêneres, que permita ir além da tradicional estimação de totais, médias, proporções e razões. Esperamos com esse livro fazer uma contribuição a esse processo.
+
+Uma dificuldade em escrever um livro como este vem do fato de que não é possível começar do zero: é preciso assumir algum conhecimento prévio de ideias e conceitos necessários à compreensão do material tratado. Procuramos tornar o livro acessível para um estudante de fim de curso de graduação em Estatística. Por essa razão, optamos por não apresentar provas de resultados e, sempre que possível, apresentar os conceitos e ideias de maneira intuitiva, juntamente com uma discussão mais formal para dar solidez aos resultados apresentados.
+
+As provas de vários dos resultados aqui discutidos se restringem a material disponível apenas em artigos em periódicos especializados estrangeiros e, portanto, são de acesso mais difícil. Ao leitor em busca de maior detalhamento e rigor, sugerimos consultar diretamente as inúmeras referências incluídas ao longo do texto. Para um tratamento mais profundo do assunto, os livros de \protect\hyperlink{ref-SHS89}{Skinner et al.} (\protect\hyperlink{ref-SHS89}{1989}) e \protect\hyperlink{ref-CHSK2003}{Chambers e Skinner} (\protect\hyperlink{ref-CHSK2003}{2003}) são as referências centrais a consultar. Para aqueles querendo um tratamento ainda mais prático que o nosso, os livros de \protect\hyperlink{ref-lethonen}{Lehtonen e Pahkinen} (\protect\hyperlink{ref-lethonen}{1995}) e \protect\hyperlink{ref-heeringa}{Heeringa et al.} (\protect\hyperlink{ref-heeringa}{2010}) podem ser opções interessantes, sendo que este último apresenta os recursos do sistema STATA para análise de dados amostrais.
+
+\hypertarget{refinf}{%
+\chapter{Referencial para Inferência}\label{refinf}}
+
+\hypertarget{classic}{%
+\section{Modelagem - Primeiras Ideias}\label{classic}}
+
+Com o objetivo de dar uma primeira ideia sobre o assunto a ser tratado neste
+livro vamos considerar, numa situação simples, algumas abordagens alternativas
+para modelagem e análise estatística.
+
+\hypertarget{abordagem-1---modelagem-cluxe1ssica}{%
+\subsection{Abordagem 1 - Modelagem Clássica}\label{abordagem-1---modelagem-cluxe1ssica}}
+
+Seja \(Y\) um vetor \(P \times 1\) de variáveis de pesquisa (ou de interesse), e
+sejam \(n\) vetores de observações destas variáveis para uma amostra de unidades
+de interesse denotados por \(y_1, \ldots ,y_n\). Em Inferência Estatística, a
+abordagem que aqui chamamos de \emph{Modelagem clássica} considera \(y_1, \ldots ,y_n\)
+como valores (realizações) de vetores de variáveis aleatórias
+\(Y_1, \ldots ,Y_n\).
+
+Podemos formular modelos bastante sofisticados para a distribuição conjunta
+destes vetores aleatórios, mas para simplificar a discussão, vamos inicialmente
+supor que \(Y_1, \ldots ,Y_n\) são vetores aleatórios independentes e
+identicamente distribuídos (IID), com a mesma distribuição de \(Y\), caracterizada
+pela função de densidade ou de frequência \(f(y;\theta)\), onde
+\(\theta \in \Theta\) é o parâmetro (um vetor de dimensão \(K \times 1\)) indexador
+da distribuição \(f\), e \(\Theta\) é o espaço paramétrico. A partir das observações
+\(y_1, \ldots ,y_n\), são feitas inferências a respeito do parâmetro \(\theta\).
+
+Uma representação gráfica esquemática dessa abordagem é apresentada na Figura
+\ref{fig:modclas}, e uma descrição esquemática resumida é apresentada na Tabela
+\ref{tab:modelclass}.
+
+\begin{figure}
+\includegraphics[width=10,6in]{Figuras/Figura2.1} \caption{Representação esquemática da Modelagem Clássica}\label{fig:modclas}
+\end{figure}
+
+\begin{table}[H]
+
+\caption{\label{tab:modelclass}$\text{Representação esquemática da abordagem }\textit{Modelagem Clássica}$}
+\centering
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{4.5cm}l}
+\toprule
+Dados Amostrais & $Y_1=y_1,\ldots, Y_n=y_n$\\
+Modelo Paramétrico/ Hipóteses & $Y_1, \ldots ,Y_n \text{ variáveis aleatórias IID com distribuição }f(y,\theta),\text{ onde }\theta \in \Theta$\\
+Objetivo & $\text{Inferir sobre }\theta\text{ usando as observações } y_1, \ldots ,y_n$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Do ponto de vista matemático, o parâmetro \(\theta\) serve para indexar os
+elementos da família de distribuições
+\(\left\{f\left( y;\theta \right);\theta \in \Theta \right\}\). Na prática, as
+questões relevantes da pesquisa são traduzidas em termos de perguntas sobre o
+valor ou região a que pertence o parâmetro \(\theta\), e a inferência sobre
+\(\theta\) a partir dos dados ajuda a responder tais questões.
+
+Esta abordagem é útil em estudos analíticos tais como, por exemplo, na
+investigação da natureza da associação entre variáveis (modelos de regressão
+linear ou logística, modelos log-lineares, etc.). Vários exemplos discutidos ao
+longo dos Capítulos \ref{modreg}, \ref{testqualajust} e \ref{testetab2}
+ilustram situações deste tipo. No Capítulo \ref{estimacao-de-densidades} o foco
+vai ser a estimação não paramétrica da forma da função \(f(y;\theta)\).
+
+Inferência sob modelos do tipo descrito nesta seção forma o conteúdo de um curso
+introdutório de inferência estatística. Mais detalhes podem ser consultados, por
+exemplo, em \protect\hyperlink{ref-Casella}{Casella e Berger} (\protect\hyperlink{ref-Casella}{2010}) e \protect\hyperlink{ref-Marcos}{Magalhães e Lima} (\protect\hyperlink{ref-Marcos}{2015}).
+
+\hypertarget{abordagem-2---amostragem-probabiluxedstica}{%
+\subsection{Abordagem 2 - Amostragem Probabilística}\label{abordagem-2---amostragem-probabiluxedstica}}
+
+A abordagem adotada pelos praticantes de \emph{Amostragem Probabilística}
+(amostristas) considera uma população finita \(U=\{1, \ldots ,N\}\), da qual é
+selecionada uma amostra \(a=\left\{ i_{1}, \ldots ,i_{n}\right\}\), segundo um
+plano amostral caracterizado por \(p\left( a\right)\), probabilidade de ser
+selecionada a amostra \(a\), suposta calculável para todas as possíveis amostras.
+Os valores \(y_{1}, \ldots ,y_{N}\) das variáveis de interesse \(Y\) na \emph{população
+finita} são considerados fixos, porém desconhecidos.
+
+A partir dos valores observados na amostra \(a\), denotados por
+\(y_{i_1}, \ldots, y_{i_n}\), são feitas inferências a respeito de funções dos
+valores populacionais, digamos \(g\left( y_{1}, \ldots , y_{N}\right)\). Os
+valores de tais funções são quantidades descritivas populacionais (QDPs), também
+denominadas \emph{parâmetros da população finita} pelos amostristas. Em geral, o
+objetivo desta abordagem é fazer estudos descritivos utilizando funções \(g\)
+particulares, tais como totais
+\(g\left( y_{1}, \ldots , y_{N}\right) = \sum_{i=1}^{N} y_{i}\) , médias
+\(g\left( y_{1}, \ldots , y_{N}\right) = N^{-1}\sum_{i=1}^{N} y_{i}\), proporções,
+razões, etc. Uma descrição esquemática resumida dessa abordagem é apresentada na
+Tabela \ref{tab:modelamo}, e uma representação gráfica resumida na Figura
+\ref{fig:modamo}.
+
+\begin{table}[H]
+
+\caption{\label{tab:modelamo}$\text{Representação esquemática da abordagem }\textit{Amostragem Probabilística}$}
+\centering
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{4.5cm}l}
+\toprule
+Dados Amostrais & $Y_1=y_{i_1}, \ldots, Y_n=y_{i_n}$\\
+Modelo Paramétrico/ Hipóteses & $\text{Dados extraídos de }y_1,\ldots, y_N \text{ segundo }p(a)$\\
+Objetivo & $\text{Inferir sobre funções }g(y_1, \ldots , y_N)\text{ usando }y_{i_1}, \ldots, y_{i_n}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}
+\includegraphics[width=10,81in]{Figuras/Figura2.2} \caption{Representação esquemática da Modelagem Clássica}\label{fig:modamo}
+\end{figure}
+
+Esta abordagem é largamente empregada na produção de estatísticas públicas e
+oficiais, por agências e instituições de muitos países. Uma das alegadas
+vantagens dessa abordagem é o fato de que as distribuições de referência usadas
+para inferência são controladas pelos amostristas que planejam as pesquisas por
+amostragem, e portanto, a inferência pode ser considerada não paramétrica e não
+dependente de modelos que precisariam ser especificados pelo analista.
+
+\hypertarget{discussuxe3o-das-abordagens-1-e-2}{%
+\subsection{Discussão das Abordagens 1 e 2}\label{discussuxe3o-das-abordagens-1-e-2}}
+
+A primeira abordagem ( \emph{Modelagem Clássica} ), nos termos descritos, foi
+inicialmente proposta para dados de medidas na Física e Astronomia, onde em
+geral o pesquisador tem relativo controle sobre os experimentos, e onde faz
+sentido falar em replicação ou repetição do experimento. Neste contexto, a ideia
+de aleatoriedade é geralmente introduzida para modelar os erros (não
+controláveis) do processo de medição, e as distribuições de estatísticas de
+interesse são derivadas a partir da \emph{distribuição do modelo} especificado.
+
+A segunda abordagem ( \emph{Amostragem Probabilística} ) é utilizada principalmente
+no contexto de estudos socioeconômicos observacionais, para levantamento de
+dados por agências governamentais produtoras de informações estatísticas. Nesta
+abordagem, a aleatoriedade é introduzida pelo pesquisador no processo para
+obtenção dos dados, através do \emph{planejamento amostral} \(p(a)\) utilizado
+\protect\hyperlink{ref-Neyman}{Neyman} (\protect\hyperlink{ref-Neyman}{1934}) e as distribuições das estatísticas de interesse são derivadas a
+partir dessa \emph{distribuição de aleatorização}.
+
+Os planos amostrais podem ser complexos, gerando observações afetadas pelas
+características i) a iv) mencionadas no Capítulo \ref{introduc}. Os dados
+obtidos são utilizados principalmente para descrição da população finita,
+mediante o cálculo de estimativas de \emph{parâmetros descritivos} usuais tais como
+totais, médias, proporções, razões, etc. Sob a abordagem de \emph{Amostragem
+Probabilística}, os pontos i) a iv) do Capítulo \ref{introduc} são devidamente
+considerados tanto na estimação dos parâmetros descritivos como também na
+estimação de variâncias dos estimadores, permitindo a inferência pontual e por
+intervalos de confiança baseada na distribuição assintótica normal dos
+estimadores habitualmente considerados.
+
+A abordagem de \emph{Amostragem Probabilística} é essencialmente não-paramétrica,
+pois não supõe uma distribuição paramétrica particular para as observações da
+amostra. Por outro lado, essa abordagem tem a desvantagem de fazer inferências
+restritas à particular população finita considerada.
+
+Apesar da abordagem de \emph{Amostragem Probabilística} ter sido inicialmente
+concebida e aplicada para problemas de inferência descritiva sobre populações
+finitas, é cada vez mais comum, porém, a utilização dos dados obtidos através de
+pesquisas amostrais complexas para fins analíticos, com a aplicação de métodos
+de análise desenvolvidos e apropriados para a abordagem de \emph{Modelagem Clássica}.
+Nesse contexto, é relevante considerar algumas questões de interesse.
+
+\begin{itemize}
+\item
+  É adequado aplicar métodos de análise da \emph{Modelagem Clássica}, concebidos
+  para observações IID, aos dados obtidos através de pesquisas amostrais
+  complexas?
+\item
+  Em caso negativo, seria possível corrigir estes métodos, tornando-os
+  aplicáveis para tratar dados amostrais complexos?
+\item
+  Ou seria mais adequado fazer uso analítico dos dados dentro da abordagem de
+  \emph{Amostragem Probabilística}? E neste caso, como fazer isto, visto que nesta
+  abordagem não é especificado um modelo para a distribuição das variáveis de
+  pesquisa \emph{na população}?
+\end{itemize}
+
+Além destas questões, também é de interesse a questão da robustez da inferência,
+traduzida nas seguintes perguntas.
+
+\begin{itemize}
+\item
+  O que acontece quando o modelo adotado na \emph{Modelagem Clássica} não é
+  verdadeiro?
+\item
+  Neste caso, qual a interpretação dos parâmetros na \emph{Modelagem Clássica}?
+\item
+  Ainda neste caso, as quantidades descritivas populacionais da \emph{Amostragem
+  Probabilística} poderiam ter alguma utilidade ou interpretação?
+\end{itemize}
+
+O objeto deste livro é exatamente discutir respostas para as questões aqui
+enumeradas. Para isso, vamos considerar uma abordagem que propõe um modelo
+parametrizado como na \emph{Modelagem Clássica}, mas formulado para descrever os
+dados da população, e não os da amostra. Além disso, essa abordagem incorpora na
+análise os pontos i) a iii) do Capítulo \ref{introduc} mediante aproveitamento
+da estrutura do planejamento amostral, como feito habitualmente na \emph{Amostragem
+Probabilística}. Essa abordagem, denominada de \emph{Modelagem de Superpopulação},
+foi primeiro proposta em \protect\hyperlink{ref-Brewer1963}{Brewer} (\protect\hyperlink{ref-Brewer1963}{1963}) e \protect\hyperlink{ref-royall}{Royall} (\protect\hyperlink{ref-royall}{1970}), e é bem descrita, por
+exemplo, em \protect\hyperlink{ref-binder83}{Binder} (\protect\hyperlink{ref-binder83}{1983}) e \protect\hyperlink{ref-valliant}{Valliant e Royall} (\protect\hyperlink{ref-valliant}{2000}).
+
+\hypertarget{modelsuperpop}{%
+\subsection{Abordagem 3 - Modelagem de Superpopulação}\label{modelsuperpop}}
+
+Nesta abordagem, os valores \(y_{1}, \ldots ,y_{N}\) das variáveis de interesse
+\(Y\) na população finita são considerados observações ou realizações dos vetores
+aleatórios \(Y_{1}, \ldots , Y_{N}\), supostos IID com distribuição \(f(y;\theta)\),
+onde \(\theta \in \Theta\). Este modelo é denominado \texttt{Modelo\ de\ Superpopulação}.
+Note que, em contraste com o que se faz na \emph{Modelagem Clássica}, o modelo
+probabilístico é aqui especificado para descrever o mecanismo aleatório que gera
+a \emph{população}, não a amostra. Na maioria das aplicações práticas, a população de
+interesse, embora considerada finIta, jamais será observada por inteiro. Não
+obstante, ao formular o modelo para descrever propriedades da população, nossas
+perguntas e respostas descritas em termos de valores ou regiões para o parâmetro
+\(\theta\) passam a se referir à população de interesse ou a populações similares,
+quer existam ao mesmo tempo, quer se refiram a estados futuros (ou passados) da
+mesma população. Vale realçar também que pesquisas por amostragem ``consistem em
+selecionar parte de uma população para observar, de modo que seja possível
+estimar alguma coisa sobre toda a população'', conforme \protect\hyperlink{ref-thompson}{Thompson} (\protect\hyperlink{ref-thompson}{1992}).
+
+Utilizando um plano amostral definido por \(p(a)\), obtemos os valores das
+variáveis de pesquisa na amostra \(y_{i_1}, \ldots , y_{i_n}\). A partir de
+\(y_{i_1}, \ldots , y_{i_n}\), em geral não considerados como observações de
+vetores aleatórios IID, queremos fazer inferência sobre o parâmetro \(\theta\),
+considerando os pontos i) a iii) do Capítulo 1. Veja uma representação gráfica
+resumida desta abordagem na Figura \ref{fig:modsup}.
+
+\begin{figure}
+\includegraphics[width=10,88in]{Figuras/Figura2.3} \caption{Modelagem de Superpopulação}\label{fig:modsup}
+\end{figure}
+
+Adotando o \emph{Modelo de Superpopulação} e considerando métodos usuais disponíveis
+na \emph{Modelagem Clássica}, podemos utilizar funções de \(y_{1}, \ldots ,y_{N}\) ,
+digamos \(g( y_{1}, \ldots , y_{N})\), para fazer inferência sobre \(\theta\). Desta
+forma, definimos estatísticas \(\left( y_{1},\ldots ,y_{N}\right)\) (no sentido da
+\emph{Modelagem Clássica}) que são quantidades descritivas populacionais (parâmetros
+populacionais no contexto da \emph{Amostragem Probabilística}), que passam a ser os
+novos parâmetros-alvo. O passo seguinte é utilizar métodos disponíveis na
+\emph{Amostragem Probabilística} para fazer inferência sobre
+\(g\left( y_{1}, \ldots , y_{N}\right)\) baseada em \(y_{i_1},\ldots ,y_{i_n}\).
+Note que não é possível basear a inferência nos valores populacionais
+\(y_{1}, \ldots , y_{N}\), já que estes não são conhecidos ou observados. Este
+último passo adiciona a informação sobre o plano amostral utilizado, contida em
+\(p(a)\), à informação estrutural contida no modelo
+\(\left\{ f\left( y; \theta \right) ;\theta \in \Theta\right\}\). Uma
+representação esquemática dessa abordagem é apresentada na Tabela
+\ref{tab:modelsuperpop}.
+
+\begin{table}[H]
+
+\caption{\label{tab:modelsuperpop}$\text{Representação esquemática da } \textit{Modelagem de Superpopulação}$}
+\centering
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{5cm}l}
+\toprule
+Dados Amostrais & $Y_1=y_{i_1},\ldots,Y_n=y_{i_n}$\\
+População e esquema de seleção & $\text{Extraídos de } y_1,\dots,y_N \text{ segundo } p(a)$\\
+Modelo para população & $Y_1,\dots, Y_N \text{ variáveis aleatórias IID com distribuição } f(y,\theta),\text { onde } \theta \in \Theta$\\
+Parâmetro-alvo & $\text{Associar } \theta\Leftrightarrow g\left (Y_{1},\ldots,Y_{N}\right)$\\
+Objetivo & $\text{Inferir sobre }g\left( Y_{1}, \ldots ,Y_{N}\right)\text{ partir de }y_{i_1}, \ldots,y_{i_n} \text{ usando } p\left( a\right)$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A descrição da abordagem adotada neste livro foi apresentada de maneira
+propositalmente simplificada e vaga nesta seção, mas será aprofundada ao longo
+do texto. Admitiremos que o leitor esteja familiarizado com a \emph{Modelagem
+Clássica} e com as noções básicas da \emph{Amostragem Probabilística}. A título de
+recordação, serão apresentados no Capítulo \ref{planamo} alguns resultados
+básicos da \emph{Amostragem Probabilística}. A ênfase do texto, porém, será na
+apresentação da \emph{Modelagem de Superpopulação}, sendo para isto apresentados os
+elementos indispensáveis das abordagens de \emph{Modelagem Clássica} e da \emph{Amostragem
+Probabilística}.
+
+Ao construir e ajustar modelos a partir de dados de pesquisas amostrais
+\emph{complexas}, tais como as executadas pelo IBGE e outras instituições similares,
+o usuário precisa incorporar as informações sobre pesos e sobre a estrutura dos
+planos amostrais utilizados. Em geral, ao publicar os resultados das pesquisas,
+os pesos são considerados, sendo possível produzir estimativas pontuais
+\emph{corretas} utilizando os pacotes tradicionais. Por outro lado, para construir
+intervalos de confiança e testar hipóteses sobre parâmetros de modelos, seria
+preciso o conhecimento das estimativas de variâncias e covariâncias das
+estimativas, obtidas levando em conta a estrutura do plano amostral utilizado.
+Mesmo conhecendo o plano amostral, geralmente não é simples incorporar pesos e
+plano amostral na análise sem o uso de pacotes especializados, ou de rotinas
+específicas já agora disponíveis em alguns dos pacotes mais comumente utilizados
+(por exemplo, SAS, Stata, SPSS, ou R entre outros). Tais pacotes especializados
+ou rotinas específicas utilizam, em geral, métodos aproximados para estimar
+matrizes de covariância. Entre esses métodos, destacam-se o de Máxima
+Pseudo-Verossimilhança, a Linearização, o método do Conglomerado Primário, e
+métodos de reamostragem, que serão descritos mais adiante.
+
+Em outras palavras, o uso dos pacotes usuais para analisar dados produzidos por
+pesquisas com planos amostrais complexos, tal como o uso de muitos remédios,
+pode ter contra-indicações. Cabe ao usuário \emph{ler a bula} e identificar situações
+em que o uso de tais pacotes pode ser inadequado, e buscar opções de rotinas
+específicas ou de pacotes especializados capazes de incorporar adequadamente a
+estrutura do plano amostral nas análises.
+
+Ao longo deste livro faremos uso intensivo do pacote \emph{survey} disponível no R,
+mas o leitor encontrará funcionalidade semelhante em vários outros pacotes.
+Nossa escolha se deveu a dois fatores principais: primeiro ao fato do pacote R
+ser aberto, livre e gratuito, dispensando o usuário de custos de licenciamento,
+bem como possibilitando aos interessados o acesso ao código fonte e à capacidade
+de modificar as rotinas de análise, caso necessário. O segundo fator é de
+natureza mais técnica, porém transitória. No presente momento, o pacote \emph{survey}
+é a coleção de rotinas mais completa e genérica existente para análise de dados
+amostrais complexos, dispondo de funções capazes de ajustar os modelos usuais,
+mas também de ajustar modelos não convencionais, mediante a maximização numérica
+de verossimilhanças especificadas pelo usuário. Sabemos, entretanto, que muitos
+usuários habituados à facilidade de uso de pacotes com interfaces gráficas do
+tipo \emph{aponte e clique} terão dificuldade adicional de adaptar-se à linguagem de
+comandos utilizada pelo pacote R, mas acreditamos que os benefícios do
+aprendizado desta nova ferramenta compensarão largamente os custos adicionais do
+aprendizado.
+
+O emprego de ferramentas de análise como o pacote \emph{survey} permitirá aos
+usuários focar sua atenção mais na seleção, análise e interpretação dos modelos
+ajustados do que nas dificuldades técnicas envolvidas nos cálculos
+correspondentes. É com este espírito que escrevemos este texto, que busca
+apresentar os métodos, ilustrando seu uso com exemplos reais, e orientando sobre
+o uso adequado das ferramentas de modelagem e análise disponíveis no sistema R.
+
+\hypertarget{fontes-de-variauxe7uxe3o}{%
+\section{Fontes de Variação}\label{fontes-de-variauxe7uxe3o}}
+
+Esta seção estabelece o referencial para inferência em pesquisas amostrais que
+será usado no restante deste texto. \protect\hyperlink{ref-cassel}{Cassel et al.} (\protect\hyperlink{ref-cassel}{1977}) sugerem que um referencial para
+inferência poderia considerar três fontes de aleatoriedade (incerteza,
+variação), incluindo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \emph{Modelo de Superpopulação}, que descreve o processo subjacente que, por
+  hipótese, gera as medidas verdadeiras para todas as unidades da população
+  considerada;
+\item
+  \emph{Processo de Medição}, que diz respeito aos instrumentos e métodos usados
+  para obter as medidas de qualquer unidade da população;
+\item
+  \emph{Planejamento Amostral}, que estabelece o mecanismo pelo qual unidades da
+  população são selecionadas para participar da amostra da pesquisa ou estudo.
+\end{enumerate}
+
+Uma quarta fonte de incerteza que precisa ser acrescentada às anteriores é o
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  \emph{Mecanismo de resposta}, ou seja, o mecanismo que controla se valores de
+  medições de unidades selecionadas para a amostra são obtidos / observados ou
+  não.
+\end{enumerate}
+
+Para concentrar o foco nas questões de maior interesse deste texto, as fontes
+(2) e (4) não serão consideradas no referencial adotado para a maior parte dos
+capítulos. Para o tratamento das dificuldades causadas por não resposta, a fonte
+(4) será considerada no capítulo onze. Assim sendo, exceto onde explicitamente
+indicado, de agora em diante admitiremos que não há \emph{erros de medição},
+implicando que os valores observados de quaisquer variáveis de interesse serão
+considerados valores corretos ou verdadeiros. Admitiremos ainda que há \emph{resposta
+completa}, implicando que os valores de quaisquer variáveis de interesse estão
+disponíveis para todos os elementos da amostra selecionada depois que a pesquisa
+foi realizada. Hipóteses semelhantes são adotadas, por exemplo, em \protect\hyperlink{ref-binder83}{Binder} (\protect\hyperlink{ref-binder83}{1983}) e
+\protect\hyperlink{ref-Mont87}{Montanari} (\protect\hyperlink{ref-Mont87}{1987}).
+
+Portanto, o referencial aqui adotado considera apenas duas fontes alternativas
+de variação: o \emph{Modelo de Superpopulação} (1) e o \emph{Plano Amostral} (3). Estas
+fontes alternativas de variação, descritas nesta seção apenas de forma
+esquemática, são discutidas com maiores detalhes a seguir.
+
+A fonte de variação (1) será considerada porque usos analíticos das pesquisas
+são amplamente discutidos neste texto, os quais só têm sentido quando é
+especificado um modelo estocástico para o processo subjacente que gera as
+medidas na população. A fonte de variação (3) será considerada porque a atenção
+será focalizada na análise de dados obtidos através de pesquisas amostrais
+complexas. Aqui a discussão se restringirá a planos amostrais aleatorizados ou
+de \emph{Amostragem Probabilística}, não sendo considerados métodos intencionais ou
+outros métodos não-aleatórios algumas vezes usados para seleção de amostras.
+
+\hypertarget{modelos-de-superpopulauxe7uxe3o}{%
+\section{Modelos de Superpopulação}\label{modelos-de-superpopulauxe7uxe3o}}
+
+Seja \(\{1, ..., N\}\) um conjunto de rótulos que identificam univocamente os \(N\)
+elementos distintos de uma população-alvo finita \(U\). Sem perda de generalidade
+tomaremos \(U=\{1,...,N\}\). Uma pesquisa cobrindo \(n\) elementos distintos numa
+amostra \(a\), \(a=\{i_{1},...,i_{n}\}\subset U\), é realizada para medir os valores
+de \(P\) variáveis de interesse da pesquisa, doravante denominadas simplesmente
+\emph{variáveis da pesquisa}.
+
+Denotaremos por \(\mathbf{y}_i=(y_{i1},...,y_{iP})^{\prime }\) o vetor \(P\times 1\)
+de valores das variáveis da pesquisa e por
+\(\mathbf{x}_{i}=(x_{i1},...,x_{iQ})^{\prime }\) o vetor \(Q\times 1\) de variáveis
+auxiliares da i-ésima unidade da população, respectivamente, para \(i=1,...,N\).
+Aqui as variáveis auxiliares são consideradas como variáveis contendo a
+informação requerida para o planejamento amostral e a estimação a partir da
+amostra, como se discutirá com mais detalhes adiante. Denote por
+\(\mathbf{y}_{U}\) a matriz \(N \times P\) formada empilhando os vetores transpostos
+das observações das variáveis de pesquisa correspondentes a todas as unidades da
+população, e por \(\mathbf{Y}_{U}\) a correspondente matriz de vetores aleatórios
+geradores das observações na população.
+
+Quando se supõe que \(\mathbf{y}_1 ,\ldots, \mathbf{y}_N\) são a realização
+conjunta de vetores aleatórios \(\mathbf{Y}_1 ,\ldots, \mathbf{Y}_N\), a
+distribuição conjunta de probabilidade de \(\mathbf{Y}_1 ,\ldots, \mathbf{Y}_N\) é
+um \emph{Modelo de Superpopulação} (marginal), que doravante denotaremos simplesmente
+por \(f(\mathbf{y}_U;\theta)\), ou de forma abreviada, por \(M\). Esperanças e
+variâncias definidas com respeito à distribuição do modelo \(M\) serão denotadas
+\(E_M\) e \(V_M\) respectivamente.
+
+Analogamente, \(\mathbf{x}_1 ,\ldots, \mathbf{x}_N\) pode ser considerada uma
+realização conjunta de vetores aleatórios \(\mathbf{X}_1 ,\ldots, \mathbf{X}_N\).
+As matrizes \(N \times Q\) formadas empilhando os vetores transpostos das
+observações das variáveis auxiliares correspondentes a todas as unidades da
+população, \(\mathbf{x}_{U}\), e a correspondente matriz \(\mathbf{X}_{U}\) de
+vetores aleatórios geradores das variáveis auxiliares na população são definidas
+de forma análoga às matrizes \(\mathbf{y}_{U}\) e \(\mathbf{Y}_{U}\).
+
+O referencial aqui adotado permite a especificação da distribuição conjunta
+combinada das variáveis da pesquisa e das variáveis auxiliares. Representamos
+por \(f( \mathbf{y}_U , \mathbf{x}_U ; \mathbf{\eta} )\) a função de densidade de
+probabilidade conjunta de \(( \mathbf{Y}_U , \mathbf{X}_U )\), onde
+\(\mathbf{\eta}\) é um vetor de parâmetros.
+
+Um tipo importante de modelo de superpopulação é obtido quando os vetores
+aleatórios correspondentes às observações de unidades diferentes da população
+são supostos independentes e identicamente distribuídos (IID). Neste caso, o
+modelo de superpopulação pode ser escrito como:
+
+\begin{eqnarray}
+f \left( \mathbf{y}_U , \mathbf{x}_U ; \mathbf{\eta} \right) 
+&=&\prod_{i\in U} f\left(\mathbf{y}_i , \mathbf{x}_i ; \mathbf{\eta} \right) \label{eq:ref1} \\
+&=&\prod_{i\in U} f\left( \mathbf{y}_i \mathbf{|x}_i ; \mathbf{\lambda} \right) 
+f\left( \mathbf{x}_i ; \mathbf{\phi} \right) \label{eq:ref2}
+\end{eqnarray} onde~\(\mathbf{\lambda}\) e \(\mathbf{\phi}\) são vetores de
+parâmetros.
+
+Sob \eqref{eq:ref2}, o modelo marginal correspondente das variáveis da pesquisa
+seria obtido integrando nas variáveis auxiliares:
+
+\begin{equation}
+f(\mathbf{y}_U ; \mathbf{\theta}) = f(\mathbf{y}_1 ,\ldots ,\mathbf{y}_N ; \mathbf{\theta}) = \prod_{i\in U} \int f\left( \mathbf{y}_i \mathbf{|x}_i ; \mathbf{\lambda} \right) f\left( \mathbf{x}_i ; \mathbf{\phi} \right) \mathbf{dx}_i = \prod_{i\in U} f\left( \mathbf{y}_i ; \mathbf{\theta} \right) \label{eq:ref3}
+\end{equation} onde
+\(f\left( \mathbf{y}_i ; \mathbf{\theta} \right) = \int f\left( \mathbf{y}_i | \mathbf{x}_i ; \mathbf{\lambda} \right) f\left( \mathbf{x}_i ; \mathbf{\phi} \right) \mathbf{dx}_i\)
+e \(\mathbf{\theta =} h\left( \mathbf{\lambda} , \mathbf{\phi} \right)\).
+
+Outro tipo especial de modelo de superpopulação é o modelo de população fixa,
+que supõe que os valores numa população finita são fixos mas desconhecidos. Este
+modelo pode ser descrito por:
+
+\begin{equation}
+P\left[ \left( \mathbf{Y}_U , \mathbf{X}_U \right) = \left( \mathbf{y}_U , \mathbf{x}_U \right) \right] = 1 \label{eq:ref4}
+\end{equation} ou seja, uma distribuição degenerada é especificada para
+\(\left(\mathbf{Y}_U , \mathbf{X}_U \right)\).
+
+Este modelo foi considerado em \protect\hyperlink{ref-cassel}{Cassel et al.} (\protect\hyperlink{ref-cassel}{1977}), que o chamaram de \emph{abordagem de
+população fixa}, e afirmaram ser esta a abordagem subjacente ao desenvolvimento
+da teoria da \emph{Amostragem Probabilística} encontrada nos livros clássicos tais
+como \protect\hyperlink{ref-cochran}{Cochran} (\protect\hyperlink{ref-cochran}{1977}) e outros. Aqui esta abordagem é chamada de \emph{abordagem baseada no
+planejamento amostral} ou \emph{abordagem de aleatorização}, pois neste caso a única
+fonte de variação (aleatoriedade) é proveniente do planejamento amostral. Em
+geral, a distribuição conjunta de \(\left( \mathbf{Y}_U , \mathbf{X}_U \right)\)
+não precisa ser degenerada como em \eqref{eq:ref4}, embora o referencial aqui
+adotado seja suficientemente geral para permitir considerar esta possibilidade.
+
+Se todas as unidades da população fossem pesquisadas (ou seja, se fosse
+executado um censo), os dados observados seriam
+\((\mathbf{y}_1 , \mathbf{x}_1) ,\ldots, (\mathbf{y}_N , \mathbf{x}_N)\). Sob a
+hipótese de resposta completa, a única fonte de incerteza seria devida ao fato
+de que \((\mathbf{y}_1 , \mathbf{x}_1) ,\ldots, (\mathbf{y}_N , \mathbf{x}_N)\) é
+uma realização de
+\(\left( \mathbf{Y}_1 , \mathbf{X}_1 \right) ,\ldots, \left( \mathbf{Y}_N , \mathbf{X}_N \right)\).
+Os dados observados poderiam então ser usados para fazer inferências sobre
+\(\mathbf{\eta}, \mathbf{\phi},\mathbf{\lambda}\) ou \(\mathbf{\theta}\) usando
+procedimentos padrões.
+
+Inferência sobre quaisquer dos parâmetros
+\(\mathbf{\eta},\mathbf{\phi},\mathbf{\lambda}\) ou \(\mathbf{\theta}\) do modelo de
+superpopulação é chamada \emph{inferência analítica}. Este tipo de inferência só faz
+sentido quando o modelo de superpopulação não é degenerado como em
+\eqref{eq:ref4}. Usualmente seu objetivo é explicar a relação entre variáveis não
+apenas para a população finita sob análise, mas também para outras populações
+que poderiam ter sido geradas pelo modelo de superpopulação adotado. Vários
+exemplos de inferência analítica serão discutidos ao longo deste livro.
+
+Se o objetivo da inferência é estimar quantidades que fazem sentido somente para
+a população finita sob análise, tais como funções
+\(g\left( \mathbf{y}_1 ,\ldots, \mathbf{y}_N \right)\) dos valores das variáveis
+da pesquisa, o modelo de superpopulação não é estritamente necessário, embora
+possa ser útil. Inferência para tais quantidades, chamadas parâmetros da
+população finita ou quantidades descritivas populacionais (QDPs), é chamada
+\emph{inferência descritiva}.
+
+Vale notar que a especificação do modelo de superpopulação aqui proposta serve
+tanto para o caso da abordagem clássica para inferência, como também para o caso
+da abordagem Bayesiana. Neste caso, a especificação do modelo precisaria ser
+completada mediante a especificação de distribuições a priori para os parâmetros
+do modelo.
+
+\hypertarget{planamo}{%
+\section{Planejamento Amostral}\label{planamo}}
+
+Embora censos sejam algumas vezes realizados para coletar dados sobre certas
+populações, a vasta maioria das pesquisas realizadas é de pesquisas amostrais,
+nas quais apenas uma amostra de elementos da população (usualmente uma pequena
+parte) é investigada. Neste caso, os dados disponíveis incluem:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  O conjunto de rótulos \(a=\left\{ i_1 , \ldots, i_n \right\}\) dos distintos
+  elementos na amostra, onde \(n\) \(\left( 1 \leq n \leq N \right)\) é o número
+  de elementos na amostra \(a\), também chamado de \emph{tamanho da amostra};
+\item
+  Os valores na amostra das variáveis da pesquisa
+  \(\mathbf{y}_{i_1} ,\ldots, \mathbf{y}_{i_n}\);
+\item
+  Os valores das variáveis auxiliares na população
+  \(\mathbf{x}_1 ,\ldots, \mathbf{x}_N\), quando a informação auxiliar é dita
+  \emph{completa}; alternativamente, os valores das variáveis auxiliares na amostra
+  \(\mathbf{x}_{i_1} ,\ldots, \mathbf{x}_{i_n}\), mais os totais ou médias
+  destas variáveis na população, quando a informação auxiliar é dita
+  \emph{parcial}.
+\end{enumerate}
+
+O mecanismo usado para selecionar a amostra \(a\) da população finita \(U\) é
+chamado \emph{plano amostral}. Uma forma de caracterizá-lo é através da função
+\(p\left( .\right)\), onde \(p(a)\) dá a probabilidade de selecionar a amostra \(a\)
+no conjunto \(A\) de todas as amostras possíveis. Só mecanismos amostrais
+envolvendo alguma forma de seleção probabilística bem definida serão aqui
+considerados. Portanto, supõe-se que \(0 \leq p(a) \leq 1 \; \forall a \in A\) e
+\(\sum_{a \in A} p(a)=1\).
+
+Esta caracterização do plano amostral \(p(a)\) é bem geral, permitindo que o
+mecanismo de seleção amostral dependa dos valores das variáveis auxiliares
+\(\mathbf{x}_1 ,\ldots, \mathbf{x}_N\) bem como dos valores das variáveis da
+pesquisa na população \(\mathbf{y}_1 ,\ldots, \mathbf{y}_N\) (amostragem
+\emph{informativa}, veja Seção \ref{inform}. Uma notação mais explícita para indicar
+esta possibilidade envolveria escrever \(p(a)\) como
+\(p\left[ a | (\mathbf{y}_U , \mathbf{x}_U ) \right]\). Tal notação será evitada
+por razões de simplicidade.
+
+Denotamos por \(I(B)\) a função indicadora que assume o valor 1 quando o evento
+\(B\) ocorre e 0 caso contrário. Seja
+\(\mathbf{\Delta}_a = \left[ I(1 \in a) ,\ldots, I(N \in a)\right]^{\prime}\) um
+vetor aleatório de indicadores dos elementos incluídos na amostra \(a\). Então o
+plano amostral pode ser alternativamente caracterizado pela distribuição de
+probabilidade de \(\mathbf{\Delta }_a\) denotada por
+\(f\left[ \mathbf{\delta }_a | \left(\mathbf{y}_U , \mathbf{x}_U \right) \right]\),
+onde \(\mathbf{\delta }_a\) é qualquer realização particular de
+\(\mathbf{\Delta }_a\) tal que \({\mathbf{\delta}_a}^{\prime} \mathbf{1}_N = n\), e
+\(\mathbf{1}_N\) é o vetor unitário de dimensão \(N\).
+
+Notação adicional necessária nas seções posteriores será agora introduzida.
+Denotamos por \(\pi_i\) a probabilidade de inclusão da unidade \(i\) na amostra \(a\),
+isto é,
+
+\begin{equation}
+\pi_i = Pr\left( i \in a \right) = \sum_{a \ni i} p(a)  \label{eq:ref5}
+\end{equation} e denotamos por \(\pi_{ij}\) a probabilidade de inclusão conjunta
+na amostra das unidades \(i\) e \(j\), dada por
+
+\begin{equation}
+\pi_{ij} = Pr \left( i \in a , j \in a \right) = \sum_{a \ni i,j} p(a) \label{eq:ref6}
+\end{equation} para todo \(i \neq j \in U\), e seja \(\pi_{ii} = \pi_{i}\)
+\(\forall i \in U.\)
+
+Uma hipótese básica assumida com relação aos planos amostrais aqui considerados
+é que \(\pi_i > 0\) e \(\pi_{ij} > 0\) \(\forall i,j \in U.\) A hipótese de \(\pi_{ij}\)
+ser positiva é adotada para simplificar a apresentação de expressões para
+estimadores de variância dos estimadores dos parâmetros de interesse. Contudo,
+esta não é uma hipótese crucial, pois há planos amostrais que não a satisfazem e
+para os quais estão disponíveis aproximações e estimadores satisfatórios das
+variâncias dos estimadores de totais e de médias.
+
+\hypertarget{inform}{%
+\section{Planos Amostrais Informativos e Ignoráveis}\label{inform}}
+
+Ao fazer inferência usando dados de pesquisas amostrais precisamos distinguir
+duas situações que requerem tratamento diferenciado. Uma dessas situações ocorre
+quando o plano amostral empregado para coletar os dados é \emph{informativo}, isto é,
+quando o mecanismo de seleção das unidades amostrais pode depender dos valores
+das variáveis de pesquisa. Um exemplo típico desta situação é o dos \emph{estudos de
+caso-controle}, em que a amostra é selecionada de tal forma que há \emph{casos}
+(unidades com determinada condição) e \emph{controles} (unidades sem essa condição),
+sendo de interesse a modelagem do indicador de presença ou ausência da condição
+em função de variáveis preditoras, e sendo esse indicador uma das variáveis de
+pesquisa, que é considerada no mecanismo de seleção da amostra. Os métodos que
+discutiremos ao longo deste livro não são adequados, em geral, para esse tipo de
+situação, e portanto uma hipótese fundamental adotada ao longo deste texto é que
+os planos amostrais considerados são \emph{não-informativos}, isto é, não podem
+depender diretamente dos valores das variáveis da pesquisa. Logo eles
+satisfazem:
+
+\begin{equation}
+f\left[ \mathbf{\delta }_a | \left( \mathbf{y}_U , \mathbf{x}_U \right)
+\right] = f\left( \mathbf{\delta }_a | \mathbf{x}_U \right) . \label{eq:ref7}
+\end{equation}
+
+Entre os planos amostrais \emph{não-informativos}, precisamos ainda distinguir duas
+outras situações de interesse. Quando o plano amostral é Amostragem Aleatória
+Simples Com Reposição (AASC), o modelo adotado para a amostra é o mesmo que o
+modelo adotado para a população antes da amostragem. Quando isto ocorre, o plano
+amostral é dito \emph{ignorável}, porque a inferência baseada na amostra utilizando a
+abordagem DE \emph{Modelagem Clássica} descrita em \ref{classic} pode prosseguir sem
+problemas. Entretanto, esquemas amostrais desse tipo são raramente empregados na
+prática, por razões de eficiência e custo. Em vez disso, são geralmente
+empregados planos amostrais envolvendo estratificação, conglomeração e
+probabilidades desiguais de seleção ( \emph{amostragem complexa} ).
+
+Com amostragem complexa, porém, os modelos para a população e a amostra podem
+ser muito diferentes (plano amostral \emph{não-ignorável}), mesmo que o mecanismo de
+seleção não dependa das variáveis de pesquisa, mas somente das variáveis
+auxiliares. Neste caso, ignorar o plano amostral pode viciar a inferência. Veja
+o Exemplo \ref{exm:nonigno} adiante.
+
+A definição precisa de ignorabilidade e as condições sob as quais um plano
+amostral é \emph{ignorável} para inferência são bastante discutidas na literatura -
+veja por exemplo \protect\hyperlink{ref-Sugden84}{Sugden e Smith} (\protect\hyperlink{ref-Sugden84}{1984}) ou os Capítulos 1 e 2 de \protect\hyperlink{ref-CHSK2003}{Chambers e Skinner} (\protect\hyperlink{ref-CHSK2003}{2003}). Porém testar
+a ignorabilidade do plano amostral é muitas vezes complicado. Em caso de
+dificuldade, o uso dos \emph{pesos amostrais} tem papel fundamental, como se verá
+mais adiante.
+
+Uma forma simples de lidar com os efeitos do plano amostral na estimação pontual
+de quantidades descritivas populacionais de interesse é incorporar pesos
+adequados na análise, como se verá no Capítulo \ref{capplanamo}. Essa forma
+porém, não resolve por si só o problema de estimação da precisão das estimativas
+pontuais, nem mesmo o caso da estimação pontual de parâmetros em modelos de
+superpopulação, o que vai requerer métodos específicos discutidos no Capítulo
+\ref{ajmodpar}.
+
+Como incluir os pesos para proteger contra planos amostrais \emph{não-ignoráveis} e a
+possibilidade de má especificação do modelo? Uma ideia é modificar os
+estimadores dos parâmetros de modo que sejam consistentes (em termos da
+\emph{distribuição de aleatorização}) para quantidades descritivas da população
+finita da qual a amostra foi extraída, que por sua vez seriam boas aproximações
+para os parâmetros dos modelos de interesse. Afirmações probabilísticas são
+então feitas com respeito à \emph{distribuição de aleatorização} das estatísticas
+amostrais \(p\) ou com respeito à distribuição mista ou combinada \(Mp\).
+
+A seguir apresentamos um exemplo com a finalidade de ilustrar uma situação de
+plano amostral \emph{não-ignorável}.
+
+\begin{example}
+\protect\hypertarget{exm:nonigno}{}{\label{exm:nonigno} }Efeito da amostragem estratificada simples com alocação desproporcional
+\end{example}
+
+Considere \(N\) observações de uma população finita \(U\) onde são consideradas de
+interesse duas variáveis binárias \((x_i ; y_i )\). Suponha que na população os
+vetores aleatórios \((X_i ; Y_i )\) são independentes e identicamente distribuídos
+com distribuição de probabilidades conjunta dada por:
+
+\begin{table}[H]
+
+\caption{\label{tab:Tab24}$\text{Distribuição de probabilidades conjunta na população }Pr( Y_i = y ; X_i = x )$}
+\centering
+\begin{tabular}[t]{>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
+\toprule
+$x/y$ & 0 & 1 & Total\\
+0 & $\eta_{00}$ & $\eta_{01}$ & $\eta_{0+}$\\
+1 & $\eta_{10}$ & $\eta_{11}$ & $\eta_{1+}$\\
+Total & $\eta_{+0}$ & $\eta_{+1}$ & 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+que também pode ser representada por:
+
+\begin{eqnarray}
+ f_U (x ; y) &=& Pr( X = x ; Y = y )\\
+             & =& \eta_{00}^{(1-x)(1-y)} \times \eta_{01}^{(1-x)y} \times \eta_{10}^{x(1-y)} \times (1 - \eta_{00} - \eta_{01} - \eta_{10})^{xy} \nonumber
+\end{eqnarray} onde a designação \(f_U\) é utilizada para denotar a distribuição
+\emph{na população}.
+
+Note agora que a distribuição marginal da variável \(Y\) \emph{na população} é
+Bernoulli com parâmetro \(1 - \eta_{00} - \eta_{10}\), ou alternativamente:
+
+\begin{equation}
+ f_U (y) = Pr( Y = y ) = (\eta_{00} + \eta_{10})^{(1-y)} \times (1 - \eta_{00} - \eta_{10})^y
+\end{equation}
+
+De forma análoga, a distribuição marginal da variável \(X\) \emph{na população} também
+é Bernoulli, mas com parâmetro \(1 - \eta_{00} - \eta_{01}\), ou alternativamente:
+
+\begin{equation}
+ f_U (x) = Pr( X = x ) = (\eta_{00} + \eta_{01})^{(1-x)} \times (1 - \eta_{00} - \eta_{01})^x
+\end{equation}
+
+Seja \(N_{xy}\) o número de unidades na população com a combinação de valores
+observados \((x;y)\), onde \(x\) e \(y\) tomam valores em \(\Omega = \{ 0 ; 1 \}\). É
+fácil notar então que o vetor de contagens populacionais
+\(\mathbf{N} = ( N_{00}, N_{01}, N_{10}, N_{11} )^{\prime}\) tem distribuição
+Multinomial com parâmetros \(N\) e
+\(\mathbf{\eta} = (\eta_{00} , \eta_{01} , \eta_{10} , 1 - \eta_{00} - \eta_{01} - \eta_{10} )^{\prime}\).
+
+Após observada uma realização do modelo que dê origem a uma população, como
+seria o caso da realização de um censo na população, a proporção de valores de
+\(y\) iguais a 1 observada no censo seria dada por
+\((N_{+1} / N = 1 - (N_{00} - N_{10})/N\). E a proporção de valores de \(x\) iguais
+a 1 na população seria igual a \((N_{1+} / N = 1 - (N_{00} - N_{01})/N\).
+
+Agora suponha que uma amostra estratificada simples \emph{com reposição} de tamanho
+\(n\) inteiro e par seja selecionada da população, onde os estratos são definidos
+com base nos valores da variável \(x\), e onde a alocação da amostra nos estratos
+é dada por \(n_0 = n_1 = n/2\), sendo \(n_x\) o tamanho da amostra no estrato
+correspondente ao valor \(x\) usado como índice. Esta alocação é dita \emph{alocação
+igual}, pois o tamanho total da amostra é repartido em partes iguais entre os
+estratos definidos para seleção, e no caso, há apenas dois estratos. A alocação
+desta amostra será desproporcional exceto no caso em que \(N_{0+} = N_{1+}\).
+
+Nosso interesse aqui é ilustrar o efeito que uma alocação desproporcional pode
+causar na análise dos dados amostrais, caso não sejam levadas em conta na
+análise informações relevantes sobre a estrutura do plano amostral. Para isto,
+vamos precisar obter a \emph{distribuição amostral} da variável de interesse \(Y\).
+Isto pode ser feito em dois passos. Primeiro, note que a distribuição
+condicional de \(Y\) dado \(X\) \emph{na população} é dada por:
+
+\begin{table}[H]
+
+\caption{\label{tab:Tab25}$\text{Distribuição de probabilidades condicional de }y\text{ dado }x\text{ na população - }Pr( Y_i = y | X_i = x )$}
+\centering
+\begin{tabular}[t]{>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
+\toprule
+$x/y$ & 0 & 1 & Total\\
+0 & $\eta_{00}/\eta_{0+}$ & $\eta_{01}/\eta_{0+}$ & 1\\
+1 & $\eta_{10}/\eta_{1+}$ & $\eta_{11}/\eta_{1+}$ & 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+ou, alternativamente
+
+\begin{eqnarray}
+ f_U (y | x) &=& Pr( Y = y | X = x )\\
+             & =& (1-x) \times \frac{\eta_{00}^{(1-y)} \eta_{01}^y}   {\eta_{00}+\eta_{01}} + x \times \frac{\eta_{10}^{(1-y)} (1 - \eta_{00} - \eta_{01} - \eta_{10})^y} {1 - \eta_{00} - \eta_{01}}\nonumber
+\end{eqnarray}
+
+Dado o plano amostral acima descrito, a distribuição marginal de \(X\) \emph{na
+amostra} é Bernoulli com parâmetro \(1/2\). Isto segue devido ao fato de que a
+amostra foi alocada igualmente com base nos valores de \(x\) na população, e
+portanto, sempre teremos metade da amostra com valores de \(x\) iguais a \(0\) e
+metade com valores iguais a \(1\). Isto pode ser representado como:
+
+\begin{equation}
+ f_a (x) = Pr( X_i = x | i \in a ) = 1 / 2,\; \forall x \in \Omega \mbox{ e } \forall i \in U
+\end{equation} onde a designação \(f_a\) é utilizada para denotar a distribuição
+\emph{na amostra}.
+
+Podemos usar a informação sobre a distribuição condicional de \(Y\) dado \(X\) \emph{na
+população} e a informação sobre a distribuição marginal de \(X\) \emph{na amostra} para
+obter a distribuição marginal de \(Y\) \emph{na amostra}, que é dada por:
+
+\begin{eqnarray}
+ f_a (y) &= &Pr( Y_i = y | i \in a )\\ 
+&=& \sum _{x = 0} ^{1} Pr( X_i = x ; Y_i = y | i \in a) \nonumber \\ 
+&=& \sum _{x = 0} ^{1} Pr[ Y_i = y | (X_i = x) e (i \in a)] \times Pr( X_i = x | i \in a) \nonumber\\ 
+&=& \sum _{x = 0} ^{1} Pr( Y_i = y | X_i = x) \times f_a (x) \nonumber \\ 
+&=& \sum _{x = 0} ^{1} f_U ( y | x) f_a (x) \nonumber \\ 
+&=& \frac{1}{2} \times \left[ \frac{\eta_{00}^{(1-y)} \eta_{01}^y} {\eta_{00}+\eta_{01}}+ \frac{\eta_{10}^{(1-y)} (1 - \eta_{00} - \eta_{01} - \eta_{10})^y} {1 - \eta_{00} - \eta_{01}} \right]\nonumber
+\end{eqnarray}
+
+Isto mostra que a distribuição marginal de \(Y\) \emph{na amostra} é diferente da
+distribuição marginal de \(Y\) \emph{na população}, mesmo quando o plano amostral é
+especialmente simples e utiliza amostragem aleatória simples com reposição
+dentro de cada estrato definido pela variável \(X\). Isto ocorre devido à alocação
+desproporcional da amostra, apesar de a distribuição condicional de \(Y\) dado \(X\)
+na população ser a mesma e que a distribuição condicional de \(Y\) dado \(X\) \emph{na
+amostra}.
+
+Um exemplo numérico facilita a compreensão. Se a distribuição conjunta de \(X\) e
+\(Y\) na população é dada por:
+
+\begin{table}[H]
+
+\caption{\label{tab:Tab26}$\text{Distribuição de probabilidades conjunta na população }f_U( x ; y )$}
+\centering
+\begin{tabular}[t]{>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
+\toprule
+$x/y$ & 0 & 1 & Total\\
+0 & 0,7 & 0,1 & 0,8\\
+1 & 0,1 & 0,1 & 0,2\\
+Total & 0,8 & 0,2 & 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+segue-se que a distribuição condicional de \(Y\) dado \(X\) \emph{na população} (e também
+\emph{na amostra}) é dada por
+
+\begin{table}[H]
+
+\caption{\label{tab:Tab27}$\text{Distribuição de probabilidades condicional de }Y\text{ dado }X\text{ na população - }f_U( y | x )$}
+\centering
+\begin{tabular}[t]{>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
+\toprule
+$x/y$ & 0 & 1 & Total\\
+0 & 0,875 & 0,125 & 1\\
+1 & 0,500 & 0,00 & 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+e que a distribuição marginal de \(Y\) \emph{na população} e \emph{na amostra} são dadas por
+
+\begin{table}[H]
+
+\caption{\label{tab:Tab28}$\text{Distribuição de probabilidades marginal de }Y\text{ na população - }f_U( y )$}
+\centering
+\begin{tabular}[t]{>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
+\toprule
+$f_U(y)$ & 0,8000 & 0,2000\\
+$f_a(y)$ & 0,6875 & 0,3125\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Assim, inferência sobre a distribuição de \(Y\) \emph{na população} levada a cabo a
+partir dos dados da amostra observada sem considerar a estrutura do plano
+amostral seria equivocada, pois a alocação igual da amostra nos estratos levaria
+à observação de uma proporção maior de valores de \(X\) iguais a 1 na amostra
+(1/2) do que a correspondente proporção existente na população (1/5). Em
+conseqüência, a proporção de valores de \(Y\) iguais a 1 na amostra (0,3125) seria
+56\% maior que a correspondente proporção \emph{na população} (0,2).
+
+Este exemplo é propositalmente simples, envolve apenas duas variáveis com
+distribuição Bernoulli, mas ilustra bem como a amostragem pode modificar
+distribuições de variáveis \emph{na amostra} em relação à correspondente distribuição
+\emph{na população}.
+
+Caso a inferência requerida fosse sobre parâmetros da distribuição condicional
+de \(Y\) dado \(X\), a amostragem seria \emph{ignorável}, isto é,
+\(f_a ( y | x) = f_U (y | x)\). Assim, fica evidenciado também que a noção de que
+o plano amostral pode ser ignorado depende da inferência desejada. No nosso
+exemplo, o plano amostral é ignorável para inferência sobre a distribuição
+condicional de \(Y\) dado \(X\), mas não é ignorável para inferência sobre a
+distribuição marginal de \(Y\).
+
+\hypertarget{referuxeancias}{%
+\chapter*{Referências}\label{referuxeancias}}
+\addcontentsline{toc}{chapter}{Referências}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\hypertarget{ref-binder83}{}%
+Binder, D. A. (1983). On the variances of asymptotically normal estimators from complex surveys. \emph{International Statistical Review}, \emph{51}, 279--292.
+
+\leavevmode\hypertarget{ref-Brewer1963}{}%
+Brewer, K. R. W. (1963). {Ratio estimation and finite populations: Some results deducible from the assumption of an underlying stochastic process}. \emph{The Australian Journal of statistics}, \emph{5}(3).
+
+\leavevmode\hypertarget{ref-Casella}{}%
+Casella, G. e Berger, R. L. (2010). \emph{Inferência Estatística}. Cengage Learning.
+
+\leavevmode\hypertarget{ref-cassel}{}%
+Cassel, C. M.; Särndal, C.-E. e Wretman, J. H. (1977). \emph{Foundations of Inference in Survey Sampling}. John Wiley.
+
+\leavevmode\hypertarget{ref-CHSK2003}{}%
+Chambers, R. L. e Skinner, C. J. (Eds.). (2003). \emph{Analysis of Survey Data}. John Wiley.
+
+\leavevmode\hypertarget{ref-cochran}{}%
+Cochran, W. G. (1977). \emph{Sampling Techniques}. John Wiley.
+
+\leavevmode\hypertarget{ref-heeringa}{}%
+Heeringa, S. G.; West, B. T. e Berglund, P. A. (2010). \emph{Applied Survey Data Analysis}. Taylor \& Francis. Disponível em: \url{https://books.google.com.br/books?id=QNmIvnTLlxcC} (Acesso: set. 2020.)
+
+\leavevmode\hypertarget{ref-kalton83a}{}%
+Kalton, G. (1983). \emph{Compensating for missing survey data}. The University of Michigan, Institute for Social Research, Survey Research Center.
+
+\leavevmode\hypertarget{ref-lethonen}{}%
+Lehtonen, R. e Pahkinen, E. J. (1995). \emph{Practical Methods for Design and Analysis of Complex Surveys}. John Wiley; Sons.
+
+\leavevmode\hypertarget{ref-LR2002}{}%
+Little, R. J. A. e Rubin, D. B. (2002). \emph{Statistical Analysis with missing data}. John Wiley; Sons.
+
+\leavevmode\hypertarget{ref-R-survey}{}%
+Lumley, T. (2017). \emph{survey: Analysis of Complex Survey Samples}. Disponível em: \url{https://CRAN.R-project.org/package=survey} (Acesso: set. 2020.)
+
+\leavevmode\hypertarget{ref-Marcos}{}%
+Magalhães, M. N. e Lima, A. C. P. (2015). \emph{Noções de Probabilidade e Estatística} (7ª edição, 3ª reimpressão revista). Edusp - Editora da Universidade de São Paulo.
+
+\leavevmode\hypertarget{ref-Mont87}{}%
+Montanari, G. E. (1987). Post-sampling efficient {QR-prediction} in large-sample surveys. \emph{International Statistical Review}, \emph{55}, 191--202.
+
+\leavevmode\hypertarget{ref-Neyman}{}%
+Neyman, J. (1934). On the two different aspects of the representative method: the method of stratified sampling and the method of purposive selection. \emph{Journal of the Royal Statistical Society A}, \emph{97}, 558--606.
+
+\leavevmode\hypertarget{ref-NICbr2020a}{}%
+NIC.br. (2020). \emph{{Pesquisa Sobre o Uso das Tecnologias da Informa{ç}{ã}o e da Comunica{ç}{ã}o no Brasil}} (p. 344). Disponível em: \url{https://cetic.br/media/docs/publicacoes/2/20201123121817/tic_dom_2019_livro_eletronico.pdf\%0Ahttps://cetic.br/pt/publicacoes/indice/pesquisas/\%0Ahttps://cetic.br/pt/publicacao/pesquisa-sobre-o-uso-das-tecnologias-de-informacao-e-comunicacao-nos-domicilios} (Acesso: set. 2020.)
+
+\leavevmode\hypertarget{ref-Pessoa1998}{}%
+Pessoa, D. G. C. e Silva, P. L. do N. (1998). \emph{{An{á}lise de dados amostrais complexos}} (p. 170). Associa{ç}{ã}o Brasileira de Estat{í}stica.
+
+\leavevmode\hypertarget{ref-Pfeff}{}%
+Pfeffermann, D. (1993). The role of sampling weights when modelling survey data. \emph{International Statistical Review}, \emph{61}, 317--337.
+
+\leavevmode\hypertarget{ref-royall}{}%
+Royall, R. M. (1970). On finite population sampling theory under certain linear regression models. \emph{Biometrika}, \emph{57}(2), 377--387.
+
+\leavevmode\hypertarget{ref-Rubin87}{}%
+Rubin, D. B. (1987). \emph{Multiple Imputation for Nonresponse in Surveys}. John Wiley; Sons.
+
+\leavevmode\hypertarget{ref-SSW92}{}%
+Särndal, C.-E.; Swensson, B. e Wretman, J. H. (1992). \emph{Model Assisted Survey Sampling}. Springer-Verlag.
+
+\leavevmode\hypertarget{ref-Schafer1997}{}%
+Schafer, J. L. (1997). \emph{{Analysis of Incomplete Multivariate Data}} (p. 430). Chapman {\&} Hall / CRC.
+
+\leavevmode\hypertarget{ref-Silva}{}%
+Silva, P. L. N. (1996). \emph{Utilizing Auxiliary Information for Estimation and Analysis in Sample Surveys} {[}Phdthesis{]}. University of Southampton, Department of Social Statistics.
+
+\leavevmode\hypertarget{ref-Silva2020}{}%
+Silva, P. L. N.; Bianchini, Z. M. e Dias, A. J. R. (2020). \emph{{Amostragem: teoria e pr{á}tica usando R}}. Disponível em: \url{https://amostragemcomr.github.io/livro/} (Acesso: set. 2020.)
+
+\leavevmode\hypertarget{ref-SHS89}{}%
+Skinner, C. J.; Holt, D. e Smith, T. M. F. (Eds.). (1989). \emph{Analysis of Complex Surveys}. John Wiley; Sons.
+
+\leavevmode\hypertarget{ref-Sugden84}{}%
+Sugden, R. A. e Smith, T. M. F. (1984). Ignorable and informative designs in survey sampling inference. \emph{Biometrika}, \emph{71}, 495--506.
+
+\leavevmode\hypertarget{ref-thompson}{}%
+Thompson, S. K. (1992). \emph{Sampling}. John Wiley; Sons.
+
+\leavevmode\hypertarget{ref-valliant}{}%
+Valliant, A. H., R.; Dorfman e Royall, R. M. (2000). \emph{Finite population sampling and inference: a prediction approach}.
+
+\leavevmode\hypertarget{ref-W85}{}%
+Wolter, K. M. (1985). \emph{Introduction to Variance Estimation}. Springer-Verlag.
+
+\end{CSLReferences}
+
+\end{document}
