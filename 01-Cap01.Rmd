@@ -51,7 +51,7 @@ tabela01a <- data.frame (
 knitr::kable(tabela01a, booktabs = TRUE, align= "lrr",
              format.args= list(big.mark = '.'),
   caption = "$\\text{Tamanhos da amostra de setores e domicílios por macrorregião}$") %>%
-  kable_styling(full_width = F,latex_options = 'HOLD_position') 
+  kable_styling(full_width = F,latex_options = 'HOLD_position') %>%column_spec(1,width ='5cm' )%>%column_spec(2,width ='5cm' ) %>% column_spec(3,width ='5cm' )
 
 ```
 A Tabela \@ref(tab:tab01b) apresenta um resumo das distribuições dos pesos amostrais dos domicílios pesquisados na TICDOM 2019 para as macrorregiões separadamente e, também, para o conjunto da amostra da pesquisa. 
@@ -71,7 +71,7 @@ tabela01b <- data.frame(
 knitr::kable(tabela01b, booktabs = TRUE, align= "lrrrrr",
              format.args= list(big.mark = '.'),
   caption = "$\\text{Resumos da distribuição dos pesos de domicílios por macrorregião}$") %>%
-  kable_styling(full_width = F,latex_options = 'HOLD_position')
+  kable_styling(full_width = F,latex_options = 'HOLD_position')%>%column_spec(1,width ='5cm' )
 
 ```
 
@@ -109,7 +109,7 @@ tabela01c <- readRDS(file="./data/tabela01c.rds")
 knitr::kable(tabela01c, booktabs = TRUE, align= "lrrrr",
              format.args= list(big.mark = '.'),
   caption = "$\\text{Estimativas de parâmetros populacionais e EPAs}$") %>%  
-  kable_styling(full_width = F,latex_options = 'HOLD_position')%>% column_spec(1,width ='7cm' )
+  kable_styling(full_width = T,latex_options = 'HOLD_position')%>% column_spec(1,width ='8cm' )
 
 ```
 Os resultados mostram que há diferenças entre as estimativas pontuais dos parâmetros considerados, com uma tendência de subestimar quando se ignoram os pesos e o plano amostral efetivamente usado na pesquisa. As estimativas dos EPAs variam entre 2,64 e 5,30, se deixarmos de fora o EPA maior que 30 observado para a estimativa da contagem de domicílios com computador. Estes valores indicam que ignorar o plano amostral na estimação da precisão levaria também à subestimação dos erros padrão. 
@@ -135,7 +135,7 @@ ignorando o plano amostral) permite avaliar o impacto de não se considerar os p
 
 ## Estrutura do livro
 
-O livro está organizado em duas partes. A primeira parte representa uma segunda edição atualizada e revisada do conteúdo do livro publicado em 1998 @Pessoa1998. A segunda parte é uma coletânea de textos reunidos para cobrir temas não tratados no livro anterior, que foram produzidos por autores convidados, como forma de prestar homenagem ao Prof. Djalma Pessoa. 
+O livro está organizado em duas partes. A primeira parte representa uma segunda edição atualizada e revisada do conteúdo do livro publicado em 1998, @Pessoa1998. A segunda parte é uma coletânea de textos reunidos para cobrir temas não tratados no livro anterior, que foram produzidos por autores convidados, como forma de prestar homenagem ao Prof. Djalma Pessoa. 
 
 A parte 1 é composta por nove capítulos. Este primeiro capítulo discute a motivação para estudar o assunto e apresenta uma ideia geral dos objetivos e da estrutura do livro.
 
@@ -143,7 +143,7 @@ No Capítulo \@ref(refinf), procuramos dar uma visão das diferentes abordagens 
 
 Esse referencial tem evoluído ao longo dos anos como uma forma de permitir a incorporação de ideias e procedimentos de análise e inferência usualmente associados à Estatística Clássica à prática da análise e interpretação de dados provenientes de pesquisas amostrais. Apesar dessa evolução, sua adoção não é livre de controvérsia e uma breve revisão dessa discussão é apresentada no Capítulo \@ref(refinf).
 
-No Capítulo \@ref(capplanamo) apresentamos uma revisão sucinta, para recordação, de alguns resultados básicos da Teoria de Amostragem, requeridos nas partes subsequentes do livro. São discutidos os procedimentos básicos para estimação de totais considerando o plano amostral e, em seguida, revistas algumas técnicas para estimação de variâncias que são necessárias e úteis para o caso de estatísticas complexas, tais como razões e outras estatísticas requeridas na inferência analítica com dados amostrais. As referências centrais para este capítulo são os Capítulos 2 e 3 em @SSW92, @Silva2020, @W85 e @cochran.
+No Capítulo \@ref(capplanamo) apresentamos uma revisão sucinta, para recordação, de alguns resultados básicos da Teoria de Amostragem, requeridos nas partes subsequentes do livro. São discutidos os procedimentos básicos para estimação de totais considerando o plano amostral e, em seguida, revistas algumas técnicas para estimação de variâncias que são necessárias e úteis para o caso de estatísticas complexas, tais como razões e outras estatísticas requeridas na inferência analítica com dados amostrais. As referências centrais para este capítulo são os Capítulos 2 e 3 em @SSW92, @Silva2020, @W85 e @Cochran1977.
 
 No Capítulo \@ref(epa) introduzimos o conceito de _Efeito do Plano Amostral - EPA_, que permite avaliar o impacto de ignorar a estrutura dos dados populacionais ou do plano amostral sobre a estimativa da variância de um estimador. Para isso, comparamos o estimador da variância apropriado para dados obtidos por Amostragem Aleatória Simples (hipótese de AAS) com o valor esperado deste mesmo estimador sob a distribuição de aleatorização induzida pelo plano amostral efetivamente utilizado (plano amostral verdadeiro). Aqui a referência principal foi o livro @SHS89, complementado com o texto de @lethonen.
 

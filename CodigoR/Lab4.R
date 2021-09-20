@@ -2,8 +2,8 @@
 ## @knitr simula
 library(survey)
 # carrega dados
-library(anamco)
-popul_dat <- popul
+#library(anamco)
+popul_dat <- readRDS(file = 'data/popul.rds') # carrega dados
 N<-nrow(popul_dat)
 n1<-30; n2<-30
 nh=c(n1,n2)
