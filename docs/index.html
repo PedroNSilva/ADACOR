@@ -105,15 +105,15 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="refinf.html"><a href="refinf.html"><i class="fa fa-check"></i><b>2</b> Referencial para Inferência</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="refinf.html"><a href="refinf.html#classic"><i class="fa fa-check"></i><b>2.1</b> Modelagem - Primeiras Ideias</a></li>
-<li class="chapter" data-level="2.2" data-path="refinf.html"><a href="refinf.html#abordagem-1---modelagem-clássica"><i class="fa fa-check"></i><b>2.2</b> Abordagem 1 - Modelagem Clássica</a></li>
+<li class="chapter" data-level="2.1" data-path="refinf.html"><a href="refinf.html#modelagem---primeiras-ideias"><i class="fa fa-check"></i><b>2.1</b> Modelagem - Primeiras ideias</a></li>
+<li class="chapter" data-level="2.2" data-path="refinf.html"><a href="refinf.html#classic"><i class="fa fa-check"></i><b>2.2</b> Abordagem 1 - Modelagem Clássica</a></li>
 <li class="chapter" data-level="2.3" data-path="refinf.html"><a href="refinf.html#abordagem-2---amostragem-probabilística"><i class="fa fa-check"></i><b>2.3</b> Abordagem 2 - Amostragem Probabilística</a></li>
-<li class="chapter" data-level="2.4" data-path="refinf.html"><a href="refinf.html#discussão-das-abordagens-1-e-2"><i class="fa fa-check"></i><b>2.4</b> Discussão das Abordagens 1 e 2</a></li>
+<li class="chapter" data-level="2.4" data-path="refinf.html"><a href="refinf.html#discussão-das-abordagens-1-e-2"><i class="fa fa-check"></i><b>2.4</b> Discussão das abordagens 1 e 2</a></li>
 <li class="chapter" data-level="2.5" data-path="refinf.html"><a href="refinf.html#modelsuperpop"><i class="fa fa-check"></i><b>2.5</b> Abordagem 3 - Modelagem de Superpopulação</a></li>
-<li class="chapter" data-level="2.6" data-path="refinf.html"><a href="refinf.html#fontes-de-variação"><i class="fa fa-check"></i><b>2.6</b> Fontes de Variação</a></li>
+<li class="chapter" data-level="2.6" data-path="refinf.html"><a href="refinf.html#fontes-de-variação"><i class="fa fa-check"></i><b>2.6</b> Fontes de variação</a></li>
 <li class="chapter" data-level="2.7" data-path="refinf.html"><a href="refinf.html#modelos-de-superpopulação"><i class="fa fa-check"></i><b>2.7</b> Modelos de Superpopulação</a></li>
-<li class="chapter" data-level="2.8" data-path="refinf.html"><a href="refinf.html#planamo"><i class="fa fa-check"></i><b>2.8</b> Planejamento Amostral</a></li>
-<li class="chapter" data-level="2.9" data-path="refinf.html"><a href="refinf.html#inform"><i class="fa fa-check"></i><b>2.9</b> Planos Amostrais Informativos e Ignoráveis</a></li>
+<li class="chapter" data-level="2.8" data-path="refinf.html"><a href="refinf.html#planamo"><i class="fa fa-check"></i><b>2.8</b> Planejamento amostral</a></li>
+<li class="chapter" data-level="2.9" data-path="refinf.html"><a href="refinf.html#inform"><i class="fa fa-check"></i><b>2.9</b> Planos amostrais informativos e ignoráveis</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
 </ul>
@@ -137,7 +137,7 @@ div.csl-indent {
 <h1 class="title">Análise de Dados Amostrais</h1>
 <p class="author"><em>Djalma G. C. Pessoa, Pedro Luis do Nascimento Silva,</em></p>
 <p class="author"><em>Antonio José Ribeiro Dias, Zélia Magalhães Bianchini e Sonia Albieri</em></p>
-<p class="date"><em>20 de setembro de 2021, 17:01:05</em></p>
+<p class="date"><em>21 de setembro de 2021, 15:28:32</em></p>
 </div>
 <div id="bem-vindo" class="section level1 unnumbered">
 <h1>Bem-vindo</h1>
@@ -149,7 +149,7 @@ computacionais padrões disponíveis para a seleção e ajuste de modelos. É ne
 <p>O que torna tais dados especiais para quem pretende usá-los para fins
 analíticos? Esta é a questão básica que será amplamente discutida ao longo deste texto. A mensagem principal que pretendemos transmitir é que certos cuidados precisam ser tomados para utilização correta dos dados de pesquisas amostrais como as que o IBGE realiza.</p>
 <p>O que torna especiais dados como os produzidos pelo IBGE é que estes são obtidos através de pesquisas amostrais complexas de populações finitas que envolvem: <strong>probabilidades distintas de seleção, estratificação e conglomeração das unidades, ajustes para compensar não-resposta e outros ajustes</strong>. Os sistemas
-tradicionais de análise ignoram estes aspectos, podendo produzir estimativas incorretas tanto dos parâmetros como para as variâncias destas estimativas. Quando utilizamos a amostra para estudos analíticos, as opções disponíveis nos pacotes estatísticos usuais para levar em conta os pesos distintos das observações são apropriadas somente para observações independentes e identicamente distribuídas (IID). Além disso, a variabilidade dos pesos produz
+tradicionais de análise ignoram estes aspectos, podendo produzir estimativas incorretas tanto dos parâmetros como para as variâncias destas estimativas. Quando utilizamos a amostra para estudos analíticos, as opções disponíveis nos pacotes estatísticos usuais para levar em conta os pesos distintos das observações são apropriadas somente para observações independentes e identicamente distribuídas - IID. Além disso, a variabilidade dos pesos produz
 impactos tanto na estimação pontual quanto na estimação das variâncias dessas estimativas, que sofre ainda influência da estratificação e conglomeração.</p>
 <p>O objetivo deste livro é analisar o impacto das simplificações feitas ao utilizar procedimentos e pacotes usuais de análise de dados, e apresentar os ajustes necessários desses procedimentos de modo a incorporar na análise, de forma apropriada, os aspectos aqui ressaltados. Para isto serão apresentados exemplos de análises de dados obtidos em pesquisas amostrais complexas, usando pacotes clássicos e também pacotes estatísticos especializados. A comparação
 dos resultados das análises feitas das duas formas permitirá avaliar o impacto de ignorar o plano amostral na análise dos dados resultantes de pesquisas amostrais complexas.</p>
