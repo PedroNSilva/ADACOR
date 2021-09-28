@@ -41,7 +41,7 @@ As Unidades Primárias de Amostragem - UPAs foram municípios ou setores censit�
 A amostra da pesquisa foi planejada e dimensionada visando ao fornecimento de estimativas com precisão adequada para as cinco macrorregiões do Brasil. Os tamanhos da amostra planejada de setores e domicílios para as macrorregiões são apresentados na Tabela \@ref(tab:numset).
 
 ```{r, numset, echo=FALSE}
-suppressMessages(library(kableExtra))
+suppressMessages(library(kableExtra,float))
 
 tabela01a <- data.frame (
  Macrorregião = c("Norte", "Nordeste", "Sudeste", "Sul", "Centro-Oeste", "Total"),

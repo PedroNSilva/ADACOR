@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="introduc.html"/>
-<link rel="next" href="referências.html"/>
+<link rel="next" href="capplanamo.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -115,6 +115,25 @@ div.csl-indent {
 <li class="chapter" data-level="2.8" data-path="refinf.html"><a href="refinf.html#planamo"><i class="fa fa-check"></i><b>2.8</b> Planejamento amostral</a></li>
 <li class="chapter" data-level="2.9" data-path="refinf.html"><a href="refinf.html#inform"><i class="fa fa-check"></i><b>2.9</b> Planos amostrais informativos e ignoráveis</a></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="capplanamo.html"><a href="capplanamo.html"><i class="fa fa-check"></i><b>3</b> Estimação Baseada no Plano Amostral</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="capplanamo.html"><a href="capplanamo.html#estimatotais"><i class="fa fa-check"></i><b>3.1</b> Estimação de Totais</a></li>
+<li class="chapter" data-level="3.2" data-path="capplanamo.html"><a href="capplanamo.html#por-que-estimar-variâncias"><i class="fa fa-check"></i><b>3.2</b> Por que Estimar Variâncias</a></li>
+<li class="chapter" data-level="3.3" data-path="capplanamo.html"><a href="capplanamo.html#taylor"><i class="fa fa-check"></i><b>3.3</b> Linearização de Taylor para Estimar variâncias</a></li>
+<li class="chapter" data-level="3.4" data-path="capplanamo.html"><a href="capplanamo.html#método-do-conglomerado-primário"><i class="fa fa-check"></i><b>3.4</b> Método do Conglomerado Primário</a></li>
+<li class="chapter" data-level="3.5" data-path="capplanamo.html"><a href="capplanamo.html#métodos-de-replicação"><i class="fa fa-check"></i><b>3.5</b> Métodos de Replicação</a></li>
+<li class="chapter" data-level="3.6" data-path="capplanamo.html"><a href="capplanamo.html#laboratório-de-r"><i class="fa fa-check"></i><b>3.6</b> Laboratório de R</a></li>
+<li class="chapter" data-level="3.7" data-path="capplanamo.html"><a href="capplanamo.html#section"><i class="fa fa-check"></i><b>3.7</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="epa.html"><a href="epa.html"><i class="fa fa-check"></i><b>4</b> Efeitos do Plano Amostral</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="epa.html"><a href="epa.html#introdução"><i class="fa fa-check"></i><b>4.1</b> Introdução</a></li>
+<li class="chapter" data-level="4.2" data-path="epa.html"><a href="epa.html#efeito-do-plano-amostral-epa-de-kish"><i class="fa fa-check"></i><b>4.2</b> Efeito do Plano Amostral (EPA) de Kish</a></li>
+<li class="chapter" data-level="4.3" data-path="epa.html"><a href="epa.html#efeito-do-plano-amostral-ampliado"><i class="fa fa-check"></i><b>4.3</b> Efeito do Plano Amostral Ampliado</a></li>
+<li class="chapter" data-level="4.4" data-path="epa.html"><a href="epa.html#icth"><i class="fa fa-check"></i><b>4.4</b> Intervalos de Confiança e Testes de Hipóteses</a></li>
+<li class="chapter" data-level="4.5" data-path="epa.html"><a href="epa.html#efeitos-multivariados-de-plano-amostral"><i class="fa fa-check"></i><b>4.5</b> Efeitos Multivariados de Plano Amostral</a></li>
+<li class="chapter" data-level="4.6" data-path="epa.html"><a href="epa.html#laboratório-de-r-1"><i class="fa fa-check"></i><b>4.6</b> Laboratório de R</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
 </ul>
 
@@ -152,9 +171,9 @@ identicamente distribuídas - IID, com a mesma distribuição caracterizada pela
 <a href="refinf.html#fig:modclas">2.1</a>, e uma descrição esquemática resumida é apresentada na Tabela
 <a href="refinf.html#tab:modelclass">2.1</a>.</p>
 <div class="figure"><span style="display:block;" id="fig:modclas"></span>
-<img src="Figuras/Figura2.1.png" alt="Representação esquemática da Modelagem Clássica"  />
+<img src="Figuras/Figura2.1.png" alt="Representação esquemática da *Modelagem Clássica*"  />
 <p class="caption">
-Figura 2.1: Representação esquemática da Modelagem Clássica
+Figura 2.1: Representação esquemática da <em>Modelagem Clássica</em>
 </p>
 </div>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -250,9 +269,9 @@ Objetivo
 </tbody>
 </table>
 <div class="figure"><span style="display:block;" id="fig:modamo"></span>
-<img src="Figuras/Figura2.2.png" alt="Representação esquemática da Amostragem Probabilística"  />
+<img src="Figuras/Figura2.2.png" alt="Representação esquemática da *Amostragem Probabilística*"  />
 <p class="caption">
-Figura 2.2: Representação esquemática da Amostragem Probabilística
+Figura 2.2: Representação esquemática da <em>Amostragem Probabilística</em>
 </p>
 </div>
 <p>Esta abordagem é largamente empregada na produção de estatísticas públicas e
@@ -335,9 +354,9 @@ vetores aleatórios IID, queremos fazer inferência sobre o parâmetro <span cla
 considerando os pontos i) a iii) do Capítulo <a href="introduc.html#introduc">1</a>. Veja uma representação gráfica
 resumida desta abordagem na Figura <a href="refinf.html#fig:modsup">2.3</a>.</p>
 <div class="figure"><span style="display:block;" id="fig:modsup"></span>
-<img src="Figuras/Figura2.3.png" alt="Modelagem de Superpopulação"  />
+<img src="Figuras/Figura2.3.png" alt="Representação esquemática da *Modelagem de Superpopulação*"  />
 <p class="caption">
-Figura 2.3: Modelagem de Superpopulação
+Figura 2.3: Representação esquemática da <em>Modelagem de Superpopulação</em>
 </p>
 </div>
 <p>Adotando o <em>Modelo de Superpopulação</em> e considerando métodos usuais disponíveis
@@ -626,7 +645,7 @@ dificuldade, o uso dos <em>pesos amostrais</em> tem papel fundamental, como se v
 mais adiante.</p>
 <p>Uma forma simples de lidar com os efeitos do plano amostral na estimação pontual
 de quantidades descritivas populacionais de interesse é incorporar pesos
-adequados na análise, como mostram <span class="citation"><a href="#ref-Silva" role="doc-biblioref">Silva</a> (<a href="#ref-Silva" role="doc-biblioref">1996</a>)</span> e se verá no Capítulo <a href="#capplanamo"><strong>??</strong></a>. Essa forma porém, não resolve por si só o problema de estimação da precisão das estimativas pontuais, nem mesmo o caso da estimação pontual de parâmetros em <em>modelos de superpopulação</em>, o que vai requerer métodos específicos discutidos no Capítulo <a href="#ajmodpar"><strong>??</strong></a>.</p>
+adequados na análise, como mostram <span class="citation"><a href="#ref-Silva" role="doc-biblioref">Silva</a> (<a href="#ref-Silva" role="doc-biblioref">1996</a>)</span> e se verá no Capítulo <a href="capplanamo.html#capplanamo">3</a>. Essa forma porém, não resolve por si só o problema de estimação da precisão das estimativas pontuais, nem mesmo o caso da estimação pontual de parâmetros em <em>modelos de superpopulação</em>, o que vai requerer métodos específicos discutidos no Capítulo <a href="#ajmodpar"><strong>??</strong></a>.</p>
 <p>Como incluir os pesos para proteger contra planos amostrais <em>não-ignoráveis</em> e a
 possibilidade de má especificação do modelo? Uma ideia é modificar os estimadores dos parâmetros de modo que sejam consistentes (em termos da <em>distribuição de aleatorização</em>) para quantidades descritivas da população finita da qual a amostra foi extraída, que por sua vez seriam boas aproximações para os parâmetros dos modelos de interesse. Afirmações probabilísticas são então feitas com respeito à <em>distribuição de aleatorização</em> <span class="math inline">\(p\)</span> das estatísticas amostrais ou com respeito à distribuição mista ou combinada <span class="math inline">\(Mp\)</span>.</p>
 <p>A seguir apresentamos um exemplo com a finalidade de ilustrar uma situação de
@@ -1025,7 +1044,7 @@ Valliant, A. H., R.; Dorfman e Royall, R. M. (2000). <em>Finite population sampl
         </div>
       </div>
 <a href="introduc.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="referências.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="capplanamo.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

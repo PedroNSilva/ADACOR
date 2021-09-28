@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.9.8)  21 SEP 2021 15:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.9.24)  28 SEP 2021 16:27
 entering extended mode
 **./bookdown-adacor.tex
 (bookdown-adacor.tex
@@ -392,26 +392,26 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 )
 \Gin@req@height=\dimen180
 \Gin@req@width=\dimen181
+) (C:\Program Files\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count298
+\float@exts=\toks29
+\float@box=\box60
+\@float@everytoks=\toks30
+\@floatcapt=\box61
 ) (C:\Program Files\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip63
-\multirow@cntb=\count298
+\multirow@cntb=\count299
 \multirow@dima=\skip64
 \bigstrutjot=\dimen182
 ) (C:\Program Files\MiKTeX\tex/latex/wrapfig\wrapfig.sty
 \wrapoverhang=\dimen183
 \WF@size=\dimen184
-\c@WF@wrappedlines=\count299
-\WF@box=\box60
-\WF@everypar=\toks29
+\c@WF@wrappedlines=\count300
+\WF@box=\box62
+\WF@everypar=\toks31
 Package: wrapfig 2003/01/31  v 3.6
-) (C:\Program Files\MiKTeX\tex/latex/float\float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count300
-\float@exts=\toks30
-\float@box=\box61
-\@float@everytoks=\toks31
-\@floatcapt=\box62
 ) (C:\Program Files\MiKTeX\tex/latex/colortbl\colortbl.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 \everycr=\toks32
@@ -535,32 +535,32 @@ File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 ) (bookdown-adacor.aux)
 \openout1 = `bookdown-adacor.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 144.
-LaTeX Font Info:    ... okay on input line 144.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 144.
-LaTeX Font Info:    ... okay on input line 144.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 144.
-LaTeX Font Info:    ... okay on input line 144.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 144.
-LaTeX Font Info:    ... okay on input line 144.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 144.
-LaTeX Font Info:    ... okay on input line 144.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 144.
-LaTeX Font Info:    ... okay on input line 144.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 144.
-LaTeX Font Info:    ... okay on input line 144.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 144.
-LaTeX Font Info:    ... okay on input line 144.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 144.
-LaTeX Font Info:    ... okay on input line 144.
-LaTeX Info: Redefining \microtypecontext on input line 144.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Info: Redefining \microtypecontext on input line 145.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 144.
+LaTeX Info: Redefining \showhyphens on input line 145.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -587,7 +587,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 144.
+Package hyperref Info: Link coloring OFF on input line 145.
 (C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (C:\Program Files\MiKTeX\tex/latex/refcount\refcount.sty
@@ -597,9 +597,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count328
 )
-LaTeX Info: Redefining \ref on input line 144.
-LaTeX Info: Redefining \pageref on input line 144.
-LaTeX Info: Redefining \nameref on input line 144.
+LaTeX Info: Redefining \ref on input line 145.
+LaTeX Info: Redefining \pageref on input line 145.
+LaTeX Info: Redefining \nameref on input line 145.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -635,39 +635,39 @@ LaTeX Info: Redefining \nameref on input line 144.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-46.
+47.
 (C:\Program Files\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-46.
+47.
 (C:\Program Files\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-146.
+147.
 (C:\Program Files\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-146.
+147.
 (C:\Program Files\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 146.
+(Font)              <14.4> on input line 147.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 146.
+(Font)              <10> on input line 147.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 146.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 146
+(Font)              <7> on input line 147.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 147
 .
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (C:\Program Files\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 146
+LaTeX Font Info:    Trying to load font information for U+msb on input line 147
 .
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -702,20 +702,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.261 
+l.262 
       ] [9pdfTeX warning (ext4): destination with the same identifier (name{tab
 le.1.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.284   \textbf
+l.285   \textbf
                {considerando Amostragem AleatÃ³ria Simples - AAS} e, portant...
 ]
-Overfull \hbox (10.8533pt too wide) in paragraph at lines 309--309
+Overfull \hbox (10.8533pt too wide) in paragraph at lines 310--310
  []\T1/lmr/m/n/12 (-20) Est_por_AAS|
  []
 
 
-Overfull \hbox (10.50768pt too wide) in paragraph at lines 309--309
+Overfull \hbox (10.50768pt too wide) in paragraph at lines 310--310
  []\T1/lmr/m/n/12 (-20) DP_Est_Verd|
  []
 
@@ -723,61 +723,54 @@ Overfull \hbox (10.50768pt too wide) in paragraph at lines 309--309
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.327   I
+l.328   I
          lustrar e analisar o impacto das simplificaÃ§Ãµes feitas ao utiliza...
-]
+] [11]
 
-LaTeX Warning: Reference `capplanamo' on page 11 undefined on input line 349.
-
-
-LaTeX Warning: Reference `epa' on page 11 undefined on input line 351.
-
-[11]
-
-LaTeX Warning: Reference `ajmodpar' on page 12 undefined on input line 353.
+LaTeX Warning: Reference `ajmodpar' on page 12 undefined on input line 354.
 
 
-LaTeX Warning: Reference `modreg' on page 12 undefined on input line 355.
+LaTeX Warning: Reference `modreg' on page 12 undefined on input line 356.
 
 
-LaTeX Warning: Reference `modlog' on page 12 undefined on input line 357.
+LaTeX Warning: Reference `modlog' on page 12 undefined on input line 358.
 
 
-LaTeX Warning: Reference `testqualajust' on page 12 undefined on input line 359
+LaTeX Warning: Reference `testqualajust' on page 12 undefined on input line 360
 .
 
 
-LaTeX Warning: Reference `testetab2' on page 12 undefined on input line 359.
+LaTeX Warning: Reference `testetab2' on page 12 undefined on input line 360.
 
 
-LaTeX Warning: Reference `graficos' on page 12 undefined on input line 384.
+LaTeX Warning: Reference `graficos' on page 12 undefined on input line 385.
 
 [12]
 
 LaTeX Warning: Reference `estimacao-de-densidades' on page 13 undefined on inpu
-t line 386.
+t line 387.
 
 
-LaTeX Warning: Reference `cdf' on page 13 undefined on input line 388.
+LaTeX Warning: Reference `cdf' on page 13 undefined on input line 389.
 
 
-LaTeX Warning: Reference `cdf' on page 13 undefined on input line 390.
+LaTeX Warning: Reference `cdf' on page 13 undefined on input line 391.
 
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-90.
+91.
 (C:\Program Files\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
 LaTeX Warning: Reference `modelos-hierarquicos' on page 13 undefined on input l
-ine 392.
+ine 393.
 
 [13] [14]
 Cap\'{\i }tulo 2.
-<Figuras/Figura2.1.png, id=222, 459.51675pt x 345.6915pt>
+<Figuras/Figura2.1.png, id=254, 459.51675pt x 345.6915pt>
 File: Figuras/Figura2.1.png Graphic file (type png)
 <use Figuras/Figura2.1.png>
-Package pdftex.def Info: Figuras/Figura2.1.png  used on input line 430.
+Package pdftex.def Info: Figuras/Figura2.1.png  used on input line 431.
 (pdftex.def)             Requested size: 459.51563pt x 345.69064pt.
 [15
 
@@ -785,130 +778,209 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.2.1}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.450 
+l.451 
       ] [16pdfTeX warning (ext4): destination with the same identifier (name{fi
 gure.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.450 
+l.451 
        <./Figuras/Figura2.1.png>]
 
-LaTeX Warning: Reference `modreg' on page 17 undefined on input line 454.
+LaTeX Warning: Reference `modreg' on page 17 undefined on input line 455.
 
 
-LaTeX Warning: Reference `testqualajust' on page 17 undefined on input line 454
+LaTeX Warning: Reference `testqualajust' on page 17 undefined on input line 455
 .
 
 
-LaTeX Warning: Reference `testetab2' on page 17 undefined on input line 454.
+LaTeX Warning: Reference `testetab2' on page 17 undefined on input line 455.
 
 
 LaTeX Warning: Reference `estimacao-de-densidades' on page 17 undefined on inpu
-t line 455.
+t line 456.
 
-<Figuras/Figura2.2.png, id=246, 468.5505pt x 497.4585pt>
+<Figuras/Figura2.2.png, id=278, 468.5505pt x 497.4585pt>
 File: Figuras/Figura2.2.png Graphic file (type png)
 <use Figuras/Figura2.2.png>
-Package pdftex.def Info: Figuras/Figura2.2.png  used on input line 502.
+Package pdftex.def Info: Figuras/Figura2.2.png  used on input line 503.
 (pdftex.def)             Requested size: 468.56366pt x 497.47244pt.
 [17pdfTeX warning (ext4): destination with the same identifier (name{table.2.2}
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.504 \end{figure}
+l.505 \end{figure}
                   ] [18pdfTeX warning (ext4): destination with the same identif
 ier (name{figure.2.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.518 
+l.519 
        <./Figuras/Figura2.2.png>] [19]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
-67.
+68.
 (C:\Program Files\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<Figuras/Figura2.3.png, id=294, 471.56175pt x 620.3175pt>
+<Figuras/Figura2.3.png, id=326, 471.56175pt x 620.3175pt>
 File: Figuras/Figura2.3.png Graphic file (type png)
 <use Figuras/Figura2.3.png>
-Package pdftex.def Info: Figuras/Figura2.3.png  used on input line 611.
+Package pdftex.def Info: Figuras/Figura2.3.png  used on input line 612.
 (pdftex.def)             Requested size: 471.5606pt x 620.316pt.
 [20] [21pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.2.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.621 
+l.622 
        <./Figuras/Figura2.3.png>] [22pdfTeX warning (ext4): destination with th
 e same identifier (name{table.2.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.677 
+l.678 
       ] [23] [24] [25] [26]
 
-LaTeX Warning: Reference `capplanamo' on page 27 undefined on input line 937.
-
-
-LaTeX Warning: Reference `ajmodpar' on page 27 undefined on input line 937.
+LaTeX Warning: Reference `ajmodpar' on page 27 undefined on input line 938.
 
 [27] [28pdfTeX warning (ext4): destination with the same identifier (name{table
 .2.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1026 
+l.1027 
        ] [29pdfTeX warning (ext4): destination with the same identifier (name{t
 able.2.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1075 \end{table}
+l.1076 \end{table}
                   ] [30pdfTeX warning (ext4): destination with the same identif
 ier (name{table.2.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1126 ...er*{ReferÃªncias}\label{referuxeancias}}
+l.1127 ...da no Plano Amostral}\label{capplanamo}}
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{table.2.7}) has been already used, duplica
 te ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1126 ...er*{ReferÃªncias}\label{referuxeancias}}
+l.1127 ...da no Plano Amostral}\label{capplanamo}}
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{table.2.8}) has been already used, duplica
 te ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1126 ...er*{ReferÃªncias}\label{referuxeancias}}
-                                                  ] [31
+l.1127 ...da no Plano Amostral}\label{capplanamo}}
+                                                  ]
+Cap\'{\i }tulo 3.
+[31
 
-] [32] (bookdown-adacor.aux)
+] [32] [33] [34]
+
+LaTeX Warning: Reference `agregdesag' on page 35 undefined on input line 1357.
+
+[35] [36] [37] [38] [39] [40] [41] [42]
+Cap\'{\i }tulo 4.
+[43
+
+] [44pdfTeX warning (ext4): destination with the same identifier (name{table.4.
+1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1951 
+       ] [45] [46] [47pdfTeX warning (ext4): destination with the same identifi
+er (name{table.4.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.2158 
+       ] [48pdfTeX warning (ext4): destination with the same identifier (name{t
+able.4.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.2246 \end{table}
+                  ] [49pdfTeX warning (ext4): destination with the same identif
+ier (name{table.4.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.2323 
+       ] [50pdfTeX warning (ext4): destination with the same identifier (name{t
+able.4.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.2405 \]
+         ]
+<04-Cap04_files/figure-latex/epacong-1.pdf, id=725, 469.755pt x 325.215pt>
+File: 04-Cap04_files/figure-latex/epacong-1.pdf Graphic file (type pdf)
+<use 04-Cap04_files/figure-latex/epacong-1.pdf>
+Package pdftex.def Info: 04-Cap04_files/figure-latex/epacong-1.pdf  used on inp
+ut line 2411.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[51pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.2434 
+        <./04-Cap04_files/figure-latex/epacong-1.pdf>]
+Underfull \hbox (badness 1418) in paragraph at lines 2447--2452
+[]\T1/lmr/m/n/12 (+20) Neste caso, um in-ter-valo de con-fi-ança de ní-vel de c
+on-fi-ança apro-xi-mado $[]$ é dado por
+ []
+
+[52] [53pdfTeX warning (ext4): destination with the same identifier (name{table
+.4.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.2573 \end{equation}
+                     ] [54]
+
+LaTeX Warning: Reference `eq:epa7' on page 55 undefined on input line 2687.
+
+[55] [56]
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
+2880.
+(C:\Program Files\MiKTeX\tex/latex/lm\ts1lmtt.fd
+File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [57pdfTeX warning (ext4): destination with the same identifier (name{table.4.
+7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.2888 
+       ]
+Overfull \hbox (34.53331pt too wide) in paragraph at lines 2889--2890
+[]\T1/lmr/m/n/12 (-20) #\T1/lmtt/m/n/12 {r} #library(survey) #amolim.des<-svyde
+sign(id=~setor+domic, weights=~pesof, #  data=amolim)
+ []
+
+[58] [59
+
+] [60] [61] (bookdown-adacor.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 15816 strings out of 478864
- 231932 string characters out of 2858509
- 613655 words of memory out of 3000000
- 32982 multiletter control sequences out of 15000+600000
- 498053 words of font info for 223 fonts, out of 8000000 for 9000
+ 16167 strings out of 478864
+ 236526 string characters out of 2858508
+ 622085 words of memory out of 3000000
+ 33118 multiletter control sequences out of 15000+600000
+ 506628 words of font info for 251 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,15n,80p,1087b,491s stack positions out of 5000i,500n,10000p,200000b,80000s
-{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTe
-X/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-
-mathit.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Progra
-m Files/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/
+ 74i,23n,80p,1087b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
+{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Program Files/MiKT
+eX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-
+mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Progra
+m Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX/fonts/
 enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx12.pf
-b><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/M
-iKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
-lic/lm/lmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/P
-rogram Files/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX/fo
-nts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lm
-r6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Program File
-s/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX/fonts/type1/
-public/lm/lmro12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-<C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files/MiKT
-eX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on bookdown-adacor.pdf (32 pages, 467477 bytes).
+b><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Program Files/Mi
+KTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/publ
+ic/lm/lmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/P
+rogram Files/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX/fo
+nts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lm
+r17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Program Fil
+es/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/p
+ublic/lm/lmri12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmro12.pfb><
+C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/lm/lmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
+lm/lmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Prog
+ram Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on bookdown-adacor.pdf (61 pages, 716329 bytes).
 PDF statistics:
- 578 PDF objects out of 1000 (max. 8388607)
- 144 named destinations out of 1000 (max. 500000)
- 49304 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1102 PDF objects out of 1200 (max. 8388607)
+ 301 named destinations out of 1000 (max. 500000)
+ 53525 words of extra memory for PDF output out of 61914 (max. 10000000)
 

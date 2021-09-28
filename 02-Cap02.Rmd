@@ -26,7 +26,7 @@ Uma representação gráfica esquemática dessa abordagem é apresentada na Figu
 \@ref(fig:modclas), e uma descrição esquemática resumida é apresentada na Tabela
 \@ref(tab:modelclass).
 
-```{r,modclas, echo=FALSE, fig.cap="Representação esquemática da Modelagem Clássica"}
+```{r,modclas, echo=FALSE, fig.cap="Representação esquemática da *Modelagem Clássica*",fig.pos="!H"}
 knitr::include_graphics("Figuras/Figura2.1.png")
 ```
 
@@ -107,7 +107,7 @@ kable_styling(full_width = F,latex_options = 'HOLD_position')%>%column_spec(colu
 
 ```
 
-```{r,modamo, echo=FALSE, fig.cap="Representação esquemática da Amostragem Probabilística"}
+```{r,modamo, echo=FALSE, fig.cap="Representação esquemática da *Amostragem Probabilística*"}
 knitr::include_graphics("Figuras/Figura2.2.png")
 ```
 
@@ -208,7 +208,7 @@ vetores aleatórios IID, queremos fazer inferência sobre o parâmetro $\theta$,
 considerando os pontos i) a iii) do Capítulo \@ref(introduc). Veja uma representação gráfica
 resumida desta abordagem na Figura \@ref(fig:modsup).
 
-```{r, modsup, echo=FALSE, fig.cap="Modelagem de Superpopulação"}
+```{r, modsup, echo=FALSE, fig.cap="Representação esquemática da *Modelagem de Superpopulação*"}
 knitr::include_graphics("Figuras/Figura2.3.png")
 ```
 

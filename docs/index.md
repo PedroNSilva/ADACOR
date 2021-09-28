@@ -4,11 +4,14 @@ title: "Análise de Dados Amostrais"
 author: 
   - Djalma G. C. Pessoa, Pedro Luis do Nascimento Silva,
   - Antonio José Ribeiro Dias, Zélia Magalhães Bianchini e Sonia Albieri
-date: '21 de setembro de 2021, 15:29:39'
+date: '28 de setembro de 2021, 16:26:28'
 summary_depth: 3
 summary_float:
    collapsed: false
 site: bookdown::bookdown_site
+
+header-includes:
+    - \usepackage{float}
 
 geometry: "left=1.5cm,right=1cm,top=1.5cm,bottom=1.5cm"
 fontsize: 12pt
@@ -16,6 +19,7 @@ fontsize: 12pt
 output:
    bookdown::gitbook: default
    bookdown::pdf_book: default
+
 documentclass: book          
 
 bibliography: [book.bib, packages.bib]
