@@ -129,8 +129,10 @@ $$
 O estimador padrão (tipo Horvitz-Thompson) para este parâmetro na amostragem estratificada simples é dado por:
 
 $$
-\widehat {T_y} = \sum_{h=1}^H \frac{N_h}{n_h} \sum_{i \in s_h} y_i,\text{ onde }s_h \text{ é a amostra das unidades do estrato }h, h=1, 2,\dots,H.
+\widehat {T_y} = \sum_{h=1}^H \frac{N_h}{n_h} \sum_{i \in s_h} y_i,
 $$
+onde $s_h$ é a amostra das unidades do estrato $h, h=1, 2,\dots,H$.
+
 Este estimador pode ser usado para fazer inferência sobre o total populacional, como descrito, por exemplo, na seção 11.2 de @Silva2020. A distribuição do estimador $\widehat {T_y}$ obtida considerando o plano amostral $p(s)$ é denominada de *distribuição de aleatorização* e é geralmente aproximada usando o TCL para viabilizar a inferência.
 
 

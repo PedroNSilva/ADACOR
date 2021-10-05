@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.9.24)  5 OCT 2021 15:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.9.24)  5 OCT 2021 16:18
 entering extended mode
 **./bookdown-adacor.tex
 (bookdown-adacor.tex
@@ -823,59 +823,59 @@ ier (name{figure.2.2}) has been already used, duplicate ignored
 l.524 
        <./Figuras/Figura2.2.png>] [19]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
-73.
+75.
 (C:\Program Files\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 <Figuras/Figura2.3.png, id=296, 476.53032pt x 626.34pt>
 File: Figuras/Figura2.3.png Graphic file (type png)
 <use Figuras/Figura2.3.png>
-Package pdftex.def Info: Figuras/Figura2.3.png  used on input line 617.
+Package pdftex.def Info: Figuras/Figura2.3.png  used on input line 619.
 (pdftex.def)             Requested size: 476.5437pt x 626.35756pt.
 [20] [21pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.2.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.630 
+l.632 
        <./Figuras/Figura2.3.png>] [22pdfTeX warning (ext4): destination with th
 e same identifier (name{table.2.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.685 
+l.687 
       ] [23] [24] [25] [26]
 
-LaTeX Warning: Reference `capplanamo' on page 27 undefined on input line 943.
+LaTeX Warning: Reference `capplanamo' on page 27 undefined on input line 945.
 
 
-LaTeX Warning: Reference `ajmodpar' on page 27 undefined on input line 943.
+LaTeX Warning: Reference `ajmodpar' on page 27 undefined on input line 945.
 
 [27] [28pdfTeX warning (ext4): destination with the same identifier (name{table
 .2.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1031 
+l.1033 
        ] [29pdfTeX warning (ext4): destination with the same identifier (name{t
 able.2.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1080 \end{table}
+l.1082 \end{table}
                   ] [30pdfTeX warning (ext4): destination with the same identif
 ier (name{table.2.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1131 ...er*{Referências}\label{referuxeancias}}
+l.1133 ...er*{Referências}\label{referuxeancias}}
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{table.2.7}) has been already used, duplica
 te ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1131 ...er*{Referências}\label{referuxeancias}}
+l.1133 ...er*{Referências}\label{referuxeancias}}
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{table.2.8}) has been already used, duplica
 te ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1131 ...er*{Referências}\label{referuxeancias}}
+l.1133 ...er*{Referências}\label{referuxeancias}}
                                                   ] [31
 
 ] [32] (bookdown-adacor.aux)
@@ -906,7 +906,7 @@ s/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX/fonts/type1/
 public/lm/lmro12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
 <C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files/MiKT
 eX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on bookdown-adacor.pdf (32 pages, 475815 bytes).
+Output written on bookdown-adacor.pdf (32 pages, 475769 bytes).
 PDF statistics:
  582 PDF objects out of 1000 (max. 8388607)
  144 named destinations out of 1000 (max. 500000)
