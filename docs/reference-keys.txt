@@ -1,0 +1,14 @@
+introduc
+motivação
+objetivos-do-livro
+estrutura-do-livro
+refinf
+classic
+abordagem-1---modelagem-clássica
+abordagem-2---amostragem-probabilística
+discussão-das-abordagens-1-e-2
+modelsuperpop
+fontes-de-variação
+modelos-de-superpopulação
+planamo
+inform
