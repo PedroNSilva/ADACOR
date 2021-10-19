@@ -52,4 +52,7 @@ taylor
 método-do-conglomerado-primário
 métodos-de-replicação
 laboratório-de-r
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
