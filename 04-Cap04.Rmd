@@ -1058,56 +1058,56 @@ Utilizando o R, obtemos a seguir alguns resultados descritos nos Exemplos \@ref(
 e \@ref(tab:varest).
 
 
-#```{r, code=readLines('CodigoR/Lab4a.R', encoding= "UTF-8")}
-#```
+```{r, code=readLines('CodigoR/Lab4a.R', encoding= "UTF-8")}
+```
 
-#```{example, label="eqmean" }
+```{example, label="eqmean" }
 Teste da igualdade de médias para duas populações
-#```
+```
 
 Para exemplificar o material descrito na Seção \@ref(icth), vamos utilizar o data frame `amolim`, contendo dados da `Amostra do Censo Experimental de Limeira`.
 
-#```{r}
+```{r}
 # carregar dados
-#library(anamco)
-#dim(amolim)
-#names(amolim)
-#```
-#- Objeto de desenho para os dados da Amostra de Limeira:
+library(anamco)
+dim(amolim)
+names(amolim)
+```
+- Objeto de desenho para os dados da Amostra de Limeira:
 
-#```{r}
-#library(survey)
-#amolim.des<-svydesign(id=~setor+domic, weights=~pesof,
-#  data=amolim)
-#```
+```{r}
+library(survey)
+amolim.des<-svydesign(id=~setor+domic, weights=~pesof,
+  data=amolim)
+```
 
-#- Vamos estimar, a renda média por raça:
+- Vamos estimar, a renda média por raça:
 
-#```{r}
-#svyby(~renda, ~raca, amolim.des, svymean)
-#```
+```{r}
+svyby(~renda, ~raca, amolim.des, svymean)
+```
 
-#- Vamos estimar, a renda média por sexo:
+- Vamos estimar, a renda média por sexo:
 
-#```{r}
-#svyby(~renda, ~sexo, amolim.des, svymean)
-#```
-#- Vamos testar a igualdade de rendas por sexo:
+```{r}
+svyby(~renda, ~sexo, amolim.des, svymean)
+```
+- Vamos testar a igualdade de rendas por sexo:
 
-#```{r}
-#svyttest(renda ~ sexo, amolim.des)
-#```
+```{r}
+svyttest(renda ~ sexo, amolim.des)
+```
 
-#- Vamos testar a igualdade de rendas por raça:
+- Vamos testar a igualdade de rendas por raça:
 
-#```{r}
-#svyttest(renda ~ raca, amolim.des)
-#```
-
-
+```{r}
+svyttest(renda ~ raca, amolim.des)
+```
 
 
 
-#```{r include=FALSE, cache=FALSE}
-#options(op)
-#```
+
+
+```{r include=FALSE, cache=FALSE}
+options(op)
+```

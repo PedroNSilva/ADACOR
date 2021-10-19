@@ -200,7 +200,7 @@ aleatórias $Y_{1}, \ldots , Y_{N}$, supostas IID com distribuição $f(y;\theta
 onde $\theta \in \Theta$. Este modelo é denominado *Modelo de Superpopulação*. Note que, em contraste com o que se faz na *Modelagem Clássica*, o modelo probabilístico é aqui especificado para descrever o mecanismo aleatório que gera
 a *população*, não a amostra. 
 
-Na maioria das aplicações práticas, a população de interesse, embora considerada finita, jamais será observada por inteiro. Não obstante, ao formular o modelo para descrever propriedades da população, nossas perguntas e respostas descritas em termos de valores ou regiões para o parâmetro $\theta$ passam a se referir à população de interesse ou a populações similares, quer existam ao mesmo tempo, quer se refiram a estados futuros (ou passados) da mesma população. Vale realçar também que pesquisas por amostragem "consistem em selecionar parte de uma população para observar, de modo que seja possível estimar alguma coisa sobre toda a população", conforme @thompson1992.
+Na maioria das aplicações práticas, a população de interesse, embora considerada finita, jamais é observada por inteiro. Não obstante, ao formular o modelo para descrever propriedades da população, nossas perguntas e respostas descritas em termos de valores ou regiões para o parâmetro $\theta$ passam a se referir à população de interesse ou a populações similares, quer existam ao mesmo tempo, quer se refiram a estados futuros (ou passados) da mesma população. Vale realçar também que pesquisas por amostragem "consistem em selecionar parte de uma população para observar, de modo que seja possível estimar alguma coisa sobre toda a população", conforme @thompson1992.
 
 Utilizando um plano amostral definido por $p(s)$, obtemos os valores das
 variáveis de pesquisa na amostra $y_{i_1}, \ldots , y_{i_n}$. A partir de
@@ -262,7 +262,7 @@ específicas já agora disponíveis em alguns dos pacotes mais comumente utiliza
 (por exemplo, SAS, STATA, SPSS, ou R entre outros). Tais pacotes especializados
 ou rotinas específicas utilizam, em geral, métodos aproximados para estimar
 matrizes de covariância. Entre esses métodos, destacam-se o de Máxima
-Pseudo-Verossimilhança, a Linearização de Taylor, o método do Conglomerado Primário e métodos de reamostragem, que serão descritos mais adiante.
+Pseudo-Verossimilhança, a Linearização de Taylor, o método do Conglomerado Primário e métodos de reamostragem, que são descritos mais adiante.
 
 Em outras palavras, o uso dos pacotes usuais para analisar dados produzidos por
 pesquisas com planos amostrais complexos, tal como o uso de muitos remédios,
@@ -290,7 +290,7 @@ apresentar os métodos, ilustrando seu uso com exemplos reais e orientando sobre
 ## Fontes de variação
 
 Esta seção estabelece o referencial para inferência em pesquisas amostrais que
-será usado no restante deste texto. @cassel1977 sugerem que um referencial para
+é usado no restante deste texto. @cassel1977 sugerem que um referencial para
 inferência poderia considerar três fontes de aleatoriedade (incerteza,
 variação), incluindo:
 
@@ -313,7 +313,7 @@ Uma quarta fonte de incerteza que precisa ser acrescentada às anteriores é o
 Para concentrar o foco nas questões de maior interesse deste texto, as fontes
 (2) e (4) não serão consideradas no referencial adotado para a maior parte dos
 capítulos. Para o tratamento das dificuldades causadas por não resposta, a fonte
-(4) será considerada no Capítulo xx. 
+(4) é considerada no Capítulo xx. 
 
 Assim sendo, exceto onde explicitamente indicado, de agora em diante admitiremos que não há *erros de medição*, implicando que os valores observados de quaisquer variáveis de interesse são considerados valores corretos ou verdadeiros. Admitimos ainda que há *resposta completa*, implicando que os valores de quaisquer variáveis de interesse estão disponíveis para todos os elementos da amostra selecionada depois que a pesquisa foi realizada. Hipóteses semelhantes são adotadas, por exemplo, em @binder83 e @Mont87.
 
@@ -338,7 +338,7 @@ de $P$ variáveis de interesse da pesquisa, doravante denominadas simplesmente
 *variáveis da pesquisa*.
 
 Denotemos por $\mathbf{y}_i=(y_{i1},...,y_{iP})^{\prime }$ um vetor $P \times 1$
-de valores das variáveis da pesquisa e por $\mathbf{x}_{i} = (x_{i1}, \ldots, x_{iQ})^{\prime }$ um vetor $Q\times 1$ de variáveis auxiliares da $i$-ésima unidade da população, respectivamente, para $i=1,...,N$. Aqui as variáveis auxiliares são consideradas como variáveis contendo a informação requerida para o plano amostral e a estimação a partir da amostra, como se discutirá com mais detalhes adiante. 
+de valores das variáveis da pesquisa e por $\mathbf{x}_{i} = (x_{i1}, \ldots, x_{iQ})^{\prime }$ um vetor $Q\times 1$ de variáveis auxiliares da $i$-ésima unidade da população, respectivamente, para $i=1,...,N$. Aqui as variáveis auxiliares são consideradas como variáveis contendo a informação requerida para o plano amostral e a estimação a partir da amostra, como se discute com mais detalhes adiante. 
 
 Denotemos por $\mathbf{y}_{U}$ a matriz $N \times P$ formada empilhando os vetores transpostos das observações das variáveis de pesquisa correspondentes a todas as unidades da população, e por $\mathbf{Y}_{U}$ a correspondente matriz de vetores aleatórios geradores das observações na população.
 
@@ -449,12 +449,12 @@ Esta caracterização do plano amostral $p(s)$ é bem geral, permitindo que o
 mecanismo de seleção amostral dependa dos valores das variáveis auxiliares
 $\mathbf{x}_1, \ldots, \mathbf{x}_N$ bem como dos valores das variáveis da
 pesquisa na população $\mathbf{y}_1, \ldots, \mathbf{y}_N$ (*amostragem informativa*, ver Seção \@ref(inform)). Uma notação mais explícita para indicar
-esta possibilidade envolveria escrever $p(s)$ como $p\left[ a | (\mathbf{y}_U , \mathbf{x}_U ) \right]$. Tal notação será evitada por razões de simplicidade.
+esta possibilidade envolveria escrever $p(s)$ como $p\left[ s | (\mathbf{y}_U , \mathbf{x}_U ) \right]$. Tal notação é evitada por razões de simplicidade.
 
 Denotamos por $I(B)$ a função indicadora que assume o valor $1$ quando o evento
 $B$ ocorre e $0$ caso contrário. Seja $\mathbf{\Delta}_s = \left[ I(1 \in s), \ldots, I(N \in s) \right]^{\prime}$ um vetor aleatório de indicadores dos elementos incluídos na amostra $s$. Então o plano amostral pode ser alternativamente caracterizado pela distribuição de probabilidade de $\mathbf{\Delta }_s$ denotada por $f\left[ \mathbf{\delta }_s | \left(\mathbf{y}_U, \mathbf{x}_U \right) \right]$, onde $\mathbf{\delta }_s$ é qualquer realização particular de $\mathbf{\Delta }_s$ tal que ${\mathbf{\delta}_s}^{\prime} \mathbf{1}_N = n$, e $\mathbf{1}_N$ é o vetor unitário de dimensão $N$.
 
-Notação adicional necessária nas seções posteriores será agora introduzida.
+Notação adicional necessária nas seções posteriores é agora introduzida.
 Denotamos por $\pi_i$ a probabilidade de inclusão da unidade $i$ na amostra $s$,
 isto é,
 
@@ -514,7 +514,7 @@ A definição precisa de ignorabilidade e as condições sob as quais um plano
 amostral é *ignorável* para inferência são bastante discutidas na literatura -
 ver por exemplo @Sugden84 ou os Capítulos 1 e 2 de @CHSK2003. Porém testar
 a ignorabilidade do plano amostral é muitas vezes complicado. Em caso de
-dificuldade, o uso dos *pesos amostrais* tem papel fundamental, como se verá
+dificuldade, o uso dos *pesos amostrais* tem papel fundamental, como se vê
 mais adiante.
 
 Uma forma simples de lidar com os efeitos do plano amostral na estimação pontual
@@ -591,7 +591,7 @@ $n$ inteiro e par seja selecionada da população, onde os estratos são definid
 com base nos valores da variável $x$, e onde a alocação da amostra nos estratos
 é dada por $n_0 = n_1 = n/2$, sendo $n_x$ o tamanho da amostra no estrato
 correspondente ao valor $x$ usado como índice. Esta alocação é dita *alocação igual*, pois o tamanho total da amostra é repartido em partes iguais entre os estratos definidos para seleção e, no caso, há apenas dois estratos. A alocação
-desta amostra será desproporcional exceto no caso em que $N_{0+} = N_{1+}$.
+desta amostra é desproporcional exceto no caso em que $N_{0+} = N_{1+}$.
 
 Nosso interesse aqui é ilustrar o efeito que uma *alocação desproporcional* pode
 causar na análise dos dados amostrais, caso não sejam levadas em conta na
@@ -685,7 +685,7 @@ suppressMessages(library(kableExtra))
 
 l1=c('$x \\downarrow \\text{ | } y \\rightarrow$','0','1', 'Total')
 l2=c('0', '0,875','0,125','1')
-l3=c('1','0,500','0,00','1')
+l3=c('1','0,500','0,500','1')
 
 tabela=as.data.frame(t(data.frame(l1,l2,l3)))
 
@@ -703,10 +703,11 @@ e que a distribuição marginal de $Y$ *na população* e *na amostra* são dada
 ```{r, echo=FALSE, label=Tab28}
 suppressMessages(library(kableExtra))
 
-l1=c('$f_U(y)$','0,8000','0,2000')
-l2=c('$f_s(y)$','0,6875','0,3125')
+l1=c('$y$','0','1')
+l2=c('$f_U(y)$','0,8000','0,2000')
+l3=c('$f_s(y)$','0,6875','0,3125')
 
-tabela=as.data.frame(t(data.frame(l1,l2)))
+tabela=as.data.frame(t(data.frame(l1,l2,l3)))
 
 names(tabela) <-NULL
 
@@ -732,4 +733,4 @@ distribuições de variáveis *na amostra* em relação à correspondente distri
 Caso a inferência requerida fosse sobre parâmetros da distribuição condicional
 de $Y$ dado $X$, a amostragem seria *ignorável*, isto é, $f_s ( y | x) = f_U (y | x)$. Assim, fica evidenciado também que a questão de saber se o plano amostral pode ou não ser ignorado depende da inferência desejada. No nosso exemplo, o plano amostral seria ignorável para inferência sobre a distribuição condicional de $Y$ dado $X$, mas não seria ignorável para inferência sobre a distribuição marginal de $Y$.
 
-Feita esta discussão sobre o referencial para inferência que adotaremos neste livro, segue-se uma revisão rápida dos métodos de estimação da *amostragem probabilística*. Como já indicado, o leitor interessado numa discussão mais detalhada pode consultar @Silva2020.
+Feita esta discussão sobre o referencial para inferência que adotamos neste livro, segue-se uma revisão rápida dos métodos de estimação da *amostragem probabilística*. Como já indicado, o leitor interessado numa discussão mais detalhada pode consultar @Silva2020.
