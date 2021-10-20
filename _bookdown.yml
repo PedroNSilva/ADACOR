@@ -35,7 +35,7 @@ language:
 
 output_dir: "docs"
 
-rmd_files: ["index.Rmd","01-Cap01.Rmd","02-Cap02.Rmd","03-Cap03.Rmd","15-ReferenciasCap.Rmd"]
+rmd_files: ["index.Rmd","01-Cap01.Rmd","02-Cap02.Rmd","15-Referencias.Rmd"]
 clean: [packages.bib, bookdown.bbl]
 new_session: yes
 delete_merged_file: TRUE

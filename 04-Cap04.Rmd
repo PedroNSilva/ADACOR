@@ -6,7 +6,7 @@ options(digits=3)
 # Efeitos do Plano Amostral {#epa}
 
 ## Introdução
-
+<div style="text-align: justify">
 O cálculo de desvio padrão e o uso de testes de hipóteses
 desempenham papel fundamental em estudos analíticos. Além de
 estimativas pontuais, na inferência analítica é necessário
@@ -39,7 +39,7 @@ cuidados que devem ser tomados na análise de dados deste tipo. Neste
 capítulo, usaremos como referência básica @Sk89a.
 
 ## Efeito do Plano Amostral (EPA) de Kish
-
+<div style="text-align: justify">
 Para medir o efeito do plano amostral sobre a variância de um estimador,
 Kish(1965) propôs uma medida que denominou `Efeito do Plano Amostral` ($\mathbf{EPA}$) (em inglês, *design effect*  ou,
 abreviadamente, *deff*). O objetivo desta medida é comparar
@@ -157,7 +157,7 @@ pesquisas futuras, e não a análise dos resultados da amostra do
 censo 80.
 
 ## Efeito do Plano Amostral Ampliado
-
+<div style="text-align: justify">
 O que se observou no Exemplo \@ref(exm:epakish) com respeito à dificuldade de
 uso dos EPAs de Kish calculados para fins analíticos também se
 aplica para outras situações e é uma deficiência estrutural
@@ -608,7 +608,7 @@ intraclasse $\rho$. Efeitos como esse são comuns também devido ao
 planejamento amostral, mesmo em populações onde a conglomeração é imposta artificialmente pelo amostrista.
 
 ## Intervalos de Confiança e Testes de Hipóteses {#icth}
-
+<div style="text-align: justify">
 A partir da estimativa pontual $\hat{\theta}$ de um parâmetro 
 $\theta$ (da população finita ou do modelo de superpopulação) é
 possível construir um intervalo de confiança de nível de confiança aproximado $\left( 1-\alpha \right)$ a partir da distribuição assintótica de 
@@ -785,7 +785,7 @@ verificar se as conclusões obtidas por formas ingênuas de
 análise ignorando os pesos e plano amostral são as mesmas.
 
 ## Efeitos Multivariados de Plano Amostral
-
+<div style="text-align: justify">
 O conceito de efeito de plano amostral introduzido em \@ref(eq:epa2) é
 relativo a inferências sobre um parâmetro univariado $\theta$.
 Consideremos agora o problema de estimação de um vetor 
@@ -1053,7 +1053,7 @@ de 5% assumindo autovalores iguais a delta.")
 ```
 
 ## Laboratório de R
-
+<div style="text-align: justify">
 Utilizando o R, obtemos a seguir alguns resultados descritos nos Exemplos \@ref(exm:deffuni) e \@ref(exm:deffmult). Na simulação, usamos a library *sampling*, @R-sampling, para gerar amostras estratificadas de tamanho 30, com estratos definidos na Tabela \@ref(tab:estempr), para obter os valores nas Tabelas \@ref(tab:proestmed)
 e \@ref(tab:varest).
 

@@ -1,7 +1,7 @@
 # Estimação Baseada no Plano Amostral {#capplanamo}
 
 ## Estimação de Totais {#estimatotais}
-
+<div style="text-align: justify">
 Devido a sua importância para os desenvolvimentos teóricos em vários dos capítulos subsequentes, alguns resultados básicos relativos à estimação de totais da população finita numa abordagem baseada no plano amostral serão reproduzidos nesta seção. A referência básica usada foi a  Seção 2.8 de @SSW92.
 
 Consideremos o problema de estimar o vetor $\mathbf{Y}=\sum_{i \in U}\mathbf{y}_i$ de totais das $P$ variáveis da pesquisa na população, a partir de uma amostra observada $a$. Naturalmente, qualquer estimador viável do total $\mathbf{Y}$ só pode depender dos valores das
@@ -156,7 +156,7 @@ O problema da estimação das variâncias de aleatorização para estimadores co
 disponíveis para estimar variâncias de estimadores `complexos`. O caso dos estimadores de razão e regressão para totais e médias foi resolvido faz tempo, e não há muito o que discutir aqui. Entretanto, a variedade de métodos empregados para estimação de variâncias merece uma discussão em separado, pois as técnicas de ajuste consideradas neste livro para incorporar pesos e plano amostral na inferência partindo de dados de pesquisas amostrais complexas depende em grande medida da aplicação de tais técnicas.
 
 ## Por que Estimar Variâncias
-
+<div style="text-align: justify">
 Em Amostragem, como de resto na Estatística Clássica, a estimação de variâncias é um componente `essencial` da
 abordagem inferencial adotada: sem estimativas de variância, nenhuma
 indicação da precisão (e portanto, da qualidade) das estimativas
@@ -231,7 +231,7 @@ algoritmos empregados pelos principais pacotes estatísticos
 especializados em estimação de variâncias de aleatorização (veja discussão no Capítulo \@ref(agregdesag).
 
 ## Linearização de Taylor para Estimar variâncias {#taylor}
-
+<div style="text-align: justify">
 Um problema que ocorre frequentemente é o de estimar um vetor de
 parâmetros 
 $\mathbf{\theta =}\left( \theta _{1},\ldots ,\theta_{K}\right)$, que pode ser escrito na forma 
@@ -421,7 +421,7 @@ para a matriz de variância do estimador
 $\widehat{\mathbf{R}}$ do vetor de razões de interesse.
 
 ## Método do Conglomerado Primário
-
+<div style="text-align: justify">
 A ideia central do *Método do Conglomerado Primário* (do
 inglês *Ultimate Cluster*) para estimação de variâncias
 para estimadores de totais e médias em planos amostrais de múltiplos
@@ -483,7 +483,7 @@ amostrais em vários estágios. Uma discussão sobre a qualidade
 dessa aproximação e alternativas pode ser encontrada em  @SSW92, p. 153.
 
 ## Métodos de Replicação
-
+<div style="text-align: justify">
 A ideia de usar métodos indiretos ou de replicação para
 estimar variâncias em amostragem não é nova. @Mahala39, @Mahala44 e @deming foram os precursores e muitos desenvolvimentos
 importantes se seguiram. Hoje em dia várias técnicas baseadas nessa
@@ -631,7 +631,7 @@ principalmente no método `jackknife`, embora também possua uma
 opção para usar outro método conhecido como de replicações de meias amostras balanceadas (do inglês *balanced half-sample replication*).
 
 ## Laboratório de R
-
+<div style="text-align: justify">
 Vamos utilizar dados da Pesquisa de Padrão  de Vida (PPV) do IBGE para ilustrar alguns métodos de estimação de variâncias. Vamos considerar a estimação da proporção de analfabetos na faixa etária acima de 14 anos. Os dados da pesquisa encontram-se no data frame \texttt{ppv1}. A variável `analf2` é indicadora da condição
 de analfabetismo na faixa etária acima de 14 anos e a variável `faixa2` é indicadora da faixa etária acima de 14 anos. Queremos estimar a proporção de analfabetos na faixa etária acima de 14 anos na região Sudeste.  Antes apresentamos o método de estimação de variância por linearização de Taylor
 
@@ -641,9 +641,9 @@ Vamos criar duas variáveis:
 `v04a02` igual a 2;
 - faixa - variável indicadora de faixa etária entre 7 e 14 anos.
 
-```{r, message=FALSE, warning=FALSE,echo=FALSE, eval=FALSE}
+```{r, message=FALSE, warning=FALSE,echo=TRUE, eval=TRUE}
 library(survey)
-#library(anamco) 
+library(anamco) 
 ppv_dat <- ppv # carrega dados
 # cria objeto de desenho
 ppv_plan<-svydesign(ids = ~nsetor, strata = ~estratof,
@@ -658,20 +658,20 @@ ppv_plan<-update(ppv_plan,
 
 Como estamos interessados em estimativas relativas à Região Sudeste, vamos restringir o desenho a esse domínio:
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 ppv_se_plan <- subset(ppv_plan, regiao == 2)
 ```
 
 Vamos estimar os totais das variáveis `analf.faixa` e `faixa`:
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 analf_faixa_tot_est<-svytotal(~analf.faixa+faixa ,ppv_se_plan )
 Vcov.Y1.Y2<-vcov(analf_faixa_tot_est) 
 ```
 Substituindo os valores na expressão \@ref(eq:estpa21), obtemos a estimativa da variância da razão de totais das variáveis `analf.faixa` e `faixa`.
 
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 y1hat<-coef(analf_faixa_tot_est)[1]
 y2hat<-coef(analf_faixa_tot_est)[2]
 Var.raz<-(1/y2hat)*(1/y2hat)*Vcov.Y1.Y2[1,1]+2*(1/y2hat)*(-y1hat/y2hat^2)*Vcov.Y1.Y2[1,2]+
@@ -683,42 +683,42 @@ sqrt(Var.raz)
 Podemos calcular diretamente o desvio-padrão:
 
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 svyratio(~analf.faixa, ~faixa, ppv_se_plan)
 ```
 
-A estimativa do desvio-padrão obtida por meio da função `svyratio` coincide com a obtida diretamente pelo método
+A estimativa do desvio-padrão obtida por meio da função *svyratio* coincide com a obtida diretamente pelo método
 de linearização, e é igual a "r round(sqrt(Var.raz),digits=5)". O método default para estimar variâncias
 usado pela library *survey*, @R-survey, do R é o de linearização de Taylor.
 
 A library `survey` dispõe de métodos alternativos para a estimação de variância.  Vamos utilizar os métodos de replicação
 de *Jackknife* e de *Bootstrap* para estimar esta variância de razão. Inicialmente, vamos converter o objeto de desenho `ppv1_se_plan` em um objeto de desenho de replicação de tipo *Jackknife*, contendo as réplicas de pesos que fornecem correspondentes réplicas de estimativas.
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 ppv_se_plan_jkn<-as.svrepdesign(ppv_se_plan,type="JKn")
 svyratio(~analf.faixa, ~faixa, ppv_se_plan_jkn)
 ```
 Para o tipo *Bootstrap*, temos:
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 ppv_se_plan_boot<-as.svrepdesign(ppv_se_plan,type="bootstrap")
 svyratio(~analf.faixa, ~faixa, ppv_se_plan_boot)
 
 ```
 Vamos apresentar mais detalhes sobre a obtenção dos estimadores de *Jackknife* e *Bootstrap* na library *survey*, @R-survey.
-A classe do objeto `ppv_se_plan_jkn` é `svyrep.design` e ele contém as seguintes componentes:
+A classe do objeto *ppv_se_plan_jkn* é *svyrep.design* e ele contém as seguintes componentes:
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 class(ppv_se_plan_jkn)
 names(ppv_se_plan_jkn)
 ```
 
 
-A componente `repweights` é uma lista com duas componentes: `weights` e `index`. A componente
-`weights` é uma matriz de dimensão $276 \times 276$, onde $276$ é o número de conglomerados primários do plano
+A componente *repweights* é uma lista com duas componentes: *weights* e *index*. A componente
+*weights* é uma matriz de dimensão $276 \times 276$, onde $276$ é o número de conglomerados primários do plano
 amostral da PPV na região Sudeste. A partir desta matriz, podemos obter $276$  réplicas de pesos de desenho de Jackknife.
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 ppv_se_dat<-ppv_se_plan_jkn$variables
 nrow(ppv_se_dat)
 ncong<-sum(with(ppv_se_dat,tapply( nsetor,estratof, function(t) length(unique(t)))))
@@ -726,9 +726,9 @@ ncong
 ```
 
 
-O argumento `compress` da função `as.svrepdesign` permite especificar se, na saída da função, a matriz
-`weights` será na forma comprimida ou não. Na aplicação feita foi usado o valor default que é a forma comprimida. 
-A forma não comprimida da matriz `weights` tem  "r nrow(ppv_se_dat)" linhas e "r ncong" colunas. A forma comprimida
+O argumento *compress* da função *as.svrepdesign* permite especificar se, na saída da função, a matriz
+*weights* será na forma comprimida ou não. Na aplicação feita foi usado o valor default que é a forma comprimida. 
+A forma não comprimida da matriz *weights* tem  "r nrow(ppv_se_dat)" linhas e "r ncong" colunas. A forma comprimida
 permite economizar memória, e pode ser facilmente convertida para a forma não comprimida, utilizando-se a componente`index`. 
 
 No método *jackknife*, cada um dos conglomerados primários é removido, e a réplica correspondente dos pesos é o produto
@@ -743,7 +743,7 @@ no estrato $h$, então os pesos do plano amostral serão multiplicados por:
 
 Podemos obter a matriz de fatores de correção do peso amostral na forma não comprimida da seguinte maneira:
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 fact_peso_comp_mat<-ppv_se_plan_jkn$repweights[[1]]
 ind_cong <-ppv_se_plan_jkn$repweights[[2]]
 fat_pesos_mat<- fact_peso_comp_mat[ind_cong,]
@@ -752,13 +752,13 @@ str(fat_pesos_mat)
 
 Podemos obter matriz de réplicas de pesos multiplicando cada coluna dessa matriz pelos pesos do plano amostra:
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 rep_pesos_mat<-weights(ppv_se_plan)*fat_pesos_mat
 ```
 
 Utilizando esta matriz de réplicas de pesos, podemos obter réplicas correspondentes de estimativas da razão.
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 rep_est_raz<-numeric(ncol(rep_pesos_mat))
 for (i in 1:ncol(rep_pesos_mat)){
 rep_est_raz[i]<-sum(rep_pesos_mat[,i]*ppv_se_dat$analf.faixa)/sum(rep_pesos_mat[,i]*ppv_se_dat$faixa)
@@ -769,15 +769,15 @@ rep_est_raz[i]<-sum(rep_pesos_mat[,i]*ppv_se_dat$analf.faixa)/sum(rep_pesos_mat[
 A partir destas réplicas de estimativas da razão, finalmente estimamos a variância:
 
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 mean_raz<-mean( rep_est_raz[ppv_se_plan_jkn$rscales>0])
 var_jack_raz<- sum((rep_est_raz-mean_raz)^2*ppv_se_plan_jkn$rscales)*ppv_se_plan_jkn$scale
 round(sqrt(var_jack_raz),5)
 ```
 
-A library `survey` @R-survey fornece uma função para estimar a variância de uma função de totais a partir das réplicas de pesos:
+A library *survey*, @R-survey, fornece uma função para estimar a variância de uma função de totais a partir das réplicas de pesos:
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 var_raz_rep<-withReplicates(ppv_se_plan_jkn, function(w,ppv_se_dat) sum(w*ppv_se_dat$analf.faixa)/sum(w*ppv_se_dat$faixa))
 var_raz_rep 
 ```
@@ -787,7 +787,7 @@ Resultado que coincide com a estimativa obtida pela aplicação da função `svy
 A vantagem de utilizar métodos de replicação é a facilidade com que estimamos a variância de qualquer
 característica da população, cujo estimador pontual é conhecido. Por exemplo, se quisermos estimar a variância da razão das taxas de analfabetos nas faixas etárias de 0 a 14 anos e acima de 14 anos podemos usar as mesmas réplicas de pesos:
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 withReplicates (ppv_se_plan_jkn,function(w,ppv_se_dat) with(ppv_se_dat,
 (sum(w*(analf==1&faixa==1))/sum(w*(faixa==1)))/(sum(w*(analf==1&faixa==0))/sum(w*(faixa==0)))
 ))  
@@ -795,7 +795,7 @@ withReplicates (ppv_se_plan_jkn,function(w,ppv_se_dat) with(ppv_se_dat,
 
 O erro padrão da razão entre razões estimada no exemplo anterior pode ser estimado por linearização de Taylor, usando-se a função `svycontrast()` da library survey: 
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 # cria variáveis dummies: 
 ppv_se_plan <- update(ppv_se_plan,
 num1 = as.numeric(analf==1 & faixa==1),
@@ -811,7 +811,6 @@ svycontrast(comp.tot, quote((num1/den1)/(num2/den2)))
 
 ```
 
-##
 
 
 

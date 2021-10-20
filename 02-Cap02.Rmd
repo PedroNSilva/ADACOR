@@ -8,13 +8,13 @@ editor_options:
 # Referencial para Inferência {#refinf}
 
 ## Modelagem - Primeiras ideias 
-
+<div style="text-align: justify">
 Com o objetivo de dar uma primeira ideia sobre o assunto a ser tratado neste
 livro vamos considerar, em situações simples, algumas abordagens alternativas
 para modelagem e análise estatística. A ideia é apresentar a principal abordagem que vamos considerar, a de *Modelagem de Superpopulação*, em contraste com as alternativas que poderiam ser consideradas, mas que tornariam difícil incorporar adequadamente as características que diferenciam dados obtidos com amostras complexas de outros.
 
 ## Abordagem 1 - Modelagem Clássica {#classic}
-
+<div style="text-align: justify">
 Seja $y$ uma variável de pesquisa (ou de interesse), e sejam $n$ observações desta variável para uma amostra de unidades de pesquisa denotadas por $y_1, \ldots ,y_n$. Em Inferência Estatística, a abordagem que aqui chamamos de *Modelagem Clássica*  considera $y_1, \ldots ,y_n$ como valores (realizações) de variáveis aleatórias $Y_1, \ldots ,Y_n$.
 
 Podemos formular modelos bastante sofisticados para a distribuição conjunta
@@ -26,7 +26,7 @@ Uma representação gráfica esquemática dessa abordagem é apresentada na Figu
 \@ref(fig:modclas), e uma descrição esquemática resumida é apresentada na Tabela
 \@ref(tab:modelclass).
 
-```{r,modclas, echo=FALSE, fig.cap="Representação esquemática da *Modelagem Clássica*",fig.align="center"}
+```{r,modclas, echo=FALSE, fig.cap="$\\text{Representação esquemática da }\\textit{Modelagem Clássica}$",fig.align="center"}
 knitr::include_graphics("Figuras/Figura2.1.png")
 ```
 
@@ -40,7 +40,7 @@ l3=c('Objetivo', '$\\text{Inferir sobre } \\theta
 
 tabela=as.data.frame(t(data.frame(l1,l2,l3)))
 
-names(tabela) <- NULL
+names(tabela) <-NULL
 
 knitr::kable(tabela,align= "ll",format.args= list(big.mark = '.',dec=','), escape = F, booktabs=T,
 caption= "$\\text{Representação esquemática da abordagem }\\textit{Modelagem Clássica}$",row.names=FALSE)%>% 
@@ -74,7 +74,7 @@ Para amostras de tamanho grande ($n \rightarrow \infty$), podemos usar o Teorema
 
 
 ## Abordagem 2 - Amostragem Probabilística
-
+<div style="text-align: justify">
 A abordagem adotada pelos praticantes de *Amostragem Probabilística*
 (amostristas) considera uma população finita $U=\{1, \ldots ,N\}$, da qual é
 selecionada uma amostra $s=\left\{ i_{1}, \ldots ,i_{n}\right\}$, segundo um
@@ -98,7 +98,7 @@ l3=c('Objetivo','$\\text{Inferir sobre funções }g(y_1, \\ldots , y_N)\\text{ u
 
 tabela=as.data.frame(t(data.frame(l1,l2,l3)))
 
-names(tabela) <- NULL
+names(tabela) <-NULL
 
 knitr::kable(tabela,align= "ll",format.args= list(big.mark = '.',dec=','), escape = F, booktabs=T,
 caption= "$\\text{Representação esquemática da abordagem }\\textit{Amostragem Probabilística}$",row.names=FALSE)%>% 
@@ -106,7 +106,7 @@ kable_styling(full_width = F,latex_options = 'HOLD_position')%>%column_spec(colu
 
 ```
 
-```{r,modamo, echo=FALSE, fig.cap="Representação esquemática da *Amostragem Probabilística*",fig.align="center"}
+```{r,modamo, echo=FALSE, fig.cap="$\\text{Representação esquemática da }\\textit{Amostragem Probabilística}$",fig.align="center"}
 knitr::include_graphics("Figuras/Figura2.2.png")
 ```
 
@@ -129,15 +129,15 @@ $$
 O estimador padrão (tipo Horvitz-Thompson) para este parâmetro na amostragem estratificada simples é dado por:
 
 $$
-\widehat {T_y} = \sum_{h=1}^H \frac{N_h}{n_h} \sum_{i \in s_h} y_i,
+\widehat {T}_y = \sum_{h=1}^H \frac{N_h}{n_h} \sum_{i \in s_h} y_i
 $$
 onde $s_h$ é a amostra das unidades do estrato $h, h=1, 2,\dots,H$.
 
-Este estimador pode ser usado para fazer inferência sobre o total populacional, como descrito, por exemplo, na seção 11.2 de @Silva2020. A distribuição do estimador $\widehat {T_y}$ obtida considerando o plano amostral $p(s)$ é denominada de *distribuição de aleatorização* e é geralmente aproximada usando o TCL para viabilizar a inferência.
+Este estimador pode ser usado para fazer inferência sobre o total populacional, como descrito, por exemplo, na seção 11.2 de @Silva2020. A distribuição do estimador $\widehat {T}_y$ obtida considerando o plano amostral $p(s)$ é denominada de *distribuição de aleatorização* e é geralmente aproximada usando o TCL para viabilizar a inferência.
 
 
 ## Discussão das abordagens 1 e 2
-
+<div style="text-align: justify">
 A primeira abordagem (*Modelagem Clássica*), nos termos descritos, foi
 inicialmente proposta para dados de medidas na Física e Astronomia, onde em
 geral o pesquisador tem relativo controle sobre os experimentos, e onde faz
@@ -193,7 +193,7 @@ dados da *população*, e não os da amostra. Essa abordagem incorpora na análi
 
 
 ## Abordagem 3 - Modelagem de Superpopulação {#modelsuperpop}
-
+<div style="text-align: justify">
 Nesta abordagem, os valores $y_{1}, \ldots , y_{N}$ da variável de interesse
 $y$ na população finita são considerados observações ou realizações das variáveis
 aleatórias $Y_{1}, \ldots , Y_{N}$, supostas IID com distribuição $f(y;\theta)$,
@@ -209,7 +209,7 @@ vetores aleatórios IID, queremos fazer inferência sobre o parâmetro $\theta$,
 considerando os pontos i) a iii) do Capítulo \@ref(introduc). Ver uma representação gráfica
 resumida desta abordagem na Figura \@ref(fig:modsup).
 
-```{r, modsup, echo=FALSE, fig.cap="Representação esquemática da *Modelagem de Superpopulação*",fig.align="center"}
+```{r, modsup, echo=FALSE, fig.cap="$\\text{Representação esquemática da }\\textit{Modelagem de Superpopulação}$",fig.align="center"}
 knitr::include_graphics("Figuras/Figura2.3.png")
 ```
 
@@ -236,7 +236,7 @@ l5=c('Objetivo','$\\text{Inferir sobre }g\\left( y_{1}, \\ldots , y_{N} \\right)
 
 tabela=as.data.frame(t(data.frame(l1,l2,l3,l4,l5)))
 
-names(tabela) <- NULL
+names(tabela) <-NULL
 
 knitr::kable(tabela,align= "ll",format.args= list(big.mark = '.',dec=','),escape = F, booktabs=T,
 caption= "$\\text{Representação esquemática da } \\textit{Modelagem de Superpopulação}$", row.names=FALSE)%>% 
@@ -288,7 +288,7 @@ correspondentes. É com este espírito que escrevemos este texto, que busca
 apresentar os métodos, ilustrando seu uso com exemplos reais e orientando sobre o uso adequado das ferramentas de modelagem e análise disponíveis no sistema R.
 
 ## Fontes de variação
-
+<div style="text-align: justify">
 Esta seção estabelece o referencial para inferência em pesquisas amostrais que
 é usado no restante deste texto. @cassel1977 sugerem que um referencial para
 inferência poderia considerar três fontes de aleatoriedade (incerteza,
@@ -329,7 +329,7 @@ de *Amostragem Probabilística*, não sendo considerados métodos intencionais o
 outros métodos não aleatórios algumas vezes usados para seleção de amostras.
 
 ## Modelos de Superpopulação
-
+<div style="text-align: justify">
 Seja $\{1, ..., N\}$ um conjunto de rótulos que identificam univocamente os $N$
 elementos distintos de uma população-alvo finita $U$. Sem perda de generalidade
 tomemos $U=\{1,...,N\}$. Uma pesquisa cobrindo $n$ elementos distintos numa
@@ -373,8 +373,8 @@ f \left( \mathbf{y}_U , \mathbf{x}_U ; \mathbf{\eta} \right)
 &=&\prod_{i\in U} f\left(\mathbf{y}_i , \mathbf{x}_i ; \mathbf{\eta} \right) (\#eq:ref1) \\
 &=&\prod_{i\in U} f\left( \mathbf{y}_i \mathbf{|x}_i ; \mathbf{\lambda} \right) 
 f\left( \mathbf{x}_i ; \mathbf{\phi} \right) (\#eq:ref2)
-\end{eqnarray} onde $\mathbf{\lambda}$ e $\mathbf{\phi}$ são vetores de
-parâmetros.
+\end{eqnarray} 
+onde $\mathbf{\lambda}$ e $\mathbf{\phi}$ são vetores de parâmetros.
 
 Sob \@ref(eq:ref2), o modelo marginal correspondente das variáveis da pesquisa
 seria obtido integrando nas variáveis auxiliares:
@@ -417,7 +417,7 @@ completada mediante a especificação de distribuições *a priori* para os par�
 do modelo.
 
 ## Plano amostral {#planamo}
-
+<div style="text-align: justify">
 Embora *censos* sejam algumas vezes realizados para coletar dados sobre certas
 populações, a vasta maioria das pesquisas realizadas é de pesquisas amostrais,
 nas quais apenas uma amostra de elementos da população (usualmente uma pequena
@@ -479,7 +479,7 @@ para os quais estão disponíveis aproximações e estimadores satisfatórios da
 variâncias dos estimadores de totais e de médias.
 
 ## Planos amostrais informativos e ignoráveis {#inform}
-
+<div style="text-align: justify">
 Ao fazer inferência usando dados de pesquisas amostrais precisamos distinguir
 duas situações que requerem tratamentos diferentes. Uma dessas situações ocorre quando o plano amostral empregado para coletar os dados é *informativo*, isto é,
 quando o mecanismo de seleção das unidades amostrais pode depender dos valores
@@ -545,9 +545,9 @@ l2=c('0','$\\eta_{00}$','$\\eta_{01}$','$\\eta_{0+}$')
 l3=c('1','$\\eta_{10}$','$\\eta_{11}$','$\\eta_{1+}$')
 l4=c('Total','$\\eta_{+0}$','$\\eta_{+1}$','1')
 
-tabela=as.data.frame(t(data.frame(l1,l2,l3,l4)))
+tabela=as.data.frame(t(data.frame(l2,l3,l4)))
 
-names(tabela) <-NULL
+names(tabela) <-l1
 
 knitr::kable(tabela,align= "cccc",format.args= list(big.mark = '.',dec=','),escape = F, booktabs=T,
 caption= "$\\text{Distribuição de probabilidades conjunta na população }P( Y_i = y ; X_i = x )$", row.names=FALSE)%>% 
@@ -558,7 +558,7 @@ column_spec(column=2,width='2cm')%>%column_spec(column=3,width='2cm')%>%column_s
 que também pode ser representada por:
 
 \begin{eqnarray}
- f_U (x ; y) &=& P( X = x ; Y = y )\\
+ f_U (x ; y) &=& P( X = x ; Y = y )\nonumber\\ 
              & =& \eta_{00}^{(1-x)(1-y)} \times \eta_{01}^{(1-x)y} \times \eta_{10}^{x(1-y)} \times (1 - \eta_{00} - \eta_{01} - \eta_{10})^{xy} \nonumber
 \end{eqnarray} 
 
@@ -568,14 +568,14 @@ Note agora que a distribuição marginal da variável $Y$ *na população* é
 Bernoulli com parâmetro $1 - \eta_{00} - \eta_{10}$, ou alternativamente:
 
 \begin{equation}
- f_U (y) = P( Y = y ) = (\eta_{00} + \eta_{10})^{(1-y)} \times (1 - \eta_{00} - \eta_{10})^y
+ f_U (y) = P( Y = y ) = (\eta_{00} + \eta_{10})^{(1-y)} \times (1 - \eta_{00} - \eta_{10})^y\nonumber
 \end{equation}
 
 De forma análoga, a distribuição marginal da variável $X$ *na população* também
 é Bernoulli, mas com parâmetro $1 - \eta_{00} - \eta_{01}$, ou alternativamente:
 
 \begin{equation}
- f_U (x) = P( X = x ) = (\eta_{00} + \eta_{01})^{(1-x)} \times (1 - \eta_{00} - \eta_{01})^x
+ f_U (x) = P( X = x ) = (\eta_{00} + \eta_{01})^{(1-x)} \times (1 - \eta_{00} - \eta_{01})^x\nonumber
 \end{equation}
 
 Seja $N_{xy}$ o número de unidades na população com a combinação de valores
@@ -607,9 +607,9 @@ l1=c('$x \\downarrow \\text{ | } y \\rightarrow$','0','1', 'Total')
 l2=c('0','$\\eta_{00}/\\eta_{0+}$','$\\eta_{01}/\\eta_{0+}$','1')
 l3=c('1','$\\eta_{10}/\\eta_{1+}$','$\\eta_{11}/\\eta_{1+}$','1')
 
-tabela=as.data.frame(t(data.frame(l1,l2,l3)))
+tabela=as.data.frame(t(data.frame(l2,l3)))
 
-names(tabela) <-NULL
+names(tabela) <-l1
 
 knitr::kable(tabela,align= "cccc",format.args= list(big.mark = '.',dec=','),escape = F, booktabs=T,
 caption= "$\\text{Distribuição de probabilidades condicional de }y\\text{ dado }x\\text{ na população - }P( Y_i = y | X_i = x )$", row.names=FALSE)%>% 
@@ -621,14 +621,14 @@ ou, alternativamente
 
 
 \begin{eqnarray}
- f_U (y | x) &=& P( Y = y | X = x )\\
+ f_U (y | x) &=& P( Y = y | X = x )\nonumber\\
              & =& (1-x) \times \frac{\eta_{00}^{(1-y)} \eta_{01}^y}   {\eta_{00}+\eta_{01}} + x \times \frac{\eta_{10}^{(1-y)} (1 - \eta_{00} - \eta_{01} - \eta_{10})^y} {1 - \eta_{00} - \eta_{01}}\nonumber
 \end{eqnarray}
 
 Dado o plano amostral acima descrito, a distribuição marginal de $X$ *na amostra* é Bernoulli com parâmetro $1/2$. Isto segue devido ao fato de que a amostra foi alocada igualmente com base nos valores de $x$ na população e, portanto, sempre teremos metade da amostra com valores de $x$ iguais a $0$ e metade com valores iguais a $1$. Isto pode ser representado como:
 
 \begin{equation}
- f_s (x) = P( X_i = x | i \in s ) = 1 / 2,\; \forall x \in \Omega \mbox{ e } \forall i \in U
+ f_s (x) = P( X_i = x | i \in s ) = 1 / 2,\; \forall x \in \Omega \mbox{ e } \forall i \in U\nonumber
 \end{equation} 
 
 onde a designação $f_s$ é utilizada para denotar a distribuição *na amostra*.
@@ -637,7 +637,7 @@ Podemos usar a informação sobre a distribuição condicional de $Y$ dado $X$ *
 obter a distribuição marginal de $Y$ *na amostra*, que é dada por:
 
 \begin{eqnarray}
- f_s (y) &= &P( Y_i = y | i \in s )\\ 
+ f_s (y) &= &P( Y_i = y | i \in s )\nonumber\\ 
 &=& \sum _{x = 0} ^{1} P( X_i = x ; Y_i = y | i \in s) \nonumber \\ 
 &=& \sum _{x = 0} ^{1} P[ Y_i = y | (X_i = x) e (i \in s)] \times P( X_i = x | i \in s) \nonumber\\ 
 &=& \sum _{x = 0} ^{1} P( Y_i = y | X_i = x) \times f_s (x) \nonumber \\ 
@@ -666,9 +666,9 @@ l3=c('1','0,1','0,1','0,2')
 
 l4=c('Total','0,8','0,2','1')
 
-tabela=as.data.frame(t(data.frame(l1,l2,l3,l4)))
+tabela=as.data.frame(t(data.frame(l2,l3,l4)))
 
-names(tabela) <-NULL
+names(tabela) <-l1
 
 knitr::kable(tabela,align= "cccc",format.args= list(big.mark = '.',dec=','),escape = F, booktabs=T,
 caption= "$\\text{Distribuição de probabilidades conjunta na população }f_U( x ; y )$", row.names=FALSE)%>% 
@@ -687,9 +687,9 @@ l1=c('$x \\downarrow \\text{ | } y \\rightarrow$','0','1', 'Total')
 l2=c('0', '0,875','0,125','1')
 l3=c('1','0,500','0,500','1')
 
-tabela=as.data.frame(t(data.frame(l1,l2,l3)))
+tabela=as.data.frame(t(data.frame(l2,l3)))
 
-names(tabela) <-NULL
+names(tabela) <-l1
 
 knitr::kable(tabela,align= "cccc",format.args= list(big.mark = '.',dec=','),escape = F, booktabs=T,
 caption= "$\\text{Distribuição de probabilidades condicional de }Y\\text{ dado }X\\text{ na população - }f_U( y | x )$", row.names=FALSE)%>% 
@@ -707,9 +707,9 @@ l1=c('$y$','0','1')
 l2=c('$f_U(y)$','0,8000','0,2000')
 l3=c('$f_s(y)$','0,6875','0,3125')
 
-tabela=as.data.frame(t(data.frame(l1,l2,l3)))
+tabela=as.data.frame(t(data.frame(l2,l3)))
 
-names(tabela) <-NULL
+names(tabela) <-l1
 
 knitr::kable(tabela,align= "cccc",format.args= list(big.mark = '.',dec=','),escape = F, booktabs=T,
 caption= "$\\text{Distribuição de probabilidades marginal de }Y\\text{ na população e na amostra - }f_U(y)\\text{ e } f_s(y)$", row.names=FALSE)%>% 

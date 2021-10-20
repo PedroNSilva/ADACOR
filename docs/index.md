@@ -4,7 +4,7 @@ title: "Análise de Dados Amostrais"
 author: 
   - Djalma G. C. Pessoa, Pedro Luis do Nascimento Silva,
   - Antonio José Ribeiro Dias, Zélia Magalhães Bianchini e Sonia Albieri
-date: '19 de outubro de 2021, 14:46:11'
+date: '20 de outubro de 2021, 15:14:08'
 summary_depth: 3
 summary_float:
    collapsed: false
@@ -26,14 +26,14 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 csl: Modified-apa.csl
 suppress-bibliography: false
-link-citations: yes
+#link-citations: yes
 github-repo: PedroNSilva/ADACOR
 cover-image: "Figuras/capa.png"
 description: "Análise de dados de pesquisas amostrais."
 ---
 
 # Bem-vindo {-}
-
+<div style="text-align: justify">
 Uma preocupação básica de toda instituição produtora de informações estatísticas é com a utilização "correta" de seus dados. Isso pode ser interpretado de várias formas, algumas delas com reflexos até na confiança do público e na
 própria sobrevivência do órgão. Do nosso ponto de vista, enfatizamos um aspecto
 técnico particular, mas nem por isso menos importante para os usuários dos dados.

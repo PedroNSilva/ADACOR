@@ -6,8 +6,7 @@ output:
 # Modelos de Regressão {#modreg}
 
 ## Modelo de Regressão Linear Normal {#modlinear}
-
-
+<div style="text-align: justify">
 O problema considerado nesta seção é o de estimar os
 parâmetros num modelo de regressão linear normal especificado para
 um subconjunto das variáveis da pesquisa. O procedimento de máxima
@@ -19,7 +18,7 @@ como os derivados de estimadores de razão ou regressão, por exemplo)
 estão discutidos em @Silva, Cap. 6.
 
 ### Especificação do Modelo
-
+<div style="text-align: justify">
 Vamos supor que os dados da $i$-ésima unidade da população
 pesquisada incluam um vetor $\mathbf{z}_{i}=\left( z_{i1},\ldots
 ,z_{iP}\right) ^{^{\prime }}$ de dimensão $P\times 1$ com os valores de
@@ -77,7 +76,7 @@ y_{i}-\mathbf{z}_{i}^{\prime }\mathbf{\beta }\right) ^{2}-\sigma _{e}\right]
 \end{eqnarray*}
 
 ### Pseudo-parâmetros do Modelo
-
+<div style="text-align: justify">
 Se todos os elementos da população tivessem sido pesquisados, os
 EMVs de $\mathbf{\beta }$ e $\sigma _{e}$ do censo, denotados por 
 $\mathbf{B}$ e $S_{e}$ respectivamente, poderiam ser facilmente obtidos como soluções das equações de verossimilhança do censo dadas por 
@@ -162,7 +161,7 @@ COV_{M}\left( \left. Y_{i},Y_{j}\right| \mathbf{z}_{i}=\mathbf{z}_{i},
 \end{eqnarray}
 
 ### Estimadores de MPV dos Parâmetros do Modelo
-
+<div style="text-align: justify">
 Quando apenas uma amostra de unidades da população é observada,
 são usados pesos $w_{i}$ para obter estimadores de máxima
 pseudo-verossimilhança de $\mathbf{\beta }$ e $\sigma _{e}$, ou
@@ -269,7 +268,7 @@ _{\pi }\right) ^{^{\prime }}\mathbf{\Pi }_{s}^{-1}\left( \mathbf{y}_{s}-
 \end{equation}
 
 ### Estimação da Variância de Estimadores de MPV
-
+<div style="text-align: justify">
 O exercício de ajustar um modelo não estará completo sem a 
 avaliação da precisão e significância das estimativas dos
 parâmetros. Para isto é necessária a estimação das
@@ -337,7 +336,7 @@ como \@ref(eq:norm1). Este procedimento é bastante flexível e
 aplicável numa ampla gama de planos amostrais.
 
 ## Modelo de Regressão Logística {#modlogist}
-
+<div style="text-align: justify">
 No modelo de regressão logística, a variável resposta $y$ é
 binária, isto é, assume os valores $0$ e $1$. Considerando um vetor $\mathbf{z}$ de variáveis explanatórias tal como o empregado no
 modelo de regressão linear discutido na Seção \@ref(modlinear), o
@@ -764,7 +763,7 @@ dificuldade de seleção de modelos através do **SUDAAN**,
 preferiu-se usá-lo aqui apenas para ajustar um modelo já selecionado.
 
 ## Teste de Hipóteses
-
+<div style="text-align: justify">
 Nas Seções \@ref(modlinear) e \@ref(modlogist) discutimos formas de introduzir pesos e plano
 amostral em procedimentos de estimação pontual e de variâncias
 ao ajustar modelos com dados de pesquisas amostrais complexas. Neste
@@ -881,7 +880,7 @@ investigação e por enquanto é uma desvantagem da abordagem aqui
 preconizada.
 
 ## Laboratório de R
-
+<div style="text-align: justify">
 Usar exemplo da amolim ou conseguir exemplo melhor?
 Reproduzir usando a survey os resultados do Exemplo 6.1???
 

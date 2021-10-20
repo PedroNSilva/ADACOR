@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 1 Modelos de Regressão | Análise de Dados Amostrais</title>
+  <title>Capítulo 6 Modelos de Regressão | Análise de Dados Amostrais</title>
   <meta name="description" content="Análise de dados de pesquisas amostrais." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 1 Modelos de Regressão | Análise de Dados Amostrais" />
+  <meta property="og:title" content="Capítulo 6 Modelos de Regressão | Análise de Dados Amostrais" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="/Figuras/capa.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="PedroNSilva/ADACOR" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 1 Modelos de Regressão | Análise de Dados Amostrais" />
+  <meta name="twitter:title" content="Capítulo 6 Modelos de Regressão | Análise de Dados Amostrais" />
   
   <meta name="twitter:description" content="Análise de dados de pesquisas amostrais." />
   <meta name="twitter:image" content="/Figuras/capa.png" />
@@ -31,7 +31,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
+<link rel="prev" href="ajmodpar.html"/>
 <link rel="next" href="referências.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -161,18 +161,64 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimentos"><i class="fa fa-check"></i>Agradecimentos</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="modreg.html"><a href="modreg.html"><i class="fa fa-check"></i><b>1</b> Modelos de Regressão</a>
+<li class="chapter" data-level="1" data-path="introduc.html"><a href="introduc.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="modreg.html"><a href="modreg.html#modlinear"><i class="fa fa-check"></i><b>1.1</b> Modelo de Regressão Linear Normal</a>
-<ul>
-<li class="chapter" data-level="1.1.1" data-path="modreg.html"><a href="modreg.html#especificação-do-modelo"><i class="fa fa-check"></i><b>1.1.1</b> Especificação do Modelo</a></li>
-<li class="chapter" data-level="1.1.2" data-path="modreg.html"><a href="modreg.html#pseudo-parâmetros-do-modelo"><i class="fa fa-check"></i><b>1.1.2</b> Pseudo-parâmetros do Modelo</a></li>
-<li class="chapter" data-level="1.1.3" data-path="modreg.html"><a href="modreg.html#estimadores-de-mpv-dos-parâmetros-do-modelo"><i class="fa fa-check"></i><b>1.1.3</b> Estimadores de MPV dos Parâmetros do Modelo</a></li>
-<li class="chapter" data-level="1.1.4" data-path="modreg.html"><a href="modreg.html#estimação-da-variância-de-estimadores-de-mpv"><i class="fa fa-check"></i><b>1.1.4</b> Estimação da Variância de Estimadores de MPV</a></li>
+<li class="chapter" data-level="1.1" data-path="introduc.html"><a href="introduc.html#motivação"><i class="fa fa-check"></i><b>1.1</b> Motivação</a></li>
+<li class="chapter" data-level="1.2" data-path="introduc.html"><a href="introduc.html#objetivos-do-livro"><i class="fa fa-check"></i><b>1.2</b> Objetivos do livro</a></li>
+<li class="chapter" data-level="1.3" data-path="introduc.html"><a href="introduc.html#estrutura-do-livro"><i class="fa fa-check"></i><b>1.3</b> Estrutura do livro</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="modreg.html"><a href="modreg.html#modlogist"><i class="fa fa-check"></i><b>1.2</b> Modelo de Regressão Logística</a></li>
-<li class="chapter" data-level="1.3" data-path="modreg.html"><a href="modreg.html#teste-de-hipóteses"><i class="fa fa-check"></i><b>1.3</b> Teste de Hipóteses</a></li>
-<li class="chapter" data-level="1.4" data-path="modreg.html"><a href="modreg.html#laboratório-de-r"><i class="fa fa-check"></i><b>1.4</b> Laboratório de R</a></li>
+<li class="chapter" data-level="2" data-path="refinf.html"><a href="refinf.html"><i class="fa fa-check"></i><b>2</b> Referencial para Inferência</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="refinf.html"><a href="refinf.html#modelagem---primeiras-ideias"><i class="fa fa-check"></i><b>2.1</b> Modelagem - Primeiras ideias</a></li>
+<li class="chapter" data-level="2.2" data-path="refinf.html"><a href="refinf.html#classic"><i class="fa fa-check"></i><b>2.2</b> Abordagem 1 - Modelagem Clássica</a></li>
+<li class="chapter" data-level="2.3" data-path="refinf.html"><a href="refinf.html#abordagem-2---amostragem-probabilística"><i class="fa fa-check"></i><b>2.3</b> Abordagem 2 - Amostragem Probabilística</a></li>
+<li class="chapter" data-level="2.4" data-path="refinf.html"><a href="refinf.html#discussão-das-abordagens-1-e-2"><i class="fa fa-check"></i><b>2.4</b> Discussão das abordagens 1 e 2</a></li>
+<li class="chapter" data-level="2.5" data-path="refinf.html"><a href="refinf.html#modelsuperpop"><i class="fa fa-check"></i><b>2.5</b> Abordagem 3 - Modelagem de Superpopulação</a></li>
+<li class="chapter" data-level="2.6" data-path="refinf.html"><a href="refinf.html#fontes-de-variação"><i class="fa fa-check"></i><b>2.6</b> Fontes de variação</a></li>
+<li class="chapter" data-level="2.7" data-path="refinf.html"><a href="refinf.html#modelos-de-superpopulação"><i class="fa fa-check"></i><b>2.7</b> Modelos de Superpopulação</a></li>
+<li class="chapter" data-level="2.8" data-path="refinf.html"><a href="refinf.html#planamo"><i class="fa fa-check"></i><b>2.8</b> Plano amostral</a></li>
+<li class="chapter" data-level="2.9" data-path="refinf.html"><a href="refinf.html#inform"><i class="fa fa-check"></i><b>2.9</b> Planos amostrais informativos e ignoráveis</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="capplanamo.html"><a href="capplanamo.html"><i class="fa fa-check"></i><b>3</b> Estimação Baseada no Plano Amostral</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="capplanamo.html"><a href="capplanamo.html#estimatotais"><i class="fa fa-check"></i><b>3.1</b> Estimação de Totais</a></li>
+<li class="chapter" data-level="3.2" data-path="capplanamo.html"><a href="capplanamo.html#por-que-estimar-variâncias"><i class="fa fa-check"></i><b>3.2</b> Por que Estimar Variâncias</a></li>
+<li class="chapter" data-level="3.3" data-path="capplanamo.html"><a href="capplanamo.html#taylor"><i class="fa fa-check"></i><b>3.3</b> Linearização de Taylor para Estimar variâncias</a></li>
+<li class="chapter" data-level="3.4" data-path="capplanamo.html"><a href="capplanamo.html#método-do-conglomerado-primário"><i class="fa fa-check"></i><b>3.4</b> Método do Conglomerado Primário</a></li>
+<li class="chapter" data-level="3.5" data-path="capplanamo.html"><a href="capplanamo.html#métodos-de-replicação"><i class="fa fa-check"></i><b>3.5</b> Métodos de Replicação</a></li>
+<li class="chapter" data-level="3.6" data-path="capplanamo.html"><a href="capplanamo.html#laboratório-de-r"><i class="fa fa-check"></i><b>3.6</b> Laboratório de R</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="epa.html"><a href="epa.html"><i class="fa fa-check"></i><b>4</b> Efeitos do Plano Amostral</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="epa.html"><a href="epa.html#introdução"><i class="fa fa-check"></i><b>4.1</b> Introdução</a></li>
+<li class="chapter" data-level="4.2" data-path="epa.html"><a href="epa.html#efeito-do-plano-amostral-epa-de-kish"><i class="fa fa-check"></i><b>4.2</b> Efeito do Plano Amostral (EPA) de Kish</a></li>
+<li class="chapter" data-level="4.3" data-path="epa.html"><a href="epa.html#efeito-do-plano-amostral-ampliado"><i class="fa fa-check"></i><b>4.3</b> Efeito do Plano Amostral Ampliado</a></li>
+<li class="chapter" data-level="4.4" data-path="epa.html"><a href="epa.html#icth"><i class="fa fa-check"></i><b>4.4</b> Intervalos de Confiança e Testes de Hipóteses</a></li>
+<li class="chapter" data-level="4.5" data-path="epa.html"><a href="epa.html#efeitos-multivariados-de-plano-amostral"><i class="fa fa-check"></i><b>4.5</b> Efeitos Multivariados de Plano Amostral</a></li>
+<li class="chapter" data-level="4.6" data-path="epa.html"><a href="epa.html#laboratório-de-r-1"><i class="fa fa-check"></i><b>4.6</b> Laboratório de R</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ajmodpar.html"><a href="ajmodpar.html"><i class="fa fa-check"></i><b>5</b> Ajuste de Modelos Paramétricos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ajmodpar.html"><a href="ajmodpar.html#modpar1"><i class="fa fa-check"></i><b>5.1</b> Introdução</a></li>
+<li class="chapter" data-level="5.2" data-path="ajmodpar.html"><a href="ajmodpar.html#método-de-máxima-verossimilhança-mv"><i class="fa fa-check"></i><b>5.2</b> Método de Máxima Verossimilhança (MV)</a></li>
+<li class="chapter" data-level="5.3" data-path="ajmodpar.html"><a href="ajmodpar.html#ponderação-de-dados-amostrais"><i class="fa fa-check"></i><b>5.3</b> Ponderação de Dados Amostrais</a></li>
+<li class="chapter" data-level="5.4" data-path="ajmodpar.html"><a href="ajmodpar.html#modpar3"><i class="fa fa-check"></i><b>5.4</b> Método de Máxima Pseudo-Verossimilhança</a></li>
+<li class="chapter" data-level="5.5" data-path="ajmodpar.html"><a href="ajmodpar.html#robustez-do-procedimento-mpv"><i class="fa fa-check"></i><b>5.5</b> Robustez do Procedimento MPV</a></li>
+<li class="chapter" data-level="5.6" data-path="ajmodpar.html"><a href="ajmodpar.html#desvantagens-da-inferência-de-aleatorização"><i class="fa fa-check"></i><b>5.6</b> Desvantagens da Inferência de Aleatorização</a></li>
+<li class="chapter" data-level="5.7" data-path="ajmodpar.html"><a href="ajmodpar.html#laboratório-de-r-2"><i class="fa fa-check"></i><b>5.7</b> Laboratório de R</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="modreg.html"><a href="modreg.html"><i class="fa fa-check"></i><b>6</b> Modelos de Regressão</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="modreg.html"><a href="modreg.html#modlinear"><i class="fa fa-check"></i><b>6.1</b> Modelo de Regressão Linear Normal</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="modreg.html"><a href="modreg.html#especificação-do-modelo"><i class="fa fa-check"></i><b>6.1.1</b> Especificação do Modelo</a></li>
+<li class="chapter" data-level="6.1.2" data-path="modreg.html"><a href="modreg.html#pseudo-parâmetros-do-modelo"><i class="fa fa-check"></i><b>6.1.2</b> Pseudo-parâmetros do Modelo</a></li>
+<li class="chapter" data-level="6.1.3" data-path="modreg.html"><a href="modreg.html#estimadores-de-mpv-dos-parâmetros-do-modelo"><i class="fa fa-check"></i><b>6.1.3</b> Estimadores de MPV dos Parâmetros do Modelo</a></li>
+<li class="chapter" data-level="6.1.4" data-path="modreg.html"><a href="modreg.html#estimação-da-variância-de-estimadores-de-mpv"><i class="fa fa-check"></i><b>6.1.4</b> Estimação da Variância de Estimadores de MPV</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="modreg.html"><a href="modreg.html#modlogist"><i class="fa fa-check"></i><b>6.2</b> Modelo de Regressão Logística</a></li>
+<li class="chapter" data-level="6.3" data-path="modreg.html"><a href="modreg.html#teste-de-hipóteses"><i class="fa fa-check"></i><b>6.3</b> Teste de Hipóteses</a></li>
+<li class="chapter" data-level="6.4" data-path="modreg.html"><a href="modreg.html#laboratório-de-r-3"><i class="fa fa-check"></i><b>6.4</b> Laboratório de R</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
 </ul>
@@ -192,21 +238,23 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="modreg" class="section level1" number="1">
-<h1><span class="header-section-number">Capítulo 1</span> Modelos de Regressão</h1>
-<div id="modlinear" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Modelo de Regressão Linear Normal</h2>
+<div id="modreg" class="section level1" number="6">
+<h1><span class="header-section-number">Capítulo 6</span> Modelos de Regressão</h1>
+<div id="modlinear" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Modelo de Regressão Linear Normal</h2>
+<div style="text-align: justify">
 <p>O problema considerado nesta seção é o de estimar os
 parâmetros num modelo de regressão linear normal especificado para
 um subconjunto das variáveis da pesquisa. O procedimento de máxima
-pseudo-verossimilhança, descrito na Seção <a href="#modpar3"><strong>??</strong></a>, é
+pseudo-verossimilhança, descrito na Seção <a href="ajmodpar.html#modpar3">5.4</a>, é
 aplicado. Os resultados são derivados considerando pesos ordinários
 dados pelo inverso das probabilidades de inclusão das unidades na
 amostra. Resultados mais gerais considerando outros tipos de pesos (tais
 como os derivados de estimadores de razão ou regressão, por exemplo)
 estão discutidos em <span class="citation"><a href="#ref-Silva" role="doc-biblioref">Silva</a> (<a href="#ref-Silva" role="doc-biblioref">1996</a>)</span>, Cap. 6.</p>
-<div id="especificação-do-modelo" class="section level3" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> Especificação do Modelo</h3>
+<div id="especificação-do-modelo" class="section level3" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Especificação do Modelo</h3>
+<div style="text-align: justify">
 <p>Vamos supor que os dados da <span class="math inline">\(i\)</span>-ésima unidade da população
 pesquisada incluam um vetor <span class="math inline">\(\mathbf{z}_{i}=\left( z_{i1},\ldots ,z_{iP}\right) ^{^{\prime }}\)</span> de dimensão <span class="math inline">\(P\times 1\)</span> com os valores de
 variáveis <span class="math inline">\(\mathbf{z}\)</span>, que são <em>preditoras</em> ou
@@ -222,29 +270,29 @@ adotada no restante deste capítulo). Suponhamos agora que
 <span class="math inline">\(\left( Y_{i},\mathbf{Z}_{i}^{^{\prime }}\right) ^{^{\prime }},\;i\in U\)</span>, são vetores aleatórios independentes e identicamente distribuídos tais que
 <span class="math display" id="eq:norm1">\[\begin{equation}
 f\left( \left. y_{i}\right|\mathbf{z}_{i};\mathbf{\beta },\sigma_{e}\right) =\left( 2\pi \sigma _{e}\right) ^{-1/2}\exp \left[ -\left( y_{i}-\mathbf{z}_{i}^{^{\prime }}\mathbf{\beta }\right) ^{2}/2\sigma _{e}\right]
-\tag{1.1}
+\tag{6.1}
 \end{equation}\]</span>
 onde <span class="math inline">\(\mathbf{\beta }=\left( \beta _{1},\ldots ,\beta _{P}\right) ^{^{\prime }}\)</span> e <span class="math inline">\(\sigma_{e}&gt;0\)</span> são parâmetros desconhecidos do modelo.</p>
-<p>Observe que <a href="modreg.html#eq:norm1">(1.1)</a> constitui-se numa especificação (parcial) de
+<p>Observe que <a href="modreg.html#eq:norm1">(6.1)</a> constitui-se numa especificação (parcial) de
 um modelo marginal para um conjunto de variáveis da pesquisa, e não
 faz nenhuma referência direta à forma como elas se relacionam com
 variáveis auxiliares <span class="math inline">\(\mathbf{x}\)</span> que eventualmente possam estar
 disponíveis. A atenção é focalizada na estimação de <span class="math inline">\(\mathbf{\beta }\)</span> e <span class="math inline">\(\sigma_{e}\)</span> e sua interpretação com respeito ao
-modelo agregado <a href="modreg.html#eq:norm1">(1.1)</a>.</p>
-<p>Modelos como <a href="modreg.html#eq:norm1">(1.1)</a> já foram considerados por vários autores,
+modelo agregado <a href="modreg.html#eq:norm1">(6.1)</a>.</p>
+<p>Modelos como <a href="modreg.html#eq:norm1">(6.1)</a> já foram considerados por vários autores,
 por exemplo <span class="citation"><a href="#ref-holt80b" role="doc-biblioref">Holt et al.</a> (<a href="#ref-holt80b" role="doc-biblioref">1980</a>)</span>, <span class="citation"><a href="#ref-NH80" role="doc-biblioref">Nathan e Holt</a> (<a href="#ref-NH80" role="doc-biblioref">1980</a>)</span>, pág. 81 de <span class="citation"><a href="#ref-Sk89b" role="doc-biblioref">Skinner</a> (<a href="#ref-Sk89b" role="doc-biblioref">1989b</a>)</span>, <span class="citation"><a href="#ref-chambers86" role="doc-biblioref">Chambers</a> (<a href="#ref-chambers86" role="doc-biblioref">1986</a>)</span>, <span class="citation"><a href="#ref-chambers95" role="doc-biblioref">Chambers</a> (<a href="#ref-chambers95" role="doc-biblioref">1995</a>)</span>.
 Eles são simples, mesmo assim
 frequentemente usados pelos analistas de dados, pelo menos como uma
 primeira aproximação. Além disto, eles satisfazem todas as condições padrões de regularidade. Assim eles são adequados a uma
 aplicação de procedimentos de máxima pseudo-verossimilhança
-descritos na Seção <a href="#modpar3"><strong>??</strong></a>.</p>
+descritos na Seção <a href="ajmodpar.html#modpar3">5.4</a>.</p>
 <p>As funções escores para <span class="math inline">\(\mathbf{\beta}\)</span> e <span class="math inline">\(\sigma _{e}\)</span>
-correspondentes ao modelo <a href="modreg.html#eq:norm1">(1.1)</a> podem ser facilmente obtidas como
+correspondentes ao modelo <a href="modreg.html#eq:norm1">(6.1)</a> podem ser facilmente obtidas como
 <span class="math display" id="eq:norm2">\[\begin{eqnarray}
 \partial \log \left[ f\left( \left. y_{i}\right| \mathbf{z}_{i};\mathbf{
 \beta },\sigma _{e}\right) \right] /\partial \mathbf{\beta } &amp;=&amp;\mathbf{z}
 _{i}\left( y_{i}-\mathbf{z}_{i}^{\prime }\mathbf{\beta }\right) /\sigma _{e}
-\tag{1.2} \\
+\tag{6.2} \\
 &amp;\propto &amp;\mathbf{z}_{i}\left( y_{i}-\mathbf{z}_{i}^{\prime }\mathbf{
 \beta }\right) =\mathbf{u}_{i}\left( \mathbf{\beta }\right)  \nonumber
 \end{eqnarray}\]</span>
@@ -253,13 +301,14 @@ e
 \partial \log \left[ f\left( \left. y_{i}\right| \mathbf{z}_{i};\mathbf{
 \beta },\sigma _{e}\right) \right] /\partial \sigma _{e} &amp;=&amp;\left[ \left(
 y_{i}-\mathbf{z}_{i}^{\prime }\mathbf{\beta }\right) ^{2}-\sigma _{e}\right]
-/2\sigma _{e}^{2}  \tag{1.3} \\
+/2\sigma _{e}^{2}  \tag{6.3} \\
 &amp;\propto &amp;\left( y_{i}-\mathbf{z}_{i}^{\prime }\mathbf{\beta }\right)
 ^{2}-\sigma _{e}=u_{i}\left( \sigma _{e}\right) \;.  
 \end{eqnarray*}\]</span></p>
 </div>
-<div id="pseudo-parâmetros-do-modelo" class="section level3" number="1.1.2">
-<h3><span class="header-section-number">1.1.2</span> Pseudo-parâmetros do Modelo</h3>
+<div id="pseudo-parâmetros-do-modelo" class="section level3" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Pseudo-parâmetros do Modelo</h3>
+<div style="text-align: justify">
 <p>Se todos os elementos da população tivessem sido pesquisados, os
 EMVs de <span class="math inline">\(\mathbf{\beta }\)</span> e <span class="math inline">\(\sigma _{e}\)</span> do censo, denotados por
 <span class="math inline">\(\mathbf{B}\)</span> e <span class="math inline">\(S_{e}\)</span> respectivamente, poderiam ser facilmente obtidos como soluções das equações de verossimilhança do censo dadas por
@@ -268,7 +317,7 @@ EMVs de <span class="math inline">\(\mathbf{\beta }\)</span> e <span class="math
 =\sum\limits_{i\in U}\mathbf{z}_{i}\left( y_{i}-\mathbf{z}_{i}^{\prime }
 \mathbf{\beta }\right) =\mathbf{z}_{U}^{^{\prime }}\mathbf{y}_{U}-\left( 
 \mathbf{z}_{U}^{^{\prime }}\mathbf{z}_{U}\right) \mathbf{B}=\mathbf{0}
-\tag{1.4}
+\tag{6.4}
 \end{equation}\]</span>
 e
 <span class="math display" id="eq:norm5">\[\begin{equation}
@@ -276,14 +325,14 @@ e
 \left( y_{i}-\mathbf{z}_{i}^{\prime }\mathbf{B}\right) ^{2}-S_{e}\right]
 =\left( \mathbf{y}_{U}-\mathbf{z}_{U}^{\prime }\mathbf{B}\right) ^{^{\prime
 }}\left( \mathbf{y}_{U}-\mathbf{zz}_{U}^{\prime }\mathbf{B}\right) -NS_{e}=0
-\tag{1.5}
+\tag{6.5}
 \end{equation}\]</span></p>
 <p>onde <span class="math inline">\(\mathbf{z}_{U}=\left( \mathbf{z}_{1},\ldots ,\mathbf{z}_{N}\right) ^{^{\prime }}\)</span> e <span class="math inline">\(\mathbf{y}_{U}=\left( y_{1},\ldots ,y_{N}\right) ^{^{\prime }}\)</span>.</p>
 <p>Se <span class="math inline">\(\mathbf{z}_{U}^{^{\prime }}\mathbf{z}_{U}\)</span> for não-singular, as soluções para estas equações são facilmente obtidas como
 <span class="math display" id="eq:norm6">\[\begin{equation}
 \mathbf{B}=\left( \mathbf{z}_{U}^{^{\prime }}\mathbf{z}_{U}\right) ^{-1}
 \mathbf{z}_{U}^{^{\prime }}\mathbf{y}_{U}  
-\tag{1.6}
+\tag{6.6}
 \end{equation}\]</span>
 e
 <span class="math display" id="eq:norm7">\[\begin{equation}
@@ -291,40 +340,40 @@ S_{e}=N^{-1}\sum\limits_{i\in U}\left( y_{i}-\mathbf{z}_{i}^{\prime }\mathbf{
 B}\right) ^{2}=N^{-1}\left( \mathbf{y}_{U}-\mathbf{z}_{U}^{\prime }\mathbf{B}
 \right) ^{^{\prime }}\left( \mathbf{y}_{U}-\mathbf{z}_{U}^{\prime }\mathbf{B}
 \right) \;.  
-\tag{1.7}
+\tag{6.7}
 \end{equation}\]</span></p>
 <p>Com uma parametrização que isole o termo correspondente ao
 intercepto (primeira coluna do vetor <span class="math inline">\(\mathbf{z}_{i}\)</span>) do modelo de
-regressão <a href="modreg.html#eq:norm1">(1.1)</a>, pode ser facilmente mostrado, <span class="citation"><a href="#ref-Silva" role="doc-biblioref">Silva</a> (<a href="#ref-Silva" role="doc-biblioref">1996</a>)</span>, p. 142,
+regressão <a href="modreg.html#eq:norm1">(6.1)</a>, pode ser facilmente mostrado, <span class="citation"><a href="#ref-Silva" role="doc-biblioref">Silva</a> (<a href="#ref-Silva" role="doc-biblioref">1996</a>)</span>, p. 142,
 que os EMV de <span class="math inline">\(\mathbf{\beta }_{2}\)</span> (igual a <span class="math inline">\(\mathbf{\beta }\)</span>
 excluído o primeiro componente), <span class="math inline">\(\beta _{1}\)</span> e <span class="math inline">\(\sigma _{e}\)</span> são
 dados respectivamente por</p>
 <p><span class="math display" id="eq:norm8">\[\begin{equation}
 \mathbf{B}_{2}=\mathbf{S}_{\mathbf{z}}^{-1}\mathbf{S}_{\mathbf{z}y}\;,
-\tag{1.8}
+\tag{6.8}
 \end{equation}\]</span></p>
 <p><span class="math display" id="eq:norm9">\[\begin{equation}
 B_{1}=\bar{Y}-\mathbf{\bar{Z}}^{^{\prime }}\mathbf{B}_{2}\mathbf{\;,}
-\tag{1.9}
+\tag{6.9}
 \end{equation}\]</span>
 e</p>
 <p><span class="math display" id="eq:norm10">\[\begin{equation}
 S_{e}=N^{-1}\sum\limits_{i\in U}\left( y_{i}-B_{1}-\mathbf{z}_{i}^{^{\prime
 }}\mathbf{B}_{2}\right) ^{2}=N^{-1}\sum\limits_{i\in U}e_{i}^{2}\;,
-\tag{1.10}
+\tag{6.10}
 \end{equation}\]</span>
 onde <span class="math inline">\(\bar{Y}=N^{-1}\sum\limits_{i\in U}y_{i}\)</span>,
 <span class="math inline">\(\mathbf{\bar{Z}}=N^{-1}\sum\limits_{i\in U}\mathbf{z}_{i}\)</span> , <span class="math inline">\(\mathbf{S}_{\mathbf{z}}=N^{-1}\sum\limits_{i\in U}\left( \mathbf{z}_{i}-\mathbf{\bar{Z}}\right)\left( \mathbf{z}_{i}-\mathbf{\bar{Z}}\right) ^{^{\prime }}\)</span>, <span class="math inline">\(\mathbf{S}_{ \mathbf{z}y}=N^{-1}\sum\limits_{i\in U}\left( \mathbf{z}_{i}-\mathbf{\bar{Z}}\right) \left( y_{i}-\bar{Y}\right)\)</span> e
 <span class="math inline">\(e_{i}=y_{i}-B_{1}-\mathbf{z}_{i}^{^{\prime }}\mathbf{B}_{2}=\left( y_{i}-\bar{Y}\right) -\left( \mathbf{z}_{i}-\mathbf{\bar{Z}}\right) ^{^{\prime }}\mathbf{B}_{2}\)</span> , sendo neste
 trecho os vetores de variáveis preditoras tomados sem o termo constante
 referente ao intercepto.</p>
-<p>Os EMVs do censo dados em <a href="modreg.html#eq:norm1">(1.1)</a> a <a href="modreg.html#eq:norm10">(1.10)</a> coincidem com os
+<p>Os EMVs do censo dados em <a href="modreg.html#eq:norm1">(6.1)</a> a <a href="modreg.html#eq:norm10">(6.10)</a> coincidem com os
 estimadores de mínimos quadrados ordinários, sob as hipóteses
-mais fracas do modelo dadas por <a href="modreg.html#eq:norm11">(1.11)</a> a seguir (ver Nathan e Holt,
+mais fracas do modelo dadas por <a href="modreg.html#eq:norm11">(6.11)</a> a seguir (ver Nathan e Holt,
 1980), onde se dispensou a hipótese de normalidade dos erros, isto é
 <span class="math display" id="eq:norm11">\[\begin{eqnarray}
 E_{M}\left( \left. Y_{i}\right| \mathbf{z}_{i}=\mathbf{z}_{i}\right)
-&amp;=&amp;\beta _{1}+\mathbf{z}_{i}^{^{\prime }}\mathbf{\beta }_{2}  \tag{1.11} \\
+&amp;=&amp;\beta _{1}+\mathbf{z}_{i}^{^{\prime }}\mathbf{\beta }_{2}  \tag{6.11} \\
 V_{M}\left( \left. Y_{i}\right| \mathbf{z}_{i}=\mathbf{z}_{i}\right)
 &amp;=&amp;\sigma _{e}  \nonumber \\
 COV_{M}\left( \left. Y_{i},Y_{j}\right| \mathbf{z}_{i}=\mathbf{z}_{i},
@@ -332,19 +381,20 @@ COV_{M}\left( \left. Y_{i},Y_{j}\right| \mathbf{z}_{i}=\mathbf{z}_{i},
 \nonumber
 \end{eqnarray}\]</span></p>
 </div>
-<div id="estimadores-de-mpv-dos-parâmetros-do-modelo" class="section level3" number="1.1.3">
-<h3><span class="header-section-number">1.1.3</span> Estimadores de MPV dos Parâmetros do Modelo</h3>
+<div id="estimadores-de-mpv-dos-parâmetros-do-modelo" class="section level3" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> Estimadores de MPV dos Parâmetros do Modelo</h3>
+<div style="text-align: justify">
 <p>Quando apenas uma amostra de unidades da população é observada,
 são usados pesos <span class="math inline">\(w_{i}\)</span> para obter estimadores de máxima
 pseudo-verossimilhança de <span class="math inline">\(\mathbf{\beta }\)</span> e <span class="math inline">\(\sigma _{e}\)</span>, ou
 alternativamente de <span class="math inline">\(\mathbf{B}\)</span> e <span class="math inline">\(S_{e}\)</span>, se as quantidades descritivas
 populacionais correspondentes forem escolhidas para alvo da inferência.
 Se os pesos <span class="math inline">\(w_{i}\)</span> satisfizerem às condições de regularidade
-discutidas na Seção <a href="#modpar3"><strong>??</strong></a>, será imediato obter as equações de pseudo-verossimilhança correspondentes ao modelo <a href="modreg.html#eq:norm1">(1.1)</a> como
+discutidas na Seção <a href="ajmodpar.html#modpar3">5.4</a>, será imediato obter as equações de pseudo-verossimilhança correspondentes ao modelo <a href="modreg.html#eq:norm1">(6.1)</a> como
 <span class="math display" id="eq:norm12">\[\begin{eqnarray}
 \sum\limits_{i\in s}w_{i}\mathbf{u}_{i}\left( \mathbf{\hat{B}}_{w}\right)
 &amp;=&amp;\sum\limits_{i\in s}w_{i}\mathbf{z}_{i}\left( y_{i}-\mathbf{z}
-_{i}^{\prime }\mathbf{\hat{B}}_{w}\right)  \tag{1.12} \\
+_{i}^{\prime }\mathbf{\hat{B}}_{w}\right)  \tag{6.12} \\
 &amp;=&amp;\mathbf{z}_{s}^{^{\prime }}\mathbf{W}_{s}\mathbf{y}_{s}-\left( \mathbf{z}
 _{s}^{^{\prime }}\mathbf{W}_{s}\mathbf{y}_{s}\right) \mathbf{\hat{B}}_{w}=
 \mathbf{0}  \nonumber
@@ -353,7 +403,7 @@ e
 <span class="math display" id="eq:norm13">\[\begin{eqnarray}
 \sum\limits_{i\in s}w_{i}u_{i}\left( s_{e}^{w}\right) &amp;=&amp;\sum\limits_{i\in
 s}w_{i}\left[ \left( y_{i}-\mathbf{z}_{i}^{\prime }\mathbf{\hat{B}}
-_{w}\right) ^{2}-s_{e}^{w}\right]  \tag{1.13} \\
+_{w}\right) ^{2}-s_{e}^{w}\right]  \tag{6.13} \\
 &amp;=&amp;\left( \mathbf{y}_{s}-\mathbf{z}_{s}\mathbf{\hat{B}}_{w}\right)
 ^{^{\prime }}\mathbf{W}_{s}\left( \mathbf{y}_{s}-\mathbf{z}_{s}\mathbf{\hat{B
 }}_{w}\right) -\left( \mathbf{1}_{s}^{^{\prime }}\mathbf{W}_{s}\mathbf{1}
@@ -366,33 +416,33 @@ uma matriz diagonal <span class="math inline">\(n\times n\)</span> com os pesos 
 diagonal principal, e <span class="math inline">\(\mathbf{\hat{B}}_{w}\)</span> e <span class="math inline">\(s_{e}^{w}\)</span> são
 estimadores MPV de <span class="math inline">\(\mathbf{\beta }\)</span> e <span class="math inline">\(\sigma _{e}\)</span> respectivamente.</p>
 <p>Supondo que <span class="math inline">\(\mathbf{z}_{s}^{^{\prime }}\mathbf{W}_{s}\mathbf{z}_{s}\)</span> é
-não-singular e resolvendo <a href="modreg.html#eq:norm12">(1.12)</a> e <a href="modreg.html#eq:norm13">(1.13)</a> em <span class="math inline">\(\mathbf{\hat{B} }_{w}\)</span> e <span class="math inline">\(s_{e}^{w}\)</span> obtemos as seguintes expressões para os estimadores
+não-singular e resolvendo <a href="modreg.html#eq:norm12">(6.12)</a> e <a href="modreg.html#eq:norm13">(6.13)</a> em <span class="math inline">\(\mathbf{\hat{B} }_{w}\)</span> e <span class="math inline">\(s_{e}^{w}\)</span> obtemos as seguintes expressões para os estimadores
 MPV dos parâmetros do modelo:
 <span class="math display" id="eq:norm14">\[\begin{equation}
 \widehat{\mathbf{B}}_{w}=\left( \mathbf{z}_{s}^{^{\prime }}\mathbf{W}_{s}
 \mathbf{z}_{s}\right) ^{-1}\mathbf{z}_{s}^{^{\prime }}\mathbf{W}_{s}\mathbf{y
-}_{s}  \tag{1.14}
+}_{s}  \tag{6.14}
 \end{equation}\]</span>
 e</p>
 <p><span class="math display" id="eq:norm15">\[\begin{eqnarray}
 s_{e}^{w} &amp;=&amp;\left( \mathbf{1}_{s}^{^{\prime }}\mathbf{W}_{s}\mathbf{1}
 _{s}\right) ^{-1}\left( \mathbf{y}_{s}-\mathbf{z}_{s}\widehat{\mathbf{B}}
 _{w}\right) ^{^{\prime }}\mathbf{W}_{s}\left( \mathbf{y}_{s}-\mathbf{z}_{s}
-\widehat{\mathbf{B}}_{w}\right)  \tag{1.15} \\
+\widehat{\mathbf{B}}_{w}\right)  \tag{6.15} \\
 &amp;=&amp;\left( \mathbf{1}_{s}^{^{\prime }}\mathbf{W}_{s}\mathbf{1}_{s}\right)
 ^{-1}\mathbf{y}_{s}^{^{\prime }}\left[ \mathbf{W}_{s}-\mathbf{W}_{s}\mathbf{z
 }_{s}\left( \mathbf{z}_{s}^{^{\prime }}\mathbf{W}_{s}\mathbf{z}_{s}\right)
 ^{-1}\mathbf{z}_{s}^{^{\prime }}\mathbf{W}_{s}\right] \mathbf{y}_{s} 
 \nonumber
 \end{eqnarray}\]</span>
-sendo a segunda expressão para <span class="math inline">\(s_{e}^{w}\)</span> obtida mediante substituição do valor de <span class="math inline">\(\widehat{\mathbf{B}}_{w}\)</span> em <a href="modreg.html#eq:norm14">(1.14)</a> na primeira
-linha de <a href="modreg.html#eq:norm15">(1.15)</a>.</p>
+sendo a segunda expressão para <span class="math inline">\(s_{e}^{w}\)</span> obtida mediante substituição do valor de <span class="math inline">\(\widehat{\mathbf{B}}_{w}\)</span> em <a href="modreg.html#eq:norm14">(6.14)</a> na primeira
+linha de <a href="modreg.html#eq:norm15">(6.15)</a>.</p>
 <p>Observe que a hipótese de não-singularidade de <span class="math inline">\(\mathbf{z} _{s}^{^{\prime }}\mathbf{W}_{s}\mathbf{z}_{s}\)</span> não seria satisfeita se
 <span class="math inline">\(w_{i}=0\)</span> para algum <span class="math inline">\(i\in s\)</span>. Para evitar que se percam de vista as
 questões principais com relação à estimação dos
 parâmetros do modelo, admitiremos de agora em diante que <span class="math inline">\(\mathbf{z} _{s}^{^{\prime }}\mathbf{W}_{s}\mathbf{z}_{s}\)</span> é não-singular.</p>
 <p>Estimadores pontuais dos parâmetros do modelo podem ser derivados a
-partir de <a href="modreg.html#eq:norm14">(1.14)</a> e <a href="modreg.html#eq:norm15">(1.15)</a> para vários esquemas de ponderaão de interesse pela simples substituição da matriz apropriada
+partir de <a href="modreg.html#eq:norm14">(6.14)</a> e <a href="modreg.html#eq:norm15">(6.15)</a> para vários esquemas de ponderaão de interesse pela simples substituição da matriz apropriada
 de ponderação <span class="math inline">\(\mathbf{W}_{s}\)</span>. Se todos os elementos da pesquisa
 têm o mesmo peso (como no caso de planos amostrais autoponderados), ou
 seja, <span class="math inline">\(w_{i}=\bar{w}\)</span> e <span class="math inline">\(\mathbf{W}_{s}=\bar{w}\mathbf{I}_{n}\)</span>, os
@@ -403,53 +453,54 @@ estimadores de máxima verossimilhança sob normalidade) dos
 parâmetros do modelo, dados por:
 <span class="math display" id="eq:norm16">\[\begin{equation}
 \widehat{\mathbf{B}}=\left( \mathbf{z}_{s}^{^{\prime }}\mathbf{z}_{s}\right)
-^{-1}\mathbf{z}_{s}^{^{\prime }}\mathbf{y}_{s}  \tag{1.16}
+^{-1}\mathbf{z}_{s}^{^{\prime }}\mathbf{y}_{s}  \tag{6.16}
 \end{equation}\]</span>
 e</p>
 <p><span class="math display" id="eq:norm17">\[\begin{equation}
 s_{e}=n^{-1}\left( \mathbf{y}_{s}-\mathbf{z}_{s}\widehat{\mathbf{B}}\right)
 ^{^{\prime }}\left( \mathbf{y}_{s}-\mathbf{z}_{s}\widehat{\mathbf{B}}\right)
-\;.  \tag{1.17}
+\;.  \tag{6.17}
 \end{equation}\]</span></p>
-<p>Substituindo <span class="math inline">\(\mathbf{W}_{s}\)</span> em <a href="modreg.html#eq:norm14">(1.14)</a> e <a href="modreg.html#eq:norm15">(1.15)</a> por <span class="math inline">\(diag\left( \pi _{i}:i\in s\right) =\mathbf{\Pi }_{s}^{-1}\)</span>, onde os <span class="math inline">\(\pi _{i}\)</span> em geral
+<p>Substituindo <span class="math inline">\(\mathbf{W}_{s}\)</span> em <a href="modreg.html#eq:norm14">(6.14)</a> e <a href="modreg.html#eq:norm15">(6.15)</a> por <span class="math inline">\(diag\left( \pi _{i}:i\in s\right) =\mathbf{\Pi }_{s}^{-1}\)</span>, onde os <span class="math inline">\(\pi _{i}\)</span> em geral
 não são todos iguais, obtemos estimadores, chamados de mínimos
 quadrados <span class="math inline">\(\pi -\)</span>ponderados, dados por:
 <span class="math display" id="eq:norm18">\[\begin{equation}
 \widehat{\mathbf{B}}_{\pi }=\left( \mathbf{z}_{s}^{^{\prime }}\mathbf{\Pi }
 _{s}^{-1}\mathbf{z}_{s}\right) ^{-1}\mathbf{z}_{s}^{^{\prime }}\mathbf{\Pi }
-_{s}^{-1}\mathbf{y}_{s}  \tag{1.18}
+_{s}^{-1}\mathbf{y}_{s}  \tag{6.18}
 \end{equation}\]</span>
 e</p>
 <p><span class="math display" id="eq:norm19">\[\begin{equation}
 s_{e}^{\pi }=\left( \mathbf{1}_{s}^{^{\prime }}\mathbf{\Pi }_{s}^{-1}\mathbf{
 1}_{s}\right) ^{-1}\left( \mathbf{y}_{s}-\mathbf{z}_{s}\widehat{\mathbf{B}}
 _{\pi }\right) ^{^{\prime }}\mathbf{\Pi }_{s}^{-1}\left( \mathbf{y}_{s}-
-\mathbf{z}_{s}\widehat{\mathbf{B}}_{\pi }\right) \;.  \tag{1.19}
+\mathbf{z}_{s}\widehat{\mathbf{B}}_{\pi }\right) \;.  \tag{6.19}
 \end{equation}\]</span></p>
 </div>
-<div id="estimação-da-variância-de-estimadores-de-mpv" class="section level3" number="1.1.4">
-<h3><span class="header-section-number">1.1.4</span> Estimação da Variância de Estimadores de MPV</h3>
+<div id="estimação-da-variância-de-estimadores-de-mpv" class="section level3" number="6.1.4">
+<h3><span class="header-section-number">6.1.4</span> Estimação da Variância de Estimadores de MPV</h3>
+<div style="text-align: justify">
 <p>O exercício de ajustar um modelo não estará completo sem a
 avaliação da precisão e significância das estimativas dos
 parâmetros. Para isto é necessária a estimação das
 variâncias correspondentes. Nesta seção concentramos nossa atenção na estimação das variâncias dos estimadores de MPV
 dos coeficientes de regressão <span class="math inline">\(\mathbf{\beta}\)</span>. As expressões a
 seguir são obtidas por aplicação direta dos resultados gerais
-fornecidos na Seção <a href="#modpar3"><strong>??</strong></a>, observando-se que os escores
-correspondentes a <span class="math inline">\(\mathbf{\beta}\)</span> no <em>ajuste do censo</em> do modelo <a href="modreg.html#eq:norm1">(1.1)</a> são dados por
+fornecidos na Seção <a href="ajmodpar.html#modpar3">5.4</a>, observando-se que os escores
+correspondentes a <span class="math inline">\(\mathbf{\beta}\)</span> no <em>ajuste do censo</em> do modelo <a href="modreg.html#eq:norm1">(6.1)</a> são dados por
 <span class="math inline">\(\mathbf{u}_{i}\left( \mathbf{B}\right) =\mathbf{z}_{i}\left( y_{i}-\mathbf{z}_{i}^{\prime }\mathbf{B}\right) =\mathbf{z} _{i}e_{i}\)</span> ,
 onde <span class="math inline">\(e_{i}=\left( y_{i}-\bar{Y}\right) -\left( \mathbf{z}_{i}-\mathbf{\bar{Z}}\right) ^{^{\prime }}\mathbf{B}\)</span> para <span class="math inline">\(i\in U\)</span>, com o
 Jacobiano correspondente dado por</p>
 <p><span class="math display" id="eq:norm20">\[\begin{eqnarray}
 J\left( \mathbf{B}\right) &amp;=&amp;\left. \sum\nolimits_{i\in U}\partial \mathbf{z}
 _{i}\left( y_{i}-\mathbf{z}_{i}^{\prime }\mathbf{\beta }\right) /\partial 
-\mathbf{\beta }\right| _{\mathbf{\beta }=\mathbf{B}}  \tag{1.20} \\
+\mathbf{\beta }\right| _{\mathbf{\beta }=\mathbf{B}}  \tag{6.20} \\
 &amp;=&amp;\left. \partial \left( \mathbf{z}_{U}^{\prime }\mathbf{y}_{U}-\mathbf{z}
 _{U}^{\prime }\mathbf{z}_{U}\mathbf{\beta }\right) /\partial \mathbf{\beta }
 \right| _{\mathbf{\beta }=\mathbf{B}}=-\mathbf{z}_{U}^{\prime }\mathbf{z}
 _{U}\;\;.  \nonumber
 \end{eqnarray}\]</span></p>
-<p>Substituindo em <a href="modreg.html#eq:norm8">(1.8)</a> e <a href="modreg.html#eq:norm9">(1.9)</a> os valores dos escores, do
+<p>Substituindo em <a href="modreg.html#eq:norm8">(6.8)</a> e <a href="modreg.html#eq:norm9">(6.9)</a> os valores dos escores, do
 jacobiano e dos estimadores <span class="math inline">\(\pi\)</span>-ponderados correspondentes, obtemos as
 seguintes expressões para a variância assintótica de aleatorização do estimador de MPV padrão <span class="math inline">\(\widehat{\mathbf{B}}_{\pi}\)</span> e
 seu estimador consistente, dadas por</p>
@@ -457,7 +508,7 @@ seu estimador consistente, dadas por</p>
 V_{p}\left( \widehat{\mathbf{B}}_{\pi }\right) =\left( \mathbf{z}
 _{U}^{\prime }\mathbf{z}_{U}\right) ^{-1}V_{p}\left( \sum\limits_{i\in s}\pi
 _{i}^{-1}\mathbf{z}_{i}e_{i}\right) \left( \mathbf{z}_{U}^{\prime }\mathbf{z}
-_{U}\right) ^{-1}  \tag{1.21}
+_{U}\right) ^{-1}  \tag{6.21}
 \end{equation}\]</span>
 e</p>
 <p><span class="math display" id="eq:norm22">\[\begin{equation}
@@ -465,39 +516,40 @@ e</p>
 _{s}^{\prime }\mathbf{\Pi }_{s}^{-1}\mathbf{z}_{s}\right) ^{-1}\hat{V}
 _{p}\left( \sum\limits_{i\in s}\pi _{i}^{-1}\mathbf{z}_{i}e_{i}\right)
 \left( \mathbf{z}_{s}^{\prime }\mathbf{\Pi }_{s}^{-1}\mathbf{z}_{s}\right)
-^{-1}\;,  \tag{1.22}
+^{-1}\;,  \tag{6.22}
 \end{equation}\]</span>
 onde</p>
 <p><span class="math display" id="eq:norm23">\[\begin{equation}
 V_{p}\left( \sum\limits_{i\in s}\pi _{i}^{-1}\mathbf{z}_{i}e_{i}\right)
 =\sum\limits_{i\in U}\sum\limits_{j\in U}\frac{\pi _{ij}-\pi _{i}\pi _{j}}{
 \pi _{i}\pi _{j}}e_{i}\mathbf{z}_{i}\mathbf{z}_{j}^{\prime }e_{j}\;\;,
-\tag{1.23}
+\tag{6.23}
 \end{equation}\]</span></p>
 <p><span class="math display" id="eq:norm24">\[\begin{equation}
 \hat{V}_{p}\left( \sum\limits_{i\in s}\pi _{i}^{-1}\mathbf{z}_{i}\hat{e}
 _{i}\right) =\sum\limits_{i\in s}\sum\limits_{j\in s}\left( \pi _{i}^{-1}\pi
 _{j}^{-1}-\pi _{ij}^{-1}\right) \hat{e}_{i}\mathbf{z}_{i}\mathbf{z}
-_{j}^{\prime }\hat{e}_{j}\;\;,  \tag{1.24}
+_{j}^{\prime }\hat{e}_{j}\;\;,  \tag{6.24}
 \end{equation}\]</span>
 e <span class="math inline">\(\hat{e}_{i}=y_{i}-\mathbf{z}_{i}^{\prime }\widehat{\mathbf{B}}_{\pi }\)</span>
 para <span class="math inline">\(i\in s\)</span>.</p>
 <p>Isto completa a especificação de um procedimento de máxima
 pseudo-verossimilhança para ajustar modelos normais de regressão
-como <a href="modreg.html#eq:norm1">(1.1)</a>. Este procedimento é bastante flexível e
+como <a href="modreg.html#eq:norm1">(6.1)</a>. Este procedimento é bastante flexível e
 aplicável numa ampla gama de planos amostrais.</p>
 </div>
 </div>
-<div id="modlogist" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Modelo de Regressão Logística</h2>
+<div id="modlogist" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Modelo de Regressão Logística</h2>
+<div style="text-align: justify">
 <p>No modelo de regressão logística, a variável resposta <span class="math inline">\(y\)</span> é
 binária, isto é, assume os valores <span class="math inline">\(0\)</span> e <span class="math inline">\(1\)</span>. Considerando um vetor <span class="math inline">\(\mathbf{z}\)</span> de variáveis explanatórias tal como o empregado no
-modelo de regressão linear discutido na Seção <a href="modreg.html#modlinear">1.1</a>, o
+modelo de regressão linear discutido na Seção <a href="modreg.html#modlinear">6.1</a>, o
 modelo de superpopulação é dado por
 <span class="math display" id="eq:norm25">\[\begin{equation}
 f(y_{i}|\mathbf{z}_{i},\mathbf{\beta )=}\left[ p\left( \mathbf{z}_{i}^{\prime }\mathbf{\beta }\right) \right] ^{y_{i}}\left[ 1-p\left( 
 \mathbf{z}_{i}^{\prime }\mathbf{\beta }\right) \right] ^{1-y_{i}},
-\tag{1.25}
+\tag{6.25}
 \end{equation}\]</span>
 onde,</p>
 <p><span class="math display">\[
@@ -508,25 +560,25 @@ _{i}^{\prime }\mathbf{\beta }\right) \right] \;.
 <p>A função escore de <span class="math inline">\(\mathbf{\beta }\)</span> é</p>
 <p><span class="math display" id="eq:norm25a">\[\begin{equation}
 \mathbf{u}_{i}\left( \mathbf{\beta }\right) =\partial \log (y_{i}|\mathbf{z}_{i},\mathbf{\beta )/\partial \beta =}\left[ y_{i}-p\left( \mathbf{z}
-_{i}^{\prime }\mathbf{\beta }\right) \right] \mathbf{z}_{i}  \tag{1.26}
+_{i}^{\prime }\mathbf{\beta }\right) \right] \mathbf{z}_{i}  \tag{6.26}
 \end{equation}\]</span>
 e portanto a equação de verossimilhança do censo correspondente
 é dada por</p>
 <p><span class="math display" id="eq:norm26">\[\begin{equation}
 \sum\nolimits_{i\in U}\mathbf{u}_{i}\left( \mathbf{\beta }\right)
 =\sum\nolimits_{i\in U}\left[ y_{i}-p\left( \mathbf{z}_{i}^{\prime }\mathbf{
-\beta }\right) \right] \mathbf{z}_{i}=\mathbf{0\;.}  \tag{1.27}
+\beta }\right) \right] \mathbf{z}_{i}=\mathbf{0\;.}  \tag{6.27}
 \end{equation}\]</span></p>
-<p>O estimador de MPV do vetor de coeficientes <span class="math inline">\(\mathbf{\beta }\)</span> no modelo <a href="modreg.html#eq:norm25">(1.25)</a> é a solução da equação</p>
+<p>O estimador de MPV do vetor de coeficientes <span class="math inline">\(\mathbf{\beta }\)</span> no modelo <a href="modreg.html#eq:norm25">(6.25)</a> é a solução da equação</p>
 <p><span class="math display" id="eq:norm27">\[\begin{equation}
 \sum\nolimits_{i\in s}w_{i}\mathbf{u}_{i}\left( \mathbf{\beta }\right)
 =\sum\nolimits_{i\in s}w_{i}\left[ y_{i}-p\left( \mathbf{z}_{i}^{\prime }
 \mathbf{\beta }\right) \right] \mathbf{z}_{i}=\mathbf{0},
-\tag{1.28}
+\tag{6.28}
 \end{equation}\]</span>
 onde <span class="math inline">\(w_{i}\)</span> é o peso da <span class="math inline">\(i\)</span>-ésima observação amostral.</p>
 <p>A matriz de covariância do estimador de MPV de <span class="math inline">\(\mathbf{\beta}\)</span> pode
-ser obtida conforme indicado na Seção <a href="#modpar3"><strong>??</strong></a>, bastando
+ser obtida conforme indicado na Seção <a href="ajmodpar.html#modpar3">5.4</a>, bastando
 substituir os valores dos escores
 <span class="math inline">\(\mathbf{u}_{i}\left( \mathbf{\beta}\right) =\left[ y_{i}-p\left(\mathbf{z}_{i}^{\prime }\mathbf{\beta }\right)\right] \mathbf{z}_{i}\)</span> e do jacobiano correspondentes. Para maiores
 detalhes, o leitor interessado pode consultar Binder(1983), que aborda o
@@ -541,7 +593,7 @@ estão disponíveis vários pacotes com essa funcionalidade,
 conforme se discute no Capítulo <a href="#pacotes"><strong>??</strong></a>.</p>
 
 <div class="example">
-<span id="exm:pnad6" class="example"><strong>Exemplo 1.1  </strong></span>Análise do perfil sócio-econômico das pessoas
+<span id="exm:pnad6" class="example"><strong>Exemplo 6.1  </strong></span>Análise do perfil sócio-econômico das pessoas
 ocupadas no setor informal da economia na área urbana do Rio de Janeiro
 </div>
 <p>Utilizando dados do Suplemento Trabalho da Pesquisa Nacional por Amostra
@@ -565,14 +617,14 @@ cinco pessoas ocupadas foram classificadas no setor formal. O trabalho
 refere-se ao trabalho principal. Para a variável renda considerou-se a
 soma dos rendimentos de todos os trabalhos.</p>
 <p>Foi considerada uma amostra de <span class="math inline">\(6.507\)</span> pessoas (após a exclusão de <span class="math inline">\(9\)</span> registros considerados atípicos), classificadas de acordo com as
-variáveis descritas na Tabela <a href="modreg.html#tab:varexp">1.1</a>, todas tratadas como
+variáveis descritas na Tabela <a href="modreg.html#tab:varexp">6.1</a>, todas tratadas como
 fatores na análise. A variável ht foi considerada como a soma de
 horas trabalhadas em todos os trabalhos, por semana. A variável re
 compreende a renda média mensal de todos os trabalhos, em salários
 mínimos.</p>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:varexp">Tabela 1.1: </span><span class="math inline">\(\text{Descrição das variáveis explicativas}\)</span>
+<span id="tab:varexp">Tabela 6.1: </span><span class="math inline">\(\text{Descrição das variáveis explicativas}\)</span>
 </caption>
 <thead>
 <tr>
@@ -767,7 +819,7 @@ de graus de liberdade. O modelo selecionado foi</p>
 <p><span class="math display" id="eq:norm28">\[\begin{eqnarray}
 \log \left( \frac{p_{ijklm}}{1-p_{ijklm}}\right) &amp;=&amp;\mu +\beta
 _{i}^{sx}+\beta _{j}^{ae}+\beta _{k}^{ht}+\beta _{l}^{id}+\beta _{m}^{re}
-\tag{1.29} \\
+\tag{6.29} \\
 &amp;&amp;+\beta _{ij}^{sx.id}+\beta _{ik}^{sx.ht}+\beta _{jk}^{ae.ht}+\beta
 _{kl}^{ht.id}+\beta _{km}^{ht.re},  \nonumber
 \end{eqnarray}\]</span>
@@ -776,7 +828,7 @@ correspondente à combinação de níveis das variáveis
 explicativas, sendo i=1, 2 o nível de sx; j=1, 2, 3 o nível de ae;
 k=1, 2, 3 o nível de ht; l=1, 2, 3, 4 o nível de id e m=1, 2, 3 o
 nível de re.</p>
-<p>Os efeitos foram adicionados sequencialmente na ordem da Tabela <a href="modreg.html#tab:varexp">1.1</a>. Depois de introduzidos os efeitos principais, as interações
+<p>Os efeitos foram adicionados sequencialmente na ordem da Tabela <a href="modreg.html#tab:varexp">6.1</a>. Depois de introduzidos os efeitos principais, as interações
 de dois fatores foram introduzidas na ordem definida pela
 <em>função step do S-Plus</em>.</p>
 <p>O <span class="math inline">\(p\)</span>valor do teste de nulidade das interações não incluídas
@@ -785,7 +837,7 @@ efeitos ao nível <span class="math inline">\(\alpha =0,05\)</span>. O modelo ob
 em Leote(1996) só pela inclusão de mais um efeito, referente à
 interação ae:ht.</p>
 <p>Uma descrição detalhada do plano amostral da PNAD 90 foi apresentada
-no Exemplo <a href="#exm:pnad"><strong>??</strong></a>. Como se pode observar dessa descrição, o
+no Exemplo <a href="ajmodpar.html#exm:pnad">5.1</a>. Como se pode observar dessa descrição, o
 plano amostral da PNAD apresenta todos os aspectos de um plano amostral
 complexo, incluindo estratificação (geográfica), seleção
 de unidades primárias (municípios, ou setores nos municípios
@@ -798,15 +850,15 @@ considerados métodos alternativos de modelagem e ajuste.</p>
 <p>Apresentamos a seguir as estimativas dos efeitos principais e interações do modelo selecionado e seus respectivos desvios padrões,
 calculadas pela função <em>svyglm()</em> da library <em>survey</em>, <span class="citation"><a href="#ref-R-survey" role="doc-biblioref">Lumley</a> (<a href="#ref-R-survey" role="doc-biblioref">2017</a>)</span>.</p>
 <p>As estimativas calculadas pela função <em>svyglm</em> são feitas pelo
-<em>Método de Máxima Pseudo-Verossimilhança</em>, resolvendo a equação <a href="modreg.html#eq:norm27">(1.28)</a>. As estimativas dos desvios padrões são
-obtidas das variâncias calculadas pelo método de linearização descrito na Seção <a href="#modpar3"><strong>??</strong></a>, equação <a href="#eq:modpar5">(<strong>??</strong>)</a>,
-considerando os escores tal como apresentados na equação <a href="modreg.html#eq:norm25a">(1.26)</a>. Para esses cálculos, os estimadores de variância considerados
+<em>Método de Máxima Pseudo-Verossimilhança</em>, resolvendo a equação <a href="modreg.html#eq:norm27">(6.28)</a>. As estimativas dos desvios padrões são
+obtidas das variâncias calculadas pelo método de linearização descrito na Seção <a href="ajmodpar.html#modpar3">5.4</a>, equação <a href="ajmodpar.html#eq:modpar5">(5.5)</a>,
+considerando os escores tal como apresentados na equação <a href="modreg.html#eq:norm25a">(6.26)</a>. Para esses cálculos, os estimadores de variância considerados
 levaram em conta os pesos das observações, mas utilizaram uma
 aproximação que consiste em considerar que as unidades primárias
 de amostragem foram selecionadas com reposição, conforme descrito na Seção .</p>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:logit">Tabela 1.2: </span><span class="math inline">\(\text{Estmativas dos efeitos e respectivos erros padrões obtidos pela library survey do R}\)</span>
+<span id="tab:logit">Tabela 6.2: </span><span class="math inline">\(\text{Estmativas dos efeitos e respectivos erros padrões obtidos pela library survey do R}\)</span>
 </caption>
 <thead>
 <tr>
@@ -1339,20 +1391,20 @@ ht2:re2
 </tr>
 </tbody>
 </table>
-<p>Na Tabela <a href="modreg.html#tab:testmodlogit">1.3</a> são apresentadas as probabilidades de
+<p>Na Tabela <a href="modreg.html#tab:testmodlogit">6.3</a> são apresentadas as probabilidades de
 significância dos testes de nulidade dos efeitos do modelo. Todos os
 efeitos incluídos no modelo são significativos, nos níveis
 usuais de significância. A <strong>PROC LOGISTIC</strong> do pacote
 <strong>SUDAAN</strong> não inclui testes para os efeitos principais, por não ser
 possível separar tais efeitos das interações. A coluna de <span class="math inline">\(p\)</span>
-valores da Tabela <a href="modreg.html#tab:testmodlogit">1.3</a>, obtida pela função <em>svyglm()</em> do pacote <em>survey</em>,
+valores da Tabela <a href="modreg.html#tab:testmodlogit">6.3</a>, obtida pela função <em>svyglm()</em> do pacote <em>survey</em>,
 utiliza a estatística de <em>Wald</em> baseada no plano amostral com correção.</p>
-<p>Os testes da Tabela <a href="modreg.html#tab:testmodlogit">1.3</a> indicam a significância de todas as
+<p>Os testes da Tabela <a href="modreg.html#tab:testmodlogit">6.3</a> indicam a significância de todas as
 interações de 2 fatores que entraram no modelo selecionado. O teste
-de qualidade global de ajuste, na primeira linha da Tabela <a href="modreg.html#tab:testmodlogit">1.3</a>, indica a necessidade de serem introduzidas novas interações.</p>
+de qualidade global de ajuste, na primeira linha da Tabela <a href="modreg.html#tab:testmodlogit">6.3</a>, indica a necessidade de serem introduzidas novas interações.</p>
 <table>
 <caption>
-<span id="tab:testmodlogit">Tabela 1.3: </span>Testes de hipóteses de Wald de nulidade dos efeitos do modelo
+<span id="tab:testmodlogit">Tabela 6.3: </span>Testes de hipóteses de Wald de nulidade dos efeitos do modelo
 </caption>
 <thead>
 <tr>
@@ -1461,10 +1513,10 @@ ae:ht
 </tr>
 </tbody>
 </table>
-<p>Para comparação, apresentamos na Tabela <a href="modreg.html#tab:razvant">1.4</a> algumas
+<p>Para comparação, apresentamos na Tabela <a href="modreg.html#tab:razvant">6.4</a> algumas
 estimativas de razões de vantagens, relevantes na análise,
 calculadas pela função <em>svyglm()</em> do pacote <em>survey</em> e, na
-Tabela <a href="modreg.html#tab:icvant">1.5</a> os correspondentes intervalos de confiança de <span class="math inline">\(95\%\)</span>. Na
+Tabela <a href="modreg.html#tab:icvant">6.5</a> os correspondentes intervalos de confiança de <span class="math inline">\(95\%\)</span>. Na
 construção destes intervalos foi necessário utilizar estimativas
 pontuais dos efeitos bem como a matriz de covariância estimada dos
 estimadores dos efeitos do modelo. Deste modo, estes intervalos sumarizam,
@@ -1472,7 +1524,7 @@ ao mesmo tempo, discrepâncias existentes tanto nas estimativas pontuais
 dos efeitos como nas variâncias e covariâncias das estimativas.</p>
 <table>
 <caption>
-<span id="tab:razvant">Tabela 1.4: </span>Estimativas das razões de vantagens, variando-se os níveis de ae para níveis fixos
+<span id="tab:razvant">Tabela 6.4: </span>Estimativas das razões de vantagens, variando-se os níveis de ae para níveis fixos
 de ht
 </caption>
 <thead>
@@ -1559,7 +1611,7 @@ raz_vantagem
 </table>
 <table>
 <caption>
-<span id="tab:icvant">Tabela 1.5: </span>Intervalos de confiança de 95% para razões de vantagens, variando-se os níveis de ae para níveis fixos
+<span id="tab:icvant">Tabela 6.5: </span>Intervalos de confiança de 95% para razões de vantagens, variando-se os níveis de ae para níveis fixos
 de ht
 </caption>
 <thead>
@@ -1679,11 +1731,11 @@ do pacote <strong>SUDAAN</strong>. Pode-se notar que, neste exemplo, há estreit
 concordância entre as estimativas pontuais obtidas pelos dois pacotes.</p>
 <p>A concordância das estimativas dos coeficientes pode ser explicada, em
 parte, pela pequena variabilidade dos pesos das unidades, tal como se pode
-verificar na Tabela <a href="modreg.html#tab:pesofreq">1.6</a>, que apresenta a distribuição de
+verificar na Tabela <a href="modreg.html#tab:pesofreq">6.6</a>, que apresenta a distribuição de
 frequências dos pesos.</p>
 <table>
 <caption>
-<span id="tab:pesofreq">Tabela 1.6: </span>Distribuição de frequências dos pesos da amostra da PNAD-90 - Parte
+<span id="tab:pesofreq">Tabela 6.6: </span>Distribuição de frequências dos pesos da amostra da PNAD-90 - Parte
 Urbana do Rio de Janeiro
 </caption>
 <thead>
@@ -1731,7 +1783,7 @@ Frequência
 </tr>
 </tbody>
 </table>
-<p>Como foi visto na Tabela <a href="modreg.html#tab:logit">1.2</a>, o impacto do plano amostral nas
+<p>Como foi visto na Tabela <a href="modreg.html#tab:logit">6.2</a>, o impacto do plano amostral nas
 estimativas de precisão é um pouco maior. As maiores diferenças
 entre os dois métodos ocorrem na estimação dos desvios das
 estimativas dos parâmetros do primeiro nível de idade (até 17
@@ -1765,9 +1817,10 @@ seu uso na etapa de seleção de modelos. Considerando-se a maior
 dificuldade de seleção de modelos através do <strong>SUDAAN</strong>,
 preferiu-se usá-lo aqui apenas para ajustar um modelo já selecionado.</p>
 </div>
-<div id="teste-de-hipóteses" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Teste de Hipóteses</h2>
-<p>Nas Seções <a href="modreg.html#modlinear">1.1</a> e <a href="modreg.html#modlogist">1.2</a> discutimos formas de introduzir pesos e plano
+<div id="teste-de-hipóteses" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Teste de Hipóteses</h2>
+<div style="text-align: justify">
+<p>Nas Seções <a href="modreg.html#modlinear">6.1</a> e <a href="modreg.html#modlogist">6.2</a> discutimos formas de introduzir pesos e plano
 amostral em procedimentos de estimação pontual e de variâncias
 ao ajustar modelos com dados de pesquisas amostrais complexas. Neste
 contexto, procedimentos estatísticos de teste de hipóteses devem,
@@ -1801,7 +1854,7 @@ matriz de covariância, tais como as que são geradas pelo método
 de MPV. é essa abordagem que vamos adotar aqui.</p>
 <p>Considere o problema de testar a hipótese linear geral
 <span class="math display" id="eq:norm30">\[\begin{equation}
-H_{0}:\mathbf{C\beta }=\mathbf{c},  \tag{1.30}
+H_{0}:\mathbf{C\beta }=\mathbf{c},  \tag{6.30}
 \end{equation}\]</span>
 onde <span class="math inline">\(\mathbf{C}\)</span> é uma matriz de dimensão <span class="math inline">\(R\times P\)</span> de posto
 pleno <span class="math inline">\(R=P-Q\)</span> e <span class="math inline">\(\mathbf{c}\)</span> é um vetor <span class="math inline">\(R\)</span> <span class="math inline">\(\times 1.\)</span></p>
@@ -1813,12 +1866,12 @@ pleno <span class="math inline">\(R=P-Q\)</span> e <span class="math inline">\(\
 <span class="math inline">\(c=\mathbf{0}_{R}\)</span> , sendo <span class="math inline">\(\mathbf{0}_{R\times Q}\)</span> matriz de
 zeros de dimensão <span class="math inline">\(R\times Q\)</span> e <span class="math inline">\(\mathbf{I}_{R}\)</span> a matriz identidade de
 ordem <span class="math inline">\(R\)</span>.</p>
-<p>A estatística de Wald clássica para testar a hipótese nula <a href="modreg.html#eq:norm30">(1.30)</a> é definida por</p>
+<p>A estatística de Wald clássica para testar a hipótese nula <a href="modreg.html#eq:norm30">(6.30)</a> é definida por</p>
 <p><span class="math display" id="eq:norm31">\[\begin{equation}
 X_{W}^{2}=\left( \mathbf{C}\widehat{\mathbf{\beta }}-\mathbf{c}\right)
 ^{\prime }\left( \mathbf{C}\widehat{\mathbf{V}}\left( \mathbf{\hat{\beta}}
 \right) \mathbf{C}^{\prime }\right) ^{-1}\left( \mathbf{C}\widehat{\mathbf{
-\beta }}\mathbf{-c}\right),  \tag{1.31}
+\beta }}\mathbf{-c}\right),  \tag{6.31}
 \end{equation}\]</span>
 onde os estimadores <span class="math inline">\(\widehat{\mathbf{\beta }}\)</span> e
 <span class="math inline">\(\widehat{\mathbf{V}}\left( \mathbf{\hat{\beta}}\right)\)</span> são obtidos pela teoria de
@@ -1831,7 +1884,7 @@ distribuição de referência implica na obtenção de testes
 com níveis de significância incorretos. Esse problema é
 solucionado substituindo-se na expressão de
 <span class="math inline">\(X_{W}^{2}\)</span>, <span class="math inline">\(\mathbf{\hat{\beta}}\)</span> pela estimativa MPV
-<span class="math inline">\(\widehat{\mathbf{B}}_{\pi }\)</span> de <span class="math inline">\(\mathbf{\beta}\)</span> dada em <a href="modreg.html#eq:norm18">(1.18)</a>, e <span class="math inline">\(\widehat{\mathbf{V}}\left( \mathbf{\hat{\beta}}\right)\)</span>pela estimativa da matriz de covariância do estimador de MPV <span class="math inline">\(\hat{V}_{p}\left( \widehat{\mathbf{B}}_{\pi }\right)\)</span> dada em <a href="modreg.html#eq:norm22">(1.22)</a>.
+<span class="math inline">\(\widehat{\mathbf{B}}_{\pi }\)</span> de <span class="math inline">\(\mathbf{\beta}\)</span> dada em <a href="modreg.html#eq:norm18">(6.18)</a>, e <span class="math inline">\(\widehat{\mathbf{V}}\left( \mathbf{\hat{\beta}}\right)\)</span>pela estimativa da matriz de covariância do estimador de MPV <span class="math inline">\(\hat{V}_{p}\left( \widehat{\mathbf{B}}_{\pi }\right)\)</span> dada em <a href="modreg.html#eq:norm22">(6.22)</a>.
 Tais estimativas consideram os pesos diferentes das observações e o
 plano amostral efetivamente utilizado. A normalidade assintótica do
 estimador de MPV de <span class="math inline">\(\mathbf{\beta}\)</span> e a consistência do estimador da
@@ -1866,42 +1919,43 @@ ajuste dum modelo via MPV. Essa é questão que ainda merece maior
 investigação e por enquanto é uma desvantagem da abordagem aqui
 preconizada.</p>
 </div>
-<div id="laboratório-de-r" class="section level2" number="1.4">
-<h2><span class="header-section-number">1.4</span> Laboratório de R</h2>
+<div id="laboratório-de-r-3" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Laboratório de R</h2>
+<div style="text-align: justify">
 <p>Usar exemplo da amolim ou conseguir exemplo melhor?
 Reproduzir usando a survey os resultados do Exemplo 6.1???</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="modreg.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survey)</span>
-<span id="cb1-2"><a href="modreg.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(anamco)</span>
-<span id="cb1-3"><a href="modreg.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(pnadrj90)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="modreg.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survey)</span>
+<span id="cb62-2"><a href="modreg.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(anamco)</span>
+<span id="cb62-3"><a href="modreg.html#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(pnadrj90)</span></code></pre></div>
 <pre><code>##  [1] &quot;stra&quot;     &quot;psu&quot;      &quot;pesopes&quot;  &quot;informal&quot; &quot;sx&quot;       &quot;id&quot;      
 ##  [7] &quot;ae&quot;       &quot;ht&quot;       &quot;re&quot;       &quot;um&quot;</code></pre>
 <p>Preparação dos dados: Variáveis explicativas são fatores.
 Ver tipo de variável:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="modreg.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unlist</span>(<span class="fu">lapply</span>(pnadrj90, mode))</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="modreg.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unlist</span>(<span class="fu">lapply</span>(pnadrj90, mode))</span></code></pre></div>
 <pre><code>##      stra       psu   pesopes  informal        sx        id        ae        ht 
 ## &quot;numeric&quot; &quot;numeric&quot; &quot;numeric&quot; &quot;numeric&quot; &quot;numeric&quot; &quot;numeric&quot; &quot;numeric&quot; &quot;numeric&quot; 
 ##        re        um 
 ## &quot;numeric&quot; &quot;numeric&quot;</code></pre>
 <p>Transformar variáveis para fatores e mudar o nível básico do fator (último)</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="modreg.html#cb5-1" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>sx<span class="ot">&lt;-</span><span class="fu">as.factor</span>(pnadrj90<span class="sc">$</span>sx)</span>
-<span id="cb5-2"><a href="modreg.html#cb5-2" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>sx<span class="ot">&lt;-</span><span class="fu">relevel</span>(pnadrj90<span class="sc">$</span>sx,<span class="at">ref=</span><span class="st">&quot;2&quot;</span>)</span>
-<span id="cb5-3"><a href="modreg.html#cb5-3" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>id<span class="ot">&lt;-</span><span class="fu">as.factor</span>(pnadrj90<span class="sc">$</span>id)</span>
-<span id="cb5-4"><a href="modreg.html#cb5-4" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>id<span class="ot">&lt;-</span><span class="fu">relevel</span>(pnadrj90<span class="sc">$</span>id,<span class="at">ref=</span><span class="st">&quot;4&quot;</span>)</span>
-<span id="cb5-5"><a href="modreg.html#cb5-5" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>ae<span class="ot">&lt;-</span><span class="fu">as.factor</span>(pnadrj90<span class="sc">$</span>ae)</span>
-<span id="cb5-6"><a href="modreg.html#cb5-6" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>ae<span class="ot">&lt;-</span><span class="fu">relevel</span>(pnadrj90<span class="sc">$</span>ae,<span class="at">ref=</span><span class="st">&quot;3&quot;</span>)</span>
-<span id="cb5-7"><a href="modreg.html#cb5-7" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>ht<span class="ot">&lt;-</span><span class="fu">as.factor</span>(pnadrj90<span class="sc">$</span>ht)</span>
-<span id="cb5-8"><a href="modreg.html#cb5-8" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>ht<span class="ot">&lt;-</span><span class="fu">relevel</span>(pnadrj90<span class="sc">$</span>ht,<span class="at">ref=</span><span class="st">&quot;3&quot;</span>)</span>
-<span id="cb5-9"><a href="modreg.html#cb5-9" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>re<span class="ot">&lt;-</span><span class="fu">as.factor</span>(pnadrj90<span class="sc">$</span>re)</span>
-<span id="cb5-10"><a href="modreg.html#cb5-10" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>re<span class="ot">&lt;-</span><span class="fu">relevel</span>(pnadrj90<span class="sc">$</span>re,<span class="at">ref=</span><span class="st">&quot;3&quot;</span>)</span>
-<span id="cb5-11"><a href="modreg.html#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="do">##transformar variável de resposta para 0,1:</span></span>
-<span id="cb5-12"><a href="modreg.html#cb5-12" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>informal<span class="ot">&lt;-</span><span class="fu">ifelse</span>(pnadrj90<span class="sc">$</span>informal<span class="sc">==</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="modreg.html#cb66-1" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>sx<span class="ot">&lt;-</span><span class="fu">as.factor</span>(pnadrj90<span class="sc">$</span>sx)</span>
+<span id="cb66-2"><a href="modreg.html#cb66-2" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>sx<span class="ot">&lt;-</span><span class="fu">relevel</span>(pnadrj90<span class="sc">$</span>sx,<span class="at">ref=</span><span class="st">&quot;2&quot;</span>)</span>
+<span id="cb66-3"><a href="modreg.html#cb66-3" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>id<span class="ot">&lt;-</span><span class="fu">as.factor</span>(pnadrj90<span class="sc">$</span>id)</span>
+<span id="cb66-4"><a href="modreg.html#cb66-4" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>id<span class="ot">&lt;-</span><span class="fu">relevel</span>(pnadrj90<span class="sc">$</span>id,<span class="at">ref=</span><span class="st">&quot;4&quot;</span>)</span>
+<span id="cb66-5"><a href="modreg.html#cb66-5" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>ae<span class="ot">&lt;-</span><span class="fu">as.factor</span>(pnadrj90<span class="sc">$</span>ae)</span>
+<span id="cb66-6"><a href="modreg.html#cb66-6" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>ae<span class="ot">&lt;-</span><span class="fu">relevel</span>(pnadrj90<span class="sc">$</span>ae,<span class="at">ref=</span><span class="st">&quot;3&quot;</span>)</span>
+<span id="cb66-7"><a href="modreg.html#cb66-7" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>ht<span class="ot">&lt;-</span><span class="fu">as.factor</span>(pnadrj90<span class="sc">$</span>ht)</span>
+<span id="cb66-8"><a href="modreg.html#cb66-8" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>ht<span class="ot">&lt;-</span><span class="fu">relevel</span>(pnadrj90<span class="sc">$</span>ht,<span class="at">ref=</span><span class="st">&quot;3&quot;</span>)</span>
+<span id="cb66-9"><a href="modreg.html#cb66-9" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>re<span class="ot">&lt;-</span><span class="fu">as.factor</span>(pnadrj90<span class="sc">$</span>re)</span>
+<span id="cb66-10"><a href="modreg.html#cb66-10" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>re<span class="ot">&lt;-</span><span class="fu">relevel</span>(pnadrj90<span class="sc">$</span>re,<span class="at">ref=</span><span class="st">&quot;3&quot;</span>)</span>
+<span id="cb66-11"><a href="modreg.html#cb66-11" aria-hidden="true" tabindex="-1"></a><span class="do">##transformar variável de resposta para 0,1:</span></span>
+<span id="cb66-12"><a href="modreg.html#cb66-12" aria-hidden="true" tabindex="-1"></a>pnadrj90<span class="sc">$</span>informal<span class="ot">&lt;-</span><span class="fu">ifelse</span>(pnadrj90<span class="sc">$</span>informal<span class="sc">==</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span></code></pre></div>
 <p>Cria objeto de desenho</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="modreg.html#cb6-1" aria-hidden="true" tabindex="-1"></a>pnad.des<span class="ot">&lt;-</span><span class="fu">svydesign</span>(<span class="at">id=</span><span class="sc">~</span>psu,<span class="at">strata=</span><span class="sc">~</span>stra,<span class="at">weights=</span><span class="sc">~</span>pesopes,<span class="at">data=</span>pnadrj90,<span class="at">nest=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<p>Ajusta modelo de regressão logística na Tabela <a href="modreg.html#tab:logit">1.2</a>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="modreg.html#cb67-1" aria-hidden="true" tabindex="-1"></a>pnad.des<span class="ot">&lt;-</span><span class="fu">svydesign</span>(<span class="at">id=</span><span class="sc">~</span>psu,<span class="at">strata=</span><span class="sc">~</span>stra,<span class="at">weights=</span><span class="sc">~</span>pesopes,<span class="at">data=</span>pnadrj90,<span class="at">nest=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Ajusta modelo de regressão logística na Tabela <a href="modreg.html#tab:logit">6.2</a>
 Comparar resultado com o da página 106 de Pessoa e Silva (1998)</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="modreg.html#cb7-1" aria-hidden="true" tabindex="-1"></a>inf.logit<span class="ot">&lt;-</span><span class="fu">svyglm</span>(informal<span class="sc">~</span>sx<span class="sc">+</span>ae<span class="sc">+</span>ht<span class="sc">+</span>id<span class="sc">+</span>re<span class="sc">+</span>sx<span class="sc">*</span>id<span class="sc">+</span>sx<span class="sc">*</span>ht<span class="sc">+</span>ae<span class="sc">*</span>ht<span class="sc">+</span>ht<span class="sc">*</span>id<span class="sc">+</span>ht<span class="sc">*</span>re,</span>
-<span id="cb7-2"><a href="modreg.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">design=</span>pnad.des, <span class="at">family=</span><span class="fu">quasibinomial</span>())</span></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="modreg.html#cb8-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">summary</span>(inf.logit)<span class="sc">$</span>coefficients,<span class="at">booktabs=</span><span class="cn">TRUE</span>, <span class="at">digits=</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="modreg.html#cb68-1" aria-hidden="true" tabindex="-1"></a>inf.logit<span class="ot">&lt;-</span><span class="fu">svyglm</span>(informal<span class="sc">~</span>sx<span class="sc">+</span>ae<span class="sc">+</span>ht<span class="sc">+</span>id<span class="sc">+</span>re<span class="sc">+</span>sx<span class="sc">*</span>id<span class="sc">+</span>sx<span class="sc">*</span>ht<span class="sc">+</span>ae<span class="sc">*</span>ht<span class="sc">+</span>ht<span class="sc">*</span>id<span class="sc">+</span>ht<span class="sc">*</span>re,</span>
+<span id="cb68-2"><a href="modreg.html#cb68-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">design=</span>pnad.des, <span class="at">family=</span><span class="fu">quasibinomial</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="modreg.html#cb69-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">summary</span>(inf.logit)<span class="sc">$</span>coefficients,<span class="at">booktabs=</span><span class="cn">TRUE</span>, <span class="at">digits=</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>))</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2435,7 +2489,7 @@ ht2:re2
 </tbody>
 </table>
 <p>Teste de Wald para a hipótese <span class="math inline">\(H_0: ht:re=0\)</span></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="modreg.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">regTermTest</span>(inf.logit,<span class="st">&quot;ht:re&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="modreg.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">regTermTest</span>(inf.logit,<span class="st">&quot;ht:re&quot;</span>)</span></code></pre></div>
 <pre><code>## Wald test for ht:re
 ##  in svyglm(formula = informal ~ sx + ae + ht + id + re + sx * id + 
 ##     sx * ht + ae * ht + ht * id + ht * re, design = pnad.des, 
@@ -2473,7 +2527,7 @@ Skinner, C. J. (1989b). Domain Means, Regression and Multivariate Analysis. Em <
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ajmodpar.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="referências.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

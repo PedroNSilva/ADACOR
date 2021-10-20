@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 1 Ajuste de Modelos Paramétricos | Análise de Dados Amostrais</title>
+  <title>Capítulo 5 Ajuste de Modelos Paramétricos | Análise de Dados Amostrais</title>
   <meta name="description" content="Análise de dados de pesquisas amostrais." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 1 Ajuste de Modelos Paramétricos | Análise de Dados Amostrais" />
+  <meta property="og:title" content="Capítulo 5 Ajuste de Modelos Paramétricos | Análise de Dados Amostrais" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="/Figuras/capa.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="PedroNSilva/ADACOR" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 1 Ajuste de Modelos Paramétricos | Análise de Dados Amostrais" />
+  <meta name="twitter:title" content="Capítulo 5 Ajuste de Modelos Paramétricos | Análise de Dados Amostrais" />
   
   <meta name="twitter:description" content="Análise de dados de pesquisas amostrais." />
   <meta name="twitter:image" content="/Figuras/capa.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="referências.html"/>
+<link rel="prev" href="epa.html"/>
+<link rel="next" href="modreg.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -57,6 +57,70 @@
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
@@ -97,15 +161,64 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimentos"><i class="fa fa-check"></i>Agradecimentos</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="ajmodpar.html"><a href="ajmodpar.html"><i class="fa fa-check"></i><b>1</b> Ajuste de Modelos Paramétricos</a>
+<li class="chapter" data-level="1" data-path="introduc.html"><a href="introduc.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="ajmodpar.html"><a href="ajmodpar.html#modpar1"><i class="fa fa-check"></i><b>1.1</b> Introdução</a></li>
-<li class="chapter" data-level="1.2" data-path="ajmodpar.html"><a href="ajmodpar.html#método-de-máxima-verossimilhança-mv"><i class="fa fa-check"></i><b>1.2</b> Método de Máxima Verossimilhança (MV)</a></li>
-<li class="chapter" data-level="1.3" data-path="ajmodpar.html"><a href="ajmodpar.html#ponderação-de-dados-amostrais"><i class="fa fa-check"></i><b>1.3</b> Ponderação de Dados Amostrais</a></li>
-<li class="chapter" data-level="1.4" data-path="ajmodpar.html"><a href="ajmodpar.html#modpar3"><i class="fa fa-check"></i><b>1.4</b> Método de Máxima Pseudo-Verossimilhança</a></li>
-<li class="chapter" data-level="1.5" data-path="ajmodpar.html"><a href="ajmodpar.html#robustez-do-procedimento-mpv"><i class="fa fa-check"></i><b>1.5</b> Robustez do Procedimento MPV</a></li>
-<li class="chapter" data-level="1.6" data-path="ajmodpar.html"><a href="ajmodpar.html#desvantagens-da-inferência-de-aleatorização"><i class="fa fa-check"></i><b>1.6</b> Desvantagens da Inferência de Aleatorização</a></li>
-<li class="chapter" data-level="1.7" data-path="ajmodpar.html"><a href="ajmodpar.html#laboratório-de-r"><i class="fa fa-check"></i><b>1.7</b> Laboratório de R</a></li>
+<li class="chapter" data-level="1.1" data-path="introduc.html"><a href="introduc.html#motivação"><i class="fa fa-check"></i><b>1.1</b> Motivação</a></li>
+<li class="chapter" data-level="1.2" data-path="introduc.html"><a href="introduc.html#objetivos-do-livro"><i class="fa fa-check"></i><b>1.2</b> Objetivos do livro</a></li>
+<li class="chapter" data-level="1.3" data-path="introduc.html"><a href="introduc.html#estrutura-do-livro"><i class="fa fa-check"></i><b>1.3</b> Estrutura do livro</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="refinf.html"><a href="refinf.html"><i class="fa fa-check"></i><b>2</b> Referencial para Inferência</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="refinf.html"><a href="refinf.html#modelagem---primeiras-ideias"><i class="fa fa-check"></i><b>2.1</b> Modelagem - Primeiras ideias</a></li>
+<li class="chapter" data-level="2.2" data-path="refinf.html"><a href="refinf.html#classic"><i class="fa fa-check"></i><b>2.2</b> Abordagem 1 - Modelagem Clássica</a></li>
+<li class="chapter" data-level="2.3" data-path="refinf.html"><a href="refinf.html#abordagem-2---amostragem-probabilística"><i class="fa fa-check"></i><b>2.3</b> Abordagem 2 - Amostragem Probabilística</a></li>
+<li class="chapter" data-level="2.4" data-path="refinf.html"><a href="refinf.html#discussão-das-abordagens-1-e-2"><i class="fa fa-check"></i><b>2.4</b> Discussão das abordagens 1 e 2</a></li>
+<li class="chapter" data-level="2.5" data-path="refinf.html"><a href="refinf.html#modelsuperpop"><i class="fa fa-check"></i><b>2.5</b> Abordagem 3 - Modelagem de Superpopulação</a></li>
+<li class="chapter" data-level="2.6" data-path="refinf.html"><a href="refinf.html#fontes-de-variação"><i class="fa fa-check"></i><b>2.6</b> Fontes de variação</a></li>
+<li class="chapter" data-level="2.7" data-path="refinf.html"><a href="refinf.html#modelos-de-superpopulação"><i class="fa fa-check"></i><b>2.7</b> Modelos de Superpopulação</a></li>
+<li class="chapter" data-level="2.8" data-path="refinf.html"><a href="refinf.html#planamo"><i class="fa fa-check"></i><b>2.8</b> Plano amostral</a></li>
+<li class="chapter" data-level="2.9" data-path="refinf.html"><a href="refinf.html#inform"><i class="fa fa-check"></i><b>2.9</b> Planos amostrais informativos e ignoráveis</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="capplanamo.html"><a href="capplanamo.html"><i class="fa fa-check"></i><b>3</b> Estimação Baseada no Plano Amostral</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="capplanamo.html"><a href="capplanamo.html#estimatotais"><i class="fa fa-check"></i><b>3.1</b> Estimação de Totais</a></li>
+<li class="chapter" data-level="3.2" data-path="capplanamo.html"><a href="capplanamo.html#por-que-estimar-variâncias"><i class="fa fa-check"></i><b>3.2</b> Por que Estimar Variâncias</a></li>
+<li class="chapter" data-level="3.3" data-path="capplanamo.html"><a href="capplanamo.html#taylor"><i class="fa fa-check"></i><b>3.3</b> Linearização de Taylor para Estimar variâncias</a></li>
+<li class="chapter" data-level="3.4" data-path="capplanamo.html"><a href="capplanamo.html#método-do-conglomerado-primário"><i class="fa fa-check"></i><b>3.4</b> Método do Conglomerado Primário</a></li>
+<li class="chapter" data-level="3.5" data-path="capplanamo.html"><a href="capplanamo.html#métodos-de-replicação"><i class="fa fa-check"></i><b>3.5</b> Métodos de Replicação</a></li>
+<li class="chapter" data-level="3.6" data-path="capplanamo.html"><a href="capplanamo.html#laboratório-de-r"><i class="fa fa-check"></i><b>3.6</b> Laboratório de R</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="epa.html"><a href="epa.html"><i class="fa fa-check"></i><b>4</b> Efeitos do Plano Amostral</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="epa.html"><a href="epa.html#introdução"><i class="fa fa-check"></i><b>4.1</b> Introdução</a></li>
+<li class="chapter" data-level="4.2" data-path="epa.html"><a href="epa.html#efeito-do-plano-amostral-epa-de-kish"><i class="fa fa-check"></i><b>4.2</b> Efeito do Plano Amostral (EPA) de Kish</a></li>
+<li class="chapter" data-level="4.3" data-path="epa.html"><a href="epa.html#efeito-do-plano-amostral-ampliado"><i class="fa fa-check"></i><b>4.3</b> Efeito do Plano Amostral Ampliado</a></li>
+<li class="chapter" data-level="4.4" data-path="epa.html"><a href="epa.html#icth"><i class="fa fa-check"></i><b>4.4</b> Intervalos de Confiança e Testes de Hipóteses</a></li>
+<li class="chapter" data-level="4.5" data-path="epa.html"><a href="epa.html#efeitos-multivariados-de-plano-amostral"><i class="fa fa-check"></i><b>4.5</b> Efeitos Multivariados de Plano Amostral</a></li>
+<li class="chapter" data-level="4.6" data-path="epa.html"><a href="epa.html#laboratório-de-r-1"><i class="fa fa-check"></i><b>4.6</b> Laboratório de R</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ajmodpar.html"><a href="ajmodpar.html"><i class="fa fa-check"></i><b>5</b> Ajuste de Modelos Paramétricos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ajmodpar.html"><a href="ajmodpar.html#modpar1"><i class="fa fa-check"></i><b>5.1</b> Introdução</a></li>
+<li class="chapter" data-level="5.2" data-path="ajmodpar.html"><a href="ajmodpar.html#método-de-máxima-verossimilhança-mv"><i class="fa fa-check"></i><b>5.2</b> Método de Máxima Verossimilhança (MV)</a></li>
+<li class="chapter" data-level="5.3" data-path="ajmodpar.html"><a href="ajmodpar.html#ponderação-de-dados-amostrais"><i class="fa fa-check"></i><b>5.3</b> Ponderação de Dados Amostrais</a></li>
+<li class="chapter" data-level="5.4" data-path="ajmodpar.html"><a href="ajmodpar.html#modpar3"><i class="fa fa-check"></i><b>5.4</b> Método de Máxima Pseudo-Verossimilhança</a></li>
+<li class="chapter" data-level="5.5" data-path="ajmodpar.html"><a href="ajmodpar.html#robustez-do-procedimento-mpv"><i class="fa fa-check"></i><b>5.5</b> Robustez do Procedimento MPV</a></li>
+<li class="chapter" data-level="5.6" data-path="ajmodpar.html"><a href="ajmodpar.html#desvantagens-da-inferência-de-aleatorização"><i class="fa fa-check"></i><b>5.6</b> Desvantagens da Inferência de Aleatorização</a></li>
+<li class="chapter" data-level="5.7" data-path="ajmodpar.html"><a href="ajmodpar.html#laboratório-de-r-2"><i class="fa fa-check"></i><b>5.7</b> Laboratório de R</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="modreg.html"><a href="modreg.html"><i class="fa fa-check"></i><b>6</b> Modelos de Regressão</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="modreg.html"><a href="modreg.html#modlinear"><i class="fa fa-check"></i><b>6.1</b> Modelo de Regressão Linear Normal</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="modreg.html"><a href="modreg.html#especificação-do-modelo"><i class="fa fa-check"></i><b>6.1.1</b> Especificação do Modelo</a></li>
+<li class="chapter" data-level="6.1.2" data-path="modreg.html"><a href="modreg.html#pseudo-parâmetros-do-modelo"><i class="fa fa-check"></i><b>6.1.2</b> Pseudo-parâmetros do Modelo</a></li>
+<li class="chapter" data-level="6.1.3" data-path="modreg.html"><a href="modreg.html#estimadores-de-mpv-dos-parâmetros-do-modelo"><i class="fa fa-check"></i><b>6.1.3</b> Estimadores de MPV dos Parâmetros do Modelo</a></li>
+<li class="chapter" data-level="6.1.4" data-path="modreg.html"><a href="modreg.html#estimação-da-variância-de-estimadores-de-mpv"><i class="fa fa-check"></i><b>6.1.4</b> Estimação da Variância de Estimadores de MPV</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="modreg.html"><a href="modreg.html#modlogist"><i class="fa fa-check"></i><b>6.2</b> Modelo de Regressão Logística</a></li>
+<li class="chapter" data-level="6.3" data-path="modreg.html"><a href="modreg.html#teste-de-hipóteses"><i class="fa fa-check"></i><b>6.3</b> Teste de Hipóteses</a></li>
+<li class="chapter" data-level="6.4" data-path="modreg.html"><a href="modreg.html#laboratório-de-r-3"><i class="fa fa-check"></i><b>6.4</b> Laboratório de R</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
 </ul>
@@ -125,10 +238,11 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ajmodpar" class="section level1" number="1">
-<h1><span class="header-section-number">Capítulo 1</span> Ajuste de Modelos Paramétricos</h1>
-<div id="modpar1" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Introdução</h2>
+<div id="ajmodpar" class="section level1" number="5">
+<h1><span class="header-section-number">Capítulo 5</span> Ajuste de Modelos Paramétricos</h1>
+<div id="modpar1" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Introdução</h2>
+<div style="text-align: justify">
 <p>Nos primórdios do uso <em>moderno</em> de pesquisas por amostragem, os dados
 obtidos eram usados principalmente para estimar funções simples dos
 valores das variáveis de interesse nas populações finitas, tais
@@ -138,7 +252,7 @@ Recentemente, os dados de pesquisas amostrais têm sido cada vez mais
 utilizados também para propósitos analíticos. <em>Inferências analíticas</em>
 baseadas numa pesquisa amostral são
 aquelas que envolvem a estimação de parâmetros num modelo (de
-superpopulação) <span class="citation"><a href="#ref-kalton83b" role="doc-biblioref">Kalton</a> (<a href="#ref-kalton83b" role="doc-biblioref">1983</a>)</span>; <span class="citation"><a href="#ref-binder87" role="doc-biblioref">Binder et al.</a> (<a href="#ref-binder87" role="doc-biblioref">1987</a>)</span>.</p>
+superpopulação) <span class="citation"><a href="#ref-kalton83b" role="doc-biblioref">Kalton</a> (<a href="#ref-kalton83b" role="doc-biblioref">1983b</a>)</span>; <span class="citation"><a href="#ref-binder87" role="doc-biblioref">Binder et al.</a> (<a href="#ref-binder87" role="doc-biblioref">1987</a>)</span>.</p>
 <p>Quando os valores <em>amostrais</em> das variáveis da pesquisa podem ser
 considerados como realizações de vetores aleatórios
 independentes e identicamente distribuídos (IID), modelos podem ser
@@ -154,14 +268,14 @@ complexas e/ou estimadores especiais devem ser considerados a fim de
 acomodar aspectos da estrutura da população e/ou do plano amostral.
 Além disso, usualmente estão disponíveis informações
 sobre variáveis auxiliares, utilizadas ou não na especificação do plano amostral, que podem ser incorporadas com proveito na estimação dos parâmetros ou na própria formulação do modelo.</p>
-<p>Os exemplos apresentados no Capítulo <a href="#epa"><strong>??</strong></a> demonstram claramente a
+<p>Os exemplos apresentados no Capítulo <a href="epa.html#epa">4</a> demonstram claramente a
 inadequação de ignorar o plano amostral ao efetuar análises de dados de
 pesquisas amostrais. Os valores dos EPAs calculados, tanto para
 estimadores de medidas descritivas tais como médias e totais, como para
 estatísticas analíticas usadas em testes de hipóteses e os
 correspondentes efeitos nos níveis de significância reais, revelam
 que ignorar o plano amostral pode levar a decisões erradas e a avaliações inadequadas da precisão das estimativas amostrais.</p>
-<p>Embora as medidas propostas no Capítulo <a href="#epa"><strong>??</strong></a> para os efeitos de plano
+<p>Embora as medidas propostas no Capítulo <a href="epa.html#epa">4</a> para os efeitos de plano
 amostral sirvam para avaliar o impacto de ignorar o plano amostral nas
 inferências descritivas ou mesmo analíticas baseadas em dados
 amostrais, elas não resolvem o problema de como incorporar o plano
@@ -186,8 +300,9 @@ requeridos. Para uma discussão mais detalhada do método de
 Máxima Verossimilhança para estimação em modelos
 paramétricos regulares ver, por exemplo, <span class="citation"><a href="#ref-garthwaite" role="doc-biblioref">Garthwaite et al.</a> (<a href="#ref-garthwaite" role="doc-biblioref">1995</a>)</span>.</p>
 </div>
-<div id="método-de-máxima-verossimilhança-mv" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Método de Máxima Verossimilhança (MV)</h2>
+<div id="método-de-máxima-verossimilhança-mv" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Método de Máxima Verossimilhança (MV)</h2>
+<div style="text-align: justify">
 <p>Seja <span class="math inline">\(\mathbf{y}_{i}=\left(y_{i1},\ldots,y_{iR}\right)&#39;\)</span> um
 vetor <span class="math inline">\(R\times 1\)</span> dos valores observados das variáveis de interesse
 observadas para a unidade <span class="math inline">\(i\)</span> da amostra, gerado por um vetor aleatório <span class="math inline">\(\mathbf{Y}_{i}\)</span>, para <span class="math inline">\(i=1,\ldots ,n\)</span>, onde <span class="math inline">\(n\)</span> é o tamanho da amostra.
@@ -238,8 +353,9 @@ J\left( \mathbf{\hat{\theta}}\right) =\left. J\left( \mathbf{\theta }\right)
 \right| _{\mathbf{\theta =\hat{\theta}}}\;. 
 \]</span></p>
 </div>
-<div id="ponderação-de-dados-amostrais" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Ponderação de Dados Amostrais</h2>
+<div id="ponderação-de-dados-amostrais" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Ponderação de Dados Amostrais</h2>
+<div style="text-align: justify">
 <p>O papel da ponderação <em>na análise de dados amostrais</em> é
 alvo de controvérsia entre os estatísticos. Apesar de incorporada
 comumente na inferência descritiva, não há concordância com
@@ -248,7 +364,7 @@ opiniões entre dois extremos. Num extremo estão os <em>modelistas</em>, que co
 uso de pesos irrelevante, e no outro os <em>amostristas</em>, que incorporam pesos em qualquer análise.</p>
 
 <div class="example">
-<span id="exm:pnad" class="example"><strong>Exemplo 1.1  </strong></span>Uso analítico dos dados da Pesquisa Nacional por Amostra de
+<span id="exm:pnad" class="example"><strong>Exemplo 5.1  </strong></span>Uso analítico dos dados da Pesquisa Nacional por Amostra de
 Domicílios (PNAD)
 </div>
 <p>A título de ilustração, consideremos uma pesquisa com uma
@@ -273,13 +389,13 @@ isto é, tal que todos os domicílios e pessoas dentro
 de um mesmo estrato têm igual probabilidade de seleção.
 Entretanto, as probabilidades de inclusão (e conseqüentemente os
 pesos) variam bastante entre as várias regiões de pesquisa.
-A Tabela <a href="ajmodpar.html#tab:proselpnad">1.1</a> revela como variam essas probabilidades de seleção entre as
+A Tabela <a href="ajmodpar.html#tab:proselpnad">5.1</a> revela como variam essas probabilidades de seleção entre as
 regiões cobertas pela amostra da PNAD de 93. Como se
 pode observar, tais probabilidades de inclusão chegam a ser <span class="math inline">\(5\)</span> vezes
 maiores em Belém do que em São Paulo, e portanto variação semelhante será observada nos pesos.</p>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:proselpnad">Tabela 1.1: </span><span class="math inline">\(\text{Probabilidades de seleção da amostra da PNAD de 1993 segundo regiões}\)</span>
+<span id="tab:proselpnad">Tabela 5.1: </span><span class="math inline">\(\text{Probabilidades de seleção da amostra da PNAD de 1993 segundo regiões}\)</span>
 </caption>
 <thead>
 <tr>
@@ -373,8 +489,8 @@ estágios de amostragem.</p>
 pesquisa <span class="math inline">\(y\)</span> num dado estrato usando os dados da PNAD é feita
 rotineiramente com estimadores ponderados de tipo razão
 <span class="math inline">\(\widehat{Y}_{R}=\widehat{Y}_{\pi }\,X\,/\,\widehat{X}_{\pi }=\sum_{i\in s}w_{i}^{R}y_{i}\)</span>
-(tal como definidos por <a href="#eq:estpa15">(<strong>??</strong>)</a>, com pesos dados por
-<span class="math inline">\(w_{i}^{R}=\pi_{i}^{-1}X\,/\,\widehat{X}_{\pi }\)</span>,ver <a href="#eq:estpa17">(<strong>??</strong>)</a>, onde <span class="math inline">\(X\)</span> é o total
+(tal como definidos por <a href="capplanamo.html#eq:estpa15">(3.15)</a>, com pesos dados por
+<span class="math inline">\(w_{i}^{R}=\pi_{i}^{-1}X\,/\,\widehat{X}_{\pi }\)</span>,ver <a href="capplanamo.html#eq:estpa17">(3.17)</a>, onde <span class="math inline">\(X\)</span> é o total
 da população no estrato obtido por métodos demográficos de
 projeção, utilizado como variável auxiliar, e <span class="math inline">\(\widehat{X}_{\pi}\)</span> e <span class="math inline">\(\widehat{Y}_{\pi}\)</span> são os estimadores <span class="math inline">\(\pi\)</span>-ponderados de <span class="math inline">\(X\)</span> e
 <span class="math inline">\(Y\)</span> respectivamente. Para estimar para conjuntos de estratos basta somar as
@@ -402,9 +518,9 @@ para traçar um perfil sócio-econômico da mão-de-obra
 empregada no mercado informal de trabalho urbano no Rio de Janeiro, usando
 dados do suplemento sobre trabalho da PNAD-90. Todos os ajustes efetuados
 ignoraram os pesos e o plano amostral da pesquisa. O problema foi revisitado
-por <span class="citation"><a href="#ref-Pessoa" role="doc-biblioref">Pessoa et al.</a> (<a href="#ref-Pessoa" role="doc-biblioref">1997</a>)</span>, quando então esses aspectos
+por <span class="citation"><a href="#ref-Pessoa" role="doc-biblioref">D. G. C. Pessoa et al.</a> (<a href="#ref-Pessoa" role="doc-biblioref">1997</a>)</span>, quando então esses aspectos
 foram devidamente incorporados na análise. Um resumo desse trabalho
-é discutido no Capítulo <a href="#modreg"><strong>??</strong></a>.</p>
+é discutido no Capítulo <a href="modreg.html#modreg">6</a>.</p>
 <p>Vamos supor que haja interesse em regredir uma determinada variável de
 pesquisa <span class="math inline">\(y\)</span> contra algumas outras variáveis de pesquisa num vetor de
 regressores <span class="math inline">\(\mathbf{z}\)</span>. Seria natural indagar se, como no caso do total e
@@ -416,12 +532,12 @@ regressão por:</p>
 \widehat{\beta }_{w}=\left(\sum_{i\in s}w_{i}\mathbf{z}_{i}^{\prime }
 \mathbf{z}_{i}\right) ^{-1}\sum_{i\in s}w_{i}\mathbf{z}_{i}^{\prime}y_{i}=
 \left(\mathbf{Z}_{s}^{\prime }\mathbf{W}_{s}\mathbf{Z}_{s}\right)^{-1}\mathbf{Z}_{s}^{\prime }\mathbf{W}_{s}\mathbf{Y}_{s} 
-\tag{1.1}
+\tag{5.1}
 \end{equation}\]</span></p>
 <p>em lugar do estimador de mínimos quadrados ordinários (MQO) dado por
 <span class="math display" id="eq:modpar2">\[\begin{equation}
 \widehat{\beta}=\left( \sum_{i\in s}\mathbf{z}_{i}^{\prime }\mathbf{z}_{i}\right)^{-1}\sum_{i\in s}\mathbf{z}_{i}^{\prime }y_{i}=\left(\mathbf{Z}_{s}^{\prime }\mathbf{Z}_{s}\right)^{-1}\mathbf{Z}_{s}^{\prime }\mathbf{Y}_{s}  
-\tag{1.2}
+\tag{5.2}
 \end{equation}\]</span>
 onde <span class="math inline">\(w_{i}=\pi _{i}^{-1}\)</span>, <span class="math inline">\(y_{i}\)</span> é o valor da variável resposta e
 <span class="math inline">\(\mathbf{z}_{i}\)</span> é o vetor de regressores para a observação <span class="math inline">\(i\)</span>,
@@ -430,11 +546,11 @@ com os valores amostrais dos <span class="math inline">\(\mathbf{z}_{i}\)</span>
 <span class="math inline">\(\mathbf{W}_{s}=diag\left\{ w_{i};i\in s\right\}\)</span> é a matriz diagonal com os pesos
 amostrais.</p>
 <p>Não é possível justificar o estimador <span class="math inline">\(\widehat{\beta }_{w}\)</span>
-em <a href="ajmodpar.html#eq:modpar1">(1.1)</a> com base em critério de otimalidade, tal como ocorre com
+em <a href="ajmodpar.html#eq:modpar1">(5.1)</a> com base em critério de otimalidade, tal como ocorre com
 os estimadores usuais de Máxima Verossimilhança ou de Mínimos
 Quadrados Ordinários (MQO), se uma modelagem clássica IID fosse
 adotada para a amostra.</p>
-<p>De um ponto de vista formal (matemático), o estimador <span class="math inline">\(\widehat{\beta }_{w}\)</span> em <a href="ajmodpar.html#eq:modpar1">(1.1)</a> é equivalente ao estimador de Mínimos Quadrados
+<p>De um ponto de vista formal (matemático), o estimador <span class="math inline">\(\widehat{\beta }_{w}\)</span> em <a href="ajmodpar.html#eq:modpar1">(5.1)</a> é equivalente ao estimador de Mínimos Quadrados
 Ponderados (MQP) com pesos <span class="math inline">\(w_{i}\)</span>. Entretanto, esses estimadores diferem de
 maneira acentuada. Os estimadores de MQP são usualmente considerados
 quando o modelo de regressão é heteroscedástico, isto é,
@@ -469,7 +585,7 @@ poderiam introduzir ou causar <em>vícios</em>;</p></li>
 <p>A <em>robustez dos procedimentos</em> que incorporam pesos é obtida pela
 mudança de foco da inferência para <em>quantidades da população finita</em>, que definem parâmetros-alvo alternativos aos
 parâmetros do modelo de superpopulação, conforme já
-discutido na Seção <a href="#modelsuperpop"><strong>??</strong></a>.</p>
+discutido na Seção <a href="refinf.html#modelsuperpop">2.5</a>.</p>
 <p>A questão da construção dos pesos não será tratada neste
 texto, usando-se sempre como peso o inverso da probabilidade de inclusão
 na amostra. é possível utilizar pesos de outro tipo como, por
@@ -481,8 +597,9 @@ processo de inferência. A principal que será adotada ao longo deste
 texto será o método de <em>Máxima Pseudo-Verossimilhança</em>,
 que descrevemos na próxima seção.</p>
 </div>
-<div id="modpar3" class="section level2" number="1.4">
-<h2><span class="header-section-number">1.4</span> Método de Máxima Pseudo-Verossimilhança</h2>
+<div id="modpar3" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Método de Máxima Pseudo-Verossimilhança</h2>
+<div style="text-align: justify">
 <p>Suponha que os vetores observados <span class="math inline">\(\mathbf{y}_{i}\)</span> das variáveis de
 pesquisa do elemento<span class="math inline">\(\ i\)</span> são gerados por vetores aleatórios
 <span class="math inline">\(\mathbf{Y}_{i}\)</span> , para <span class="math inline">\(i\in U\)</span>. Suponha também que <span class="math inline">\(\mathbf{Y}_{1},\ldots ,\mathbf{Y}_{N}\)</span> são IID com densidade
@@ -493,25 +610,25 @@ por
 <span class="math display" id="eq:modpar3">\[\begin{equation}
 l_{U}\left( \mathbf{\theta }\right) =\prod\limits_{i\in U}f\left( \mathbf{y}
 _{i};\mathbf{\theta }\right)  
-\tag{1.3}
+\tag{5.3}
 \end{equation}\]</span>
 e
 <span class="math display" id="eq:modpar4">\[\begin{equation}
 L_{U}\left( \mathbf{\theta }\right) =\sum_{i\in U}\log \left[ f\left( 
 \mathbf{y}_{i};\mathbf{\theta }\right) \right] \;\;.  
-\tag{1.4}
+\tag{5.4}
 \end{equation}\]</span></p>
 <p>As equações de verossimilhança <em>populacionais</em>
 correspondentes são dadas por
 <span class="math display" id="eq:modpar5">\[\begin{equation}
 \sum_{i\in U}\mathbf{u}_{i}\left( \mathbf{\theta }\right) =\mathbf{0}
-\tag{1.5}
+\tag{5.5}
 \end{equation}\]</span>
 onde
 <span class="math display" id="eq:modpar6">\[\begin{equation}
 \mathbf{u}_{i}\left( \mathbf{\theta }\right) =\partial \log \left[ f\left( 
 \mathbf{y}_{i};\mathbf{\theta }\right) \right] /\partial \mathbf{\theta }
-\tag{1.6}
+\tag{5.6}
 \end{equation}\]</span>
 é o vetor <span class="math inline">\(K\times 1\)</span> dos escores do elemento <span class="math inline">\(i,i\in U\)</span>.</p>
 <p>Sob condições de regularidade <span class="citation"><a href="#ref-cox" role="doc-biblioref">Cox e Hinkley</a> (<a href="#ref-cox" role="doc-biblioref">1974</a>)</span>, p. 281, a
@@ -527,7 +644,7 @@ para isso especificar outra regra ou critério a otimizar e então
 definir a QDPC como a solução ótima segundo essa nova regra. Tal
 generalização, discutida em <span class="citation"><a href="#ref-Pfeff" role="doc-biblioref">Pfeffermann</a> (<a href="#ref-Pfeff" role="doc-biblioref">1993</a>)</span>, não será aqui
 considerada para manter a simplicidade.</p>
-<p>A QDPC <span class="math inline">\(\mathbf{\theta }_{U}\)</span> definida com base em <a href="ajmodpar.html#eq:modpar5">(1.5)</a> não
+<p>A QDPC <span class="math inline">\(\mathbf{\theta }_{U}\)</span> definida com base em <a href="ajmodpar.html#eq:modpar5">(5.5)</a> não
 é calculável a menos que um censo seja realizado. Entretanto,
 desempenha papel fundamental nessa abordagem inferencial, por constituir-se
 num <em>pseudo-parâmetro</em>, eleito como alvo da inferência num
@@ -539,21 +656,21 @@ da população é geralmente grande, um estimador adequado para
 <p>Seja <span class="math inline">\(\mathbf{T}=\sum_{i\in U}\mathbf{u}_{i}\left( \mathbf{\theta }\right)\)</span>
 a soma dos vetores de escores na população, o qual é um vetor de
 totais populacionais. Para estimar este vetor de totais, podemos então
-usar um estimador linear ponderado da forma <span class="math inline">\(\mathbf{\hat{T}}=\sum_{i\in s}w_{i}\mathbf{u}_{i}\left( \mathbf{\theta }\right)\)</span>, ver Capítulo <a href="#planamo"><strong>??</strong></a>,
+usar um estimador linear ponderado da forma <span class="math inline">\(\mathbf{\hat{T}}=\sum_{i\in s}w_{i}\mathbf{u}_{i}\left( \mathbf{\theta }\right)\)</span>, ver Capítulo <a href="refinf.html#planamo">2.8</a>,
 onde <span class="math inline">\(w_{i}\)</span> são pesos propriamente definidos. Com essa notação,
 podemos agora obter um estimador para <span class="math inline">\(\mathbf{\theta }_{U}\)</span> resolvendo o
 sistema de equações obtido igualando o estimador <span class="math inline">\(\mathbf{\hat{T}}\)</span>
 do total <span class="math inline">\(\mathbf{T}\)</span> a zero.</p>
 
 <div class="definition">
-<span id="def:unnamed-chunk-1" class="definition"><strong>Definição 1.1  </strong></span>O estimador de Máxima Pseudo-Verossimilhança (MPV) <span class="math inline">\(\mathbf{\hat{\theta}}_{MPV}\)</span> de <span class="math inline">\(\mathbf{\theta }_{U}\)</span> (e consequentemente de <span class="math inline">\(\mathbf{\theta}\)</span>) será a solução das equações dePseudo-Verossimilhança dadas por
+<span id="def:unnamed-chunk-1" class="definition"><strong>Definição 5.1  </strong></span>O estimador de Máxima Pseudo-Verossimilhança (MPV) <span class="math inline">\(\mathbf{\hat{\theta}}_{MPV}\)</span> de <span class="math inline">\(\mathbf{\theta }_{U}\)</span> (e consequentemente de <span class="math inline">\(\mathbf{\theta}\)</span>) será a solução das equações dePseudo-Verossimilhança dadas por
 <span class="math display" id="eq:modpar7">\[\begin{equation}
 \mathbf{\hat{T}}=\sum_{i\in s}w_{i}\mathbf{u}_{i}\left( \mathbf{\theta }
 \right) =\mathbf{0\;\;.}  
-\tag{1.7}
+\tag{5.7}
 \end{equation}\]</span>
 </div>
-<p>Através da linearização de Taylor, ver Seção <a href="#taylor"><strong>??</strong></a>, considerando os resultados de <span class="citation"><a href="#ref-binder83" role="doc-biblioref">Binder</a> (<a href="#ref-binder83" role="doc-biblioref">1983</a>)</span>, podemos obter a
+<p>Através da linearização de Taylor, ver Seção <a href="capplanamo.html#taylor">3.3</a>, considerando os resultados de <span class="citation"><a href="#ref-binder83" role="doc-biblioref">Binder</a> (<a href="#ref-binder83" role="doc-biblioref">1983</a>)</span>, podemos obter a
 variância de aleatorização assintótica do estimador
 <span class="math inline">\(\mathbf{\hat{\theta}}_{MPV}\)</span> e seu estimador correspondente, dados respectivamente
 por:
@@ -562,7 +679,7 @@ V_{p}\left( \mathbf{\hat{\theta}}_{MPV}\right) \simeq \left[ J\left( \mathbf{
 \theta }_{U}\right) \right] ^{-1}V_{p}\left[ \sum_{i\in s}w_{i}\mathbf{u}
 _{i}\left( \mathbf{\theta }_{U}\right) \right] \left[ J\left( \mathbf{\theta 
 }_{U}\right) \right] ^{-1}  
-\tag{1.8}
+\tag{5.8}
 \end{equation}\]</span>
 e
 <span class="math display" id="eq:modpar9">\[\begin{equation}
@@ -570,7 +687,7 @@ e
 \mathbf{\hat{\theta}}_{MPV}\right) \right] ^{-1}\hat{V}_{p}\left[ \sum_{i\in
 s}w_{i}\mathbf{u}_{i}\left( \mathbf{\hat{\theta}}_{MPV}\right) \right]
 \left[ \hat{J}\left( \mathbf{\hat{\theta}}_{MPV}\right) \right] ^{-1}\;,
-\tag{1.9}
+\tag{5.9}
 \end{equation}\]</span>
 onde</p>
 <p><span class="math display" id="eq:modpar10">\[\begin{equation}
@@ -579,7 +696,7 @@ J\left( \mathbf{\theta }_{U}\right) =\left. \frac{\partial T\left( \mathbf{
 }_{U}}=\sum_{i\in U}\left. \frac{\partial \mathbf{u}_{i}\left( \mathbf{
 \theta }\right) }{\partial \left( \mathbf{\theta }\right) }\right| _{\mathbf{
 \theta =\theta }_{U}},  
-\tag{1.10}
+\tag{5.10}
 \end{equation}\]</span></p>
 <p><span class="math display" id="eq:modpar11">\[\begin{equation}
 \hat{J}\left( \mathbf{\hat{\theta}}_{MPV}\right) =\left. \frac{\partial 
@@ -587,24 +704,24 @@ J\left( \mathbf{\theta }_{U}\right) =\left. \frac{\partial T\left( \mathbf{
 \right| _{\mathbf{\theta =\hat{\theta}}_{MPV}}=\sum_{i\in s}w_{i}\left. 
 \frac{\partial \mathbf{u}_{i}\left( \mathbf{\theta }\right) }{\partial 
 \mathbf{\theta }}\right| _{\mathbf{\theta =\hat{\theta}}_{MPV}},
-\tag{1.11}
+\tag{5.11}
 \end{equation}\]</span></p>
 <p><span class="math inline">\(V_{p}\left[\sum_{i\in s}w_{i}\mathbf{u}_{i}\left( \mathbf{\theta}_{U}\right) \right]\)</span> é a matriz de variância (de aleatorização) do estimador do total populacional dos escores e <span class="math inline">\(\hat{V}_{p}\left[\sum_{i\in s}w_{i}\mathbf{u}_{i}\left(\mathbf{\hat{\theta}}_{MPV}\right)\right]\)</span> é um estimador consistente para esta variância.
 Binder(1983) mostrou também que a distribuição assintótica
 de <span class="math inline">\(\mathbf{\hat{\theta}}_{MPV}\)</span> é Normal Multivariada, isto é, que
 <span class="math display" id="eq:modpar12">\[\begin{equation}
 \left[ \hat{V}_{p}\left( \mathbf{\hat{\theta}}_{MPV}\right) \right]^{-1/2}\left(\mathbf{\hat{\theta}}_{MPV}-\mathbf{\theta }_{U}\right) \sim  \mathbf{NM}\left(\mathbf{0};\mathbf{I}\right),  
-\tag{1.12}
+\tag{5.12}
 \end{equation}\]</span>
 o que fornece uma base para a inferência sobre <span class="math inline">\(\mathbf{\theta }_{U}\)</span> (ou <span class="math inline">\(\mathbf{\theta }\)</span>) usando amostras grandes.</p>
 <p>Muitos modelos paramétricos, com vários planos amostrais e
 estimadores de totais diferentes, podem ser ajustados resolvendo-se as
-equações de Pseudo-Verossimilhança <a href="ajmodpar.html#eq:modpar7">(1.7)</a>, satisfeitas algumas
+equações de Pseudo-Verossimilhança <a href="ajmodpar.html#eq:modpar7">(5.7)</a>, satisfeitas algumas
 condições de regularidade enunciadas no apêndice de <span class="citation"><a href="#ref-binder83" role="doc-biblioref">Binder</a> (<a href="#ref-binder83" role="doc-biblioref">1983</a>)</span> e
 revistas em <span class="citation"><a href="#ref-Silva" role="doc-biblioref">Silva</a> (<a href="#ref-Silva" role="doc-biblioref">1996</a>)</span>, p. 126. Entretanto, os estimadores de
 MPV não serão únicos, já que existem diversas maneiras
 de se definir os pesos <span class="math inline">\(w_{i}\)</span>.</p>
-<p>Os pesos <span class="math inline">\(w_{i}\)</span> devem ser tais que os estimadores de total em <a href="ajmodpar.html#eq:modpar7">(1.7)</a>
+<p>Os pesos <span class="math inline">\(w_{i}\)</span> devem ser tais que os estimadores de total em <a href="ajmodpar.html#eq:modpar7">(5.7)</a>
 sejam assintoticamente normais e não-viciados, e possuam estimadores de
 variância consistentes, conforme requerido para a obtenção da
 distribuição assintótica dos estimadores MPV. Os pesos mais
@@ -629,7 +746,7 @@ modelo <span class="math inline">\(f\left( \mathbf{y;\theta }\right)\)</span> (o
 \sum\limits_{i\in s}\pi _{i}^{-1}\mathbf{u}_{i}\left( \mathbf{\hat{\theta}}
 _{\pi }\right) \right] \left[ \hat{J}\left( \mathbf{\hat{\theta}}_{\pi
 }\right) \right] ^{-1},  
-\tag{1.13}
+\tag{5.13}
 \end{equation}\]</span>
 onde</p></li>
 </ol>
@@ -639,7 +756,7 @@ onde</p></li>
 s}\sum\limits_{j\in s}\frac{\pi _{ij}-\pi _{i}\pi _{j}}{\pi _{ij}}
 \frac{\mathbf{u}_{i}\left(\mathbf{\hat{\theta}}_{\pi }\right)}{\pi _{i}} 
 \frac{\mathbf{u}_{j}^{\prime}\left(\mathbf{\hat{\theta}}_{\pi}\right)}{\pi _{j}} 
-\tag{1.14}
+\tag{5.14}
 \end{equation}\]</span>
 e</p>
 <p><span class="math display" id="eq:modpar15">\[\begin{equation}
@@ -649,7 +766,7 @@ e</p>
 s}\pi _{i}^{-1}\left. \frac{\partial \mathbf{u}_{i}\left( \mathbf{\theta }
 \right) }{\partial \mathbf{\theta }}\right| _{\mathbf{\theta }=\mathbf{\hat{
 \theta}}_{\pi }}\;\;.  
-\tag{1.15}
+\tag{5.15}
 \end{equation}\]</span></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Usar <span class="math inline">\(\mathbf{\hat{\theta}}_{\pi }\)</span> e
@@ -661,13 +778,13 @@ normal e utilizá-las para fazer inferência sobre os componentes de
 <div class="remark">
  <span class="remark"><em>Observação </em></span> No Método de Máxima Pseudo-Verossimilhança, os pesos amostrais
 são incorporados na análise através das equações de
-estimação dos parâmetros <a href="ajmodpar.html#eq:modpar7">(1.7)</a> e através das
+estimação dos parâmetros <a href="ajmodpar.html#eq:modpar7">(5.7)</a> e através das
 equações de estimação da matriz de covariância dos estimadores
-<a href="ajmodpar.html#eq:modpar13">(1.13)</a>-<a href="ajmodpar.html#eq:modpar15">(1.15)</a>.
+<a href="ajmodpar.html#eq:modpar13">(5.13)</a>-<a href="ajmodpar.html#eq:modpar15">(5.15)</a>.
 </div>
 
 <div class="remark">
- <span class="remark"><em>Observação </em></span> O plano amostral é também incorporado no método de estimação MPV através da expressão para a variância do total dos escores sob o plano amostral <a href="ajmodpar.html#eq:modpar14">(1.14)</a>, onde as propriedades do plano amostral estão resumidas nas probabilidades de inclusão de primeira
+ <span class="remark"><em>Observação </em></span> O plano amostral é também incorporado no método de estimação MPV através da expressão para a variância do total dos escores sob o plano amostral <a href="ajmodpar.html#eq:modpar14">(5.14)</a>, onde as propriedades do plano amostral estão resumidas nas probabilidades de inclusão de primeira
 e segunda ordem, isto é, os <span class="math inline">\(\pi _{i}\)</span> e os <span class="math inline">\(\pi _{ij}\)</span> respectivamente.
 </div>
 
@@ -714,8 +831,9 @@ de modelos (tais como gráficos de resíduos) e outros procedimentos
 da inferência clássica (tais como testes estatísticos de
 Razões de Verossimilhança) não podem ser utilizados.</p>
 </div>
-<div id="robustez-do-procedimento-mpv" class="section level2" number="1.5">
-<h2><span class="header-section-number">1.5</span> Robustez do Procedimento MPV</h2>
+<div id="robustez-do-procedimento-mpv" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Robustez do Procedimento MPV</h2>
+<div style="text-align: justify">
 <p>Nesta seção vamos examinar a questão da robustez dos estimadores
 obtidos pelo procedimento MPV. é essa robustez que justifica o emprego
 desses estimadores frente aos estimadores usuais de MV, pois nas situações práticas da análise de dados amostrais complexos as
@@ -785,10 +903,11 @@ tamanho da população, isto é, quando <span class="math inline">\(n\rightarrow
 <span class="math inline">\(N\uparrow\)</span> e <span class="math inline">\(n\uparrow\)</span> preservando a estrutura do plano amostral.
 Para evitar um desvio indesejado que a discussão deste problema traria,
 vamos supor que <span class="math inline">\(N\uparrow\)</span> e <span class="math inline">\(n\uparrow\)</span> de uma forma bem definida. Os
-leitores interessados poderão consultar: <span class="citation"><a href="#ref-SSW92" role="doc-biblioref">Särndal et al.</a> (<a href="#ref-SSW92" role="doc-biblioref">1992</a>)</span>, p. 166, <span class="citation"><a href="#ref-brewer" role="doc-biblioref">Brewer</a> (<a href="#ref-brewer" role="doc-biblioref">1979</a>)</span>, <span class="citation"><a href="#ref-Isaki" role="doc-biblioref">Isaki e Fuller</a> (<a href="#ref-Isaki" role="doc-biblioref">1982</a>)</span>, <span class="citation"><a href="#ref-Robin" role="doc-biblioref">Robinson e Särndal</a> (<a href="#ref-Robin" role="doc-biblioref">1983</a>)</span>, <span class="citation"><a href="#ref-hajek" role="doc-biblioref">Hájek</a> (<a href="#ref-hajek" role="doc-biblioref">1960</a>)</span> e <span class="citation"><a href="#ref-SHS89" role="doc-biblioref">Skinner et al.</a> (<a href="#ref-SHS89" role="doc-biblioref">1989</a>)</span>, p. 18-19.</p>
+leitores interessados poderão consultar: <span class="citation"><a href="#ref-SSW92" role="doc-biblioref">Särndal et al.</a> (<a href="#ref-SSW92" role="doc-biblioref">1992</a>)</span>, p. 166, <span class="citation"><a href="#ref-brewer" role="doc-biblioref">K. W. R. Brewer</a> (<a href="#ref-brewer" role="doc-biblioref">1979</a>)</span>, <span class="citation"><a href="#ref-Isaki" role="doc-biblioref">Isaki e Fuller</a> (<a href="#ref-Isaki" role="doc-biblioref">1982</a>)</span>, <span class="citation"><a href="#ref-Robin" role="doc-biblioref">Robinson e Särndal</a> (<a href="#ref-Robin" role="doc-biblioref">1983</a>)</span>, <span class="citation"><a href="#ref-hajek" role="doc-biblioref">Hájek</a> (<a href="#ref-hajek" role="doc-biblioref">1960</a>)</span> e <span class="citation"><a href="#ref-SHS89" role="doc-biblioref">Skinner et al.</a> (<a href="#ref-SHS89" role="doc-biblioref">1989</a>)</span>, p. 18-19.</p>
 </div>
-<div id="desvantagens-da-inferência-de-aleatorização" class="section level2" number="1.6">
-<h2><span class="header-section-number">1.6</span> Desvantagens da Inferência de Aleatorização</h2>
+<div id="desvantagens-da-inferência-de-aleatorização" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Desvantagens da Inferência de Aleatorização</h2>
+<div style="text-align: justify">
 <p>Se o modelo postulado para os dados amostrais for correto, o uso de
 estimadores ponderados pode resultar em perda substancial de eficiência
 comparado com o estimador ótimo, sob o modelo. Em geral, a perda de
@@ -800,7 +919,7 @@ pesos é inevitável. Um exemplo clássico é discutido a
 seguir.</p>
 
 <div class="example">
-<span id="exm:Analisec" class="example"><strong>Exemplo 1.2  </strong></span>Análise secundária de tabelas de contingência.
+<span id="exm:Analisec" class="example"><strong>Exemplo 5.2  </strong></span>Análise secundária de tabelas de contingência.
 </div>
 <p>A pesquisa <em>Canada Health Survey</em> usa um plano amostral estratificado
 com vários estágios de seleção. Nessa pesquisa, a estimativa
@@ -836,8 +955,9 @@ agências produtoras. Este é o caso, por exemplo, da PNAD, da amostra
 do Censo Demográfico e de inúmeras outras pesquisas do IBGE e de
 agências estatísticas congêneres.</p>
 </div>
-<div id="laboratório-de-r" class="section level2" number="1.7">
-<h2><span class="header-section-number">1.7</span> Laboratório de R</h2>
+<div id="laboratório-de-r-2" class="section level2" number="5.7">
+<h2><span class="header-section-number">5.7</span> Laboratório de R</h2>
+<div style="text-align: justify">
 <p>Usar função svymle da library <em>survey</em>, <span class="citation"><a href="#ref-R-survey" role="doc-biblioref">Lumley</a> (<a href="#ref-R-survey" role="doc-biblioref">2017</a>)</span>, para incluir exemplo de estimador MPV?</p>
 <p>Possibilidade: explorar o exemplo 2.1?</p>
 
@@ -882,7 +1002,7 @@ IBGE. (1981). <em>Metodologia da <span>Pesquisa</span> <span>Nacional</span> por
 Isaki, C. T. e Fuller, W. A. (1982). Survey design under the regression superpopulation model. <em>Journal of the American Statistical Association</em>, <em>77</em>, 89–96.
 </div>
 <div id="ref-kalton83b" class="csl-entry">
-Kalton, G. (1983). Models in the practice of survey sampling. <em>International Statistical Review</em>, <em>51</em>, 175–188.
+Kalton, G. (1983b). Models in the practice of survey sampling. <em>International Statistical Review</em>, <em>51</em>, 175–188.
 </div>
 <div id="ref-Leote" class="csl-entry">
 Leote, R. M. D. (1996). <em>Um perfil sócio-econômico das pessoas ocupadas no setor informal na área urbana do <span>Rio</span> de <span>Janeiro</span></em> (N. 2). IBGE, Escola Nacional de Ciências Estatísticas.
@@ -923,8 +1043,8 @@ Skinner, C. J.; Holt, D. e Smith, T. M. F. (Eds.). (1989). <em>Analysis of Compl
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="referências.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="epa.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="modreg.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

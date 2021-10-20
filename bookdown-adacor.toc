@@ -15,12 +15,4 @@
 \contentsline {section}{\numberline {2.7}Modelos de Superpopulação}{24}{section.2.7}%
 \contentsline {section}{\numberline {2.8}Plano amostral}{25}{section.2.8}%
 \contentsline {section}{\numberline {2.9}Planos amostrais informativos e ignoráveis}{26}{section.2.9}%
-\contentsline {chapter}{\numberline {3}Estimação Baseada no Plano Amostral}{31}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Estimação de Totais}{31}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Por que Estimar Variâncias}{34}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Linearização de Taylor para Estimar variâncias}{35}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Método do Conglomerado Primário}{37}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Métodos de Replicação}{38}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Laboratório de R}{40}{section.3.6}%
-\contentsline {section}{\numberline {3.7}}{42}{section.3.7}%
-\contentsline {chapter}{Referências}{43}{chapter*.4}%
+\contentsline {chapter}{Referências}{33}{chapter*.4}%

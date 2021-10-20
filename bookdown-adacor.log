@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.9.24)  19 OCT 2021 14:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.9.24)  20 OCT 2021 15:14
 entering extended mode
 **./bookdown-adacor.tex
 (bookdown-adacor.tex
@@ -727,6 +727,9 @@ l.327   I
          lustrar e analisar o impacto das simplificações feitas ao utiliza...
 ]
 
+LaTeX Warning: Reference `capplanamo' on page 11 undefined on input line 349.
+
+
 LaTeX Warning: Reference `epa' on page 11 undefined on input line 351.
 
 [11]
@@ -771,7 +774,7 @@ ine 392.
 
 [13] [14]
 Cap\'{\i }tulo 2.
-<Figuras/Figura2.1.png, id=239, 459.51675pt x 345.6915pt>
+<Figuras/Figura2.1.png, id=134, 459.51675pt x 345.6915pt>
 File: Figuras/Figura2.1.png Graphic file (type png)
 <use Figuras/Figura2.1.png>
 Package pdftex.def Info: Figuras/Figura2.1.png  used on input line 430.
@@ -803,7 +806,7 @@ LaTeX Warning: Reference `testetab2' on page 17 undefined on input line 457.
 LaTeX Warning: Reference `estimacao-de-densidades' on page 17 undefined on inpu
 t line 458.
 
-<Figuras/Figura2.2.png, id=263, 474.27188pt x 502.12593pt>
+<Figuras/Figura2.2.png, id=154, 474.27188pt x 502.12593pt>
 File: Figuras/Figura2.2.png Graphic file (type png)
 <use Figuras/Figura2.2.png>
 Package pdftex.def Info: Figuras/Figura2.2.png  used on input line 504.
@@ -824,7 +827,7 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
 (C:\Program Files\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<Figuras/Figura2.3.png, id=313, 476.53032pt x 626.34pt>
+<Figuras/Figura2.3.png, id=187, 476.53032pt x 626.34pt>
 File: Figuras/Figura2.3.png Graphic file (type png)
 <use Figuras/Figura2.3.png>
 Package pdftex.def Info: Figuras/Figura2.3.png  used on input line 618.
@@ -841,6 +844,9 @@ e same identifier (name{table.2.3}) has been already used, duplicate ignored
 l.686 
       ] [23] [24] [25] [26]
 
+LaTeX Warning: Reference `capplanamo' on page 27 undefined on input line 944.
+
+
 LaTeX Warning: Reference `ajmodpar' on page 27 undefined on input line 944.
 
 
@@ -850,72 +856,132 @@ Underfull \vbox (badness 1490) has occurred while \output is active []
 .2.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1032 
-       ] [29pdfTeX warning (ext4): destination with the same identifier (name{t
-able.2.5}) has been already used, duplicate ignored
+l.1034 
+       pdfTeX warning (ext4): destination with the same identifier (name{equati
+on.2.9.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1081 \end{table}
+l.1034 
+       pdfTeX warning (ext4): destination with the same identifier (name{equati
+on.2.9.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1034 
+       ]pdfTeX warning (ext4): destination with the same identifier (name{equat
+ion.2.9.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1037 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1037 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1037 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1037 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1044 \begin{equation}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1044 \begin{equation}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1044 \begin{equation}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1044 \begin{equation}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1053 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1053 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1053 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1053 \begin{eqnarray}
+                        [29pdfTeX warning (ext4): destination with the same ide
+ntifier (name{table.2.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1084 \end{table}
                   ] [30pdfTeX warning (ext4): destination with the same identif
 ier (name{table.2.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1133 ...da no Plano Amostral}\label{capplanamo}}
+l.1138 ...er*{Referências}\label{referuxeancias}}
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{table.2.7}) has been already used, duplica
 te ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1133 ...da no Plano Amostral}\label{capplanamo}}
+l.1138 ...er*{Referências}\label{referuxeancias}}
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{table.2.8}) has been already used, duplica
 te ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1133 ...da no Plano Amostral}\label{capplanamo}}
-                                                  ]
-Cap\'{\i }tulo 3.
-[31
+l.1138 ...er*{Referências}\label{referuxeancias}}
+                                                  ] [31] [32
 
-] [32] [33] [34]
-
-LaTeX Warning: Reference `agregdesag' on page 35 undefined on input line 1363.
-
-[35] [36] [37] [38] [39] [40] [41] [42] [43
-
-] [44] (bookdown-adacor.aux)
+] [33] [34] (bookdown-adacor.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 15971 strings out of 478864
- 233954 string characters out of 2858508
- 619812 words of memory out of 3000000
- 33043 multiletter control sequences out of 15000+600000
- 504900 words of font info for 234 fonts, out of 8000000 for 9000
+ 15823 strings out of 478864
+ 232119 string characters out of 2858508
+ 613770 words of memory out of 3000000
+ 32994 multiletter control sequences out of 15000+600000
+ 497829 words of font info for 220 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,23n,80p,1087b,491s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 74i,15n,80p,1087b,491s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTe
-X/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/
-lm-ts1.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Progra
-m Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX/fonts/
+X/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-
+mathit.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Progra
+m Files/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/
 enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx12.pf
-b><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Program Files/Mi
-KTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/publ
-ic/lm/lmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/P
-rogram Files/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX/fo
-nts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lm
-r17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Program Fil
-es/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/p
-ublic/lm/lmri12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmro12.pfb><
-C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKT
-eX/fonts/type1/public/lm/lmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
-lm/lmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Prog
-ram Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bookdown-adacor.pdf (44 pages, 611420 bytes).
+b><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/M
+iKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
+lic/lm/lmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/P
+rogram Files/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX/fo
+nts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lm
+r6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Program File
+s/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX/fonts/type1/
+public/lm/lmro12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
+<C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/lm/lmtt12.pfb>
+Output written on bookdown-adacor.pdf (34 pages, 456092 bytes).
 PDF statistics:
- 835 PDF objects out of 1000 (max. 8388607)
- 214 named destinations out of 1000 (max. 500000)
- 53464 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 477 PDF objects out of 1000 (max. 8388607)
+ 141 named destinations out of 1000 (max. 500000)
+ 49304 words of extra memory for PDF output out of 51595 (max. 10000000)
 
