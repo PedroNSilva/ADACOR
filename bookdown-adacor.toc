@@ -13,6 +13,6 @@
 \contentsline {section}{\numberline {2.5}Abordagem 3 - Modelagem de Superpopulação}{20}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Fontes de variação}{23}{section.2.6}%
 \contentsline {section}{\numberline {2.7}Modelos de Superpopulação}{24}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Plano amostral}{25}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Planos amostrais informativos e ignoráveis}{26}{section.2.9}%
+\contentsline {section}{\numberline {2.8}Plano amostral}{26}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Planos amostrais informativos e ignoráveis}{27}{section.2.9}%
 \contentsline {chapter}{Referências}{33}{chapter*.4}%
