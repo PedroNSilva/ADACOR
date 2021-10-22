@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.9.24)  21 OCT 2021 16:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.9.24)  22 OCT 2021 10:50
 entering extended mode
 **./bookdown-adacor.tex
 (bookdown-adacor.tex
@@ -861,72 +861,72 @@ LaTeX Warning: Reference `ajmodpar' on page 27 undefined on input line 971.
                                                   \__shipout_drop_firstpage_...
 l.1057 
        pdfTeX warning (ext4): destination with the same identifier (name{equati
-on.2.9.10}) has been already used, duplicate ignored
+on.2.9.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.1057 
        pdfTeX warning (ext4): destination with the same identifier (name{equati
-on.2.9.10}) has been already used, duplicate ignored
+on.2.9.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.1057 
        ]pdfTeX warning (ext4): destination with the same identifier (name{equat
-ion.2.9.10}) has been already used, duplicate ignored
+ion.2.9.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1075 \begin{eqnarray}
                        pdfTeX warning (ext4): destination with the same identif
-ier (name{equation.2.9.10}) has been already used, duplicate ignored
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1075 \begin{eqnarray}
                        pdfTeX warning (ext4): destination with the same identif
-ier (name{equation.2.9.10}) has been already used, duplicate ignored
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1075 \begin{eqnarray}
                        pdfTeX warning (ext4): destination with the same identif
-ier (name{equation.2.9.10}) has been already used, duplicate ignored
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1075 \begin{eqnarray}
                        pdfTeX warning (ext4): destination with the same identif
-ier (name{equation.2.9.10}) has been already used, duplicate ignored
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1087 \begin{equation}
                        pdfTeX warning (ext4): destination with the same identif
-ier (name{equation.2.9.10}) has been already used, duplicate ignored
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1087 \begin{equation}
                        pdfTeX warning (ext4): destination with the same identif
-ier (name{equation.2.9.10}) has been already used, duplicate ignored
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1087 \begin{equation}
                        pdfTeX warning (ext4): destination with the same identif
-ier (name{equation.2.9.10}) has been already used, duplicate ignored
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1087 \begin{equation}
                        pdfTeX warning (ext4): destination with the same identif
-ier (name{equation.2.9.10}) has been already used, duplicate ignored
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1097 \begin{eqnarray}
                        pdfTeX warning (ext4): destination with the same identif
-ier (name{equation.2.9.10}) has been already used, duplicate ignored
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1097 \begin{eqnarray}
                        pdfTeX warning (ext4): destination with the same identif
-ier (name{equation.2.9.10}) has been already used, duplicate ignored
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1097 \begin{eqnarray}
                        pdfTeX warning (ext4): destination with the same identif
-ier (name{equation.2.9.10}) has been already used, duplicate ignored
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1097 \begin{eqnarray}
@@ -958,10 +958,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 15827 strings out of 478864
- 232168 string characters out of 2858508
- 611978 words of memory out of 3000000
- 32996 multiletter control sequences out of 15000+600000
+ 15826 strings out of 478864
+ 232158 string characters out of 2858508
+ 611920 words of memory out of 3000000
+ 32995 multiletter control sequences out of 15000+600000
  497829 words of font info for 220 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,15n,80p,1087b,491s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -980,7 +980,7 @@ s/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX/fonts/type1/
 public/lm/lmro12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
 <C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files/MiKT
 eX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on bookdown-adacor.pdf (34 pages, 456249 bytes).
+Output written on bookdown-adacor.pdf (34 pages, 456236 bytes).
 PDF statistics:
  479 PDF objects out of 1000 (max. 8388607)
  143 named destinations out of 1000 (max. 500000)

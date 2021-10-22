@@ -4,7 +4,7 @@ title: "Análise de Dados Amostrais"
 author: 
   - Djalma Galvão Carneiro Pessoa, Pedro Luis do Nascimento Silva,
   - Antonio José Ribeiro Dias, Zélia Magalhães Bianchini e Sonia Albieri
-date: '21 de outubro de 2021, 16:29:48'
+date: '22 de outubro de 2021, 10:49:53'
 summary_depth: 3
 summary_float:
    collapsed: false

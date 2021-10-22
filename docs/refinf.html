@@ -522,34 +522,34 @@ probabilidade conjunta de <span class="math inline">\(( \mathbf{Y}_U , \mathbf{X
 aleatórios correspondentes às observações de unidades diferentes da população
 são supostos independentes e identicamente distribuídos - IID. Neste caso, o
 modelo de superpopulação pode ser escrito como:</p>
-<p><span class="math display" id="eq:ref4" id="eq:ref3">\[\begin{eqnarray}
+<p><span class="math display" id="eq:ref3">\[\begin{eqnarray}
 f \left( \mathbf{y}_U , \mathbf{x}_U ; \mathbf{\eta} \right) 
-&amp;=&amp;\prod_{i\in U} f\left(\mathbf{y}_i , \mathbf{x}_i ; \mathbf{\eta} \right) \tag{2.3} \\
+&amp;=&amp;\prod_{i\in U} f\left(\mathbf{y}_i , \mathbf{x}_i ; \mathbf{\eta} \right)\nonumber\\
 &amp;=&amp;\prod_{i\in U} f\left( \mathbf{y}_i \mathbf{|x}_i ; \mathbf{\lambda} \right) 
-f\left( \mathbf{x}_i ; \mathbf{\phi} \right) \tag{2.4}
+f\left( \mathbf{x}_i ; \mathbf{\phi} \right) \tag{2.3}
 \end{eqnarray}\]</span>
 onde <span class="math inline">\(\mathbf{\lambda}\)</span> e <span class="math inline">\(\mathbf{\phi}\)</span> são vetores de parâmetros.</p>
-<p>Sob <a href="refinf.html#eq:ref2">(2.2)</a>, o modelo marginal correspondente das variáveis da pesquisa
+<p>Sob <a href="refinf.html#eq:ref3">(2.3)</a>, o modelo marginal correspondente das variáveis da pesquisa
 seria obtido integrando nas variáveis auxiliares:</p>
-<p><span class="math display" id="eq:ref5">\[\begin{equation}
-f(\mathbf{y}_U ; \mathbf{\theta}) = f(\mathbf{y}_1 ,\ldots ,\mathbf{y}_N ; \mathbf{\theta}) = \prod_{i\in U} \int f\left( \mathbf{y}_i \mathbf{|x}_i ; \mathbf{\lambda} \right) f\left( \mathbf{x}_i ; \mathbf{\phi} \right) \mathbf{dx}_i = \prod_{i\in U} f\left( \mathbf{y}_i ; \mathbf{\theta} \right) \tag{2.5}
+<p><span class="math display" id="eq:ref4">\[\begin{equation}
+f(\mathbf{y}_U ; \mathbf{\theta}) = f(\mathbf{y}_1 ,\ldots ,\mathbf{y}_N ; \mathbf{\theta}) = \prod_{i\in U} \int f\left( \mathbf{y}_i \mathbf{|x}_i ; \mathbf{\lambda} \right) f\left( \mathbf{x}_i ; \mathbf{\phi} \right) \mathbf{dx}_i = \prod_{i\in U} f\left( \mathbf{y}_i ; \mathbf{\theta} \right) \tag{2.4}
 \end{equation}\]</span></p>
 <p>onde <span class="math inline">\(f\left( \mathbf{y}_i ; \mathbf{\theta} \right) = \int f\left( \mathbf{y}_i | \mathbf{x}_i ; \mathbf{\lambda} \right) f\left( \mathbf{x}_i ; \mathbf{\phi} \right) \mathbf{dx}_i\)</span> e <span class="math inline">\(\mathbf{\theta =} h\left( \mathbf{\lambda} , \mathbf{\phi} \right)\)</span> é função de <span class="math inline">\(\mathbf{\lambda}\)</span> e <span class="math inline">\(\mathbf{\phi}\)</span>.</p>
 <p>Outro tipo especial de modelo de superpopulação é o modelo de população fixa,
 que supõe que os valores numa população finita são fixos mas desconhecidos. Este
 modelo pode ser descrito por:</p>
-<p><span class="math display" id="eq:ref6">\[\begin{equation}
-P\left[ \left( \mathbf{Y}_U , \mathbf{X}_U \right) = \left( \mathbf{y}_U , \mathbf{x}_U \right) \right] = 1 \tag{2.6}
+<p><span class="math display" id="eq:ref5">\[\begin{equation}
+P\left[ \left( \mathbf{Y}_U , \mathbf{X}_U \right) = \left( \mathbf{y}_U , \mathbf{x}_U \right) \right] = 1 \tag{2.5}
 \end{equation}\]</span></p>
 <p>ou seja, uma distribuição degenerada é especificada para
 <span class="math inline">\(\left(\mathbf{Y}_U , \mathbf{X}_U \right)\)</span>.</p>
 <p>Este modelo foi considerado em <span class="citation">Cassel et al. (1977)</span>, que o chamaram de <em>abordagem de população fixa</em>, e afirmaram ser esta a abordagem subjacente ao desenvolvimento
 da teoria da <em>Amostragem Probabilística</em> encontrada nos livros clássicos tais como <span class="citation">Cochran (1977)</span> e outros.</p>
-<p>Aqui esta abordagem é chamada de <em>abordagem baseada no plano amostral</em> ou <em>abordagem de aleatorização</em>, pois neste caso a única fonte de variação (aleatoriedade) é proveniente do plano amostral. Em geral, a distribuição conjunta de <span class="math inline">\(\left( \mathbf{Y}_U , \mathbf{X}_U \right)\)</span> não precisa ser degenerada como especificada em <a href="refinf.html#eq:ref4">(2.4)</a>, embora o referencial aqui adotado seja suficientemente geral para permitir considerar esta possibilidade.</p>
+<p>Aqui esta abordagem é chamada de <em>abordagem baseada no plano amostral</em> ou <em>abordagem de aleatorização</em>, pois neste caso a única fonte de variação (aleatoriedade) é proveniente do plano amostral. Em geral, a distribuição conjunta de <span class="math inline">\(\left( \mathbf{Y}_U , \mathbf{X}_U \right)\)</span> não precisa ser degenerada como especificada em <a href="refinf.html#eq:ref5">(2.5)</a>, embora o referencial aqui adotado seja suficientemente geral para permitir considerar esta possibilidade.</p>
 <p>Se todas as unidades da população <span class="math inline">\(U\)</span> fossem pesquisadas (ou seja, se fosse
 executado um <em>censo</em>), os dados observados seriam <span class="math inline">\((\mathbf{y}_1 , \mathbf{x}_1), \ldots, (\mathbf{y}_N , \mathbf{x}_N)\)</span>. Sob a hipótese de resposta completa, a única fonte de incerteza seria devida ao fato de que <span class="math inline">\((\mathbf{y}_1 , \mathbf{x}_1), \ldots, (\mathbf{y}_N , \mathbf{x}_N)\)</span> é uma realização de
 <span class="math inline">\(\left( \mathbf{Y}_1, \mathbf{X}_1 \right), \ldots, \left( \mathbf{Y}_N, \mathbf{X}_N \right)\)</span>. Os dados observados poderiam então ser usados para fazer inferências sobre <span class="math inline">\(\mathbf{\eta}, \mathbf{\phi},\mathbf{\lambda}\)</span> ou <span class="math inline">\(\mathbf{\theta}\)</span> usando procedimentos padrões.</p>
-<p>Inferência sobre quaisquer dos parâmetros <span class="math inline">\(\mathbf{\eta}, \mathbf{\phi}, \mathbf{\lambda}\)</span> ou <span class="math inline">\(\mathbf{\theta}\)</span> do modelo de superpopulação é chamada <em>inferência analítica</em>. Este tipo de inferência só faz sentido quando o modelo de superpopulação não é degenerado como em <a href="refinf.html#eq:ref4">(2.4)</a>. Usualmente seu objetivo é explicar a relação entre variáveis não apenas para a população finita sob análise, mas também para outras populações que poderiam ter sido geradas pelo modelo de superpopulação adotado. Vários exemplos de inferência analítica são discutidos ao longo deste livro.</p>
+<p>Inferência sobre quaisquer dos parâmetros <span class="math inline">\(\mathbf{\eta}, \mathbf{\phi}, \mathbf{\lambda}\)</span> ou <span class="math inline">\(\mathbf{\theta}\)</span> do modelo de superpopulação é chamada <em>inferência analítica</em>. Este tipo de inferência só faz sentido quando o modelo de superpopulação não é degenerado como em <a href="refinf.html#eq:ref5">(2.5)</a>. Usualmente seu objetivo é explicar a relação entre variáveis não apenas para a população finita sob análise, mas também para outras populações que poderiam ter sido geradas pelo modelo de superpopulação adotado. Vários exemplos de inferência analítica são discutidos ao longo deste livro.</p>
 <p>Se o objetivo da inferência é estimar quantidades que fazem sentido somente para
 a população finita sob análise, tais como funções <span class="math inline">\(g\left( \mathbf{y}_1, \ldots, \mathbf{y}_N \right)\)</span> dos valores das variáveis da pesquisa, o modelo de superpopulação não é estritamente necessário, embora possa ser útil. Inferência para tais quantidades, chamadas parâmetros da população finita ou quantidades descritivas populacionais - QDPs, é chamada <em>inferência descritiva</em>.</p>
 <p>Vale notar que a especificação do modelo de superpopulação aqui proposta serve
@@ -595,12 +595,12 @@ esta possibilidade envolveria escrever <span class="math inline">\(p(s)\)</span>
 <p>Notação adicional necessária nas seções posteriores é agora introduzida.
 Denotamos por <span class="math inline">\(\pi_i\)</span> a probabilidade de inclusão da unidade <span class="math inline">\(i\)</span> na amostra <span class="math inline">\(s\)</span>,
 isto é,</p>
-<p><span class="math display" id="eq:ref7">\[\begin{equation}
-\pi_i = P\left( i \in s \right) = \sum_{s \ni i} p(s)  \tag{2.7}
+<p><span class="math display" id="eq:ref6">\[\begin{equation}
+\pi_i = P\left( i \in s \right) = \sum_{s \ni i} p(s)  \tag{2.6}
 \end{equation}\]</span></p>
 <p>e denotamos por <span class="math inline">\(\pi_{ij}\)</span> a probabilidade de inclusão conjunta na amostra <span class="math inline">\(s\)</span> das unidades <span class="math inline">\(i\)</span> e <span class="math inline">\(j\)</span>, dada por</p>
-<p><span class="math display" id="eq:ref8">\[\begin{equation}
-\pi_{ij} = P \left( i \in s , j \in s \right) = \sum_{s \ni i,j} p(s) \tag{2.8}
+<p><span class="math display" id="eq:ref7">\[\begin{equation}
+\pi_{ij} = P \left( i \in s , j \in s \right) = \sum_{s \ni i,j} p(s) \tag{2.7}
 \end{equation}\]</span></p>
 <p>para todo <span class="math inline">\(i \neq j \in U\)</span>. Note que <span class="math inline">\(\pi_{ii} = \pi_{i}\)</span> <span class="math inline">\(\forall\, i \in U.\)</span></p>
 <p>Uma hipótese básica assumida com relação aos planos amostrais aqui considerados
@@ -628,9 +628,9 @@ métodos que discutimos ao longo deste livro não são adequados, em geral, para
 de situação e, portanto, uma hipótese fundamental adotada ao longo deste texto é que os
 planos amostrais considerados são <em>não informativos</em>, isto é, não podem depender
 diretamente dos valores das variáveis da pesquisa. Logo eles satisfazem:</p>
-<p><span class="math display" id="eq:ref9">\[\begin{equation}
+<p><span class="math display" id="eq:ref8">\[\begin{equation}
 f\left[ \mathbf{\delta }_s | \left( \mathbf{y}_U , \mathbf{x}_U \right)
-\right] = f\left( \mathbf{\delta }_s | \mathbf{x}_U \right) \tag{2.9}
+\right] = f\left( \mathbf{\delta }_s | \mathbf{x}_U \right) \tag{2.8}
 \end{equation}\]</span></p>
 <p>Entre os planos amostrais <em>não informativos</em>, precisamos ainda distinguir duas
 outras situações de interesse. Quando o plano amostral é Amostragem Aleatória
