@@ -21,7 +21,7 @@ O estimador $\pi$-ponderado $\mathbf{\hat{Y}}_{\pi}$ é não-viciado para o tota
 \[
 E_p \left( \mathbf{\hat{Y}}_{\pi} \right) = \mathbf{Y} . 
 \]
-Além disto, sua variância de aleatorização é dada por
+Além disso, sua variância de aleatorização é dada por
 
 \begin{equation}
 V_p \left( \mathbf{\hat{Y}}_{\pi} \right) = \sum_{ i \in U} \, \sum_{j \in U} \left( \pi _{ij} - \pi_i \pi_j \right) \frac{ \mathbf{y}_i} {\pi_i} \frac{\mathbf{y}_j ^{\prime} } {\pi_j} \; .  (\#eq:estpa2)
