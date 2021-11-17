@@ -1,0 +1,2301 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  12pt,
+  brazilian,
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Análise de Dados Amostrais},
+  pdfauthor={Djalma Galvão Carneiro Pessoa, Pedro Luis do Nascimento Silva,; Antonio José Ribeiro Dias, Zélia Magalhães Bianchini e Sonia Albieri},
+  pdflang={pt-BR},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[left=1.5cm,right=1cm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\ifxetex
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[variant=brazilian]{portuguese}
+\else
+  \usepackage[main=brazilian]{babel}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\fi
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\title{Análise de Dados Amostrais}
+\author{Djalma Galvão Carneiro Pessoa, Pedro Luis do Nascimento Silva, \and Antonio José Ribeiro Dias, Zélia Magalhães Bianchini e Sonia Albieri}
+\date{17 de novembro de 2021, 13:32:48}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{lemma}{Lema}[chapter]
+\newtheorem{corollary}{Corolário}[chapter]
+\newtheorem{proposition}{Proposição}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definição}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Exemplo}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Observação }
+\newtheorem*{solution}{Solution}
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{bem-vindo}{%
+\chapter*{Bem-vindo}\label{bem-vindo}}
+\addcontentsline{toc}{chapter}{Bem-vindo}
+
+Uma preocupação básica de toda instituição produtora de informações estatísticas é com a utilização ``correta'' de seus dados. Isso pode ser interpretado de várias formas, algumas delas com reflexos até na confiança do público e na
+própria sobrevivência do órgão. Do nosso ponto de vista, enfatizamos um aspecto
+técnico particular, mas nem por isso menos importante para os usuários dos dados.
+
+A revolução da informática, com a resultante facilidade de acesso ao computador, criou condições extremamente favoráveis à utilização de dados estatísticos produzidos por órgãos como o IBGE. Algumas vezes esses dados são utilizados para fins puramente descritivos. Outras vezes, porém, sua utilização é feita para fins analíticos, envolvendo a construção de modelos, quando o objetivo é extrair conclusões aplicáveis também a populações distintas daquela da qual se extraiu a amostra. Neste caso, é comum empregar, sem grandes preocupações, pacotes
+computacionais padrões disponíveis para a seleção e ajuste de modelos. É neste ponto que entra a nossa preocupação com o uso adequado dos dados produzidos pelo IBGE.
+
+O que torna tais dados especiais para quem pretende usá-los para fins
+analíticos? Esta é a questão básica que é amplamente discutida ao longo deste texto. A mensagem principal que pretendemos transmitir é que certos cuidados precisam ser tomados para utilização correta dos dados de pesquisas amostrais como as que o IBGE realiza.
+
+O que torna especiais dados como os produzidos pelo IBGE é que estes são obtidos através de pesquisas amostrais complexas de populações finitas que envolvem: \textbf{probabilidades distintas de seleção, estratificação e conglomeração das unidades, ajustes para compensar não resposta e outros ajustes}. Os sistemas
+tradicionais de análise ignoram estes aspectos, podendo produzir estimativas incorretas tanto dos parâmetros como para as variâncias destas estimativas. Quando utilizamos a amostra para estudos analíticos, as opções disponíveis nos pacotes estatísticos usuais para levar em conta os pesos distintos das observações são apropriadas somente para observações independentes e identicamente distribuídas - IID. Além disso, a variabilidade dos pesos produz
+impactos tanto na estimação pontual quanto na estimação das variâncias dessas estimativas, que sofre ainda influência da estratificação e conglomeração.
+
+O objetivo deste livro é analisar o impacto das simplificações feitas ao utilizar procedimentos e pacotes usuais de análise de dados e apresentar os ajustes necessários desses procedimentos de modo a incorporar na análise, de forma apropriada, os aspectos aqui ressaltados. Para isto são apresentados exemplos de análises de dados obtidos em pesquisas amostrais complexas, usando pacotes clássicos e também pacotes estatísticos especializados. A comparação
+dos resultados das análises feitas das duas formas permite avaliar o impacto de ignorar o plano amostral na análise dos dados resultantes de pesquisas amostrais complexas.
+
+\hypertarget{agradecimentos}{%
+\section*{Agradecimentos}\label{agradecimentos}}
+\addcontentsline{toc}{section}{Agradecimentos}
+
+A elaboração de um texto como esse não se faz sem a colaboração de muitas pessoas. Em primeiro lugar, agradecemos à Comissão Organizadora do SINAPE por ter propiciado a oportunidade ao selecionar nossa proposta de minicurso. Agradecemos também ao IBGE por ter proporcionado as condições e os meios usados para a produção da monografia, bem como o acesso aos dados detalhados e identificados que utilizamos em vários exemplos.
+
+No plano pessoal, agradecemos a Zélia Bianchini pela revisão do manuscrito e sugestões que o aprimoraram. Agradecemos a Marcos Paulo de Freitas e Renata Duarte pela ajuda com a computação de vários exemplos. Agradecemos a Waldecir Bianchini, Luiz Pessoa e Marinho Persiano pela colaboração na utilização do processador de textos. Aos demais colegas do Departamento de Metodologia do IBGE, agradecemos o companheirismo e solidariedade nesses meses de trabalho na preparação do manuscrito.
+
+Finalmente, agradecemos a nossas famílias pela aceitação resignada de nossas ausências e pelo incentivo à conclusão da empreitada.
+
+\hypertarget{introduc}{%
+\chapter{Introdução}\label{introduc}}
+
+\hypertarget{motivauxe7uxe3o}{%
+\section{Motivação}\label{motivauxe7uxe3o}}
+
+Este livro trata de questões e ideias de grande importância para os analistas de dados obtidos através de pesquisas amostrais, tais como as conduzidas por agências produtoras de informações estatísticas oficiais ou públicas. Tais dados são comumente utilizados em análises descritivas envolvendo a obtenção de estimativas para totais, médias, proporções e razões. Nessas análises, em geral, são devidamente incorporados os pesos distintos das observações e a estrutura do plano amostral empregado para obter os dados considerados.
+
+Nas últimas décadas tornou-se muito mais frequente um outro tipo de uso de dados de pesquisas amostrais. Tal uso, denominado secundário e/ou analítico, envolve a construção e ajuste de modelos, geralmente feito por analistas que trabalham fora das agências produtoras dos dados. Neste caso, o foco da análise busca estabelecer a natureza de relações ou associações entre variáveis ou testar hipóteses. Para tais fins, a estatística clássica conta com um vasto arsenal de ferramentas de análise, já incorporadas aos principais sistemas estatísticos disponíveis (tais como MINITAB, R, SAS, SPSS, etc).
+
+Muitas ferramentas de análise convencionais disponíveis nesses sistemas estatísticos geralmente partem de hipóteses básicas sobre as amostras disponíveis que só são válidas quando os dados foram obtidos através de Amostras Aleatórias Simples Com Reposição - AASC. Por exemplo, a hipótese de observações Independentes e Identicamente Distribuídas - IID corresponde justamente ao caso de observações selecionadas por AASC de uma população especificada. Tais hipóteses são geralmente inadequadas para modelar observações provenientes de pesquisas amostrais de populações finitas, pois desconsideram os seguintes aspectos relevantes dos planos amostrais usualmente empregados nessas pesquisas:
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi}.}
+\item
+  probabilidades desiguais de seleção das unidades;
+\item
+  conglomeração das unidades;
+\item
+  estratificação;
+\item
+  calibração ou imputação para não resposta e outros ajustes.
+\end{enumerate}
+
+Em amostragem de populações finitas, a abordagem probabilística emprega pesos para as observações amostrais que dependem das probabilidades de seleção das unidades, que podem ser desiguais. Em consequência, as estimativas pontuais de parâmetros descritivos da população ou mesmo de parâmetros de modelos são influenciadas por pesos distintos das observações.
+
+Além disso, as estimativas de variância (ou da precisão dos estimadores) são influenciadas pela conglomeração, estratificação e pesos ou, no caso de não resposta, também por eventual imputação de dados faltantes ou reponderação das observações disponíveis para compensar a não resposta. Ao ignorar estes aspectos, as ferramentas convencionais dos sistemas estatísticos tradicionais de análise podem produzir estimativas incorretas das variâncias das estimativas pontuais.
+
+O Exemplo \ref{exm:ticdom01} considera o uso de dados de uma pesquisa amostral real, realizada pelo Núcleo de Informação e Coordenação do Ponto BR - NIC.br, para ilustrar como os pontos i) a iv) acima mencionados afetam a inferência sobre quantidades descritivas populacionais tais como
+totais, médias, proporções e razões.
+
+\textbf{\label{exm:ticdom01}} Pesquisa TIC Domicílios 2019 do NIC.br
+
+Os dados deste exemplo são relativos à distribuição dos pesos de domicílios na amostra da Pesquisa TIC Domicílios 2019 do NIC.br - TICDOM 2019. NIC.br (2020) apresenta os resultados da pesquisa e seu capítulo intitulado `Relatório Metodológico' descreve os métodos e o plano amostral empregado na pesquisa, que foi estratificado e conglomerado em múltiplos estágios, com alocação desproporcional da amostra nos estratos.
+
+As Unidades Primárias de Amostragem - UPAs foram municípios ou setores censitários da Base Operacional Geográfica do IBGE conforme usada para o Censo Demográfico de 2010. A seleção de municípios quando estes eram UPAs foi feita usando Amostragem Sistemática com Probabilidades Proporcionais ao Tamanho - AS-PPT - ver a Seção 10.6 de Silva et al. (2020). A seleção dos setores dentro de cada município também foi feita com AS-PPT. Dentro de cada setor censitário selecionado, quinze domicílios foram selecionados por amostragem aleatória simples sem reposição, após a atualização do cadastro de domicílios do setor.
+
+A amostra da pesquisa foi planejada e dimensionada visando ao fornecimento de estimativas com precisão adequada para as cinco macrorregiões do Brasil. Os tamanhos da amostra planejada de setores e domicílios para as macrorregiões são apresentados na Tabela \ref{tab:numset}.
+
+\begin{table}[H]
+
+\caption{\label{tab:numset}$\text{Tamanhos da amostra de setores e domicílios por macrorregião}$}
+\centering
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{5cm}>{\raggedleft\arraybackslash}p{5cm}>{\raggedleft\arraybackslash}p{5cm}}
+\toprule
+Macrorregião & Setores & Domicílios\\
+\midrule
+Norte & 201 & 3.015\\
+Nordeste & 617 & 9.255\\
+Sudeste & 863 & 12.945\\
+Sul & 337 & 5.055\\
+Centro-Oeste & 196 & 2.940\\
+\addlinespace
+Total & 2.214 & 33.210\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A Tabela \ref{tab:tab01b} apresenta um resumo das distribuições dos pesos amostrais dos domicílios pesquisados na TICDOM 2019 para as macrorregiões separadamente e, também, para o conjunto da amostra da pesquisa.
+
+\begin{table}[H]
+
+\caption{\label{tab:tab01b}$\text{Resumos da distribuição dos pesos de domicílios por macrorregião}$}
+\centering
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{5cm}rrrrr}
+\toprule
+Macrorregião & Mínimo & Quartil1 & Mediana & Quartil3 & Máximo\\
+\midrule
+Norte & 1,8 & 1.957 & 2.898 & 4.359 & 82.627\\
+Nordeste & 103,8 & 1.283 & 2.057 & 3.314 & 40.118\\
+Sudeste & 36,0 & 1.814 & 2.583 & 3.583 & 27.993\\
+Sul & 20,0 & 1.028 & 1.756 & 2.706 & 118.715\\
+Centro-Oeste & 140,8 & 1.153 & 2.401 & 3.640 & 29.029\\
+\addlinespace
+Total & 1,8 & 1.546 & 2.470 & 3.636 & 118.715\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+No cálculo dos pesos amostrais foram consideradas as probabilidades de inclusão dos domicílios na amostra, bem como as correções de calibração para compensar a
+não resposta. Contudo, a grande variabilidade dos pesos amostrais da TICDOM 2019
+é devida, principalmente, à variabilidade das probabilidades de inclusão na
+amostra, ilustrando desta forma o ponto i) citado anteriormente nesta seção.
+Tal variabilidade é devida à alocação desproporcional da amostra entre os estratos geográficos e ao emprego de contagens defasadas de domicílios nos setores para definir probabilidades de seleção dos mesmos.
+
+Nas análises de dados desta pesquisa, deve-se considerar que há domicílios com pesos muito diferentes. Por exemplo, dividindo-se o maior peso pelo menor encontra-se uma razão da ordem de 66 mil. Os pesos também variam bastante entre as regiões, sendo a razão entre as medianas dos pesos das regiões Norte e Sul igual a 1,65 em função da alocação desproporcional da amostra nas regiões. Os maiores pesos são também muito maiores que os pesos medianos, com essa razão sendo 48 para o conjunto da amostra.
+
+Tais pesos são utilizados para \emph{expandir} os dados, multiplicando-se cada observação pelo seu respectivo peso. Assim, por exemplo, para \emph{estimar}
+quantos domicílios \emph{da população} pertencem a determinado conjunto (\emph{domínio}), basta somar os pesos dos domicílios da amostra que pertencem a este conjunto. É possível ainda incorporar os pesos, de maneira simples e natural, quando se quer estimar medidas descritivas simples da população, tais como totais, médias, proporções, razões, etc. Os métodos para estimação de parâmetros descritivos da população como os aqui citados são cobertos com maior detalhe em Silva et al. (2020).
+
+Por outro lado, quando se quer utilizar a amostra para estudos analíticos, as
+opções padrão disponíveis nos sistemas estatísticos usuais para levar em conta os pesos distintos das observações são apropriadas somente para observações IID. Por exemplo, os procedimentos padrão disponíveis para estimar a média populacional permitem utilizar pesos distintos das observações amostrais, mas tratariam tais pesos como se fossem frequências de observações repetidas na amostra e, portanto, interpretariam a soma dos pesos como tamanho amostral, situação que, na maioria das vezes, geraria inferências incorretas sobre a precisão das estimativas resultantes. Isto ocorre porque o tamanho da amostra é muito menor que a soma dos pesos amostrais usualmente encontrados nos arquivos de microdados de pesquisas disseminados por agências de estatísticas oficiais ou públicas, como é o caso da pesquisa TICDOM 2019 aqui considerada. Em tais pesquisas, a opção mais frequente é disseminar pesos que, quando somados, estimam o total de unidades \emph{da população}.
+
+Além disso, a variabilidade dos pesos para distintas observações amostrais
+produz impactos tanto na estimação pontual quanto na estimação das variâncias dessas estimativas, que sofre ainda influência da conglomeração e da estratificação - pontos ii) e iii) mencionados anteriormente.
+
+Para exemplificar o impacto de ignorar os pesos e o plano amostral ao estimar quantidades descritivas populacionais, tais como totais e proporções, calculamos estimativas de quantidades desses diferentes tipos usando a amostra da TICDOM 2019 juntamente com estimativas das respectivas variâncias. Tais estimativas de variância foram calculadas sob duas estratégias:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  \textbf{considerando Amostragem Aleatória Simples - AAS} e, portanto, ignorando o plano amostral efetivamente adotado na pesquisa; e
+\item
+  \textbf{considerando o plano amostral da pesquisa e os pesos diferentes das unidades.}
+\end{enumerate}
+
+Na Tabela \ref{tab:tab01c} apresentamos as estimativas dos seguintes parâmetros populacionais: porcentagem de domicílios com computador de mesa; porcentagem de domicílios com notebook; porcentagem de domicílios com tablete; porcentagem de domicílios com algum computador (de mesa, notebook ou tablete); total de domicílios com algum computador (de mesa, notebook ou tablete); número médio de computadores por domicílio que tem computador.
+
+A razão entre as estimativas de variância obtidas sob o plano amostral verdadeiro (de fato usado na pesquisa) e sob AAS foi estimada para cada uma das estimativas consideradas usando o pacote \emph{survey} do R, Thomas Lumley (2017). Essa razão fornece uma medida do efeito de ignorar o plano amostral. Os resultados das estimativas pontuais (Est\_por\_AAS e Est\_Verd para as estimativas considerando AAS e o plano amostral verdadeiro, respectivamente), do desvio padrão da estimativa considerando o plano amostral verdadeiro (DP\_Est\_Verd) e do Efeito do Plano Amostral - EPA são apresentados na Tabela \ref{tab:tab01c}.
+
+\begin{table}[H]
+
+\caption{\label{tab:tab01c}$\text{Estimativas de parâmetros populacionais e EPAs}$}
+\centering
+\begin{tabu} to \linewidth {>{\raggedright\arraybackslash}p{8cm}>{\raggedleft}X>{\raggedleft}X>{\raggedleft}X>{\raggedleft}X}
+\toprule
+Parâmetro & Est\_por\_AAS & Est\_Verd & DP\_Est\_Verd & EPA\\
+\midrule
+Porcentagem de domicílios com computador de mesa & 14,21 & 16,17 & 0,46 & 3,64\\
+Porcentagem de domicílios com notebook & 22,84 & 26,05 & 0,66 & 5,30\\
+Porcentagem de domicílios com tablete & 11,24 & 12,95 & 0,36 & 2,64\\
+Porcentagem de domicílios com computador & 35,34 & 39,36 & 0,67 & 4,38\\
+Total de domicílios com computador (milhões) & 25,10 & 27,95 & 1,37 & 36,90\\
+\addlinespace
+Número médio de computadores por domicílio que tem computador & 1,55 & 1,63 & 0,02 & 3,73\\
+\bottomrule
+\end{tabu}
+\end{table}
+
+Os resultados mostram que há diferenças entre as estimativas pontuais dos parâmetros considerados, com uma tendência de subestimar quando se ignoram os pesos e o plano amostral efetivamente usado na pesquisa. As estimativas dos EPAs variam entre 2,64 e 5,30, se deixarmos de fora o EPA maior que 30 observado para a estimativa da contagem de domicílios com computador. Estes valores indicam que ignorar o plano amostral na estimação da precisão levaria também à subestimação dos erros padrão.
+
+Note que as variáveis e parâmetros cujas estimativas foram apresentadas na Tabela \ref{tab:tab01c} não foram escolhidas de forma a acentuar os efeitos ilustrados, mas tão somente para representar distintos parâmetros (totais, médias, proporções) e variáveis de interesse. Os resultados apresentados para as estimativas de EPA ilustram bem o cenário típico em pesquisas amostrais complexas: o impacto do plano amostral sobre a inferência varia conforme
+a variável e o tipo de parâmetro de interesse. Note ainda que todas as estimativas de EPA apresentaram valores superiores a 2.
+
+\hypertarget{objetivos-do-livro}{%
+\section{Objetivos do livro}\label{objetivos-do-livro}}
+
+Este livro tem três objetivos principais:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  Apresentar uma coleção de métodos e recursos computacionais disponíveis no R para análise de dados de pesquisas amostrais, equipando o analista para trabalhar com tais dados, reduzindo assim o risco de inferências incorretas.
+\item
+  Ilustrar e analisar o impacto das simplificações feitas ao utilizar pacotes usuais de análise de dados quando estes são provenientes de pesquisas amostrais complexas.
+\item
+  Ilustrar o potencial analítico de muitas das pesquisas produzidas por agências de estatísticas públicas para responder questões de interesse, mediante uso de ferramentas de análise estatística agora já bastante difundidas, aumentando assim o valor adicionado destas pesquisas.
+\end{enumerate}
+
+Para alcançar tais objetivos, adotamos uma abordagem fortemente ancorada na
+apresentação de exemplos de análises de dados obtidos em pesquisas amostrais, usando os recursos do sistema estatístico R, \url{http://www.r-project.org/}.
+
+A comparação dos resultados de análises feitas das duas formas (considerando ou
+ignorando o plano amostral) permite avaliar o impacto de não se considerar os pontos i) a iv) anteriormente citados. O ponto iv) não é tratado de forma completa neste texto. O leitor interessado na análise de dados sujeitos a não resposta pode consultar Kalton (1983), Little e Rubin (2002), Rubin (1987), (\textbf{SSW92?}), ou Schafer (1997), por exemplo.
+
+\hypertarget{estrutura-do-livro}{%
+\section{Estrutura do livro}\label{estrutura-do-livro}}
+
+O livro está organizado em duas partes. A primeira parte representa uma segunda edição atualizada e revisada do conteúdo do livro publicado em 1998, Pessoa e Silva (1998). A segunda parte é uma coletânea de textos reunidos para cobrir temas não tratados no livro anterior, que foram produzidos por autores convidados, como forma de prestar homenagem ao Prof.~Djalma Pessoa.
+
+A parte 1 é composta por nove capítulos. Este primeiro capítulo discute a motivação para estudar o assunto e apresenta uma ideia geral dos objetivos e da estrutura do livro.
+
+No Capítulo \ref{refinf}, procuramos dar uma visão das diferentes abordagens utilizadas na análise estatística de dados de pesquisas amostrais. Apresentamos um referencial para inferência com ênfase no \emph{Modelo de Superpopulação} que incorpora, de forma natural, tanto uma estrutura estocástica para descrever a geração dos dados populacionais (modelo) como o plano amostral efetivamente utilizado para obter os dados amostrais (plano amostral). As referências básicas para seguir este capítulo são o Capítulo 2 em (\textbf{Silva?}), o Capítulo 1 em Skinner et al. (1989) e os Capítulos 1 e 2 em Chambers e Skinner (2003).
+
+Esse referencial tem evoluído ao longo dos anos como uma forma de permitir a incorporação de ideias e procedimentos de análise e inferência usualmente associados à Estatística Clássica à prática da análise e interpretação de dados provenientes de pesquisas amostrais. Apesar dessa evolução, sua adoção não é livre de controvérsia e uma breve revisão dessa discussão é apresentada no Capítulo \ref{refinf}.
+
+No Capítulo \ref{capplanamo} apresentamos uma revisão sucinta, para recordação, de alguns resultados básicos da Teoria de Amostragem, requeridos nas partes subsequentes do livro. São discutidos os procedimentos básicos para estimação de totais considerando o plano amostral e, em seguida, revistas algumas técnicas para estimação de variâncias que são necessárias e úteis para o caso de estatísticas complexas, tais como razões e outras estatísticas requeridas na inferência analítica com dados amostrais. As referências centrais para este capítulo são os Capítulos 2 e 3 em (\textbf{SSW92?}), Silva et al. (2020), (\textbf{W85?}) e Cochran (1977).
+
+No Capítulo \ref{epa} introduzimos o conceito de \emph{Efeito do Plano Amostral - EPA}, que permite avaliar o impacto de ignorar a estrutura dos dados populacionais ou do plano amostral sobre a estimativa da variância de um estimador. Para isso, comparamos o estimador da variância apropriado para dados obtidos por Amostragem Aleatória Simples (hipótese de AAS) com o valor esperado deste mesmo estimador sob a distribuição de aleatorização induzida pelo plano amostral efetivamente utilizado (plano amostral verdadeiro). Aqui a referência principal foi o livro Skinner et al. (1989), complementado com o texto de Lehtonen e Pahkinen (1995).
+
+No Capítulo \ref{ajmodpar} estudamos a questão do uso de pesos ao analisar dados provenientes de pesquisas amostrais complexas e introduzimos um método geral, denominado \emph{Método de Máxima Pseudo Verossimilhança - MPV}, para incorporar os pesos e o plano amostral na obtenção não só de estimativas de parâmetros dos modelos de interesse mais comuns, como também das variâncias dessas estimativas. As referências básicas utilizadas nesse capítulo foram Skinner et al. (1989), Pfeffermann (1993), Binder (1983) e o Capítulo 6 em (\textbf{Silva?}).
+
+O Capítulo \ref{modreg} trata da obtenção de \emph{Estimadores de Máxima Pseudo Verossimilhança - EMPV} e da respectiva matriz de covariância para os parâmetros em modelos de regressão linear quando os dados vêm de pesquisas amostrais complexas. Apresentamos alguns exemplos de aplicação desse método ilustrando o uso do pacote \emph{survey}, Thomas Lumley (2017), para ajustar modelos de regressão linear. As referências centrais são o Capítulo 6 em (\textbf{Silva?}) e Binder (1983).
+
+O Capítulo \ref{modlog} trata da obtenção de \emph{Estimadores de Máxima Pseudo Verossimilhança - EMPV} e da respectiva matriz de covariância para os parâmetros em modelos de regressão logística quando os dados vêm de pesquisas amostrais complexas. Apresentamos alguns exemplos de aplicação desse método ilustrando o uso do pacote \emph{survey}, Thomas Lumley (2017), para ajustar modelos de regressão logística. As referências centrais são o Capítulo 6 em (\textbf{Silva?}) e Binder (1983).
+
+Os Capítulos \ref{testqualajust} e \ref{testetab2} tratam da análise de dados
+categóricos, dando ênfase à adaptação dos testes clássicos para proporções, de independência e de homogeneidade em tabelas de contingência, para lidar com dados provenientes de pesquisas amostrais complexas. Apresentamos correções das estatísticas clássicas e também a estatística de Wald baseada no plano amostral. As referências básicas usadas nesses capítulos foram o Capítulo 4 em Skinner et al. (1989) e o Capítulo 7 em Lehtonen e Pahkinen (1995). Também são apresentadas as ideias básicas de como efetuar ajuste de modelos log-lineares a dados de frequências em tabelas de múltiplas entradas.
+
+A parte 2 é composta por mais dez capítulos, todos escritos por autores convidados. Todos estes temas foram objeto de avanços importantes tanto no desenvolvimento de métodos como no de ferramentas computacionais para sua implementação no ambiente do sistema R, desde que foi publicado o livro inicial. A seguir, a lista dos dez capítulos da parte 2.
+
+Capítulo 10 - Gráficos
+
+Capítulo 11 - Estimação de funções de densidade
+
+Capítulo 12 - Estimação de funções de distribuição e quantis
+
+Capítulo 13 - Estimação de medidas de desigualdade e pobreza
+
+Capítulo 14 - Modelos multiníveis
+
+Capítulo 15 - Modelos de teoria da resposta ao item
+
+Capítulo 16 - Estimação de fluxos
+
+Capítulo 17 - Modelos de séries temporais
+
+Capítulo 18 - Modelos de redes neurais
+
+Capítulo 19 - Modelos log-lineares para tabelas
+
+O Capítulo \ref{graficos} aborda a elaboração de alguns tipos de gráficos de uso frequente quando os dados elementares provêm de pesquisas amostrais. Entre os gráficos cobertos estão histogramas, boxplots, diagramas de dispersão e gráficos tipo quantil-quantil (qq-plots).
+
+O Capítulo \ref{estimacao-de-densidades} trata da estimação de densidades, ferramenta que tem assumido importância cada dia maior com a maior disponibilidade de microdados de pesquisas amostrais para analistas fora das agências produtoras. Também é apresentada ferramenta para elaboração de gráficos das densidades estimadas.
+
+O Capítulo \ref{cdf} trata da estimação de funções de distribuição empíricas e também de quantis. Também é apresentada ferramenta para elaboração de gráficos das funções de distribuição estimadas.
+
+O Capítulo \ref{cdf} trata da estimação de medidas de desigualdade e pobreza, enfatizando o uso destas em análises baseadas na renda de domicílios ou pessoas. Apresenta os recursos do pacote \texttt{convey} (inserir referência).
+
+O Capítulo \ref{modelos-hierarquicos} trata da estimação e ajuste de modelos hierárquicos ou multiníveis considerando o plano amostral. Modelos hierárquicos têm sido bastante utilizados para explorar situações em que as relações entre variáveis de interesse em uma certa população de unidades elementares (por exemplo, crianças em escolas, pacientes em hospitais, empregados em empresas, moradores em regiões, etc.) são afetadas por efeitos de grupos determinados ao nível de unidades conglomeradas (os grupos). Ajustar e interpretar tais modelos é tarefa mais difícil que o mero ajuste de modelos lineares, mesmo em casos onde os dados são obtidos de forma exaustiva ou por AAS, e ainda mais complicada quando se trata de dados obtidos através de pesquisas com planos amostrais complexos. Diferentes abordagens estão disponíveis para ajuste de modelos hierárquicos nesse caso, e este capítulo apresenta uma revisão de tais abordagens, ilustrando com aplicações a dados de pesquisas amostrais de escolares.
+
+Uma das características que procuramos dar ao livro foi o emprego de exemplos com dados reais, retirados principalmente da experiência do IBGE com pesquisas amostrais complexas. Sem prejuízo na concentração de exemplos que se utilizam de dados de pesquisas do IBGE, incluímos também exemplos que consideram aplicações a dados de pesquisas realizadas por outras instituições. Nas duas décadas desde a primeira edição deste livro foram muitas as iniciativas de realizar pesquisas por amostragem em várias áreas, tendo a educação e a saúde como as mais proeminentes.
+
+Para facilitar a localização e replicação dos exemplos pelos leitores, estes foram em sua maioria introduzidos em seções denominadas \emph{Laboratório} ao final de cada um dos capítulos. Os códigos em R dos exemplos são todos fornecidos, o que torna simples a replicação dos mesmos pelos leitores. Optamos pelo emprego do sistema R que, por ser de acesso livre e gratuito, favorece o amplo acesso aos interessados em replicar nossas análises e também em usar as ferramentas disponíveis para implementar suas próprias análises de interesse com outros conjuntos de dados.
+
+Embora a experiência de fazer inferência analítica com dados de pesquisas amostrais complexas já tenha alguma difusão no Brasil, acreditamos ser fundamental difundir ainda mais essas ideias para alimentar um processo de melhoria do aproveitamento dos dados das inúmeras pesquisas realizadas pelo IBGE e instituições congêneres, que permita ir além da tradicional estimação de totais, médias, proporções e razões. Esperamos com esse livro fazer uma contribuição a esse processo.
+
+Uma dificuldade em escrever um livro como este vem do fato de que não é possível começar do zero: é preciso assumir algum conhecimento prévio de ideias e conceitos necessários à compreensão do material tratado. Procuramos tornar o livro acessível para um estudante de fim de curso de graduação em Estatística. Por essa razão, optamos por não apresentar provas de resultados e, sempre que possível, apresentar os conceitos e ideias de maneira intuitiva, juntamente com uma discussão mais formal para dar solidez aos resultados apresentados.
+
+As provas de vários dos resultados aqui discutidos se restringem a material disponível apenas em artigos em periódicos especializados estrangeiros e, portanto, são de acesso mais difícil. Ao leitor em busca de maior detalhamento e rigor, sugerimos consultar diretamente as inúmeras referências incluídas ao longo do texto. Para um tratamento mais profundo do assunto, os livros de Skinner et al. (1989) e Chambers e Skinner (2003) são as referências centrais a consultar. Para aqueles querendo um tratamento ainda mais prático que o nosso, os livros de Lehtonen e Pahkinen (1995) e Heeringa et al. (2010) podem ser opções interessantes, sendo que este último apresenta os recursos do sistema STATA para análise de dados amostrais.
+
+\hypertarget{refinf}{%
+\chapter{Referencial para Inferência}\label{refinf}}
+
+\hypertarget{modelagem---primeiras-ideias}{%
+\section{Modelagem - Primeiras ideias}\label{modelagem---primeiras-ideias}}
+
+Com o objetivo de dar uma primeira ideia sobre o assunto a ser tratado neste
+livro vamos considerar, em situações simples, algumas abordagens alternativas
+para modelagem e análise estatística. A ideia é apresentar a principal abordagem
+que vamos considerar, a de \emph{Modelagem de Superpopulação}, em contraste com as
+alternativas que poderiam ser consideradas, mas que tornariam difícil incorporar
+adequadamente as características que diferenciam dados obtidos com amostras complexas de outros.
+
+\hypertarget{classic}{%
+\section{Abordagem 1 - Modelagem Clássica}\label{classic}}
+
+Seja \(y\) uma variável de pesquisa (ou de interesse), e sejam \(n\) observações desta
+variável para uma amostra de unidades de pesquisa denotadas por \(y_1, \ldots ,y_n\).
+Em Inferência Estatística, a abordagem que aqui chamamos de \emph{Modelagem Clássica}\\
+considera \(y_1, \ldots ,y_n\) como valores (realizações) de variáveis aleatórias \(Y_1, \ldots ,Y_n\).
+
+Podemos formular modelos bastante sofisticados para a distribuição conjunta
+destas variáveis aleatórias, mas para simplificar a discussão, vamos inicialmente
+supor que \(Y_1, \ldots ,Y_n\) são variáveis aleatórias independentes e
+identicamente distribuídas - IID, com a mesma distribuição caracterizada pela função
+de densidade ou de frequência \(f(y;\theta)\), onde \(\theta \in \Theta\) é o parâmetro
+(um vetor de dimensão \(K \times 1\)) indexador da distribuição \(f\), e \(\Theta\) é
+o espaço paramétrico. A partir das observações \(y_1, \ldots ,y_n\), são feitas inferências a respeito do parâmetro \(\theta\).
+
+Uma representação gráfica esquemática dessa abordagem é apresentada na Figura
+\ref{fig:modclas}, e uma descrição esquemática resumida é apresentada na Tabela
+\ref{tab:modelclass}.
+
+\begin{figure}
+
+{\centering \includegraphics{Figuras/Figura2.1} 
+
+}
+
+\caption{$\text{Representação esquemática da }\textit{Modelagem Clássica}$}\label{fig:modclas}
+\end{figure}
+
+\begin{table}[H]
+
+\caption{\label{tab:modelclass}$\text{Representação esquemática da abordagem }\textit{Modelagem Clássica}$}
+\centering
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{4.5cm}l}
+\toprule
+Dados Amostrais (observações) & $y_1, \ldots, y_n$\\
+Modelo Paramétrico/ Hipóteses & $Y_1, \ldots , Y_n 
+     \text{ variáveis aleatórias IID com distribuição } f(y,\theta) \text{ onde } \theta \in \Theta$\\
+Objetivo & $\text{Inferir sobre } \theta 
+     \text{ usando as observações } y_1, \ldots, y_n$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Do ponto de vista matemático, o parâmetro \(\theta\) serve para indexar os
+elementos da família de distribuições \(\left\{f\left( y;\theta \right);\theta \in \Theta \right\}\).
+Na prática, as questões relevantes da pesquisa são traduzidas em termos de perguntas sobre o valor
+ou região a que pertence o parâmetro \(\theta\), e a inferência sobre \(\theta\) a partir dos dados ajuda a responder tais questões.
+
+Esta abordagem é útil em estudos analíticos tais como, por exemplo, na
+investigação da natureza da associação entre variáveis (modelos de regressão
+linear ou logística, modelos log-lineares, etc.). Vários exemplos discutidos ao
+longo dos Capítulos \ref{modreg}, \ref{testqualajust} e \ref{testetab2}
+ilustram situações deste tipo. No Capítulo \ref{estimacao-de-densidades} o foco é
+a estimação não paramétrica da forma da função \(f(y;\theta)\).
+
+Inferência sob modelos do tipo descrito nesta seção forma o conteúdo de um curso
+introdutório de inferência estatística. Mais detalhes podem ser consultados, por
+exemplo, em Casella e Berger (2010) e Magalhães e Lima (2015).
+
+\begin{example}
+\protect\hypertarget{exm:distbin}{}{\label{exm:distbin} }Estimação da proporção de sucessos em ensaios de Bernoulli
+\end{example}
+Para dar um exemplo concreto de modelagem do tipo descrito aqui, considere uma sequência
+de \(n\) ensaios de Bernoulli, em que a cada ensaio a resposta é o indicador de ocorrência
+de um evento de interesse - por exemplo, o indivíduo amostrado já foi vacinado contra uma doença especificada.
+
+Se considerarmos que os resultados desses ensaios podem ser modelados como uma sequência de variáveis aleatórias \(Y_1, \ldots ,Y_n\) IID, com distribuição de Bernoulli dada por \(f(y;\theta)=\theta^y \times (1 - \theta)^{(1-y)}\), com \(\theta \in (0;1)\), podemos usar a amostra observada \(y_1, \ldots ,y_n\) para fazer inferência sobre \(\theta\).
+
+Sob o modelo especificado, é fácil deduzir que \(T = \sum_{i=1}^n Y_i\) tem distribuição Binomial de parâmetros \((n, \theta)\). Logo, \(\overline{T} = T/n\) tem média \(\theta\). Portanto, considerando o método dos momentos, \(\overline{T}\) pode ser usado para estimar o parâmetro de interesse \(\theta\). Ademais, como \(n\) é conhecido, sabemos que a variância da sua distribuição de probabilidades é dada por \(\theta \times (1 - \theta) / n\), podendo ser estimada sem viés usando \(\overline{T} \times (1 - \overline{T}) / (n-1)\).
+
+Para amostras de tamanho grande (\(n \rightarrow \infty\)), podemos usar o Teorema Central do Limite - TCL para obter intervalos de confiança de nível especificado para \(\theta\) e também testar hipóteses sobre regiões de interesse.
+
+\hypertarget{abordagem-2---amostragem-probabiluxedstica}{%
+\section{Abordagem 2 - Amostragem Probabilística}\label{abordagem-2---amostragem-probabiluxedstica}}
+
+A abordagem adotada pelos praticantes de \emph{Amostragem Probabilística}
+(amostristas) considera uma população finita \(U=\{1, \ldots ,N\}\), da qual é
+selecionada uma amostra \(s=\left\{ i_{1}, \ldots ,i_{n}\right\}\), segundo um
+plano amostral caracterizado por \(p(s)\), probabilidade de ser
+selecionada a amostra \(s\), suposta calculável para todas as possíveis amostras.
+Os valores \(y_{1}, \ldots ,y_{N}\) da variável de interesse \(y\) na \emph{população finita} são considerados fixos, porém desconhecidos.
+
+A partir dos valores observados na amostra \(s\), denotados por \(y_{i_1}, \ldots, y_{i_n}\), são feitas inferências a respeito de funções dos valores populacionais, digamos \(g\left( y_{1}, \ldots , y_{N}\right)\). Os valores de tais funções são quantidades descritivas populacionais - QDPs, também denominadas \emph{parâmetros da população finita} pelos amostristas.
+
+Em geral, o objetivo desta abordagem é fazer estudos descritivos utilizando funções \(g\) particulares, tais como totais \(g\left( y_{1}, \ldots , y_{N}\right) = \sum_{i=1}^{N} y_{i}\) , médias \(g\left( y_{1}, \ldots , y_{N}\right) = N^{-1}\sum_{i=1}^{N} y_{i}\), proporções, razões, etc. Uma descrição esquemática resumida dessa abordagem é apresentada na Tabela \ref{tab:modelamo}, e uma representação gráfica resumida na Figura \ref{fig:modamo}.
+
+\begin{table}[H]
+
+\caption{\label{tab:modelamo}$\text{Representação esquemática da abordagem }\textit{Amostragem Probabilística}$}
+\centering
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{4.5cm}l}
+\toprule
+Dados Amostrais & $y_{i_1}, \ldots, y_{i_n}$\\
+Modelo / Hipóteses & $\text{Dados extraídos de }y_1,\ldots, y_N \text{ segundo }p(s)$\\
+Objetivo & $\text{Inferir sobre funções }g(y_1, \ldots , y_N)\text{ usando }y_{i_1}, \ldots, y_{i_n}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}
+
+{\centering \includegraphics{Figuras/Figura2.2} 
+
+}
+
+\caption{$\text{Representação esquemática da }\textit{Amostragem Probabilística}$}\label{fig:modamo}
+\end{figure}
+
+Esta abordagem é largamente empregada na produção de estatísticas públicas e
+oficiais, por agências e instituições de muitos países. Uma das alegadas vantagens dessa abordagem é o fato de que as distribuições de referência usadas para inferência são controladas pelos amostristas que planejam as pesquisas por
+amostragem e, portanto, a inferência pode ser considerada não paramétrica e não
+dependente de modelos que precisariam ser especificados pelo analista.
+
+Uma revisão detalhada da amostragem probabilística pode ser encontrada em Silva et al. (2020). Nessa abordagem, a inferência é geralmente guiada também por distribuições dos estimadores aproximadas usando o TCL.
+
+\begin{example}
+\protect\hypertarget{exm:aestot}{}{\label{exm:aestot} }Estimação do total com amostragem estratificada simples
+\end{example}
+
+Considere o cenário de uma população \(U\) que foi estratificada em \(H\) grupos com base numa variável de estratificação \(x\). Dos estratos formados, foram selecionadas de forma independente amostras aleatórias simples de tamanhos \(n_1, \ldots, n_h, \ldots, n_H\). Nessa população, denotando por \(U_h\) o \(h\)-ésimo estrato, de tamanho \(N_h\), o total populacional da variável de pesquisa \(y\) pode ser escrito como:
+
+\begin{equation}
+T_y = \sum_{h=1}^H \sum_{i \in U_h} y_i \label{eq:ref1}
+\end{equation}
+O estimador padrão (tipo Horvitz-Thompson) para este parâmetro na amostragem estratificada simples é dado por:
+
+\begin{equation}
+\widehat {T}_y = \sum_{h=1}^H \frac{N_h}{n_h} \sum_{i \in s_h} y_i \label{eq:ref2}
+\end{equation}
+onde \(s_h\) é a amostra das unidades do estrato \(h, h=1, 2,\dots,H\).
+
+Este estimador pode ser usado para fazer inferência sobre o total populacional, como descrito, por exemplo, na seção 11.2 de Silva et al. (2020). A distribuição do estimador \(\widehat {T}_y\) obtida considerando o plano amostral \(p(s)\) é denominada de \emph{distribuição de aleatorização} e é geralmente aproximada usando o TCL para viabilizar a inferência.
+
+\hypertarget{discussuxe3o-das-abordagens-1-e-2}{%
+\section{Discussão das abordagens 1 e 2}\label{discussuxe3o-das-abordagens-1-e-2}}
+
+A primeira abordagem (\emph{Modelagem Clássica}), nos termos descritos, foi
+inicialmente proposta para dados de medidas na Física e Astronomia, onde em
+geral o pesquisador tem relativo controle sobre os experimentos, e onde faz
+sentido falar em replicação ou repetição do experimento. Neste contexto, a ideia
+de aleatoriedade é geralmente introduzida para modelar os erros (não
+controláveis) do processo de medição, e as distribuições de estatísticas de
+interesse são derivadas a partir da \emph{distribuição do modelo} especificado.
+
+A segunda abordagem (\emph{Amostragem Probabilística}) é utilizada principalmente
+no contexto de estudos socioeconômicos observacionais, para levantamento de
+dados por agências produtoras de informações estatísticas públicas ou oficiais. Nesta abordagem, a aleatoriedade é introduzida pelo pesquisador no processo conduzido para obtenção dos dados, através do \emph{plano amostral} \(p(s)\) utilizado para selecionar as unidades de uma população finita \(U\) para observação ou medição, e as distribuições das estatísticas de interesse são derivadas a
+partir dessa \emph{distribuição de aleatorização}.
+
+Os planos amostrais podem ser complexos, gerando observações afetadas pelas
+características i) a iv) mencionadas no Capítulo \ref{introduc}. Os dados
+obtidos são utilizados principalmente para descrição da população finita,
+mediante o cálculo de estimativas de \emph{parâmetros descritivos} usuais tais como
+totais, médias, proporções, razões, etc.
+
+Sob a abordagem de \emph{Amostragem Probabilística}, os pontos i) a iv) do Capítulo \ref{introduc} são devidamente considerados tanto na estimação dos parâmetros descritivos como, também, na estimação de variâncias dos estimadores, permitindo a inferência pontual e por intervalos de confiança baseada na distribuição assintótica normal dos estimadores habitualmente considerados.
+
+A abordagem de \emph{Amostragem Probabilística} é essencialmente não paramétrica,
+pois não supõe uma distribuição paramétrica particular para as observações da
+amostra. Por outro lado, essa abordagem tem a desvantagem de fazer inferências
+restritas à particular população finita considerada.
+
+Apesar da abordagem de \emph{Amostragem Probabilística} ter sido inicialmente
+concebida e aplicada para problemas de inferência descritiva sobre populações
+finitas, é cada vez mais comum, porém, a utilização dos dados obtidos através de
+pesquisas amostrais complexas para fins analíticos, com a aplicação de métodos
+de análise desenvolvidos e apropriados para a abordagem de \emph{Modelagem Clássica}.
+Nesse contexto, é relevante considerar algumas questões de interesse:
+
+\begin{itemize}
+\item
+  É adequado aplicar métodos de análise da \emph{Modelagem Clássica}, concebidos para observações de variáveis aleatórias IID, aos dados obtidos através de pesquisas amostrais complexas?
+\item
+  Em caso negativo, seria possível corrigir estes métodos, tornando-os aplicáveis para tratar dados amostrais complexos?
+\item
+  Ou seria mais adequado fazer uso analítico dos dados dentro da abordagem de \emph{Amostragem Probabilística}? E neste caso, como fazer isto, visto que nesta abordagem não é especificado um modelo para a distribuição das variáveis de pesquisa \emph{na população}?
+\end{itemize}
+
+Além destas questões, também é de interesse a questão da \emph{robustez da inferência},
+traduzida nas seguintes perguntas:
+
+\begin{itemize}
+\item
+  O que acontece quando o modelo adotado na \emph{Modelagem Clássica} não é verdadeiro?
+\item
+  Neste caso, qual a interpretação dos parâmetros na \emph{Modelagem Clássica}?
+\item
+  Ainda neste caso, as quantidades descritivas populacionais da \emph{Amostragem Probabilística} poderiam ter alguma utilidade ou interpretação?
+\end{itemize}
+
+O objeto deste livro é exatamente discutir respostas para as questões aqui
+enumeradas. Para isso, vamos considerar uma abordagem que propõe um modelo
+parametrizado como na \emph{Modelagem Clássica}, mas formulado para descrever os
+dados da \emph{população}, e não os da amostra. Essa abordagem incorpora na análise os pontos i) a iii) do Capítulo \ref{introduc} mediante aproveitamento da estrutura do plano amostral, como feito habitualmente na \emph{Amostragem Probabilística}. Essa abordagem, denominada de \emph{Modelagem de Superpopulação}, foi primeiro proposta em Brewer (1963) e Royall (1970), e é bem descrita, por exemplo, em Binder (1983) e Valliant et al. (2000).
+
+\hypertarget{modelsuperpop}{%
+\section{Abordagem 3 - Modelagem de Superpopulação}\label{modelsuperpop}}
+
+Nesta abordagem, os valores \(y_{1}, \ldots , y_{N}\) da variável de interesse
+\(y\) na população finita são considerados observações ou realizações das variáveis
+aleatórias \(Y_{1}, \ldots , Y_{N}\), supostas IID com distribuição \(f(y;\theta)\),
+onde \(\theta \in \Theta\). Este modelo é denominado \emph{Modelo de Superpopulação}. Note que, em contraste com o que se faz na \emph{Modelagem Clássica}, o modelo probabilístico é aqui especificado para descrever o mecanismo aleatório que gera
+a \emph{população}, não a amostra.
+
+Na maioria das aplicações práticas, a população de interesse, embora considerada finita, jamais é observada por inteiro. Não obstante, ao formular o modelo para descrever propriedades da população, nossas perguntas e respostas descritas em termos de valores ou regiões para o parâmetro \(\theta\) passam a se referir à população de interesse ou a populações similares, quer existam ao mesmo tempo, quer se refiram a estados futuros (ou passados) da mesma população. Vale realçar também que pesquisas por amostragem ``consistem em selecionar parte de uma população para observar, de modo que seja possível estimar alguma coisa sobre toda a população'', conforme Thompson (1992).
+
+Utilizando um plano amostral definido por \(p(s)\), obtemos os valores das
+variáveis de pesquisa na amostra \(y_{i_1}, \ldots , y_{i_n}\). A partir de
+\(y_{i_1}, \ldots , y_{i_n}\), em geral não considerados como observações de
+vetores aleatórios IID, queremos fazer inferência sobre o parâmetro \(\theta\),
+considerando os pontos i) a iii) do Capítulo \ref{introduc}. Ver uma representação gráfica
+resumida desta abordagem na Figura \ref{fig:modsup}.
+
+\begin{figure}
+
+{\centering \includegraphics{Figuras/Figura2.3} 
+
+}
+
+\caption{$\text{Representação esquemática da }\textit{Modelagem de Superpopulação}$}\label{fig:modsup}
+\end{figure}
+
+Adotando o \emph{Modelo de Superpopulação} e considerando métodos usuais disponíveis
+na \emph{Modelagem Clássica}, podemos utilizar funções de \(y_{1}, \ldots ,y_{N}\) ,
+digamos \(g( y_{1}, \ldots , y_{N})\), para fazer inferência sobre \(\theta\). Desta
+forma, definimos estatísticas \(g\left( y_{1}, \ldots , y_{N} \right)\) (no sentido da \emph{Modelagem Clássica}) que são quantidades descritivas populacionais (parâmetros
+populacionais no contexto da \emph{Amostragem Probabilística}), que passam a ser os
+novos parâmetros-alvo.
+
+O passo seguinte é utilizar métodos disponíveis na \emph{Amostragem Probabilística} para fazer inferência sobre \(g\left( y_{1}, \ldots , y_{N} \right)\) com base nas observações (dados amostrais) \(y_{i_1}, \ldots , y_{i_n}\). Note que não é possível basear a inferência nos valores populacionais \(y_{1}, \ldots , y_{N}\), já que estes não são conhecidos ou observados. Este último passo adiciona a informação sobre o plano amostral utilizado, contida em \(p(s)\), à informação estrutural contida no modelo \(\left\{ f\left( y; \theta \right) ; \theta \in \Theta \right\}\).
+
+Uma representação esquemática dessa abordagem é apresentada na Tabela
+\ref{tab:modelsuperpop}.
+
+\begin{table}[H]
+
+\caption{\label{tab:modelsuperpop}$\text{Representação esquemática da } \textit{Modelagem de Superpopulação}$}
+\centering
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{5cm}l}
+\toprule
+Dados Amostrais & $y_{i_1}, \ldots, y_{i_n}$\\
+População e esquema de seleção & $\text{Selecionados de } y_1, \dots, y_N \text{ segundo } p(s)$\\
+Modelo para população & $Y_1, \dots, Y_N \text{ variáveis aleatórias IID com distribuição } f(y, \theta),\text { onde } \theta \in \Theta$\\
+Parâmetro-alvo & $\text{Associar } \theta\Leftrightarrow g\left (Y_{1},\ldots,Y_{N}\right)$\\
+Objetivo & $\text{Inferir sobre }g\left( y_{1}, \ldots , y_{N} \right) \text{ partir de } y_{i_1}, \ldots, y_{i_n} \text{ usando } p(s)$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A descrição da abordagem adotada neste livro foi apresentada de maneira
+propositalmente simplificada e vaga nesta seção, mas é aprofundada ao longo
+do texto. Admitimos que o leitor esteja familiarizado com a \emph{Modelagem Clássica} e com as noções básicas da \emph{Amostragem Probabilística}.
+
+A título de recordação, são apresentados na Seção \ref{planamo} alguns resultados básicos da \emph{Amostragem Probabilística}. A ênfase do texto, porém, é a apresentação da \emph{Modelagem de Superpopulação}, sendo para isto apresentados os elementos indispensáveis das abordagens de \emph{Modelagem Clássica} e da \emph{Amostragem Probabilística}.
+
+Ao construir e ajustar modelos a partir de dados de pesquisas amostrais
+\emph{complexas}, tais como as executadas pelo IBGE e outras instituições similares,
+o usuário precisará incorporar as informações sobre pesos e sobre a estrutura dos
+planos amostrais utilizados para obtenção dos dados. Em geral, ao publicar os resultados das pesquisas, os pesos são considerados, sendo possível produzir estimativas pontuais \emph{corretas} utilizando os pacotes computacionais tradicionais. Por outro lado, para construir intervalos de confiança e testar hipóteses sobre parâmetros de modelos, é necessário conhecer estimativas de variâncias e covariâncias das
+estimativas, obtidas levando em conta a estrutura do plano amostral utilizado.
+
+Mesmo conhecendo o plano amostral, geralmente não é simples incorporar pesos e
+plano amostral na análise sem o uso de pacotes especializados, ou de rotinas
+específicas já agora disponíveis em alguns dos pacotes mais comumente utilizados
+(por exemplo, SAS, STATA, SPSS, ou R entre outros). Tais pacotes especializados
+ou rotinas específicas utilizam, em geral, métodos aproximados para estimar
+matrizes de covariância. Entre esses métodos, destacam-se o de Máxima
+Pseudo-Verossimilhança, a Linearização de Taylor, o método do Conglomerado Primário e métodos de reamostragem, que são descritos mais adiante.
+
+Em outras palavras, o uso dos pacotes usuais para analisar dados produzidos por
+pesquisas com planos amostrais complexos, tal como o uso de muitos remédios,
+pode ter contraindicações. Cabe ao usuário \emph{ler a bula} e identificar situações
+em que o uso de tais pacotes pode ser inadequado e buscar opções de rotinas
+específicas ou de pacotes especializados capazes de incorporar adequadamente a
+estrutura do plano amostral nas análises.
+
+Ao longo deste livro fazemos uso intensivo do pacote \emph{survey} e outros disponíveis no R, mas o leitor pode encontrar funcionalidade semelhante em alguns outros sistemas.
+Nossa escolha se deveu a dois fatores principais: primeiro ao fato do sistema R
+ser aberto, livre e gratuito, dispensando o usuário de custos de licenciamento,
+bem como possibilitando aos interessados o acesso ao código fonte e à capacidade
+de modificar as rotinas de análise, caso necessário. O segundo fator é de
+natureza mais técnica, porém transitória. No presente momento, o pacote \emph{survey}
+do R é a coleção de rotinas mais completa e genérica existente para análise de dados amostrais complexos, dispondo de funções capazes de ajustar os modelos usuais, mas também de ajustar modelos não convencionais, mediante a maximização numérica de verossimilhanças especificadas pelo usuário.
+
+Sabemos, entretanto, que muitos usuários habituados à facilidade de uso de pacotes com interfaces gráficas do tipo \emph{aponte e clique} terão dificuldade adicional de adaptar-se à linguagem de comandos utilizada pelo sistema R, mas acreditamos que os benefícios do aprendizado desta nova ferramenta compensarão largamente os custos adicionais do aprendizado.
+
+O emprego de ferramentas de análise como o pacote \emph{survey} permite aos
+usuários focar sua atenção mais na seleção, análise e interpretação dos modelos
+ajustados do que nas dificuldades técnicas envolvidas nos cálculos
+correspondentes. É com este espírito que escrevemos este texto, que busca
+apresentar os métodos, ilustrando seu uso com exemplos reais e orientando sobre o uso adequado das ferramentas de modelagem e análise disponíveis no sistema R.
+
+\hypertarget{fontes-de-variauxe7uxe3o}{%
+\section{Fontes de variação}\label{fontes-de-variauxe7uxe3o}}
+
+Esta seção estabelece o referencial para inferência em pesquisas amostrais que
+é usado no restante deste texto. Cassel et al. (1977) sugerem que um referencial para
+inferência poderia considerar três fontes de aleatoriedade (incerteza,
+variação), incluindo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \emph{Modelo de Superpopulação}, que descreve o processo subjacente que, por
+  hipótese, gera as medidas verdadeiras para todas as unidades da população
+  considerada;
+\item
+  \emph{Processo de Medição}, que diz respeito aos instrumentos e métodos usados
+  para obter as medidas de qualquer unidade da população;
+\item
+  \emph{Plano Amostral}, que estabelece o mecanismo pelo qual unidades da
+  população são selecionadas para participar da amostra da pesquisa ou estudo.
+\end{enumerate}
+
+Uma quarta fonte de incerteza que precisa ser acrescentada às anteriores é o
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  \emph{Mecanismo de resposta}, ou seja, o mecanismo que controla se valores de
+  medições de unidades selecionadas para a amostra são obtidos / observados ou
+  não.
+\end{enumerate}
+
+Para concentrar o foco nas questões de maior interesse deste texto, as fontes
+(2) e (4) não são consideradas no referencial adotado para a maior parte dos
+capítulos. Para o tratamento das dificuldades causadas por não resposta, a fonte
+(4) é considerada no Capítulo xx.
+
+Assim sendo, exceto onde explicitamente indicado, de agora em diante admitiremos que não há \emph{erros de medição}, implicando que os valores observados de quaisquer variáveis de interesse são considerados valores corretos ou verdadeiros. Admitimos ainda que há \emph{resposta completa}, implicando que os valores de quaisquer variáveis de interesse estão disponíveis para todos os elementos da amostra selecionada depois que a pesquisa foi realizada. Hipóteses semelhantes são adotadas, por exemplo, em Binder (1983) e Montanari (1987).
+
+Portanto, o referencial aqui adotado considera apenas duas fontes de variação: o \emph{Modelo de Superpopulação} (1) e o \emph{Plano Amostral} (3). Estas fontes de variação, descritas nesta seção apenas de forma esquemática, são discutidas com maiores detalhes a seguir.
+
+A fonte de variação (1) é considerada porque usos analíticos das pesquisas
+são amplamente discutidos neste texto, os quais só têm sentido quando é
+especificado um modelo estocástico para o processo subjacente que gera as
+medidas na população. A fonte de variação (3) é considerada porque a atenção
+é focalizada na análise de dados obtidos através de pesquisas amostrais
+complexas. Aqui a discussão se restringe a planos amostrais aleatorizados ou
+de \emph{Amostragem Probabilística}, não sendo considerados métodos intencionais ou
+outros métodos não aleatórios algumas vezes usados para seleção de amostras.
+
+\hypertarget{modelos-de-superpopulauxe7uxe3o}{%
+\section{Modelos de Superpopulação}\label{modelos-de-superpopulauxe7uxe3o}}
+
+Seja \(\{1, ..., N\}\) um conjunto de rótulos que identificam univocamente os \(N\)
+elementos distintos de uma população-alvo finita \(U\). Sem perda de generalidade
+tomemos \(U=\{1,...,N\}\). Uma pesquisa cobrindo \(n\) elementos distintos numa
+amostra \(s\), \(s=\{i_{1},...,i_{n}\} \subset U\), é realizada para medir os valores
+de \(P\) variáveis de interesse da pesquisa, doravante denominadas simplesmente
+\emph{variáveis da pesquisa}.
+
+Denotemos por \(\mathbf{y}_i=(y_{i1},...,y_{iP})^{\prime }\) um vetor \(P \times 1\)
+de valores das variáveis da pesquisa e por \(\mathbf{x}_{i} = (x_{i1}, \ldots, x_{iQ})^{\prime }\) um vetor \(Q\times 1\) de variáveis auxiliares da \(i\)-ésima unidade da população, respectivamente, para \(i=1,...,N\). Aqui as variáveis auxiliares são consideradas como variáveis contendo a informação requerida para o plano amostral e a estimação a partir da amostra, como se discute com mais detalhes adiante.
+
+Denotemos por \(\mathbf{y}_{U}\) a matriz \(N \times P\) formada empilhando os vetores transpostos das observações das variáveis de pesquisa correspondentes a todas as unidades da população, e por \(\mathbf{Y}_{U}\) a correspondente matriz de vetores aleatórios geradores das observações na população.
+
+Quando se supõe que \(\mathbf{y}_1 , \ldots, \mathbf{y}_N\) são a realização
+conjunta de vetores aleatórios \(\mathbf{Y}_1, \ldots, \mathbf{Y}_N\), a
+distribuição conjunta de probabilidade de \(\mathbf{Y}_1, \ldots, \mathbf{Y}_N\) é
+um \emph{Modelo de Superpopulação} (marginal), que doravante denotaremos simplesmente
+por \(f(\mathbf{y}_U;\theta)\), ou de forma abreviada, por \(M\). Esperanças e
+variâncias definidas com respeito à distribuição do modelo \(M\) são denotadas
+\(E_M\) e \(V_M\) respectivamente.
+
+Analogamente, \(\mathbf{x}_1, \ldots, \mathbf{x}_N\) pode ser considerada uma
+realização conjunta de vetores aleatórios \(\mathbf{X}_1, \ldots, \mathbf{X}_N\).
+As matrizes \(N \times Q\) formadas empilhando os vetores transpostos das
+observações das variáveis auxiliares correspondentes a todas as unidades da
+população, \(\mathbf{x}_{U}\), e a correspondente matriz \(\mathbf{X}_{U}\) de
+vetores aleatórios geradores das variáveis auxiliares na população são definidas
+de forma análoga às matrizes \(\mathbf{y}_{U}\) e \(\mathbf{Y}_{U}\).
+
+O referencial aqui adotado permite a especificação da distribuição conjunta
+combinada das variáveis da pesquisa e das variáveis auxiliares. Representamos
+por \(f( \mathbf{y}_U , \mathbf{x}_U ; \mathbf{\eta} )\) a função de densidade de
+probabilidade conjunta de \(( \mathbf{Y}_U , \mathbf{X}_U )\), onde \(\mathbf{\eta}\) é um vetor de parâmetros.
+
+Um tipo importante de modelo de superpopulação é obtido quando os vetores
+aleatórios correspondentes às observações de unidades diferentes da população
+são supostos independentes e identicamente distribuídos - IID. Neste caso, o
+modelo de superpopulação pode ser escrito como:
+
+\begin{eqnarray}
+f \left( \mathbf{y}_U , \mathbf{x}_U ; \mathbf{\eta} \right) 
+&=&\prod_{i\in U} f\left(\mathbf{y}_i , \mathbf{x}_i ; \mathbf{\eta} \right)\nonumber\\
+&=&\prod_{i\in U} f\left( \mathbf{y}_i \mathbf{|x}_i ; \mathbf{\lambda} \right) 
+f\left( \mathbf{x}_i ; \mathbf{\phi} \right) \label{eq:ref3}
+\end{eqnarray}
+onde~\(\mathbf{\lambda}\) e \(\mathbf{\phi}\) são vetores de parâmetros.
+
+Sob \eqref{eq:ref3}, o modelo marginal correspondente das variáveis da pesquisa
+seria obtido integrando nas variáveis auxiliares:
+
+\begin{equation}
+f(\mathbf{y}_U ; \mathbf{\theta}) = f(\mathbf{y}_1 ,\ldots ,\mathbf{y}_N ; \mathbf{\theta}) = \prod_{i\in U} \int f\left( \mathbf{y}_i \mathbf{|x}_i ; \mathbf{\lambda} \right) f\left( \mathbf{x}_i ; \mathbf{\phi} \right) \mathbf{dx}_i = \prod_{i\in U} f\left( \mathbf{y}_i ; \mathbf{\theta} \right) \label{eq:ref4}
+\end{equation}
+
+onde \(f\left( \mathbf{y}_i ; \mathbf{\theta} \right) = \int f\left( \mathbf{y}_i | \mathbf{x}_i ; \mathbf{\lambda} \right) f\left( \mathbf{x}_i ; \mathbf{\phi} \right) \mathbf{dx}_i\) e \(\mathbf{\theta =} h\left( \mathbf{\lambda} , \mathbf{\phi} \right)\) é função de \(\mathbf{\lambda}\) e \(\mathbf{\phi}\).
+
+Outro tipo especial de modelo de superpopulação é o modelo de população fixa,
+que supõe que os valores numa população finita são fixos mas desconhecidos. Este
+modelo pode ser descrito por:
+
+\begin{equation}
+P\left[ \left( \mathbf{Y}_U , \mathbf{X}_U \right) = \left( \mathbf{y}_U , \mathbf{x}_U \right) \right] = 1 \label{eq:ref5}
+\end{equation}
+
+ou seja, uma distribuição degenerada é especificada para
+\(\left(\mathbf{Y}_U , \mathbf{X}_U \right)\).
+
+Este modelo foi considerado em Cassel et al. (1977), que o chamaram de \emph{abordagem de população fixa}, e afirmaram ser esta a abordagem subjacente ao desenvolvimento
+da teoria da \emph{Amostragem Probabilística} encontrada nos livros clássicos tais como Cochran (1977) e outros.
+
+Aqui esta abordagem é chamada de \emph{abordagem baseada no plano amostral} ou \emph{abordagem de aleatorização}, pois neste caso a única fonte de variação (aleatoriedade) é proveniente do plano amostral. Em geral, a distribuição conjunta de \(\left( \mathbf{Y}_U , \mathbf{X}_U \right)\) não precisa ser degenerada como especificada em \eqref{eq:ref5}, embora o referencial aqui adotado seja suficientemente geral para permitir considerar esta possibilidade.
+
+Se todas as unidades da população \(U\) fossem pesquisadas (ou seja, se fosse
+executado um \emph{censo}), os dados observados seriam \((\mathbf{y}_1 , \mathbf{x}_1), \ldots, (\mathbf{y}_N , \mathbf{x}_N)\). Sob a hipótese de resposta completa, a única fonte de incerteza seria devida ao fato de que \((\mathbf{y}_1 , \mathbf{x}_1), \ldots, (\mathbf{y}_N , \mathbf{x}_N)\) é uma realização de
+\(\left( \mathbf{Y}_1, \mathbf{X}_1 \right), \ldots, \left( \mathbf{Y}_N, \mathbf{X}_N \right)\). Os dados observados poderiam então ser usados para fazer inferências sobre \(\mathbf{\eta}, \mathbf{\phi},\mathbf{\lambda}\) ou \(\mathbf{\theta}\) usando procedimentos padrões.
+
+Inferência sobre quaisquer dos parâmetros \(\mathbf{\eta}, \mathbf{\phi}, \mathbf{\lambda}\) ou \(\mathbf{\theta}\) do modelo de superpopulação é chamada \emph{inferência analítica}. Este tipo de inferência só faz sentido quando o modelo de superpopulação não é degenerado como em \eqref{eq:ref5}. Usualmente seu objetivo é explicar a relação entre variáveis não apenas para a população finita sob análise, mas também para outras populações que poderiam ter sido geradas pelo modelo de superpopulação adotado. Vários exemplos de inferência analítica são discutidos ao longo deste livro.
+
+Se o objetivo da inferência é estimar quantidades que fazem sentido somente para
+a população finita sob análise, tais como funções \(g\left( \mathbf{y}_1, \ldots, \mathbf{y}_N \right)\) dos valores das variáveis da pesquisa, o modelo de superpopulação não é estritamente necessário, embora possa ser útil. Inferência para tais quantidades, chamadas parâmetros da população finita ou quantidades descritivas populacionais - QDPs, é chamada \emph{inferência descritiva}.
+
+Vale notar que a especificação do modelo de superpopulação aqui proposta serve
+tanto para o caso da abordagem clássica para inferência, como também para o caso
+da abordagem Bayesiana. Neste caso, a especificação do modelo \(M\) precisaria ser
+completada mediante a especificação de distribuições \emph{a priori} para os parâmetros
+do modelo.
+
+\hypertarget{planamo}{%
+\section{Plano amostral}\label{planamo}}
+
+Embora \emph{censos} sejam algumas vezes realizados para coletar dados sobre certas
+populações, a vasta maioria das pesquisas realizadas é de pesquisas amostrais,
+nas quais apenas uma amostra de elementos da população (usualmente uma pequena
+parte) é investigada. Neste caso, os dados disponíveis incluem:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  O conjunto de rótulos \(s=\left\{ i_1 , \ldots, i_n \right\}\) dos distintos
+  elementos na amostra, onde \(n\), \(1 \leq n \leq N\), é o número
+  de elementos na amostra \(s\), também chamado de \emph{tamanho da amostra}.
+\item
+  Os valores na amostra das variáveis da pesquisa
+  \(\mathbf{y}_{i_1}, \ldots, \mathbf{y}_{i_n}\).
+\item
+  Os valores das variáveis auxiliares na população
+  \(\mathbf{x}_1, \ldots, \mathbf{x}_N\), quando a informação auxiliar é dita
+  \emph{completa}; alternativamente, os valores das variáveis auxiliares na amostra
+  \(\mathbf{x}_{i_1}, \ldots, \mathbf{x}_{i_n}\), mais os totais ou médias
+  destas variáveis na população, quando a informação auxiliar é dita
+  \emph{parcial}.
+\end{enumerate}
+
+O mecanismo usado para selecionar a amostra \(s\) da população finita \(U\) é
+chamado \emph{plano amostral}. Uma forma de caracterizá-lo é através da função
+\(p\left( .\right)\), onde \(p(s)\) dá a probabilidade de selecionar a amostra \(s\)
+no conjunto \(S\) de todas as amostras possíveis. Só mecanismos amostrais
+envolvendo alguma forma de seleção probabilística bem definida são aqui
+considerados. Portanto, supõe-se que \(0 \leq p(s) \leq 1 \; \forall \,s \in S\) e
+\(\sum_{s \in S} p(s) = 1\).
+
+Esta caracterização do plano amostral \(p(s)\) é bem geral, permitindo que o
+mecanismo de seleção amostral dependa dos valores das variáveis auxiliares
+\(\mathbf{x}_1, \ldots, \mathbf{x}_N\) bem como dos valores das variáveis da
+pesquisa na população \(\mathbf{y}_1, \ldots, \mathbf{y}_N\) (\emph{amostragem informativa}, ver Seção \ref{inform}). Uma notação mais explícita para indicar
+esta possibilidade envolveria escrever \(p(s)\) como \(p\left[ s | (\mathbf{y}_U , \mathbf{x}_U ) \right]\). Tal notação é evitada por razões de simplicidade.
+
+Denotamos por \(I(B)\) a função indicadora que assume o valor \(1\) quando o evento
+\(B\) ocorre e \(0\) caso contrário. Seja \(\mathbf{\Delta}_s = \left[ I(1 \in s), \ldots, I(N \in s) \right]^{\prime}\) um vetor aleatório de indicadores dos elementos incluídos na amostra \(s\). Então o plano amostral pode ser alternativamente caracterizado pela distribuição de probabilidade de \(\mathbf{\Delta }_s\) denotada por \(f\left[ \mathbf{\delta }_s | \left(\mathbf{y}_U, \mathbf{x}_U \right) \right]\), onde \(\mathbf{\delta }_s\) é qualquer realização particular de \(\mathbf{\Delta }_s\) tal que \({\mathbf{\delta}_s}^{\prime} \mathbf{1}_N = n\), e \(\mathbf{1}_N\) é o vetor unitário de dimensão \(N\).
+
+Notação adicional necessária nas seções posteriores é agora introduzida.
+Denotamos por \(\pi_i\) a probabilidade de inclusão da unidade \(i\) na amostra \(s\),
+isto é,
+
+\begin{equation}
+\pi_i = P\left( i \in s \right) = \sum_{s \ni i} p(s)  \label{eq:ref6}
+\end{equation}
+
+e denotamos por \(\pi_{ij}\) a probabilidade de inclusão conjunta na amostra \(s\) das unidades \(i\) e \(j\), dada por
+
+\begin{equation}
+\pi_{ij} = P \left( i \in s , j \in s \right) = \sum_{s \ni i,j} p(s) \label{eq:ref7}
+\end{equation}
+
+para todo \(i \neq j \in U\). Note que \(\pi_{ii} = \pi_{i}\) \(\forall\, i \in U.\)
+
+Uma hipótese básica assumida com relação aos planos amostrais aqui considerados
+é que \(\pi_i > 0\) e \(\pi_{ij} > 0\) \(\forall\, i,j \in U.\) A hipótese de \(\pi_{ij}\)
+ser positiva é adotada para simplificar a apresentação de expressões para
+estimadores de variância dos estimadores dos parâmetros de interesse. Contudo,
+esta não é uma hipótese crucial, pois há planos amostrais que não a satisfazem e
+para os quais estão disponíveis aproximações e estimadores satisfatórios das
+variâncias dos estimadores de totais e de médias.
+
+\hypertarget{inform}{%
+\section{Planos amostrais informativos e ignoráveis}\label{inform}}
+
+Ao fazer inferência usando dados de pesquisas amostrais precisamos distinguir
+duas situações que requerem tratamentos diferentes. Uma dessas situações ocorre quando o plano
+amostral empregado para coletar os dados é \emph{informativo}, isto é,
+quando o mecanismo de seleção das unidades amostrais pode depender dos valores
+das variáveis de pesquisa.
+
+Um exemplo típico desta situação é o dos \emph{estudos de caso-controle}, em que a amostra
+é selecionada de tal forma que há \emph{casos} (unidades com determinada condição)
+e \emph{controles} (unidades sem essa condição), sendo de interesse a modelagem do indicador
+de presença ou ausência da condição em função de variáveis preditoras, sendo esse indicador
+uma das variáveis de pesquisa, que é considerada no mecanismo de seleção da amostra. Os
+métodos que discutimos ao longo deste livro não são adequados, em geral, para esse tipo
+de situação e, portanto, uma hipótese fundamental adotada ao longo deste texto é que os
+planos amostrais considerados são \emph{não informativos}, isto é, não podem depender
+diretamente dos valores das variáveis da pesquisa. Logo eles satisfazem:
+
+\begin{equation}
+f\left[ \mathbf{\delta }_s | \left( \mathbf{y}_U , \mathbf{x}_U \right)
+\right] = f\left( \mathbf{\delta }_s | \mathbf{x}_U \right) \label{eq:ref8}
+\end{equation}
+
+Entre os planos amostrais \emph{não informativos}, precisamos ainda distinguir duas
+outras situações de interesse. Quando o plano amostral é Amostragem Aleatória
+Simples Com Reposição - AASC, o modelo adotado para a amostra é o mesmo que o
+modelo adotado para a população antes da amostragem. Quando isto ocorre, o plano
+amostral é dito \emph{ignorável}, porque a inferência baseada na amostra utilizando a
+abordagem de \emph{Modelagem Clássica} descrita na Seção \ref{classic} pode prosseguir sem
+problemas. Entretanto, esquemas amostrais desse tipo são raramente empregados na
+prática, por razões de eficiência e custo. Em vez disso, são geralmente
+empregados planos amostrais envolvendo estratificação, conglomeração e
+probabilidades desiguais de seleção (\emph{amostragem complexa}).
+
+Com amostragem complexa, porém, os modelos para a população e a amostra podem
+ser muito diferentes (plano amostral \emph{não ignorável}), mesmo que o mecanismo de
+seleção não dependa das variáveis de pesquisa, mas somente das variáveis
+auxiliares. Neste caso, ignorar o plano amostral pode viciar a inferência. Ver
+o Exemplo \ref{exm:nonigno} adiante.
+
+A definição precisa de ignorabilidade e as condições sob as quais um plano
+amostral é \emph{ignorável} para inferência são bastante discutidas na literatura -
+ver por exemplo Sugden e Smith (1984) ou os Capítulos 1 e 2 de Chambers e Skinner (2003). Porém, testar
+a ignorabilidade do plano amostral é muitas vezes complicado. Em caso de
+dificuldade, o uso dos \emph{pesos amostrais} tem papel fundamental, como se vê
+mais adiante.
+
+Uma forma simples de lidar com os efeitos do plano amostral na estimação pontual
+de quantidades descritivas populacionais de interesse é incorporar pesos
+adequados na análise, como pode ser visto em (\textbf{Silva?}) e no Capítulo \ref{capplanamo}.
+Essa forma porém, não resolve por si só o problema de estimação da precisão das
+estimativas pontuais, nem mesmo o caso da estimação pontual de parâmetros em
+\emph{modelos de superpopulação}, o que vai requerer métodos específicos discutidos no Capítulo \ref{ajmodpar}.
+
+Como incluir os pesos para proteger contra planos amostrais \emph{não ignoráveis} e a
+possibilidade de má especificação do modelo? Uma ideia é modificar os estimadores
+dos parâmetros de modo que sejam consistentes (em termos da \emph{distribuição de aleatorização})
+para quantidades descritivas da população finita da qual a amostra foi extraída, que
+por sua vez seriam boas aproximações para os parâmetros dos modelos de interesse. Afirmações
+probabilísticas são então feitas com respeito à \emph{distribuição de aleatorização} \(p\) das
+estatísticas amostrais ou com respeito à distribuição mista ou combinada \(Mp\).
+
+A seguir apresentamos um exemplo com a finalidade de ilustrar uma situação de
+plano amostral \emph{não ignorável}.
+
+\begin{example}
+\protect\hypertarget{exm:nonigno}{}{\label{exm:nonigno} }Efeito da amostragem estratificada simples com alocação desproporcional
+\end{example}
+
+Considere \(N\) observações de uma população finita \(U\) onde são consideradas de
+interesse duas variáveis binárias \((x_i ; y_i )\). Suponha que na população os
+vetores aleatórios \((X_i ; Y_i )\) são independentes e identicamente distribuídos
+com distribuição de probabilidades conjunta dada por:
+
+\begin{table}[H]
+
+\caption{\label{tab:Tab24}$\text{Distribuição de probabilidades conjunta na população }P( Y_i = y ; X_i = x )$}
+\centering
+\begin{tabular}[t]{>{\centering\arraybackslash}p{4cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
+\toprule
+$x \downarrow \text{ | } y \rightarrow$ & 0 & 1 & Total\\
+\midrule
+0 & $\eta_{00}$ & $\eta_{01}$ & $\eta_{0+}$\\
+1 & $\eta_{10}$ & $\eta_{11}$ & $\eta_{1+}$\\
+Total & $\eta_{+0}$ & $\eta_{+1}$ & 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+que também pode ser representada por:
+
+\begin{eqnarray}
+ f_U (x ; y) &=& P( X = x ; Y = y )\nonumber\\ 
+             & =& \eta_{00}^{(1-x)(1-y)} \times \eta_{01}^{(1-x)y} \times \eta_{10}^{x(1-y)} 
+             \times (1 - \eta_{00} - \eta_{01} - \eta_{10})^{xy} \nonumber
+\end{eqnarray}
+
+onde a designação \(f_U\) é utilizada para denotar a distribuição \emph{na população}.
+
+Note agora que a distribuição marginal da variável \(Y\) \emph{na população} é
+Bernoulli com parâmetro \(1 - \eta_{00} - \eta_{10}\), ou alternativamente:
+
+\begin{equation}
+ f_U (y) = P( Y = y ) = (\eta_{00} + \eta_{10})^{(1-y)} \times (1 - \eta_{00} - \eta_{10})^y\nonumber
+\end{equation}
+
+De forma análoga, a distribuição marginal da variável \(X\) \emph{na população} também
+é Bernoulli, mas com parâmetro \(1 - \eta_{00} - \eta_{01}\), ou alternativamente:
+
+\begin{equation}
+ f_U (x) = P( X = x ) = (\eta_{00} + \eta_{01})^{(1-x)} \times (1 - \eta_{00} - \eta_{01})^x\nonumber
+\end{equation}
+
+Seja \(N_{xy}\) o número de unidades na população com a combinação de valores
+observados \((x;y)\), onde \(x\) e \(y\) tomam valores em \(\Omega = \{ 0 ; 1 \}\). É
+fácil notar então que o vetor de contagens populacionais \(\mathbf{N} = ( N_{00}, N_{01}, N_{10}, N_{11} )^{\prime}\) tem distribuição Multinomial com parâmetros
+\(N\) e \(\mathbf{\eta} = (\eta_{00} , \eta_{01} , \eta_{10} , 1 - \eta_{00} - \eta_{01} - \eta_{10} )^{\prime}\).
+
+Após observada uma realização do modelo que dê origem a uma população, como
+seria o caso da realização de um \emph{censo} na população, a proporção de valores de
+\(y\) iguais a \(1\) observada no censo seria dada por \(N_{+1} / N = 1 - (N_{00} - N_{10})/N\).
+E a proporção de valores de \(x\) iguais a \(1\) na população seria igual a \(N_{1+} / N = 1 - (N_{00} - N_{01})/N\).
+
+Agora suponha que uma amostra estratificada simples \emph{com reposição} de tamanho
+\(n\) inteiro e par seja selecionada da população, onde os estratos são definidos
+com base nos valores da variável \(x\), e onde a alocação da amostra nos estratos
+é dada por \(n_0 = n_1 = n/2\), sendo \(n_x\) o tamanho da amostra no estrato
+correspondente ao valor \(x\) usado como índice. Esta alocação é dita \emph{alocação igual},
+pois o tamanho total da amostra é repartido em partes iguais entre os estratos
+definidos para seleção e, no caso, há apenas dois estratos. A alocação
+desta amostra é desproporcional exceto no caso em que \(N_{0+} = N_{1+}\).
+
+Nosso interesse aqui é ilustrar o efeito que uma \emph{alocação desproporcional} pode
+causar na análise dos dados amostrais, caso não sejam levadas em conta na
+análise informações relevantes sobre a estrutura do plano amostral. Para isto,
+vamos precisar obter a \emph{distribuição amostral} da variável de interesse \(Y\).
+Isto pode ser feito em dois passos. Primeiro, note que a distribuição
+condicional de \(Y\) dado \(X\) \emph{na população} é dada por:
+
+\begin{table}[H]
+
+\caption{\label{tab:Tab25}$\text{Distribuição de probabilidades condicional de }y\text{ dado }x
+\text{ na população - }P( Y_i = y | X_i = x )$}
+\centering
+\begin{tabular}[t]{>{\centering\arraybackslash}p{4cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
+\toprule
+$x \downarrow \text{ | } y \rightarrow$ & 0 & 1 & Total\\
+\midrule
+0 & $\eta_{00}/\eta_{0+}$ & $\eta_{01}/\eta_{0+}$ & 1\\
+1 & $\eta_{10}/\eta_{1+}$ & $\eta_{11}/\eta_{1+}$ & 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+ou, alternativamente
+
+\begin{eqnarray}
+ f_U (y | x) &=& P( Y = y | X = x )\nonumber\\
+             & =& (1-x) \times \frac{\eta_{00}^{(1-y)} \eta_{01}^y}   {\eta_{00}+\eta_{01}} + x 
+             \times \frac{\eta_{10}^{(1-y)} (1 - \eta_{00} - \eta_{01} - \eta_{10})^y} {1 - \eta_{00} - \eta_{01}}\nonumber
+\end{eqnarray}
+
+Dado o plano amostral acima descrito, a distribuição marginal de \(X\) \emph{na amostra}
+é Bernoulli com parâmetro \(1/2\). Isto segue devido ao fato de que a amostra foi
+alocada igualmente com base nos valores de \(x\) na população e, portanto, sempre
+teremos metade da amostra com valores de \(x\) iguais a \(0\) e metade com valores iguais a \(1\).
+Isto pode ser representado como:
+
+\begin{equation}
+ f_s (x) = P( X_i = x | i \in s ) = 1 / 2,\; \forall x \in \Omega \mbox{ e } \forall i \in U\nonumber
+\end{equation}
+
+onde a designação \(f_s\) é utilizada para denotar a distribuição \emph{na amostra}.
+
+Podemos usar a informação sobre a distribuição condicional de \(Y\) dado \(X\) \emph{na população}
+e a informação sobre a distribuição marginal de \(X\) \emph{na amostra} para
+obter a distribuição marginal de \(Y\) \emph{na amostra}, que é dada por:
+
+\begin{eqnarray}
+ f_s (y) &= &P( Y_i = y | i \in s )\nonumber\\ 
+&=& \sum _{x = 0} ^{1} P( X_i = x ; Y_i = y | i \in s) \nonumber \\ 
+&=& \sum _{x = 0} ^{1} P[ Y_i = y | (X_i = x) e (i \in s)] \times P( X_i = x | i \in s) \nonumber\\ 
+&=& \sum _{x = 0} ^{1} P( Y_i = y | X_i = x) \times f_s (x) \nonumber \\ 
+&=& \sum _{x = 0} ^{1} f_U ( y | x) f_s (x) \nonumber \\ 
+&=& \frac{1}{2} \times \left[ \frac{\eta_{00}^{(1-y)} \eta_{01}^y} {\eta_{00}+\eta_{01}}+ 
+\frac{\eta_{10}^{(1-y)} (1 - \eta_{00} - \eta_{01} - \eta_{10})^y} {1 - \eta_{00} - \eta_{01}} \right]\nonumber
+\end{eqnarray}
+
+Isto mostra que a distribuição marginal de \(Y\) \emph{na amostra} é diferente da
+distribuição marginal de \(Y\) \emph{na população}, mesmo quando o plano amostral é
+especialmente simples e utiliza amostragem aleatória simples com reposição
+dentro de cada estrato definido pela variável \(X\). Isto ocorre devido à
+\emph{alocação desproporcional} da amostra, apesar de a distribuição condicional de \(Y\) dado \(X\)
+\emph{na população} ser a mesma que a distribuição condicional de \(Y\) dado \(X\) \emph{na amostra}.
+
+Um exemplo numérico facilita a compreensão. Se a distribuição conjunta de \(X\) e
+\(Y\) na população é dada por:
+
+\begin{table}[H]
+
+\caption{\label{tab:Tab26}$\text{Distribuição de probabilidades conjunta na população }f_U( x ; y )$}
+\centering
+\begin{tabular}[t]{>{\centering\arraybackslash}p{4cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
+\toprule
+$x \downarrow \text{ | } y \rightarrow$ & 0 & 1 & Total\\
+\midrule
+0 & 0,7 & 0,1 & 0,8\\
+1 & 0,1 & 0,1 & 0,2\\
+Total & 0,8 & 0,2 & 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+segue-se que a distribuição condicional de \(Y\) dado \(X\) \emph{na população} (e também
+\emph{na amostra}) é dada por
+
+\begin{table}[H]
+
+\caption{\label{tab:Tab27}$\text{Distribuição de probabilidades condicional de }Y\text{ dado }X\text{ na população - }f_U( y | x )$}
+\centering
+\begin{tabular}[t]{>{\centering\arraybackslash}p{4cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
+\toprule
+$x \downarrow \text{ | } y \rightarrow$ & 0 & 1 & Total\\
+\midrule
+0 & 0,875 & 0,125 & 1\\
+1 & 0,500 & 0,500 & 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+e que a distribuição marginal de \(Y\) \emph{na população} e \emph{na amostra} são dadas por
+
+\begin{table}[H]
+
+\caption{\label{tab:Tab28}$\text{Distribuição de probabilidades marginal de }Y\text{ na população e na amostra - }
+f_U(y)\text{ e } f_s(y)$}
+\centering
+\begin{tabular}[t]{>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
+\toprule
+$y$ & 0 & 1\\
+\midrule
+$f_U(y)$ & 0,8000 & 0,2000\\
+$f_s(y)$ & 0,6875 & 0,3125\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Assim, inferência sobre a distribuição de \(Y\) \emph{na população} levada a cabo a
+partir dos dados da \emph{amostra observada} sem considerar a estrutura do plano
+amostral seria equivocada, pois a alocação igual da amostra nos estratos levaria
+à observação de uma proporção maior de valores de \(X\) iguais a 1 na amostra
+(1/2) do que a correspondente proporção existente na população (1/5). Em
+consequência, a proporção de valores de \(Y\) iguais a 1 na amostra (0,3125) seria
+56\% maior que a correspondente proporção \emph{na população} (0,2).
+
+Este exemplo é propositalmente simples, envolve apenas duas variáveis com
+distribuição Bernoulli, mas ilustra bem como a amostragem pode modificar
+distribuições de variáveis \emph{na amostra} em relação à correspondente distribuição
+\emph{na população}. Isto ocorre mesmo em situações em que a amostragem não é
+\emph{informativa} (pois a seleção da amostra não depende dos valores da variável \(y\)),
+mas onde o plano amostral não é \emph{ignorável} para inferência sobre a distribuição marginal de \(Y\).
+
+Caso a inferência requerida fosse sobre parâmetros da distribuição condicional
+de \(Y\) dado \(X\), a amostragem seria \emph{ignorável}, isto é, \(f_s ( y | x) = f_U (y | x)\).
+Assim, fica evidenciado também que a questão de saber se o plano amostral pode
+ou não ser ignorado depende da inferência desejada. No nosso exemplo, o plano amostral
+seria ignorável para inferência sobre a distribuição condicional de \(Y\) dado \(X\),
+mas não seria ignorável para inferência sobre a distribuição marginal de \(Y\).
+
+Feita esta discussão sobre o referencial para inferência que adotamos neste
+livro, segue-se uma revisão rápida dos métodos de estimação da \emph{amostragem probabilística}.
+Como já indicado, o leitor interessado numa discussão mais detalhada pode consultar Silva et al. (2020).
+
+\hypertarget{capplanamo}{%
+\chapter{Estimação Baseada no Plano Amostral}\label{capplanamo}}
+
+\hypertarget{estimatotais}{%
+\section{Estimação de Totais}\label{estimatotais}}
+
+Devido a sua importância para os desenvolvimentos teóricos em vários dos capítulos subsequentes, alguns resultados básicos relativos à estimação de totais da população finita numa abordagem baseada no plano amostral serão relembrados nesta seção. A referência básica usada foi a Seção 2.8 de Särndal et al. (1992). O leitor pode também consultar o capítulo 3 de Silva et al. (2020).
+
+Consideremos o problema de estimar o vetor \(\mathbf{Y} = \sum_{i \in U} \mathbf{y}_i\) de totais das \(P\) variáveis da pesquisa na população, a partir de uma amostra observada \(a\). Naturalmente, qualquer estimador viável do total \(\mathbf{Y}\) só pode depender dos valores das variáveis de pesquisa observados na amostra, contidos em \(\mathbf{y}_{i_{1}}, \ldots , \mathbf{y}_{i_{n}}\), mas não dos valores dessas variáveis para os elementos não pesquisados (\(i \in U-a\)).
+
+Um estimador usual baseado no plano amostral para o total \(\mathbf{Y}\) é o estimador de Horvitz-Thompson (veja seção 3.7 de Silva et al. (2020)), dado por:
+
+\[
+\widehat{\mathbf{Y}}_{HT} = \sum_{i \in a} \mathbf{y}_i / \pi_{i} = \sum_{i \in a} d_i \mathbf{y}_i \,\,  \label{eq:estpa1}
+\]
+onde \(d_i = 1/\pi_i\) é o \emph{peso básico} da unidade \(i\).
+
+Na abordagem baseada no planejamento amostral, as propriedades de uma estatística ou estimador são avaliadas com respeito à sua \emph{distribuição de aleatorização}. Denotemos por \(E_p(.)\) e \(V_p(.)\) os operadores de esperança e variância referentes à distribuição de probabilidades induzida pelo planejamento amostral \(p(a)\), que chamaremos daqui por diante de \texttt{esperança\ de\ aleatorização} e \texttt{variância\ de\ aleatorização}.
+
+O estimador \(\mathbf{\hat{Y}}_{HT}\) é não-viciado para o total \(\mathbf{Y}\) com respeito à distribuição de aleatorização, isto é:
+
+\[
+E_p \left( \mathbf{\widehat{Y}}_{HT} \right) = \mathbf{Y} 
+\]
+
+\[
+E_p \left( \mathbf{\hat{Y}}_{\pi} \right) = \mathbf{Y} . 
+\]
+Além disso, sua variância de aleatorização é dada por
+
+\[
+V_p \left( \mathbf{\widehat{Y}}_{HT} \right) = \sum_{i \in U} \sum_{j \in U} \left( \frac{d_i d_j}{d_{ij}} - 1 \right) \mathbf{y}_i {\mathbf{y}^\prime_j}  \,\,\,  \label{eq:estpa2}
+\]
+Um estimador não viciado para a variância de aleatorização de \(\mathbf{ \hat{Y}}_{HT}\) é dado por:
+
+\[
+\widehat{V_p} \left( \mathbf{\widehat{Y}}_{HT} \right) =\sum_{i \in a} \sum_{j \in a} \left( {d_i d_j} - d_{ij} \right) \mathbf{y}_i {\mathbf{y}^\prime_j}  \,\,\, \label{eq:estpa3}
+\]
+
+O estimador de variância em \eqref{eq:estpa3} é um estimador não-viciado da variância de aleatorização de \(\mathbf{\hat{Y}}_{\pi}\), isto é
+
+\[
+E_p \left[ \widehat{V_p} \left( \mathbf{\widehat{Y}}_{HT} \right) \right] = V_p \left( \mathbf{\widehat{Y}}_{HT} \right) \,\,\, \label{eq:estpa4}
+\]
+desde que \(\pi_{ij} > 0 \quad \forall i \neq j \in U\), como vamos supor neste livro.
+
+\begin{example}
+\protect\hypertarget{exm:exe31}{}{\label{exm:exe31} }Amostragem Aleatória Simples Sem Reposição (AAS)
+\end{example}
+
+Quando o plano amostral empregado num levantamento é amostragem aleatória simples sem reposição (AAS), as expressões apresentadas para o estimador de total, sua variância e estimadores desta variância simplificam bastante, porque as probabilidades de inclusão e os pesos básicos das unidades ficam iguais a
+\[
+\pi_i = \frac{n}{N} \,\, \text{e} \,\, d_i = \frac{N}{N} \, \, \forall i \in U  \,\, \label{eq:estpa5}
+\]
+e
+\[
+\pi_{ij} = \frac{n(n-1)}{N(N-1)} \,\, \text{e} \,\,  d_{ij} = \frac{N(N-1)}{n(n-1)} \,\, \forall \, i \neq j \in U \,\, \label{eq:estpa6} 
+\]
+
+Essas probabilidades de inclusão e pesos básicos levam às seguintes expressões simplificadas para o caso AAS:
+
+\[
+\widehat{\mathbf{Y}}_{AAS} = \frac{N}{n} \sum_{i \in a} \mathbf{y}_i = N \, \overline{\mathbf{y}}  \,\, \label{eq:estpa7}
+\]
+onde
+
+\[
+\overline{\mathbf{y}} = \frac{1}{n} \sum_{i \in a} \mathbf{y}_i  \,\, \label{eq:estpa8}
+\]
+
+\[
+V_{AAS} \left( \mathbf{\widehat{Y}}_{AAS} \right) = N^{2} \left( \frac{1}{n} - \frac{1}{N} \right) \mathbf{S}_y \mbox{ ,}  \,\, \label{eq:estpa9}
+\]
+onde
+
+\[
+\mathbf{S}_y = \frac{1}{N-1} \sum_{i \in U} \left( \mathbf{y}_i - \overline{ \mathbf{Y}} \right) \left( \mathbf{y}_i - \overline{\mathbf{Y}} \right) ^{^{\prime }}   \label{eq:estpa10}
+\]
+
+\[
+\overline{\mathbf{Y}} = \frac{1}{N} \sum_{i \in U} \mathbf{y}_i = \frac{1}{N} \mathbf{Y} \,\,\, \label{eq:estpa11}
+\]
+Sob AAS, o estimador da variância do estimador de total simplifica para:
+
+\[
+\widehat{V}_{AAS} \left( \mathbf{\widehat{Y}}_{AAS} \right) = N^{2} \left( \frac{1}{n} - \frac{1}{N} \right) \mathbf{\widehat S}_y \,\, \label{eq:estpa12}
+\]
+onde
+\[
+\widehat{\mathbf{S}}_y = \frac{1}{n-1} \sum_{i \in a} \left( \mathbf{y}_i - \overline{\mathbf{y}} \right) \left( \mathbf{y}_i - \overline{\mathbf{y}} \right) ^{^{\prime }} \,\,\, \label{eq:estpa13} 
+\]
+
+Vários outros estimadores de totais estão disponíveis na literatura de amostragem, porém os que são comumente usados na prática são estimadores ponderados (lineares) da forma
+
+\[
+\mathbf{\widehat{Y}}_w = \sum\limits_{i \in a} w_i \mathbf{y}_i  \,\,\, \label{eq:estpa14}
+\]
+
+onde \(w_i\) é um peso associado à unidade \(i\) da amostra (\(i \in a\)).
+
+O estimador de Horvitz-Thompson é um caso particular de \(\mathbf{\widehat{Y}}_w\) em \eqref{eq:estpa14} quando os pesos \(w_i\) são da forma
+
+\[
+w_i^{HT} = d_i = 1 / \pi_i \quad \forall \ i \in a. 
+\]
+
+Outros dois estimadores de totais comumente usados pelos praticantes de amostragem são o \emph{estimador de razão} \(\mathbf{\widehat{Y}}_R\) e o \emph{estimador de regressão} \(\mathbf{\widehat{Y}}_{REG}\), dados respectivamente por
+\textless\textless\textless\textless\textless\textless\textless{} Updated upstream
+
+\[
+\mathbf{\widehat{Y}}_R = \sum_{i \in a} {w_i^{R} \ } \mathbf{y}_i \,\,\,  \label{eq:estpa15}
+\]
+
+\$\$
+w\_i\^{}\{R\} = d\_i \times \frac{\sum_{i \in U} x_i } \{\sum\_\{i \in a\} \{d\_i ~\} x\_i\} = d\_i \times \frac{X}{\widehat{X}_{HT}} ,,, \label{eq:estpa16}
+
+e
+
+\[
+\mathbf{\widehat{Y}}_{REG} = \sum_{i \in a} {w_i^{REG} \ } \mathbf{y}_i \,\,\,  \label{eq:estpa17}
+\]
+onde
+
+\[
+\mathbf{\widehat{Y}}_R = \sum_{i \in a} {w_i^{R} \ } \mathbf{y}_i \,\,\,  \label{eq:estpa15}
+\]
+
+\[
+w_i^{R} = d_i \times \frac{\sum_{i \in U} x_i } {\sum_{i \in a} {d_i \ } x_i} \,\,\,  \label{eq:estpa16}
+\]
+e
+\[
+g_{i} = 1 + x_{i \mbox{ }} (X - \widehat{X}_{HT}) / \sum_{i \in a} d_i x_i^2
+\]
+é um fator de ajuste de regressão, sendo \(x\) uma variável auxiliar cujo total populacional \(\sum_{i \in U} x_i = X\) é conhecido e \(\widehat{X}_{HT} = \sum_{i \in a} d_i \, x_i\) o estimador tipo Horvitz-Thompson para esse total.
+
+O estimador de regressão descrito em \eqref{eq:estpa17} é um caso particular do \emph{estimador de regressão generalizado}, obtido quando se consideram vetores de variáveis auxiliares em vez de uma única variável auxiliar \(x\) como aqui. Para uma discussão detalhada do \emph{estimador de regressão generalizado} veja o capítulo 3 de Silva (1996), ou o excelente livro de Särndal et al. (1992). Por sua vez, o \emph{estimador de regressão generalizado} é caso particular da família mais ampla dos \emph{estimadores de calibração}, definidos por Deville e Särndal (1992).
+
+Para completar a descrição dos procedimentos de inferência para médias e totais baseados em estimadores ponderados do tipo razão ou regressão, é necessário identificar estimadores para as variâncias de aleatorização correspondentes. Entretanto, os estimadores de razão e regressão são viciados sob a distribuição de aleatorização para pequenas amostras. Em ambos os casos, o vício é desprezível para amostras grandes, e estão disponíveis expressões assintóticas para as respectivas variâncias de aleatorização. Partindo destas expressões foram então construídos estimadores amostrais das variâncias dos estimadores de razão e regressão, que podem ser encontrados na excelente revisão sobre o tema contida em (Särndal et al., 1992), Seção 6.6 e cap. 7. Apesar de sua importância para os praticantes de amostragem, a discussão detalhada desse problema não será incluída neste livro.
+
+O problema da estimação das variâncias de aleatorização para estimadores como os de razão e regressão nos remete a uma questão central da teoria da amostragem. Trata-se dos métodos disponíveis para estimar variâncias de estimadores \texttt{complexos}. O caso dos estimadores de razão e regressão para totais e médias foi resolvido faz tempo, e não há muito o que discutir aqui. Entretanto, a variedade de métodos empregados para estimação de variâncias merece uma discussão em separado, pois as técnicas de ajuste consideradas neste livro para incorporar pesos e plano amostral na inferência partindo de dados de pesquisas amostrais complexas depende em grande medida da aplicação de tais técnicas.
+
+\hypertarget{por-que-estimar-variuxe2ncias}{%
+\section{Por que Estimar Variâncias}\label{por-que-estimar-variuxe2ncias}}
+
+Em Amostragem, como de resto na Estatística Clássica, a estimação de variâncias é um componente \texttt{essencial} da abordagem inferencial adotada: sem estimativas de variância, nenhuma indicação da precisão (e portanto, da qualidade) das estimativas
+de interesse está disponível. Nesse caso, uma tentação que assola muitos usuários incautos é esquecer que os resultados são baseados apenas em dados de uma amostra da população, e portanto sujeitos a incerteza, que não pode ser quantificada sem medidas de precisão amostral.
+
+Em geral, a obtenção de estimativas de variâncias (alternativamente, de desvios padrões ou mesmo de coeficientes de variação) é requerida para que intervalos de confiança possam ser calculados, e outras formas de inferência realizadas. Intervalos de confiança elaborados com estimativas amostrais são geralmente
+baseados em aproximações assintóticas da distribuição amostral do estimador pela distribuição normal, usando resultados análogos ao TCL para populações finitas - ver Fuller (2009), tais que intervalos da forma
+\[
+IC\left[ \widehat{\theta };\widehat{V}_{p}\left( \widehat{\theta }\right)
+\right] =\left[ \,\, \widehat{\theta } \pm z_{\alpha /2}\sqrt{\widehat{V}_{p} \left( \widehat{\theta} \right) } \,\, \right] 
+\]
+têm probabilidade de cobertura aproximada \(1-\alpha\), com \(z_{\alpha /2}\) sendo o quantil que deixa área de \(1-\alpha/2\) à sua esquerda na distribuição Normal padrão.
+
+Estimativas de variância podem ser úteis também para outras finalidades, tais como a detecção de problemas não antecipados, tais como observações suspeitas, celas raras em tabelas de contingência, etc.
+
+A estimação de variâncias para os casos padrões de amostragem, isto é, quando os estimadores são lineares nas observações amostrais, não viciados, e todas as probabilidades de inclusão conjuntas são não nulas, é tratada em todos os
+livros de amostragem convencionais. Apesar disso, os pacotes estatísticos usuais, tais como SAS, SPSS, MINITAB e outros, por muito tempo não ofereciam rotinas prontas para estimar variâncias considerando o plano amostral, nem mesmo para estatísticas simples como estimadores de totais e médias. Felizmente tal situação mudou, e agora já é possível contar com ferramentas no SAS (procedimentos \texttt{SURVEY}), no SPSS (módulo \texttt{COMPLEX\ SAMPLES}) e no STATA (funções \texttt{svy}). Mas é no pacote \texttt{survey} do sistema R que estão disponíveis as melhores ferramentas para estimação de parâmetros a partir de dados de amostras complexas.
+
+Para alguns planos amostrais utilizados na prática, as probabilidades de inclusão conjuntas podem ser nulas (caso de amostragem sistemática) ou difíceis de calcular (caso de alguns esquemas de seleção com probabilidades desiguais). Nesses casos, as expressões fornecidas na Seção \ref{estimatotais} para os estimadores das variâncias dos estimadores de totais não são mais válidas.
+
+Em muitos outros casos, como se verá no restante deste livro, os parâmetros de interesse são \texttt{não\ lineares} (diferentes de totais, médias e proporções, por exemplo). Casos comuns que consideraremos mais adiante são a estimação de razões,
+coeficientes de modelos de regressão etc. Nesses casos é comum que as estatísticas empregadas para estimar tais parâmetros também sejam \texttt{não\ lineares}.
+
+\[
+\mathbf{\widehat{Y}}_{REG} = \sum_{i \in a} {w_i^{REG} \ } \mathbf{y}_i \,\,\,  \label{eq:estpa17}
+\]
+onde
+
+\[
+w_i^{REG} = d_i \times g_i \,\,\, \label{eq:estpa18}
+\]
+e
+\[
+g_{i} = 1 + x_{i \mbox{ }} (X - \widehat{X}_{HT}) / \sum_{i \in a} d_i x_i^2
+\]
+é um fator de ajuste de regressão, sendo \(x\) uma variável auxiliar cujo total populacional \(\sum_{i \in U} x_i = X\) é conhecido e \(\widehat{X}_{HT} = \sum_{i \in a} d_i \, x_i\) o estimador tipo Horvitz-Thompson para esse total.
+
+O estimador de regressão descrito em \eqref{eq:estpa17} é um caso particular do \emph{estimador de regressão generalizado}, obtido quando se consideram vetores de variáveis auxiliares em vez de uma única variável auxiliar \(x\) como aqui. Para uma discussão detalhada do \emph{estimador de regressão generalizado} veja o capítulo 3 de Silva (1996), ou o excelente livro de Särndal et al. (1992). Por sua vez, o \emph{estimador de regressão generalizado} é caso particular da família mais ampla dos \emph{estimadores de calibração}, definidos por Deville e Särndal (1992).
+
+Para completar a descrição dos procedimentos de inferência para médias e totais baseados em estimadores ponderados do tipo razão ou regressão, é necessário identificar estimadores para as variâncias de aleatorização correspondentes. Entretanto, os estimadores de razão e regressão são viciados sob a distribuição de aleatorização para pequenas amostras. Em ambos os casos, o vício é desprezível para amostras grandes, e estão disponíveis expressões assintóticas para as respectivas variâncias de aleatorização. Partindo destas expressões foram então construídos estimadores amostrais das variâncias dos estimadores de razão e regressão, que podem ser encontrados na excelente revisão sobre o tema contida em (Särndal et al., 1992), Seção 6.6 e cap. 7. Apesar de sua importância para os praticantes de amostragem, a discussão detalhada desse problema não será incluída neste livro.
+
+O problema da estimação das variâncias de aleatorização para estimadores como os de razão e regressão nos remete a uma questão central da teoria da amostragem. Trata-se dos métodos disponíveis para estimar variâncias de estimadores \texttt{complexos}. O caso dos estimadores de razão e regressão para totais e médias foi resolvido faz tempo, e não há muito o que discutir aqui. Entretanto, a variedade de métodos empregados para estimação de variâncias merece uma discussão em separado, pois as técnicas de ajuste consideradas neste livro para incorporar pesos e plano amostral na inferência partindo de dados de pesquisas amostrais complexas depende em grande medida da aplicação de tais técnicas.
+
+\hypertarget{por-que-estimar-variuxe2ncias-1}{%
+\section{Por que Estimar Variâncias}\label{por-que-estimar-variuxe2ncias-1}}
+
+Em Amostragem, como de resto na Estatística Clássica, a estimação de variâncias é um componente \texttt{essencial} da abordagem inferencial adotada: sem estimativas de variância, nenhuma indicação da precisão (e portanto, da qualidade) das estimativas
+de interesse está disponível. Nesse caso, uma tentação que assola muitos usuários incautos é esquecer que os resultados são baseados apenas em dados de uma amostra da população, e portanto sujeitos a incerteza, que não pode ser quantificada sem medidas de precisão amostral.
+
+Em geral, a obtenção de estimativas de variâncias (alternativamente, de desvios padrões ou mesmo de coeficientes de variação) é requerida para que intervalos de confiança possam ser calculados, e outras formas de inferência realizadas. Intervalos de confiança elaborados com estimativas amostrais são geralmente
+baseados em aproximações assintóticas da distribuição amostral do estimador pela distribuição normal, usando resultados análogos ao TCL para populações finitas - ver Fuller (2009), tais que intervalos da forma
+\[
+IC\left[ \widehat{\theta };\widehat{V}_{p}\left( \widehat{\theta }\right)
+\right] =\left[ \,\, \widehat{\theta } \pm z_{\alpha /2}\sqrt{\widehat{V}_{p} \left( \widehat{\theta} \right) } \,\, \right] 
+\]
+têm probabilidade de cobertura aproximada \(1-\alpha\), com \(z_{\alpha /2}\) sendo o quantil que deixa área de \(1-\alpha/2\) à sua esquerda na distribuição Normal padrão.
+
+Estimativas de variância podem ser úteis também para outras finalidades, tais como a detecção de problemas não antecipados, tais como observações suspeitas, celas raras em tabelas de contingência, etc.
+
+A estimação de variâncias para os casos padrões de amostragem, isto é, quando os estimadores são lineares nas observações amostrais, não viciados, e todas as probabilidades de inclusão conjuntas são não nulas, é tratada em todos os
+livros de amostragem convencionais. Apesar disso, os pacotes estatísticos usuais, tais como SAS, SPSS, MINITAB e outros, por muito tempo não ofereciam rotinas prontas para estimar variâncias considerando o plano amostral, nem mesmo para estatísticas simples como estimadores de totais e médias. Felizmente tal situação mudou, e agora já é possível contar com ferramentas no SAS (procedimentos \texttt{SURVEY}), no SPSS (módulo \texttt{COMPLEX\ SAMPLES}) e no STATA (funções \texttt{svy}). Mas é no pacote \texttt{survey} do sistema R que estão disponíveis as melhores ferramentas para estimação de parâmetros a partir de dados de amostras complexas.
+
+Para alguns planos amostrais utilizados na prática, as probabilidades de inclusão conjuntas podem ser nulas (caso de amostragem sistemática) ou difíceis de calcular (caso de alguns esquemas de seleção com probabilidades desiguais). Nesses casos, as expressões fornecidas na Seção \ref{estimatotais} para os estimadores das variâncias dos estimadores de totais não são mais válidas.
+
+Em Amostragem, como de resto na Estatística Clássica, a estimação de variâncias é um componente \texttt{essencial} da abordagem inferencial adotada: sem estimativas de variância, nenhuma indicação da precisão (e portanto, da qualidade) das estimativas
+de interesse está disponível. Nesse caso, uma tentação que assola muitos usuários incautos é esquecer que os resultados são baseados apenas em dados de uma amostra da população, e portanto sujeitos a incerteza, que não pode ser quantificada sem medidas de precisão amostral.
+
+Em geral, a obtenção de estimativas de variâncias (alternativamente, de desvios padrões ou mesmo de coeficientes de variação) é requerida para que intervalos de confiança possam ser calculados, e outras formas de inferência realizadas. Intervalos de confiança elaborados com estimativas amostrais são geralmente
+baseados em aproximações assintóticas da distribuição amostral do estimador pela distribuição normal, usando resultados análogos ao TCL para populações finitas - ver Fuller (2009), tais que intervalos da forma
+\[
+IC\left[ \widehat{\theta };\widehat{V}_{p}\left( \widehat{\theta }\right)
+\right] =\left[ \,\, \widehat{\theta } \pm z_{\alpha /2}\sqrt{\widehat{V}_{p} \left( \widehat{\theta} \right) } \,\, \right] 
+\]
+têm probabilidade de cobertura aproximada \(1-\alpha\), com \(z_{\alpha /2}\) sendo o quantil que deixa área de \(1-\alpha/2\) à sua esquerda na distribuição Normal padrão.
+
+Estimativas de variância podem ser úteis também para outras finalidades, tais como a detecção de problemas não antecipados, tais como observações suspeitas, celas raras em tabelas de contingência, etc.
+
+A estimação de variâncias para os casos padrões de amostragem, isto é, quando os estimadores são lineares nas observações amostrais, não viciados, e todas as probabilidades de inclusão conjuntas são não nulas, é tratada em todos os
+livros de amostragem convencionais. Apesar disso, os pacotes estatísticos usuais, tais como SAS, SPSS, MINITAB e outros, por muito tempo não ofereciam rotinas prontas para estimar variâncias considerando o plano amostral, nem mesmo para estatísticas simples como estimadores de totais e médias. Felizmente tal situação mudou, e agora já é possível contar com ferramentas no SAS (procedimentos \texttt{SURVEY}), no SPSS (módulo \texttt{COMPLEX\ SAMPLES}) e no STATA (funções \texttt{svy}). Mas é no pacote \texttt{survey} do sistema R que estão disponíveis as melhores ferramentas para estimação de parâmetros a partir de dados de amostras complexas.
+
+Para alguns planos amostrais utilizados na prática, as probabilidades de inclusão conjuntas podem ser nulas (caso de amostragem sistemática) ou difíceis de calcular (caso de alguns esquemas de seleção com probabilidades desiguais). Nesses casos, as expressões fornecidas na Seção \ref{estimatotais} para os estimadores das variâncias dos estimadores de totais não são mais válidas.
+
+Em muitos outros casos, como se verá no restante deste livro, os parâmetros de interesse são \texttt{não\ lineares} (diferentes de totais, médias e proporções, por exemplo). Casos comuns que consideraremos mais adiante são a estimação de razões,
+coeficientes de modelos de regressão etc. Nesses casos é comum que as estatísticas empregadas para estimar tais parâmetros também sejam \texttt{não\ lineares}.
+
+Em muitos outros casos, como se verá no restante deste livro, os parâmetros de interesse são \texttt{não\ lineares} (diferentes de totais, médias e proporções, por exemplo). Casos comuns que consideraremos mais adiante são a estimação de razões,
+coeficientes de modelos de regressão etc. Nesses casos é comum que as estatísticas empregadas para estimar tais parâmetros também sejam \texttt{não\ lineares}.
+
+Finalmente, alguns estimadores de variância podem, em alguns casos, produzir estimativas negativas da variância, que são inaceitáveis de um ponto de vista prático (tais como o estimador da expressão \eqref{eq:estpa3} para alguns esquemas de seleção com probabilidades desiguais e determinadas configurações peculiares da
+amostra).
+
+Em todos esses casos, é requerido o emprego de técnicas especiais de estimação de variância. É de algumas dessas técnicas que tratam as seções seguintes deste capítulo. A seleção das técnicas discutidas aqui não é exaustiva, e um tratamento
+mais completo e aprofundado da questão pode ser encontrado no livro de Kirk M. Wolter (2007).
+
+Discutimos inicialmente a técnica de \texttt{Linearização\ de\ Taylor}, em seguida uma abordagem comumente adotada para estimar variâncias para planos amostrais estratificados e conglomerados em vários estágios, com seleção de unidades primárias com probabilidades desiguais, denominada \texttt{Método\ do\ Conglomerado\ Primário} (do inglês \emph{Ultimate Cluster}). Por último, trataremos brevemente de uma técnica baseada na ideia de pseudo-replicações da amostra, denominada \texttt{Bootstrap}. A combinação dessas três idéias suporta os desenvolvimentos teóricos dos algoritmos empregados pelo pacote \texttt{survey} do sistema R para estimação de variâncias - veja T. Lumley (2006) e Thomas Lumley (2010).
+
+\hypertarget{taylor}{%
+\section{Linearização de Taylor para Estimar variâncias}\label{taylor}}
+
+Um problema que ocorre frequentemente é o de estimar um vetor de parâmetros
+\(\mathbf{\theta} = \left( \theta _{1},\ldots ,\theta_{K}\right)\) de uma população finita \(U\), que pode ser escrito na forma:
+\[
+\mathbf{\theta} = \mathbf{g}(\mathbf{Y}) 
+\]
+
+onde \(\mathbf{Y} = \sum_{i \in U} \mathbf{y}_i\) é o vetor de totais de \(R\) variáveis de pesquisa.
+
+Consideremos inicialmente estimador tipo Horvitz-Thompson para o vetor de totais populacionais \(\mathbf{Y}\), isto é, estimadores da forma:
+
+\[
+\widehat{\mathbf{Y}}_{HT} = \sum_{i\in a} \, d_i \, \mathbf{y}_{i}  
+\]
+Poderíamos usar como estimador para o vetor de parâmetros \(\theta\) o estimador \(\mathbf{\widehat{\theta}}\) dado por:
+
+\[
+\mathbf{\widehat{\theta}} = \mathbf{g} \left( \widehat{ \mathbf{Y}}_{HT} \right) = \mathbf{g} \left(\sum_{i\in a} \, d_i \, \mathbf{y}_{i} \right)  
+\]
+
+No caso particular em que \(\mathbf{g}\) é uma função linear, é fácil estudar as propriedades de \(\mathbf{\widehat{\theta}}\). Supondo então que \(\mathbf{\theta}\) é da forma
+
+\[
+\mathbf{\theta} = \mathbf{A Y}  
+\]
+onde \(\mathbf{A}\) é uma matriz de constantes de dimensão \(K \times R\), o estimador
+\(\mathbf{\widehat{\theta}}\) de \(\mathbf{\theta}\) neste caso seria
+
+\[
+\mathbf{\widehat{\theta}} = \mathbf{A \widehat{Y}}_{HT} \,
+\]
+
+Este estimador é não-viciado e tem variância de aleatorização dada por:
+
+\[
+V_{p}\left( \mathbf{\widehat{\theta}} \right) = \mathbf{A} \left[ V_{p} \left( \mathbf{\widehat{Y}}_{HT} \right) \right] \mathbf{A}^{^{\prime }} \,\,
+\]
+
+No caso particular em que \(\mathbf{g}\) é uma função linear, é fácil estudar as propriedades de \(\mathbf{\widehat{\theta}}\). Supondo então que \(\mathbf{\theta}\) é da forma
+
+\[
+\mathbf{\theta} = \mathbf{AY}  
+\]
+onde \(\mathbf{A}\) é uma matriz de constantes de dimensão \(K \times P\), o estimador
+\(\mathbf{\widehat{\theta}}\) de \(\mathbf{\theta}\) neste caso seria
+
+\$\$
+\mathbf{\widehat{\theta}} = \mathbf{A \widehat{Y}}\_\{HT\} ,
+
+\$\$
+onde \(V_{p} \left( \mathbf{\widehat{Y}}_{HT}\right)\) é dado em \eqref{eq:estpa2}.
+
+Quando \(\mathbf{g}\) é não linear, podemos usar a técnica de \texttt{Linearização\ de\ Taylor} (ou Método Delta) para obter aproximações assintóticas para a variância de
+
+\(\mathbf{ \widehat{\theta}} = \mathbf{g} \left( \widehat{\mathbf{Y}}_{HT}\right)\). Para maiores detalhes sobre esse método, veja por exemplo p.~172 de (Särndal et al., 1992) ou p.~486 de Bishop et al. (1975).
+
+Vamos considerar a expansão de \$ \mathbf{g} \left( \mathbf{\widehat{Y}}\_\{HT\} \right)\$ em torno de \(\mathbf{Y}\), até o termo de primeira ordem, desprezando o resto, dada por:
+
+\[
+\mathbf{\widehat{\theta} \simeq \widehat{\theta}}_{L} = \mathbf{g(Y) + \Delta g(Y)} \left( \mathbf{\widehat{Y}}_{HT} \mathbf{-Y} \right) \,\,\, \label{eq:estpa19}
+\]
+onde \(\mathbf{\Delta g(Y)}\) é a matriz Jacobiana \(K \times R\) cuja \(r\)-ésima coluna é \(\mathbf{\partial g(Y)/}\partial Y_{r}\), para \(r=1,\ldots, R\).
+
+A ideia básica do método de linearização é aproximar a variância do estimador \(\mathbf{\widehat{\theta}}\) pela variância do \texttt{estimador\ linearizado} \(\mathbf{\widehat{\theta}}_L\) dado pelo lado direito da equação \eqref{eq:estpa19}. Para obter a variância do estimador linearizado, note que:
+
+\[
+\begin{array}{lll}
+ V_p \left( \widehat{\theta}_L \right) & = & V_p \left[ \mathbf{g(Y) + \Delta g(Y)} \left( \mathbf{\widehat{Y}}_{HT} \mathbf{-Y} \right) \right] \\
+ & = & V_p \left[ \mathbf{\Delta g(Y)} \left( \mathbf{\widehat{Y}}_{HT} \right) \right] \\
+ & = & \mathbf{\Delta g(Y)} V_p \left( \mathbf{\widehat{Y}}_{HT} \right)  \mathbf{\Delta g(Y)}^{\prime} 
+\end{array}
+\]
+
+Este resultado segue porque na expressão do lado direito o único termo que tem variância de aleatorização é \(\mathbf{\widehat{Y}}_{HT}\), sendo os demais constantes (em relação ao planejamento amostral). Logo, segue imediatamente que a variância do estimador \(\widehat{\theta}\) pode ser obtida como:
+
+No caso particular em que \(\mathbf{g}\) é uma função linear, é fácil estudar as propriedades de \(\mathbf{\widehat{\theta}}\). Supondo então que \(\mathbf{\theta}\) é da forma
+
+\[
+\mathbf{\theta} = \mathbf{AY}  
+\]
+onde \(\mathbf{A}\) é uma matriz de constantes de dimensão \(K \times P\), o estimador
+\(\mathbf{\widehat{\theta}}\) de \(\mathbf{\theta}\) neste caso seria
+
+\[
+\mathbf{\widehat{\theta}} = \mathbf{A \widehat{Y}}_{HT} \,
+\]
+
+\[
+V_{p} \left( \mathbf{\widehat{\theta}} \right) \mathbf{\simeq \Delta g(Y)} \left[
+V_{p} \left( \mathbf{\hat{Y}}_{HT} \right) \right] \mathbf{\Delta g(Y)}^{\prime}
+\,\, \label{eq:estpa20}
+\]
+onde \(V_{p} \left( \mathbf{\widehat{Y}}_{HT}\right)\) é dado em \eqref{eq:estpa2}.
+
+Um estimador consistente de \(V_{p} \left( \mathbf{\widehat{\theta}}\right)\) é dado por
+
+\[
+\widehat{V}_{p} \left( \mathbf{\widehat{\theta}} \right) = \mathbf{\Delta g( \widehat{Y} }_{HT} \mathbf{)} \left[ \widehat{V}_{p} \left( \mathbf{\widehat{Y}}_{HT} \right) \right] \mathbf{\Delta g\mathbf{(\widehat{Y}}_{HT} \mathbf{)}}^{\prime} \,\,\,  \label{eq:estpa21}
+\]
+onde \(\widehat{V}_{p}\left( \mathbf{\widehat{Y}}_{HT}\right)\) é dado em \eqref{eq:estpa3}.
+
+Linearização de Taylor pode ser trabalhosa, porque para cada parâmetro/estimador de interesse são requeridas derivações e cálculos específicos. Felizmente, grande parte das situações de interesse prático estão hoje cobertas por pacotes estatísticos especializados na estimação de medidas descritivas e parâmetros de modelos, e suas respectivas variâncias de aleatorização empregando o método de linearização, de modo que essa desvantagem potencial tende a se diluir.
+
+XXX Inserir aqui a
+
+Este estimador é não-viciado e tem variância de aleatorização dada por:
+\[
+V_{p}\left( \mathbf{\widehat{\theta}} \right) = \mathbf{A} \left[ V_{p} \left( \mathbf{\widehat{Y}}_{HT} \right) \right] \mathbf{A}^{^{\prime }} \,\,
+\]
+onde \(V_{p} \left( \mathbf{\widehat{Y}}_{HT}\right)\) é dado em \eqref{eq:estpa2}.
+
+Quando \(\mathbf{g}\) é não linear, podemos usar a técnica de Linearização de Taylor (ou Método Delta) para obter aproximações assintóticas para a variância de
+\(\mathbf{ \widehat{\theta}} = \mathbf{g} \left( \widehat{\mathbf{Y}}_{HT}\right)\). Para maiores detalhes sobre esse método, veja por exemplo p.~172 de (Särndal et al., 1992) ou p.~486 de Bishop et al. (1975).
+
+Vamos considerar a expansão de \$ \mathbf{g} \left( \mathbf{\widehat{Y}}\_\{HT\} \right)\$ em torno de \(\mathbf{Y}\), até o termo de primeira ordem, desprezando o resto, dada por:
+
+\[
+\mathbf{\widehat{\theta} \simeq \widehat{\theta}}_{L} = \mathbf{g(Y) + \Delta g(Y)} \left( \mathbf{\widehat{Y}}_{HT} \mathbf{-Y} \right) \,\,\, \label{eq:estpa19}
+\]
+onde \(\mathbf{\Delta g(Y)}\) é a matriz Jacobiana \(K \times P\) cuja \(r\)-ésima coluna é \(\mathbf{\partial g(Y)/}\partial Y_{r}\), para \(r=1,\ldots, P\).
+
+Tomando as variâncias de aleatorização dos dois lados em \eqref{eq:estpa19}, e notando que no lado direito o único termo que tem variância de aleatorização
+\(\mathbf{\Delta g(Y)}\left( \mathbf{\widehat{Y}}_{HT}\mathbf{-Y}\right)\) é uma função linear de \(\mathbf{\widehat{Y}}_{HT}\), segue imediatamente que
+
+\[
+V_{p} \left( \mathbf{\widehat{\theta}} \right) \mathbf{\simeq \Delta g(Y)} \left[
+V_{p} \left( \mathbf{\hat{Y}}_{HT} \right) \right] \mathbf{\Delta g(Y)}^{\prime}
+\,\, \label{eq:estpa20}
+\]
+onde \(V_{p} \left( \mathbf{\widehat{Y}}_{HT}\right)\) é dado em \eqref{eq:estpa2}. Um estimador consistente de \(V_{p} \left( \mathbf{\widehat{\theta}}\right)\) é dado por
+
+\[
+\hat{V}_{p} \left( \mathbf{\widehat{\theta}} \right) = \mathbf{\Delta g( \widehat{Y} }_{HT} \mathbf{)} \left[ \widehat{V}_{p} \left( \mathbf{\widehat{Y}}_{HT} \right) \right] \mathbf{\Delta g\mathbf{(\widehat{Y}}_{HT} \mathbf{)}}^{\prime} \,\,\,  \label{eq:estpa21}
+\]
+onde \(\widehat{V}_{p}\left( \mathbf{\widehat{Y}}_{HT}\right)\) é dado em \eqref{eq:estpa3}.
+
+Linearização de Taylor pode ser trabalhosa, porque para cada parâmetro/estimador de interesse são requeridas derivações e cálculos específicos. Felizmente, grande parte das situações de interesse prático estão hoje cobertas por pacotes estatísticos especializados na estimação de medidas descritivas e parâmetros de modelos, e suas respectivas variâncias de aleatorização empregando o método de linearização, de modo que essa desvantagem potencial tende a se diluir.
+
+Este estimador é não-viciado e tem variância de aleatorização dada por:
+\[
+V_{p}\left( \mathbf{\widehat{\theta}} \right) = \mathbf{A} \left[ V_{p} \left( \mathbf{\widehat{Y}}_{HT} \right) \right] \mathbf{A}^{^{\prime }} \,\,
+\]
+onde \(V_{p} \left( \mathbf{\widehat{Y}}_{HT}\right)\) é dado em \eqref{eq:estpa2}.
+
+Quando \(\mathbf{g}\) é não linear, podemos usar a técnica de Linearização de Taylor (ou Método Delta) para obter aproximações assintóticas para a variância de
+\(\mathbf{ \widehat{\theta}} = \mathbf{g} \left( \widehat{\mathbf{Y}}_{HT}\right)\). Para maiores detalhes sobre esse método, veja por exemplo p.~172 de (Särndal et al., 1992) ou p.~486 de Bishop et al. (1975).
+
+Vamos considerar a expansão de \$ \mathbf{g} \left( \mathbf{\widehat{Y}}\_\{HT\} \right)\$ em torno de \(\mathbf{Y}\), até o termo de primeira ordem, desprezando o resto, dada por:
+
+\[
+\mathbf{\widehat{\theta} \simeq \widehat{\theta}}_{L} = \mathbf{g(Y) + \Delta g(Y)} \left( \mathbf{\widehat{Y}}_{HT} \mathbf{-Y} \right) \,\,\, \label{eq:estpa19}
+\]
+onde \(\mathbf{\Delta g(Y)}\) é a matriz Jacobiana \(K \times P\) cuja \(r\)-ésima coluna é \(\mathbf{\partial g(Y)/}\partial Y_{r}\), para \(r=1,\ldots, P\).
+
+Tomando as variâncias de aleatorização dos dois lados em \eqref{eq:estpa19}, e notando que no lado direito o único termo que tem variância de aleatorização
+\(\mathbf{\Delta g(Y)}\left( \mathbf{\widehat{Y}}_{HT}\mathbf{-Y}\right)\) é uma função linear de \(\mathbf{\widehat{Y}}_{HT}\), segue imediatamente que
+
+\[
+V_{p} \left( \mathbf{\widehat{\theta}} \right) \mathbf{\simeq \Delta g(Y)} \left[
+V_{p} \left( \mathbf{\hat{Y}}_{HT} \right) \right] \mathbf{\Delta g(Y)}^{\prime}
+\,\, \label{eq:estpa20}
+\]
+onde \(V_{p} \left( \mathbf{\widehat{Y}}_{HT}\right)\) é dado em \eqref{eq:estpa2}. Um estimador consistente de \(V_{p} \left( \mathbf{\widehat{\theta}}\right)\) é dado por
+
+\[
+\hat{V}_{p} \left( \mathbf{\widehat{\theta}} \right) = \mathbf{\Delta g( \widehat{Y} }_{HT} \mathbf{)} \left[ \widehat{V}_{p} \left( \mathbf{\widehat{Y}}_{HT} \right) \right] \mathbf{\Delta g\mathbf{(\widehat{Y}}_{HT} \mathbf{)}}^{\prime} \,\,\,  \label{eq:estpa21}
+\]
+onde \(\widehat{V}_{p}\left( \mathbf{\widehat{Y}}_{HT}\right)\) é dado em \eqref{eq:estpa3}.
+
+Linearização de Taylor pode não ser imediatamente possível, pois as quantidades de interesse podem não ser expressas como funções de totais ou médias populacionais (este é o caso de quantis de distribuições, por exemplo).
+
+\begin{example}
+\protect\hypertarget{exm:exe32}{}{\label{exm:exe32} }Matriz de covariância para um vetor de razões
+\end{example}
+
+Para ilustrar a aplicação dos resultados anteriores, consideremos o problema de estimar a matriz de covariância de um vetor de razões. Sejam \(\mathbf{Y}=\left( Y_{1},\ldots Y_{u}\right) ^{\prime }\) e \(\mathbf{X}=\left( X_{1},\ldots, X_{u}\right) ^{\prime }\) vetores de totais e consideremos o vetor de razões \(\mathbf{R=} \left( \frac{Y_{1}}{X_{1}},\ldots ,\frac{Y_{u}}{X_{u}}\right) ^{\prime }.\)
+
+Conhecendo estimativas das matrizes \(V_{p}\left( \mathbf{\hat{Y}}_{HT}\right)\), \(V_{p}\left( \mathbf{\hat{X}}_{HT}\right)\) e \(COV_{p}\left( \mathbf{\hat{Y}}_{HT} \mathbf{;\hat{X}}_{HT}\right)\), queremos calcular a matriz de variância de
+
+\[
+\widehat{\mathbf{R}}\mathbf{=}\left( \frac{\hat{Y}_{1}}{\hat{X}_{1}},\ldots ,\frac{\hat{Y}_{u}}{\hat{X}_{u}}\right) ^{^{\prime }}. 
+\]
+
+Consideremos a função \(\mathbf{g}:\textbf{R}^{2u}\rightarrow \textbf{R}^{u}\) dada por
+
+\[
+\mathbf{g}\left( \mathbf{y},\mathbf{x}\right) =\left( \frac{y_{1}}{x_{1}},\ldots ,\frac{y_{u}}{x_{u}}\right) 
+\]
+onde \(\mathbf{y=}\left( y_{1},\ldots ,y_{u}\right) ^{\prime }\) e \(\mathbf{x=}\left( x_{1},\ldots,x_{u}\right) ^{\prime }\).
+
+A matriz jacobiana de \(\mathbf{g}\left( \mathbf{y},\mathbf{x}\right)\) é a matriz \(u\times 2u\) dada por
+
+\[
+\mathbf{\Delta g}\left( \mathbf{y},\mathbf{x}\right) = \left[ 
+\begin{array}{lll}
+ diag \left( \frac{1}{x_{1}}, \ldots, \frac{1}{x_{u}} \right) &  & diag\left( -\frac{y_{1}}{x_{1}^{2}}, \ldots, -\frac{y_{u}}{x_{u}^{2}} \right)
+\end{array}
+\right] \,\,
+\]
+
+Seja \(\mathbf{D}_{\mathbf{x}}=diag(x_{1},\ldots ,x_{u})\) a matriz diagonal
+de dimensão \(u \times u\) formada a partir do vetor \(\mathbf{x=}\left( x_{1}, \ldots, x_{u}\right) ^{\prime}\). Usando essa notação, podemos escrever o vetor \(\widehat{\mathbf{R}}\) de estimadores das razões como
+
+\[
+\widehat{\mathbf{R}}\mathbf{=}\left( \frac{\hat{Y}_{1 }}{\hat{X}_{1 }},\ldots ,\frac{\hat{Y}_{u }}{\hat{X}_{u }}\right) ^{^{\prime }}=\mathbf{g}\left( \mathbf{\hat{Y}}_{HT},\mathbf{\hat{X}}_{HT}\right)
+\]
+e a correspondente matriz jacobiana como
+
+\[
+\mathbf{\Delta g}\left( \mathbf{\hat{Y}}_{HT},\mathbf{\hat{X}}_{HT} \right) = \left[ \begin{array}{lll}
+\mathbf{\mathbf{D}_{\widehat{\mathbf{R}}}D}_{\mathbf{\hat{Y}}_{HT}}^{-1} &\left. {}\right. & \mathbf{-\mathbf{D}_{\widehat{\mathbf{R}}}D}_{\mathbf{\hat{X}}_{HT}}^{-1}
+\end{array}
+\right] 
+\]
+
+A partir deste resultado, aplicando \eqref{eq:estpa21} podemos escrever:
+\begin{eqnarray*}
+&& 
+\begin{array}{lll}
+\widehat{V}_{p}\left( \widehat{\mathbf{R}}\right) & \doteq & \left[ 
+\begin{array}{lll}
+\mathbf{\mathbf{D}_{\widehat{\mathbf{R}}}D}_{\mathbf{\hat{Y}}_{HT}}^{-1} & 
+\left. {}\right. & \mathbf{-\mathbf{D}_{\widehat{\mathbf{R}}}D}_{\mathbf{\hat{X}}_{HT }}^{-1}
+\end{array}
+\right]
+\end{array}
+\\
+&& 
+\begin{array}{lll}
+&  & \times \left[ 
+\begin{array}{cc}
+\widehat{V}_{p}\left( \mathbf{\hat{Y}}_{HT }\right) & \widehat{COV}_{p}\left( \mathbf{\hat{Y}}_{HT }\mathbf{,\hat{X}}_{HT }\right) \\ 
+\widehat{COV}_{p}\left( \mathbf{\hat{X}}_{HT }\mathbf{,\hat{Y}}_{HT
+}\right) & \widehat{V}_{p}\left( \mathbf{\hat{X}}_{HT }\right)
+\end{array}
+\right]
+\end{array}
+\\
+&& 
+\begin{array}{lll}
+&  & \times \left[ 
+\begin{array}{l}
+\mathbf{D}_{\mathbf{\hat{Y}}_{HT }}^{-1}\mathbf{\mathbf{D}_{\widehat{
+\mathbf{R}}}} \\ 
+-\mathbf{D}_{\mathbf{\hat{X}}_{HT }}^{-1}\mathbf{\mathbf{D}_{\widehat{
+\mathbf{R}}}}
+\end{array}
+\right]
+\end{array}
+\;\;.
+\end{eqnarray*}
+
+Efetuando os produtos das matrizes em blocos obtemos
+\begin{eqnarray}
+\widehat{V}_{p}\left( \widehat{\mathbf{R}}\right) &=&\mathbf{\mathbf{D}_{
+\widehat{\mathbf{R}}}}\left[ \mathbf{D}_{\mathbf{\hat{Y}}_{HT }}^{-1}%
+\widehat{V}_{p}\left( \mathbf{\hat{Y}}_{HT }\right) \mathbf{D}_{\mathbf{
+\hat{Y}}_{HT }}^{-1}+\mathbf{D}_{\mathbf{\hat{X}}_{HT }}^{-1}\widehat{V}
+_{p}\left( \mathbf{\hat{X}}_{HT }\right) \mathbf{D}_{\mathbf{\hat{X}}_{HT
+}}^{-1}\right] \mathbf{\mathbf{D}_{\widehat{\mathbf{R}}}}  \nonumber \\
+&&-\mathbf{\mathbf{D}_{\widehat{\mathbf{R}}}}\left[ \mathbf{D}_{\mathbf{\hat{
+Y}}_{HT }}^{-1}\widehat{COV}_{p}\left( \mathbf{\hat{Y}}_{HT }\mathbf{,\hat{
+X}}_{HT }\right) \mathbf{D}_{\mathbf{\hat{X}}_{HT }}^{-1}\right.
+\label{eq:estpa22} \\
+&&+\left. \mathbf{D}_{\mathbf{\hat{X}}_{HT }}^{-1}\widehat{COV}_{p}\left( 
+\mathbf{\hat{X}}_{HT }\mathbf{,\hat{Y}}_{HT }\right) \mathbf{D}_{\mathbf{
+\hat{Y}}_{HT }}^{-1}\right] \mathbf{\mathbf{D}_{\widehat{\mathbf{R}}}}\;\;
+\mbox{,}  \nonumber
+\end{eqnarray}
+
+que fornece o resultado desejado, isto é, uma expressão de estimador para a matriz de variância do estimador \(\widehat{\mathbf{R}}\) do vetor de razões de interesse.
+
+\hypertarget{muxe9todo-do-conglomerado-primuxe1rio}{%
+\section{Método do Conglomerado Primário}\label{muxe9todo-do-conglomerado-primuxe1rio}}
+
+A ideia central do \texttt{Método\ do\ Conglomerado\ Primário} (do inglês \texttt{Ultimate\ Cluster}) para estimação de variâncias para estimadores de totais e médias em planos amostrais de múltiplos estágios, proposto por (Hansen et al., 1953), é considerar apenas a variação entre informações disponíveis no nível das unidades primárias de amostragem (UPAs), isto é, dosconglomerados primários, e admitir que estes teriam sido selecionados com reposição da população. Esta ideia é simples, porém bastante poderosa, porque permite acomodar uma enorme variedade de planos amostrais, envolvendo estratificação e seleção com probabilidades desiguais (com ou sem reposição) tanto das unidades primárias como das demais unidades de amostragem.
+
+Os requisitos fundamentais para permitir a aplicação deste método são que estejam disponíveis estimadores não viciados dos totais da variável de interesse para cada um dos conglomerados primários selecionados, e que pelo menos dois destes sejam selecionados em cada estrato (se a amostra for estratificada no primeiro estágio).
+
+Embora o método tenha sido originalmente proposto para estimação de totais, pode ser aplicado também para estimar (por linearização) quantidades populacionais que possam ser representadas como funções de totais, conforme discutido na Seção \ref{taylor}. De fato, esse método fornece a base para ferramentas dos sistemas
+estatísticos para cálculo de variâncias considerando o plano amostral, tais como o pacote \texttt{survey} do R, as funções \texttt{svy} do STATA, o módulo \texttt{Complex\ Samples} do SPSS, as procs \texttt{Survey} do SAS, entre outros.
+
+Para descrever o método, considere um plano amostral em vários estágios, no qual \(n_{h}\) unidades primárias de amostragem (UPAs) foram selecionadas no estrato \(h\), com \(h=1, \ldots, H\). Denotemos por \(\pi_{hi}\) a probabilidade de inclusão na amostra da UPA (conglomerado primário) \(i\) do estrato \(h\), e por \(\widehat{Y}_{hi}\) um estimador não viciado do total \(Y_{hi}\) da variável de pesquisa \(y\) na \(i\)-ésima UPA do estrato \(h\). Então um estimador não viciado do total \(Y= \sum_{h=1}^{H} \sum_{i=1}^{N_{h}} Y_{hi}\) da variável de pesquisa \(y\) na população é dado por
+
+\[
+\widehat{Y}_{CP}=\sum_{h=1}^{H}\sum_{i=1}^{n_{h}}\widehat{Y}_{hi}/\pi _{hi} 
+\]
+e um estimador não viciado da variância de aleatorização correspondente por
+
+\[
+\widehat{V}_{p}\left( \widehat{Y}_{CP}\right) =\sum_{h=1}^{H}\frac{n_{h}}
+{n_{h}-1}\sum_{i=1}^{n_{h}}\left( \frac{\widehat{Y}_{hi}}{\pi _{hi}}-
+\frac{\widehat{Y}_{h}}{n_{h}}\right) ^{2}  \label{eq:estpa22}
+\]
+
+onde \(\widehat{Y}_{h} = \sum_{i=1}^{n_{h}} \widehat{Y}_{hi} / \pi _{hi}\) para
+\(h=1,\ldots ,H\). (Veja por exemplo, (Shah et al., 1993), p.~4).
+
+Embora na prática a seleção das UPAs seja geralmente feita sem reposição, o estimador do Método do Conglomerado Primário (MCP) aqui apresentado pode fornecer uma aproximação razoável da correspondente variância de aleatorização. Isso ocorre porque planos amostrais sem reposição são em geral mais eficientes que planos com reposição de igual tamanho.
+
+Tal aproximação é largamente utilizada pelos praticantes de amostragem para estimar variâncias de quantidades descritivas usuais tais como totais e médias (com a devida adaptação) devido à sua simplicidade, comparada com a complexidade muito maior envolvida com o emprego de estimadores de variância que tentam incorporar todas as etapas de planos amostrais conglomerados em vários estágios. Uma discussão sobre a qualidade dessa aproximação e alternativas pode ser encontrada em Särndal et al. (1992), p.~153.
+
+\hypertarget{muxe9todos-de-replicauxe7uxe3o}{%
+\section{Métodos de Replicação}\label{muxe9todos-de-replicauxe7uxe3o}}
+
+A ideia de usar métodos indiretos ou de replicação para estimar variâncias em amostragem não é nova. Mahalanobis (1939), Mahalanobis (1944) e Deming (1956) foram os precursores e muitos desenvolvimentos importantes se seguiram. Hoje em dia várias técnicas baseadas nessa ideia são rotineiramente empregadas por praticantes de amostragem, e
+inclusive formam a base para pacotes especializados de estimação tais como WesVarPC (veja Westat (1996)).
+
+A ideia básica original foi construir a amostra de tamanho \(n\) como a união de \(G\) amostras de tamanho \(n/G\) cada uma, selecionadas de forma independente e usando o mesmo plano amostral, onde \(G\) é o número de \texttt{replicações}. Nesse caso, se \(\theta\) é o parâmetro-alvo, e \(\widehat{\theta}_{g}\) é um estimador não viciado de \(\theta\) baseado na \(g\)-ésima réplica \((g=1,\ldots ,G)\), segue-se que
+
+\[
+\widehat{\theta }_{R}=\frac{1}{G}\sum_{g=1}^{G}\widehat{\theta }_{g} 
+\]
+
+é também um estimador não viciado de \(\theta\) e
+
+\[
+\widehat{V}_{R} \left( \widehat{\theta }_{R}\right) = \frac{1}{G \left(
+G-1 \right)} \sum_{g=1}^{G} \left( \widehat{\theta }_{g} - \widehat{\theta}_{R} \right)^{2}  \,\, \label{eq:estpa23}
+\]
+é um estimador não viciado (de replicação) da variância do estimador \(\widehat{\theta}_{R}\) .
+
+Note que desde que as réplicas sejam construídas de forma independente conforme indicado, os estimadores \(\widehat{\theta }_{R}\) e \(\widehat{V}_{R}\left( \widehat{\theta }_{R}\right)\) são não viciados qualquer que seja o plano amostral empregado para selecionar a amostra de cada réplica, o que faz desta uma técnica
+flexível e genérica. Além disso, a abordagem de replicação é bastante geral, pois os estimadores aos quais se aplica não precisam ser necessariamente expressos como funções de totais, como ocorre com a técnica de linearização discutida na Seção
+\ref{taylor}.
+
+Apesar destas vantagens, a aplicação prática desta técnica de forma exata é restrita porque, em geral, é menos eficiente, inconveniente e mais caro selecionar \(G\) amostras (réplicas) independentes com o mesmo esquema, se comparado à seleção de uma única amostra de tamanho \(n\) diretamente. Além disto, se o número de
+réplicas \(G\) for pequeno, o estimador de variância pode ser instável.
+
+Uma pesquisa importante e de grande porte em que esta ideia é aplicada exatamente é a pesquisa de preços para formar o índice de Preços ao Consumidor (do inglês
+\emph{Consumer Price Index - CPI} do Labor Statistics (1984), p.~22, que utiliza duas réplicas (meias amostras) para formar a amostra pesquisada.
+
+Mesmo quando a amostra não foi selecionada exatamente dessa forma, a construção de réplicas a posteriori para fins de estimação de variâncias em situações complexas é também uma ideia simples de aplicar, poderosa e flexível, por acomodar uma ampla gama de planos amostrais e situações de estimação de interesse. Quando as réplicas são construídas após a pesquisa (a posteriori), mediante repartição (por sorteio) da amostra pesquisada em \(G\) grupos mutuamente exclusivos de igual tamanho, estas são chamadas de \texttt{réplicas\ dependentes} ou \texttt{grupos\ aleatórios} (do inglês \emph{random groups}). As expressões fornecidas para o estimador de replicação e sua
+variância são também empregadas nesse caso como uma aproximação, mas não possuem as mesmas propriedades do caso de réplicas independentes.
+
+É importante observar que a repartição da amostra em grupos aleatórios a posteriori precisa considerar o plano amostral empregado e pode não ser possível em algumas situações. Idealmente, tal repartição deveria ser feita respeitando estratos e alocando UPAs inteiras (isto é, com todas as respectivas unidades subordinadas). K. M. Wolter (1985), p.~31, discute algumas regras sobre como fazer para respeitar o plano amostral ao fazer a repartição da amostra a posteriori, porém recomendamos que o interessado no uso dessa técnica exerça cautela.
+
+Além da modificação da interpretação das réplicas no caso de serem formadas a posteriori, é comum também nesse caso empregar um estimador para o parâmetro \(\theta\) baseado na amostra completa (denotado \(\widehat{\theta}\)), e um estimador de variância mais conservador que o estimador \(\widehat{V}_{R}\left( \widehat{\theta }_{R}\right)\) anteriormente apresentado, dado por
+
+\[
+\widehat{V}_{RG}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
+}\sum_{g=1}^{G}\left( \widehat{\theta }_{g}-\widehat{\theta }\right) ^{2} \,\,
+\label{eq:estpa24}
+\]
+
+Um exemplo de aplicação desta técnica pode ser encontrado na forma recomendada para estimação de variâncias a partir das Amostras de Uso Público do Censo Demográfico Brasileiro de 80 (veja IBGE (1985)).
+
+Nesta seção descreveremos uma outra dessas técnicas baseadas em replicações, talvez a mais conhecida e popular, o método de \texttt{jackknife}. Este método foi originalmente proposto por (Quenoille, 1949) e (Quenoille, 1956) como uma técnica para redução de vício de estimadores, num contexto da Estatística Clássica. A ideia central consiste em repartir a amostra (a posteriori, como no caso do método dos grupos aleatórios) em \(G\) grupos mutuamente exclusivos de igual tamanho \(n/G\). Em seguida, para cada grupo formado calcular os chamados pseudo-estimadores dados por
+
+\[
+\widehat{\theta }_{\left( g\right) }=G\widehat{\theta }-\left( G-1\right) 
+\widehat{\theta }_{g} 
+\]
+
+onde \(\widehat{\theta }_{g}\) é um estimador de \(\theta\) obtido da amostra após eliminar os elementos do grupo \(g\), empregando a mesma forma funcional adotada no cálculo do estimador \(\widehat{\theta}\) que considera a amostra inteira.
+
+A estimação da variância por esse método pode então ser feita de duas maneiras alternativas, usando um dos estimadores dados por
+
+\[
+\widehat{V}_{J1}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
+}\sum_{g=1}^{G}\left( \widehat{\theta }_{\left( g\right) }-\widehat{\theta }
+_{J}\right) ^{2}  \label{eq:estpa25}
+\]
+ou
+
+\[
+\widehat{V}_{J2}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
+}\sum_{g=1}^{G}\left( \widehat{\theta }_{\left( g\right) }-\widehat{\theta }
+\right) ^{2}  \label{eq:estpa26}
+\]
+onde \(\widehat{\theta }_{J} = \frac{1}{G} \sum_{g=1}^{G} \widehat{\theta }_{\left( g\right)}\) é um estimador pontual \emph{jackknife} para \(\theta\), alternativo ao estimador da amostra inteira \(\hat{\theta}\).
+
+\begin{remark}
+\iffalse{} {Observação } \fi{}A descrição do método \emph{jackknife} aqui apresentada não cobre o caso de planos amostrais estratificados, que é mais complexo. Para detalhes sobre este caso, consulte K. M. Wolter (1985), pág. 174.
+\end{remark}
+
+\begin{remark}
+\iffalse{} {Observação } \fi{}O estimador \(\widehat{V}_{J2}\left( \widehat{\theta }\right)\) é mais conservador que o estimador \(\widehat{V}_{J1}\left( \widehat{\theta }\right)\).
+\end{remark}
+
+\begin{remark}
+\iffalse{} {Observação } \fi{}É comum aplicar a técnica fazendo o número de grupos igual ao tamanho da amostra, isto é, tomando \(G=n\) e portanto eliminando uma observação da amostra de cada vez ao calcular os pseudo-valores. Essa regra deve ser aplicada considerando o número de UPAs quando o plano amostral é em múltiplos estágios, pois as UPAs devem sempre ser eliminadas com todas as unidades subordinadas.
+\end{remark}
+
+Os estimadores de variância do método \texttt{jackknife} fornecem resultado idêntico aos dos estimadores usuais de variância quando aplicados para o caso de estimadores lineares nas observações amostrais. Além disso, suas propriedades são razoáveis para vários outros casos de estimadores não lineares de interesse (veja, por exemplo, (\textbf{cochran1977?}), p.~321 e K. M. Wolter (1985), p.~306). A situação merece maiores cuidados para o caso de quantis ou estatísticas de ordem, tais como a mediana e o máximo, pois neste caso essa técnica não funciona bem K. M. Wolter (1985), p.~163.
+
+O pacote WesVarPC - Westat (1996) - baseia suas estimativas de variância principalmente no método \texttt{jackknife}, embora também possua uma opção para usar outro método conhecido como de replicações de meias amostras balanceadas (do inglês \emph{balanced half-sample replication}).
+
+\hypertarget{laboratuxf3rio-de-r}{%
+\section{Laboratório de R}\label{laboratuxf3rio-de-r}}
+
+Vamos utilizar dados da Pesquisa de Padrão de Vida (PPV) do IBGE para ilustrar alguns métodos de estimação de variâncias. Vamos considerar a estimação da proporção de analfabetos na faixa etária acima de 14 anos. Os dados da pesquisa encontram-se no data frame \texttt{ppv1}. A variável \texttt{analf2} é indicadora da condição
+de analfabetismo na faixa etária acima de 14 anos e a variável \texttt{faixa2} é indicadora da faixa etária acima de 14 anos. Queremos estimar a proporção de analfabetos na faixa etária acima de 14 anos na região Sudeste. Antes apresentamos o método de estimação de variância por linearização de Taylor
+
+Vamos criar duas variáveis:
+
+\begin{itemize}
+\tightlist
+\item
+  analf - variável indicadora da condição de analfabetismo: \texttt{v04a01} ou
+  \texttt{v04a02} igual a 2;
+\item
+  faixa - variável indicadora de faixa etária entre 7 e 14 anos.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(survey)}
+\NormalTok{ppv\_dat }\OtherTok{\textless{}{-}} \FunctionTok{readRDS}\NormalTok{(}\StringTok{"./data/ppv.rds"}\NormalTok{) }\CommentTok{\# carrega dados}
+\CommentTok{\# cria objeto de desenho}
+\NormalTok{ppv\_plan}\OtherTok{\textless{}{-}}\FunctionTok{svydesign}\NormalTok{(}\AttributeTok{ids =} \SpecialCharTok{\textasciitilde{}}\NormalTok{nsetor, }\AttributeTok{strata =} \SpecialCharTok{\textasciitilde{}}\NormalTok{estratof,}
+\AttributeTok{data =}\NormalTok{ ppv\_dat, }\AttributeTok{nest =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{weights =} \SpecialCharTok{\textasciitilde{}}\NormalTok{pesof)}
+\CommentTok{\# atualiza objeto de desenho com novas variáveis}
+\NormalTok{ppv\_plan}\OtherTok{\textless{}{-}}\FunctionTok{update}\NormalTok{(ppv\_plan,}
+  \AttributeTok{analf=}\NormalTok{(v04a01 }\SpecialCharTok{==} \DecValTok{2} \SpecialCharTok{|}\NormalTok{ v04a02 }\SpecialCharTok{==} \DecValTok{2}\NormalTok{)}\SpecialCharTok{*}\DecValTok{1}\NormalTok{,}
+  \AttributeTok{faixa=}\NormalTok{(v02a08 }\SpecialCharTok{\textgreater{}=} \DecValTok{7} \SpecialCharTok{\&}\NormalTok{ v02a08 }\SpecialCharTok{\textless{}=} \DecValTok{14}\NormalTok{) }\SpecialCharTok{*}\DecValTok{1}\NormalTok{,}
+  \AttributeTok{analf.faixa=}\NormalTok{ (analf}\SpecialCharTok{==}\DecValTok{1} \SpecialCharTok{\&}\NormalTok{ faixa}\SpecialCharTok{==}\DecValTok{1}\NormalTok{)}\SpecialCharTok{*}\DecValTok{1}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Como estamos interessados em estimativas relativas à Região Sudeste, vamos restringir o desenho a esse domínio:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ppv\_se\_plan }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(ppv\_plan, regiao }\SpecialCharTok{==} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Vamos estimar os totais das variáveis \texttt{analf.faixa} e \texttt{faixa}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{analf\_faixa\_tot\_est}\OtherTok{\textless{}{-}}\FunctionTok{svytotal}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{analf.faixa}\SpecialCharTok{+}\NormalTok{faixa ,ppv\_se\_plan )}
+\NormalTok{Vcov.Y1.Y2}\OtherTok{\textless{}{-}}\FunctionTok{vcov}\NormalTok{(analf\_faixa\_tot\_est) }
+\end{Highlighting}
+\end{Shaded}
+
+Substituindo os valores na expressão \eqref{eq:estpa21}, obtemos a estimativa da variância da razão de totais das variáveis \texttt{analf.faixa} e \texttt{faixa}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{y1hat}\OtherTok{\textless{}{-}}\FunctionTok{coef}\NormalTok{(analf\_faixa\_tot\_est)[}\DecValTok{1}\NormalTok{]}
+\NormalTok{y2hat}\OtherTok{\textless{}{-}}\FunctionTok{coef}\NormalTok{(analf\_faixa\_tot\_est)[}\DecValTok{2}\NormalTok{]}
+\NormalTok{Var.raz}\OtherTok{\textless{}{-}}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\NormalTok{y2hat)}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\NormalTok{y2hat)}\SpecialCharTok{*}\NormalTok{Vcov.Y1.Y2[}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{]}\SpecialCharTok{+}\DecValTok{2}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\NormalTok{y2hat)}\SpecialCharTok{*}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{y1hat}\SpecialCharTok{/}\NormalTok{y2hat}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}\SpecialCharTok{*}\NormalTok{Vcov.Y1.Y2[}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{]}\SpecialCharTok{+}
+\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{y1hat}\SpecialCharTok{/}\NormalTok{y2hat}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}\SpecialCharTok{*}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{y1hat}\SpecialCharTok{/}\NormalTok{y2hat}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}\SpecialCharTok{*}\NormalTok{Vcov.Y1.Y2[}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{]}
+\CommentTok{\# estimativa do desvio{-}padrão}
+\FunctionTok{sqrt}\NormalTok{(Var.raz)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  faixa 
+## 0,0118
+\end{verbatim}
+
+Podemos calcular diretamente o desvio-padrão:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{svyratio}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{analf.faixa, }\SpecialCharTok{\textasciitilde{}}\NormalTok{faixa, ppv\_se\_plan)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Ratio estimator: svyratio.survey.design2(~analf.faixa, ~faixa, ppv_se_plan)
+## Ratios=
+##             faixa
+## analf.faixa 0,119
+## SEs=
+##              faixa
+## analf.faixa 0,0118
+\end{verbatim}
+
+A estimativa do desvio-padrão obtida por meio da função \texttt{svyratio} coincide com a obtida diretamente pelo método
+de linearização, e é igual a \text{0,012}. O método default para estimar variâncias
+usado pela library \texttt{survey} (Thomas Lumley, 2017) do R é o de linearização de Taylor.
+
+A library \texttt{survey} dispõe de métodos alternativos para a estimação de variância. Vamos utilizar os métodos de replicação
+de \emph{Jackknife} e de \emph{Bootstrap} para estimar esta variância de razão. Inicialmente, vamos converter o objeto de desenho \texttt{ppv1\_se\_plan} em um objeto de desenho de replicação de tipo \emph{Jackknife}, contendo as réplicas de pesos que fornecem correspondentes réplicas de estimativas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ppv\_se\_plan\_jkn}\OtherTok{\textless{}{-}}\FunctionTok{as.svrepdesign}\NormalTok{(ppv\_se\_plan,}\AttributeTok{type=}\StringTok{"JKn"}\NormalTok{)}
+\FunctionTok{svyratio}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{analf.faixa, }\SpecialCharTok{\textasciitilde{}}\NormalTok{faixa, ppv\_se\_plan\_jkn)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Ratio estimator: svyratio.svyrep.design(~analf.faixa, ~faixa, ppv_se_plan_jkn)
+## Ratios=
+##             faixa
+## analf.faixa 0,119
+## SEs=
+##        [,1]
+## [1,] 0,0118
+\end{verbatim}
+
+Para o tipo \emph{Bootstrap}, temos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ppv\_se\_plan\_boot}\OtherTok{\textless{}{-}}\FunctionTok{as.svrepdesign}\NormalTok{(ppv\_se\_plan,}\AttributeTok{type=}\StringTok{"bootstrap"}\NormalTok{)}
+\FunctionTok{svyratio}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{analf.faixa, }\SpecialCharTok{\textasciitilde{}}\NormalTok{faixa, ppv\_se\_plan\_boot)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Ratio estimator: svyratio.svyrep.design(~analf.faixa, ~faixa, ppv_se_plan_boot)
+## Ratios=
+##             faixa
+## analf.faixa 0,119
+## SEs=
+##        [,1]
+## [1,] 0,0135
+\end{verbatim}
+
+Vamos apresentar mais detalhes sobre a obtenção dos estimadores de \emph{Jackknife} e \emph{Bootstrap} na library \texttt{survey} (Thomas Lumley, 2017).
+A classe do objeto \texttt{ppv\_se\_plan\_jkn} é \texttt{svyrep.design} e ele contém as seguintes componentes:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(ppv\_se\_plan\_jkn)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "svyrep.design"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{names}\NormalTok{(ppv\_se\_plan\_jkn)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "repweights"       "pweights"         "type"             "rho"             
+##  [5] "scale"            "rscales"          "call"             "combined.weights"
+##  [9] "selfrep"          "mse"              "variables"        "degf"
+\end{verbatim}
+
+A componente \texttt{repweights} é uma lista com duas componentes: \texttt{weights} e \texttt{index}. A componente
+\texttt{weights} é uma matriz de dimensão \(276 \times 276\), onde \(276\) é o número de conglomerados primários do plano
+amostral da PPV na região Sudeste. A partir desta matriz, podemos obter \(276\) réplicas de pesos de desenho de Jackknife.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ppv\_se\_dat}\OtherTok{\textless{}{-}}\NormalTok{ppv\_se\_plan\_jkn}\SpecialCharTok{$}\NormalTok{variables}
+\FunctionTok{nrow}\NormalTok{(ppv\_se\_dat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 8903
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ncong}\OtherTok{\textless{}{-}}\FunctionTok{sum}\NormalTok{(}\FunctionTok{with}\NormalTok{(ppv\_se\_dat,}\FunctionTok{tapply}\NormalTok{( nsetor,estratof, }\ControlFlowTok{function}\NormalTok{(t) }\FunctionTok{length}\NormalTok{(}\FunctionTok{unique}\NormalTok{(t)))))}
+\NormalTok{ncong}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 276
+\end{verbatim}
+
+O argumento \texttt{compress} da função \texttt{as.svrepdesign} permite especificar se, na saída da função, a matriz
+\texttt{weights} será na forma comprimida ou não. Na aplicação feita foi usado o valor default que é a forma comprimida.
+A forma não comprimida da matriz \texttt{weights} tem \text{8903} linhas e \text{276} colunas. A forma comprimida
+permite economizar memória, e pode ser facilmente convertida para a forma não comprimida, utilizando-se a componente\texttt{index}.
+
+No método \emph{jackknife}, cada um dos conglomerados primários é removido, e a réplica correspondente dos pesos é o produto
+do peso amostral original por um fator apropriado, definido da forma a seguir. Suponhamos que foi removido um conglomerado
+no estrato \(h\), então os pesos do plano amostral serão multiplicados por:
+
+\begin{itemize}
+\tightlist
+\item
+  \(0\) para as unidades no conglomerado removido;
+\item
+  \(m_h/(m_h-1)\) para unidades pertencentes a outros conglomerados do estrato \(h\);
+\item
+  \(1\) para unidades em estratos \(h'\neq h\).
+\end{itemize}
+
+Podemos obter a matriz de fatores de correção do peso amostral na forma não comprimida da seguinte maneira:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fact\_peso\_comp\_mat}\OtherTok{\textless{}{-}}\NormalTok{ppv\_se\_plan\_jkn}\SpecialCharTok{$}\NormalTok{repweights[[}\DecValTok{1}\NormalTok{]]}
+\NormalTok{ind\_cong }\OtherTok{\textless{}{-}}\NormalTok{ppv\_se\_plan\_jkn}\SpecialCharTok{$}\NormalTok{repweights[[}\DecValTok{2}\NormalTok{]]}
+\NormalTok{fat\_pesos\_mat}\OtherTok{\textless{}{-}}\NormalTok{ fact\_peso\_comp\_mat[ind\_cong,]}
+\FunctionTok{str}\NormalTok{(fat\_pesos\_mat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  num [1:8903, 1:276] 0 0 1,06 1,06 1,06 ...
+\end{verbatim}
+
+Podemos obter matriz de réplicas de pesos multiplicando cada coluna dessa matriz pelos pesos do plano amostra:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rep\_pesos\_mat}\OtherTok{\textless{}{-}}\FunctionTok{weights}\NormalTok{(ppv\_se\_plan)}\SpecialCharTok{*}\NormalTok{fat\_pesos\_mat}
+\end{Highlighting}
+\end{Shaded}
+
+Utilizando esta matriz de réplicas de pesos, podemos obter réplicas correspondentes de estimativas da razão.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rep\_est\_raz}\OtherTok{\textless{}{-}}\FunctionTok{numeric}\NormalTok{(}\FunctionTok{ncol}\NormalTok{(rep\_pesos\_mat))}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{ncol}\NormalTok{(rep\_pesos\_mat))\{}
+\NormalTok{rep\_est\_raz[i]}\OtherTok{\textless{}{-}}\FunctionTok{sum}\NormalTok{(rep\_pesos\_mat[,i]}\SpecialCharTok{*}\NormalTok{ppv\_se\_dat}\SpecialCharTok{$}\NormalTok{analf.faixa)}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(rep\_pesos\_mat[,i]}\SpecialCharTok{*}\NormalTok{ppv\_se\_dat}\SpecialCharTok{$}\NormalTok{faixa)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+A partir destas réplicas de estimativas da razão, finalmente estimamos a variância:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mean\_raz}\OtherTok{\textless{}{-}}\FunctionTok{mean}\NormalTok{( rep\_est\_raz[ppv\_se\_plan\_jkn}\SpecialCharTok{$}\NormalTok{rscales}\SpecialCharTok{\textgreater{}}\DecValTok{0}\NormalTok{])}
+\NormalTok{var\_jack\_raz}\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{((rep\_est\_raz}\SpecialCharTok{{-}}\NormalTok{mean\_raz)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{*}\NormalTok{ppv\_se\_plan\_jkn}\SpecialCharTok{$}\NormalTok{rscales)}\SpecialCharTok{*}\NormalTok{ppv\_se\_plan\_jkn}\SpecialCharTok{$}\NormalTok{scale}
+\FunctionTok{round}\NormalTok{(}\FunctionTok{sqrt}\NormalTok{(var\_jack\_raz),}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,0118
+\end{verbatim}
+
+A library \texttt{survey} (Thomas Lumley, 2017) fornece uma função para estimar a variância de uma função de totais a partir das réplicas de pesos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{var\_raz\_rep}\OtherTok{\textless{}{-}}\FunctionTok{withReplicates}\NormalTok{(ppv\_se\_plan\_jkn, }\ControlFlowTok{function}\NormalTok{(w,ppv\_se\_dat) }\FunctionTok{sum}\NormalTok{(w}\SpecialCharTok{*}\NormalTok{ppv\_se\_dat}\SpecialCharTok{$}\NormalTok{analf.faixa)}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(w}\SpecialCharTok{*}\NormalTok{ppv\_se\_dat}\SpecialCharTok{$}\NormalTok{faixa))}
+\NormalTok{var\_raz\_rep }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      theta   SE
+## [1,] 0,119 0,01
+\end{verbatim}
+
+Resultado que coincide com a estimativa obtida pela aplicação da função \texttt{svyratio}.
+
+A vantagem de utilizar métodos de replicação é a facilidade com que estimamos a variância de qualquer
+característica da população, cujo estimador pontual é conhecido. Por exemplo, se quisermos estimar a variância da razão das taxas de analfabetos nas faixas etárias de 0 a 14 anos e acima de 14 anos podemos usar as mesmas réplicas de pesos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{withReplicates}\NormalTok{ (ppv\_se\_plan\_jkn,}\ControlFlowTok{function}\NormalTok{(w,ppv\_se\_dat) }\FunctionTok{with}\NormalTok{(ppv\_se\_dat,}
+\NormalTok{(}\FunctionTok{sum}\NormalTok{(w}\SpecialCharTok{*}\NormalTok{(analf}\SpecialCharTok{==}\DecValTok{1}\SpecialCharTok{\&}\NormalTok{faixa}\SpecialCharTok{==}\DecValTok{1}\NormalTok{))}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(w}\SpecialCharTok{*}\NormalTok{(faixa}\SpecialCharTok{==}\DecValTok{1}\NormalTok{)))}\SpecialCharTok{/}\NormalTok{(}\FunctionTok{sum}\NormalTok{(w}\SpecialCharTok{*}\NormalTok{(analf}\SpecialCharTok{==}\DecValTok{1}\SpecialCharTok{\&}\NormalTok{faixa}\SpecialCharTok{==}\DecValTok{0}\NormalTok{))}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(w}\SpecialCharTok{*}\NormalTok{(faixa}\SpecialCharTok{==}\DecValTok{0}\NormalTok{)))}
+\NormalTok{))  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      theta   SE
+## [1,] 0,504 0,05
+\end{verbatim}
+
+O erro padrão da razão entre razões estimada no exemplo anterior pode ser estimado por linearização de Taylor, usando-se a função \texttt{svycontrast()} da library survey:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# cria variáveis dummies: }
+\NormalTok{ppv\_se\_plan }\OtherTok{\textless{}{-}} \FunctionTok{update}\NormalTok{(ppv\_se\_plan,}
+\AttributeTok{num1 =} \FunctionTok{as.numeric}\NormalTok{(analf}\SpecialCharTok{==}\DecValTok{1} \SpecialCharTok{\&}\NormalTok{ faixa}\SpecialCharTok{==}\DecValTok{1}\NormalTok{),}
+\AttributeTok{num2 =} \FunctionTok{as.numeric}\NormalTok{(analf}\SpecialCharTok{==}\DecValTok{1} \SpecialCharTok{\&}\NormalTok{ faixa}\SpecialCharTok{==}\DecValTok{0}\NormalTok{),}
+\AttributeTok{den1 =} \FunctionTok{as.numeric}\NormalTok{ (faixa }\SpecialCharTok{==} \DecValTok{1}\NormalTok{),}
+\AttributeTok{den2 =} \FunctionTok{as.numeric}\NormalTok{(faixa }\SpecialCharTok{==} \DecValTok{0}\NormalTok{)}
+\NormalTok{)}
+\CommentTok{\# estima totais e matriz de covariância de estimativas de totais}
+\NormalTok{comp.tot }\OtherTok{\textless{}{-}} \FunctionTok{svytotal}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{num1}\SpecialCharTok{+}\NormalTok{num2}\SpecialCharTok{+}\NormalTok{den1}\SpecialCharTok{+}\NormalTok{den2, ppv\_se\_plan)  }
+
+\CommentTok{\# estima razão de razões:  }
+\FunctionTok{svycontrast}\NormalTok{(comp.tot, }\FunctionTok{quote}\NormalTok{((num1}\SpecialCharTok{/}\NormalTok{den1)}\SpecialCharTok{/}\NormalTok{(num2}\SpecialCharTok{/}\NormalTok{den2)))  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          nlcon   SE
+## contrast 0,504 0,05
+\end{verbatim}
+
+\hypertarget{referuxeancias}{%
+\chapter*{Referências}\label{referuxeancias}}
+\addcontentsline{toc}{chapter}{Referências}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\hypertarget{ref-binder83}{}%
+Binder, D. A. (1983). On the variances of asymptotically normal estimators from complex surveys. \emph{International Statistical Review}, \emph{51}, 279--292.
+
+\leavevmode\hypertarget{ref-Bishop1975}{}%
+Bishop, Y. M. M.; Fienberg, S. E. e Holland, P. W. (1975). \emph{Discrete Multivariate Analysis: Theory and Practice}. The MIT Press.
+
+\leavevmode\hypertarget{ref-Brewer1963}{}%
+Brewer, K. R. W. (1963). {Ratio estimation and finite populations: Some results deducible from the assumption of an underlying stochastic process}. \emph{The Australian Journal of statistics}, \emph{5}(3).
+
+\leavevmode\hypertarget{ref-Casella2010}{}%
+Casella, G. e Berger, R. L. (2010). \emph{Inferência Estatística}. Cengage Learning.
+
+\leavevmode\hypertarget{ref-cassel1977}{}%
+Cassel, C. M.; Särndal, C. E. e Wretman, J. H. (1977). \emph{Foundations of Inference in Survey Sampling}. John Wiley \& Sons.
+
+\leavevmode\hypertarget{ref-CHSK2003}{}%
+Chambers, R. L. e Skinner, C. J. (Eds.). (2003). \emph{Analysis of Survey Data}. John Wiley \& Sons.
+
+\leavevmode\hypertarget{ref-Cochran1977}{}%
+Cochran, W. G. (1977). \emph{{Sampling Techniques}} (3rd ed., p. 428). John Wiley {\&} Sons.
+
+\leavevmode\hypertarget{ref-deming1956}{}%
+Deming, W. E. (1956). On simplifications of sampling design through replication with equal probabilities and without stages. \emph{Journal of the American Statistical Association}, \emph{51}, 24--53.
+
+\leavevmode\hypertarget{ref-Deville1992}{}%
+Deville, J. C. e Särndal, C. E. (1992). {Calibration estimators in survey sampling}. \emph{Journal of the American Statistical Association}, \emph{87}, 376--382.
+
+\leavevmode\hypertarget{ref-Fuller2009}{}%
+Fuller, W. A. (2009). \emph{Sampling Statistics}. John Wiley.
+
+\leavevmode\hypertarget{ref-hansen1953}{}%
+Hansen, M. H.; Hurwitz, W. N. e Madow, W. G. (1953). \emph{Sample Survey Methods and Theory}. John Wiley \& Sons.
+
+\leavevmode\hypertarget{ref-heeringa}{}%
+Heeringa, S. G.; West, B. T. e Berglund, P. A. (2010). \emph{Applied Survey Data Analysis}. Taylor \& Francis. Disponível em: \url{https://books.google.com.br/books?id=QNmIvnTLlxcC} (Acesso: set. 2020.)
+
+\leavevmode\hypertarget{ref-IBGE1985}{}%
+IBGE. (1985). \emph{Amostra de {Uso} {Público} do {Censo} {Demográfico} de 1980 - {Metodologia} e {Manual} do {Usuário}}. IBGE.
+
+\leavevmode\hypertarget{ref-kalton83a}{}%
+Kalton, G. (1983). \emph{Compensating for missing survey data}. The University of Michigan, Institute for Social Research, Survey Research Center.
+
+\leavevmode\hypertarget{ref-USBureau1984}{}%
+Labor Statistics, U. B. of. (1984). \emph{BLS Handbook of Methods - Volume II - The Consumer Price Index} {[}BLS Bulletin 2134-2{]}.
+
+\leavevmode\hypertarget{ref-lethonen}{}%
+Lehtonen, R. e Pahkinen, E. J. (1995). \emph{Practical Methods for Design and Analysis of Complex Surveys}. John Wiley \& Sons.
+
+\leavevmode\hypertarget{ref-LR2002}{}%
+Little, R. J. A. e Rubin, D. B. (2002). \emph{Statistical Analysis with missing data}. John Wiley \& Sons.
+
+\leavevmode\hypertarget{ref-Lumley2006}{}%
+Lumley, T. (2006). Analysis of complex survey samples. \emph{Journal of Statistical Software}, \emph{9}(1), 1--19.
+
+\leavevmode\hypertarget{ref-Lumley2010}{}%
+Lumley, Thomas. (2010). \emph{{Complex Surveys: A Guide to Analysis Using R}} (p. 276). John Wiley \& Sons.
+
+\leavevmode\hypertarget{ref-R-survey}{}%
+Lumley, Thomas. (2017). \emph{survey: Analysis of Complex Survey Samples}. Disponível em: \url{https://CRAN.R-project.org/package=survey} (Acesso: set. 2020.)
+
+\leavevmode\hypertarget{ref-Marcos2015}{}%
+Magalhães, M. N. e Lima, A. C. P. (2015). \emph{Noções de Probabilidade e Estatística} (7ª edição, 3ª reimpressão revista). Edusp - Editora da Universidade de São Paulo.
+
+\leavevmode\hypertarget{ref-Mahala1939}{}%
+Mahalanobis, P. C. (1939). A sample survey of the acreage under jute in Bengal. \emph{Sankhya}, \emph{4}, 511--531.
+
+\leavevmode\hypertarget{ref-Mahala1944}{}%
+Mahalanobis, P. C. (1944). On large-scale sample surveys. \emph{Philosophical Transactions of the Royal Society of London B}, \emph{231}, 329--451.
+
+\leavevmode\hypertarget{ref-Mont87}{}%
+Montanari, G. E. (1987). Post-sampling efficient {QR-prediction} in large-sample surveys. \emph{International Statistical Review}, \emph{55}, 191--202.
+
+\leavevmode\hypertarget{ref-NICbr2020a}{}%
+NIC.br. (2020). \emph{{Pesquisa Sobre o Uso das Tecnologias da Informa{ç}{ã}o e da Comunica{ç}{ã}o no Brasil}} (p. 344). Disponível em: \url{https://cetic.br/media/docs/publicacoes/2/20201123121817/tic_dom_2019_livro_eletronico.pdf\%0Ahttps://cetic.br/pt/publicacoes/indice/pesquisas/\%0Ahttps://cetic.br/pt/publicacao/pesquisa-sobre-o-uso-das-tecnologias-de-informacao-e-comunicacao-nos-domicilios} (Acesso: set. 2020.)
+
+\leavevmode\hypertarget{ref-Pessoa1998}{}%
+Pessoa, D. G. C. e Silva, P. L. N. (1998). \emph{{An{á}lise de dados amostrais complexos}} (p. 170). Associa{ç}{ã}o Brasileira de Estat{í}stica.
+
+\leavevmode\hypertarget{ref-Pfeff}{}%
+Pfeffermann, D. (1993). The role of sampling weights when modelling survey data. \emph{International Statistical Review}, \emph{61}, 317--337.
+
+\leavevmode\hypertarget{ref-Queno49}{}%
+Quenoille, M. H. (1949). Problems in plane sampling. \emph{Annals of Mathematical Statistics}, \emph{20}, p. 355--375.
+
+\leavevmode\hypertarget{ref-Queno56}{}%
+Quenoille, M. H. (1956). Notes on bias in estimation. \emph{Biometrika}, \emph{43}, 353--360.
+
+\leavevmode\hypertarget{ref-royall1970}{}%
+Royall, R. M. (1970). On finite population sampling theory under certain linear regression models. \emph{Biometrika}, \emph{57}(2), 377--387.
+
+\leavevmode\hypertarget{ref-Rubin87}{}%
+Rubin, D. B. (1987). \emph{Multiple Imputation for Nonresponse in Surveys}. John Wiley \& Sons.
+
+\leavevmode\hypertarget{ref-SSW1992}{}%
+Särndal, C. E.; Swensson, B. e Wretman, J. H. (1992). \emph{Model Assisted Survey Sampling}. Springer-Verlag.
+
+\leavevmode\hypertarget{ref-Schafer1997}{}%
+Schafer, J. L. (1997). \emph{{Analysis of Incomplete Multivariate Data}} (p. 430). Chapman {\&} Hall / CRC.
+
+\leavevmode\hypertarget{ref-Shah1993}{}%
+Shah, B. V.; Folsom, R. E.; LaVange, L. M.; Wheeless, S. C.; Boyle, K. E. e Williams, R. L. (1993). \emph{Statistical Methods and Mathematical Algorithms Used in SUDAAN}.
+
+\leavevmode\hypertarget{ref-Silva1996}{}%
+Silva, P. L. N. (1996). \emph{Utilizing Auxiliary Information for Estimation and Analysis in Sample Surveys} {[}Phdthesis{]}. University of Southampton, Department of Social Statistics.
+
+\leavevmode\hypertarget{ref-Silva2020}{}%
+Silva, P. L. N.; Bianchini, Z. M. e Dias, A. J. R. (2020). \emph{{Amostragem: teoria e pr{á}tica usando R}}. Disponível em: \url{https://amostragemcomr.github.io/livro/} (Acesso: set. 2020.)
+
+\leavevmode\hypertarget{ref-SHS89}{}%
+Skinner, C. J.; Holt, D. e Smith, T. M. F. (Eds.). (1989). \emph{Analysis of Complex Surveys}. John Wiley \& Sons.
+
+\leavevmode\hypertarget{ref-Sugden84}{}%
+Sugden, R. A. e Smith, T. M. F. (1984). Ignorable and informative designs in survey sampling inference. \emph{Biometrika}, \emph{71}, 495--506.
+
+\leavevmode\hypertarget{ref-thompson1992}{}%
+Thompson, S. K. (1992). \emph{Sampling}. John Wiley \& Sons.
+
+\leavevmode\hypertarget{ref-valliant2000}{}%
+Valliant, R.; Dorfman, A. H. e Royall, R. M. (2000). \emph{Finite population sampling and inference: a prediction approach}.
+
+\leavevmode\hypertarget{ref-Westat1996}{}%
+Westat. (1996). \emph{A User's Guide to {WesVarPc}, version 2.0}. Westat, Inc.
+
+\leavevmode\hypertarget{ref-Wolter1985}{}%
+Wolter, K. M. (1985). \emph{Introduction to Variance Estimation}. Springer-Verlag.
+
+\leavevmode\hypertarget{ref-Wolter2007}{}%
+Wolter, Kirk M. (2007). \emph{Introduction to Variance Estimation} (Second, p. 428). Springer-Verlag.
+
+\end{CSLReferences}
+
+\end{document}
