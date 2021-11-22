@@ -4,7 +4,7 @@
 -----------
 Sigla            Descrição
 ---------------- -----------------------------------------------------------------------
-AAS              Amostragem Aleatória Simples 
+AAS              Amostragem Aleatória Simples Sem Reposição
 
 AASC             Amostragem Aleatória Simples Com Reposição
 
@@ -18,11 +18,15 @@ IBGE             Instituto Brasileiro de Geografia e Estatística
 
 IID              Independentes e Identicamente Distribuídas 
 
+MCP              Método do Conglomerado Primário  
+
 MINITAB          Minitab Statistical Software
 
 MPV              Método de Máxima Pseudo Verossimilhança 
 
 NIC.br           Núcleo de Informação e Coordenação do Ponto BR
+
+PNAD Contínua    Pesquisa Nacional por Amostra de Domicílios Contínua 
 
 QDPs             Quantidades Descritivas Populacionais 
 
