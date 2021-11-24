@@ -165,17 +165,21 @@ Capítulo 12 - Estimação de funções de distribuição e quantis
 
 Capítulo 13 - Estimação de medidas de desigualdade e pobreza
 
-Capítulo 14 - Modelos multiníveis
+Capítulo 14 - Estimação de fluxos
 
-Capítulo 15 - Modelos de teoria da resposta ao item
+Capítulo 15 - Modelos multiníveis
 
-Capítulo 16 - Estimação de fluxos
+Capítulo 16 - Modelos para dados longitudinais
 
-Capítulo 17 - Modelos de séries temporais
+Capítulo 17 - Modelos de teoria da resposta ao item
 
-Capítulo 18 - Modelos de redes neurais
+Capítulo 18 - Modelos de séries temporais
 
-Capítulo 19 - Modelos log-lineares para tabelas
+Capítulo 19 - Modelos de redes neurais
+
+Capítulo 20 - Modelos log-lineares para tabelas
+
+Capítulo 21 - Aplicações
 
 
 O Capítulo \@ref(graficos) aborda a elaboração de alguns tipos de gráficos de uso frequente quando os dados elementares provêm de pesquisas amostrais. Entre os gráficos cobertos estão histogramas, boxplots, diagramas de dispersão e gráficos tipo quantil-quantil (qq-plots).
