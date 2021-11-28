@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Page not found | Análise de Dados Amostrais</title>
   <meta name="description" content="Análise de dados de pesquisas amostrais." />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Page not found | Análise de Dados Amostrais" />
   <meta property="og:type" content="book" />
@@ -35,6 +35,7 @@
 
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -161,6 +161,9 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimentos"><i class="fa fa-check"></i>Agradecimentos</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="lista-de-figuras.html"><a href="lista-de-figuras.html"><i class="fa fa-check"></i>Lista de Figuras</a></li>
+<li class="chapter" data-level="" data-path="lista-de-siglas.html"><a href="lista-de-siglas.html"><i class="fa fa-check"></i>Lista de Siglas</a></li>
+<li class="chapter" data-level="" data-path="lista-de-tabelas.html"><a href="lista-de-tabelas.html"><i class="fa fa-check"></i>Lista de Tabelas</a></li>
 <li class="chapter" data-level="1" data-path="introduc.html"><a href="introduc.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="introduc.html"><a href="introduc.html#motivação"><i class="fa fa-check"></i><b>1.1</b> Motivação</a></li>
@@ -181,12 +184,13 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="capplanamo.html"><a href="capplanamo.html"><i class="fa fa-check"></i><b>3</b> Estimação Baseada no Plano Amostral</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="capplanamo.html"><a href="capplanamo.html#estimatotais"><i class="fa fa-check"></i><b>3.1</b> Estimação de Totais</a></li>
-<li class="chapter" data-level="3.2" data-path="capplanamo.html"><a href="capplanamo.html#por-que-estimar-variâncias"><i class="fa fa-check"></i><b>3.2</b> Por que Estimar Variâncias</a></li>
-<li class="chapter" data-level="3.3" data-path="capplanamo.html"><a href="capplanamo.html#taylor"><i class="fa fa-check"></i><b>3.3</b> Linearização de Taylor para Estimar variâncias</a></li>
-<li class="chapter" data-level="3.4" data-path="capplanamo.html"><a href="capplanamo.html#método-do-conglomerado-primário"><i class="fa fa-check"></i><b>3.4</b> Método do Conglomerado Primário</a></li>
-<li class="chapter" data-level="3.5" data-path="capplanamo.html"><a href="capplanamo.html#métodos-de-replicação"><i class="fa fa-check"></i><b>3.5</b> Métodos de Replicação</a></li>
-<li class="chapter" data-level="3.6" data-path="capplanamo.html"><a href="capplanamo.html#laboratório-de-r"><i class="fa fa-check"></i><b>3.6</b> Laboratório de R</a></li>
+<li class="chapter" data-level="3.1" data-path="capplanamo.html"><a href="capplanamo.html#estimatotais"><i class="fa fa-check"></i><b>3.1</b> Estimação de totais</a></li>
+<li class="chapter" data-level="3.2" data-path="capplanamo.html"><a href="capplanamo.html#estimação-de-variâncias---motivação"><i class="fa fa-check"></i><b>3.2</b> Estimação de variâncias - motivação</a></li>
+<li class="chapter" data-level="3.3" data-path="capplanamo.html"><a href="capplanamo.html#taylor"><i class="fa fa-check"></i><b>3.3</b> Linearização de Taylor (ou Delta) para estimar variâncias</a></li>
+<li class="chapter" data-level="3.4" data-path="capplanamo.html"><a href="capplanamo.html#equações-de-estimação"><i class="fa fa-check"></i><b>3.4</b> Equações de estimação</a></li>
+<li class="chapter" data-level="3.5" data-path="capplanamo.html"><a href="capplanamo.html#método-do-conglomerado-primário"><i class="fa fa-check"></i><b>3.5</b> Método do Conglomerado Primário</a></li>
+<li class="chapter" data-level="3.6" data-path="capplanamo.html"><a href="capplanamo.html#métodos-de-replicação"><i class="fa fa-check"></i><b>3.6</b> Métodos de replicação</a></li>
+<li class="chapter" data-level="3.7" data-path="capplanamo.html"><a href="capplanamo.html#laboratório-de-r"><i class="fa fa-check"></i><b>3.7</b> Laboratório de R</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
 </ul>
@@ -222,7 +226,6 @@ the table of contents to find the page you are looking for.</p>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -263,7 +266,7 @@ gitbook.start({
 },
 "download": ["bookdown-adacor.pdf"],
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {
