@@ -2,9 +2,10 @@
 lang: pt-BR
 title: "Análise de Dados Amostrais"
 author: 
-  - Djalma Galvão Carneiro Pessoa, Pedro Luis do Nascimento Silva,
-  - Antonio José Ribeiro Dias, Zélia Magalhães Bianchini e Sonia Albieri
-date: '28 de novembro de 2021, 17:42:52'
+  - Djalma Galvão Carneiro Pessoa, Pedro Luis do Nascimento Silva
+editor:
+  - Pedro Luis do Nascimento Silva, Antonio José Ribeiro Dias, Zélia Magalhães Bianchini e Sonia Albieri
+date: '28 de novembro de 2021, 18:19:43'
 summary_depth: 3
 summary_float:
    collapsed: false
@@ -18,7 +19,7 @@ fontsize: 12pt
 
 output:
   bookdown::gitbook: default
-  bookdown::pdf_book: default
+ 
    
    
 documentclass: book          
