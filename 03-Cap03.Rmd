@@ -6,7 +6,7 @@ Devido a sua importância para os desenvolvimentos teóricos em vários dos cap�
 
 Consideremos o problema de estimar o vetor $\mathbf{Y} = \sum_{i \in U} \mathbf{y}_i$ de totais das $Q$ variáveis da pesquisa na população, a partir de uma amostra observada $s$. Naturalmente, qualquer estimador viável do total $\mathbf{Y}$ só pode depender dos valores das variáveis de pesquisa observados na amostra, contidos em $\mathbf{y}_{i_{1}}, \ldots , \mathbf{y}_{i_{n}}$, mas não dos valores dessas variáveis para os elementos não pesquisados ($i \in U-s$).
 
-Um estimador usual baseado no plano amostral para o total $\mathbf{Y}$ é o estimador de Horvitz-Thompson (ver Capítulo \@ref(#refinf) deste livro e Seção 3.7 de @Silva2020), dado por:
+Um estimador usual baseado no plano amostral para o total $\mathbf{Y}$ é o estimador de Horvitz-Thompson (ver Capítulo \@ref(refinf) deste livro e Seção 3.7 de @Silva2020), dado por:
 
 \begin{equation}
 \widehat{\mathbf{Y}}_{HT} = \sum_{i \in s} \mathbf{y}_i / \pi_{i} = \sum_{i \in s} d_i \mathbf{y}_i \,\,  (\#eq:estpa1)
@@ -381,7 +381,7 @@ Uma pesquisa importante e de grande porte em que esta ideia é aplicada é a pes
 
 É importante observar que a repartição da amostra em grupos aleatórios a posteriori precisa considerar o plano amostral empregado e pode não ser possível em algumas situações. Idealmente, tal repartição deveria ser feita respeitando estratos e alocando UPAs inteiras (isto é, com todas as respectivas unidades subordinadas). @Wolter1985, p. 31, discute algumas regras sobre como fazer para respeitar o plano amostral ao fazer a repartição da amostra a posteriori, porém recomendamos que o interessado no uso dessa técnica exerça cautela.
 
-Além da modificação da interpretação das réplicas no caso de serem formadas a posteriori, é comum também nesse caso empregar um estimador para o parâmetro $\theta$ baseado na amostra completa (denotado $\widehat{\theta}$), e um estimador de variância mais conservador que o estimador $\widehat{V}_{R}\left( \widehat{\theta }_{R}\right)$ anteriormente apresentado, dado por 
+Além da modificação da interpretação das réplicas no caso de serem formadas a posteriori, é comum também nesse caso empregar um estimador para o parâmetro $\theta$ baseado na amostra completa (denotado $\widehat{\theta}$), e um estimador de variância mais conservador que o estimador $\widehat{V}_{G}\left( \widehat{\theta }_{G}\right)$ anteriormente apresentado, dado por 
 
 \begin{equation}
 \widehat{V}_{RG}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
@@ -418,11 +418,11 @@ ou
 onde $\widehat{\theta }_{J} = \frac{1}{G} \sum_{g=1}^{G} \widehat{\theta }_{\left( g\right)}$ é um estimador pontual *jackknife* para $\theta$, alternativo ao estimador da amostra inteira $\hat{\theta}$.
 
 
-**Observaçao 1:** A descrição do método *jackknife* aqui apresentada não cobre o caso de planos amostrais estratificados, que é mais complexo. Para detalhes sobre este caso, consulte @Wolter1985, pág. 174.
+**Observaçao 3.1:** A descrição do método *jackknife* aqui apresentada não cobre o caso de planos amostrais estratificados, que é mais complexo. Para detalhes sobre este caso, consulte @Wolter1985, pág. 174.
 
-**Observaçao 2:** O estimador $\widehat{V}_{J2}\left( \widehat{\theta }\right)$ é mais conservador que o estimador $\widehat{V}_{J1}\left( \widehat{\theta }\right)$.
+**Observaçao 3.2:** O estimador $\widehat{V}_{J2}\left( \widehat{\theta }\right)$ é mais conservador que o estimador $\widehat{V}_{J1}\left( \widehat{\theta }\right)$.
 
-**Observaçao 3:** É comum aplicar a técnica fazendo o número de grupos igual ao tamanho da amostra, isto é, tomando $G=n$ e portanto eliminando uma observação da amostra de cada vez ao calcular os pseudo valores. Essa regra deve ser aplicada considerando o número de UPAs quando o plano amostral é em múltiplos estágios, pois as UPAs devem sempre ser eliminadas com todas as unidades subordinadas.
+**Observaçao 3.3:** É comum aplicar a técnica fazendo o número de grupos igual ao tamanho da amostra, isto é, tomando $G=n$ e portanto eliminando uma observação da amostra de cada vez ao calcular os pseudo valores. Essa regra deve ser aplicada considerando o número de UPAs quando o plano amostral é em múltiplos estágios, pois as UPAs devem sempre ser eliminadas com todas as unidades subordinadas.
 
 
 Os estimadores de variância do método *jackknife* fornecem resultadoS idênticos aos dos estimadores usuais de variância quando aplicados para o caso de estimadores lineares nas observações amostrais. Além disso, suas propriedades são razoáveis para vários outros casos de estimadores não lineares de interesse (ver, por exemplo, @Cochran1977, p. 321 e @Wolter1985, p. 306). A situação merece maiores cuidados para o caso de quantis ou estatísticas de ordem, tais como a mediana e o máximo, pois neste caso essa técnica não funciona bem @Wolter1985, p. 163.
