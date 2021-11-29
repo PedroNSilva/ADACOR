@@ -6,7 +6,7 @@ Devido a sua importância para os desenvolvimentos teóricos em vários dos cap�
 
 Consideremos o problema de estimar o vetor $\mathbf{Y} = \sum_{i \in U} \mathbf{y}_i$ de totais das $Q$ variáveis da pesquisa na população, a partir de uma amostra observada $s$. Naturalmente, qualquer estimador viável do total $\mathbf{Y}$ só pode depender dos valores das variáveis de pesquisa observados na amostra, contidos em $\mathbf{y}_{i_{1}}, \ldots , \mathbf{y}_{i_{n}}$, mas não dos valores dessas variáveis para os elementos não pesquisados ($i \in U-s$).
 
-Um estimador usual baseado no plano amostral para o total $\mathbf{Y}$ é o estimador de Horvitz-Thompson (ver Capítulo \@ref(#refinf) deste livro e Seção 3.7 de @Silva2020), dado por:
+Um estimador usual baseado no plano amostral para o total $\mathbf{Y}$ é o estimador de Horvitz-Thompson (ver Capítulo \@ref(refinf) deste livro e Seção 3.7 de @Silva2020), dado por:
 
 \begin{equation}
 \widehat{\mathbf{Y}}_{HT} = \sum_{i \in s} \mathbf{y}_i / \pi_{i} = \sum_{i \in s} d_i \mathbf{y}_i \,\,  (\#eq:estpa1)

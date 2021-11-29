@@ -217,7 +217,7 @@ div.csl-indent {
 <div style="text-align: justify">
 <p>Devido a sua importância para os desenvolvimentos teóricos em vários dos capítulos subsequentes, alguns resultados básicos relativos à estimação de totais da população finita numa abordagem baseada no plano amostral são relembrados nesta seção. A referência básica usada foi a Seção 2.8 de <span class="citation">Särndal et al. (1992)</span>. O leitor pode também consultar o Capítulo 3 de <span class="citation">Silva et al. (2020)</span>.</p>
 <p>Consideremos o problema de estimar o vetor <span class="math inline">\(\mathbf{Y} = \sum_{i \in U} \mathbf{y}_i\)</span> de totais das <span class="math inline">\(Q\)</span> variáveis da pesquisa na população, a partir de uma amostra observada <span class="math inline">\(s\)</span>. Naturalmente, qualquer estimador viável do total <span class="math inline">\(\mathbf{Y}\)</span> só pode depender dos valores das variáveis de pesquisa observados na amostra, contidos em <span class="math inline">\(\mathbf{y}_{i_{1}}, \ldots , \mathbf{y}_{i_{n}}\)</span>, mas não dos valores dessas variáveis para os elementos não pesquisados (<span class="math inline">\(i \in U-s\)</span>).</p>
-<p>Um estimador usual baseado no plano amostral para o total <span class="math inline">\(\mathbf{Y}\)</span> é o estimador de Horvitz-Thompson (ver Capítulo @ref(#refinf) deste livro e Seção 3.7 de <span class="citation">Silva et al. (2020)</span>), dado por:</p>
+<p>Um estimador usual baseado no plano amostral para o total <span class="math inline">\(\mathbf{Y}\)</span> é o estimador de Horvitz-Thompson (ver Capítulo <a href="refinf.html#refinf">2</a> deste livro e Seção 3.7 de <span class="citation">Silva et al. (2020)</span>), dado por:</p>
 <p><span class="math display" id="eq:estpa1">\[\begin{equation}
 \widehat{\mathbf{Y}}_{HT} = \sum_{i \in s} \mathbf{y}_i / \pi_{i} = \sum_{i \in s} d_i \mathbf{y}_i \,\,  \tag{3.1}
 \end{equation}\]</span>
@@ -608,7 +608,7 @@ de <em>Jackknife</em> e de <em>Bootstrap</em> para estimar esta variância de ra
 ## analf.faixa 0,119
 ## SEs=
 ##        [,1]
-## [1,] 0,0114</code></pre>
+## [1,] 0,0134</code></pre>
 <p>Vamos apresentar mais detalhes sobre a obtenção dos estimadores de <em>Jackknife</em> e <em>Bootstrap</em> na library <em>survey</em> <span class="citation">(Lumley, 2017)</span>.
 A classe do objeto <em>ppv_se_plan_jkn</em> é <em>svyrep.design</em> e ele contém as seguintes componentes:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="capplanamo.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(ppv_se_plan_jkn)</span></code></pre></div>

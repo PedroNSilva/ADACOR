@@ -155,7 +155,7 @@ Os Capítulos \@ref(testqualajust) e \@ref(testetab2) tratam da análise de dado
 categóricos, dando ênfase à adaptação dos testes clássicos para proporções, de independência e de homogeneidade em tabelas de contingência, para lidar com dados provenientes de pesquisas amostrais complexas. Apresentamos correções das estatísticas clássicas e também a estatística de Wald baseada no plano amostral. As referências básicas usadas nesses capítulos foram o Capítulo 4 em @SHS89 e o Capítulo 7 em @lethonen. Também são apresentadas as ideias básicas de como efetuar ajuste de modelos log-lineares a dados de frequências em tabelas de múltiplas entradas.
 
 
-A parte 2 é composta por mais doze capítulos, todos escritos por autores convidados. Todos estes temas foram objeto de avanços importantes tanto no desenvolvimento de métodos como no de ferramentas computacionais para sua implementação no ambiente do sistema R, desde que foi publicado o livro inicial. A seguir, a lista dos dez capítulos da parte 2.
+A parte 2 é composta por mais doze capítulos, vários deles escritos por autores convidados. Todos estes temas foram objeto de avanços importantes tanto no desenvolvimento de métodos como no de ferramentas computacionais para sua implementação no ambiente do sistema R, desde que foi publicado o livro inicial. A seguir, a lista dos doze capítulos da parte 2.
 
 Capítulo 10 - Gráficos
 
@@ -190,7 +190,21 @@ O Capítulo \@ref(cdf) trata da estimação de funções de distribuição empí
 
 O Capítulo \@ref(cdf) trata da estimação de medidas de desigualdade e pobreza, enfatizando o uso destas em análises baseadas na renda de domicílios ou pessoas. Apresenta os recursos do pacote `convey` (inserir referência).
 
+O Capítulo \@ref(fluxos) trata da estimação de fluxos em pesquisas repetidas sujeitas a não resposta. Apresenta os recursos do pacote `surf` (inserir referência).
+
 O Capítulo \@ref(modelos-hierarquicos) trata da estimação e ajuste de modelos hierárquicos ou multiníveis considerando o plano amostral. Modelos hierárquicos têm sido bastante utilizados para explorar situações em que as relações entre variáveis de interesse em uma certa população de unidades elementares (por exemplo, crianças em escolas, pacientes em hospitais, empregados em empresas, moradores em regiões, etc.) são afetadas por efeitos de grupos determinados ao nível de unidades conglomeradas (os grupos). Ajustar e interpretar tais modelos é tarefa mais difícil que o mero ajuste de modelos lineares, mesmo em casos onde os dados são obtidos de forma exaustiva ou por AAS, e ainda mais complicada quando se trata de dados obtidos através de pesquisas com planos amostrais complexos. Diferentes abordagens estão disponíveis para ajuste de modelos hierárquicos nesse caso, e este capítulo apresenta uma revisão de tais abordagens, ilustrando com aplicações a dados de pesquisas amostrais de escolares.
+
+O Capítulo \@ref(modlong) trata do ajuste de modelos para dados longitudinais. 
+
+O Capítulo \@ref(tri) trata do ajuste de modelos da Teoria da Resposta ao Item (TRI). 
+
+O Capítulo \@ref(stpr) trata do ajuste de modelos séries temporais a dados de pesquisas amostrais repetidas.
+
+O Capítulo \@ref(redeneur) trata do ajuste de modelos de redes neurais.
+
+O Capítulo \@ref(modloglin) trata do ajuste de modelos log-lineares a dados de tabelas de contingência.
+
+O Capítulo \@ref(aplic) apresenta algumas aplicações de modelos e métodos descritos em capítulos anteriores no contexto de pesquisas sobre TICs no Brasil.
 
 Uma das características que procuramos dar ao livro foi o emprego de exemplos com dados reais, retirados principalmente da experiência do IBGE com pesquisas amostrais complexas. Sem prejuízo na concentração de exemplos que se utilizam de dados de pesquisas do IBGE, incluímos também exemplos que consideram aplicações a dados de pesquisas realizadas por outras instituições. Nas duas décadas desde a primeira edição deste livro foram muitas as iniciativas de realizar pesquisas por amostragem em várias áreas, tendo a educação e a saúde como as mais proeminentes. 
 
