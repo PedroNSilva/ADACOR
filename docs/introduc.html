@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xml:lang="pt-BR">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 1 Introdução | Análise de Dados Amostrais</title>
+  <meta name="description" content="Análise de dados de pesquisas amostrais." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 1 Introdução | Análise de Dados Amostrais" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="/Figuras/capa.png" />
+  <meta property="og:description" content="Análise de dados de pesquisas amostrais." />
+  <meta name="github-repo" content="PedroNSilva/ADACOR" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 1 Introdução | Análise de Dados Amostrais" />
+  
+  <meta name="twitter:description" content="Análise de dados de pesquisas amostrais." />
+  <meta name="twitter:image" content="/Figuras/capa.png" />
+
+<meta name="author" content="Djalma Galvão Carneiro Pessoa, Pedro Luis do Nascimento Silva" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lista-de-tabelas.html"/>
+<link rel="next" href="refinf.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimentos"><i class="fa fa-check"></i>Agradecimentos</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="lista-de-figuras.html"><a href="lista-de-figuras.html"><i class="fa fa-check"></i>Lista de Figuras</a></li>
+<li class="chapter" data-level="" data-path="lista-de-siglas.html"><a href="lista-de-siglas.html"><i class="fa fa-check"></i>Lista de Siglas</a></li>
+<li class="chapter" data-level="" data-path="lista-de-tabelas.html"><a href="lista-de-tabelas.html"><i class="fa fa-check"></i>Lista de Tabelas</a></li>
+<li class="chapter" data-level="1" data-path="introduc.html"><a href="introduc.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduc.html"><a href="introduc.html#motivação"><i class="fa fa-check"></i><b>1.1</b> Motivação</a></li>
+<li class="chapter" data-level="1.2" data-path="introduc.html"><a href="introduc.html#objetivos-do-livro"><i class="fa fa-check"></i><b>1.2</b> Objetivos do livro</a></li>
+<li class="chapter" data-level="1.3" data-path="introduc.html"><a href="introduc.html#estrutura-do-livro"><i class="fa fa-check"></i><b>1.3</b> Estrutura do livro</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="refinf.html"><a href="refinf.html"><i class="fa fa-check"></i><b>2</b> Referencial para Inferência</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="refinf.html"><a href="refinf.html#modelagem---primeiras-ideias"><i class="fa fa-check"></i><b>2.1</b> Modelagem - Primeiras ideias</a></li>
+<li class="chapter" data-level="2.2" data-path="refinf.html"><a href="refinf.html#classic"><i class="fa fa-check"></i><b>2.2</b> Abordagem 1 - Modelagem Clássica</a></li>
+<li class="chapter" data-level="2.3" data-path="refinf.html"><a href="refinf.html#abordagem-2---amostragem-probabilística"><i class="fa fa-check"></i><b>2.3</b> Abordagem 2 - Amostragem Probabilística</a></li>
+<li class="chapter" data-level="2.4" data-path="refinf.html"><a href="refinf.html#discussão-das-abordagens-1-e-2"><i class="fa fa-check"></i><b>2.4</b> Discussão das abordagens 1 e 2</a></li>
+<li class="chapter" data-level="2.5" data-path="refinf.html"><a href="refinf.html#modelsuperpop"><i class="fa fa-check"></i><b>2.5</b> Abordagem 3 - Modelagem de Superpopulação</a></li>
+<li class="chapter" data-level="2.6" data-path="refinf.html"><a href="refinf.html#fontes-de-variação"><i class="fa fa-check"></i><b>2.6</b> Fontes de variação</a></li>
+<li class="chapter" data-level="2.7" data-path="refinf.html"><a href="refinf.html#modelos-de-superpopulação"><i class="fa fa-check"></i><b>2.7</b> Modelos de Superpopulação</a></li>
+<li class="chapter" data-level="2.8" data-path="refinf.html"><a href="refinf.html#planamo"><i class="fa fa-check"></i><b>2.8</b> Plano amostral</a></li>
+<li class="chapter" data-level="2.9" data-path="refinf.html"><a href="refinf.html#inform"><i class="fa fa-check"></i><b>2.9</b> Planos amostrais informativos e ignoráveis</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="capplanamo.html"><a href="capplanamo.html"><i class="fa fa-check"></i><b>3</b> Estimação Baseada no Plano Amostral</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="capplanamo.html"><a href="capplanamo.html#estimatotais"><i class="fa fa-check"></i><b>3.1</b> Estimação de totais</a></li>
+<li class="chapter" data-level="3.2" data-path="capplanamo.html"><a href="capplanamo.html#estimação-de-variâncias---motivação"><i class="fa fa-check"></i><b>3.2</b> Estimação de variâncias - motivação</a></li>
+<li class="chapter" data-level="3.3" data-path="capplanamo.html"><a href="capplanamo.html#taylor"><i class="fa fa-check"></i><b>3.3</b> Linearização de Taylor (ou Delta) para estimar variâncias</a></li>
+<li class="chapter" data-level="3.4" data-path="capplanamo.html"><a href="capplanamo.html#equações-de-estimação"><i class="fa fa-check"></i><b>3.4</b> Equações de estimação</a></li>
+<li class="chapter" data-level="3.5" data-path="capplanamo.html"><a href="capplanamo.html#método-do-conglomerado-primário"><i class="fa fa-check"></i><b>3.5</b> Método do Conglomerado Primário</a></li>
+<li class="chapter" data-level="3.6" data-path="capplanamo.html"><a href="capplanamo.html#métodos-de-replicação"><i class="fa fa-check"></i><b>3.6</b> Métodos de replicação</a></li>
+<li class="chapter" data-level="3.7" data-path="capplanamo.html"><a href="capplanamo.html#laboratório-de-r"><i class="fa fa-check"></i><b>3.7</b> Laboratório de R</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Análise de Dados Amostrais</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduc" class="section level1" number="1">
+<h1><span class="header-section-number">Capítulo 1</span> Introdução</h1>
+<div id="motivação" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Motivação</h2>
+<div style="text-align: justify">
+<p>Este livro trata de questões e ideias de grande importância para os analistas de dados obtidos através de pesquisas amostrais, tais como as conduzidas por agências produtoras de informações estatísticas oficiais ou públicas. Tais dados são comumente utilizados em análises descritivas envolvendo a obtenção de estimativas para totais, médias, proporções e razões. Nessas análises, em geral, são devidamente incorporados os pesos distintos das observações e a estrutura do plano amostral empregado para obter os dados considerados.</p>
+<p>Nas últimas décadas tornou-se muito mais frequente um outro tipo de uso de dados de pesquisas amostrais. Tal uso, denominado secundário e/ou analítico, envolve a construção e ajuste de modelos, geralmente feito por analistas que trabalham fora das agências produtoras dos dados. Neste caso, o foco da análise busca estabelecer a natureza de relações ou associações entre variáveis ou testar hipóteses. Para tais fins, a estatística clássica conta com um vasto arsenal de ferramentas de análise, já incorporadas aos principais sistemas estatísticos disponíveis (tais como MINITAB, R, SAS, SPSS, etc).</p>
+<p>Muitas ferramentas de análise convencionais disponíveis nesses sistemas estatísticos geralmente partem de hipóteses básicas sobre as amostras disponíveis que só são válidas quando os dados foram obtidos através de Amostras Aleatórias Simples Com Reposição - AASC. Por exemplo, a hipótese de observações Independentes e Identicamente Distribuídas - IID corresponde justamente ao caso de observações selecionadas por AASC de uma população especificada. Tais hipóteses são geralmente inadequadas para modelar observações provenientes de pesquisas amostrais de populações finitas, pois desconsideram os seguintes aspectos relevantes dos planos amostrais usualmente empregados nessas pesquisas:</p>
+<ol style="list-style-type: lower-roman">
+<li><p>probabilidades desiguais de seleção das unidades;</p></li>
+<li><p>conglomeração das unidades;</p></li>
+<li><p>estratificação;</p></li>
+<li><p>calibração ou imputação para não resposta e outros ajustes.</p></li>
+</ol>
+<p>Em amostragem de populações finitas, a abordagem probabilística emprega pesos para as observações amostrais que dependem das probabilidades de seleção das unidades, que podem ser desiguais. Em consequência, as estimativas pontuais de parâmetros descritivos da população ou mesmo de parâmetros de modelos são influenciadas por pesos distintos das observações.</p>
+<p>Além disso, as estimativas de variância (ou da precisão dos estimadores) são influenciadas pela conglomeração, estratificação e pesos ou, no caso de não resposta, também por eventual imputação de dados faltantes ou reponderação das observações disponíveis para compensar a não resposta. Ao ignorar estes aspectos, as ferramentas convencionais dos sistemas estatísticos tradicionais de análise podem produzir estimativas incorretas das variâncias das estimativas pontuais.</p>
+<p>O Exemplo <a href="#exm:ticdom01">1.1</a> considera o uso de dados de uma pesquisa amostral real, realizada pelo Núcleo de Informação e Coordenação do Ponto BR - NIC.br, para ilustrar como os pontos i) a iv) acima mencionados afetam a inferência sobre quantidades descritivas populacionais tais como
+totais, médias, proporções e razões.</p>
+<p><strong>Exemplo 1.1 </strong> Pesquisa TIC Domicílios 2019 do NIC.br</p>
+<p>Os dados deste exemplo são relativos à distribuição dos pesos de domicílios na amostra da Pesquisa TIC Domicílios 2019 do NIC.br - TICDOM 2019. <span class="citation">NIC.br (2020)</span> apresenta os resultados da pesquisa e seu capítulo intitulado ‘Relatório Metodológico’ descreve os métodos e o plano amostral empregado na pesquisa, que foi estratificado e conglomerado em múltiplos estágios, com alocação desproporcional da amostra nos estratos.</p>
+<p>As Unidades Primárias de Amostragem - UPAs foram municípios ou setores censitários da Base Operacional Geográfica do IBGE conforme usada para o Censo Demográfico de 2010. A seleção de municípios quando estes eram UPAs foi feita usando Amostragem Sistemática com Probabilidades Proporcionais ao Tamanho - AS-PPT - ver a Seção 10.6 de <span class="citation">Silva et al. (2020)</span>. A seleção dos setores dentro de cada município também foi feita com AS-PPT. Dentro de cada setor censitário selecionado, quinze domicílios foram selecionados por amostragem aleatória simples sem reposição, após a atualização do cadastro de domicílios do setor.</p>
+<p>A amostra da pesquisa foi planejada e dimensionada visando ao fornecimento de estimativas com precisão adequada para as cinco macrorregiões do Brasil. Os tamanhos da amostra planejada de setores e domicílios para as macrorregiões são apresentados na Tabela <a href="introduc.html#tab:numset">1.1</a>.</p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:numset">Tabela 1.1: </span><span class="math inline">\(\text{Tamanhos da amostra de setores e domicílios por macrorregião}\)</span>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Macrorregião
+</th>
+<th style="text-align:right;">
+Setores
+</th>
+<th style="text-align:right;">
+Domicílios
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Norte
+</td>
+<td style="text-align:right;width: 5cm; ">
+201
+</td>
+<td style="text-align:right;width: 5cm; ">
+3.015
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Nordeste
+</td>
+<td style="text-align:right;width: 5cm; ">
+617
+</td>
+<td style="text-align:right;width: 5cm; ">
+9.255
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Sudeste
+</td>
+<td style="text-align:right;width: 5cm; ">
+863
+</td>
+<td style="text-align:right;width: 5cm; ">
+12.945
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Sul
+</td>
+<td style="text-align:right;width: 5cm; ">
+337
+</td>
+<td style="text-align:right;width: 5cm; ">
+5.055
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Centro-Oeste
+</td>
+<td style="text-align:right;width: 5cm; ">
+196
+</td>
+<td style="text-align:right;width: 5cm; ">
+2.940
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Total
+</td>
+<td style="text-align:right;width: 5cm; ">
+2.214
+</td>
+<td style="text-align:right;width: 5cm; ">
+33.210
+</td>
+</tr>
+</tbody>
+</table>
+<p>A Tabela <a href="introduc.html#tab:tab01b">1.2</a> apresenta um resumo das distribuições dos pesos amostrais dos domicílios pesquisados na TICDOM 2019 para as macrorregiões separadamente e, também, para o conjunto da amostra da pesquisa.</p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tab01b">Tabela 1.2: </span><span class="math inline">\(\text{Resumos da distribuição dos pesos de domicílios por macrorregião}\)</span>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Macrorregião
+</th>
+<th style="text-align:right;">
+Mínimo
+</th>
+<th style="text-align:right;">
+Quartil1
+</th>
+<th style="text-align:right;">
+Mediana
+</th>
+<th style="text-align:right;">
+Quartil3
+</th>
+<th style="text-align:right;">
+Máximo
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Norte
+</td>
+<td style="text-align:right;">
+1,8
+</td>
+<td style="text-align:right;">
+1.957
+</td>
+<td style="text-align:right;">
+2.898
+</td>
+<td style="text-align:right;">
+4.359
+</td>
+<td style="text-align:right;">
+82.627
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Nordeste
+</td>
+<td style="text-align:right;">
+103,8
+</td>
+<td style="text-align:right;">
+1.283
+</td>
+<td style="text-align:right;">
+2.057
+</td>
+<td style="text-align:right;">
+3.314
+</td>
+<td style="text-align:right;">
+40.118
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Sudeste
+</td>
+<td style="text-align:right;">
+36,0
+</td>
+<td style="text-align:right;">
+1.814
+</td>
+<td style="text-align:right;">
+2.583
+</td>
+<td style="text-align:right;">
+3.583
+</td>
+<td style="text-align:right;">
+27.993
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Sul
+</td>
+<td style="text-align:right;">
+20,0
+</td>
+<td style="text-align:right;">
+1.028
+</td>
+<td style="text-align:right;">
+1.756
+</td>
+<td style="text-align:right;">
+2.706
+</td>
+<td style="text-align:right;">
+118.715
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Centro-Oeste
+</td>
+<td style="text-align:right;">
+140,8
+</td>
+<td style="text-align:right;">
+1.153
+</td>
+<td style="text-align:right;">
+2.401
+</td>
+<td style="text-align:right;">
+3.640
+</td>
+<td style="text-align:right;">
+29.029
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Total
+</td>
+<td style="text-align:right;">
+1,8
+</td>
+<td style="text-align:right;">
+1.546
+</td>
+<td style="text-align:right;">
+2.470
+</td>
+<td style="text-align:right;">
+3.636
+</td>
+<td style="text-align:right;">
+118.715
+</td>
+</tr>
+</tbody>
+</table>
+<p>No cálculo dos pesos amostrais foram consideradas as probabilidades de inclusão dos domicílios na amostra, bem como as correções de calibração para compensar a
+não resposta. Contudo, a grande variabilidade dos pesos amostrais da TICDOM 2019
+é devida, principalmente, à variabilidade das probabilidades de inclusão na
+amostra, ilustrando desta forma o ponto i) citado anteriormente nesta seção.
+Tal variabilidade é devida à alocação desproporcional da amostra entre os estratos geográficos e ao emprego de contagens defasadas de domicílios nos setores para definir probabilidades de seleção dos mesmos.</p>
+<p>Nas análises de dados desta pesquisa, deve-se considerar que há domicílios com pesos muito diferentes. Por exemplo, dividindo-se o maior peso pelo menor encontra-se uma razão da ordem de 66 mil. Os pesos também variam bastante entre as regiões, sendo a razão entre as medianas dos pesos das regiões Norte e Sul igual a 1,65 em função da alocação desproporcional da amostra nas regiões. Os maiores pesos são também muito maiores que os pesos medianos, com essa razão sendo 48 para o conjunto da amostra.</p>
+<p>Tais pesos são utilizados para <em>expandir</em> os dados, multiplicando-se cada observação pelo seu respectivo peso. Assim, por exemplo, para <em>estimar</em>
+quantos domicílios <em>da população</em> pertencem a determinado conjunto (<em>domínio</em>), basta somar os pesos dos domicílios da amostra que pertencem a este conjunto. É possível ainda incorporar os pesos, de maneira simples e natural, quando se quer estimar medidas descritivas simples da população, tais como totais, médias, proporções, razões, etc. Os métodos para estimação de parâmetros descritivos da população como os aqui citados são cobertos com maior detalhe em <span class="citation">Silva et al. (2020)</span>.</p>
+<p>Por outro lado, quando se quer utilizar a amostra para estudos analíticos, as
+opções padrão disponíveis nos sistemas estatísticos usuais para levar em conta os pesos distintos das observações são apropriadas somente para observações IID. Por exemplo, os procedimentos padrão disponíveis para estimar a média populacional permitem utilizar pesos distintos das observações amostrais, mas tratariam tais pesos como se fossem frequências de observações repetidas na amostra e, portanto, interpretariam a soma dos pesos como tamanho amostral, situação que, na maioria das vezes, geraria inferências incorretas sobre a precisão das estimativas resultantes. Isto ocorre porque o tamanho da amostra é muito menor que a soma dos pesos amostrais usualmente encontrados nos arquivos de microdados de pesquisas disseminados por agências de estatísticas oficiais ou públicas, como é o caso da pesquisa TICDOM 2019 aqui considerada. Em tais pesquisas, a opção mais frequente é disseminar pesos que, quando somados, estimam o total de unidades <em>da população</em>.</p>
+<p>Além disso, a variabilidade dos pesos para distintas observações amostrais
+produz impactos tanto na estimação pontual quanto na estimação das variâncias dessas estimativas, que sofre ainda influência da conglomeração e da estratificação - pontos ii) e iii) mencionados anteriormente.</p>
+<p>Para exemplificar o impacto de ignorar os pesos e o plano amostral ao estimar quantidades descritivas populacionais, tais como totais e proporções, calculamos estimativas de quantidades desses diferentes tipos usando a amostra da TICDOM 2019 juntamente com estimativas das respectivas variâncias. Tais estimativas de variância foram calculadas sob duas estratégias:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><strong>considerando Amostragem Aleatória Simples - AAS</strong> e, portanto, ignorando o plano amostral efetivamente adotado na pesquisa; e</p></li>
+<li><p><strong>considerando o plano amostral da pesquisa e os pesos diferentes das unidades.</strong></p></li>
+</ol>
+<p>Na Tabela <a href="introduc.html#tab:tab01c">1.3</a> apresentamos as estimativas dos seguintes parâmetros populacionais: porcentagem de domicílios com computador de mesa; porcentagem de domicílios com notebook; porcentagem de domicílios com tablete; porcentagem de domicílios com algum computador (de mesa, notebook ou tablete); total de domicílios com algum computador (de mesa, notebook ou tablete); número médio de computadores por domicílio que tem computador.</p>
+<p>A razão entre as estimativas de variância obtidas sob o plano amostral verdadeiro (de fato usado na pesquisa) e sob AAS foi estimada para cada uma das estimativas consideradas usando o pacote <em>survey</em> do R, <span class="citation">Lumley (2017)</span>. Essa razão fornece uma medida do efeito de ignorar o plano amostral. Os resultados das estimativas pontuais (Est_por_AAS e Est_Verd para as estimativas considerando AAS e o plano amostral verdadeiro, respectivamente), do desvio padrão da estimativa considerando o plano amostral verdadeiro (DP_Est_Verd) e do Efeito do Plano Amostral - EPA são apresentados na Tabela <a href="introduc.html#tab:tab01c">1.3</a>.</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tab01c">Tabela 1.3: </span><span class="math inline">\(\text{Estimativas de parâmetros populacionais e EPAs}\)</span>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Parâmetro
+</th>
+<th style="text-align:right;">
+Est_por_AAS
+</th>
+<th style="text-align:right;">
+Est_Verd
+</th>
+<th style="text-align:right;">
+DP_Est_Verd
+</th>
+<th style="text-align:right;">
+EPA
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+Porcentagem de domicílios com computador de mesa
+</td>
+<td style="text-align:right;">
+14,21
+</td>
+<td style="text-align:right;">
+16,17
+</td>
+<td style="text-align:right;">
+0,46
+</td>
+<td style="text-align:right;">
+3,64
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+Porcentagem de domicílios com notebook
+</td>
+<td style="text-align:right;">
+22,84
+</td>
+<td style="text-align:right;">
+26,05
+</td>
+<td style="text-align:right;">
+0,66
+</td>
+<td style="text-align:right;">
+5,30
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+Porcentagem de domicílios com tablete
+</td>
+<td style="text-align:right;">
+11,24
+</td>
+<td style="text-align:right;">
+12,95
+</td>
+<td style="text-align:right;">
+0,36
+</td>
+<td style="text-align:right;">
+2,64
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+Porcentagem de domicílios com computador
+</td>
+<td style="text-align:right;">
+35,34
+</td>
+<td style="text-align:right;">
+39,36
+</td>
+<td style="text-align:right;">
+0,67
+</td>
+<td style="text-align:right;">
+4,38
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+Total de domicílios com computador (milhões)
+</td>
+<td style="text-align:right;">
+25,10
+</td>
+<td style="text-align:right;">
+27,95
+</td>
+<td style="text-align:right;">
+1,37
+</td>
+<td style="text-align:right;">
+36,90
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+Número médio de computadores por domicílio que tem computador
+</td>
+<td style="text-align:right;">
+1,55
+</td>
+<td style="text-align:right;">
+1,63
+</td>
+<td style="text-align:right;">
+0,02
+</td>
+<td style="text-align:right;">
+3,73
+</td>
+</tr>
+</tbody>
+</table>
+<p>Os resultados mostram que há diferenças entre as estimativas pontuais dos parâmetros considerados, com uma tendência de subestimar quando se ignoram os pesos e o plano amostral efetivamente usado na pesquisa. As estimativas dos EPAs variam entre 2,64 e 5,30, se deixarmos de fora o EPA maior que 30 observado para a estimativa da contagem de domicílios com computador. Estes valores indicam que ignorar o plano amostral na estimação da precisão levaria também à subestimação dos erros padrão.</p>
+<p>Note que as variáveis e parâmetros cujas estimativas foram apresentadas na Tabela <a href="introduc.html#tab:tab01c">1.3</a> não foram escolhidas de forma a acentuar os efeitos ilustrados, mas tão somente para representar distintos parâmetros (totais, médias, proporções) e variáveis de interesse. Os resultados apresentados para as estimativas de EPA ilustram bem o cenário típico em pesquisas amostrais complexas: o impacto do plano amostral sobre a inferência varia conforme
+a variável e o tipo de parâmetro de interesse. Note ainda que todas as estimativas de EPA apresentaram valores superiores a 2.</p>
+</div>
+<div id="objetivos-do-livro" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Objetivos do livro</h2>
+<div style="text-align: justify">
+<p>Este livro tem três objetivos principais:</p>
+<ol style="list-style-type: decimal">
+<li><p>Apresentar uma coleção de métodos e recursos computacionais disponíveis no R para análise de dados de pesquisas amostrais, equipando o analista para trabalhar com tais dados, reduzindo assim o risco de inferências incorretas.</p></li>
+<li><p>Ilustrar e analisar o impacto das simplificações feitas ao utilizar pacotes usuais de análise de dados quando estes são provenientes de pesquisas amostrais complexas.</p></li>
+<li><p>Ilustrar o potencial analítico de muitas das pesquisas produzidas por agências de estatísticas públicas para responder questões de interesse, mediante uso de ferramentas de análise estatística agora já bastante difundidas, aumentando assim o valor adicionado destas pesquisas.</p></li>
+</ol>
+<p>Para alcançar tais objetivos, adotamos uma abordagem fortemente ancorada na
+apresentação de exemplos de análises de dados obtidos em pesquisas amostrais, usando os recursos do sistema estatístico R, <a href="http://www.r-project.org/" class="uri">http://www.r-project.org/</a>.</p>
+<p>A comparação dos resultados de análises feitas das duas formas (considerando ou
+ignorando o plano amostral) permite avaliar o impacto de não se considerar os pontos i) a iv) anteriormente citados. O ponto iv) não é tratado de forma completa neste texto. O leitor interessado na análise de dados sujeitos a não resposta pode consultar <span class="citation">Kalton (1983)</span>, <span class="citation">Little e Rubin (2002)</span>, <span class="citation">Rubin (1987)</span>, <span class="citation">Särndal et al. (1992)</span>, ou <span class="citation">Schafer (1997)</span>, por exemplo.</p>
+</div>
+<div id="estrutura-do-livro" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Estrutura do livro</h2>
+<div style="text-align: justify">
+<p>O livro está organizado em duas partes. A primeira parte representa uma segunda edição atualizada e revisada do conteúdo do livro publicado em 1998, <span class="citation">Pessoa e Silva (1998)</span>. A segunda parte é uma coletânea de textos reunidos para cobrir temas não tratados no livro anterior, que foram produzidos por autores convidados, como forma de prestar homenagem ao Prof. Djalma Pessoa.</p>
+<p>A parte 1 é composta por nove capítulos. Este primeiro capítulo discute a motivação para estudar o assunto e apresenta uma ideia geral dos objetivos e da estrutura do livro.</p>
+<p>No Capítulo <a href="refinf.html#refinf">2</a>, procuramos dar uma visão das diferentes abordagens utilizadas na análise estatística de dados de pesquisas amostrais. Apresentamos um referencial para inferência com ênfase no <em>Modelo de Superpopulação</em> que incorpora, de forma natural, tanto uma estrutura estocástica para descrever a geração dos dados populacionais (modelo) como o plano amostral efetivamente utilizado para obter os dados amostrais (plano amostral). As referências básicas para seguir este capítulo são o Capítulo 2 em <span class="citation">Silva et al. (2020)</span>, o Capítulo 1 em <span class="citation">Skinner et al. (1989)</span> e os Capítulos 1 e 2 em <span class="citation">Chambers e Skinner (2003)</span>.</p>
+<p>Esse referencial tem evoluído ao longo dos anos como uma forma de permitir a incorporação de ideias e procedimentos de análise e inferência usualmente associados à Estatística Clássica à prática da análise e interpretação de dados provenientes de pesquisas amostrais. Apesar dessa evolução, sua adoção não é livre de controvérsia e uma breve revisão dessa discussão é apresentada no Capítulo <a href="refinf.html#refinf">2</a>.</p>
+<p>No Capítulo <a href="capplanamo.html#capplanamo">3</a> apresentamos uma revisão sucinta, para recordação, de alguns resultados básicos da Teoria de Amostragem, requeridos nas partes subsequentes do livro. São discutidos os procedimentos básicos para estimação de totais considerando o plano amostral e, em seguida, revistas algumas técnicas para estimação de variâncias que são necessárias e úteis para o caso de estatísticas complexas, tais como razões e outras estatísticas requeridas na inferência analítica com dados amostrais. As referências centrais para este capítulo são os Capítulos 2 e 3 em <span class="citation">Särndal et al. (1992)</span>, <span class="citation">Silva et al. (2020)</span>, <span class="citation">Wolter (1985)</span> e <span class="citation">Cochran (1977)</span>.</p>
+<p>No Capítulo <a href="#epa"><strong>??</strong></a> introduzimos o conceito de <em>Efeito do Plano Amostral - EPA</em>, que permite avaliar o impacto de ignorar a estrutura dos dados populacionais ou do plano amostral sobre a estimativa da variância de um estimador. Para isso, comparamos o estimador da variância apropriado para dados obtidos por Amostragem Aleatória Simples (hipótese de AAS) com o valor esperado deste mesmo estimador sob a distribuição de aleatorização induzida pelo plano amostral efetivamente utilizado (plano amostral verdadeiro). Aqui a referência principal foi o livro <span class="citation">Skinner et al. (1989)</span>, complementado com o texto de <span class="citation">Lehtonen e Pahkinen (1995)</span>.</p>
+<p>No Capítulo <a href="#ajmodpar"><strong>??</strong></a> estudamos a questão do uso de pesos ao analisar dados provenientes de pesquisas amostrais complexas e introduzimos um método geral, denominado <em>Método de Máxima Pseudo Verossimilhança - MPV</em>, para incorporar os pesos e o plano amostral na obtenção não só de estimativas de parâmetros dos modelos de interesse mais comuns, como também das variâncias dessas estimativas. As referências básicas utilizadas nesse capítulo foram <span class="citation">Skinner et al. (1989)</span>, <span class="citation">Pfeffermann (1993)</span>, <span class="citation">Binder (1983)</span> e o Capítulo 6 em <span class="citation">Silva et al. (2020)</span>.</p>
+<p>O Capítulo <a href="#modreg"><strong>??</strong></a> trata da obtenção de <em>Estimadores de Máxima Pseudo Verossimilhança - EMPV</em> e da respectiva matriz de covariância para os parâmetros em modelos de regressão linear quando os dados vêm de pesquisas amostrais complexas. Apresentamos alguns exemplos de aplicação desse método ilustrando o uso do pacote <em>survey</em>, <span class="citation">Lumley (2017)</span>, para ajustar modelos de regressão linear. As referências centrais são o Capítulo 6 em <span class="citation">Silva et al. (2020)</span> e <span class="citation">Binder (1983)</span>.</p>
+<p>O Capítulo <a href="#modlog"><strong>??</strong></a> trata da obtenção de <em>Estimadores de Máxima Pseudo Verossimilhança - EMPV</em> e da respectiva matriz de covariância para os parâmetros em modelos de regressão logística quando os dados vêm de pesquisas amostrais complexas. Apresentamos alguns exemplos de aplicação desse método ilustrando o uso do pacote <em>survey</em>, <span class="citation">Lumley (2017)</span>, para ajustar modelos de regressão logística. As referências centrais são o Capítulo 6 em <span class="citation">Silva et al. (2020)</span> e <span class="citation">Binder (1983)</span>.</p>
+<p>Os Capítulos <a href="#testqualajust"><strong>??</strong></a> e <a href="#testetab2"><strong>??</strong></a> tratam da análise de dados
+categóricos, dando ênfase à adaptação dos testes clássicos para proporções, de independência e de homogeneidade em tabelas de contingência, para lidar com dados provenientes de pesquisas amostrais complexas. Apresentamos correções das estatísticas clássicas e também a estatística de Wald baseada no plano amostral. As referências básicas usadas nesses capítulos foram o Capítulo 4 em <span class="citation">Skinner et al. (1989)</span> e o Capítulo 7 em <span class="citation">Lehtonen e Pahkinen (1995)</span>. Também são apresentadas as ideias básicas de como efetuar ajuste de modelos log-lineares a dados de frequências em tabelas de múltiplas entradas.</p>
+<p>A parte 2 é composta por mais doze capítulos, vários deles escritos por autores convidados. Todos estes temas foram objeto de avanços importantes tanto no desenvolvimento de métodos como no de ferramentas computacionais para sua implementação no ambiente do sistema R, desde que foi publicado o livro inicial. A seguir, a lista dos doze capítulos da parte 2.</p>
+<p>Capítulo 10 - Gráficos</p>
+<p>Capítulo 11 - Estimação de funções de densidade</p>
+<p>Capítulo 12 - Estimação de funções de distribuição e quantis</p>
+<p>Capítulo 13 - Estimação de medidas de desigualdade e pobreza</p>
+<p>Capítulo 14 - Estimação de fluxos</p>
+<p>Capítulo 15 - Modelos multiníveis</p>
+<p>Capítulo 16 - Modelos para dados longitudinais</p>
+<p>Capítulo 17 - Modelos de teoria da resposta ao item</p>
+<p>Capítulo 18 - Modelos de séries temporais</p>
+<p>Capítulo 19 - Modelos de redes neurais</p>
+<p>Capítulo 20 - Modelos log-lineares para tabelas</p>
+<p>Capítulo 21 - Aplicações</p>
+<p>O Capítulo <a href="#graficos"><strong>??</strong></a> aborda a elaboração de alguns tipos de gráficos de uso frequente quando os dados elementares provêm de pesquisas amostrais. Entre os gráficos cobertos estão histogramas, boxplots, diagramas de dispersão e gráficos tipo quantil-quantil (qq-plots).</p>
+<p>O Capítulo <a href="#estimacao-de-densidades"><strong>??</strong></a> trata da estimação de densidades, ferramenta que tem assumido importância cada dia maior com a maior disponibilidade de microdados de pesquisas amostrais para analistas fora das agências produtoras. Também é apresentada ferramenta para elaboração de gráficos das densidades estimadas.</p>
+<p>O Capítulo <a href="#cdf"><strong>??</strong></a> trata da estimação de funções de distribuição empíricas e também de quantis. Também é apresentada ferramenta para elaboração de gráficos das funções de distribuição estimadas.</p>
+<p>O Capítulo <a href="#cdf"><strong>??</strong></a> trata da estimação de medidas de desigualdade e pobreza, enfatizando o uso destas em análises baseadas na renda de domicílios ou pessoas. Apresenta os recursos do pacote <code>convey</code> (inserir referência).</p>
+<p>O Capítulo <a href="#fluxos"><strong>??</strong></a> trata da estimação de fluxos em pesquisas repetidas sujeitas a não resposta. Apresenta os recursos do pacote <code>surf</code> (inserir referência).</p>
+<p>O Capítulo <a href="#modelos-hierarquicos"><strong>??</strong></a> trata da estimação e ajuste de modelos hierárquicos ou multiníveis considerando o plano amostral. Modelos hierárquicos têm sido bastante utilizados para explorar situações em que as relações entre variáveis de interesse em uma certa população de unidades elementares (por exemplo, crianças em escolas, pacientes em hospitais, empregados em empresas, moradores em regiões, etc.) são afetadas por efeitos de grupos determinados ao nível de unidades conglomeradas (os grupos). Ajustar e interpretar tais modelos é tarefa mais difícil que o mero ajuste de modelos lineares, mesmo em casos onde os dados são obtidos de forma exaustiva ou por AAS, e ainda mais complicada quando se trata de dados obtidos através de pesquisas com planos amostrais complexos. Diferentes abordagens estão disponíveis para ajuste de modelos hierárquicos nesse caso, e este capítulo apresenta uma revisão de tais abordagens, ilustrando com aplicações a dados de pesquisas amostrais de escolares.</p>
+<p>O Capítulo <a href="#modlong"><strong>??</strong></a> trata do ajuste de modelos para dados longitudinais.</p>
+<p>O Capítulo <a href="#tri"><strong>??</strong></a> trata do ajuste de modelos da Teoria da Resposta ao Item (TRI).</p>
+<p>O Capítulo <a href="#stpr"><strong>??</strong></a> trata do ajuste de modelos séries temporais a dados de pesquisas amostrais repetidas.</p>
+<p>O Capítulo <a href="#redeneur"><strong>??</strong></a> trata do ajuste de modelos de redes neurais.</p>
+<p>O Capítulo <a href="#modloglin"><strong>??</strong></a> trata do ajuste de modelos log-lineares a dados de tabelas de contingência.</p>
+<p>O Capítulo <a href="#aplic"><strong>??</strong></a> apresenta algumas aplicações de modelos e métodos descritos em capítulos anteriores no contexto de pesquisas sobre TICs no Brasil.</p>
+<p>Uma das características que procuramos dar ao livro foi o emprego de exemplos com dados reais, retirados principalmente da experiência do IBGE com pesquisas amostrais complexas. Sem prejuízo na concentração de exemplos que se utilizam de dados de pesquisas do IBGE, incluímos também exemplos que consideram aplicações a dados de pesquisas realizadas por outras instituições. Nas duas décadas desde a primeira edição deste livro foram muitas as iniciativas de realizar pesquisas por amostragem em várias áreas, tendo a educação e a saúde como as mais proeminentes.</p>
+<p>Para facilitar a localização e replicação dos exemplos pelos leitores, estes foram em sua maioria introduzidos em seções denominadas <em>Laboratório</em> ao final de cada um dos capítulos. Os códigos em R dos exemplos são todos fornecidos, o que torna simples a replicação dos mesmos pelos leitores. Optamos pelo emprego do sistema R que, por ser de acesso livre e gratuito, favorece o amplo acesso aos interessados em replicar nossas análises e também em usar as ferramentas disponíveis para implementar suas próprias análises de interesse com outros conjuntos de dados.</p>
+<p>Embora a experiência de fazer inferência analítica com dados de pesquisas amostrais complexas já tenha alguma difusão no Brasil, acreditamos ser fundamental difundir ainda mais essas ideias para alimentar um processo de melhoria do aproveitamento dos dados das inúmeras pesquisas realizadas pelo IBGE e instituições congêneres, que permita ir além da tradicional estimação de totais, médias, proporções e razões. Esperamos com esse livro fazer uma contribuição a esse processo.</p>
+<p>Uma dificuldade em escrever um livro como este vem do fato de que não é possível começar do zero: é preciso assumir algum conhecimento prévio de ideias e conceitos necessários à compreensão do material tratado. Procuramos tornar o livro acessível para um estudante de fim de curso de graduação em Estatística. Por essa razão, optamos por não apresentar provas de resultados e, sempre que possível, apresentar os conceitos e ideias de maneira intuitiva, juntamente com uma discussão mais formal para dar solidez aos resultados apresentados.</p>
+<p>As provas de vários dos resultados aqui discutidos se restringem a material disponível apenas em artigos em periódicos especializados estrangeiros e, portanto, são de acesso mais difícil. Ao leitor em busca de maior detalhamento e rigor, sugerimos consultar diretamente as inúmeras referências incluídas ao longo do texto. Para um tratamento mais profundo do assunto, os livros de <span class="citation">Skinner et al. (1989)</span> e <span class="citation">Chambers e Skinner (2003)</span> são as referências centrais a consultar. Para aqueles querendo um tratamento ainda mais prático que o nosso, os livros de <span class="citation">Lehtonen e Pahkinen (1995)</span> e <span class="citation">Heeringa et al. (2010)</span> podem ser opções interessantes, sendo que este último apresenta os recursos do sistema STATA para análise de dados amostrais.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lista-de-tabelas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="refinf.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-adacor.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
