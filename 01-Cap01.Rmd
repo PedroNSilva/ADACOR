@@ -155,7 +155,11 @@ Os Capítulos \@ref(testqualajust) e \@ref(testetab2) tratam da análise de dado
 categóricos, dando ênfase à adaptação dos testes clássicos para proporções, de independência e de homogeneidade em tabelas de contingência, para lidar com dados provenientes de pesquisas amostrais complexas. Apresentamos correções das estatísticas clássicas e também a estatística de Wald baseada no plano amostral. As referências básicas usadas nesses capítulos foram o Capítulo 4 em @SHS89 e o Capítulo 7 em @lethonen. Também são apresentadas as ideias básicas de como efetuar ajuste de modelos log-lineares a dados de frequências em tabelas de múltiplas entradas.
 
 
+<<<<<<< Updated upstream
 A parte 2 é composta por mais doze capítulos, vários deles escritos por autores convidados. Todos estes temas foram objeto de avanços importantes tanto no desenvolvimento de métodos como no de ferramentas computacionais para sua implementação no ambiente do sistema R, desde que foi publicado o livro inicial. A seguir, a lista dos doze capítulos da parte 2.
+=======
+A parte 2 é composta por mais doze capítulos, todos escritos por autores convidados. Todos estes temas foram objeto de avanços importantes tanto no desenvolvimento de métodos como no de ferramentas computacionais para sua implementação no ambiente do sistema R, desde que foi publicado o livro inicial. A seguir, a lista dos dez capítulos da parte 2.
+>>>>>>> Stashed changes
 
 Capítulo 10 - Gráficos
 
