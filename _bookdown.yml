@@ -28,6 +28,7 @@ language:
     proof: 'Prova '
     
     remark: '**Observação:** '
+  
   ui:
     
     chapter_name: 'Capítulo '

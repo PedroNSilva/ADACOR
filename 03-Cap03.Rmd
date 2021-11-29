@@ -384,7 +384,7 @@ Uma pesquisa importante e de grande porte em que esta ideia é aplicada é a pes
 Além da modificação da interpretação das réplicas no caso de serem formadas a posteriori, é comum também nesse caso empregar um estimador para o parâmetro $\theta$ baseado na amostra completa (denotado $\widehat{\theta}$), e um estimador de variância mais conservador que o estimador $\widehat{V}_{G}\left( \widehat{\theta }_{G}\right)$ anteriormente apresentado, dado por 
 
 \begin{equation}
-\widehat{V}_{RG}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
+\widehat{V}_{G}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
 }\sum_{g=1}^{G}\left( \widehat{\theta }_{g}-\widehat{\theta }\right) ^{2} \,\,
 (\#eq:estpa26)
 \end{equation}

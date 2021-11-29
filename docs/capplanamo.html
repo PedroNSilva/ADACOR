@@ -487,7 +487,7 @@ variância são também empregadas nesse caso como uma aproximação, mas não p
 <p>É importante observar que a repartição da amostra em grupos aleatórios a posteriori precisa considerar o plano amostral empregado e pode não ser possível em algumas situações. Idealmente, tal repartição deveria ser feita respeitando estratos e alocando UPAs inteiras (isto é, com todas as respectivas unidades subordinadas). <span class="citation">Wolter (1985)</span>, p. 31, discute algumas regras sobre como fazer para respeitar o plano amostral ao fazer a repartição da amostra a posteriori, porém recomendamos que o interessado no uso dessa técnica exerça cautela.</p>
 <p>Além da modificação da interpretação das réplicas no caso de serem formadas a posteriori, é comum também nesse caso empregar um estimador para o parâmetro <span class="math inline">\(\theta\)</span> baseado na amostra completa (denotado <span class="math inline">\(\widehat{\theta}\)</span>), e um estimador de variância mais conservador que o estimador <span class="math inline">\(\widehat{V}_{G}\left( \widehat{\theta }_{G}\right)\)</span> anteriormente apresentado, dado por</p>
 <p><span class="math display" id="eq:estpa26">\[\begin{equation}
-\widehat{V}_{RG}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
+\widehat{V}_{G}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
 }\sum_{g=1}^{G}\left( \widehat{\theta }_{g}-\widehat{\theta }\right) ^{2} \,\,
 \tag{3.26}
 \end{equation}\]</span></p>
@@ -607,7 +607,7 @@ de <em>Jackknife</em> e de <em>Bootstrap</em> para estimar esta variância de ra
 ## analf.faixa 0,119
 ## SEs=
 ##        [,1]
-## [1,] 0,0121</code></pre>
+## [1,] 0,0122</code></pre>
 <p>Vamos apresentar mais detalhes sobre a obtenção dos estimadores de <em>Jackknife</em> e <em>Bootstrap</em> na library <em>survey</em> <span class="citation">(Lumley, 2017)</span>.
 A classe do objeto <em>ppv_se_plan_jkn</em> é <em>svyrep.design</em> e ele contém as seguintes componentes:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="capplanamo.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(ppv_se_plan_jkn)</span></code></pre></div>

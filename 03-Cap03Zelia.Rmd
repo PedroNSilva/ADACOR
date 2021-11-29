@@ -1,19 +1,19 @@
 # Estimação Baseada no Plano Amostral {#capplanamo}
 
 ## Estimação de totais {#estimatotais}
-<div style="text-align: justify">
+
 Devido a sua importância para os desenvolvimentos teóricos em vários dos capítulos subsequentes, alguns resultados básicos relativos à estimação de totais da população finita numa abordagem baseada no plano amostral são relembrados nesta seção. A referência básica usada foi a Seção 2.8 de @SSW1992. O leitor pode também consultar o Capítulo 3 de @Silva2020.
 
-Consideremos o problema de estimar o vetor $\mathbf{Y} = \sum_{i \in U} \mathbf{y}_i$ de totais das $Q$ variáveis da pesquisa na população, a partir de uma amostra observada $s$. Naturalmente, qualquer estimador viável do total $\mathbf{Y}$ só pode depender dos valores das variáveis de pesquisa observados na amostra, contidos em $\mathbf{y}_{i_{1}}, \ldots , \mathbf{y}_{i_{n}}$, mas não dos valores dessas variáveis para os elementos não pesquisados ($i \in U-s$).
+Consideremos o problema de estimar o vetor $\mathbf{Y} = \sum_{i \in U} \mathbf{y}_i$ de totais das $P$ variáveis da pesquisa na população, a partir de uma amostra observada $s$. Naturalmente, qualquer estimador viável do total $\mathbf{Y}$ só pode depender dos valores das variáveis de pesquisa observados na amostra, contidos em $\mathbf{y}_{i_{1}}, \ldots , \mathbf{y}_{i_{n}}$, mas não dos valores dessas variáveis para os elementos não pesquisados ($i \in U-s$).
 
-Um estimador usual baseado no plano amostral para o total $\mathbf{Y}$ é o estimador de Horvitz-Thompson (ver Capítulo \@ref(refinf) deste livro e Seção 3.7 de @Silva2020), dado por:
+Um estimador usual baseado no plano amostral para o total $\mathbf{Y}$ é o estimador de Horvitz-Thompson (ver Seção 3.7 de @Silva2020), dado por:
 
-\begin{equation}
+$$
 \widehat{\mathbf{Y}}_{HT} = \sum_{i \in s} \mathbf{y}_i / \pi_{i} = \sum_{i \in s} d_i \mathbf{y}_i \,\,  (\#eq:estpa1)
-\end{equation}
+$$ 
 onde $d_i = 1/\pi_i$ é o *peso básico* da unidade $i$.
 
-Na abordagem baseada no planejamento amostral, as propriedades de uma estatística ou estimador são avaliadas com respeito a sua *distribuição de aleatorização*. Denotemos por $E_p(.)$ e $V_p(.)$ os operadores de esperança e variância referentes à distribuição de probabilidades induzida pelo planejamento amostral $p(s)$, que chamaremos daqui por diante de *esperança de aleatorização* e *variância de aleatorização*.
+Na abordagem baseada no planejamento amostral, as propriedades de uma estatística ou estimador são avaliadas com respeito à sua *distribuição de aleatorização*. Denotemos por $E_p(.)$ e $V_p(.)$ os operadores de esperança e variância referentes à distribuição de probabilidades induzida pelo planejamento amostral $p(s)$, que chamaremos daqui por diante de *esperança de aleatorização* e *variância de aleatorização*.
 
 O estimador $\mathbf{\widehat{Y}}_{HT}$ é não viciado para o total $\mathbf{Y}$ com respeito à distribuição de aleatorização, isto é:
 
@@ -23,83 +23,73 @@ $$
 
 Além disto, sua variância de aleatorização é dada por
 
-\begin{equation}
+$$
 V_p \left( \mathbf{\widehat{Y}}_{HT} \right) = \sum_{i \in U} \sum_{j \in U} \left( \frac{d_i d_j}{d_{ij}} - 1 \right) \mathbf{y}_i {\mathbf{y}^\prime_j}  \,\,\,  (\#eq:estpa2)
-\end{equation}
-
+$$
 Um estimador não viciado para a variância de aleatorização de $\mathbf{ \widehat{Y}}_{HT}$ é dado por:
 
-\begin{equation}
-\widehat V_p \left( \mathbf{\widehat{Y}}_{HT} \right) =\sum_{i \in s} \sum_{j \in s} \left( {d_i d_j} - d_{ij} \right) \mathbf{y}_i {\mathbf{y}^\prime_j}  \,\,\, (\#eq:estpa3)
-\end{equation}
+$$
+\widehat V_p \left( \mathbf{\widehat{Y}}_{HT} \right) =\sum_{i \in s} \sum_{j \in a} \left( {d_i d_j} - d_{ij} \right) \mathbf{y}_i {\mathbf{y}^\prime_j}  \,\,\, (\#eq:estpa3)
+$$
 
 O estimador de variância em \@ref(eq:estpa3) é um estimador não viciado da variância de aleatorização de $\mathbf{\widehat{Y}}_{HT}$, isto é 
 
-\begin{equation}
+$$
 E_p \left[ \widehat V_p \left( \mathbf{\widehat{Y}}_{HT} \right) \right] = V_p \left( \mathbf{\widehat{Y}}_{HT} \right) \,\,\, (\#eq:estpa4)
-\end{equation}
+$$
+desde que $\pi_{ij} > 0 \quad \forall\, i \neq j \in U$, como vamos supor neste livro.
 
-desde que $\pi_{ij} > 0 \quad \forall\,\, i \neq j \in U$, como vamos supor neste livro.
-
-\BeginKnitrBlock{example}
-<span class="example" id="exm:exe31"><strong>(\#exm:exe31) </strong></span>Amostragem Aleatória Simples Sem Reposição - AAS
-\EndKnitrBlock{example}
+```{example, label = "exe31"}
+Amostragem Aleatória Simples Sem Reposição - AAS
+```
 
 Quando o plano amostral empregado num levantamento é amostragem aleatória simples sem reposição - AAS, as expressões apresentadas para o estimador de total, sua variância e estimadores desta variância simplificam bastante, porque as probabilidades de inclusão e os pesos básicos das unidades ficam iguais a 
-
-\begin{equation}
-\pi_i = \frac{n}{N}\,\text{ e }\, d_i = \frac{N}{n} \, \,\, \forall \,\,i \in U  \,\, (\#eq:estpa5)
-\end{equation}
-
+$$
+\pi_i = \frac{n}{N} \,\, \,\,\,\text{e} \,\, d_i = \frac{N}{n} \, \,\, \forall \,i \in U  \,\, (\#eq:estpa5)
+$$
 e 
-
-\begin{equation}
+$$
 \pi_{ij} = \frac{n(n-1)}{N(N-1)} \,\, \,\,\,\text{e} \,\,  d_{ij} = \frac{N(N-1)}{n(n-1)} \,\,\, \forall \, i \neq j \in U \,\, (\#eq:estpa6) 
-\end{equation}
+$$
 
 Essas probabilidades de inclusão e pesos básicos levam às seguintes expressões simplificadas para o caso AAS: 
 
-\begin{equation}
+$$
 \widehat{\mathbf{Y}}_{AAS} = \frac{N}{n} \sum_{i \in s} \mathbf{y}_i = N \, \overline{\mathbf{y}}  \,\, (\#eq:estpa7)
-\end{equation}
-
+$$
 onde 
 
-\begin{equation}
+$$
 \overline{\mathbf{y}} = \frac{1}{n} \sum_{i \in s} \mathbf{y}_i  \,\, (\#eq:estpa8)
-\end{equation}
+$$
 
-\begin{equation}
+$$
 V_{AAS} \left( \mathbf{\widehat{Y}}_{AAS} \right) = N^{2} \left( \frac{1}{n} - \frac{1}{N} \right) \mathbf{S}_y \,\, (\#eq:estpa9)
-\end{equation}
-
+$$
 onde
 
-\begin{equation}
+$$
 \mathbf{S}_y = \frac{1}{N-1} \sum_{i \in U} \left( \mathbf{y}_i - \overline{ \mathbf{Y}} \right) \left( \mathbf{y}_i - \overline{\mathbf{Y}} \right) ^{^{\prime }}   (\#eq:estpa10)
-\end{equation}
+$$
 
-\begin{equation}
+$$
 \overline{\mathbf{Y}} = \frac{1}{N} \sum_{i \in U} \mathbf{y}_i = \frac{1}{N} \mathbf{Y} \,\,\, (\#eq:estpa11)
-\end{equation}
-
+$$
 Sob AAS, o estimador da variância do estimador de total simplifica para:
 
-\begin{equation}
+$$
 \widehat{V}_{AAS} \left( \mathbf{\widehat{Y}}_{AAS} \right) = N^{2} \left( \frac{1}{n} - \frac{1}{N} \right) \mathbf{\widehat S}_y \,\, (\#eq:estpa12)
-\end{equation}
-
+$$
 onde
-
-\begin{equation}
+$$
 \widehat{\mathbf{S}}_y = \frac{1}{n-1} \sum_{i \in s} \left( \mathbf{y}_i - \overline{\mathbf{y}} \right) \left( \mathbf{y}_i - \overline{\mathbf{y}} \right) ^{^{\prime }} \,\,\, (\#eq:estpa13) 
-\end{equation}
+$$
 
 Vários outros estimadores de totais estão disponíveis na literatura de amostragem, porém os que são comumente usados na prática são estimadores ponderados (lineares) da forma 
 
-\begin{equation}
+$$
 \mathbf{\widehat{Y}}_w = \sum\limits_{i \in s} w_i \mathbf{y}_i  \,\,\, (\#eq:estpa14)
-\end{equation}
+$$
 
 onde $w_i$ é um peso associado à unidade $i$ da amostra ($i \in s$). 
 
@@ -111,30 +101,25 @@ $$
 
 Outros dois estimadores de totais comumente usados pelos praticantes de amostragem são o *estimador de razão simples* $\mathbf{\widehat{Y}}_R$ e o *estimador de regressão simples* $\mathbf{\widehat{Y}}_{REG}$, dados respectivamente por 
 
-\begin{equation}
+$$
 \mathbf{\widehat{Y}}_R = \sum_{i \in s} {w_i^{R} \ } \mathbf{y}_i \,\,\,  (\#eq:estpa15)
-\end{equation}
-
+$$
 com
 
-\begin{equation}
+$$
 w_i^{R} = d_i \times \frac{\sum_{i \in U} x_i } {\sum_{i \in s} {d_i \ } x_i} = d_i \times \frac{X}{\widehat{X}_{HT}}  \,\,\,  (\#eq:estpa16)
-\end{equation}
-
+$$
 e 
 
-\begin{equation}
+$$
 \mathbf{\widehat{Y}}_{REG} = \sum_{i \in s} {w_i^{REG} \ } \mathbf{y}_i \,\,\,  (\#eq:estpa17)
-\end{equation}
-
+$$
 onde
 
-\begin{equation}
+$$
 w_i^{REG} = d_i \times g_i \,\,\, (\#eq:estpa18)
-\end{equation}
-
+$$
 sendo 
-
 $$
 g_{i} = 1 + x_{i \mbox{ }} (X - \widehat{X}_{HT}) / \sum_{i \in s} d_i x_i^2
 $$
@@ -145,14 +130,14 @@ O estimador de regressão descrito em \@ref(eq:estpa17) é um caso particular do
 
 Para completar a descrição dos procedimentos de inferência para médias e totais baseados em estimadores ponderados do tipo razão ou regressão, é necessário identificar estimadores para as variâncias de aleatorização correspondentes. Entretanto, os estimadores de razão e regressão são viciados sob a distribuição de aleatorização para pequenas amostras. Em ambos os casos, o vício é desprezível para amostras grandes, e estão disponíveis expressões assintóticas para as respectivas variâncias de aleatorização. 
 
-Partindo destas expressões foram então construídos estimadores amostrais das variâncias dos estimadores de razão e regressão, que podem ser encontrados na excelente revisão sobre o tema contida em @SSW1992, Seção 6.6 e Capítulo 7. Apesar de sua importância para os praticantes de amostragem, a discussão detalhada desse problema não está incluída neste livro.
+Partindo destas expressões foram então construídos estimadores amostrais das variâncias dos estimadores de razão e regressão, que podem ser encontrados na excelente revisão sobre o tema contida em @SSW1992, Seção 6.6 e Cap. 7. Apesar de sua importância para os praticantes de amostragem, a discussão detalhada desse problema não será incluída neste livro.
 
 O problema da estimação das variâncias de aleatorização para estimadores como os de razão e regressão nos remete a uma questão central da teoria da amostragem. Trata-se dos métodos disponíveis para estimar variâncias de estimadores "complexos". O caso dos estimadores de razão e regressão para totais e médias foi resolvido faz tempo, e não há muito o que discutir aqui. Entretanto, a variedade de métodos empregados para estimação de variâncias merece uma discussão em separado, pois as técnicas de ajuste consideradas neste livro para incorporar pesos e plano amostral na inferência partindo de dados de pesquisas amostrais complexas depende em grande medida da aplicação de tais técnicas.
 
 ## Estimação de variâncias - motivação
-<div style="text-align: justify">
-Em Amostragem, como de resto na Estatística Clássica, a estimação de variâncias é um componente *essencial* da abordagem inferencial adotada: sem estimativas de variância, nenhuma indicação da precisão (e, portanto, da qualidade) das estimativas
-de interesse está disponível. Nesse caso, uma tentação que assola muitos usuários incautos é esquecer que os resultados são baseados apenas em dados de uma amostra da população e, portanto, sujeitos a incerteza, que não pode ser quantificada sem medidas de precisão amostral.
+
+Em Amostragem, como de resto na Estatística Clássica, a estimação de variâncias é um componente *essencial* da abordagem inferencial adotada: sem estimativas de variância, nenhuma indicação da precisão (e portanto, da qualidade) das estimativas
+de interesse está disponível. Nesse caso, uma tentação que assola muitos usuários incautos é esquecer que os resultados são baseados apenas em dados de uma amostra da população, e portanto sujeitos a incerteza, que não pode ser quantificada sem medidas de precisão amostral.
 
 Em geral, a obtenção de estimativas de variâncias (alternativamente, de desvios padrões ou mesmo de coeficientes de variação) é requerida para que intervalos de confiança possam ser calculados, e outras formas de inferência realizadas. Intervalos de confiança elaborados com estimativas amostrais são geralmente
 baseados em aproximações assintóticas da distribuição amostral do estimador pela distribuição normal, usando resultados análogos ao TCL para populações finitas - ver @Fuller2009, tais que intervalos da forma 
@@ -165,14 +150,14 @@ têm probabilidade de cobertura aproximada $1-\alpha$, com $z_{\alpha /2}$ sendo
 
 Estimativas de variância podem ser úteis também para outras finalidades, tais como a detecção de problemas não antecipados, tais como observações suspeitas, celas raras em tabelas de contingência, etc.
 
-A estimação de variâncias para os casos padrões de amostragem, isto é, quando os estimadores são lineares nas observações amostrais, não viciados e todas as probabilidades de inclusão conjuntas são não nulas, é tratada em todos os
+A estimação de variâncias para os casos padrões de amostragem, isto é, quando os estimadores são lineares nas observações amostrais, não viciados, e todas as probabilidades de inclusão conjuntas são não nulas, é tratada em todos os
 livros de amostragem convencionais. Apesar disso, os pacotes estatísticos usuais, tais como SAS, SPSS, MINITAB e outros, por muito tempo não ofereciam rotinas prontas para estimar variâncias considerando o plano amostral, nem mesmo para estatísticas simples como estimadores de totais e médias. 
 
-Felizmente tal situação mudou, e agora já é possível contar com ferramentas no SAS (procedimentos *survey*), no SPSS (módulo *Complex Samples*) e no STATA (funções *svy*). Mas, a nosso ver, é no pacote *survey* do sistema R que estão disponíveis as melhores ferramentas para estimação de parâmetros a partir de dados de amostras complexas.
+Felizmente tal situação mudou, e agora já é possível contar com ferramentas no SAS (procedimentos *SURVEY*), no SPSS (módulo *Complex Samples*) e no STATA (funções *svy*). Mas, a nosso ver, é no pacote *survey* do sistema R que estão disponíveis as melhores ferramentas para estimação de parâmetros a partir de dados de amostras complexas.
 
 Para alguns planos amostrais utilizados na prática, as probabilidades de inclusão conjuntas podem ser nulas (caso de amostragem sistemática) ou difíceis de calcular (caso de alguns esquemas de seleção com probabilidades desiguais). Nesses casos, as expressões fornecidas na Seção \@ref(estimatotais) para os estimadores das variâncias dos estimadores de totais não são mais adequadas.
 
-Em muitos outros casos, como se vê no restante deste livro, os parâmetros de interesse são "não lineares" (diferentes de totais, médias e proporções, por exemplo). Casos comuns que consideremos mais adiante são a estimação de razões,
+Em muitos outros casos, como se verá no restante deste livro, os parâmetros de interesse são "não lineares" (diferentes de totais, médias e proporções, por exemplo). Casos comuns que consideraremos mais adiante são a estimação de razões,
 coeficientes de modelos de regressão etc. Nesses casos é comum que as estatísticas empregadas para estimar tais parâmetros também sejam "não lineares".
 
 Finalmente, alguns estimadores de variância podem, em alguns casos, produzir estimativas negativas da variância, que são inaceitáveis de um ponto de vista prático (tais como o estimador da expressão \@ref(eq:estpa3) para alguns esquemas de seleção com probabilidades desiguais e determinadas configurações peculiares da
@@ -180,10 +165,10 @@ amostra).
 
 Em todos esses casos, é requerido o emprego de técnicas especiais de estimação de variância. É de algumas dessas técnicas que tratam as seções seguintes deste capítulo. A seleção das técnicas discutidas aqui não é exaustiva, e um tratamento
 mais completo e aprofundado da questão pode ser encontrado no livro de @Wolter2007. 
-Discutimos inicialmente a técnica de *Linearização de Taylor*, em seguida uma abordagem comumente adotada para estimar variâncias para planos amostrais estratificados e conglomerados em vários estágios, com seleção de unidades primárias com probabilidades desiguais, denominada *Método do Conglomerado Primário* (do inglês *Ultimate Cluster*). Por último, tratamos brevemente de uma técnica baseada na ideia de pseudo replicações da amostra, denominada *Bootstrap*. A combinação dessas três idéias suporta os desenvolvimentos teóricos dos algoritmos empregados pelo pacote *survey* do sistema R para estimação de variâncias - ver @Lumley2006 e @Lumley2010.
+Discutimos inicialmente a técnica de *Linearização de Taylor*, em seguida uma abordagem comumente adotada para estimar variâncias para planos amostrais estratificados e conglomerados em vários estágios, com seleção de unidades primárias com probabilidades desiguais, denominada *Método do Conglomerado Primário* (do inglês *Ultimate Cluster*). Por último, trataremos brevemente de uma técnica baseada na ideia de pseudo-replicações da amostra, denominada *Bootstrap*. A combinação dessas três idéias suporta os desenvolvimentos teóricos dos algoritmos empregados pelo pacote *survey* do sistema R para estimação de variâncias - ver @Lumley2006 e @Lumley2010.
 
 ## Linearização de Taylor (ou Delta) para estimar variâncias {#taylor}
-<div style="text-align: justify">
+
 Um problema que ocorre frequentemente é o de estimar um vetor de parâmetros 
 $\mathbf{\theta} = \left( \theta _{1},\ldots ,\theta_{K}\right)$ de uma população finita $U$, que pode ser escrito na forma: 
 
@@ -219,10 +204,9 @@ Quando $\mathbf{g}(\bullet)$ é uma função não linear, podemos usar a técnic
 
 Vamos considerar a expansão de $\mathbf{g} \left( \mathbf{\widehat{Y}}_{HT} \right)$ em torno de $\mathbf{Y}$, até o termo de primeira ordem, desprezando o resto, dada por:
 
-\begin{equation}
+$$
 \mathbf{\widehat{\theta} \doteq  \widehat{\theta}}_{L} = \mathbf{g(Y) + \Delta g(Y)} \left( \mathbf{\widehat{Y}}_{HT} - \mathbf{Y} \right) \,\,\, (\#eq:estpa19)
-\end{equation}
-
+$$
 onde $\mathbf{\Delta g(Y)}$ é a matriz Jacobiana $K \times Q$ cuja $q$-ésima coluna é $\mathbf{\partial g(Y)/}\partial Y_{q}$, para $q=1,\ldots, Q$.
 
 A ideia básica do método de linearização é aproximar a variância do estimador  $\mathbf{\widehat{\theta}}$ pela variância do *estimador linearizado* $\mathbf{\widehat{\theta}}_L$ dado pelo lado direito da expressão \@ref(eq:estpa19). Para obter a variância do estimador linearizado, note que $\mathbf{g(Y)}$ é uma constante, e que
@@ -245,37 +229,34 @@ Este resultado segue porque na expressão do lado direito o único termo que tem
 
 Um estimador consistente de $V_{p} \left( \mathbf{\widehat{\theta}}\right)$ é dado por:
 
-\begin{equation}
+$$
 \widehat{V}_{p} \left( \mathbf{\widehat{\theta}} \right) = \widehat{V}_{p} \left( \mathbf{\widehat{Z}}_{HT} \right)  \,\,\,  (\#eq:estpa20)
-\end{equation}
-
+$$
 onde $\widehat{V}_{p}\left( \mathbf{\widehat{Z}}_{HT}\right)$ é dado em \@ref(eq:estpa3), onde substituímos o vetor de variáveis resposta original $\mathbf{y}_i$ pelo vetor de variáveis linearizadas $\mathbf{z}_{i} = \mathbf{\Delta g(Y)} \mathbf{y}_{i}$.
 
 Linearização de Taylor pode ser trabalhosa, porque para cada parâmetro/estimador de interesse são requeridas derivações e cálculos específicos. Felizmente, grande parte das situações de interesse prático estão hoje cobertas por pacotes estatísticos especializados na estimação de medidas descritivas e parâmetros de modelos, e suas respectivas variâncias de aleatorização empregando o método de linearização, de modo que essa desvantagem potencial tende a se diluir.
 
-Linearização de Taylor pode não ser imediatamente possível, pois pode ocorrer que as quantidades de interesse não podem ser expressas como funções de totais ou médias populacionais (este é o caso de quantis de distribuições, por exemplo). Para estes casos é necessário recorrer a outras técnicas de estimação de variâncias, como discutido, por exemplo, em @Wolter2007.
+Linearização de Taylor pode não ser imediatamente possível, pois pode ocorrer que as quantidades de interesse não podem ser expressas como funções de totais ou médias populacionais (este é o caso de quantis de distribuições, por exemplo). Para estes casos será necessário recorrer a outras técnicas de estimação de variâncias, como discutido, por exemplo, em @Wolter2007.
 
 ## Equações de estimação
-<div style="text-align: justify">
+
 Até aqui, falamos da estimação de totais e de parâmetros que podem ser escritos como funções de totais. O caminho para obter resultados gerais referentes a muitos outros parâmetros de interesse é o que discutimos nesta seção.
 
-Se um parâmetro populacional de interesse $\theta_U$ é uma solução única de um sistema de equações de estimação definidas como
+Se um parâmetro populacional de interesse $θ_U$ é uma solução única de um sistema de equações de estimação definidas como
 
-\begin{equation}
+$$
 \sum_{i \in U} \mathbf{u_i(\theta)} = \mathbf{0}  \,\,\, (\#eq:estpa21)
-\end{equation}
+$$
+para uma função $\mathbf{u(\bullet)}$ conhecida, então é possível estimar o parâmetro $θ_U$ usando o estimador $\widehat θ$ obtido resolvendo as equações de estimação amostrais:
 
-para uma função $\mathbf{u(\bullet)}$ conhecida, então é possível estimar o parâmetro $\theta_U$ usando o estimador $\widehat \theta$ obtido resolvendo as equações de estimação amostrais:
-
-\begin{equation}
+$$
 \sum_{i \in s} d_i \, \mathbf{u_i(\theta)} = \mathbf{0}  \,\,\, (\#eq:estpa22)
-\end{equation}
+$$
+O estimador $\widehat θ$ é consistente para $θ_U$, e adiante mostraremos como o método de Linearização de Taylor pode ser usado para estimar a sua variância. Antes, porém, vamos usar alguns exemplos para ilustrar casos particulares relevantes de como aplicar essa ideia.
 
-O estimador $\widehat \theta$ é consistente para $\theta_U$, e adiante mostraremos como o método de Linearização de Taylor pode ser usado para estimar a sua variância. Antes, porém, vamos usar alguns exemplos para ilustrar casos particulares relevantes de como aplicar essa ideia.
-
-\BeginKnitrBlock{example}
-<span class="example" id="exm:exe32"><strong>(\#exm:exe32) </strong></span>Estimação de médias populacionais
-\EndKnitrBlock{example}
+```{example, label= "exe32"}
+Estimação de médias populacionais
+```
 
 Para ilustrar a aplicação da abordagem de equações de estimação, considere o caso em que a função $\mathbf{u_i(\theta)} = y_i - \theta$. Nesse caso, as equações de estimação populacionais \@ref(eq:estpa21) simplificam para:
 
@@ -294,9 +275,9 @@ $$
 $$
 que é o conhecido estimador de Hàjek da média populacional.
 
-\BeginKnitrBlock{example}
-<span class="example" id="exm:exe33"><strong>(\#exm:exe33) </strong></span>Estimação de razões populacionais
-\EndKnitrBlock{example}
+```{example, label= "exe33"}
+Estimação de razões populacionais
+```
 
 Considere agora o caso em que a função $\mathbf{u_i(\theta)} = y_i - \theta z_i$. Nesse caso, as equações de estimação populacionais \@ref(eq:estpa21) simplificam para:
 
@@ -313,13 +294,13 @@ A solução das equações de estimação amostrais correspondentes fornece:
 $$
 \widehat \theta = \frac{\sum_{i \in s} d_i y_i}{\sum_{i \in s} d_i z_i} = \frac{\widehat{Y}_{HT}}{\widehat{Z}_{HT}} = \widehat{R}
 $$
-Os exemplos apresentados ilustram que a estimação de médias e razões populacionais são casos particulares simples da abordagem mais geral de *equações de estimação*. Essa abordagem também se mostrará útil quando lidamos com a estimação de parâmetros sob vários tipos de modelos paramétricos, que está apresentada nos capítulos seguintes deste livro. É também graças a ela que foi possível desenvolver software genérico para estimação a partir de amostras complexas, como é o caso do pacote *survey* do sistema R.
+Os exemplos apresentados ilustram que a estimação de médias e razões populacionais são casos particulares simples da abordagem mais geral de *equações de estimação*. Essa abordagem também se mostrará útil quando lidarmos com a estimação de parâmetros sob vários tipos de modelos paramétricos, que será apresentada nos capítulos seguintes deste livro. É também graças a ela que foi possível desenvolver software genérico para estimação a partir de amostras complexas, como é o caso do pacote *survey* do sistema R.
 
 A estimação de variâncias nesse caso pode ser feita usando o método de Linearização de Taylor, empregando a estratégia de calcular variáveis linearizadas $z$ definidas como na Seção \@ref(taylor). Esta é a estratégia adotada no pacote *survey* do sistema R.
 
 
 ## Método do Conglomerado Primário
-<div style="text-align: justify">
+
 A ideia central do Método do Conglomerado Primário (do inglês *Ultimate Cluster*) para estimação de variâncias para estimadores de totais e médias em planos amostrais de múltiplos estágios, proposto por @hansen1953, é considerar apenas a variação entre informações disponíveis no nível das unidades primárias de amostragem - UPAs, isto é, dos *conglomerados primários*, e admitir que estes teriam sido selecionados com reposição da população de UPAs. Esta ideia é simples, porém bastante poderosa, porque permite acomodar uma enorme variedade de planos amostrais envolvendo estratificação, amostragem conglomerada e seleção com probabilidades desiguais (com ou sem reposição) tanto das UPAs como das demais unidades de amostragem. 
 
 Os requisitos fundamentais para permitir a aplicação deste método são que estejam disponíveis estimadores não viciados dos totais da variável de interesse para cada um dos conglomerados primários selecionados, e que pelo menos dois destes sejam selecionados em cada estrato (se a amostra for estratificada no primeiro estágio).
@@ -329,17 +310,16 @@ estatísticos para cálculo de variâncias considerando o plano amostral, tais c
 
 Para descrever o método, considere um plano amostral em vários estágios, no qual $n_{h}$ unidades primárias de amostragem - UPAs foram selecionadas no estrato $h$, com $h=1, \ldots, H$. Denotemos por $\pi_{hi}$ a probabilidade de inclusão na amostra da UPA (conglomerado primário) $i$ do estrato $h$, e por $\widehat{Y}_{hi}$ um estimador não viciado do total $Y_{hi}$ da variável de pesquisa $y$ na $i$-ésima UPA do estrato $h$. Então um estimador não viciado do total $Y = \sum_{h=1}^{H} \sum_{i=1}^{N_{h}} Y_{hi}$ da variável de pesquisa $y$ na população é dado por
 
-\begin{equation}
+$$
 \widehat{Y}_{CP} = \sum_{h=1}^{H} \sum_{i=1}^{n_{h}} \widehat{Y}_{hi} / \pi _{hi} \,\,\, (\#eq:estpa23) 
-\end{equation}
-
+$$
 e um estimador não viciado da variância de aleatorização correspondente por 
 
-\begin{equation}
+$$
 \widehat{V}_{p} \left( \widehat{Y}_{CP}\right) = \sum_{h=1}^{H}\frac{n_{h}}
 {n_{h}-1} \sum_{i=1}^{n_{h}} \left( \frac{\widehat{Y}_{hi}}{\pi _{hi}} -
 \frac{\widehat{Y}_{h}}{n_{h}} \right) ^{2}  (\#eq:estpa24)
-\end{equation}
+$$
 
 onde $\widehat{Y}_{h} = \sum_{i=1}^{n_{h}} \widehat{Y}_{hi} / \pi _{hi}$ para 
 $h=1,\ldots ,H$. (Ver por exemplo, @Shah1993, p. 4).
@@ -349,24 +329,23 @@ Embora na prática a seleção das UPAs seja geralmente feita sem reposição, o
 Tal aproximação é largamente utilizada pelos praticantes de amostragem para estimar variâncias de quantidades descritivas usuais tais como totais e médias (com a devida adaptação) devido à sua simplicidade, comparada com a complexidade muito maior envolvida com o emprego de estimadores de variância que tentam incorporar todas as etapas de planos amostrais conglomerados em vários estágios. Uma discussão sobre a qualidade dessa aproximação e alternativas pode ser encontrada em  @SSW1992, p. 153.
 
 ## Métodos de replicação
-<div style="text-align: justify">
+
 A ideia de usar métodos indiretos ou de replicação para estimar variâncias em amostragem não é nova. @Mahala1939, @Mahala1944 e @deming1956 foram os precursores e muitos desenvolvimentos importantes se seguiram. Hoje em dia várias técnicas baseadas nessa ideia são rotineiramente empregadas por praticantes de amostragem, e
 inclusive formam a base para pacotes especializados de estimação tais como WesVarPC (ver @Westat1996).
 
 A ideia básica original foi construir a amostra de tamanho $n$ como a união de $G$ amostras de tamanho $n/G$ cada uma, selecionadas de forma independente e usando o mesmo plano amostral, onde $G$ é o número de *réplicas*. Nesse caso, se $\theta$ é o parâmetro-alvo, e $\widehat{\theta}_{g}$ é um estimador não viciado de $\theta$ baseado na $g$-ésima réplica $(g=1,\ldots ,G)$, segue-se que
 
 $$
-\widehat{\theta }_{G}=\frac{1}{G}\sum_{g=1}^{G}\widehat{\theta }_{g} 
+\widehat{\theta }_{R}=\frac{1}{G}\sum_{g=1}^{G}\widehat{\theta }_{g} 
 $$
 
 é também um estimador não viciado de $\theta$ e 
 
-\begin{equation}
-\widehat{V}_{G} \left( \widehat{\theta }_{G}\right) = \frac{1}{G \left(
-G-1 \right)} \sum_{g=1}^{G} \left( \widehat{\theta }_{g} - \widehat{\theta}_{G} \right)^{2}  \,\, (\#eq:estpa25)
-\end{equation}
-
-é um estimador não viciado (de replicação) da variância do estimador $\widehat{\theta}_{G}$.
+$$
+\widehat{V}_{R} \left( \widehat{\theta }_{R}\right) = \frac{1}{G \left(
+G-1 \right)} \sum_{g=1}^{G} \left( \widehat{\theta }_{g} - \widehat{\theta}_{R} \right)^{2}  \,\, (\#eq:estpa25)
+$$
+é um estimador não viciado (de replicação) da variância do estimador $\widehat{\theta}_{R}$.
 
 Note que desde que as réplicas sejam construídas de forma independente conforme indicado, os estimadores $\widehat{\theta }_{R}$ e $\widehat{V}_{R}\left( \widehat{\theta }_{R}\right)$ são não viciados qualquer que seja o plano amostral empregado para selecionar a amostra de cada réplica, o que faz desta uma técnica
 flexível e genérica. Além disso, a abordagem de replicação é bastante geral, pois os estimadores aos quais se aplica não precisam ser necessariamente expressos como funções de totais, como ocorre com a técnica de Linearização de Taylor discutida na Seção \@ref(taylor). 
@@ -381,17 +360,17 @@ Uma pesquisa importante e de grande porte em que esta ideia é aplicada é a pes
 
 É importante observar que a repartição da amostra em grupos aleatórios a posteriori precisa considerar o plano amostral empregado e pode não ser possível em algumas situações. Idealmente, tal repartição deveria ser feita respeitando estratos e alocando UPAs inteiras (isto é, com todas as respectivas unidades subordinadas). @Wolter1985, p. 31, discute algumas regras sobre como fazer para respeitar o plano amostral ao fazer a repartição da amostra a posteriori, porém recomendamos que o interessado no uso dessa técnica exerça cautela.
 
-Além da modificação da interpretação das réplicas no caso de serem formadas a posteriori, é comum também nesse caso empregar um estimador para o parâmetro $\theta$ baseado na amostra completa (denotado $\widehat{\theta}$), e um estimador de variância mais conservador que o estimador $\widehat{V}_{G}\left( \widehat{\theta }_{G}\right)$ anteriormente apresentado, dado por 
+Além da modificação da interpretação das réplicas no caso de serem formadas a posteriori, é comum também nesse caso empregar um estimador para o parâmetro $\theta$ baseado na amostra completa (denotado $\widehat{\theta}$), e um estimador de variância mais conservador que o estimador $\widehat{V}_{R}\left( \widehat{\theta }_{R}\right)$ anteriormente apresentado, dado por 
 
-\begin{equation}
-\widehat{V}_{G}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
+$$
+\widehat{V}_{RG}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
 }\sum_{g=1}^{G}\left( \widehat{\theta }_{g}-\widehat{\theta }\right) ^{2} \,\,
 (\#eq:estpa26)
-\end{equation}
+$$
 
 Um exemplo de aplicação desta técnica pode ser encontrado na forma recomendada para estimação de variâncias a partir das Amostras de Uso Público do Censo Demográfico Brasileiro de 80 (ver @IBGE1985).
 
-Nesta seção descreveremos duas outras dessas técnicas baseadas em replicações. A primeira é o método de *jackknife*. Este método foi originalmente proposto por @Queno49 e @Queno56 como uma técnica para redução de vício de estimadores, num contexto da Estatística Clássica. A ideia central consiste em repartir a amostra (a posteriori, como no caso do método dos grupos aleatórios) em $G$ grupos mutuamente exclusivos de igual tamanho $n/G$. Em seguida, para cada grupo formado calcular os chamados pseudo estimadores dados por 
+Nesta seção descreveremos duas outras dessas técnicas baseadas em replicações. A primeira é o método de *jackknife*. Este método foi originalmente proposto por @Queno49 e @Queno56 como uma técnica para redução de vício de estimadores, num contexto da Estatística Clássica. A ideia central consiste em repartir a amostra (a posteriori, como no caso do método dos grupos aleatórios) em $G$ grupos mutuamente exclusivos de igual tamanho $n/G$. Em seguida, para cada grupo formado calcular os chamados pseudo-estimadores dados por 
 
 $$
 \widehat{\theta }_{\left( g\right) }=G\widehat{\theta }-\left( G-1\right) 
@@ -402,30 +381,34 @@ onde $\widehat{\theta }_{g}$ é um estimador de $\theta$ obtido da amostra após
 
 A estimação da variância por esse método pode então ser feita de duas maneiras alternativas, usando um dos estimadores dados por 
 
-\begin{equation}
+$$
 \widehat{V}_{J1}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
 }\sum_{g=1}^{G}\left( \widehat{\theta }_{\left( g\right) }-\widehat{\theta }
 _{J}\right) ^{2}  (\#eq:estpa27)
-\end{equation}
+$$
 ou 
 
-\begin{equation}
+$$
 \widehat{V}_{J2}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
 }\sum_{g=1}^{G}\left( \widehat{\theta }_{\left( g\right) }-\widehat{\theta }
 \right) ^{2} \,\,\, (\#eq:estpa28)
-\end{equation}
-
+$$
 onde $\widehat{\theta }_{J} = \frac{1}{G} \sum_{g=1}^{G} \widehat{\theta }_{\left( g\right)}$ é um estimador pontual *jackknife* para $\theta$, alternativo ao estimador da amostra inteira $\hat{\theta}$.
 
 
-**Observaçao 3.1:** A descrição do método *jackknife* aqui apresentada não cobre o caso de planos amostrais estratificados, que é mais complexo. Para detalhes sobre este caso, consulte @Wolter1985, pág. 174.
+```{remark}
+A descrição do método *jackknife* aqui apresentada não cobre o caso de planos amostrais estratificados, que é mais complexo. Para detalhes sobre este caso, consulte @Wolter1985, pág. 174.
+```
+ 
+```{remark} 
+O estimador $\widehat{V}_{J2}\left( \widehat{\theta }\right)$ é mais conservador que o estimador $\widehat{V}_{J1}\left( \widehat{\theta }\right)$.
+```
 
-**Observaçao 3.2:** O estimador $\widehat{V}_{J2}\left( \widehat{\theta }\right)$ é mais conservador que o estimador $\widehat{V}_{J1}\left( \widehat{\theta }\right)$.
+```{remark}
+É comum aplicar a técnica fazendo o número de grupos igual ao tamanho da amostra, isto é, tomando $G=n$ e portanto eliminando uma observação da amostra de cada vez ao calcular os pseudo-valores. Essa regra deve ser aplicada considerando o número de UPAs quando o plano amostral é em múltiplos estágios, pois as UPAs devem sempre ser eliminadas com todas as unidades subordinadas.
+```
 
-**Observaçao 3.3:** É comum aplicar a técnica fazendo o número de grupos igual ao tamanho da amostra, isto é, tomando $G=n$ e portanto eliminando uma observação da amostra de cada vez ao calcular os pseudo valores. Essa regra deve ser aplicada considerando o número de UPAs quando o plano amostral é em múltiplos estágios, pois as UPAs devem sempre ser eliminadas com todas as unidades subordinadas.
-
-
-Os estimadores de variância do método *jackknife* fornecem resultadoS idênticos aos dos estimadores usuais de variância quando aplicados para o caso de estimadores lineares nas observações amostrais. Além disso, suas propriedades são razoáveis para vários outros casos de estimadores não lineares de interesse (ver, por exemplo, @Cochran1977, p. 321 e @Wolter1985, p. 306). A situação merece maiores cuidados para o caso de quantis ou estatísticas de ordem, tais como a mediana e o máximo, pois neste caso essa técnica não funciona bem @Wolter1985, p. 163.
+Os estimadores de variância do método *jackknife* fornecem resultado idêntico aos dos estimadores usuais de variância quando aplicados para o caso de estimadores lineares nas observações amostrais. Além disso, suas propriedades são razoáveis para vários outros casos de estimadores não lineares de interesse (ver, por exemplo, @Cochran1977, p. 321 e @Wolter1985, p. 306). A situação merece maiores cuidados para o caso de quantis ou estatísticas de ordem, tais como a mediana e o máximo, pois neste caso essa técnica não funciona bem @Wolter1985, p. 163.
 
 O pacote WesVarPC - @Westat1996 - baseia suas estimativas de variância principalmente no método *jackknife*, embora também possua uma opção para usar outro método conhecido como de replicações de meias amostras balanceadas (do inglês *balanced half-sample replication*).
 
@@ -437,11 +420,10 @@ O outro método de replicação que vamos considerar é uma variante do método 
 
 3) Defina pesos *bootstrap* para as unidades da amostra selecionada em (1) usando:
 
-\begin{equation}
+$$
  w_{hik}^* = \left[ 1 - \left( \frac{m_h} {n_h - 1} \right)^{1/2} +  \left( \frac{m_h} {n_h - 1} \right)^{1/2} \times \frac{n_h} {m_h} \times m_{hi}^* \right] \times w_{hik}  \,\,\, (\#eq:estpa29)
-\end{equation}
-
-onde $w_{hik}$ é o peso da unidade $k$ da UPA $i$ do estrato $h$. Note que quando uma UPA $i$ não é selecionada, sua contagem $m_{hi}^*$ é igual a zero, e o terceiro termo dentro do colchete é nulo.
+$$
+onde $w_{hik}$ é o peso da unidade $k$ da UPA $i$ do estrato $h$. Note que quando uma UPA $i$ não é selecionada, sua contagem $m_{hi}^*$ será igual a zero, e o terceiro termo dentro do colchete será nulo.
 
 4) Calcule uma estimativa $\widehat \theta _b$ para o parâmetro de interesse usando os pesos *bootstrap* $w_{hik}^*$ em lugar dos pesos originais $w_{hik}$.
 
@@ -449,32 +431,30 @@ onde $w_{hik}$ é o peso da unidade $k$ da UPA $i$ do estrato $h$. Note que quan
 
 6) Estime a variância do estimador $\widehat \theta$ com:
 
-\begin{equation}
+$$
 \widehat{V}_{B}\left( \widehat{\theta }\right) = \frac{1}{B} \sum_{b=1}^{B} \left( \widehat \theta _b - \widehat{\theta}
 \right) ^{2} \,\,\, (\#eq:estpa30)
-\end{equation}
+$$
+A Pesquisa Nacional por Amostra de Domicílios Contínua - PNAD Contínua do IBGE passou a usar este método *bootstrap* para estimação da precisão dos indicadores que divulga a partir do terceiro trimestre de 2021.
 
-A Pesquisa Nacional por Amostra de Domicílios Contínua - PNAD Contínua do IBGE passou a usar este método *bootstrap* para estimação da precisão dos indicadores que divulga a partir do terceiro trimestre de 2021, ver @PNADC2021.
-
-Embora computacionalmente mais custoso que o método da Linearização de Taylor, o método *bootstrap* aqui descrito tem como vantagem a aplicação em casos onde o estimador não é função suave de totais populacionais, tais como separatrizes (quantis), algumas medidas de desigualdade e pobreza etc. Além disso, o método pode ser aplicado com qualquer software que permita implementar o algoritmo descrito, e não requer pacotes especializados. Vale mencionar, entretanto, que este método está disponível no pacote *survey* do sistema R. Sua utilização é ilustrada em capítulos posteriores.
+Embora computacionalmente mais custoso que o método da Linearização de Taylor, o método *bootstrap* aqui descrito tem como vantagem a aplicação em casos onde o estimador não é função suave de totais populacionais, tais como separatrizes (quantis), algumas medidas de desigualdade e pobreza etc. Além disso, o método pode ser aplicado com qualquer software que permita implementar o algoritmo descrito, e não requer pacotes especializados. Vale mencionar, entretanto, que este método está disponível no pacote *survey* do sistema R. Sua utilização será ilustrada em capítulos posteriores.
 
 
 XXX Parei aqui
 
 ## Laboratório de R
-<div style="text-align: justify">
-Vamos utilizar dados da Pesquisa de Padrão  de Vida (PPV) do IBGE para ilustrar alguns métodos de estimação de variâncias. Vamos considerar a estimação da proporção de analfabetos na faixa etária acima de 14 anos. Os dados da pesquisa encontram-se no data frame \texttt{ppv1}. A variável *analf2* é indicadora da condição
-de analfabetismo na faixa etária acima de 14 anos e a variável *faixa2* é indicadora da faixa etária acima de 14 anos. Queremos estimar a proporção de analfabetos na faixa etária acima de 14 anos na região Sudeste.  Antes apresentamos o método de estimação de variância por linearização de Taylor
+
+Vamos utilizar dados da Pesquisa de Padrão  de Vida (PPV) do IBGE para ilustrar alguns métodos de estimação de variâncias. Vamos considerar a estimação da proporção de analfabetos na faixa etária acima de 14 anos. Os dados da pesquisa encontram-se no data frame \texttt{ppv1}. A variável `analf2` é indicadora da condição
+de analfabetismo na faixa etária acima de 14 anos e a variável `faixa2` é indicadora da faixa etária acima de 14 anos. Queremos estimar a proporção de analfabetos na faixa etária acima de 14 anos na região Sudeste.  Antes apresentamos o método de estimação de variância por linearização de Taylor
 
 Vamos criar duas variáveis:
 
-- analf - variável indicadora da condição de analfabetismo:  *v04a01* ou
+- analf - variável indicadora da condição de analfabetismo:  `v04a01` ou
 `v04a02` igual a 2;
 - faixa - variável indicadora de faixa etária entre 7 e 14 anos.
 
 
-
-```r
+```{r, message=FALSE, warning=FALSE}
 library(survey)
 ppv_dat <- readRDS("./data/ppv.rds") # carrega dados
 # cria objeto de desenho
@@ -490,23 +470,20 @@ ppv_plan<-update(ppv_plan,
 
 Como estamos interessados em estimativas relativas à Região Sudeste, vamos restringir o desenho a esse domínio:
 
-
-```r
+```{r}
 ppv_se_plan <- subset(ppv_plan, regiao == 2)
 ```
 
-Vamos estimar os totais das variáveis *analf.faixa* e *faixa*:
+Vamos estimar os totais das variáveis `analf.faixa` e `faixa`:
 
-
-```r
+```{r}
 analf_faixa_tot_est<-svytotal(~analf.faixa+faixa ,ppv_se_plan )
 Vcov.Y1.Y2<-vcov(analf_faixa_tot_est) 
 ```
-Substituindo os valores na expressão \@ref(eq:estpa21), obtemos a estimativa da variância da razão de totais das variáveis *analf.faixa* e *faixa*.
+Substituindo os valores na expressão \@ref(eq:estpa21), obtemos a estimativa da variância da razão de totais das variáveis `analf.faixa` e `faixa`.
 
 
-
-```r
+```{r}
 y1hat<-coef(analf_faixa_tot_est)[1]
 y2hat<-coef(analf_faixa_tot_est)[2]
 Var.raz<-(1/y2hat)*(1/y2hat)*Vcov.Y1.Y2[1,1]+2*(1/y2hat)*(-y1hat/y2hat^2)*Vcov.Y1.Y2[1,2]+
@@ -515,118 +492,56 @@ Var.raz<-(1/y2hat)*(1/y2hat)*Vcov.Y1.Y2[1,1]+2*(1/y2hat)*(-y1hat/y2hat^2)*Vcov.Y
 sqrt(Var.raz)
 ```
 
-```
-##  faixa 
-## 0,0118
-```
-
 Podemos calcular diretamente o desvio-padrão:
 
 
-
-```r
+```{r}
 svyratio(~analf.faixa, ~faixa, ppv_se_plan)
 ```
 
-```
-## Ratio estimator: svyratio.survey.design2(~analf.faixa, ~faixa, ppv_se_plan)
-## Ratios=
-##             faixa
-## analf.faixa 0,119
-## SEs=
-##              faixa
-## analf.faixa 0,0118
-```
-A estimativa do desvio-padrão obtida por meio da função *svyratio* coincide com a obtida diretamente pelo método
-de linearização, e é igual a *r round(sqrt(Var.raz),digits=5)*. O método default para estimar variâncias
-usado pela library *survey* [@R-survey] do R é o de linearização de Taylor.
+A estimativa do desvio-padrão obtida por meio da função `svyratio` coincide com a obtida diretamente pelo método
+de linearização, e é igual a `r round(sqrt(Var.raz),digits=5)`. O método default para estimar variâncias
+usado pela library `survey` [@R-survey] do R é o de linearização de Taylor.
 
-A library *survey* dispõe de métodos alternativos para a estimação de variância.  Vamos utilizar os métodos de replicação
-de *Jackknife* e de *Bootstrap* para estimar esta variância de razão. Inicialmente, vamos converter o objeto de desenho *ppv1_se_plan* em um objeto de desenho de replicação de tipo *Jackknife*, contendo as réplicas de pesos que fornecem correspondentes réplicas de estimativas.
+A library `survey` dispõe de métodos alternativos para a estimação de variância.  Vamos utilizar os métodos de replicação
+de *Jackknife* e de *Bootstrap* para estimar esta variância de razão. Inicialmente, vamos converter o objeto de desenho `ppv1_se_plan` em um objeto de desenho de replicação de tipo *Jackknife*, contendo as réplicas de pesos que fornecem correspondentes réplicas de estimativas.
 
-
-```r
+```{r}
 ppv_se_plan_jkn<-as.svrepdesign(ppv_se_plan,type="JKn")
 svyratio(~analf.faixa, ~faixa, ppv_se_plan_jkn)
 ```
-
-```
-## Ratio estimator: svyratio.svyrep.design(~analf.faixa, ~faixa, ppv_se_plan_jkn)
-## Ratios=
-##             faixa
-## analf.faixa 0,119
-## SEs=
-##        [,1]
-## [1,] 0,0118
-```
 Para o tipo *Bootstrap*, temos:
 
-
-```r
+```{r}
 ppv_se_plan_boot<-as.svrepdesign(ppv_se_plan,type="bootstrap")
 svyratio(~analf.faixa, ~faixa, ppv_se_plan_boot)
-```
 
 ```
-## Ratio estimator: svyratio.svyrep.design(~analf.faixa, ~faixa, ppv_se_plan_boot)
-## Ratios=
-##             faixa
-## analf.faixa 0,119
-## SEs=
-##        [,1]
-## [1,] 0,0119
-```
-Vamos apresentar mais detalhes sobre a obtenção dos estimadores de *Jackknife* e *Bootstrap* na library *survey* [@R-survey].
-A classe do objeto *ppv_se_plan_jkn* é *svyrep.design* e ele contém as seguintes componentes:
+Vamos apresentar mais detalhes sobre a obtenção dos estimadores de *Jackknife* e *Bootstrap* na library `survey` [@R-survey].
+A classe do objeto `ppv_se_plan_jkn` é `svyrep.design` e ele contém as seguintes componentes:
 
-
-```r
+```{r}
 class(ppv_se_plan_jkn)
-```
-
-```
-## [1] "svyrep.design"
-```
-
-```r
 names(ppv_se_plan_jkn)
 ```
 
-```
-##  [1] "repweights"       "pweights"         "type"             "rho"             
-##  [5] "scale"            "rscales"          "call"             "combined.weights"
-##  [9] "selfrep"          "mse"              "variables"        "degf"
-```
 
-
-A componente *repweights* é uma lista com duas componentes: *weights* e *index*. A componente
-*weights* é uma matriz de dimensão $276 \times 276$, onde $276$ é o número de conglomerados primários do plano
+A componente `repweights` é uma lista com duas componentes: `weights` e `index`. A componente
+`weights` é uma matriz de dimensão $276 \times 276$, onde $276$ é o número de conglomerados primários do plano
 amostral da PPV na região Sudeste. A partir desta matriz, podemos obter $276$  réplicas de pesos de desenho de Jackknife.
 
 
-
-```r
+```{r}
 ppv_se_dat<-ppv_se_plan_jkn$variables
 nrow(ppv_se_dat)
-```
-
-```
-## [1] 8903
-```
-
-```r
 ncong<-sum(with(ppv_se_dat,tapply( nsetor,estratof, function(t) length(unique(t)))))
 ncong
 ```
 
-```
-## [1] 276
-```
 
-
-O argumento *compress* da função *as.svrepdesign* permite especificar se, na saída da função, a matriz
-`weights` é na forma comprimida ou não. Na aplicação feita foi usado o valor default que é a forma comprimida. 
-A forma não comprimida da matriz *weights* tem  *r nrow(ppv_se_dat)* linhas e *r ncong* colunas. A forma comprimida
+O argumento `compress` da função `as.svrepdesign` permite especificar se, na saída da função, a matriz
+`weights` será na forma comprimida ou não. Na aplicação feita foi usado o valor default que é a forma comprimida. 
+A forma não comprimida da matriz `weights` tem  `r nrow(ppv_se_dat)` linhas e `r ncong` colunas. A forma comprimida
 permite economizar memória, e pode ser facilmente convertida para a forma não comprimida, utilizando-se a componente`index`. 
 
 No método *jackknife*, cada um dos conglomerados primários é removido, e a réplica correspondente dos pesos é o produto
@@ -641,29 +556,22 @@ no estrato $h$, então os pesos do plano amostral serão multiplicados por:
 
 Podemos obter a matriz de fatores de correção do peso amostral na forma não comprimida da seguinte maneira:
 
-
-```r
+```{r}
 fact_peso_comp_mat<-ppv_se_plan_jkn$repweights[[1]]
 ind_cong <-ppv_se_plan_jkn$repweights[[2]]
 fat_pesos_mat<- fact_peso_comp_mat[ind_cong,]
 str(fat_pesos_mat)
 ```
 
-```
-##  num [1:8903, 1:276] 0 0 1,06 1,06 1,06 ...
-```
-
 Podemos obter matriz de réplicas de pesos multiplicando cada coluna dessa matriz pelos pesos do plano amostra:
 
-
-```r
+```{r}
 rep_pesos_mat<-weights(ppv_se_plan)*fat_pesos_mat
 ```
 
 Utilizando esta matriz de réplicas de pesos, podemos obter réplicas correspondentes de estimativas da razão.
 
-
-```r
+```{r}
 rep_est_raz<-numeric(ncol(rep_pesos_mat))
 for (i in 1:ncol(rep_pesos_mat)){
 rep_est_raz[i]<-sum(rep_pesos_mat[,i]*ppv_se_dat$analf.faixa)/sum(rep_pesos_mat[,i]*ppv_se_dat$faixa)
@@ -674,52 +582,34 @@ rep_est_raz[i]<-sum(rep_pesos_mat[,i]*ppv_se_dat$analf.faixa)/sum(rep_pesos_mat[
 A partir destas réplicas de estimativas da razão, finalmente estimamos a variância:
 
 
-
-```r
+```{r}
 mean_raz<-mean( rep_est_raz[ppv_se_plan_jkn$rscales>0])
 var_jack_raz<- sum((rep_est_raz-mean_raz)^2*ppv_se_plan_jkn$rscales)*ppv_se_plan_jkn$scale
 round(sqrt(var_jack_raz),5)
 ```
 
-```
-## [1] 0,0118
-```
+A library `survey` [@R-survey] fornece uma função para estimar a variância de uma função de totais a partir das réplicas de pesos:
 
-A library *survey* [@R-survey] fornece uma função para estimar a variância de uma função de totais a partir das réplicas de pesos:
-
-
-```r
+```{r}
 var_raz_rep<-withReplicates(ppv_se_plan_jkn, function(w,ppv_se_dat) sum(w*ppv_se_dat$analf.faixa)/sum(w*ppv_se_dat$faixa))
 var_raz_rep 
 ```
 
-```
-##      theta   SE
-## [1,] 0,119 0,01
-```
-
-Resultado que coincide com a estimativa obtida pela aplicação da função *svyratio*.
+Resultado que coincide com a estimativa obtida pela aplicação da função `svyratio`.
 
 A vantagem de utilizar métodos de replicação é a facilidade com que estimamos a variância de qualquer
 característica da população, cujo estimador pontual é conhecido. Por exemplo, se quisermos estimar a variância da razão das taxas de analfabetos nas faixas etárias de 0 a 14 anos e acima de 14 anos podemos usar as mesmas réplicas de pesos:
 
-
-```r
+```{r}
 withReplicates (ppv_se_plan_jkn,function(w,ppv_se_dat) with(ppv_se_dat,
 (sum(w*(analf==1&faixa==1))/sum(w*(faixa==1)))/(sum(w*(analf==1&faixa==0))/sum(w*(faixa==0)))
 ))  
 ```
 
-```
-##      theta   SE
-## [1,] 0,504 0,05
-```
-
-O erro padrão da razão entre razões estimada no exemplo anterior pode ser estimado por linearização de Taylor, usando-se a função *svycontrast()* da library survey: 
+O erro padrão da razão entre razões estimada no exemplo anterior pode ser estimado por linearização de Taylor, usando-se a função `svycontrast()` da library survey: 
 
 
-
-```r
+```{r}
 # cria variáveis dummies: 
 ppv_se_plan <- update(ppv_se_plan,
 num1 = as.numeric(analf==1 & faixa==1),
@@ -732,11 +622,7 @@ comp.tot <- svytotal(~num1+num2+den1+den2, ppv_se_plan)
 
 # estima razão de razões:  
 svycontrast(comp.tot, quote((num1/den1)/(num2/den2)))  
-```
 
-```
-##          nlcon   SE
-## contrast 0,504 0,05
 ```
 
 

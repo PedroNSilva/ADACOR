@@ -488,9 +488,9 @@ knitr::kable(tabela,align= "llrr",format.args= list(big.mark = '.',dec=','),esca
 caption= "$\\text{Valores dos Efeitos de Plano amostral - EPA para as médias de Salário e Receita}$", row.names=FALSE)%>% 
 kable_styling(full_width = F,latex_options = 'HOLD_position')
 ```
-                  
+                
 ```{remark}
-: Neste exemplo não foi feito uso analítico dos dados e sim
+Neste exemplo não foi feito uso analítico dos dados e sim
 descritivo, onde é usual incorporar os pesos no cálculo de
 estimativas e variâncias.
 Não seria esperado usar um estimador ponderado para a média e
@@ -498,11 +498,12 @@ não considerar os pesos no cálculo de variâncias, como fizemos
 neste exemplo.
 ```
 
-```{remark}
-: O exemplo mostra que ignorar a estratificação ao calcular $v_{0}$
+```{remark} 
+O exemplo mostra que ignorar a estratificação ao calcular $v_{0}$
 diminui o $\mathbf{EPA}$.
-```
 
+```
+                                      
 Um outro exemplo relevante é utilizado a seguir para ilustrar o fato de
 que o conceito do $\mathbf{EPA}$ adotado aqui é mais abrangente do que o
 definido por Kish, em particular porque a origem do efeito pode estar na
