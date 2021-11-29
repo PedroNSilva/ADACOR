@@ -368,7 +368,7 @@ G-1 \right)} \sum_{g=1}^{G} \left( \widehat{\theta }_{g} - \widehat{\theta}_{G} 
 
 é um estimador não viciado (de replicação) da variância do estimador $\widehat{\theta}_{G}$.
 
-Note que desde que as réplicas sejam construídas de forma independente conforme indicado, os estimadores $\widehat{\theta }_{R}$ e $\widehat{V}_{R}\left( \widehat{\theta }_{R}\right)$ são não viciados qualquer que seja o plano amostral empregado para selecionar a amostra de cada réplica, o que faz desta uma técnica
+Note que desde que as réplicas sejam construídas de forma independente conforme indicado, os estimadores $\widehat{\theta }_{G}$ e $\widehat{V}_{G}\left( \widehat{\theta }_{G}\right)$ são não viciados qualquer que seja o plano amostral empregado para selecionar a amostra de cada réplica, o que faz desta uma técnica
 flexível e genérica. Além disso, a abordagem de replicação é bastante geral, pois os estimadores aos quais se aplica não precisam ser necessariamente expressos como funções de totais, como ocorre com a técnica de Linearização de Taylor discutida na Seção \@ref(taylor). 
 
 Apesar destas vantagens, a aplicação prática desta técnica de forma exata é restrita porque, em geral, é menos eficiente, inconveniente e mais caro selecionar $G$ amostras (réplicas) independentes com o mesmo esquema, se comparado à seleção de uma única amostra de tamanho $n$ diretamente. Além disto, se o número de

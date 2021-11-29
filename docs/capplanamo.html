@@ -477,7 +477,7 @@ inclusive formam a base para pacotes especializados de estimação tais como Wes
 G-1 \right)} \sum_{g=1}^{G} \left( \widehat{\theta }_{g} - \widehat{\theta}_{G} \right)^{2}  \,\, \tag{3.25}
 \end{equation}\]</span></p>
 <p>é um estimador não viciado (de replicação) da variância do estimador <span class="math inline">\(\widehat{\theta}_{G}\)</span>.</p>
-<p>Note que desde que as réplicas sejam construídas de forma independente conforme indicado, os estimadores <span class="math inline">\(\widehat{\theta }_{R}\)</span> e <span class="math inline">\(\widehat{V}_{R}\left( \widehat{\theta }_{R}\right)\)</span> são não viciados qualquer que seja o plano amostral empregado para selecionar a amostra de cada réplica, o que faz desta uma técnica
+<p>Note que desde que as réplicas sejam construídas de forma independente conforme indicado, os estimadores <span class="math inline">\(\widehat{\theta }_{G}\)</span> e <span class="math inline">\(\widehat{V}_{G}\left( \widehat{\theta }_{G}\right)\)</span> são não viciados qualquer que seja o plano amostral empregado para selecionar a amostra de cada réplica, o que faz desta uma técnica
 flexível e genérica. Além disso, a abordagem de replicação é bastante geral, pois os estimadores aos quais se aplica não precisam ser necessariamente expressos como funções de totais, como ocorre com a técnica de Linearização de Taylor discutida na Seção <a href="capplanamo.html#taylor">3.3</a>.</p>
 <p>Apesar destas vantagens, a aplicação prática desta técnica de forma exata é restrita porque, em geral, é menos eficiente, inconveniente e mais caro selecionar <span class="math inline">\(G\)</span> amostras (réplicas) independentes com o mesmo esquema, se comparado à seleção de uma única amostra de tamanho <span class="math inline">\(n\)</span> diretamente. Além disto, se o número de
 réplicas <span class="math inline">\(G\)</span> for pequeno, o estimador de variância pode ser instável.</p>
@@ -607,7 +607,7 @@ de <em>Jackknife</em> e de <em>Bootstrap</em> para estimar esta variância de ra
 ## analf.faixa 0,119
 ## SEs=
 ##        [,1]
-## [1,] 0,0122</code></pre>
+## [1,] 0,0125</code></pre>
 <p>Vamos apresentar mais detalhes sobre a obtenção dos estimadores de <em>Jackknife</em> e <em>Bootstrap</em> na library <em>survey</em> <span class="citation">(Lumley, 2017)</span>.
 A classe do objeto <em>ppv_se_plan_jkn</em> é <em>svyrep.design</em> e ele contém as seguintes componentes:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="capplanamo.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(ppv_se_plan_jkn)</span></code></pre></div>
