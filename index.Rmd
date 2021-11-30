@@ -22,7 +22,7 @@ fontsize: 12pt
 
 output:
   bookdown::gitbook: default
-#  bookdown::pdf_book: default
+  bookdown::pdf_book: default
 
 documentclass: book          
 

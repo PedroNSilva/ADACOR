@@ -8,7 +8,7 @@ editor:
   - Antonio José Ribeiro Dias
   - Zélia Magalhães Bianchini
   - Sonia Albieri
-date: '30 de novembro de 2021, 09:49:28'
+date: '30 de novembro de 2021, 09:57:26'
 summary_depth: 3
 summary_float:
    collapsed: false
@@ -22,7 +22,7 @@ fontsize: 12pt
 
 output:
   bookdown::gitbook: default
-#  bookdown::pdf_book: default
+  bookdown::pdf_book: default
 
 documentclass: book          
 
