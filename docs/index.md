@@ -8,7 +8,7 @@ editor:
   - Antonio José Ribeiro Dias
   - Zélia Magalhães Bianchini
   - Sonia Albieri
-date: '29 de novembro de 2021, 18:57:30'
+date: '30 de novembro de 2021, 09:49:28'
 summary_depth: 3
 summary_float:
    collapsed: false
@@ -22,13 +22,13 @@ fontsize: 12pt
 
 output:
   bookdown::gitbook: default
-  bookdown::pdf_book: default
+#  bookdown::pdf_book: default
 
 documentclass: book          
 
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
-csl: Modified-apa.csl
+#csl: Modified-apa-original.csl
 suppress-bibliography: false
 #link-citations: yes
 github-repo: PedroNSilva/ADACOR

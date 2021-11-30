@@ -47,11 +47,6 @@ TIC              Tecnologias de Informação e Comunicação
 TICDOM           Pesquisa sobre o uso das Tecnologias de Informação e Comunicação nos domicílios brasileiros   
 
 UPAs             Unidades Primárias de Amostragem 
-
-TCL              Teorema Central do Limite 
-
-
-
 -----------------------------------------------------------------------------------------------------------
 
 

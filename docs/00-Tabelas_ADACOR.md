@@ -15,20 +15,12 @@ Tabela                                                                          
 
 [Tabela 2.3](refinf.html#tab:modelsuperpop)                                            Representação esquemática da *Modelagem de Superpopulação*
 
-[Tabela 2.4](refinf.html#tab:Tab24)                                                    Distribuição de probabilidades conjunta na população $Pr( Y_i = y ; X_i = x )$
+[Tabela 2.4](refinf.html#tab:Tab24)                                                    Distribuição de probabilidades conjunta na população $P( Y_i = y ; X_i = x )$
 
-[Tabela 2.5](refinf.html#tab:Tab25)                                                    Distribuição de probabilidades condicional de $y$ dado $x$ na população - $Pr( Y_i = y | X_i = x )$
+[Tabela 2.5](refinf.html#tab:Tab25)                                                    Distribuição de probabilidades condicional de $y$ dado $x$ na população - $P( Y_i = y | X_i = x )$
 
 [Tabela 2.6](refinf.html#tab:Tab26)                                                    Distribuição de probabilidades conjunta na população $f_U( x ; y )$
 
 [Tabela 2.7](refinf.html#tab:Tab27)                                                    Distribuição de probabilidades condicional de $Y$ dado $X$ na população - $f_U( y | x )$
 
-<<<<<<< Updated upstream
 [Tabela 2.8](refinf.html#tab:Tab28)                                                    Distribuição de probabilidades marginal de $Y$ na população e na amostra - $f_U(y)$ e $f_s(y)$
-=======
-[Tabela 2.8](refinf.html#tab:Tab28)                                                    Distribuição de probabilidades marginal de $Y$ na população e na amostra - $f_U(y)$  e $f_s(y)$
->>>>>>> Stashed changes
-
-
-
-----------

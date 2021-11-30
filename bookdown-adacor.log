@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.11.28)  29 NOV 2021 18:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.11.28)  29 NOV 2021 21:37
 entering extended mode
 **./bookdown-adacor.tex
 (bookdown-adacor.tex
@@ -725,9 +725,8 @@ l.399
 ble.1.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.422   \textbf
-               {considerando Amostragem Aleatória Simples - AAS} e, portant...
-]
+l.418 
+      ]
 Overfull \hbox (10.8533pt too wide) in paragraph at lines 447--447
  []\T1/lmr/m/n/12 (-20) Est_por_AAS|
  []
@@ -999,17 +998,24 @@ Underfull \vbox (badness 1430) has occurred while \output is active []
 
 [55
 
-] [56] (bookdown-adacor.aux)
+]
+Overfull \hbox (0.1743pt too wide) in paragraph at lines 2208--2210
+\T1/lmr/m/n/12 (+4) / / c e t i c . b r / m e d i a / d o c s / p u b l i c a c
+ o e s / 2 / 2 0 2 0 1 1 2 3 1 2 1 8 1 7 / t i c [] d o m [] 2 0 1 9[] l i v r 
+o [] e l e t r o n i c o . p d f % 0 A h t t p s :
+ []
+
+[56] (bookdown-adacor.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16471 strings out of 478864
- 241108 string characters out of 2858507
- 624969 words of memory out of 3000000
+ 16469 strings out of 478864
+ 241082 string characters out of 2858507
+ 623969 words of memory out of 3000000
  33508 multiletter control sequences out of 15000+600000
- 499450 words of font info for 232 fonts, out of 8000000 for 9000
+ 499266 words of font info for 231 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,15n,80p,1087b,492s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTe
@@ -1030,9 +1036,9 @@ eX/fonts/type1/public/lm/lmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
 lm/lmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Prog
 ram Files/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Program Files/MiKTeX/font
 s/type1/public/lm/lmtti10.pfb>
-Output written on bookdown-adacor.pdf (56 pages, 650295 bytes).
+Output written on bookdown-adacor.pdf (56 pages, 650264 bytes).
 PDF statistics:
- 780 PDF objects out of 1000 (max. 8388607)
+ 781 PDF objects out of 1000 (max. 8388607)
  250 named destinations out of 1000 (max. 500000)
  49392 words of extra memory for PDF output out of 51595 (max. 10000000)
 
