@@ -24,3 +24,4 @@ Tabela                                                                          
 [Tabela 2.7](refinf.html#tab:Tab27)                                                    Distribuição de probabilidades condicional de $Y$ dado $X$ na população - $f_U( y | x )$
 
 [Tabela 2.8](refinf.html#tab:Tab28)                                                    Distribuição de probabilidades marginal de $Y$ na população e na amostra - $f_U(y)$ e $f_s(y)$
+----------------------------------
