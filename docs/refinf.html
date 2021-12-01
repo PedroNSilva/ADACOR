@@ -21,7 +21,13 @@
   <meta name="twitter:description" content="Análise de dados de pesquisas amostrais." />
   <meta name="twitter:image" content="/Figuras/capa.png" />
 
-<meta name="author" content="Djalma Galvão Carneiro Pessoa, Pedro Luis do Nascimento Silva" />
+<meta name="author" content="Autores" />
+<meta name="author" content="Djalma Galvão Carneiro Pessoa e Pedro Luis do Nascimento Silva" />
+<meta name="author" content="Editores" />
+<meta name="author" content="Pedro Luis do Nascimento Silva" />
+<meta name="author" content="Antonio José Ribeiro Dias" />
+<meta name="author" content="Zélia Magalhães Bianchini" />
+<meta name="author" content="Sonia Albieri" />
 
 
 
@@ -351,7 +357,7 @@ Figura 2.2: <span class="math inline">\(\text{Representação esquemática da }\
 oficiais, por agências e instituições de muitos países. Uma das alegadas vantagens dessa abordagem é o fato de que as distribuições de referência usadas para inferência são controladas pelos amostristas que planejam as pesquisas por
 amostragem e, portanto, a inferência pode ser considerada não paramétrica e não
 dependente de modelos que precisariam ser especificados pelo analista.</p>
-<p>Uma revisão detalhada da amostragem probabilística pode ser encontrada em <span class="citation">Silva, Bianchini, e Dias (2020)</span>. Nessa abordagem, a inferência é geralmente guiada também por distribuições dos estimadores aproximadas usando o TCL.</p>
+<p>Uma revisão detalhada da amostragem probabilística pode ser encontrada em <span class="citation">Silva et al. (2020)</span>. Nessa abordagem, a inferência é geralmente guiada também por distribuições dos estimadores aproximadas usando o TCL.</p>
 
 <div class="example">
 <span id="exm:aestot" class="example"><strong>Exemplo 2.2  </strong></span>Estimação do total com amostragem estratificada simples
@@ -365,7 +371,7 @@ O estimador padrão (tipo Horvitz-Thompson) para este parâmetro na amostragem e
 \widehat {T}_y = \sum_{h=1}^H \frac{N_h}{n_h} \sum_{i \in s_h} y_i \tag{2.2}
 \end{equation}\]</span>
 onde <span class="math inline">\(s_h\)</span> é a amostra das unidades do estrato <span class="math inline">\(h, h=1, 2,\dots,H\)</span>.</p>
-<p>Este estimador pode ser usado para fazer inferência sobre o total populacional, como descrito, por exemplo, na seção 11.2 de <span class="citation">Silva, Bianchini, e Dias (2020)</span>. A distribuição do estimador <span class="math inline">\(\widehat {T}_y\)</span> obtida considerando o plano amostral <span class="math inline">\(p(s)\)</span> é denominada de <em>distribuição de aleatorização</em> e é geralmente aproximada usando o TCL para viabilizar a inferência.</p>
+<p>Este estimador pode ser usado para fazer inferência sobre o total populacional, como descrito, por exemplo, na seção 11.2 de <span class="citation">Silva et al. (2020)</span>. A distribuição do estimador <span class="math inline">\(\widehat {T}_y\)</span> obtida considerando o plano amostral <span class="math inline">\(p(s)\)</span> é denominada de <em>distribuição de aleatorização</em> e é geralmente aproximada usando o TCL para viabilizar a inferência.</p>
 </div>
 <div id="discussão-das-abordagens-1-e-2" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Discussão das abordagens 1 e 2</h2>
@@ -412,7 +418,7 @@ traduzida nas seguintes perguntas:</p>
 <p>O objeto deste livro é exatamente discutir respostas para as questões aqui
 enumeradas. Para isso, vamos considerar uma abordagem que propõe um modelo
 parametrizado como na <em>Modelagem Clássica</em>, mas formulado para descrever os
-dados da <em>população</em>, e não os da amostra. Essa abordagem incorpora na análise os pontos i) a iii) do Capítulo <a href="introduc.html#introduc">1</a> mediante aproveitamento da estrutura do plano amostral, como feito habitualmente na <em>Amostragem Probabilística</em>. Essa abordagem, denominada de <em>Modelagem de Superpopulação</em>, foi primeiro proposta em <span class="citation">Brewer (1963)</span> e <span class="citation">Royall (1970)</span>, e é bem descrita, por exemplo, em <span class="citation">Binder (1983)</span> e <span class="citation">Valliant, Dorfman, e Royall (2000)</span>.</p>
+dados da <em>população</em>, e não os da amostra. Essa abordagem incorpora na análise os pontos i) a iii) do Capítulo <a href="introduc.html#introduc">1</a> mediante aproveitamento da estrutura do plano amostral, como feito habitualmente na <em>Amostragem Probabilística</em>. Essa abordagem, denominada de <em>Modelagem de Superpopulação</em>, foi primeiro proposta em <span class="citation">Brewer (1963)</span> e <span class="citation">Royall (1970)</span>, e é bem descrita, por exemplo, em <span class="citation">Binder (1983)</span> e <span class="citation">Valliant et al. (2000)</span>.</p>
 </div>
 <div id="modelsuperpop" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Abordagem 3 - Modelagem de Superpopulação</h2>
@@ -531,7 +537,7 @@ apresentar os métodos, ilustrando seu uso com exemplos reais e orientando sobre
 <h2><span class="header-section-number">2.6</span> Fontes de variação</h2>
 <div style="text-align: justify">
 <p>Esta seção estabelece o referencial para inferência em pesquisas amostrais que
-é usado no restante deste texto. <span class="citation">Cassel, Särndal, e Wretman (1977)</span> sugerem que um referencial para
+é usado no restante deste texto. <span class="citation">Cassel et al. (1977)</span> sugerem que um referencial para
 inferência poderia considerar três fontes de aleatoriedade (incerteza,
 variação), incluindo:</p>
 <ol style="list-style-type: decimal">
@@ -619,7 +625,7 @@ P\left[ \left( \mathbf{Y}_U , \mathbf{X}_U \right) = \left( \mathbf{y}_U , \math
 \end{equation}\]</span></p>
 <p>ou seja, uma distribuição degenerada é especificada para
 <span class="math inline">\(\left(\mathbf{Y}_U , \mathbf{X}_U \right)\)</span>.</p>
-<p>Este modelo foi considerado em <span class="citation">Cassel, Särndal, e Wretman (1977)</span>, que o chamaram de <em>abordagem de população fixa</em>, e afirmaram ser esta a abordagem subjacente ao desenvolvimento
+<p>Este modelo foi considerado em <span class="citation">Cassel et al. (1977)</span>, que o chamaram de <em>abordagem de população fixa</em>, e afirmaram ser esta a abordagem subjacente ao desenvolvimento
 da teoria da <em>Amostragem Probabilística</em> encontrada nos livros clássicos tais como <span class="citation">Cochran (1977)</span> e outros.</p>
 <p>Aqui esta abordagem é chamada de <em>abordagem baseada no plano amostral</em> ou <em>abordagem de aleatorização</em>, pois neste caso a única fonte de variação (aleatoriedade) é proveniente do plano amostral. Em geral, a distribuição conjunta de <span class="math inline">\(\left( \mathbf{Y}_U , \mathbf{X}_U \right)\)</span> não precisa ser degenerada como especificada em <a href="refinf.html#eq:ref5">(2.5)</a>, embora o referencial aqui adotado seja suficientemente geral para permitir considerar esta possibilidade.</p>
 <p>Se todas as unidades da população <span class="math inline">\(U\)</span> fossem pesquisadas (ou seja, se fosse
@@ -731,7 +737,7 @@ dificuldade, o uso dos <em>pesos amostrais</em> tem papel fundamental, como se v
 mais adiante.</p>
 <p>Uma forma simples de lidar com os efeitos do plano amostral na estimação pontual
 de quantidades descritivas populacionais de interesse é incorporar pesos
-adequados na análise, como pode ser visto em <span class="citation">Silva, Bianchini, e Dias (2020)</span> e no Capítulo <a href="capplanamo.html#capplanamo">3</a>.
+adequados na análise, como pode ser visto em <span class="citation">Silva et al. (2020)</span> e no Capítulo <a href="capplanamo.html#capplanamo">3</a>.
 Essa forma porém, não resolve por si só o problema de estimação da precisão das
 estimativas pontuais, nem mesmo o caso da estimação pontual de parâmetros em
 <em>modelos de superpopulação</em>, o que vai requerer métodos específicos discutidos no Capítulo <a href="#ajmodpar"><strong>??</strong></a>.</p>
@@ -1124,7 +1130,7 @@ seria ignorável para inferência sobre a distribuição condicional de <span cl
 mas não seria ignorável para inferência sobre a distribuição marginal de <span class="math inline">\(Y\)</span>.</p>
 <p>Feita esta discussão sobre o referencial para inferência que adotamos neste
 livro, segue-se uma revisão rápida dos métodos de estimação da <em>amostragem probabilística</em>.
-Como já indicado, o leitor interessado numa discussão mais detalhada pode consultar <span class="citation">Silva, Bianchini, e Dias (2020)</span>.</p>
+Como já indicado, o leitor interessado numa discussão mais detalhada pode consultar <span class="citation">Silva et al. (2020)</span>.</p>
 
 </div>
 </div>

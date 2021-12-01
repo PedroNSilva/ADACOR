@@ -2,13 +2,21 @@
 lang: pt-BR
 title: "Análise de Dados Amostrais"
 author: 
-  - Djalma Galvão Carneiro Pessoa, Pedro Luis do Nascimento Silva
-editor:
-  - Pedro Luis do Nascimento Silva
-  - Antonio José Ribeiro Dias
-  - Zélia Magalhães Bianchini
-  - Sonia Albieri
-date: '30 de novembro de 2021, 17:55:29'
+  - <b>Autores</b>  
+  
+  - Djalma Galvão Carneiro Pessoa e Pedro Luis do Nascimento Silva  
+  
+  - <b>Editores</b>  
+  
+  - Pedro Luis do Nascimento Silva   
+  
+  - Antonio José Ribeiro Dias   
+  
+  - Zélia Magalhães Bianchini   
+  
+  - Sonia Albieri   
+  
+date: '01 de dezembro de 2021, 20:46:50'
 summary_depth: 3
 summary_float:
    collapsed: false
@@ -27,8 +35,8 @@ output:
 documentclass: book          
 
 bibliography: [book.bib, packages.bib]
-biblio-style: apalike
-#csl: Modified-apa-original.csl
+#biblio-style: apalike
+csl: Modified-apa.csl
 suppress-bibliography: false
 #link-citations: yes
 github-repo: PedroNSilva/ADACOR
