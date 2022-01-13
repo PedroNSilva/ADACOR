@@ -12,18 +12,17 @@
 \contentsline {section}{\numberline {2.1}Modelagem - Primeiras ideias}{21}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Abordagem 1 - Modelagem Clássica}{21}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Abordagem 2 - Amostragem Probabilística}{23}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Discussão das abordagens 1 e 2}{25}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Abordagem 3 - Modelagem de Superpopulação}{26}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Fontes de variação}{29}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Modelos de Superpopulação}{30}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Plano amostral}{32}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Planos amostrais informativos e ignoráveis}{33}{section.2.9}%
-\contentsline {chapter}{\numberline {3}Estimação Baseada no Plano Amostral}{39}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Estimação de totais}{39}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Estimação de variâncias - motivação}{42}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Linearização de Taylor (ou Delta) para estimar variâncias}{43}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Equações de estimação}{45}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Método do Conglomerado Primário}{46}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Métodos de replicação}{47}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Laboratório de R}{50}{section.3.7}%
-\contentsline {chapter}{Referências}{55}{chapter*.7}%
+\contentsline {section}{\numberline {2.4}Discussão das abordagens 1 e 2}{24}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Abordagem 3 - Modelagem de Superpopulação}{25}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Fontes de variação}{28}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Modelos de Superpopulação}{29}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Plano amostral}{30}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Planos amostrais informativos e ignoráveis}{31}{section.2.9}%
+\contentsline {chapter}{\numberline {3}Estimação Baseada no Plano Amostral}{37}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Estimação de totais}{37}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Estimação de variâncias - motivação}{40}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Linearização de Taylor (ou Delta) para estimar variâncias}{41}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Equações de estimação}{43}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Método do Conglomerado Primário}{44}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Métodos de replicação}{45}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Laboratório de R}{48}{section.3.7}%

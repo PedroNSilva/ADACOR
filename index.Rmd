@@ -1,20 +1,13 @@
 --- 
 lang: pt-BR
-title: "Análise de Dados Amostrais"
-author: 
-  - <b>Autores</b>  
-  
-  - Djalma Galvão Carneiro Pessoa e Pedro Luis do Nascimento Silva  
-  
-  - <b>Editores</b>  
-  
-  - Pedro Luis do Nascimento Silva   
-  
-  - Antonio José Ribeiro Dias   
-  
-  - Zélia Magalhães Bianchini   
-  
-  - Sonia Albieri   
+title: Análise de Dados Amostrais com R
+author: |
+  | Djalma Galvão Carneiro Pessoa e Pedro Luis do Nascimento Silva 
+  | 
+  | 
+  | 
+  | Editores
+  | Pedro Luis do N. Silva, Antonio José R. Dias, Zélia M. Bianchini e Sonia Albieri   
   
 date: '`r format(Sys.time(), "%d de %B de %Y, %X")`'
 summary_depth: 3
