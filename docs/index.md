@@ -16,7 +16,7 @@ author:
   
   - Sonia Albieri   
   
-date: '01 de dezembro de 2021, 20:46:50'
+date: '17 de janeiro de 2022, 12:16:47'
 summary_depth: 3
 summary_float:
    collapsed: false
@@ -30,12 +30,13 @@ fontsize: 12pt
 
 output:
   bookdown::gitbook: default
-  bookdown::pdf_book: default
+  
 
 documentclass: book          
 
 bibliography: [book.bib, packages.bib]
 #biblio-style: apalike
+#bookdown::pdf_book: default
 csl: Modified-apa.csl
 suppress-bibliography: false
 #link-citations: yes
