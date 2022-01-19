@@ -4,38 +4,31 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 3 Estimação Baseada no Plano Amostral | Análise de Dados Amostrais</title>
+  <title>Capítulo 3 Estimação Baseada no Plano Amostral | Análise de Dados Amostrais com R</title>
   <meta name="description" content="Análise de dados de pesquisas amostrais." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 3 Estimação Baseada no Plano Amostral | Análise de Dados Amostrais" />
+  <meta property="og:title" content="Capítulo 3 Estimação Baseada no Plano Amostral | Análise de Dados Amostrais com R" />
   <meta property="og:type" content="book" />
-
+  
   <meta property="og:image" content="/Figuras/capa.png" />
   <meta property="og:description" content="Análise de dados de pesquisas amostrais." />
   <meta name="github-repo" content="PedroNSilva/ADACOR" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 3 Estimação Baseada no Plano Amostral | Análise de Dados Amostrais" />
-
+  <meta name="twitter:title" content="Capítulo 3 Estimação Baseada no Plano Amostral | Análise de Dados Amostrais com R" />
+  
   <meta name="twitter:description" content="Análise de dados de pesquisas amostrais." />
   <meta name="twitter:image" content="/Figuras/capa.png" />
 
-<meta name="author" content="Autores" />
-<meta name="author" content="Djalma Galvão Carneiro Pessoa e Pedro Luis do Nascimento Silva" />
-<meta name="author" content="Editores" />
-<meta name="author" content="Pedro Luis do Nascimento Silva" />
-<meta name="author" content="Antonio José Ribeiro Dias" />
-<meta name="author" content="Zélia Magalhães Bianchini" />
-<meta name="author" content="Sonia Albieri" />
 
 
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-
-
+  
+  
 <link rel="prev" href="refinf.html"/>
 <link rel="next" href="referências.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
@@ -207,7 +200,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Análise de Dados Amostrais</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Análise de Dados Amostrais com R</a>
           </h1>
         </div>
 
@@ -230,7 +223,7 @@ onde <span class="math inline">\(d_i = 1/\pi_i\)</span> é o <em>peso básico</e
 <p>Na abordagem baseada no planejamento amostral, as propriedades de uma estatística ou estimador são avaliadas com respeito a sua <em>distribuição de aleatorização</em>. Denotemos por <span class="math inline">\(E_p(.)\)</span> e <span class="math inline">\(V_p(.)\)</span> os operadores de esperança e variância referentes à distribuição de probabilidades induzida pelo planejamento amostral <span class="math inline">\(p(s)\)</span>, que chamaremos daqui por diante de <em>esperança de aleatorização</em> e <em>variância de aleatorização</em>.</p>
 <p>O estimador <span class="math inline">\(\mathbf{\widehat{Y}}_{HT}\)</span> é não viciado para o total <span class="math inline">\(\mathbf{Y}\)</span> com respeito à distribuição de aleatorização, isto é:</p>
 <p><span class="math display">\[
-E_p \left( \mathbf{\widehat{Y}}_{HT} \right) = \mathbf{Y}
+E_p \left( \mathbf{\widehat{Y}}_{HT} \right) = \mathbf{Y} 
 \]</span></p>
 <p>Além disto, sua variância de aleatorização é dada por</p>
 <p><span class="math display" id="eq:estpa2">\[\begin{equation}
@@ -255,7 +248,7 @@ E_p \left[ \widehat V_p \left( \mathbf{\widehat{Y}}_{HT} \right) \right] = V_p \
 \end{equation}\]</span></p>
 <p>e</p>
 <p><span class="math display" id="eq:estpa6">\[\begin{equation}
-\pi_{ij} = \frac{n(n-1)}{N(N-1)} \,\, \,\,\,\text{e} \,\,  d_{ij} = \frac{N(N-1)}{n(n-1)} \,\,\, \forall \, i \neq j \in U \,\, \tag{3.6}
+\pi_{ij} = \frac{n(n-1)}{N(N-1)} \,\, \,\,\,\text{e} \,\,  d_{ij} = \frac{N(N-1)}{n(n-1)} \,\,\, \forall \, i \neq j \in U \,\, \tag{3.6} 
 \end{equation}\]</span></p>
 <p>Essas probabilidades de inclusão e pesos básicos levam às seguintes expressões simplificadas para o caso AAS:</p>
 <p><span class="math display" id="eq:estpa7">\[\begin{equation}
@@ -281,7 +274,7 @@ V_{AAS} \left( \mathbf{\widehat{Y}}_{AAS} \right) = N^{2} \left( \frac{1}{n} - \
 \end{equation}\]</span></p>
 <p>onde</p>
 <p><span class="math display" id="eq:estpa13">\[\begin{equation}
-\widehat{\mathbf{S}}_y = \frac{1}{n-1} \sum_{i \in s} \left( \mathbf{y}_i - \overline{\mathbf{y}} \right) \left( \mathbf{y}_i - \overline{\mathbf{y}} \right) ^{^{\prime }} \,\,\, \tag{3.13}
+\widehat{\mathbf{S}}_y = \frac{1}{n-1} \sum_{i \in s} \left( \mathbf{y}_i - \overline{\mathbf{y}} \right) \left( \mathbf{y}_i - \overline{\mathbf{y}} \right) ^{^{\prime }} \,\,\, \tag{3.13} 
 \end{equation}\]</span></p>
 <p>Vários outros estimadores de totais estão disponíveis na literatura de amostragem, porém os que são comumente usados na prática são estimadores ponderados (lineares) da forma</p>
 <p><span class="math display" id="eq:estpa14">\[\begin{equation}
@@ -290,7 +283,7 @@ V_{AAS} \left( \mathbf{\widehat{Y}}_{AAS} \right) = N^{2} \left( \frac{1}{n} - \
 <p>onde <span class="math inline">\(w_i\)</span> é um peso associado à unidade <span class="math inline">\(i\)</span> da amostra (<span class="math inline">\(i \in s\)</span>).</p>
 <p>O estimador de Horvitz-Thompson é um caso particular de <span class="math inline">\(\mathbf{\widehat{Y}}_w\)</span> em <a href="capplanamo.html#eq:estpa14">(3.14)</a> quando os pesos <span class="math inline">\(w_i\)</span> são da forma</p>
 <p><span class="math display">\[
-w_i^{HT} = d_i = 1 / \pi_i \quad \forall \ i \in s.
+w_i^{HT} = d_i = 1 / \pi_i \quad \forall \ i \in s. 
 \]</span></p>
 <p>Outros dois estimadores de totais comumente usados pelos praticantes de amostragem são o <em>estimador de razão simples</em> <span class="math inline">\(\mathbf{\widehat{Y}}_R\)</span> e o <em>estimador de regressão simples</em> <span class="math inline">\(\mathbf{\widehat{Y}}_{REG}\)</span>, dados respectivamente por</p>
 <p><span class="math display" id="eq:estpa15">\[\begin{equation}
@@ -326,7 +319,7 @@ de interesse está disponível. Nesse caso, uma tentação que assola muitos usu
 <p>Em geral, a obtenção de estimativas de variâncias (alternativamente, de desvios padrões ou mesmo de coeficientes de variação) é requerida para que intervalos de confiança possam ser calculados, e outras formas de inferência realizadas. Intervalos de confiança elaborados com estimativas amostrais são geralmente
 baseados em aproximações assintóticas da distribuição amostral do estimador pela distribuição normal, usando resultados análogos ao TCL para populações finitas - ver <span class="citation">Fuller (2009)</span>, tais que intervalos da forma</p>
 <p><span class="math display">\[
-IC\left[ \widehat{\theta } ; 1-\alpha \right] =\left[ \,\, \widehat{\theta } \mp z_{\alpha /2}\sqrt{\widehat{V}_{p} \left( \widehat{\theta} \right) } \,\, \right]
+IC\left[ \widehat{\theta } ; 1-\alpha \right] =\left[ \,\, \widehat{\theta } \mp z_{\alpha /2}\sqrt{\widehat{V}_{p} \left( \widehat{\theta} \right) } \,\, \right] 
 \]</span></p>
 <p>têm probabilidade de cobertura aproximada <span class="math inline">\(1-\alpha\)</span>, com <span class="math inline">\(z_{\alpha /2}\)</span> sendo o quantil que deixa área de <span class="math inline">\(1-\alpha/2\)</span> à sua esquerda na distribuição Normal padrão.</p>
 <p>Estimativas de variância podem ser úteis também para outras finalidades, tais como a detecção de problemas não antecipados, tais como observações suspeitas, celas raras em tabelas de contingência, etc.</p>
@@ -348,16 +341,16 @@ Discutimos inicialmente a técnica de <em>Linearização de Taylor</em>, em segu
 <p>Um problema que ocorre frequentemente é o de estimar um vetor de parâmetros
 <span class="math inline">\(\mathbf{\theta} = \left( \theta _{1},\ldots ,\theta_{K}\right)\)</span> de uma população finita <span class="math inline">\(U\)</span>, que pode ser escrito na forma:</p>
 <p><span class="math display">\[
-\mathbf{\theta} = \mathbf{g}(\mathbf{Y})
+\mathbf{\theta} = \mathbf{g}(\mathbf{Y}) 
 \]</span>
 onde <span class="math inline">\(\mathbf{Y} = \sum_{i \in U} \mathbf{y}_i\)</span> é o vetor de totais de <span class="math inline">\(Q\)</span> variáveis de pesquisa.</p>
 <p>Poderíamos usar como estimador para o vetor de parâmetros <span class="math inline">\(\theta\)</span> o estimador <span class="math inline">\(\mathbf{\widehat{\theta}}\)</span> dado por:</p>
 <p><span class="math display">\[
-\mathbf{\widehat{\theta}} = \mathbf{g} \left( \widehat{ \mathbf{Y}}_{HT} \right) = \mathbf{g} \left(\sum_{i \in s} \, d_i \, \mathbf{y}_{i} \right)
+\mathbf{\widehat{\theta}} = \mathbf{g} \left( \widehat{ \mathbf{Y}}_{HT} \right) = \mathbf{g} \left(\sum_{i \in s} \, d_i \, \mathbf{y}_{i} \right)  
 \]</span>
 No caso particular em que <span class="math inline">\(\mathbf{g}(\bullet)\)</span> é uma função linear dos totais das variáveis de pesquisa, isto é:</p>
 <p><span class="math display">\[
-\mathbf{\theta} = \mathbf{A Y}
+\mathbf{\theta} = \mathbf{A Y}  
 \]</span>
 onde <span class="math inline">\(\mathbf{A}\)</span> é uma matriz de constantes de dimensão <span class="math inline">\(K \times Q\)</span>, o estimador
 <span class="math inline">\(\mathbf{\widehat{\theta}}\)</span> de <span class="math inline">\(\mathbf{\theta}\)</span> neste caso seria</p>
@@ -386,7 +379,7 @@ onde <span class="math inline">\(V_{p} \left( \mathbf{\widehat{Y}}_{HT}\right)\)
 onde <span class="math inline">\(\mathbf{z}_{i} = \mathbf{\Delta g(Y)} \mathbf{y}_{i}\)</span>.</p>
 <p>Logo, a variância aproximada por linearização do estimador <span class="math inline">\(\widehat{\theta}\)</span> pode ser obtida usando a expressão <a href="capplanamo.html#eq:estpa2">(3.2)</a>
 <span class="math display">\[
- V_p \left( \widehat{\theta} \right) \doteq V_p \left( \mathbf{\widehat{Z}}_{HT} \right)
+ V_p \left( \widehat{\theta} \right) \doteq V_p \left( \mathbf{\widehat{Z}}_{HT} \right) 
 \]</span></p>
 <p>Este resultado segue porque na expressão do lado direito o único termo que tem variância de aleatorização é <span class="math inline">\(\mathbf{\widehat{Z}}_{HT}\)</span>.</p>
 <p>Um estimador consistente de <span class="math inline">\(V_{p} \left( \mathbf{\widehat{\theta}}\right)\)</span> é dado por:</p>
@@ -455,7 +448,7 @@ Os exemplos apresentados ilustram que a estimação de médias e razões populac
 estatísticos para cálculo de variâncias considerando o plano amostral, tais como o pacote <em>survey</em> do R, as funções <em>svy</em> do STATA, o módulo <em>Complex Samples</em> do SPSS, as procs <em>Survey</em> do SAS, entre outros.</p>
 <p>Para descrever o método, considere um plano amostral em vários estágios, no qual <span class="math inline">\(n_{h}\)</span> unidades primárias de amostragem - UPAs foram selecionadas no estrato <span class="math inline">\(h\)</span>, com <span class="math inline">\(h=1, \ldots, H\)</span>. Denotemos por <span class="math inline">\(\pi_{hi}\)</span> a probabilidade de inclusão na amostra da UPA (conglomerado primário) <span class="math inline">\(i\)</span> do estrato <span class="math inline">\(h\)</span>, e por <span class="math inline">\(\widehat{Y}_{hi}\)</span> um estimador não viciado do total <span class="math inline">\(Y_{hi}\)</span> da variável de pesquisa <span class="math inline">\(y\)</span> na <span class="math inline">\(i\)</span>-ésima UPA do estrato <span class="math inline">\(h\)</span>. Então um estimador não viciado do total <span class="math inline">\(Y = \sum_{h=1}^{H} \sum_{i=1}^{N_{h}} Y_{hi}\)</span> da variável de pesquisa <span class="math inline">\(y\)</span> na população é dado por</p>
 <p><span class="math display" id="eq:estpa23">\[\begin{equation}
-\widehat{Y}_{CP} = \sum_{h=1}^{H} \sum_{i=1}^{n_{h}} \widehat{Y}_{hi} / \pi _{hi} \,\,\, \tag{3.23}
+\widehat{Y}_{CP} = \sum_{h=1}^{H} \sum_{i=1}^{n_{h}} \widehat{Y}_{hi} / \pi _{hi} \,\,\, \tag{3.23} 
 \end{equation}\]</span></p>
 <p>e um estimador não viciado da variância de aleatorização correspondente por</p>
 <p><span class="math display" id="eq:estpa24">\[\begin{equation}
@@ -475,7 +468,7 @@ estatísticos para cálculo de variâncias considerando o plano amostral, tais c
 inclusive formam a base para pacotes especializados de estimação tais como WesVarPC (ver <span class="citation">Westat (1996)</span>).</p>
 <p>A ideia básica original foi construir a amostra de tamanho <span class="math inline">\(n\)</span> como a união de <span class="math inline">\(G\)</span> amostras de tamanho <span class="math inline">\(n/G\)</span> cada uma, selecionadas de forma independente e usando o mesmo plano amostral, onde <span class="math inline">\(G\)</span> é o número de <em>réplicas</em>. Nesse caso, se <span class="math inline">\(\theta\)</span> é o parâmetro-alvo, e <span class="math inline">\(\widehat{\theta}_{g}\)</span> é um estimador não viciado de <span class="math inline">\(\theta\)</span> baseado na <span class="math inline">\(g\)</span>-ésima réplica <span class="math inline">\((g=1,\ldots ,G)\)</span>, segue-se que</p>
 <p><span class="math display">\[
-\widehat{\theta }_{G}=\frac{1}{G}\sum_{g=1}^{G}\widehat{\theta }_{g}
+\widehat{\theta }_{G}=\frac{1}{G}\sum_{g=1}^{G}\widehat{\theta }_{g} 
 \]</span></p>
 <p>é também um estimador não viciado de <span class="math inline">\(\theta\)</span> e</p>
 <p><span class="math display" id="eq:estpa25">\[\begin{equation}
@@ -493,26 +486,26 @@ variância são também empregadas nesse caso como uma aproximação, mas não p
 <p>É importante observar que a repartição da amostra em grupos aleatórios a posteriori precisa considerar o plano amostral empregado e pode não ser possível em algumas situações. Idealmente, tal repartição deveria ser feita respeitando estratos e alocando UPAs inteiras (isto é, com todas as respectivas unidades subordinadas). <span class="citation">Wolter (1985)</span>, p. 31, discute algumas regras sobre como fazer para respeitar o plano amostral ao fazer a repartição da amostra a posteriori, porém recomendamos que o interessado no uso dessa técnica exerça cautela.</p>
 <p>Além da modificação da interpretação das réplicas no caso de serem formadas a posteriori, é comum também nesse caso empregar um estimador para o parâmetro <span class="math inline">\(\theta\)</span> baseado na amostra completa (denotado <span class="math inline">\(\widehat{\theta}\)</span>), e um estimador de variância mais conservador que o estimador <span class="math inline">\(\widehat{V}_{G}\left( \widehat{\theta }_{G}\right)\)</span> anteriormente apresentado, dado por</p>
 <p><span class="math display" id="eq:estpa26">\[\begin{equation}
-\widehat{V}_{G}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right)
+\widehat{V}_{G}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
 }\sum_{g=1}^{G}\left( \widehat{\theta }_{g}-\widehat{\theta }\right) ^{2} \,\,
 \tag{3.26}
 \end{equation}\]</span></p>
 <p>Um exemplo de aplicação desta técnica pode ser encontrado na forma recomendada para estimação de variâncias a partir das Amostras de Uso Público do Censo Demográfico Brasileiro de 80 (ver <span class="citation">IBGE (1985)</span>).</p>
 <p>Nesta seção descreveremos duas outras dessas técnicas baseadas em replicações. A primeira é o método de <em>jackknife</em>. Este método foi originalmente proposto por <span class="citation">Quenoille (1949)</span> e <span class="citation">Quenoille (1956)</span> como uma técnica para redução de vício de estimadores, num contexto da Estatística Clássica. A ideia central consiste em repartir a amostra (a posteriori, como no caso do método dos grupos aleatórios) em <span class="math inline">\(G\)</span> grupos mutuamente exclusivos de igual tamanho <span class="math inline">\(n/G\)</span>. Em seguida, para cada grupo formado calcular os chamados pseudo estimadores dados por</p>
 <p><span class="math display">\[
-\widehat{\theta }_{\left( g\right) }=G\widehat{\theta }-\left( G-1\right)
-\widehat{\theta }_{g}
+\widehat{\theta }_{\left( g\right) }=G\widehat{\theta }-\left( G-1\right) 
+\widehat{\theta }_{g} 
 \]</span></p>
 <p>onde <span class="math inline">\(\widehat{\theta }_{g}\)</span> é um estimador de <span class="math inline">\(\theta\)</span> obtido da amostra após eliminar os elementos do grupo <span class="math inline">\(g\)</span>, empregando a mesma forma funcional adotada no cálculo do estimador <span class="math inline">\(\widehat{\theta}\)</span> que considera a amostra inteira.</p>
 <p>A estimação da variância por esse método pode então ser feita de duas maneiras alternativas, usando um dos estimadores dados por</p>
 <p><span class="math display" id="eq:estpa27">\[\begin{equation}
-\widehat{V}_{J1}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right)
+\widehat{V}_{J1}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
 }\sum_{g=1}^{G}\left( \widehat{\theta }_{\left( g\right) }-\widehat{\theta }
 _{J}\right) ^{2}  \tag{3.27}
 \end{equation}\]</span>
 ou</p>
 <p><span class="math display" id="eq:estpa28">\[\begin{equation}
-\widehat{V}_{J2}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right)
+\widehat{V}_{J2}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
 }\sum_{g=1}^{G}\left( \widehat{\theta }_{\left( g\right) }-\widehat{\theta }
 \right) ^{2} \,\,\, \tag{3.28}
 \end{equation}\]</span></p>
@@ -579,7 +572,7 @@ de analfabetismo na faixa etária acima de 14 anos e a variável <em>faixa2</em>
 <span id="cb4-4"><a href="capplanamo.html#cb4-4" aria-hidden="true" tabindex="-1"></a>(<span class="sc">-</span>y1hat<span class="sc">/</span>y2hat<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>(<span class="sc">-</span>y1hat<span class="sc">/</span>y2hat<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>Vcov.Y1.Y2[<span class="dv">2</span>,<span class="dv">2</span>]</span>
 <span id="cb4-5"><a href="capplanamo.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># estimativa do desvio-padrão</span></span>
 <span id="cb4-6"><a href="capplanamo.html#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(Var.raz)</span></code></pre></div>
-<pre><code>##  faixa
+<pre><code>##  faixa 
 ## 0,0118</code></pre>
 <p>Podemos calcular diretamente o desvio-padrão:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="capplanamo.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">svyratio</span>(<span class="sc">~</span>analf.faixa, <span class="sc">~</span>faixa, ppv_se_plan)</span></code></pre></div>
@@ -613,13 +606,13 @@ de <em>Jackknife</em> e de <em>Bootstrap</em> para estimar esta variância de ra
 ## analf.faixa 0,119
 ## SEs=
 ##       [,1]
-## [1,] 0,011</code></pre>
+## [1,] 0,012</code></pre>
 <p>Vamos apresentar mais detalhes sobre a obtenção dos estimadores de <em>Jackknife</em> e <em>Bootstrap</em> na library <em>survey</em> <span class="citation">(Lumley, 2021)</span>.
 A classe do objeto <em>ppv_se_plan_jkn</em> é <em>svyrep.design</em> e ele contém as seguintes componentes:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="capplanamo.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(ppv_se_plan_jkn)</span></code></pre></div>
 <pre><code>## [1] &quot;svyrep.design&quot;</code></pre>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="capplanamo.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ppv_se_plan_jkn)</span></code></pre></div>
-<pre><code>##  [1] &quot;repweights&quot;       &quot;pweights&quot;         &quot;type&quot;             &quot;rho&quot;
+<pre><code>##  [1] &quot;repweights&quot;       &quot;pweights&quot;         &quot;type&quot;             &quot;rho&quot;             
 ##  [5] &quot;scale&quot;            &quot;rscales&quot;          &quot;call&quot;             &quot;combined.weights&quot;
 ##  [9] &quot;selfrep&quot;          &quot;mse&quot;              &quot;variables&quot;        &quot;degf&quot;</code></pre>
 <p>A componente <em>repweights</em> é uma lista com duas componentes: <em>weights</em> e <em>index</em>. A componente

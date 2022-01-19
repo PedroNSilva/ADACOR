@@ -1,10 +1,15 @@
 --- 
 lang: pt-BR
-title: "Análise de Dados Amostrais"
-author:
-  - <b>Autores</b>  
-
-date: '19 de janeiro de 2022, 11:18:50'
+title: Análise de Dados Amostrais com R
+author: |
+  | Djalma Galvão Carneiro Pessoa e Pedro Luis do Nascimento Silva 
+  | 
+  | 
+  | 
+  | Editores
+  | Pedro Luis do N. Silva, Antonio José R. Dias, Zélia M. Bianchini e Sonia Albieri   
+  
+date: '19 de janeiro de 2022, 11:51:24'
 summary_depth: 3
 summary_float:
    collapsed: false
@@ -18,7 +23,7 @@ fontsize: 12pt
 
 output:
   bookdown::gitbook: default
-
+  
 
 documentclass: book          
 
