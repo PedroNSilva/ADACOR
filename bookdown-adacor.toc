@@ -26,3 +26,4 @@
 \contentsline {section}{\numberline {3.5}Método do Conglomerado Primário}{44}{section.3.5}%
 \contentsline {section}{\numberline {3.6}Métodos de replicação}{45}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Laboratório de R}{48}{section.3.7}%
+\contentsline {chapter}{Referências}{53}{chapter*.7}%

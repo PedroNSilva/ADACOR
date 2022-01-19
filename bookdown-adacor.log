@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2022.1.7)  12 JAN 2022 21:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2022.1.7)  19 JAN 2022 11:19
 entering extended mode
 **./bookdown-adacor.tex
 (bookdown-adacor.tex
@@ -810,7 +810,7 @@ LaTeX Warning: Reference `aplic' on page 19 undefined on input line 547.
 
 [19] [20]
 Cap\'{\i }tulo 2.
-<Figuras/Figura2.1.png, id=204, 589.4522pt x 441.90094pt>
+<Figuras/Figura2.1.png, id=206, 589.4522pt x 441.90094pt>
 File: Figuras/Figura2.1.png Graphic file (type png)
 <use Figuras/Figura2.1.png>
 Package pdftex.def Info: Figuras/Figura2.1.png  used on input line 594.
@@ -846,7 +846,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
                                                   \__shipout_drop_firstpage_...
 l.654 
        <./Figuras/Figura2.1.png>]
-<Figuras/Figura2.2.png, id=227, 474.27188pt x 502.12593pt>
+<Figuras/Figura2.2.png, id=229, 474.27188pt x 502.12593pt>
 File: Figuras/Figura2.2.png Graphic file (type png)
 <use Figuras/Figura2.2.png>
 Package pdftex.def Info: Figuras/Figura2.2.png  used on input line 674.
@@ -867,7 +867,7 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 7
 (C:\Program Files\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [25]
-<Figuras/Figura2.3.png, id=258, 476.53032pt x 626.34pt>
+<Figuras/Figura2.3.png, id=260, 476.53032pt x 626.34pt>
 File: Figuras/Figura2.3.png Graphic file (type png)
 <use Figuras/Figura2.3.png>
 Package pdftex.def Info: Figuras/Figura2.3.png  used on input line 788.
@@ -984,19 +984,21 @@ LaTeX Warning: Command \` invalid in math mode on input line 1644.
 [43] [44] [45] [46] [47] [48] [49]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1993.
-[50] [51]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[50] [51] [52]
+Underfull \vbox (badness 1430) has occurred while \output is active []
 
-[52] [53] (bookdown-adacor.aux)
+[53
+
+] [54] (bookdown-adacor.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16464 strings out of 478864
- 241041 string characters out of 2858509
- 625734 words of memory out of 3000000
- 33506 multiletter control sequences out of 15000+600000
+ 16469 strings out of 478864
+ 241094 string characters out of 2858509
+ 625773 words of memory out of 3000000
+ 33508 multiletter control sequences out of 15000+600000
  499450 words of font info for 232 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,15n,80p,1087b,492s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1018,9 +1020,9 @@ eX/fonts/type1/public/lm/lmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
 lm/lmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Prog
 ram Files/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Program Files/MiKTeX/font
 s/type1/public/lm/lmtti10.pfb>
-Output written on bookdown-adacor.pdf (53 pages, 646691 bytes).
+Output written on bookdown-adacor.pdf (54 pages, 648096 bytes).
 PDF statistics:
- 758 PDF objects out of 1000 (max. 8388607)
- 245 named destinations out of 1000 (max. 500000)
- 49384 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 769 PDF objects out of 1000 (max. 8388607)
+ 248 named destinations out of 1000 (max. 500000)
+ 49392 words of extra memory for PDF output out of 51595 (max. 10000000)
 
