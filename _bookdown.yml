@@ -22,15 +22,15 @@ language:
     prp: 'Proposição '
 
     exm: 'Exemplo '
-    
+
     exe: 'Exercício '
-    
+
     proof: 'Prova '
-    
+
     remark: '**Observação:** '
-  
+
   ui:
-    
+
     chapter_name: 'Capítulo '
 
 output_dir: 'docs'
