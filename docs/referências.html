@@ -21,13 +21,6 @@
   <meta name="twitter:description" content="Análise de dados de pesquisas amostrais." />
   <meta name="twitter:image" content="/Figuras/capa.png" />
 
-<meta name="author" content="Autores" />
-<meta name="author" content="Djalma Galvão Carneiro Pessoa e Pedro Luis do Nascimento Silva" />
-<meta name="author" content="Editores" />
-<meta name="author" content="Pedro Luis do Nascimento Silva" />
-<meta name="author" content="Antonio José Ribeiro Dias" />
-<meta name="author" content="Zélia Magalhães Bianchini" />
-<meta name="author" content="Sonia Albieri" />
 
 
 
@@ -36,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="capplanamo.html"/>
+<link rel="prev" href="epa.html"/>
 
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -197,6 +190,15 @@ div.csl-indent {
 <li class="chapter" data-level="3.6" data-path="capplanamo.html"><a href="capplanamo.html#métodos-de-replicação"><i class="fa fa-check"></i><b>3.6</b> Métodos de replicação</a></li>
 <li class="chapter" data-level="3.7" data-path="capplanamo.html"><a href="capplanamo.html#laboratório-de-r"><i class="fa fa-check"></i><b>3.7</b> Laboratório de R</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="epa.html"><a href="epa.html"><i class="fa fa-check"></i><b>4</b> Efeitos do Plano Amostral</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="epa.html"><a href="epa.html#secC4N1"><i class="fa fa-check"></i><b>4.1</b> Introdução</a></li>
+<li class="chapter" data-level="4.2" data-path="epa.html"><a href="epa.html#secC4N2"><i class="fa fa-check"></i><b>4.2</b> Efeito do Plano Amostral - EPA - de Kish</a></li>
+<li class="chapter" data-level="4.3" data-path="epa.html"><a href="epa.html#secC4N3"><i class="fa fa-check"></i><b>4.3</b> Efeito do Plano Amostral Ampliado</a></li>
+<li class="chapter" data-level="4.4" data-path="epa.html"><a href="epa.html#secC4N4"><i class="fa fa-check"></i><b>4.4</b> Efeitos sobre Intervalos de Confiança e Testes de Hipóteses Uniparamétricos</a></li>
+<li class="chapter" data-level="4.5" data-path="epa.html"><a href="epa.html#secC4N5"><i class="fa fa-check"></i><b>4.5</b> Efeitos Multivariados de Plano Amostral</a></li>
+<li class="chapter" data-level="4.6" data-path="epa.html"><a href="epa.html#secC4N6"><i class="fa fa-check"></i><b>4.6</b> Laboratório de R</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
 </ul>
 
@@ -254,6 +256,9 @@ Deville, J. C. e Särndal, C. E. (1992). <span>Calibration estimators in survey 
 Fuller, W. A. (2009). <em>Sampling Statistics</em>. John Wiley.
 </div>
 <div class="csl-entry">
+Haggard, E. A. (1958). <em>Intraclass Correlation and the Analysis of Variance</em>. Dryden Press.
+</div>
+<div class="csl-entry">
 Hansen, M. H.; Hurwitz, W. N. e Madow, W. G. (1953). <em>Sample Survey Methods and Theory</em>. John Wiley &amp; Sons.
 </div>
 <div class="csl-entry">
@@ -266,7 +271,13 @@ IBGE. (1985). <em>Amostra de <span>Uso</span> <span>Público</span> do <span>Cen
 IBGE. (2021). <em><span>Sobre a alteração do método de calibração dos fatores de expansão da PNAD Contínua </span></em>. Instituto Brasileiro de Geografia e Estat<span>í</span>stica - IBGE; IBGE, Diretoria de Pesquisas. Disponível em: <a href="https://biblioteca.ibge.gov.br/index.php/biblioteca-catalogo?view=detalhes&amp;id=2101882">https://biblioteca.ibge.gov.br/index.php/biblioteca-catalogo?view=detalhes&amp;id=2101882</a> (Acesso em 28/11/2021)
 </div>
 <div class="csl-entry">
+Johnson, R. A. e Wichern, D. W. (1988). <em>Applied Multivariate Statistical Analysis</em>. Prentice Hall.
+</div>
+<div class="csl-entry">
 Kalton, G. (1983). <em>Compensating for missing survey data</em>. The University of Michigan, Institute for Social Research, Survey Research Center.
+</div>
+<div class="csl-entry">
+Kish, L. (1965). <em>Survey Sampling</em>. John Wiley &amp; Sons.
 </div>
 <div class="csl-entry">
 Lehtonen, R. e Pahkinen, E. J. (1995). <em>Practical Methods for Design and Analysis of Complex Surveys</em>. John Wiley &amp; Sons.
@@ -335,13 +346,25 @@ Silva, P. L. N. (1996). <em>Utilizing Auxiliary Information for Estimation and A
 Silva, P. L. N.; Bianchini, Z. M. e Dias, A. J. R. (2020). <em><span>Amostragem: teoria e pr<span>á</span>tica usando R</span></em>. Disponível em: <a href="https://amostragemcomr.github.io/livro/">https://amostragemcomr.github.io/livro/</a> (Acesso em 1/12/2021)
 </div>
 <div class="csl-entry">
+Silva, P. L. N. e Moura, F. A. S. (1990). <em>Efeitos de conglomeração da malha setorial do censo demográfico 80</em> (Série Textos para Discussão nº 32). IBGE, Diretoria de Pesquisas.
+</div>
+<div class="csl-entry">
+Skinner, C. J. (1989a). Introduction to <span>Part</span> <span>A</span>. In <em>Analysis of Complex Surveys</em> (p. 23–57). John Wiley &amp; Sons.
+</div>
+<div class="csl-entry">
 Skinner, C. J.; Holt, D. e Smith, T. M. F. (Orgs.). (1989). <em>Analysis of Complex Surveys</em>. John Wiley &amp; Sons.
+</div>
+<div class="csl-entry">
+Sudman, S. (1976). <em>Applied Sampling</em>. Academic Press.
 </div>
 <div class="csl-entry">
 Sugden, R. A. e Smith, T. M. F. (1984). Ignorable and informative designs in survey sampling inference. <em>Biometrika</em>, <em>71</em>, 495–506.
 </div>
 <div class="csl-entry">
 Thompson, S. K. (1992). <em>Sampling</em>. John Wiley &amp; Sons.
+</div>
+<div class="csl-entry">
+Tillé, Y. e Matei, A. (2016). <em>sampling: Survey Sampling</em>. Disponível em: <a href="https://CRAN.R-project.org/package=sampling">https://CRAN.R-project.org/package=sampling</a> R package version 2.8
 </div>
 <div class="csl-entry">
 US Bureau of Labour Statistics. (2020). <em><span>Consumer price index - Handbook of methods</span></em> (p. 67). US Bureau of Labour Statistics.
@@ -365,7 +388,7 @@ Wolter, K. M. (2007). <em>Introduction to Variance Estimation</em> (Second, p. 4
           </div>
         </div>
       </div>
-<a href="capplanamo.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="epa.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
