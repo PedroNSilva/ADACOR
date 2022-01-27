@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.12.12)  17 JAN 2022 12:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2022.1.7)  19 JAN 2022 11:19
 entering extended mode
 **./bookdown-adacor.tex
 (bookdown-adacor.tex
@@ -339,7 +339,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen159
 \Gm@layoutvoffset=\dimen160
 \Gm@dimlist=\toks25
-(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) 
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
 Package: fancyvrb 2021/12/21 4.1b verbatim text (tvz,hv)
 \FV@CodeLineNo=\count286
@@ -626,7 +626,7 @@ Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
-File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
@@ -676,7 +676,7 @@ LaTeX Info: Redefining \nameref on input line 188.
 * paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: twoside 
+* modes: twoside
 * h-part:(L,W,R)=(42.67912pt, 543.16313pt, 28.45274pt)
 * v-part:(T,H,B)=(42.67912pt, 709.61174pt, 42.67912pt)
 * \paperwidth=614.295pt
@@ -713,12 +713,12 @@ LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line
 190.
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line
 190.
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -775,12 +775,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [14pdfTeX warning (ext4): destination with the same identifier (name{table.1.1}
 ) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
+<argument> ...shipout:D \box_use:N \l_shipout_box
                                                   \__shipout_drop_firstpage_...
-l.394 
+l.394
       ] [15pdfTeX warning (ext4): destination with the same identifier (name{ta
 ble.1.2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
+<argument> ...shipout:D \box_use:N \l_shipout_box
                                                   \__shipout_drop_firstpage_...
 l.417   \textbf
                {considerando Amostragem Aleatória Simples - AAS} e, portant...
@@ -796,7 +796,7 @@ Overfull \hbox (10.50768pt too wide) in paragraph at lines 442--442
 
 [16pdfTeX warning (ext4): destination with the same identifier (name{table.1.3}
 ) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
+<argument> ...shipout:D \box_use:N \l_shipout_box
                                                   \__shipout_drop_firstpage_...
 l.460   I
          lustrar e analisar o impacto das simplificações feitas ao utiliza...
@@ -867,22 +867,225 @@ LaTeX Warning: Reference `aplic' on page 19 undefined on input line 543.
 
 [19] [20]
 Cap\'{\i }tulo 2.
+<Figuras/Figura2.1.png, id=206, 589.4522pt x 441.90094pt>
+File: Figuras/Figura2.1.png Graphic file (type png)
+<use Figuras/Figura2.1.png>
+Package pdftex.def Info: Figuras/Figura2.1.png  used on input line 594.
+(pdftex.def)             Requested size: 271.58302pt x 203.60056pt.
+[21
+
+pdfTeX warning (ext4): destination with the same identifier (name{table.2.1}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box
+                                                  \__shipout_drop_firstpage_...
+l.620
+      ]
+
+LaTeX Warning: Reference `modreg' on page 22 undefined on input line 624.
+
+
+LaTeX Warning: Reference `testqualajust' on page 22 undefined on input line 624
+.
+
+
+LaTeX Warning: Reference `testetab2' on page 22 undefined on input line 624.
+
+
+LaTeX Warning: Reference `estimacao-de-densidades' on page 22 undefined on inpu
+t line 625.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[22pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1
+}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box
+                                                  \__shipout_drop_firstpage_...
+l.654
+       <./Figuras/Figura2.1.png>]
+<Figuras/Figura2.2.png, id=229, 474.27188pt x 502.12593pt>
+File: Figuras/Figura2.2.png Graphic file (type png)
+<use Figuras/Figura2.2.png>
+Package pdftex.def Info: Figuras/Figura2.2.png  used on input line 674.
+(pdftex.def)             Requested size: 271.58974pt x 287.54025pt.
+[23pdfTeX warning (ext4): destination with the same identifier (name{table.2.2}
+) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box
+                                                  \__shipout_drop_firstpage_...
+l.685
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+2.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box
+                                                  \__shipout_drop_firstpage_...
+l.685
+       <./Figuras/Figura2.2.png>] [24]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 7
+44.
+(C:\Program Files\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [25]
+<Figuras/Figura2.3.png, id=260, 476.53032pt x 626.34pt>
+File: Figuras/Figura2.3.png Graphic file (type png)
+<use Figuras/Figura2.3.png>
+Package pdftex.def Info: Figuras/Figura2.3.png  used on input line 788.
+(pdftex.def)             Requested size: 271.59602pt x 356.97926pt.
+
+Underfull \vbox (badness 1194) has occurred while \output is active []
+
+[26pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3
+}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box
+                                                  \__shipout_drop_firstpage_...
+l.821
+       <./Figuras/Figura2.3.png>] [27pdfTeX warning (ext4): destination with th
+e same identifier (name{table.2.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box
+                                                  \__shipout_drop_firstpage_...
+l.858
+      ]
+Underfull \vbox (badness 1571) has occurred while \output is active []
+
+[28] [29] [30] [31]
+
+LaTeX Warning: Reference `ajmodpar' on page 32 undefined on input line 1126.
+
+[32pdfTeX warning (ext4): destination with the same identifier (name{table.2.4}
+) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box
+                                                  \__shipout_drop_firstpage_...
+l.1169 \end{eqnarray}
+                     ] [33pdfTeX warning (ext4): destination with the same iden
+tifier (name{equation.2.9.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box
+                                                  \__shipout_drop_firstpage_...
+l.1234 \end{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.2.9.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box
+                                                  \__shipout_drop_firstpage_...
+l.1234 \end{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{table.2.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box
+                                                  \__shipout_drop_firstpage_...
+l.1234 \end{eqnarray}
+                     ]pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.2.9.9}) has been already used, duplicate ignored
+<to be read again>
+                   \relax
+l.1242 \begin{equation}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
+<to be read again>
+                   \relax
+l.1242 \begin{equation}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
+<to be read again>
+                   \relax
+l.1242 \begin{equation}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
+<to be read again>
+                   \relax
+l.1242 \begin{equation}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
+<to be read again>
+                   \relax
+l.1252 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
+<to be read again>
+                   \relax
+l.1252 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
+<to be read again>
+                   \relax
+l.1252 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.2.9.9}) has been already used, duplicate ignored
+<to be read again>
+                   \relax
+l.1252 \begin{eqnarray}
+                        [34pdfTeX warning (ext4): destination with the same ide
+ntifier (name{equation.2.9.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box
+                                                  \__shipout_drop_firstpage_...
+l.1302 \end{table}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{table.2.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box
+                                                  \__shipout_drop_firstpage_...
+l.1302 \end{table}
+                  ] [35pdfTeX warning (ext4): destination with the same identif
+ier (name{table.2.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box
+                                                  \__shipout_drop_firstpage_...
+l.1348 ...da no Plano Amostral}\label{capplanamo}}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{table.2.8}) has been already used, duplica
+te ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box
+                                                  \__shipout_drop_firstpage_...
+l.1348 ...da no Plano Amostral}\label{capplanamo}}
+                                                  ] [36
+
+]
+Cap\'{\i }tulo 3.
+[37] [38] [39] [40] [41] [42]
+
+LaTeX Warning: Command \` invalid in math mode on input line 1644.
+
+[43] [44] [45] [46] [47] [48] [49]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1993.
+[50] [51] [52]
+Underfull \vbox (badness 1430) has occurred while \output is active []
+
+[53
+
+] [54] (bookdown-adacor.aux)
 
 ! Package keyval Error: 6in undefined.
 
 See the keyval package documentation for explanation.
 Type  H <return>  for immediate help.
- ...                                              
-                                                  
+ ...
+
 l.590 ...graphics[width=10,6in]{Figuras/Figura2.1}
-                                                   
+
 Here is how much of TeX's memory you used:
- 16173 strings out of 478840
- 243046 string characters out of 2848533
- 629844 words of memory out of 3000000
- 33564 multiletter control sequences out of 15000+600000
- 473718 words of font info for 157 fonts, out of 8000000 for 9000
+ 16469 strings out of 478864
+ 241094 string characters out of 2858509
+ 625773 words of memory out of 3000000
+ 33508 multiletter control sequences out of 15000+600000
+ 499450 words of font info for 232 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,15n,80p,1087b,492s stack positions out of 5000i,500n,10000p,200000b,80000s
+{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTe
+X/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-m
+athsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Program Fi
+les/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX/fonts/enc/
+dvips/lm/lm-mathex.enc}<C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx12.pf
+b><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Program Files/Mi
+KTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/publ
+ic/lm/lmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/P
+rogram Files/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX/fo
+nts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lm
+r17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Program Fil
+es/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/p
+ublic/lm/lmri12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmro12.pfb><
+C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/lm/lmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
+lm/lmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Prog
+ram Files/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Program Files/MiKTeX/font
+s/type1/public/lm/lmtti10.pfb>
+Output written on bookdown-adacor.pdf (54 pages, 648096 bytes).
+PDF statistics:
+ 769 PDF objects out of 1000 (max. 8388607)
+ 248 named destinations out of 1000 (max. 500000)
+ 49392 words of extra memory for PDF output out of 51595 (max. 10000000)
 
 !  ==> Fatal error occurred, no output PDF file produced!
