@@ -43,8 +43,7 @@ for (i in 1:500) {
 }
 
 # média populacional
-
-med_pop <- round(c(mean(popul_dat$sal), mean(popul_dat$rec)),3)
+med_pop <- round(c(mean(popul_dat$sal), mean(popul_dat$rec)), 3)
 
 
 # Calcula médias das estimativas na simulação
