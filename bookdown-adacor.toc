@@ -26,4 +26,11 @@
 \contentsline {section}{\numberline {3.5}Método do Conglomerado Primário}{44}{section.3.5}%
 \contentsline {section}{\numberline {3.6}Métodos de replicação}{45}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Laboratório de R}{48}{section.3.7}%
-\contentsline {chapter}{Referências}{53}{chapter*.7}%
+\contentsline {chapter}{\numberline {4}Efeitos do Plano Amostral}{53}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introdução}{53}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Efeito do Plano Amostral - EPA de Kish}{53}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Efeito do Plano Amostral Ampliado}{56}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Efeitos sobre Intervalos de Confiança e Testes de Hipóteses Uniparamétricos}{64}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Efeitos Multivariados de Plano Amostral}{67}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Laboratório de R}{70}{section.4.6}%
+\contentsline {chapter}{Referências}{75}{chapter*.7}%

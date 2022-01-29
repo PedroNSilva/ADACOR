@@ -9,7 +9,7 @@ author: |
   | Editores
   | Pedro Luis do N. Silva, Antonio José R. Dias, Zélia M. Bianchini e Sonia Albieri   
   
-date: '19 de janeiro de 2022, 11:51:24'
+date: '29 de janeiro de 2022, 17:48:46'
 summary_depth: 3
 summary_float:
    collapsed: false
@@ -22,14 +22,14 @@ geometry: "left=1.5cm,right=1cm,top=1.5cm,bottom=1.5cm"
 fontsize: 12pt
 
 output:
-  bookdown::gitbook: default
-  
+#  bookdown::gitbook: default
+  bookdown::pdf_book: default  
 
 documentclass: book          
 
 bibliography: [book.bib, packages.bib]
 #biblio-style: apalike
-#bookdown::pdf_book: default
+
 csl: Modified-apa.csl
 suppress-bibliography: false
 #link-citations: yes

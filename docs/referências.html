@@ -29,9 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="capplanamo.html"/>
+<link rel="prev" href="epa.html"/>
 
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,6 +48,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
@@ -56,18 +56,18 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +87,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -120,28 +120,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 </head>
 
@@ -155,40 +133,16 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a>
-<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimentos"><i class="fa fa-check"></i>Agradecimentos</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="lista-de-figuras.html"><a href="lista-de-figuras.html"><i class="fa fa-check"></i>Lista de Figuras</a></li>
-<li class="chapter" data-level="" data-path="lista-de-siglas.html"><a href="lista-de-siglas.html"><i class="fa fa-check"></i>Lista de Siglas</a></li>
-<li class="chapter" data-level="" data-path="lista-de-tabelas.html"><a href="lista-de-tabelas.html"><i class="fa fa-check"></i>Lista de Tabelas</a></li>
-<li class="chapter" data-level="1" data-path="introduc.html"><a href="introduc.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="introduc.html"><a href="introduc.html#motivação"><i class="fa fa-check"></i><b>1.1</b> Motivação</a></li>
-<li class="chapter" data-level="1.2" data-path="introduc.html"><a href="introduc.html#objetivos-do-livro"><i class="fa fa-check"></i><b>1.2</b> Objetivos do livro</a></li>
-<li class="chapter" data-level="1.3" data-path="introduc.html"><a href="introduc.html#estrutura-do-livro"><i class="fa fa-check"></i><b>1.3</b> Estrutura do livro</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="refinf.html"><a href="refinf.html"><i class="fa fa-check"></i><b>2</b> Referencial para Inferência</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="refinf.html"><a href="refinf.html#modelagem---primeiras-ideias"><i class="fa fa-check"></i><b>2.1</b> Modelagem - Primeiras ideias</a></li>
-<li class="chapter" data-level="2.2" data-path="refinf.html"><a href="refinf.html#classic"><i class="fa fa-check"></i><b>2.2</b> Abordagem 1 - Modelagem Clássica</a></li>
-<li class="chapter" data-level="2.3" data-path="refinf.html"><a href="refinf.html#abordagem-2---amostragem-probabilística"><i class="fa fa-check"></i><b>2.3</b> Abordagem 2 - Amostragem Probabilística</a></li>
-<li class="chapter" data-level="2.4" data-path="refinf.html"><a href="refinf.html#discussão-das-abordagens-1-e-2"><i class="fa fa-check"></i><b>2.4</b> Discussão das abordagens 1 e 2</a></li>
-<li class="chapter" data-level="2.5" data-path="refinf.html"><a href="refinf.html#modelsuperpop"><i class="fa fa-check"></i><b>2.5</b> Abordagem 3 - Modelagem de Superpopulação</a></li>
-<li class="chapter" data-level="2.6" data-path="refinf.html"><a href="refinf.html#fontes-de-variação"><i class="fa fa-check"></i><b>2.6</b> Fontes de variação</a></li>
-<li class="chapter" data-level="2.7" data-path="refinf.html"><a href="refinf.html#modelos-de-superpopulação"><i class="fa fa-check"></i><b>2.7</b> Modelos de Superpopulação</a></li>
-<li class="chapter" data-level="2.8" data-path="refinf.html"><a href="refinf.html#planamo"><i class="fa fa-check"></i><b>2.8</b> Plano amostral</a></li>
-<li class="chapter" data-level="2.9" data-path="refinf.html"><a href="refinf.html#inform"><i class="fa fa-check"></i><b>2.9</b> Planos amostrais informativos e ignoráveis</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="capplanamo.html"><a href="capplanamo.html"><i class="fa fa-check"></i><b>3</b> Estimação Baseada no Plano Amostral</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="capplanamo.html"><a href="capplanamo.html#estimatotais"><i class="fa fa-check"></i><b>3.1</b> Estimação de totais</a></li>
-<li class="chapter" data-level="3.2" data-path="capplanamo.html"><a href="capplanamo.html#estimação-de-variâncias---motivação"><i class="fa fa-check"></i><b>3.2</b> Estimação de variâncias - motivação</a></li>
-<li class="chapter" data-level="3.3" data-path="capplanamo.html"><a href="capplanamo.html#taylor"><i class="fa fa-check"></i><b>3.3</b> Linearização de Taylor (ou Delta) para estimar variâncias</a></li>
-<li class="chapter" data-level="3.4" data-path="capplanamo.html"><a href="capplanamo.html#equações-de-estimação"><i class="fa fa-check"></i><b>3.4</b> Equações de estimação</a></li>
-<li class="chapter" data-level="3.5" data-path="capplanamo.html"><a href="capplanamo.html#método-do-conglomerado-primário"><i class="fa fa-check"></i><b>3.5</b> Método do Conglomerado Primário</a></li>
-<li class="chapter" data-level="3.6" data-path="capplanamo.html"><a href="capplanamo.html#métodos-de-replicação"><i class="fa fa-check"></i><b>3.6</b> Métodos de replicação</a></li>
-<li class="chapter" data-level="3.7" data-path="capplanamo.html"><a href="capplanamo.html#laboratório-de-r"><i class="fa fa-check"></i><b>3.7</b> Laboratório de R</a></li>
+<li class="chapter" data-level="1" data-path="epa.html"><a href="epa.html"><i class="fa fa-check"></i><b>1</b> Efeitos do Plano Amostral</a><ul>
+<li class="chapter" data-level="1.1" data-path="epa.html"><a href="epa.html#secC4N1"><i class="fa fa-check"></i><b>1.1</b> Introdução</a></li>
+<li class="chapter" data-level="1.2" data-path="epa.html"><a href="epa.html#secC4N2"><i class="fa fa-check"></i><b>1.2</b> Efeito do Plano Amostral - EPA de Kish</a></li>
+<li class="chapter" data-level="1.3" data-path="epa.html"><a href="epa.html#secC4N3"><i class="fa fa-check"></i><b>1.3</b> Efeito do Plano Amostral Ampliado</a></li>
+<li class="chapter" data-level="1.4" data-path="epa.html"><a href="epa.html#secC4N4"><i class="fa fa-check"></i><b>1.4</b> Efeitos sobre Intervalos de Confiança e Testes de Hipóteses Uniparamétricos</a></li>
+<li class="chapter" data-level="1.5" data-path="epa.html"><a href="epa.html#secC4N5"><i class="fa fa-check"></i><b>1.5</b> Efeitos Multivariados de Plano Amostral</a></li>
+<li class="chapter" data-level="1.6" data-path="epa.html"><a href="epa.html#secC4N6"><i class="fa fa-check"></i><b>1.6</b> Laboratório de R</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
 </ul>
@@ -215,141 +169,36 @@ div.csl-indent {
 <div style="text-align: justify">
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
-<div class="csl-entry">
-Binder, D. A. (1983). On the variances of asymptotically normal estimators from complex surveys. <em>International Statistical Review</em>, <em>51</em>, 279–292.
+<div id="refs" class="references">
+<div>
+<p>Haggard, E. A. (1958). <em>Intraclass Correlation and the Analysis of Variance</em>. Dryden Press.</p>
 </div>
-<div class="csl-entry">
-Bishop, Y. M. M.; Fienberg, S. E. e Holland, P. W. (1975). <em>Discrete Multivariate Analysis: Theory and Practice</em>. The MIT Press.
+<div>
+<p>Johnson, R. A. e Wichern, D. W. (1988). <em>Applied Multivariate Statistical Analysis</em>. Prentice Hall.</p>
 </div>
-<div class="csl-entry">
-Brewer, K. R. W. (1963). <span>Ratio estimation and finite populations: Some results deducible from the assumption of an underlying stochastic process</span>. <em>The Australian Journal of statistics</em>, <em>5</em>(3).
+<div>
+<p>Kish, L. (1965). <em>Survey Sampling</em>. John Wiley &amp; Sons.</p>
 </div>
-<div class="csl-entry">
-Casella, G. e Berger, R. L. (2010). <em>Inferência Estatística</em>. Cengage Learning.
+<div>
+<p>Lehtonen, R. e Pahkinen, E. J. (1995). <em>Practical Methods for Design and Analysis of Complex Surveys</em>. John Wiley &amp; Sons.</p>
 </div>
-<div class="csl-entry">
-Cassel, C. M.; Särndal, C. E. e Wretman, J. H. (1977). <em>Foundations of Inference in Survey Sampling</em>. John Wiley &amp; Sons.
+<div>
+<p>Silva, P. L. N.; Bianchini, Z. M. e Dias, A. J. R. (2020). <em>Amostragem: teoria e prática usando R</em>. Disponível em: <a href="https://amostragemcomr.github.io/livro/">https://amostragemcomr.github.io/livro/</a> (Acesso em 1/12/2021) </p>
 </div>
-<div class="csl-entry">
-Chambers, R. L. e Skinner, C. J. (Orgs.). (2003). <em>Analysis of Survey Data</em>. John Wiley &amp; Sons.
+<div>
+<p>Silva, P. L. N. e Moura, F. A. S. (1990). <em>Efeitos de conglomeração da malha setorial do censo demográfico 80</em> (Série Textos para Discussão Nº 32). IBGE, Diretoria de Pesquisas.</p>
 </div>
-<div class="csl-entry">
-Cochran, W. G. (1977). <em><span>Sampling Techniques</span></em> (3rd ed, p. 428). John Wiley <span>&amp;</span> Sons.
+<div>
+<p>Skinner, C. J. ([s.d.]). Introduction to Part A. In <em>Analysis of Complex Surveys</em> (p. 23–57). John Wiley &amp; Sons.</p>
 </div>
-<div class="csl-entry">
-Deming, W. E. (1956). On simplifications of sampling design through replication with equal probabilities and without stages. <em>Journal of the American Statistical Association</em>, <em>51</em>, 24–53.
+<div>
+<p>Skinner, C. J.; Holt, D. e Smith, T. M. F. (Orgs.). (1989). <em>Analysis of Complex Surveys</em>. John Wiley &amp; Sons.</p>
 </div>
-<div class="csl-entry">
-Deville, J. C. e Särndal, C. E. (1992). <span>Calibration estimators in survey sampling</span>. <em>Journal of the American Statistical Association</em>, <em>87</em>, 376–382.
+<div>
+<p>Sudman, S. (1976). <em>Applied Sampling</em>. Academic Press.</p>
 </div>
-<div class="csl-entry">
-Fuller, W. A. (2009). <em>Sampling Statistics</em>. John Wiley.
-</div>
-<div class="csl-entry">
-Hansen, M. H.; Hurwitz, W. N. e Madow, W. G. (1953). <em>Sample Survey Methods and Theory</em>. John Wiley &amp; Sons.
-</div>
-<div class="csl-entry">
-Heeringa, S. G.; West, B. T. e Berglund, P. A. (2010). <em>Applied Survey Data Analysis</em>. Taylor &amp; Francis. Disponível em: <a href="https://books.google.com.br/books?id=QNmIvnTLlxcC">https://books.google.com.br/books?id=QNmIvnTLlxcC</a> (Acesso em 1/12/2021)
-</div>
-<div class="csl-entry">
-IBGE. (1985). <em>Amostra de <span>Uso</span> <span>Público</span> do <span>Censo</span> <span>Demográfico</span> de 1980 - <span>Metodologia</span> e <span>Manual</span> do <span>Usuário</span></em>. IBGE.
-</div>
-<div class="csl-entry">
-IBGE. (2021). <em><span>Sobre a alteração do método de calibração dos fatores de expansão da PNAD Contínua </span></em>. Instituto Brasileiro de Geografia e Estat<span>í</span>stica - IBGE; IBGE, Diretoria de Pesquisas. Disponível em: <a href="https://biblioteca.ibge.gov.br/index.php/biblioteca-catalogo?view=detalhes&amp;id=2101882">https://biblioteca.ibge.gov.br/index.php/biblioteca-catalogo?view=detalhes&amp;id=2101882</a> (Acesso em 28/11/2021)
-</div>
-<div class="csl-entry">
-Kalton, G. (1983). <em>Compensating for missing survey data</em>. The University of Michigan, Institute for Social Research, Survey Research Center.
-</div>
-<div class="csl-entry">
-Lehtonen, R. e Pahkinen, E. J. (1995). <em>Practical Methods for Design and Analysis of Complex Surveys</em>. John Wiley &amp; Sons.
-</div>
-<div class="csl-entry">
-Little, R. J. A. e Rubin, D. B. (2002). <em>Statistical Analysis with missing data</em>. John Wiley &amp; Sons.
-</div>
-<div class="csl-entry">
-Lumley, T. (2006). Analysis of complex survey samples. <em>Journal of Statistical Software</em>, <em>9</em>(1), 1–19.
-</div>
-<div class="csl-entry">
-Lumley, T. (2010). <em><span>Complex Surveys: A Guide to Analysis Using R</span></em> (p. 276). John Wiley &amp; Sons.
-</div>
-<div class="csl-entry">
-Lumley, T. (2021). <em>survey: Analysis of Complex Survey Samples</em>. Disponível em: <a href="https://CRAN.R-project.org/package=survey">https://CRAN.R-project.org/package=survey</a> R package version &gt;3.5.0, (Acesso em 1/12/2021)
-</div>
-<div class="csl-entry">
-Magalhães, M. N. e Lima, A. C. P. (2015). <em>Noções de Probabilidade e Estatística</em> (7ª edição, 3ª reimpressão revista). Edusp - Editora da Universidade de São Paulo.
-</div>
-<div class="csl-entry">
-Mahalanobis, P. C. (1939). A sample survey of the acreage under jute in Bengal. <em>Sankhya</em>, <em>4</em>, 511–531.
-</div>
-<div class="csl-entry">
-Mahalanobis, P. C. (1944). On large-scale sample surveys. <em>Philosophical Transactions of the Royal Society of London B</em>, <em>231</em>, 329–451.
-</div>
-<div class="csl-entry">
-Montanari, G. E. (1987). Post-sampling efficient <span>QR-prediction</span> in large-sample surveys. <em>International Statistical Review</em>, <em>55</em>, 191–202.
-</div>
-<div class="csl-entry">
-NIC.br. (2020). <em><span>Pesquisa Sobre o Uso das Tecnologias da Informa<span>ç</span><span>ã</span>o e da Comunica<span>ç</span><span>ã</span>o no Brasil</span></em> (p. 344). Disponível em: <a href="https://cetic.br/media/docs/publicacoes/2/20201123121817/tic_dom_2019_livro_eletronico.pdf">https://cetic.br/media/docs/publicacoes/2/20201123121817/tic_dom_2019_livro_eletronico.pdf</a> (Acesso em 1/12/2021)
-</div>
-<div class="csl-entry">
-Pessoa, D. G. C. e Silva, P. L. N. (1998). <em><span>An<span>á</span>lise de dados amostrais complexos</span></em> (p. 170). Associa<span>ç</span><span>ã</span>o Brasileira de Estat<span>í</span>stica.
-</div>
-<div class="csl-entry">
-Pfeffermann, D. (1993). The role of sampling weights when modelling survey data. <em>International Statistical Review</em>, <em>61</em>, 317–337.
-</div>
-<div class="csl-entry">
-Quenoille, M. H. (1949). Problems in plane sampling. <em>Annals of Mathematical Statistics</em>, <em>20</em>, p. 355–375.
-</div>
-<div class="csl-entry">
-Quenoille, M. H. (1956). Notes on bias in estimation. <em>Biometrika</em>, <em>43</em>, 353–360.
-</div>
-<div class="csl-entry">
-Rao, J. N. K.; Wu, C. F. J. e Yue, K. (1992). <span>Some recent work on resampling methods for complex surveys</span>. <em>Survey Methodology</em>, <em>18</em>(2), 209–217.
-</div>
-<div class="csl-entry">
-Royall, R. M. (1970). On finite population sampling theory under certain linear regression models. <em>Biometrika</em>, <em>57</em>(2), 377–387.
-</div>
-<div class="csl-entry">
-Rubin, D. B. (1987). <em>Multiple Imputation for Nonresponse in Surveys</em>. John Wiley &amp; Sons.
-</div>
-<div class="csl-entry">
-Särndal, C. E.; Swensson, B. e Wretman, J. H. (1992). <em>Model Assisted Survey Sampling</em>. Springer-Verlag.
-</div>
-<div class="csl-entry">
-Schafer, J. L. (1997). <em><span>Analysis of Incomplete Multivariate Data</span></em> (p. 430). Chapman <span>&amp;</span> Hall / CRC.
-</div>
-<div class="csl-entry">
-Shah, B. V.; Folsom, R. E.; LaVange, L. M.; Wheeless, S. C.; Boyle, K. E. e Williams, R. L. (1993). <em>Statistical Methods and Mathematical Algorithms Used in SUDAAN</em>.
-</div>
-<div class="csl-entry">
-Silva, P. L. N. (1996). <em>Utilizing Auxiliary Information for Estimation and Analysis in Sample Surveys</em> [Tese de doutorado]. University of Southampton, Department of Social Statistics.
-</div>
-<div class="csl-entry">
-Silva, P. L. N.; Bianchini, Z. M. e Dias, A. J. R. (2020). <em><span>Amostragem: teoria e pr<span>á</span>tica usando R</span></em>. Disponível em: <a href="https://amostragemcomr.github.io/livro/">https://amostragemcomr.github.io/livro/</a> (Acesso em 1/12/2021)
-</div>
-<div class="csl-entry">
-Skinner, C. J.; Holt, D. e Smith, T. M. F. (Orgs.). (1989). <em>Analysis of Complex Surveys</em>. John Wiley &amp; Sons.
-</div>
-<div class="csl-entry">
-Sugden, R. A. e Smith, T. M. F. (1984). Ignorable and informative designs in survey sampling inference. <em>Biometrika</em>, <em>71</em>, 495–506.
-</div>
-<div class="csl-entry">
-Thompson, S. K. (1992). <em>Sampling</em>. John Wiley &amp; Sons.
-</div>
-<div class="csl-entry">
-US Bureau of Labour Statistics. (2020). <em><span>Consumer price index - Handbook of methods</span></em> (p. 67). US Bureau of Labour Statistics.
-</div>
-<div class="csl-entry">
-Valliant, R.; Dorfman, A. H. e Royall, R. M. (2000). <em>Finite population sampling and inference: a prediction approach</em>.
-</div>
-<div class="csl-entry">
-Westat. (1996). <em>A User’s Guide to <span>WesVarPc</span>, version 2.0</em>. Westat, Inc.
-</div>
-<div class="csl-entry">
-Wolter, K. M. (1985). <em>Introduction to Variance Estimation</em>. Springer-Verlag.
-</div>
-<div class="csl-entry">
-Wolter, K. M. (2007). <em>Introduction to Variance Estimation</em> (Second, p. 428). Springer-Verlag.
+<div>
+<p>Tillé, Y. e Matei, A. (2016). <em>sampling: Survey Sampling</em>. Disponível em: <a href="https://CRAN.R-project.org/package=sampling">https://CRAN.R-project.org/package=sampling</a> R package version 2.8 </p>
 </div>
 </div>
 </div>
@@ -358,7 +207,7 @@ Wolter, K. M. (2007). <em>Introduction to Variance Estimation</em> (Second, p. 4
           </div>
         </div>
       </div>
-<a href="capplanamo.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="epa.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
