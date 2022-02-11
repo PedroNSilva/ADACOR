@@ -43,10 +43,10 @@ for(i in 1:500){
                      cov(cbind(dados$sal, dados$rec))/n
   # Prepara objeto do plano amostral para permitir estimação não enviesada
   popul_plan <- svydesign(~1, strata=~estrat, data=dados, fpc=~Prob)
-  # Calcula estimativas não-viciadas (HT) da média do salario e da receita
+  # Calcula estimativas não viciadas (HT) da média do salario e da receita
   sal_rec_aes_est <- svymean(~sal+rec, popul_plan)
   est_aes <- est_aes + coef(sal_rec_aes_est)
-  # Calcula estimativa da matriz de variância do estimador não-viciado
+  # Calcula estimativa da matriz de variância do estimador não viciado
   cov_mat_aes_est <- cov_mat_aes_est + attr(sal_rec_aes_est, 'var')
 }
 

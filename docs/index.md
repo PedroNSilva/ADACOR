@@ -2,14 +2,14 @@
 lang: pt-BR
 title: Análise de Dados Amostrais com R
 author: |
-  | Djalma Galvão Carneiro Pessoa e Pedro Luis do Nascimento Silva
-  |
-  |
-  |
+  | Djalma Galvão Carneiro Pessoa e Pedro Luis do Nascimento Silva 
+  | 
+  | 
+  | 
   | Editores
   | Pedro Luis do N. Silva, Antonio José R. Dias, Zélia M. Bianchini e Sonia Albieri   
-
-date: '29 de janeiro de 2022, 17:48:46'
+  
+date: '11 de fevereiro de 2022, 11:44:59'
 summary_depth: 3
 summary_float:
    collapsed: false
@@ -22,7 +22,7 @@ geometry: "left=1.5cm,right=1cm,top=1.5cm,bottom=1.5cm"
 fontsize: 12pt
 
 output:
-#  bookdown::gitbook: default
+  bookdown::gitbook: default
   bookdown::pdf_book: default  
 
 documentclass: book          
