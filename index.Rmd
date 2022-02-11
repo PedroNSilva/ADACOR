@@ -22,7 +22,7 @@ geometry: "left=1.5cm,right=1cm,top=1.5cm,bottom=1.5cm"
 fontsize: 12pt
 
 output:
-#  bookdown::gitbook: default
+  bookdown::gitbook: default
   bookdown::pdf_book: default  
 
 documentclass: book          

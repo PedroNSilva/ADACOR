@@ -32,10 +32,10 @@ for (i in 1:500) {
   cov_mat_aas_est <- cov_mat_aas_est + (1 - f) * cov(cbind(dados$sal, 
     dados$rec))/n
   
-  # vhat_aes estimador não-viciado
+  # vhat_aes estimador não viciado
   popul_plan <- svydesign(~1, strata = ~estrat, data = dados, 
     fpc = ~Prob)
-  # estimador não-viciado da média de salario e receita
+  # estimador não viciado da média de salario e receita
   sal_rec_aes_est <- svymean(~sal + rec, popul_plan)
   est_aes <- est_aes + coef(sal_rec_aes_est)
   cov_mat_aes_est <- cov_mat_aes_est + attr(sal_rec_aes_est, 

@@ -32,5 +32,5 @@
 \contentsline {section}{\numberline {4.3}Efeito do Plano Amostral Ampliado}{56}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Efeitos sobre Intervalos de Confiança e Testes de Hipóteses Uniparamétricos}{64}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Efeitos Multivariados de Plano Amostral}{67}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Laboratório de R}{70}{section.4.6}%
+\contentsline {section}{\numberline {4.6}Laboratório de R}{71}{section.4.6}%
 \contentsline {chapter}{Referências}{75}{chapter*.7}%
