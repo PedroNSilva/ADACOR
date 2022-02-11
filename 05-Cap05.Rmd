@@ -2,16 +2,8 @@
 
 ## Introdução {#modpar1}
 <div style="text-align: justify">
-Nos primórdios do uso *moderno* de pesquisas por amostragem, os dados
-obtidos eram usados principalmente para estimar funções simples dos
-valores das variáveis de interesse nas populações finitas, tais
-como totais, médias, razões, etc. Isto caracterizava o uso dos dados
-dessas pesquisas para *inferência descritiva*.
-Recentemente, os dados de pesquisas amostrais têm sido cada vez mais
-utilizados também para propósitos analíticos. *Inferências analíticas*
-baseadas numa pesquisa amostral são
-aquelas que envolvem a estimação de parâmetros num modelo (de
-superpopulação) @kalton83b; @binder87.
+
+Nos primórdios do uso moderno de pesquisas por amostragem, os dados obtidos eram usados principalmente para estimar funções simples dos valores das variáveis de interesse nas populações finitas, tais como totais, médias, razões etc. Isto caracterizava o uso dos dados dessas pesquisas para *inferência descritiva*. Recentemente, os dados de pesquisas amostrais têm sido cada vez mais utilizados também para propósitos analíticos. *Inferências analíticas* baseadas numa pesquisa amostral são aquelas que envolvem a estimação de parâmetros num modelo denominado *de superpopulação* @kalton83b; @binder87. 
 
 Quando os valores *amostrais* das variáveis da pesquisa podem ser
 considerados como realizações de vetores aleatórios
