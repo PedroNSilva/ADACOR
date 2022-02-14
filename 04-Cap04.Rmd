@@ -10,13 +10,13 @@ Os sistemas mais comuns de análise estatística incluem em suas saídas valores
 Este capítulo trata de como avaliar o impacto sobre estimativas de desvios padrões, intervalos de confiança e níveis de significância de testes usuais quando há afastamentos das hipóteses IID mencionadas, devidos ao uso de planos amostrais complexos para obter os dados. Como veremos, o impacto pode ser muito grande em algumas situações, justificando os cuidados que devem ser tomados na análise de dados provenientes de amostras complexas. Neste capítulo, usamos como referência básica @Sk89a.
 
 
-## Efeito do Plano Amostral - EPA de Kish {#secC4N2}
+## Efeito do plano amostral de Kish {#secC4N2}
 <div style="text-align: justify">
 
-Para medir o efeito do plano amostral sobre a variância de um estimador, @Kish65 propôs uma medida que denominou **Efeito do Plano Amostral** - $EPA$ (em inglês, *design effect* ou, abreviadamente, *deff*). O objetivo desta medida é comparar planos amostrais no estágio de planejamento da pesquisa. O $EPA$ de Kish é uma razão entre variâncias (de aleatorização) de um estimador, calculadas para dois planos amostrais alternativos. Vamos considerar um estimador $\hat{\theta}$ para um parâmetro único $\theta$ e calcular a variância de sua distribuição induzida pelo plano amostral complexo (verdadeiro) $V_{VERD}\left(\hat{\theta}\right)$ e a variância da distribuição do estimador induzida pelo plano de amostragem aleatória simples $V_{AAS}\left(\hat{\theta}\right)$. Nessa comparação, está implícita a ideia de que o estimador $\hat{\theta}$ é não enviesado ou ao menos consistente para o parâmetro $\theta$ tanto sob o plano amostral complexo como sob AAS.
+Para medir o efeito do plano amostral sobre a variância de um estimador, @Kish65 propôs uma medida que denominou *Efeito do Plano Amostral* - $EPA$ (em inglês, *design effect* ou, abreviadamente, *deff*). O objetivo desta medida é comparar planos amostrais no estágio de planejamento da pesquisa. O $EPA$ de Kish é uma razão entre variâncias (de aleatorização) de um estimador, calculadas para dois planos amostrais alternativos. Vamos considerar um estimador $\hat{\theta}$ para um parâmetro único $\theta$ e calcular a variância de sua distribuição induzida pelo plano amostral complexo (verdadeiro) $V_{VERD}\left(\hat{\theta}\right)$ e a variância da distribuição do estimador induzida pelo plano de amostragem aleatória simples $V_{AAS}\left(\hat{\theta}\right)$. Nessa comparação, está implícita a ideia de que o estimador $\hat{\theta}$ é não enviesado ou ao menos consistente para o parâmetro $\theta$ tanto sob o plano amostral complexo como sob AAS.
 
 ```{definition}
-O **Efeito do Plano Amostral -$EPA$ de Kish** para um estimador $\hat{\theta}$ é
+O *Efeito do Plano Amostral - $EPA$ de Kish* para um estimador $\hat{\theta}$ é
 ```
 
 \begin{equation}
@@ -27,10 +27,10 @@ EPA_{Kish} \left(\hat{\theta}\right) = \frac{V_{VERD} \left(\hat{\theta}\right)}
 Para ilustrar o conceito do $EPA_{Kish}\left(\hat{\theta}\right)$, vamos considerar um exemplo.
 
 ```{example, label="exC4N1" }
-Efeitos de plano amostral de Kish para estimadores de totais com amostragem conglomerada em dois estágios.
+Efeitos do plano amostral de Kish para estimadores de totais com amostragem conglomerada em dois estágios.
 ```
 
-@SilvaMou estimaram o $EPA_{Kish}$ para estimadores de totais de várias variáveis socioeconômicas no nível das Regiões Metropolitanas - RMs - utilizando dados do questionário de amostra do Censo Demográfico de 1980. Essas medidas estimadas do efeito do plano amostral foram calculadas para três estratégias amostrais alternativas, todas considerando amostragem conglomerada de domicílios em dois estágios, tendo o setor censitário como unidade primária de amostragem - UPA - e o domicílio como unidade secundária de amostragem - USA. Duas das alternativas consideraram seleção de setores com equiprobabilidade via amostragem aleatória simples sem reposição - AC2AAS - e fração amostral constante de domicílios no segundo estágio (uma usando o estimador HT do total, e outra usando o estimador de razão para o total calibrando no número total de domicílios da população). Uma terceira estratégia, denominada AC2PPT, considerou a seleção de setores com probabilidades proporcionais ao tamanho - PPT - usando o número de domicílios por setor como medida de tamanho, a seleção de $15$ domicílios em cada setor da amostra usando AAS e empregando o correspondente estimador HT.
+@SilvaMou estimaram o $EPA_{Kish}$ para estimadores de totais de várias variáveis socioeconômicas no nível das Regiões Metropolitanas - RMs - utilizando dados do questionário de amostra do Censo Demográfico de 1980. Essas medidas estimadas do efeito do plano amostral foram calculadas para três estratégias amostrais alternativas, todas considerando amostragem conglomerada de domicílios em dois estágios, tendo o setor censitário como unidade primária de amostragem - UPA - e o domicílio como unidade secundária de amostragem - USA. Duas das alternativas consideraram seleção de setores com equiprobabilidade via amostragem aleatória simples sem reposição - AC2AAS - e fração amostral constante de domicílios no segundo estágio (uma usando o estimador Horvitz-Thompson - HT do total, e outra usando o estimador de razão para o total calibrando no número total de domicílios da população). Uma terceira estratégia, denominada AC2PPT, considerou a seleção de setores com probabilidades proporcionais ao tamanho - PPT - usando o número de domicílios por setor como medida de tamanho, a seleção de $15$ domicílios em cada setor da amostra usando AAS e empregando o correspondente estimador HT.
 
 A título de ilustração, resultados referentes à Região Metropolitana do Rio de Janeiro são apresentados na Tabela \@ref(tab:tabC4N1) para algumas variáveis. Note que a população-alvo para a qual se faz inferência considera apenas moradores em domicílios particulares permanentes na Região Metropolitana do Rio de Janeiro.
 
@@ -52,7 +52,7 @@ tabela=as.data.frame(t(data.frame(l1,l2,l3,l4,l5,l6,l7,l8,l9)))
 names(tabela) <- c('Variável', 'AC2AAS + Estimador HT', 'AC2AAS + Estimador de Razão', 'AC2PPT + Estimador HT')
 
 knitr::kable(tabela,align= "lrrr",format.args= list(big.mark = '.',dec=','),escape = F, booktabs=T,
-caption= "\\centering $\\text{Efeitos de plano amostral de Kish para variáveis selecionadas}$ \\newline $\\text{Região Metropolitana do Rio de Janeiro}$", row.names=FALSE)%>%
+caption= "\\centering $\\text{Efeitos do plano amostral de Kish para variáveis selecionadas}$ \\newline $\\text{Região Metropolitana do Rio de Janeiro}$", row.names=FALSE)%>%
 kable_styling(full_width = F,latex_options = 'HOLD_position') %>% column_spec(column=1,width='6cm')%>%column_spec(column=2,width='3cm')%>% column_spec(column=3,width='3cm')%>%column_spec(column=4,width='3.5cm')
 ```
 
@@ -65,18 +65,18 @@ Uma outra análise revela que, para algumas variáveis (1, 2, 4, 5 e 9), o $EPA_
 
 Outra regularidade encontrada nesse valores é que o $EPA_{Kish}$ para a estratégia que usa o plano amostral AC2AAS com o estimador HT apresenta sempre os valores mais elevados, revelando que esta estratégia é menos eficiente que as duas competidoras consideradas. Em geral, o $EPA_{Kish}$ é menor para a estratégia AC2PPT com o correspondente estimador HT, com valores próximos aos da estratégia AC2AAS com estimador de razão.
 
-Os valores dos $EPA_{Kish}$ calculados por @SilvaMou podiam ser usados para planejar pesquisas amostrais (ao menos nas regiões metropolitanas), pois permitiam comparar e antecipar o impacto do uso de algumas estratégias amostrais alternativas sobre a precisão de estimadores de totais de várias variáveis relevantes. Permitiam também calcular tamanhos amostrais para garantir determinado nível de precisão, sem emprego de fórmulas complicadas, como discutido, por exemplo, em @Silva2020, seção 12.10.4. Portanto, tais valores seriam úteis como informação de apoio ao planejamento de novas pesquisas por amostragem, antes que as respectivas amostras fossem efetivamente selecionadas.
+Os valores dos $EPA_{Kish}$ calculados por @SilvaMou podiam ser usados para planejar pesquisas amostrais (ao menos nas regiões metropolitanas), pois permitiam comparar e antecipar o impacto do uso de algumas estratégias amostrais alternativas sobre a precisão de estimadores de totais de várias variáveis relevantes. Permitiam também calcular tamanhos amostrais para garantir determinado nível de precisão, sem emprego de fórmulas complicadas, como discutido, por exemplo, em @Silva2020, Seção 12.10.4. Portanto, tais valores seriam úteis como informação de apoio ao planejamento de novas pesquisas por amostragem, antes que as respectivas amostras fossem efetivamente selecionadas.
 
 Entretanto, esses valores teriam pouca utilidade em termos de usos analíticos dos dados da amostra do Censo Demográfico 1980 - CD80. É que tais valores, embora tendo sido estimados com essa amostra, foram calculados para planos amostrais distintos do que foi efetivamente adotado para seleção da amostra daquele censo.
 
 A amostra de domicílios usada no CD80 foi estratificada por setor censitário com seleção sistemática de uma fração fixa (1/4 ou 25%) dos domicílios de cada setor. Já os planos amostrais considerados por @SilvaMou na estimação dos $EPA_{Kish}$ que apresentaram eram planos amostrais em dois estágios, com seleção de setores no primeiro estágio, e domicílios no segundo estágio. Tais planos foram considerados por sua similaridade com os planos amostrais adotados nas principais pesquisas domiciliares do IBGE, tais como a PNAD e a Pesquisa Mensal de Emprego - PME. Portanto, a utilidade maior dos valores tabulados dos $EPA_{Kish}$ seria a comparação de planos amostrais alternativos para planejamento de pesquisas futuras, e não a análise dos resultados da amostra do CD80.
 
-## Efeito do Plano Amostral Ampliado {#secC4N3}
+## Efeito do plano amostral ampliado {#secC4N3}
 <div style="text-align: justify">
 
-O que se observou no Exemplo \@ref(exm:exC4N1) com respeito à dificuldade ou mesmo impossibilidade de uso dos $EPA_{Kish}$ calculados para fins analíticos também se aplica para outras situações e é uma deficiência estrutural do conceito de EPA proposto por @Kish65. Para tentar contornar essa dificuldade, é necessário considerar um conceito ampliado de EPA, correspondente ao conceito de *misspecification effect* - `meff` - proposto por @SHS89 na p. 24, que apresentamos e discutimos nesta seção.
+O que se observou no Exemplo \@ref(exm:exC4N1) com respeito à dificuldade ou mesmo impossibilidade de uso dos $EPA_{Kish}$ calculados para fins analíticos também se aplica para outras situações e é uma deficiência estrutural do conceito de $EPA$ proposto por @Kish65. Para tentar contornar essa dificuldade, é necessário considerar um conceito ampliado de $EPA$, correspondente ao conceito de *misspecification effect* ou, abreviadamente,  *meff* proposto por @SHS89 na página 24, que apresentamos e discutimos nesta seção.
 
-Para introduzir este conceito ampliado de EPA, que tem utilidade também para fins de inferência analítica, vamos agora considerar um modelo subjacente às observações usadas para o cálculo do estimador pontual $\hat{\theta}$ para um parâmetro único $\theta$. Designemos por $v_{0} = \widehat{V}_{IID} \left(\hat{\theta}\right)$ um estimador usual (consistente) da variância de $\hat{\theta}$ calculado sob a hipótese (ingênua) de que as observações da amostra disponível são IID. A inadequação da hipótese de IID poderia ser consequência ou da estrutura da população ou do efeito de um plano amostral complexo, ou ambos. Em qualquer dos casos, a estimativa $v_{0}$ da variância de $\hat{\theta}$ calculada sob a hipótese de observações IID se afastaria da variância de $\hat{\theta}$ sob o plano amostral (ou modelo) verdadeiro, denotada $V_{VERD}\left(\hat{\theta}\right)$. Note que $V_{VERD}\left(\hat{\theta}\right) = V_{M}\left(\hat{\theta}\right)$ na abordagem baseada em modelos e $V_{VERD}\left(\hat{\theta}\right) = V_{p}\left(\hat{\theta}\right)$ na abordagem de aleatorização, onde o plano amostral $p$ considerado é diferente de AASC.
+Para introduzir este conceito ampliado de $EPA$, que tem utilidade também para fins de inferência analítica, vamos agora considerar um modelo subjacente às observações usadas para o cálculo do estimador pontual $\hat{\theta}$ para um parâmetro único $\theta$. Designemos por $v_{0} = \widehat{V}_{IID} \left(\hat{\theta}\right)$ um estimador usual (consistente) da variância de $\hat{\theta}$ calculado sob a hipótese (ingênua) de que as observações da amostra disponível são IID. A inadequação da hipótese de IID poderia ser consequência ou da estrutura da população ou do efeito de um plano amostral complexo, ou ambos. Em qualquer dos casos, a estimativa $v_{0}$ da variância de $\hat{\theta}$ calculada sob a hipótese de observações IID se afastaria da variância de $\hat{\theta}$ sob o plano amostral (ou modelo) verdadeiro, denotada $V_{VERD}\left(\hat{\theta}\right)$. Note que $V_{VERD}\left(\hat{\theta}\right) = V_{M}\left(\hat{\theta}\right)$ na abordagem baseada em modelos e $V_{VERD}\left(\hat{\theta}\right) = V_{p}\left(\hat{\theta}\right)$ na abordagem de aleatorização, onde o plano amostral $p$ considerado é diferente de AASC.
 
 Para avaliar se este afastamento tende a ser grande ou pequeno, vamos considerar a distribuição de $v_{0}$ com relação à distribuição de aleatorização verdadeira (ou do modelo verdadeiro) e localizar $v_{0}$ com relação a esta distribuição de referência. Como em geral seria complicado obter esta distribuição, vamos tomar uma medida de centro ou locação da distribuição de $v_{0}$ e compará-la ao valor de $V_{VERD}\left(\hat{\theta}\right)$.
 
@@ -107,18 +107,18 @@ Em geral, são esperadas as seguintes consequências sobre o $EPA$ ao ignorar o 
 
 Combinações destes aspectos num mesmo plano amostral complexo, resultando na especificação incorreta do plano amostral como se fosse AASC ou da hipótese de observações IID que levam ao estimador ingênuo de variância $v_{0}$, podem inflacionar ou reduzir o $EPA$. Nesses casos é difícil prever o impacto de ignorar o plano amostral (ou modelo) verdadeiro sobre a análise baseada em hipóteses IID. Por essa razão, é recomendável ao menos estimar os $EPA$ antes de concluir a análise padrão, para então poder avaliar se há impactos importantes a considerar.
 
-Embora pensadas com objetivos distintos, as duas definições de EPA consideradas têm em comum a ideia de que são medidas adimensionais, estabelecidas mediante comparação de um valor de interesse - $V_{VERD}\left(\hat{\theta}\right)$ - com valores de referência - $V_{AAS}\left(\hat{\theta}\right)$ ou $E_{VERD}\left(v_{0}\right)$ - que nos servem de baliza para avaliar o resultado, por serem quantidades habitualmente usadas ou fáceis de calcular. Essa ideia é recorrente na Estatística, de buscar referir quantidades novas a valores ou distribuições de referência conhecidos, como veremos na sequência deste livro.
+Embora pensadas com objetivos distintos, as duas definições de $EPA$ consideradas têm em comum a ideia de que são medidas adimensionais, estabelecidas mediante comparação de um valor de interesse - $V_{VERD}\left(\hat{\theta}\right)$ - com valores de referência - $V_{AAS}\left(\hat{\theta}\right)$ ou $E_{VERD}\left(v_{0}\right)$ - que nos servem de baliza para avaliar o resultado, por serem quantidades habitualmente usadas ou fáceis de calcular. Essa ideia é recorrente na Estatística, de buscar referir quantidades novas a valores ou distribuições de referência conhecidos, como veremos na sequência deste livro.
 
-Apesar dessa diferença de conceitos do EPA de Kish e do EPA ampliado, na prática vai quase sempre ser necessário estimar valores de EPA usando dados de uma amostra. O estimador habitualmente usado para os dois tipos de EPA será então o mesmo, dado por:
+Apesar dessa diferença de conceitos do $EPA$ de Kish e do $EPA$ ampliado, na prática vai quase sempre ser necessário estimar valores de $EPA$ usando dados de uma amostra. O estimador habitualmente usado para os dois tipos de $EPA$ será então o mesmo, dado por:
 
 \begin{equation}
 \widehat{EPA} \left(\hat{\theta},v_{0}\right) = \frac{\widehat{V}_{VERD}\left(\hat{\theta}\right)} {v_{0}} \quad  (\#eq:eqC4N3)
 \end{equation}
 
-onde o numerador é um estimador não viciado (ou ao menos consistente) para a verdadeira variância do estimador sob o plano amostral de fato empregado para obter a amostra usada na inferência, e no denominador usamos a ideia de que a estimativa $v_{0}$ obtida na amostra é não viciada para estimar o valor esperado dessa quantidade aleatória sob o plano amostral de fato empregado na obtenção da amostra. Apesar de resultar numa estimativa de EPA idêntica para os dois conceitos, a interpretação do resultado será bastante distinta dependendo de qual dos dois parâmetros se buscava estimar. No caso do EPA de Kish ser o alvo, o interesse seria pela comparação de eficiência relativa entre o plano amostral efetivamente empregado e AAS. No caso do EPA ampliado ser o alvo, o interesse é em avaliar quão viciada pode ser a aplicação de métodos padrões de forma ingênua para estimar a variância de estimadores dos parâmetros de interesse da análise.
+onde o numerador é um estimador não viciado (ou ao menos consistente) para a verdadeira variância do estimador sob o plano amostral de fato empregado para obter a amostra usada na inferência, e no denominador usamos a ideia de que a estimativa $v_{0}$ obtida na amostra é não viciada para estimar o valor esperado dessa quantidade aleatória sob o plano amostral de fato empregado na obtenção da amostra. Apesar de resultar numa estimativa de $EPA$ idêntica para os dois conceitos, a interpretação do resultado será bastante distinta dependendo de qual dos dois parâmetros se buscava estimar. No caso do $EPA$ de Kish ser o alvo, o interesse seria pela comparação de eficiência relativa entre o plano amostral efetivamente empregado e AAS. No caso do $EPA$ ampliado ser o alvo, o interesse é em avaliar quão viciada pode ser a aplicação de métodos padrões de forma ingênua para estimar a variância de estimadores dos parâmetros de interesse da análise.
 
 ```{example, label = "exC4N2"}
-Efeitos de plano amostral para estimação de médias na amostragem estratificada simples com alocação desproporcional
+Efeitos do plano amostral para estimação de médias na amostragem estratificada simples com alocação desproporcional
 ```
 
 Neste exemplo consideramos uma população de $N=749$ empresas, para as quais foram observadas as seguintes variáveis:
@@ -197,7 +197,7 @@ Com a finalidade de ilustrar o cálculo do $EPA$, vamos considerar o estimador n
 
 Neste exemplo, a variância do estimador $\overline{y}_w$ pode ser obtida de duas formas: calculando a expressão da variância utilizando os dados de todas as unidades da população (que são conhecidos, mas admitidos desconhecidos para fins do exercício de estimação de médias via amostragem) e por simulação.
 
-A variância de $\overline{y}_w$ sob a distribuição de aleatorização do plano amostral 'verdadeiro' - AES - é dada por - ver a seção 11.2.3 de @Silva2020:
+A variância de $\overline{y}_w$ sob a distribuição de aleatorização do plano amostral 'verdadeiro' - AES - é dada por - ver a Seção 11.2.3 de @Silva2020:
 
 
 \begin{equation}
@@ -206,7 +206,7 @@ V_{AES} \left( \overline{y}_w \right) = \sum\limits_{h=1}^2 W_h^2 \left( \frac{1
 
 onde $S_h^2 = \frac{1}{N_h - 1} \sum_{i \in U_h} \left(y_i - \overline{Y}_h \right)^2$ é a variância populacional da variável de pesquisa $y$ dentro do estrato $h$.
 
-Conforme a seção 11.2.3 de @Silva2020, esta variância pode ser estimada sem viés sob AES usando o estimador
+Conforme a Seção 11.2.3 de @Silva2020, esta variância pode ser estimada sem viés sob AES usando o estimador
 
 
 \begin{equation}
@@ -232,7 +232,7 @@ O valor do $EPA$ foi também estimado por meio de simulação. O motivo para usa
 
 3.  estimativa da variância da estimativa ponderada da média ($\overline{y}$) considerando observações IID $v_{0}$;
 
-4.  estimativa da variância da estimativa ponderada da média ($\overline{y}_{w}$) considerando o plano amostral verdadeiro $\hat{V}_{AES} \left( \overline{y}_{w} \right)$.
+4.  estimativa da variância da estimativa ponderada da média ($\overline{y}_{w}$) considerando o plano amostral verdadeiro $\widehat{V}_{AES} \left( \overline{y}_{w} \right)$.
 
 
 Note que na apresentação dos resultados os valores dos salários foram expressos em milhares de Reais (R\$ $1.000,00$) e os valores das receitas em milhões de Reais (R\$ $1.000.000,00$). Como a população é conhecida, os parâmetros populacionais de interesse podem ser calculados, obtendo-se os valores na primeira linha da Tabela \@ref(tab:tabC4N3).
@@ -269,7 +269,7 @@ Note que o estimador $\overline{y}_{w}$ é não viciado sob o plano amostral ado
 
 XXX
 
-Além das estimativas pontuais, o interesse maior da simulação foi comparar valores de estimativas de variância e, consequentemente, de medidas do efeito do plano amostral. Como o estimador pontual dado pela média amostral não ponderada ($\overline{y}$) é grosseiramente viciado, não consideramos estimativas de variância para esse estimador, mas tão somente para o estimador não viciado dado pela média ponderada $\overline{y}_{w}$. Para esse último, consideramos dois estimadores de variância, a saber o estimador ingênuo sob a hipótese de AASC (dado por $v_{0}$, mas com o valor da estimativa de média usado no seu cálculo substituído por $\overline{y}_{w}$) e um estimador não viciado da variância sob o plano amostral AES efetivamente empregado $\hat{V}_{AES}\left( \overline{y}_{w}\right)$ dado pela expressão \@ref(eq:eqC4N5).
+Além das estimativas pontuais, o interesse maior da simulação foi comparar valores de estimativas de variância e, consequentemente, de medidas do efeito do plano amostral. Como o estimador pontual dado pela média amostral não ponderada ($\overline{y}$) é grosseiramente viciado, não consideramos estimativas de variância para esse estimador, mas tão somente para o estimador não viciado dado pela média ponderada $\overline{y}_{w}$. Para esse último, consideramos dois estimadores de variância, a saber o estimador ingênuo sob a hipótese de AASC (dado por $v_{0}$, mas com o valor da estimativa de média usado no seu cálculo substituído por $\overline{y}_{w}$) e um estimador não viciado da variância sob o plano amostral AES efetivamente empregado $\widehat{V}_{AES}\left( \overline{y}_{w}\right)$ dado pela Expressão \@ref(eq:eqC4N5).
 
 Como neste exercício a população é conhecida, podemos calcular $V_{AES} \left( \overline{y}_{w} \right)$ através das variâncias de $y$ dentro dos estratos $h=1,2$ ou estimar essa variância através da simulação. Esses valores são apresentados respectivamente na primeira e segunda linhas da Tabela \@ref(tab:tabC4N4), para as duas variáveis de pesquisa consideradas.
 
@@ -324,7 +324,7 @@ A Tabela \@ref(tab:tabC4N5) resume os principais resultados deste exercício, pa
 
 1.  ignorar os pesos na estimação da média provoca vícios substanciais, que não podem ser ignorados; portanto, o uso do estimador simples de média ($\overline{y}$) é desaconselhado;
 
-2.  ignorar os pesos na estimação da variância do estimador ponderado $\overline{y}_{w}$ também provoca vícios substanciais, neste caso, superestimando a variância por ignorar o efeito de estratificação; os efeitos de plano amostral são substancialmente menores que $1$ para as duas variáveis de pesquisa consideradas (salários e receita); portanto o uso do *estimador ingênuo* de variância $v_{0}$ é desaconselhado.
+2.  ignorar os pesos na estimação da variância do estimador ponderado $\overline{y}_{w}$ também provoca vícios substanciais, neste caso, superestimando a variância por ignorar o efeito de estratificação; os efeitos do plano amostral são substancialmente menores que $1$ para as duas variáveis de pesquisa consideradas (salários e receita); portanto o uso do *estimador ingênuo* de variância $v_{0}$ é desaconselhado.
 
 
 Essas conclusões são largamente aceitas pelos amostristas e produtores de dados baseados em pesquisas amostrais para o caso da estimação de médias e totais, e respectivas variâncias. Entretanto, ainda há exemplos de usos indevidos de dados amostrais nos quais os pesos e outros aspectos importantes dos planos amostrais complexos de fato empregados para obter os dados são ignorados nas análises, em particular para a estimação de variâncias associadas a estimativas pontuais de médias e de parâmetros de modelos. Tal situação se deve ao uso ingênuo de sistemas estatísticos padrões desenvolvidos para analisar amostras IID, sem a devida consideração dos pesos e outros aspectos da estrutura do plano amostral empregado para obtenção dos dados.
@@ -335,29 +335,31 @@ suppressMessages(library(kableExtra))
 
 tabela <- data.frame(
 c("Salário", "Salário", "Receita", "Receita"),
-c("Variância", "EPA", "Variância", "EPA"),
+c("Variância", "$EPA$", "Variância", "$EPA$"),
 c(tab_44[2,2], tab_44[2,2]/tab_44[4,2] ,tab_44[2,3], tab_44[2,3]/tab_44[4,3]),  
 c(tab_44[1,2], tab_44[1,2]/tab_44[3,2] ,tab_44[1,3], tab_44[1,3]/tab_44[3,3])
 )
 names(tabela) <- c('Variável','Estimativa','Simulação','População')
 knitr::kable(tabela,align= "llrr",format.args= list(big.mark = '.',dec=','),escape = F, booktabs=T,
-caption= "$\\text{Valores dos Efeitos de Plano amostral - EPA para as médias de Salário e Receita}$", row.names=FALSE)%>%
+caption= "$\\text{Estimativas da variância e do efeito do plano amostral para as médias dos salários e receitas}$", row.names=FALSE)%>%
 kable_styling(full_width = F,latex_options = 'HOLD_position')
 ```
 
-**Observação. ** Neste exemplo não foi feito uso analítico dos dados e sim descritivo, onde é usual incorporar os pesos no cálculo de estimativas e variâncias. Não seria esperado usar um estimador ponderado para a média e não considerar os pesos no cálculo de variâncias, como fizemos neste exemplo.   
+```{remark}
+Neste exemplo não foi feito uso analítico dos dados e sim descritivo, onde é usual incorporar os pesos no cálculo de estimativas e variâncias. Não seria esperado usar um estimador ponderado para a média e não considerar os pesos no cálculo de variâncias, como fizemos neste exemplo.   
+```
 
-
-**Observação. ** O exemplo mostra que ignorar a estratificação ao calcular $v_{0}$ diminui o $EPA$.    
-
+```{remark}
+O exemplo mostra que ignorar a estratificação ao calcular $v_{0}$ diminui o $EPA$.    
+```
 
 Um outro exemplo relevante é utilizado a seguir para ilustrar o fato de que o conceito do $EPA$ adotado aqui é mais abrangente do que o definido por @Kish65, em particular porque a origem do efeito pode estar na estrutura da população e não no plano amostral usado para obter os dados.
 
 ```{example, label= "exe43"}
-População conglomerada com conglomerados de tamanho 2 - @SHS89, p. 25
+População conglomerada com conglomerados de tamanho 2 - @SHS89, página 25
 ```
 
-Considere uma população de unidades agrupadas em conglomerados de tamanho $2$, isto é, onde as unidades (elementares ou de referência) estão grupadas em pares (exemplos de tais populações incluem pares de irmãos gêmeos, casais, jogadores numa dupla de vôlei de praia ou de tênis, etc.). Suponha que os valores de uma variável de pesquisa medida nessas unidades têm média $\theta$ e variância $\sigma^{2}$, além de uma correlação $\rho$ entre os valores dentro de cada par (correlação intraclasse, veja @SilvaMou, cap. 2 e @haggard). Suponha que um único par é sorteado ao acaso da população e que os valores $y_{1}$ e $y_{2}$ são observados para as duas unidades do par selecionado. O modelo assumido $M$ pode então ser representado como
+Considere uma população de unidades agrupadas em conglomerados de tamanho $2$, isto é, onde as unidades (elementares ou de referência) estão grupadas em pares (exemplos de tais populações incluem pares de irmãos gêmeos, casais, jogadores numa dupla de vôlei de praia ou de tênis, etc.). Suponha que os valores de uma variável de pesquisa medida nessas unidades têm média $\theta$ e variância $\sigma^{2}$, além de uma correlação $\rho$ entre os valores dentro de cada par (correlação intraclasse, veja @SilvaMou, Capítulo 2 e @haggard). Suponha que um único par é sorteado ao acaso da população e que os valores $y_{1}$ e $y_{2}$ são observados para as duas unidades do par selecionado. O modelo assumido $M$ pode então ser representado como
 
 $$
 M =
@@ -405,7 +407,7 @@ $$
 
 A Figura \@ref(fig:figC4N1) mostra os valores de $EPA_{Kish} \left( \hat{\theta} \right)$ e $EPA \left( \hat{\theta}, v_{0} \right)$ para valores de $\rho$ entre $0$ e $0,8$. Como se pode notar, o efeito da especificação inadequada do plano amostral ou da estrutura populacional pode ser severo, com valores de $EPA \left( \hat{\theta} , v_{0} \right)$ chegando a $9$. Um aspecto importante a notar é que o $EPA_{Kish} \left( \hat{\theta} \right)$ tem variação muito mais modesta que o $EPA \left( \hat{\theta} , v_{0} \right)$.
 
-```{r figC4N1, echo=FALSE,fig.cap ="Valores de EPA e EPA de Kish para conglomeração"}
+```{r figC4N1, echo=FALSE,fig.cap ="Valores de $EPA$ e $EPA$ de Kish para conglomeração"}
 ro <- seq(0, 0.8, by =0.01)
 epa <- (1+ro)/(1-ro)
 epak <- 1+ro
@@ -416,11 +418,11 @@ legend("topleft", c("EPA", "EPA_KISH"), lty= c(1,2))
 ```
 
 
-Este exemplo ilustra bem dois aspectos distintos do uso de medidas como as duas propostas para avaliar o efeito de plano amostral. O primeiro é que as duas medidas são distintas, embora as respectivas estimativas baseadas numa particular amostra seriam coincidentes, conforme discutido ao apresentar o estimador na expressão \@ref(eq:eqC4N3). No caso particular deste exemplo, o $EPA_{Kish} \left( \hat{\theta} \right)$ cresce pouco com o valor do coeficiente de correlação intraclasse $\rho$, o que implica que um plano amostral conglomerado como o adotado (seleção ao acaso de um par da população) seria menos eficiente que um plano amostral aleatório simples (seleção de duas unidades ao acaso da população), mas a perda de eficiência seria modesta. Isto se dá porque os tamanhos dos conglomerados são bem pequenos - duas unidades. Já se o interesse é medir, a posteriori, o efeito da má especificação do plano amostral no estimador de variância, o impacto, medido pelo $EPA \left( \hat{\theta} , v_{0} \right)$, seria muito maior. Assim, a imprudência na estimação de variâncias (e erros padrões, intervalos de confiança, testes de significância, etc.) teria consequências bem mais sérias para as análises.
+Este exemplo ilustra bem dois aspectos distintos do uso de medidas como as duas propostas para avaliar o efeito do plano amostral. O primeiro é que as duas medidas são distintas, embora as respectivas estimativas baseadas numa particular amostra seriam coincidentes, conforme discutido ao apresentar o estimador na Expressão \@ref(eq:eqC4N3). No caso particular deste exemplo, o $EPA_{Kish} \left( \hat{\theta} \right)$ cresce pouco com o valor do coeficiente de correlação intraclasse $\rho$, o que implica que um plano amostral conglomerado como o adotado (seleção ao acaso de um par da população) seria menos eficiente que um plano amostral aleatório simples (seleção de duas unidades ao acaso da população), mas a perda de eficiência seria modesta. Isto se dá porque os tamanhos dos conglomerados são bem pequenos - duas unidades. Já se o interesse é medir, a posteriori, o efeito da má especificação do plano amostral no estimador de variância, o impacto, medido pelo $EPA \left( \hat{\theta} , v_{0} \right)$, seria muito maior. Assim, a imprudência na estimação de variâncias (e erros padrões, intervalos de confiança, testes de significância, etc.) teria consequências bem mais sérias para as análises.
 
 Vale ainda notar que o $EPA \left( \hat{\theta} , v_{0} \right)$ mede o impacto da má especificação do plano amostral ou do modelo para a estrutura populacional. Neste exemplo, ignorar a estrutura da população (o fato de que as observações são pareadas) poderia provocar subestimação da variância do estimador de média, que seria tanto maior quanto maior fosse o coeficiente de correlação intraclasse $\rho$. Efeitos como esse são comuns devido ao planejamento amostral, mesmo em populações onde a conglomeração é imposta artificialmente pelo amostrista.
 
-## Efeitos sobre Intervalos de Confiança e Testes de Hipóteses Uniparamétricos {#secC4N4}
+## Efeitos sobre intervalos de confiança e testes de hipóteses uniparamétricos {#secC4N4}
 <div style="text-align: justify">
 
 A partir da estimativa pontual $\hat{\theta}$ de um parâmetro $\theta$ (da população finita ou do modelo de superpopulação) é possível construir um intervalo de confiança de nível de confiança aproximado $\left( 1 - \alpha \right)$ a partir da distribuição assintótica de
@@ -446,7 +448,7 @@ $$
 Como a distribuição de $t$ tende para uma $N\left( 0;1\right)$, a variância assintótica de $t_{0}$ é aproximadamente igual ao quadrado do limite do segundo fator no lado direito da expressão, isto é, a $EPA\left( \hat{\theta}, v_0 \right)$. Logo temos que a distribuição assintótica de $t_{0}$ é dada por
 
 $$
-t_{0} \sim N \left[ 0 ; EPA \left( \hat{\theta}, v_{0} \right) \right]
+t_{0} \approx N \left( 0 ; EPA \left( \hat{\theta}, v_{0} \right) \right)
 $$
 
 Dependendo do valor de $EPA \left( \hat{\theta} , v_0 \right)$, o intervalo de confiança baseado na distribuição assintótica verdadeira de $t_0$ pode ser bem distinto daquele baseado na distribuição assintótica obtida sob a hipótese de observações IID. Em geral, a probabilidade de cobertura assintótica do intervalo $\left[ \hat{\theta} \mp z_{\alpha /2} v_{0}^{1/2} \right]$ será aproximadamente igual a
@@ -485,7 +487,7 @@ Utilizando a correspondência existente entre intervalos de confiança e testes 
 ```{example, label= "exC4N4"}
 Teste de hipótese sobre proporção
 ```
-Vamos considerar um exemplo hipotético de teste de hipótese sobre uma proporção, semelhante ao de @Sud76, apresentado na p. 196 de @lethonen. Uma amostra de $m = 50$ conglomerados é extraída de uma grande população de empresas industriais (conglomerados de empregados). Suponhamos que cada empresa $i = 1, \ldots ,50$ da amostra tenha $n_{i} = 20$ empregados. O tamanho total da amostra de empregados (unidades elementares) é $n = \sum_{i \in s} n_i = 1.000$. Queremos estudar o acesso dos trabalhadores das empresas a planos de saúde.
+Vamos considerar um exemplo hipotético de teste de hipótese sobre uma proporção, semelhante ao de @Sud76, apresentado na página 196 de @lethonen. Uma amostra de $m = 50$ conglomerados é extraída de uma grande população de empresas industriais (conglomerados de empregados). Suponhamos que cada empresa $i = 1, \ldots ,50$ da amostra tenha $n_{i} = 20$ empregados. O tamanho total da amostra de empregados (unidades elementares) é $n = \sum_{i \in s} n_i = 1.000$. Queremos estudar o acesso dos trabalhadores das empresas a planos de saúde.
 
 Usando-se conhecimento do ano anterior, foi estabelecida a hipótese de que a proporção de trabalhadores cobertos por planos de saúde é $80\%$, ou seja $H_{0}: p = p_{0} = 0,8$. Vamos adotar o nível de significância $\alpha = 5\%$.
 
@@ -498,12 +500,12 @@ Z_{AASC} = |\widehat{p} - p_0| / \sqrt{p_0 \left( 1 - p_0 \right)/ n} \,\,\, (\#
 
 onde o denominador é o desvio padrão da estimativa $\widehat{p}$ sob a hipótese nula, e consideramos como hipótese alternativa $H_A: \, \, p \neq 0,8$.
 
-Vamos calcular o valor da estatística $Z_{AASC}$, supondo que tenha sido usada amostragem aleatória simples com reposição (AASC) de empregados. Vamos também considerar uma abordagem baseada no plano amostral de conglomerados. O desvio padrão de $\widehat{p}$, no denominador de $Z_{AASC}$, será baseado na hipótese de distribuição binomial, com tamanhos amostrais diferentes para as duas abordagens.
+Vamos calcular o valor da estatística $Z_{AASC}$, supondo que tenha sido usada amostragem aleatória simples com reposição - AASC de empregados. Vamos também considerar uma abordagem baseada no plano amostral de conglomerados. O desvio padrão de $\widehat{p}$, no denominador de $Z_{AASC}$, será baseado na hipótese de distribuição binomial, com tamanhos amostrais diferentes para as duas abordagens.
 
 Para o teste baseado na AASC, ignoramos a conglomeração e usamos na fórmula do desvio padrão do estimador $\widehat p$ da proporção o tamanho total da amostra de unidades elementares (empregados), isto é, $n = 1.000$. O valor da estatística de teste $Z_{AASC}$ definida em \@ref(eq:eqC4N7) fica, portanto, igual a
 
 \begin{equation}
-Z_{AASC} = |0,84 - 0,8| / \sqrt{0,8 \left( 1 - 0,8 \right) / 1.000} = 3,162 > z_{0,975} = 1,96 \,\,\, (\#eq:eqC4N8)
+Z_{AASC} = |0,84 - 0,8| / \sqrt{0,8 \left( 1 - 0,8 \right) / 1.000} = 3,162 > z_{0,975} = 1,96 \,\,\, 
 \end{equation}
 
 onde $\sqrt{0,8 \left( 1 - 0,8 \right) / 1.000} = 0,0126$ é o desvio padrão de $\widehat{p}$ sob a hipótese nula e $z_{0,975}$ é o quantil que deixa área de $0,975$ à sua esquerda sob a densidade da distribuição normal padrão. Este resultado indica a rejeição da hipótese $H_0$ ao nível de significância estabelecido.
@@ -518,10 +520,10 @@ onde o valor $\sqrt{0,8 \left( 1 - 0,8 \right) / 50} = 0,0566$ é muito maior qu
 
 Neste exemplo, portanto, se verifica que ignorar a conglomeração pode induzir a uma decisão incorreta de rejeitar a hipótese nula, quando a mesma não seria rejeitada se o plano amostral de fato empregado fosse corretamente incorporado na análise. Efeitos desse tipo são mais difíceis de antecipar para inferência analítica, particularmente quando os planos amostrais empregados envolvem combinações de estratificação, conglomeração, probabilidades desiguais de seleção e calibração de pesos. Por esse motivo, a recomendação é procurar sempre considerar o plano amostral na análise, ao menos como forma de verificar se as conclusões obtidas por formas ingênuas de análise ignorando os pesos e plano amostral seriam mantidas.
 
-## Efeitos Multivariados de Plano Amostral {#secC4N5}
+## Efeitos multivariados do plano amostral {#secC4N5}
 <div style="text-align: justify">
 
-O conceito de efeito de plano amostral introduzido em \@ref(eq:eqC4N2) é relativo a inferências sobre um único parâmetro $\theta$. Consideremos agora o problema de estimação de um vetor $\mathbf{\Theta}$ contendo $K$ parâmetros. Seja $\mathbf{\hat{\Theta}}$ um estimador de $\mathbf{\Theta}$ e seja $\mathbf{V}_{0}$ um estimador da matriz $K \times K$ de covariância de $\mathbf{\hat{\Theta}}$, baseado nas hipóteses de independência e igualdade de distribuição das observações - IID, ou equivalentemente, de amostragem aleatória simples com reposição - AASC. É possível generalizar a equação \@ref(eq:eqC4N2), definindo o *Efeito Multivariado do Plano Amostral* de $\mathbf{\hat{\Theta}}$ e seu estimador ingênuo de variância $\mathbf{V}_0$ como:
+O conceito de efeito do plano amostral introduzido em \@ref(eq:eqC4N2) é relativo a inferências sobre um único parâmetro $\theta$. Consideremos agora o problema de estimação de um vetor $\mathbf{\Theta}$ contendo $K$ parâmetros. Seja $\mathbf{\hat{\Theta}}$ um estimador de $\mathbf{\Theta}$ e seja $\mathbf{V}_{0}$ um estimador da matriz $K \times K$ de covariância de $\mathbf{\hat{\Theta}}$, baseado nas hipóteses de independência e igualdade de distribuição das observações - IID, ou equivalentemente, de amostragem aleatória simples com reposição - AASC. É possível generalizar a equação \@ref(eq:eqC4N2), definindo o *Efeito Multivariado do Plano Amostral* - EMPA de $\mathbf{\hat{\Theta}}$ e seu estimador ingênuo de variância $\mathbf{V}_0$ como:
 
 \begin{equation}
 \mathbf{EMPA} (\mathbf{\hat{\Theta}} , \mathbf{V}_0) = \mathbf{\Delta} = \left[ E_{VERD} \left( \mathbf{V}_0 \right) \right]^{-1} \times \mathbf{V}_{VERD} (\mathbf{\hat{\Theta}}) \quad (\#eq:eqC4N9)
@@ -529,7 +531,7 @@ O conceito de efeito de plano amostral introduzido em \@ref(eq:eqC4N2) é relati
 
 onde $E_{VERD} \left( \mathbf{V}_0 \right)$ é o valor esperado de $\mathbf{V}_0$ e $\mathbf{V}_{VERD}(\mathbf{\hat{\Theta})}$ é a matriz de covariância de $\mathbf{\hat{\Theta}}$, ambos calculados com respeito à distribuição induzida pelo plano amostral efetivamente utilizado (verdadeiro), ou alternativamente sob o *modelo correto*.
 
-Os autovalores $\delta_1 \geq \ldots \geq \delta_K$ da matriz $\mathbf{\Delta}$ são denominados *efeitos generalizados do plano amostral*. A partir deles, e utilizando resultados padrões de teoria das matrizes (@Johnson, p.64) é possível definir limites para os efeitos (univariados) do plano amostral para qualquer combinação linear $\mathbf{c}^{\prime} \widehat{\mathbf{\Theta}}$ das componentes de $\widehat{\mathbf{\Theta}}$. Segundo @Sk89a, pag. 43, temos os seguintes resultados:
+Os autovalores $\delta_1 \geq \ldots \geq \delta_K$ da matriz $\mathbf{\Delta}$ são denominados *efeitos generalizados do plano amostral*. A partir deles, e utilizando resultados padrões de teoria das matrizes (@Johnson, página 64) é possível definir limites para os efeitos (univariados) do plano amostral para qualquer combinação linear $\mathbf{c}^{\prime} \widehat{\mathbf{\Theta}}$ das componentes de $\widehat{\mathbf{\Theta}}$. Segundo @Sk89a, página 43, temos os seguintes resultados:
 
 
 $$
@@ -570,7 +572,7 @@ dimnames(mat_cov_aleat_verd) <- list(c("SAL", "REC"), c("SAL", "REC"))
 round(mat_cov_aleat_verd,2)
 ```
 
-onde os valores das variâncias usadas nos cálculos com a expressão \@ref(eq:eqC4N9) foram os obtidos no Exemplo \@ref(exm:exC4N2) e coincidem, respectivamente, com os valores usados nos numeradores de $EPA\left( \overline{SAL}_w\right)$ e de $EPA\left( \overline{REC}_w\right)$ lá apresentados. Para calcular o $\mathbf{EMPA}(\mathbf{\hat{\Theta}, V}_0)$ é preciso agora obter $E_{VERD}\left(\mathbf{V}_0\right)$.
+onde os valores das variâncias usadas nos cálculos com a Expressão \@ref(eq:eqC4N9) foram os obtidos no Exemplo \@ref(exm:exC4N2) e coincidem, respectivamente, com os valores usados nos numeradores de $EPA\left( \overline{SAL}_w\right)$ e de $EPA\left( \overline{REC}_w\right)$ lá apresentados. Para calcular o $\mathbf{EMPA}(\mathbf{\hat{\Theta}, V}_0)$ é preciso agora obter $E_{VERD}\left(\mathbf{V}_0\right)$.
 
 Neste exemplo, a matriz de efeito do plano amostral $\mathbf{EMPA} \left(\mathbf{\hat{\Theta} , V}_0 \right) = \mathbf{\Delta}$ pode também ser calculada através de simulação, de modo análogo ao que foi feito no Exemplo \@ref(exm:exC4N2). Para isto, foram utilizadas as $500$ amostras de tamanho $60$ segundo o plano amostral descrito no Exemplo \@ref(exm:exC4N2). Para cada uma das $500$ amostras foram calculadas estimativas:
 
@@ -617,7 +619,7 @@ DELTA
 
 Os autovalores `r epa[1]` e `r epa[2]` de $\mathbf{\Delta}$ fornecem os efeitos generalizados do plano amostral.
 
-Da mesma forma que o $EPA\left( \hat{\theta}, v_0 \right)$ definido em \@ref(eq:eqC4N2) para o caso uniparamétrico foi utilizado para corrigir níveis de confiança de intervalos e níveis de significância de testes, o $\mathbf{EMPA} (\mathbf{\hat{\Theta} , V}_0)$ definido em \@ref(eq:eqC4N9) pode ser utilizado para corrigir níveis de regiões de confiança e também de significância de testes de hipóteses no caso multiparamétrico. Para ilustrar, vamos considerar o problema de testar a hipótese $H_0: \mathbf{\Theta} = \mathbf{\Theta}_0$, onde $\mathbf{\Theta}$ é o vetor de médias de um vetor de variáveis de pesquisa $\mathbf{y}$. A estatística de teste usualmente adotada para este caso - ver @Johnson, p.171 - é a $T^{2}$ de Hottelling dada por
+Da mesma forma que o $EPA\left( \hat{\theta}, v_0 \right)$ definido em \@ref(eq:eqC4N2) para o caso uniparamétrico foi utilizado para corrigir níveis de confiança de intervalos e níveis de significância de testes, o $\mathbf{EMPA} (\mathbf{\hat{\Theta} , V}_0)$ definido em \@ref(eq:eqC4N9) pode ser utilizado para corrigir níveis de regiões de confiança e também de significância de testes de hipóteses no caso multiparamétrico. Para ilustrar, vamos considerar o problema de testar a hipótese $H_0: \mathbf{\Theta} = \mathbf{\Theta}_0$, onde $\mathbf{\Theta}$ é o vetor de médias de um vetor de variáveis de pesquisa $\mathbf{y}$. A estatística de teste usualmente adotada para este caso - ver @Johnson, página 171 - é a $T^{2}$ de Hottelling dada por
 
 \begin{equation}
 T^{2} = n \left( \mathbf{\overline{y} - \Theta}_{0} \right)^{^{\prime}} \mathbf{S}_{y}^{-1} \left( \mathbf{\overline{y} - \Theta}_{0} \right) \,\,\, (\#eq:eqC4N10)
@@ -631,7 +633,7 @@ $$
 \end{array}
 $$
 
-Sob $H_0$, se as observações $\mathbf{y}_{i}$ forem IID normais, a estatística $T^2$ tem a distribuição $\frac{ (n - 1)K } { n - K } F{\left( K ; n - K \right)}$, onde $F{\left( K ; n - K \right)}$ denota uma variável aleatória com distribuição $F$ com $K$ e $\left(n - K\right)$ graus de liberdade. Mesmo se as observações $\mathbf{y}_i$ não tiverem distribuição normal, $T^2$ tem distribuição assintótica $\chi^{2} \left( K \right)$ quando $n \rightarrow \infty$, @Johnson, p.191.
+Sob $H_0$, se as observações $\mathbf{y}_{i}$ forem IID normais, a estatística $T^2$ tem a distribuição $\frac{ (n - 1)K } { n - K } F{\left( K ; n - K \right)}$, onde $F{\left( K ; n - K \right)}$ denota uma variável aleatória com distribuição $F$ com $K$ e $\left(n - K\right)$ graus de liberdade. Mesmo se as observações $\mathbf{y}_i$ não tiverem distribuição normal, $T^2$ tem distribuição assintótica $\chi^{2} \left( K \right)$ quando $n \rightarrow \infty$, @Johnson, página 191.
 
 Contudo, se for utilizado um plano amostral complexo, $T^2$ tem aproximadamente a distribuição da variável $\sum_{k=1}^K \delta_k Z_k^{2}$, onde $Z_1, \ldots , Z_K$ são variáveis aleatórias independentes com distribuição normal padrão e os $\delta_k$ são os autovalores da matriz $\mathbf{\Delta} = \mathbf{\Sigma}_{AASC}^{-1} \mathbf{\Sigma}_p$, onde $\mathbf{\Sigma}_{AASC} = E_p (\mathbf{S}_y/n)$ e $\mathbf{\Sigma}_p = V_p (\mathbf{\overline{y})}$.
 
@@ -726,7 +728,7 @@ Utilizando o R, obtemos a seguir alguns resultados descritos nos Exemplos \@ref(
 Teste da igualdade de médias para duas populações
 ```
 
-Para exemplificar o material descrito na Seção \@ref(secC4N4), vamos utilizar o data frame `amolim`, contendo dados da `Amostra do Censo Experimental de Limeira`.
+Para exemplificar o material descrito na Seção \@ref(secC4N4), vamos utilizar o data frame *amolim*, contendo dados da Amostra do Censo Experimental de Limeira.
 
 ```{r}
 # Carrega dados
