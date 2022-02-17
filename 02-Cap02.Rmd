@@ -148,7 +148,7 @@ O estimador padrão (tipo Horvitz-Thompson) para este parâmetro na amostragem e
 \end{equation}
 onde $s_h$ é a amostra das unidades do estrato $h, h=1, 2,\dots,H$.
 
-Este estimador pode ser usado para fazer inferência sobre o total populacional, como descrito, por exemplo, na seção 11.2 de @Silva2020. A distribuição do estimador $\widehat {T}_y$ obtida considerando o plano amostral $p(s)$ é denominada de *distribuição de aleatorização* e é geralmente aproximada usando o TCL para viabilizar a inferência.
+Este estimador pode ser usado para fazer inferência sobre o total populacional, como descrito, por exemplo, na Seção 11.2 de @Silva2020. A distribuição do estimador $\widehat {T}_y$ obtida considerando o plano amostral $p(s)$ é denominada de *distribuição de aleatorização* e é geralmente aproximada usando o TCL para viabilizar a inferência.
 
 ## Discussão das abordagens 1 e 2
 <div style="text-align: justify">
@@ -203,7 +203,7 @@ traduzida nas seguintes perguntas:
 O objeto deste livro é exatamente discutir respostas para as questões aqui
 enumeradas. Para isso, vamos considerar uma abordagem que propõe um modelo
 parametrizado como na *Modelagem Clássica*, mas formulado para descrever os
-dados da *população*, e não os da amostra. Essa abordagem incorpora na análise os pontos i) a iii) do Capítulo \@ref(introduc) mediante aproveitamento da estrutura do plano amostral, como feito habitualmente na *Amostragem Probabilística*. Essa abordagem, denominada de *Modelagem de Superpopulação*, foi primeiro proposta em @Brewer1963 e @royall1970, e é bem descrita, por exemplo, em @binder83 e @valliant2000.
+dados da *população*, e não os da amostra. Essa abordagem incorpora na análise os pontos i) a iii) do Capítulo \@ref(introduc) mediante aproveitamento da estrutura do plano amostral, como feito habitualmente na *Amostragem Probabilística*. Essa abordagem, denominada de *Modelagem de Superpopulação*, foi primeiro proposta em @Brewer1963 e @royall1970, e é bem descrita, por exemplo, em @binder1983 e @valliant2000.
 
 
 ## Abordagem 3 - Modelagem de Superpopulação {#modelsuperpop}
@@ -329,7 +329,7 @@ Para concentrar o foco nas questões de maior interesse deste texto, as fontes
 capítulos. Para o tratamento das dificuldades causadas por não resposta, a fonte
 (4) é considerada no Capítulo xx. 
 
-Assim sendo, exceto onde explicitamente indicado, de agora em diante admitiremos que não há *erros de medição*, implicando que os valores observados de quaisquer variáveis de interesse são considerados valores corretos ou verdadeiros. Admitimos ainda que há *resposta completa*, implicando que os valores de quaisquer variáveis de interesse estão disponíveis para todos os elementos da amostra selecionada depois que a pesquisa foi realizada. Hipóteses semelhantes são adotadas, por exemplo, em @binder83 e @Mont87.
+Assim sendo, exceto onde explicitamente indicado, de agora em diante admitiremos que não há *erros de medição*, implicando que os valores observados de quaisquer variáveis de interesse são considerados valores corretos ou verdadeiros. Admitimos ainda que há *resposta completa*, implicando que os valores de quaisquer variáveis de interesse estão disponíveis para todos os elementos da amostra selecionada depois que a pesquisa foi realizada. Hipóteses semelhantes são adotadas, por exemplo, em @binder1983 e @Mont1987.
 
 Portanto, o referencial aqui adotado considera apenas duas fontes de variação: o *Modelo de Superpopulação* (1) e o *Plano Amostral* (3). Estas fontes de variação, descritas nesta seção apenas de forma esquemática, são discutidas com maiores detalhes a seguir.
 

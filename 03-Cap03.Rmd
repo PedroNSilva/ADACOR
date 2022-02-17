@@ -215,7 +215,7 @@ V_{p}\left( \mathbf{\widehat{\theta}} \right) = \mathbf{A} \left[ V_{p} \left( \
 $$
 onde $V_{p} \left( \mathbf{\widehat{Y}}_{HT}\right)$ é dado em \@ref(eq:estpa2).
 
-Quando $\mathbf{g}(\bullet)$ é uma função não linear, podemos usar a técnica de *Linearização de Taylor* (ou Método Delta) para obter aproximações assintóticas para a variância de $\mathbf{ \widehat{\theta}} = \mathbf{g} \left( \widehat{\mathbf{Y}}_{HT}\right)$. Para maiores detalhes sobre esse método, ver por exemplo p. 172 de @SSW1992 ou p. 486 de @Bishop1975.
+Quando $\mathbf{g}(\bullet)$ é uma função não linear, podemos usar a técnica de *Linearização de Taylor* (ou Método Delta) para obter aproximações assintóticas para a variância de $\mathbf{ \widehat{\theta}} = \mathbf{g} \left( \widehat{\mathbf{Y}}_{HT}\right)$. Para maiores detalhes sobre esse método, ver por exemplo página 172 de @SSW1992 ou página 486 de @Bishop1975.
 
 Vamos considerar a expansão de $\mathbf{g} \left( \mathbf{\widehat{Y}}_{HT} \right)$ em torno de $\mathbf{Y}$, até o termo de primeira ordem, desprezando o resto, dada por:
 
@@ -342,11 +342,11 @@ e um estimador não viciado da variância de aleatorização correspondente por
 \end{equation}
 
 onde $\widehat{Y}_{h} = \sum_{i=1}^{n_{h}} \widehat{Y}_{hi} / \pi _{hi}$ para 
-$h=1,\ldots ,H$. (Ver por exemplo, @Shah1993, p. 4).
+$h=1,\ldots ,H$. (Ver por exemplo, @Shah1993, página 4).
 
 Embora na prática a seleção das UPAs seja geralmente feita sem reposição, o estimador do Método do Conglomerado Primário -  MCP aqui apresentado pode fornecer uma aproximação razoável da correspondente variância de aleatorização, especialmente nos casos em que as frações amostrais de UPAs são pequenas nos estratos. Isso ocorre porque planos amostrais sem reposição são em geral mais eficientes que planos com reposição de igual tamanho. 
 
-Tal aproximação é largamente utilizada pelos praticantes de amostragem para estimar variâncias de quantidades descritivas usuais tais como totais e médias (com a devida adaptação) devido à sua simplicidade, comparada com a complexidade muito maior envolvida com o emprego de estimadores de variância que tentam incorporar todas as etapas de planos amostrais conglomerados em vários estágios. Uma discussão sobre a qualidade dessa aproximação e alternativas pode ser encontrada em  @SSW1992, p. 153.
+Tal aproximação é largamente utilizada pelos praticantes de amostragem para estimar variâncias de quantidades descritivas usuais tais como totais e médias (com a devida adaptação) devido à sua simplicidade, comparada com a complexidade muito maior envolvida com o emprego de estimadores de variância que tentam incorporar todas as etapas de planos amostrais conglomerados em vários estágios. Uma discussão sobre a qualidade dessa aproximação e alternativas pode ser encontrada em  @SSW1992, página 153.
 
 ## Métodos de replicação
 <div style="text-align: justify">
@@ -377,9 +377,9 @@ réplicas $G$ for pequeno, o estimador de variância pode ser instável.
 Mesmo quando a amostra não foi selecionada exatamente dessa forma, a construção de réplicas a posteriori para fins de estimação de variâncias em situações complexas é também uma ideia simples de aplicar, poderosa e flexível, por acomodar uma ampla gama de planos amostrais e situações de estimação de interesse. Quando as réplicas são construídas após a pesquisa (a posteriori), mediante repartição (por sorteio) da amostra pesquisada em $G$ grupos mutuamente exclusivos de igual tamanho, estas são chamadas de *réplicas dependentes* ou *grupos aleatórios* (do inglês *random groups*). As expressões fornecidas para o estimador de replicação e sua
 variância são também empregadas nesse caso como uma aproximação, mas não possuem as mesmas propriedades do caso de réplicas independentes.
 
-Uma pesquisa importante e de grande porte em que esta ideia é aplicada é a pesquisa de preços para formar o índice de Preços ao Consumidor (do inglês *Consumer Price Index - CPI*) do *@USBLS2020*, p. 46, que utiliza duas ou mais réplicas para formar a amostra de itens cujos preços são pesquisados.
+Uma pesquisa importante e de grande porte em que esta ideia é aplicada é a pesquisa de preços para formar o índice de Preços ao Consumidor (do inglês *Consumer Price Index - CPI*) do *@USBLS2020*, página 46, que utiliza duas ou mais réplicas para formar a amostra de itens cujos preços são pesquisados.
 
-É importante observar que a repartição da amostra em grupos aleatórios a posteriori precisa considerar o plano amostral empregado e pode não ser possível em algumas situações. Idealmente, tal repartição deveria ser feita respeitando estratos e alocando UPAs inteiras (isto é, com todas as respectivas unidades subordinadas). @Wolter1985, p. 31, discute algumas regras sobre como fazer para respeitar o plano amostral ao fazer a repartição da amostra a posteriori, porém recomendamos que o interessado no uso dessa técnica exerça cautela.
+É importante observar que a repartição da amostra em grupos aleatórios a posteriori precisa considerar o plano amostral empregado e pode não ser possível em algumas situações. Idealmente, tal repartição deveria ser feita respeitando estratos e alocando UPAs inteiras (isto é, com todas as respectivas unidades subordinadas). @Wolter1985, página 31, discute algumas regras sobre como fazer para respeitar o plano amostral ao fazer a repartição da amostra a posteriori, porém recomendamos que o interessado no uso dessa técnica exerça cautela.
 
 Além da modificação da interpretação das réplicas no caso de serem formadas a posteriori, é comum também nesse caso empregar um estimador para o parâmetro $\theta$ baseado na amostra completa (denotado $\widehat{\theta}$), e um estimador de variância mais conservador que o estimador $\widehat{V}_{G}\left( \widehat{\theta }_{G}\right)$ anteriormente apresentado, dado por 
 
@@ -425,9 +425,9 @@ onde $\widehat{\theta }_{J} = \frac{1}{G} \sum_{g=1}^{G} \widehat{\theta }_{\lef
 **Observaçao 3.3:** É comum aplicar a técnica fazendo o número de grupos igual ao tamanho da amostra, isto é, tomando $G=n$ e portanto eliminando uma observação da amostra de cada vez ao calcular os pseudo valores. Essa regra deve ser aplicada considerando o número de UPAs quando o plano amostral é em múltiplos estágios, pois as UPAs devem sempre ser eliminadas com todas as unidades subordinadas.
 
 
-Os estimadores de variância do método *jackknife* fornecem resultadoS idênticos aos dos estimadores usuais de variância quando aplicados para o caso de estimadores lineares nas observações amostrais. Além disso, suas propriedades são razoáveis para vários outros casos de estimadores não lineares de interesse (ver, por exemplo, @Cochran1977, p. 321 e @Wolter1985, p. 306). A situação merece maiores cuidados para o caso de quantis ou estatísticas de ordem, tais como a mediana e o máximo, pois neste caso essa técnica não funciona bem @Wolter1985, p. 163.
+Os estimadores de variância do método *jackknife* fornecem resultadoS idênticos aos dos estimadores usuais de variância quando aplicados para o caso de estimadores lineares nas observações amostrais. Além disso, suas propriedades são razoáveis para vários outros casos de estimadores não lineares de interesse (ver, por exemplo, @Cochran1977, página 321 e @Wolter1985, página 306). A situação merece maiores cuidados para o caso de quantis ou estatísticas de ordem, tais como a mediana e o máximo, pois neste caso essa técnica não funciona bem @Wolter1985, página 163.
 
-O pacote WesVarPC - @Westat1996 - baseia suas estimativas de variância principalmente no método *jackknife*, embora também possua uma opção para usar outro método conhecido como de replicações de meias amostras balanceadas (do inglês *balanced half-sample replication*).
+O pacote WesVarPC [@Westat1996] baseia suas estimativas de variância principalmente no método *jackknife*, embora também possua uma opção para usar outro método conhecido como de replicações de meias amostras balanceadas (do inglês *balanced half-sample replication*).
 
 O outro método de replicação que vamos considerar é uma variante do método *bootstrap* proposta por @Rao1992. O método consiste dos seguintes passos:
 
