@@ -199,6 +199,16 @@ div.csl-indent {
 <li class="chapter" data-level="4.5" data-path="epa.html"><a href="epa.html#secC4N5"><i class="fa fa-check"></i><b>4.5</b> Efeitos Multivariados de Plano Amostral</a></li>
 <li class="chapter" data-level="4.6" data-path="epa.html"><a href="epa.html#secC4N6"><i class="fa fa-check"></i><b>4.6</b> Laboratório de R</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="ajmodpar.html"><a href="ajmodpar.html"><i class="fa fa-check"></i><b>5</b> Ajuste de Modelos Paramétricos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ajmodpar.html"><a href="ajmodpar.html#modpar1"><i class="fa fa-check"></i><b>5.1</b> Introdução</a></li>
+<li class="chapter" data-level="5.2" data-path="ajmodpar.html"><a href="ajmodpar.html#método-de-máxima-verossimilhança-mv"><i class="fa fa-check"></i><b>5.2</b> Método de Máxima Verossimilhança (MV)</a></li>
+<li class="chapter" data-level="5.3" data-path="ajmodpar.html"><a href="ajmodpar.html#ponderação-de-dados-amostrais"><i class="fa fa-check"></i><b>5.3</b> Ponderação de Dados Amostrais</a></li>
+<li class="chapter" data-level="5.4" data-path="ajmodpar.html"><a href="ajmodpar.html#modpar3"><i class="fa fa-check"></i><b>5.4</b> Método de Máxima Pseudo-Verossimilhança</a></li>
+<li class="chapter" data-level="5.5" data-path="ajmodpar.html"><a href="ajmodpar.html#robustez-do-procedimento-mpv"><i class="fa fa-check"></i><b>5.5</b> Robustez do Procedimento MPV</a></li>
+<li class="chapter" data-level="5.6" data-path="ajmodpar.html"><a href="ajmodpar.html#desvantagens-da-inferência-de-aleatorização"><i class="fa fa-check"></i><b>5.6</b> Desvantagens da Inferência de Aleatorização</a></li>
+<li class="chapter" data-level="5.7" data-path="ajmodpar.html"><a href="ajmodpar.html#laboratório-de-r-1"><i class="fa fa-check"></i><b>5.7</b> Laboratório de R</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
 </ul>
 
@@ -420,7 +430,7 @@ traduzida nas seguintes perguntas:</p>
 <p>O objeto deste livro é exatamente discutir respostas para as questões aqui
 enumeradas. Para isso, vamos considerar uma abordagem que propõe um modelo
 parametrizado como na <em>Modelagem Clássica</em>, mas formulado para descrever os
-dados da <em>população</em>, e não os da amostra. Essa abordagem incorpora na análise os pontos i) a iii) do Capítulo <a href="introduc.html#introduc">1</a> mediante aproveitamento da estrutura do plano amostral, como feito habitualmente na <em>Amostragem Probabilística</em>. Essa abordagem, denominada de <em>Modelagem de Superpopulação</em>, foi primeiro proposta em <span class="citation">Brewer (1963)</span> e <span class="citation">Royall (1970)</span>, e é bem descrita, por exemplo, em <span class="citation">Binder (1983)</span> e <span class="citation">Valliant et al. (2000)</span>.</p>
+dados da <em>população</em>, e não os da amostra. Essa abordagem incorpora na análise os pontos i) a iii) do Capítulo <a href="introduc.html#introduc">1</a> mediante aproveitamento da estrutura do plano amostral, como feito habitualmente na <em>Amostragem Probabilística</em>. Essa abordagem, denominada de <em>Modelagem de Superpopulação</em>, foi primeiro proposta em <span class="citation">K. R. W. Brewer (1963)</span> e <span class="citation">Royall (1970)</span>, e é bem descrita, por exemplo, em <span class="citation">Binder (1983)</span> e <span class="citation">Valliant et al. (2000)</span>.</p>
 </div>
 <div id="modelsuperpop" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Abordagem 3 - Modelagem de Superpopulação</h2>
@@ -742,7 +752,7 @@ de quantidades descritivas populacionais de interesse é incorporar pesos
 adequados na análise, como pode ser visto em <span class="citation">Silva et al. (2020)</span> e no Capítulo <a href="capplanamo.html#capplanamo">3</a>.
 Essa forma porém, não resolve por si só o problema de estimação da precisão das
 estimativas pontuais, nem mesmo o caso da estimação pontual de parâmetros em
-<em>modelos de superpopulação</em>, o que vai requerer métodos específicos discutidos no Capítulo <a href="#ajmodpar"><strong>??</strong></a>.</p>
+<em>modelos de superpopulação</em>, o que vai requerer métodos específicos discutidos no Capítulo <a href="ajmodpar.html#ajmodpar">5</a>.</p>
 <p>Como incluir os pesos para proteger contra planos amostrais <em>não ignoráveis</em> e a
 possibilidade de má especificação do modelo? Uma ideia é modificar os estimadores
 dos parâmetros de modo que sejam consistentes (em termos da <em>distribuição de aleatorização</em>)

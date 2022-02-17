@@ -9,7 +9,7 @@ author: |
   | Editores
   | Pedro Luis do N. Silva, Antonio José R. Dias, Zélia M. Bianchini e Sonia Albieri   
   
-date: '11 de fevereiro de 2022, 11:44:59'
+date: '13 de fevereiro de 2022, 09:53:43'
 summary_depth: 3
 summary_float:
    collapsed: false
@@ -17,6 +17,8 @@ site: bookdown::bookdown_site
 
 header-includes:
     - \usepackage{float}
+      \usepackage{amsmath}
+      \usepackage{bm}
 
 geometry: "left=1.5cm,right=1cm,top=1.5cm,bottom=1.5cm"
 fontsize: 12pt

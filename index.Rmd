@@ -17,6 +17,8 @@ site: bookdown::bookdown_site
 
 header-includes:
     - \usepackage{float}
+      \usepackage{amsmath}
+      \usepackage{bm}
 
 geometry: "left=1.5cm,right=1cm,top=1.5cm,bottom=1.5cm"
 fontsize: 12pt

@@ -111,27 +111,27 @@ $$
 
 Outros dois estimadores de totais comumente usados pelos praticantes de amostragem são o *estimador de razão simples* $\mathbf{\widehat{Y}}_R$ e o *estimador de regressão simples* $\mathbf{\widehat{Y}}_{REG}$, dados respectivamente por 
 
-\begin{equation}
+$$
 \mathbf{\widehat{Y}}_R = \sum_{i \in s} {w_i^{R} \ } \mathbf{y}_i \,\,\,  (\#eq:estpa15)
-\end{equation}
+$$
 
 com
 
-\begin{equation}
+$$
 w_i^{R} = d_i \times \frac{\sum_{i \in U} x_i } {\sum_{i \in s} {d_i \ } x_i} = d_i \times \frac{X}{\widehat{X}_{HT}}  \,\,\,  (\#eq:estpa16)
-\end{equation}
+$$
 
 e 
 
-\begin{equation}
+$$
 \mathbf{\widehat{Y}}_{REG} = \sum_{i \in s} {w_i^{REG} \ } \mathbf{y}_i \,\,\,  (\#eq:estpa17)
-\end{equation}
+$$
 
 onde
 
-\begin{equation}
+$$
 w_i^{REG} = d_i \times g_i \,\,\, (\#eq:estpa18)
-\end{equation}
+$$
 
 sendo 
 

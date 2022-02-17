@@ -1,161 +1,83 @@
-# Ajuste  de Modelos Paramétricos {#ajmodpar}
+# Ajuste de Modelos Paramétricos {#capC5}
 
-## Introdução {#modpar1}
+## Introdução {#secC5N1}
 <div style="text-align: justify">
 
-Nos primórdios do uso moderno de pesquisas por amostragem, os dados obtidos eram usados principalmente para estimar funções simples dos valores das variáveis de interesse nas populações finitas, tais como totais, médias, razões etc. Isto caracterizava o uso dos dados dessas pesquisas para *inferência descritiva*. Recentemente, os dados de pesquisas amostrais têm sido cada vez mais utilizados também para propósitos analíticos. *Inferências analíticas* baseadas numa pesquisa amostral são aquelas que envolvem a estimação de parâmetros num modelo denominado *de superpopulação* @kalton83b; @binder87. 
+Nos primórdios do uso moderno de pesquisas por amostragem, os dados obtidos eram usados principalmente para estimar funções simples dos valores das variáveis de interesse nas populações finitas, tais como totais, médias, razões etc. Isto caracterizava o uso dos dados dessas pesquisas para *inferência descritiva*. Nas últimas décadas, os dados de pesquisas amostrais têm sido cada vez mais utilizados também para examinar associações, ajustar modelos, testar hipóteses etc. *Inferências analíticas* como estas, quando baseadas em dados de pesquisas amostrais, são aquelas que envolvem a estimação de parâmetros de modelos denominados *de superpopulação* @kalton1983b; @binder1987. 
 
-Quando os valores *amostrais* das variáveis da pesquisa podem ser
-considerados como realizações de vetores aleatórios
-independentes e identicamente distribuídos (IID), modelos podem ser
-especificados, ajustados, testados e reformulados usando procedimentos
-estatísticos padrões como os apresentados, por exemplo, em @bickel e @garthwaite. Neste caso, métodos e
-pacotes estatísticos padrões podem ser usados para executar os
-cálculos de estimativas de parâmetros e medidas de precisão
-correspondentes, bem como diagnóstico e verificação da adequação das hipóteses dos modelos.
+Quando os valores *amostrais* das variáveis da pesquisa podem ser considerados como realizações de vetores aleatórios independentes e identicamente distribuídos (IID), modelos podem ser especificados, ajustados, testados e reformulados usando procedimentos estatísticos padrões como os apresentados, por exemplo, em @bickel1977 e @garthwaite1995. Neste caso, métodos e sistemas estatísticos padrões podem ser usados para executar os cálculos de estimativas de parâmetros e medidas de precisão correspondentes, bem como o diagnóstico e a verificação da adequação das hipóteses dos modelos ajustados.
 
-Na prática das pesquisas amostrais, contudo, as hipóteses de modelo
-IID para as observações amostrais são raramente adequadas. Com
-maior frequência, modelos alternativos com hipóteses mais
-complexas e/ou estimadores especiais devem ser considerados a fim de
-acomodar aspectos da estrutura da população e/ou do plano amostral.
-Além disso, usualmente estão disponíveis informações
-sobre variáveis auxiliares, utilizadas ou não na especificação do plano amostral, que podem ser incorporadas com proveito na estimação dos parâmetros ou na própria formulação do modelo.
+Na prática das pesquisas amostrais, contudo, as hipóteses de observações IID para os dados amostrais são raramente adequadas. Com maior frequência, modelos alternativos com hipóteses mais complexas e/ou estimadores especiais devem ser considerados a fim de acomodar aspectos da estrutura da população e/ou do plano amostral empregado para obter os dados. Além disso, com frequência estão disponíveis informações sobre variáveis auxiliares, utilizadas ou não na especificação do plano amostral, que podem ser incorporadas com proveito na estimação dos parâmetros ou na própria formulação dos modelos de interesse.
 
-Os exemplos apresentados no Capítulo \@ref(epa) demonstram claramente a 
-inadequação de ignorar o plano amostral ao efetuar análises de dados de
-pesquisas amostrais. Os valores dos EPAs calculados, tanto para
-estimadores de medidas descritivas tais como médias e totais, como para
-estatísticas analíticas usadas em testes de hipóteses e os
-correspondentes efeitos nos níveis de significância reais, revelam
-que ignorar o plano amostral pode levar a decisões erradas e a avaliações inadequadas da precisão das estimativas amostrais.
+Os exemplos apresentados no Capítulo \@ref(epa) demonstram claramente a inadequação de ignorar o plano amostral ao efetuar análises de dados obtidos com pesquisas amostrais. Os valores dos EPAs calculados, tanto para estimadores de medidas descritivas tais como médias e totais, como para estatísticas analíticas usadas em testes de hipóteses e os correspondentes efeitos nos níveis de significância reais, revelam que ignorar o plano amostral pode levar a decisões erradas e a avaliações inadequadas da precisão das estimativas.
 
-Embora as medidas propostas no Capítulo \@ref(epa) para os efeitos de plano
-amostral sirvam para avaliar o impacto de ignorar o plano amostral nas
-inferências descritivas ou mesmo analíticas baseadas em dados
-amostrais, elas não resolvem o problema de como incorporar o plano
-amostral nessas análises. No caso das inferências descritivas
-usuais para médias, totais e proporções, o assunto é
-amplamente tratado na literatura de amostragem e o interessado em maiores
-detalhes pode consultar livros clássicos como @Cochran1977 ou mais
-recentes como @SSW92. Já os métodos
-requeridos para inferências analíticas só recentemente foram
-consolidados em livro ver @SHS89. Este capítulo
-apresenta um dos métodos centrais disponíveis para ajuste de modelos
-paramétricos regulares considerando dados amostrais complexos, baseado
-no trabalho de @binder87. Antes de descrever esse método, entretanto,
-fazemos breve discussão sobre o papel dos pesos na análise de
-dados amostrais, considerando o trabalho de @Pfeff.
+Embora as medidas propostas no Capítulo \@ref(epa) para os efeitos de plano amostral sirvam para avaliar o impacto de ignorar o plano amostral nas inferências descritivas ou mesmo analíticas baseadas em dados amostrais, elas não resolvem o problema de como incorporar o plano amostral nessas análises. No caso das inferências descritivas usuais para médias, totais e proporções, o assunto é amplamente tratado na literatura de amostragem e o interessado em maiores detalhes pode consultar livros clássicos como @Cochran1977 e @SSW1992, ou mais recentes como e @Silva2020. Já os métodos requeridos para inferências analíticas só foram consolidados em livro pela primeira vez em @SHS1989. Este capítulo apresenta um dos métodos centrais disponíveis para ajuste de modelos paramétricos regulares considerando dados amostrais complexos, baseado no trabalho de @binder1983. Antes de descrever esse método, entretanto, fazemos breve discussão sobre o papel dos pesos na análise de dados amostrais, considerando o trabalho de @Pfeff1993.
 
-Primeiramente, porém, fazemos uma revisão sucinta do método de
-Máxima Verossimilhança (MV) para ajustar modelos dentro da abordagem
-de modelagem clássica, necessária para compreensão adequada do
-material subseqüente. Essa revisão não pretende ser exaustiva ou
-detalhada, mas tão somente recordar os principais resultados aqui
-requeridos. Para uma discussão mais detalhada do método de
-Máxima Verossimilhança para estimação em modelos
-paramétricos regulares ver, por exemplo, @garthwaite.
+Primeiramente, porém, fazemos uma revisão sucinta do método de Máxima Verossimilhança (MV) para ajustar modelos dentro da abordagem de modelagem clássica, necessária para compreensão adequada do material subsequente. Essa revisão não pretende ser exaustiva ou detalhada, mas tão somente recordar os principais resultados aqui requeridos. Para uma discussão mais detalhada do método de Máxima Verossimilhança para estimação em modelos paramétricos regulares ver, por exemplo, @garthwaite1995.
 
-## Método de Máxima Verossimilhança (MV)
+## Método de Máxima Verossimilhança (MV) {#secC5N2}
 <div style="text-align: justify">
-Seja $\mathbf{y}_{i}=\left(y_{i1},\ldots,y_{iR}\right)'$ um
-vetor $R\times 1$ dos valores observados das variáveis de interesse
-observadas para a unidade $i$ da amostra, gerado por um vetor aleatório $\mathbf{Y}_{i}$, para $i=1,\ldots ,n$, onde $n$ é o tamanho da amostra.
-Suponha que os vetores aleatórios $\mathbf{Y}_{i}$, para $i=1,\ldots ,n$
-, são independentes e identicamente distribuídos (IID) com distribuição comum
-$f(\mathbf{y};\mathbf{\theta })$, onde 
-$\mathbf{\theta}=\left( \theta _{1},\ldots ,\theta _{K}\right) ^{^{\prime }}$ é um vetor 
-$K\times 1$ de parâmetros desconhecidos de interesse. Sob essas
-hipóteses, a verossimilhança amostral é dada por 
-\[
-l\left( \mathbf{\theta }\right) =\prod\limits_{i=1}^{n}f\left( \mathbf{y}
-_{i};\mathbf{\theta }\right) 
-\]
-e a correspondente log-verossimilhança por 
-\[
-L\left( \mathbf{\theta }\right) =\sum_{i=1}^n\log \left[
-f\left( \mathbf{y}_{i};\mathbf{\theta }\right) \right] \;. 
-\]
 
-Calculando as derivadas parciais de $L\left(\mathbf{\theta}\right)$ com
-relação a cada componente de $\mathbf{\theta }$ e igualando a $0$,
-obtemos um sistema de equações 
-\[
-\partial L\left( \mathbf{\theta }\right) /\partial \mathbf{\theta }=
-\sum_{i=1}^n\mathbf{u}_{i}\left( \mathbf{\theta }\right) =\mathbf{0}, 
-\]
+Seja $\mathbf y_i = \left( y_{i1}, \ldots, y_{iR} \right)'$ um vetor $Q \times 1$ dos valores das variáveis de interesse observados para a unidade $i$ da amostra, que supomos que é gerado por um vetor aleatório $\mathbf{Y}_i$, para $i=1, \ldots, n$, onde $n$ é o tamanho da amostra. Suponha que os vetores aleatórios $\mathbf Y_i$, para $i=1, \ldots, n$, são independentes e identicamente distribuídos (IID) com distribuição comum $f(\mathbf y ; \boldsymbol{\theta})$, onde $\boldsymbol{\theta} = \left( \theta_1, \ldots, \theta_K \right)^{\prime}$ é um vetor $K \times 1$ de parâmetros desconhecidos de interesse. Sob essas hipóteses, a verossimilhança amostral é dada por 
 
-onde, $\mathbf{u}_{i}\left(\mathbf{\theta }\right) =\partial\log\left[f\left(\mathbf{y}_{i};\mathbf{\theta}\right) \right] /\partial \mathbf{\theta }$ 
-é o vetor dos escores da unidade $i$, de dimensão $K\times1$.
+$$
+l_s \left( \boldsymbol{\theta} \right) = \prod \limits_{i=1}^{n} f \left( \mathbf y_i ; \boldsymbol{\theta} \right) 
+$$ 
+e a correspondente log-verossimilhança é igual a
 
-Sob condições de regularidade, p. 281 @cox, a solução $\mathbf{\hat{\theta}}$ deste sistema de equações é
-o **Estimador de Máxima Verossimilhança (EMV)** de $\mathbf{\theta}$. A variância assintótica do estimador 
-$\mathbf{\hat{\theta}}$ sob o modelo adotado, denominado aqui abreviadamente modelo $M$, é dada por 
-\[
-V_{M}\left( \mathbf{\hat{\theta}}\right) \simeq \left[ J\left( \mathbf{
-\theta }\right) \right] ^{-1} 
-\]
+$$
+L_s \left( \boldsymbol{\theta} \right) = \sum_{i=1}^n \log \left[ f \left( \mathbf y_i ; \boldsymbol{\theta} \right) \right] 
+$$
+
+O método da *Máxima Verossimilhança* para ajustar modelos requer encontrar o valor do parâmetro $\boldsymbol{\theta}$ que maximize a verossimilhança amostral $l_s \left( \boldsymbol{\theta} \right)$. Tal valor para esse parâmetro seria então o *mais verossímil* capaz de ter gerado os dados observados. Maximizar a função $l_s \left( \boldsymbol{\theta} \right)$ é equivalente a maximizar seu logaritmo $L_s \left( \boldsymbol{\theta} \right)$, o que pode ser tentado por métodos analíticos, calculando as derivadas parciais de $L_s \left( \boldsymbol{\theta} \right)$ com relação a cada componente de $\boldsymbol{\theta}$ e igualando a $0$, obtendo assim um sistema de equações de estimação dadas por:
+
+$$
+\partial L_s \left( \boldsymbol{\theta} \right) / \partial \boldsymbol{\theta} = \sum_{i=1}^n \mathbf u_i \left( \boldsymbol{\theta} \right) = \mathbf{0} 
+$$
+
+onde $\mathbf u_i \left( \boldsymbol{\theta} \right) = \partial \log \left[ f \left( \mathbf y_i; \boldsymbol{\theta} \right) \right] / \partial \boldsymbol{\theta}$ é o vetor de dimensão $K \times 1$ dos escores da unidade $i$.
+
+Sob condições de regularidade - ver por exemplo @cox1974 p. 281 - a solução $\boldsymbol{\widehat{\theta}}$ deste sistema de equações é o *Estimador de Máxima Verossimilhança (EMV)* de $\boldsymbol{\theta}$. 
+
+A variância assintótica do estimador $\boldsymbol{\widehat{\theta}}$ sob o modelo adotado, denominado aqui abreviadamente modelo $M$, é dada por 
+
+$$
+V_M \left( \boldsymbol{\widehat{\theta}} \right) \simeq \left[ J \left( \boldsymbol{\theta} \right) \right]^{-1}
+$$
+
 e um estimador consistente dessa variância é dado por 
-\[
-\hat{V}_{M}\left( \mathbf{\hat{\theta}}\right) =\left[ J\left( \mathbf{\hat{
-\theta}}\right) \right] ^{-1}\;, 
-\]
-onde 
-\[
-J\left( \mathbf{\theta }\right) =\sum\limits_{i=1}^{n}\partial \mathbf{u}
-_{i}\left( \mathbf{\theta }\right) /\partial \mathbf{\theta } 
-\]
-e 
-\[
-J\left( \mathbf{\hat{\theta}}\right) =\left. J\left( \mathbf{\theta }\right)
-\right| _{\mathbf{\theta =\hat{\theta}}}\;. 
-\]
 
-## Ponderação de Dados Amostrais
+$$
+\widehat V_M \left( \boldsymbol{\widehat{\theta}} \right) = \left[ J \left( \boldsymbol{\widehat{\theta}} \right) \right]^{-1} 
+$$
+
+onde 
+$$
+J \left( \boldsymbol{\theta} \right) = \sum \limits_{i=1}^{n} \partial \mathbf u_i \left( \boldsymbol{\theta} \right) / \partial \boldsymbol{\theta} 
+$$
+e 
+
+$$
+J \left( \boldsymbol{\widehat{\theta}} \right) = \left. J \left( \boldsymbol{\theta} \right) \right| _{\boldsymbol{\theta = \widehat{\theta}}} 
+$$
+
+## Ponderação de Dados Amostrais {#secC5N3}
 <div style="text-align: justify">
-O papel da ponderação *na análise de dados amostrais* é
-alvo de controvérsia entre os estatísticos. Apesar de incorporada
-comumente na inferência descritiva, não há concordância com
-respeito a seu uso na inferência analítica, havendo um espectro de
-opiniões entre dois extremos. Num extremo estão os *modelistas*, que consideram o
-uso de pesos irrelevante, e no outro os *amostristas*, que incorporam pesos em qualquer análise.
+
+O papel da ponderação na *análise de dados amostrais* ainda é alvo de controvérsia entre os estatísticos e outros analistas. Apesar de incorporada comumente na *inferência descritiva*, não há concordância plena com respeito a seu uso na *inferência analítica*, havendo um espectro de opiniões entre dois extremos. Num extremo estão os *modelistas*, que consideram o uso de pesos irrelevante, desde que o modelo formulado e ajustado seja o modelo correto, e no outro os *amostristas*, que incorporam pesos em qualquer análise, como estratégia para obter robustez. Uma discussão mais ampla do tema é apresentada na seção @ref(secC5N5).
 
 ```{example, label= "pnad"}
-Uso analítico dos dados da Pesquisa Nacional por Amostra de
-Domicílios (PNAD)
+Uso analítico dos dados da Pesquisa Nacional por Amostra de Domicílios (PNAD)
 ```
 
-A título de ilustração, consideremos uma pesquisa com uma
-amostra complexa como a da PNAD do IBGE, que emprega uma amostra
-estratificada de domicílios em três estágios, tendo como
-unidades primárias de amostragem (UPAs) os municípios, que são
-estratificados segundo as unidades da federação (UFs), e regiões
-menores dentro das UFs, ver @IBGE81, p. 67.
+A título de ilustração, consideremos uma pesquisa com uma amostra complexa como a da PNAD do IBGE, que emprega uma amostra de domicílios estratificada e conglomerada em dois ou três estágios, tendo como unidades primárias de amostragem (UPAs) os municípios ou os setores censitários, que são estratificados segundo as unidades da federação (UFs) e regiões menores dentro das UFs - ver @IBGE1981, p. 67 e também @Silva2002.
 
-A seleção de municípios dentro de cada estrato é feita com
-probabilidades desiguais, proporcionais ao tamanho, havendo inclusive
-municípios incluídos na amostra com certeza (chamados de
-municípios auto-representativos). Da mesma forma, a seleção de
-setores (unidades secundárias de amostragem ou USAs) dentro de cada
-município é feita com probabilidades proporcionais ao número de
-domicílios em cada setor segundo o último censo disponível.
-Dentro de cada setor, a seleção de domicílios é feita por
-amostragem sistemática simples (portanto, com equiprobabilidade).
-Todas as pessoas moradoras em cada domicílio da amostra são
-pesquisadas.
+A seleção de municípios dentro de cada estrato é feita com probabilidades desiguais, proporcionais ao tamanho, havendo inclusive municípios incluídos na amostra com certeza (chamados de municípios auto-representativos, que nesse caso, se tornam estratos para a seleção de setores censitários como UPAs nesses municípios). Da mesma forma, a seleção de setores censitários (unidades secundárias de amostragem ou USAs) dentro de cada município é feita com probabilidades proporcionais ao número de domicílios em cada setor segundo o último censo disponível. Dentro de cada setor, a seleção de domicílios é feita por amostragem sistemática simples (portanto, com equiprobabilidade). Todas as pessoas moradoras em cada domicílio da amostra são pesquisadas.
 
-A amostra de domicílios e de pessoas dentro de cada estrato é *autoponderada*, 
-isto é, tal que todos os domicílios e pessoas dentro
-de um mesmo estrato têm igual probabilidade de seleção.
-Entretanto, as probabilidades de inclusão (e conseqüentemente os
-pesos) variam bastante entre as várias regiões de pesquisa.
-A Tabela \@ref(tab:proselpnad) revela como variam essas probabilidades de seleção entre as 
-regiões cobertas pela amostra da PNAD de 93. Como se
-pode observar, tais probabilidades de inclusão chegam a ser $5$ vezes
-maiores em Belém do que em São Paulo, e portanto variação semelhante será observada nos pesos.
+A amostra de domicílios e de pessoas dentro de cada estrato é *autoponderada*, isto é, tal que todos os domicílios e pessoas dentro de um mesmo estrato têm igual probabilidade de inclusão na amostra e, em consequência, igual peso amostral básico. Entretanto, as probabilidades de inclusão (e consequentemente os pesos) variam bastante entre as várias regiões de pesquisa. A Tabela \@ref(tab:tabC5N1) revela como variavam essas probabilidades de seleção entre as regiões cobertas pela amostra da PNAD na década de 1990 - ver também @Silva2002. Como se pode observar, tais probabilidades de inclusão chegavam a ser $5$ vezes maiores para a região metropolitana (RM) de Belém do que para domicílios de São Paulo (RM ou interior) e, portanto, variação semelhante será observada também nos pesos amostrais básicos.
 
 
-```{r, echo=FALSE, label=proselpnad}
+```{r, echo=FALSE, label=tabC5N1}
 suppressMessages(library(kableExtra))
 
 l1=c('RM de Belém','1/150')
@@ -172,285 +94,198 @@ tabela=as.data.frame(t(data.frame(l1,l2,l3,l4,l5,l6,l7,l8)))
 names(tabela) <- c('Região da pesquisa','Probabilidade de seleção')
 
 knitr::kable(tabela,align= "lc",format.args= list(big.mark = '.',dec=','),escape = F, booktabs=T,
-caption= "$\\text{Probabilidades de seleção da amostra da PNAD de 1993 segundo regiões}$", row.names=FALSE,)%>% 
+caption= "$\\text{Probabilidades de seleção da amostra da PNAD da década de 1990 segundo regiões}$", row.names=FALSE,)%>% 
 kable_styling(full_width = F,latex_options = 'HOLD_position') %>% column_spec(column=1,width='14cm')%>% column_spec(column=2,width='2.5cm')
 ```
 
-Se ${\ \pi }_{i}$representa a probabilidade de inclusão na amostra do 
-$i$-ésimo domicílio da população, $i=1,...,N$, então 
-\[
-\pi _{i}=\pi _{munic\acute{\imath}pio\left| estrato\right. }\times \pi
-_{setor\left| munic\acute{\imath}pio\right. }\times \pi _{domic\acute{\imath}
-lio\left| setor\right. } 
-\]
-isto é, a probabilidade global de inclusão de um domicílio (e
-conseqüentemente de todas as pessoas nele moradoras) é dada pelo
-produto das probabilidades condicionais de inclusão nos vários
-estágios de amostragem.
+Se $\pi_i$representa a probabilidade de inclusão na amostra do $i$-ésimo domicílio da população, $i = 1, \ldots, N$, então 
 
-A estimação do total populacional $Y$ de uma variável de
-pesquisa $y$ num dado estrato usando os dados da PNAD é feita
-rotineiramente com estimadores ponderados de tipo razão 
-$\widehat{Y}_{R}=\widehat{Y}_{\pi }\,X\,/\,\widehat{X}_{\pi }=\sum_{i\in s}w_{i}^{R}y_{i}$
-(tal como definidos por \@ref(eq:estpa15), com pesos dados por 
-$w_{i}^{R}=\pi_{i}^{-1}X\,/\,\widehat{X}_{\pi }$,ver \@ref(eq:estpa17), onde $X$ é o total
-da população no estrato obtido por métodos demográficos de
-projeção, utilizado como variável auxiliar, e $\widehat{X}_{\pi}$ e $\widehat{Y}_{\pi}$ são os estimadores $\pi$-ponderados de $X$ e 
-$Y$ respectivamente. Para estimar para conjuntos de estratos basta somar as
-estimativas para cada estrato incluído no conjunto. Para estimar
-médias e proporções, os pesos são também incorporados da
-forma apropriada. No caso, a estimação de médias é feita
-usando estimadores ponderados da forma 
-\[
-\overline{y}^{R}=\frac{\sum_{i\in s}w_{i}^{R}y_{i}}{\sum_{i\in s}w_{i}^{R}} 
-\]
-e a estimação de proporções é caso particular da estimação de médias quando a variável de pesquisa $y$ é do
-tipo indicador (isto é, só toma valores $0$ e $1$).
+$$
+\pi_i = \pi_{munic\acute{\imath}pio \left| estrato \right. } \times \pi_{setor \left| munic\acute{\imath}pio\right.} \times \pi_{domic\acute{\imath}lio \left| setor\right. } 
+$$
+Isto é, a probabilidade global de inclusão de um domicílio (e consequentemente de todas as pessoas nele moradoras) é dada pelo produto das probabilidades condicionais de inclusão nos vários estágios de amostragem.
 
-Estimadores ponderados (como por exemplo os usados na PNAD)
-são preferidos pelos praticantes de amostragem por sua simplicidade e
-por serem não viciados (ao menos aproximadamente) com respeito à
-distribuição de aleatorização induzida pela seleção
-da amostra, independentemente dos valores assumidos pelas variáveis de
-pesquisa na população. Já para a modelagem de relações
-entre variáveis de pesquisa, o uso dos pesos induzidos pelo planejamento
-amostral ainda não é freqüente ou aceito sem controvérsia.
+A estimação do total populacional $Y$ de uma variável de pesquisa $y$ num dado estrato usando os dados da PNAD era feita rotineiramente com estimadores ponderados de tipo razão $\widehat Y_R = \widehat Y_{HT} \, X \, / \, \widehat X_{HT} = \sum_{i\in s} w_i^R y_i$ (tal como definidos por \@ref(eq:estpa15), com pesos dados por $w_i^R = \pi_i^{-1} X \, / \, \widehat{X}_{HT}$, ver \@ref(eq:estpa17), onde $X$ é o total da população no estrato obtido por métodos demográficos de projeção populacional utilizado como variável auxiliar, e $\widehat X_{HT}$ e $\widehat Y_{HT}$ são os estimadores tipo Horvitz-Thompson de $X$ e $Y$ respectivamente. 
 
-Um exemplo de modelagem desse tipo com dados da PNAD em que os pesos e o
-desenho amostral não foram considerados na análise é encontrado
-em @Leote. Essa autora empregou modelos de regressão logística
-para traçar um perfil sócio-econômico da mão-de-obra
-empregada no mercado informal de trabalho urbano no Rio de Janeiro, usando
-dados do suplemento sobre trabalho da PNAD-90. Todos os ajustes efetuados
-ignoraram os pesos e o plano amostral da pesquisa. O problema foi revisitado
-por @Pessoa, quando então esses aspectos
-foram devidamente incorporados na análise. Um resumo desse trabalho
-é discutido no Capítulo \@ref(modreg).
+Para estimar para conjuntos de estratos basta somar as estimativas para cada estrato incluído no conjunto. Para estimar médias e proporções, os pesos são também incorporados da forma apropriada. No caso, a estimação de médias é feita usando estimadores ponderados da forma $\overline y^R = \sum_{i\in s} w_i^R y_i / {\sum_{i \in s} w_i^R}$ e a estimação de proporções é caso particular da estimação de médias quando a variável de pesquisa $y$ é do tipo indicador (isto é, só toma valores $1$ e $0$).
 
-Vamos supor que haja interesse em regredir uma determinada variável de
-pesquisa $y$ contra algumas outras variáveis de pesquisa num vetor de
-regressores $\mathbf{z}$. Seria natural indagar se, como no caso do total e
-da média, os pesos amostrais poderiam desempenhar algum papel na estimação dos
-parâmetros do modelo (linear) de regressão. Uma
-possibilidade de incluir os pesos seria estimar os coeficientes da
-regressão por:
+Estimadores ponderados (como por exemplo os usados na PNAD) são preferidos pelos praticantes de amostragem por sua simplicidade e por serem não viciados (ao menos aproximadamente) com respeito à distribuição de aleatorização induzida pela seleção da amostra, independentemente dos valores assumidos pelas variáveis de pesquisa na população. Já para a modelagem de relações entre variáveis de pesquisa, o uso dos pesos induzidos pelo planejamento amostral, embora já frequente, ainda não é aceito sem controvérsia.
 
-\begin{equation}
-\widehat{\beta }_{w}=\left(\sum_{i\in s}w_{i}\mathbf{z}_{i}^{\prime }
-\mathbf{z}_{i}\right) ^{-1}\sum_{i\in s}w_{i}\mathbf{z}_{i}^{\prime}y_{i}=
-\left(\mathbf{Z}_{s}^{\prime }\mathbf{W}_{s}\mathbf{Z}_{s}\right)^{-1}\mathbf{Z}_{s}^{\prime }\mathbf{W}_{s}\mathbf{Y}_{s} 
-(\#eq:modpar1)
-\end{equation}
+Um exemplo de modelagem desse tipo com dados da PNAD em que os pesos e o desenho amostral não foram considerados na análise é encontrado em @Leote1996. Essa autora empregou modelos de regressão logística para traçar um perfil socioeconômico da mão-de-obra empregada no mercado de trabalho informal urbano no Rio de Janeiro, usando dados do suplemento sobre trabalho da PNAD de 1990. Todos os ajustes efetuados ignoraram os pesos e o plano amostral da pesquisa. O problema foi revisitado por @Pessoa1997, quando então esses aspectos foram devidamente incorporados na análise. Um resumo desse trabalho é discutido no Capítulo \@ref(modreg).
+
+Vamos supor que haja interesse em explicar uma determinada variável de pesquisa $y$ usando algumas outras variáveis de pesquisa num vetor de preditores $\mathbf z$. Seria natural indagar se, como no caso do total e da média, os pesos amostrais poderiam desempenhar algum papel na estimação dos parâmetros do modelo (linear) de regressão considerado. Uma possibilidade de incluir os pesos seria estimar os coeficientes da regressão por:
+
+$$
+\boldsymbol{\widehat{\beta}}_w = \left( \sum_{i \in s} w_i \mathbf z_i^{\prime} \mathbf z_i \right)^{-1} \sum_{i \in s} w_i \mathbf z_i^{\prime} y_i = \left( \mathbf Z_s^{\prime} \mathbf W_s \mathbf Z_s \right)^{-1} \mathbf Z_s^{\prime} \mathbf W_s \mathbf Y_s \quad (\#eq:eqC5N1)
+$$
 
 em lugar do estimador de mínimos quadrados ordinários (MQO) dado por 
-\begin{equation}
-\widehat{\beta}=\left( \sum_{i\in s}\mathbf{z}_{i}^{\prime }\mathbf{z}_{i}\right)^{-1}\sum_{i\in s}\mathbf{z}_{i}^{\prime }y_{i}=\left(\mathbf{Z}_{s}^{\prime }\mathbf{Z}_{s}\right)^{-1}\mathbf{Z}_{s}^{\prime }\mathbf{Y}_{s}  
-(\#eq:modpar2)
-\end{equation}
-onde $w_{i}=\pi _{i}^{-1}$, $y_{i}$ é o valor da variável resposta e 
-$\mathbf{z}_{i}$ é o vetor de regressores para a observação $i$, 
-$\mathbf{Z}_{s}$ e $\mathbf{Y}_{s}$ são respectivamente a matriz e vetor
-com os valores amostrais dos $\mathbf{z}_{i}$ e $y_{i}$, e 
-$\mathbf{W}_{s}=diag\left\{ w_{i};i\in s\right\}$ é a matriz diagonal com os pesos
-amostrais.
 
-Não é possível justificar o estimador $\widehat{\beta }_{w}$
-em \@ref(eq:modpar1) com base em critério de otimalidade, tal como ocorre com
-os estimadores usuais de Máxima Verossimilhança ou de Mínimos
-Quadrados Ordinários (MQO), se uma modelagem clássica IID fosse
-adotada para a amostra.
+$$
+\boldsymbol{\widehat{\beta}} = \left( \sum_{i \in s} \mathbf z_i^{\prime} \mathbf z_i \right)^{-1} \sum_{i \in s} \mathbf z_i^{\prime } y_i = \left(\mathbf Z_s^{\prime} \mathbf Z_s \right)^{-1} \mathbf Z_s^{\prime} \mathbf Y_s \quad (\#eq:eqC5N2)
+$$
+onde $w_i = \pi_i^{-1}$, $y_i$ é o valor da variável resposta e $\mathbf z_i$ é o vetor de preditores para a observação $i$, $\mathbf Z_s$ e $\mathbf Y_s$ são respectivamente a matriz e vetor com os valores amostrais dos preditores $\mathbf z_i$ e resposta $y_i$, e $\mathbf W_s = diag \left \{ w_i ; i \in s \right \}$ é a matriz diagonal com os pesos amostrais.
 
-De um ponto de vista formal (matemático), o estimador $\widehat{\beta }_{w}$ em \@ref(eq:modpar1) é equivalente ao estimador de Mínimos Quadrados
-Ponderados (MQP) com pesos $w_{i}$. Entretanto, esses estimadores diferem de
-maneira acentuada. Os estimadores de MQP são usualmente considerados
-quando o modelo de regressão é heteroscedástico, isto é,
-quando os resíduos têm variâncias desiguais. Nes\-te caso, os
-pesos adequados seriam dados pelos inversos das variâncias dos
-resíduos correspondentes a cada uma das observações, e portanto
-em geral diferentes dos pesos iguais aos inversos das correspondentes
-probabilidades de seleção. Além desta diferença de interpretação do papel dos pesos no estimador, outro aspecto em que os dois
-estimadores diferem de forma acentuada é na estimação da
-precisão, com o estimador MQP acoplado a um estimador de variância
-baseado no modelo e o estimador $\widehat{\beta }_{w}$ acoplado a
-estimadores de variância que incorporam o planejamento amostral e os
-pesos, tal como se verá mais adiante.
+Não é possível justificar o estimador $\boldsymbol{\widehat{\beta}}$ em \@ref(eq:eqC5N1) com base em um critério de otimalidade, tal como ocorre com os estimadores usuais de Máxima Verossimilhança ou de Mínimos Quadrados Ordinários (MQO), caso a abordagem clássica de supor observações IID fosse adotada para os dados da amostra usada para ajustar o modelo.
 
-O estimador $\widehat{\beta }_{w}$ foi proposto formalmente por
-@fuller75, que o concebeu como uma função de estimadores de
-totais populacionais. A mesma ideia subsidiou vários outros autores
-que estudaram a estimação de coeficientes de regressão partindo
-de dados amostrais complexos, tais como @NH80, @PfefeNat. Uma revisão abrangente da literatura existente sobre estimação de parâmetros em modelos de regressão linear com dados
-amostrais complexos pode ser encontrada em cap. 6, @Silva.
+De um ponto de vista formal (matemático), o estimador $\boldsymbol{\widehat{\beta}}_w$ em \@ref(eq:eqC5N1) é equivalente ao estimador de Mínimos Quadrados Ponderados (MQP) com pesos $w_i$. Entretanto, esses estimadores diferem de maneira acentuada. Os estimadores de MQP são usualmente considerados quando o modelo de regressão é heteroscedástico, isto é, quando os erros têm variâncias desiguais. Neste caso, os pesos adequados seriam dados pelos inversos das variâncias dos erros correspondentes a cada uma das observações e, portanto, em geral diferentes dos pesos iguais aos inversos das correspondentes probabilidades de inclusão na amostra. Além desta diferença de interpretação do papel dos pesos no estimador, outro aspecto em que os dois estimadores diferem de forma acentuada é na estimação da correspondente precisão, com o estimador MQP acoplado a um estimador de variância baseado no modelo e o estimador $\boldsymbol{\widehat{\beta}}_w$ acoplado a estimadores de variância que incorporam o planejamento amostral e os pesos amostrais ásicos, como se verá mais adiante.
 
-Apesar dessas dificuldades, será que é possível justificar o uso
-de pesos na inferência baseada em modelos? Se for o caso, sob que condições? Seria possível desenvolver diretrizes para o uso de
-pesos em inferência analítica partindo de dados amostrais complexos?
-A resposta para essas perguntas é afirmativa, ao menos quando a
-questão da robustez da inferência é relevante. Em
-inferências analíticas partindo de dados amostrais complexos, os
-pesos podem ser usados para proteger:
+O estimador $\boldsymbol{\widehat{\beta}}_w$ foi proposto formalmente por @fuller1975, que o concebeu como uma função de estimadores de totais populacionais. A mesma ideia subsidiou vários outros autores que estudaram a estimação de coeficientes de regressão partindo de dados amostrais complexos, tais como @NH1980, @PfeffNat1981. Uma revisão abrangente da literatura existente sobre estimação de parâmetros em modelos de regressão linear com dados amostrais complexos pode ser encontrada no capítulo 6 de @Silva1996.
+
+Apesar dessas dificuldades, será que é possível justificar o uso de pesos amostrais na inferência baseada em modelos? Se for o caso, sob que condições? Seria possível desenvolver diretrizes para o uso de pesos em *inferência analítica* partindo de dados amostrais complexos? A resposta para essas perguntas é afirmativa, ao menos quando a questão da robustez da inferência é relevante. Em inferências analíticas partindo de dados amostrais complexos, os pesos podem ser usados para proteger:
 
 
-1. contra *planos amostrais não-ignoráveis*, que
-poderiam introduzir ou causar *vícios*;
+1. contra *planos amostrais não-ignoráveis*, que poderiam introduzir ou causar *vícios*;
 
-2.  contra a *má especificação do modelo*. 
+2. contra a *má especificação do modelo*. 
 
 
-A *robustez dos procedimentos* que incorporam pesos é obtida pela
-mudança de foco da inferência para *quantidades da população finita*, que definem parâmetros-alvo alternativos aos
-parâmetros do modelo de superpopulação, conforme já
-discutido na Seção \@ref(modelsuperpop).
+A *robustez dos procedimentos* que incorporam pesos é obtida pela mudança de foco da inferência para *quantidades da população finita*, que definem parâmetros-alvo alternativos aos parâmetros do modelo de superpopulação, conforme já discutido na Seção \@ref(modelsuperpop).
 
-A questão da construção dos pesos não será tratada neste
-texto, usando-se sempre como peso o inverso da probabilidade de inclusão
-na amostra. é possível utilizar pesos de outro tipo como, por
-exemplo, aqueles de razão empregados na estimação da PNAD, ou
-mesmo pesos de regressão. Para esses casos, há que fazer alguns
-ajustes da teoria aqui exposta, ver @Silva, cap. 6.
+A questão da construção dos pesos para uso na inferência não será tratada neste texto, usando-se sempre como peso básico o inverso da probabilidade de inclusão de cada unidade na amostra. É possível utilizar pesos de outro tipo como, por exemplo, aqueles de razão empregados na estimação da PNAD, ou pesos decorrentes de estimadores de regressão ou de calibração. Para esses casos, há que fazer alguns ajustes da teoria aqui exposta para estimação de variâncias conforme discutido no capítulo 6 de @Silva1996 ou em @hidiroglou1999 e @hidiroglou2000.
 
-Há várias formas alternativas de incorporar os pesos amostrais no
-processo de inferência. A principal que será adotada ao longo deste
-texto será o método de *Máxima Pseudo-Verossimilhança*,
-que descrevemos na próxima seção.
+Há várias formas alternativas de incorporar os pesos amostrais no processo de inferência. A principal que será adotada ao longo deste texto será o método de *Máxima Pseudo-Verossimilhança*, que descrevemos na próxima seção. Este método foi desenvolvido por @Binder1983, embora só tenha recebido esta denominação mais tarde, em @SHS1989. Apesar disso, as ideias de @Binder1983 foram inicialmente expandidas por artigos como @Chambless1985 e @Roberts1987.
 
-## Método de Máxima Pseudo-Verossimilhança {#modpar3}
+XXX Parei aqui
+
+## Método de Máxima Pseudo-Verossimilhança {#secC5N4}
 <div style="text-align: justify">
+
 Suponha que os vetores observados $\mathbf{y}_{i}$ das variáveis de
 pesquisa do elemento$\ i$ são gerados por vetores aleatórios 
 $\mathbf{Y}_{i}$ , para $i\in U$. Suponha também que $\mathbf{Y}_{1},\ldots ,\mathbf{Y}_{N}$ são IID com densidade 
-$f\left( \mathbf{y},\mathbf{\theta }\right)$. Se todos os elementos da população finita 
+$f\left( \mathbf{y},\boldsymbol{\theta}\right)$. Se todos os elementos da população finita 
 $U$ fossem conhecidos, as funções de verossimilhança e de
 log-verossimilhança *populacionais* seriam dadas respectivamente
 por 
-\begin{equation}
-l_{U}\left( \mathbf{\theta }\right) =\prod\limits_{i\in U}f\left( \mathbf{y}
-_{i};\mathbf{\theta }\right)  
-(\#eq:modpar3)
-\end{equation}
+$$
+l_{U}\left( \boldsymbol{\theta}\right) =\prod\limits_{i\in U}f\left( \mathbf{y}
+_{i};\boldsymbol{\theta}\right)  
+(\#eq:eqC5N3)
+$$
 e 
-\begin{equation}
-L_{U}\left( \mathbf{\theta }\right) =\sum_{i\in U}\log \left[ f\left( 
-\mathbf{y}_{i};\mathbf{\theta }\right) \right] \;\;.  
-(\#eq:modpar4)
-\end{equation}
+$$
+L_{U}\left( \boldsymbol{\theta}\right) =\sum_{i\in U}\log \left[ f\left( 
+\mathbf{y}_{i};\boldsymbol{\theta}\right) \right] \;\;.  
+(\#eq:eqC5N4)
+$$
 
 As equações de verossimilhança *populacionais*
 correspondentes são dadas por 
-\begin{equation}
-\sum_{i\in U}\mathbf{u}_{i}\left( \mathbf{\theta }\right) =\mathbf{0}
-(\#eq:modpar5)
-\end{equation}
+$$
+\sum_{i\in U}\mathbf{u}_{i}\left( \boldsymbol{\theta}\right) =\mathbf{0}
+(\#eq:eqC5N5)
+$$
 onde 
-\begin{equation}
-\mathbf{u}_{i}\left( \mathbf{\theta }\right) =\partial \log \left[ f\left( 
-\mathbf{y}_{i};\mathbf{\theta }\right) \right] /\partial \mathbf{\theta }
-(\#eq:modpar6)
-\end{equation}
+$$
+\mathbf{u}_{i}\left( \boldsymbol{\theta}\right) =\partial \log \left[ f\left( 
+\mathbf{y}_{i};\boldsymbol{\theta}\right) \right] /\partial \boldsymbol{\theta}
+(\#eq:eqC5N6)
+$$
 é o vetor $K\times 1$ dos escores do elemento $i,i\in U$.
 
-Sob condições de regularidade @cox, p. 281, a 
-solução $\mathbf{\theta }_{U}$ deste sistema é o *Estimador de
-Máxima Verossimilhança*  de $\mathbf{\theta }$ no caso de um
-*censo*. Podemos considerar $\mathbf{\theta }_{U}$ como uma 
+Sob condições de regularidade @cox1974, p. 281, a 
+solução $\boldsymbol{\theta}_{U}$ deste sistema é o *Estimador de
+Máxima Verossimilhança*  de $\boldsymbol{\theta}$ no caso de um
+*censo*. Podemos considerar $\boldsymbol{\theta}_{U}$ como uma 
 *Quantidade Descritiva Populacional Correspondente - QDPC* a 
-$\mathbf{\theta }$, no sentido definido por @Pfeff, sobre a qual se deseja
-fazer inferências com base em informações da amostra. Essa definição da QDPC $\mathbf{\theta }_{U}$ pode ser generalizada para
+$\boldsymbol{\theta}$, no sentido definido por @Pfeff1993, sobre a qual se deseja
+fazer inferências com base em informações da amostra. Essa definição da QDPC $\boldsymbol{\theta}_{U}$ pode ser generalizada para
 contemplar outras abordagens de inferência além da abordagem
 clássica baseada em maximização da verossimilhança. Basta
 para isso especificar outra regra ou critério a otimizar e então
 definir a QDPC como a solução ótima segundo essa nova regra. Tal
-generalização, discutida em @Pfeff, não será aqui
+generalização, discutida em @Pfeff1993, não será aqui
 considerada para manter a simplicidade.
 
-A QDPC\ $\mathbf{\theta }_{U}$ definida com base em \@ref(eq:modpar5) não
+A QDPC\ $\boldsymbol{\theta}_{U}$ definida com base em \@ref(eq:eqC5N5) não
 é calculável a menos que um censo seja realizado. Entretanto,
 desempenha papel fundamental nessa abordagem inferencial, por constituir-se
 num *pseudo-parâmetro*, eleito como alvo da inferência num
 esquema que incorpora o planejamento amostral. Isto se justifica porque, sob
-certas condições de regularidade, $\mathbf{\theta }_{U}\mathbf{
+certas condições de regularidade, $\boldsymbol{\theta}_{U}\boldsymbol{
 -\theta }=o_{p}\left( 1\right)$. Como em pesquisas por amostragem o tamanho
 da população é geralmente grande, um estimador adequado para 
-$\mathbf{\theta}_{U}$ será geralmente adequado também para 
-$\mathbf{\theta }$.
+$\boldsymbol{\theta}_{U}$ será geralmente adequado também para 
+$\boldsymbol{\theta}$.
 
-Seja $\mathbf{T}=\sum_{i\in U}\mathbf{u}_{i}\left( \mathbf{\theta }\right)$
+Seja $\mathbf{T}=\sum_{i\in U}\mathbf{u}_{i}\left( \boldsymbol{\theta}\right)$
 a soma dos vetores de escores na população, o qual é um vetor de
 totais populacionais. Para estimar este vetor de totais, podemos então
 usar um estimador linear ponderado da forma $\mathbf{\hat{T}}=\sum_{i\in
-s}w_{i}\mathbf{u}_{i}\left( \mathbf{\theta }\right)$, ver Capítulo \@ref(planamo),
+s}w_{i}\mathbf{u}_{i}\left( \boldsymbol{\theta}\right)$, ver Capítulo \@ref(planamo),
 onde $w_{i}$ são pesos propriamente definidos. Com essa notação,
-podemos agora obter um estimador para $\mathbf{\theta }_{U}$ resolvendo o
+podemos agora obter um estimador para $\boldsymbol{\theta}_{U}$ resolvendo o
 sistema de equações obtido igualando o estimador $\mathbf{\hat{T}}$
 do total $\mathbf{T}$ a zero.
 
 ```{definition}
-O estimador de Máxima Pseudo-Verossimilhança (MPV) $\mathbf{\hat{\theta}}_{MPV}$ de $\mathbf{\theta }_{U}$ (e consequentemente de $\mathbf{\theta}$) será a solução das equações dePseudo-Verossimilhança dadas por 
-\begin{equation}
-\mathbf{\hat{T}}=\sum_{i\in s}w_{i}\mathbf{u}_{i}\left( \mathbf{\theta }
+O estimador de Máxima Pseudo-Verossimilhança (MPV) $\boldsymbol{\hat{\theta}}_{MPV}$ de $\boldsymbol{\theta}_{U}$ (e consequentemente de $\boldsymbol{\theta}$) será a solução das equações dePseudo-Verossimilhança dadas por 
+$$
+\mathbf{\hat{T}}=\sum_{i\in s}w_{i}\mathbf{u}_{i}\left( \boldsymbol{\theta}
 \right) =\mathbf{0\;\;.}  
-(\#eq:modpar7)
-\end{equation}
+(\#eq:eqC5N7)
+$$
 ```
 
-Através da linearização de Taylor, ver Seção \@ref(taylor), considerando os resultados de @binder83, podemos obter a
+Através da linearização de Taylor, ver Seção \@ref(taylor), considerando os resultados de @binder1983, podemos obter a
 variância de aleatorização assintótica do estimador 
-$\mathbf{\hat{\theta}}_{MPV}$ e seu estimador correspondente, dados respectivamente
+$\boldsymbol{\hat{\theta}}_{MPV}$ e seu estimador correspondente, dados respectivamente
 por: 
-\begin{equation}
-V_{p}\left( \mathbf{\hat{\theta}}_{MPV}\right) \simeq \left[ J\left( \mathbf{
+$$
+V_{p}\left( \boldsymbol{\hat{\theta}}_{MPV}\right) \simeq \left[ J\left( \boldsymbol{
 \theta }_{U}\right) \right] ^{-1}V_{p}\left[ \sum_{i\in s}w_{i}\mathbf{u}
-_{i}\left( \mathbf{\theta }_{U}\right) \right] \left[ J\left( \mathbf{\theta 
+_{i}\left( \boldsymbol{\theta}_{U}\right) \right] \left[ J\left( \boldsymbol{\theta 
 }_{U}\right) \right] ^{-1}  
-(\#eq:modpar8)
-\end{equation}
+(\#eq:eqC5N8)
+$$
 e 
-\begin{equation}
-\hat{V}_{p}\left( \mathbf{\hat{\theta}}_{MPV}\right) =\left[ \hat{J}\left( 
-\mathbf{\hat{\theta}}_{MPV}\right) \right] ^{-1}\hat{V}_{p}\left[ \sum_{i\in
-s}w_{i}\mathbf{u}_{i}\left( \mathbf{\hat{\theta}}_{MPV}\right) \right]
-\left[ \hat{J}\left( \mathbf{\hat{\theta}}_{MPV}\right) \right] ^{-1}\;,
-(\#eq:modpar9)
-\end{equation}
+$$
+\hat{V}_{p}\left( \boldsymbol{\hat{\theta}}_{MPV}\right) =\left[ \hat{J}\left( 
+\boldsymbol{\hat{\theta}}_{MPV}\right) \right] ^{-1}\hat{V}_{p}\left[ \sum_{i\in
+s}w_{i}\mathbf{u}_{i}\left( \boldsymbol{\hat{\theta}}_{MPV}\right) \right]
+\left[ \hat{J}\left( \boldsymbol{\hat{\theta}}_{MPV}\right) \right] ^{-1}\;,
+(\#eq:eqC5N9)
+$$
 onde
 
-\begin{equation}
-J\left( \mathbf{\theta }_{U}\right) =\left. \frac{\partial T\left( \mathbf{
-\theta }\right) }{\partial \mathbf{\theta }}\right| _{\mathbf{\theta =\theta 
-}_{U}}=\sum_{i\in U}\left. \frac{\partial \mathbf{u}_{i}\left( \mathbf{
-\theta }\right) }{\partial \left( \mathbf{\theta }\right) }\right| _{\mathbf{
+$$
+J\left( \boldsymbol{\theta}_{U}\right) =\left. \frac{\partial T\left( \boldsymbol{
+\theta }\right) }{\partial \boldsymbol{\theta}}\right| _{\boldsymbol{\theta =\theta 
+}_{U}}=\sum_{i\in U}\left. \frac{\partial \mathbf{u}_{i}\left( \boldsymbol{
+\theta }\right) }{\partial \left( \boldsymbol{\theta}\right) }\right| _{\boldsymbol{
 \theta =\theta }_{U}},  
-(\#eq:modpar10)
-\end{equation}
+(\#eq:eqC5N10)
+$$
 
 
-\begin{equation}
-\hat{J}\left( \mathbf{\hat{\theta}}_{MPV}\right) =\left. \frac{\partial 
-\widehat{T}\left( \mathbf{\theta }\right) }{\partial \mathbf{\theta }}
-\right| _{\mathbf{\theta =\hat{\theta}}_{MPV}}=\sum_{i\in s}w_{i}\left. 
-\frac{\partial \mathbf{u}_{i}\left( \mathbf{\theta }\right) }{\partial 
-\mathbf{\theta }}\right| _{\mathbf{\theta =\hat{\theta}}_{MPV}},
-(\#eq:modpar11)
-\end{equation}
+$$
+\hat{J}\left( \boldsymbol{\hat{\theta}}_{MPV}\right) =\left. \frac{\partial 
+\widehat{T}\left( \boldsymbol{\theta}\right) }{\partial \boldsymbol{\theta}}
+\right| _{\boldsymbol{\theta =\hat{\theta}}_{MPV}}=\sum_{i\in s}w_{i}\left. 
+\frac{\partial \mathbf{u}_{i}\left( \boldsymbol{\theta}\right) }{\partial 
+\boldsymbol{\theta}}\right| _{\boldsymbol{\theta =\hat{\theta}}_{MPV}},
+(\#eq:eqC5N11)
+$$
 
-$V_{p}\left[\sum_{i\in s}w_{i}\mathbf{u}_{i}\left( \mathbf{\theta}_{U}\right) \right]$ é a matriz de variância (de aleatorização) do estimador do total populacional dos escores e $\hat{V}_{p}\left[\sum_{i\in s}w_{i}\mathbf{u}_{i}\left(\mathbf{\hat{\theta}}_{MPV}\right)\right]$ é um estimador consistente para esta variância.
+$V_{p}\left[\sum_{i\in s}w_{i}\mathbf{u}_{i}\left( \boldsymbol{\theta}_{U}\right) \right]$ é a matriz de variância (de aleatorização) do estimador do total populacional dos escores e $\hat{V}_{p}\left[\sum_{i\in s}w_{i}\mathbf{u}_{i}\left(\boldsymbol{\hat{\theta}}_{MPV}\right)\right]$ é um estimador consistente para esta variância.
 Binder(1983) mostrou também que a distribuição assintótica
-de $\mathbf{\hat{\theta}}_{MPV}$ é Normal Multivariada, isto é, que 
-\begin{equation}
-\left[ \hat{V}_{p}\left( \mathbf{\hat{\theta}}_{MPV}\right) \right]^{-1/2}\left(\mathbf{\hat{\theta}}_{MPV}-\mathbf{\theta }_{U}\right) \sim  \mathbf{NM}\left(\mathbf{0};\mathbf{I}\right),  
-(\#eq:modpar12)
-\end{equation}
-o que fornece uma base para a inferência sobre $\mathbf{\theta }_{U}$ (ou $\mathbf{\theta }$) usando amostras grandes.
+de $\boldsymbol{\hat{\theta}}_{MPV}$ é Normal Multivariada, isto é, que 
+$$
+\left[ \hat{V}_{p}\left( \boldsymbol{\hat{\theta}}_{MPV}\right) \right]^{-1/2}\left(\boldsymbol{\hat{\theta}}_{MPV}-\boldsymbol{\theta}_{U}\right) \sim  \mathbf{NM}\left(\mathbf{0};\mathbf{I}\right),  
+(\#eq:eqC5N12)
+$$
+o que fornece uma base para a inferência sobre $\boldsymbol{\theta}_{U}$ (ou $\boldsymbol{\theta}$) usando amostras grandes.
 
 Muitos modelos paramétricos, com vários planos amostrais e
 estimadores de totais diferentes, podem ser ajustados resolvendo-se as 
-equações de Pseudo-Verossimilhança \@ref(eq:modpar7), satisfeitas algumas
-condições de regularidade enunciadas no apêndice de  @binder83 e
-revistas em @Silva, p. 126. Entretanto, os estimadores de
+equações de Pseudo-Verossimilhança \@ref(eq:eqC5N7), satisfeitas algumas
+condições de regularidade enunciadas no apêndice de  @binder1983 e
+revistas em @Silva1996, p. 126. Entretanto, os estimadores de
 MPV não serão únicos, já que existem diversas maneiras
 de se definir os pesos $w_{i}$.
 
-Os pesos $w_{i}$ devem ser tais que os estimadores de total em \@ref(eq:modpar7)
+Os pesos $w_{i}$ devem ser tais que os estimadores de total em \@ref(eq:eqC5N7)
 sejam assintoticamente normais e não-viciados, e possuam estimadores de
 variância consistentes, conforme requerido para a obtenção da
 distribuição assintótica dos estimadores MPV. Os pesos mais
@@ -459,68 +294,68 @@ totais, dados pelo inverso das probabilidades de inclusão dos
 indivíduos, ou seja $w_{i}=\pi _{i}^{-1}$. Tais pesos satisfazem essas
 condições sempre que $\pi _{i}>0$ e 
 $\pi _{ij}>0\quad \forall i,j\in U$ e algumas condições adicionais de regularidade são
-satisfeitas, ver @fuller84.
+satisfeitas, ver @fuller1984.
 
 Assim, um procedimento padrão para ajustar um modelo paramétrico
-regular $f\left( \mathbf{y};\mathbf{\theta }\right)$ pelo método da
+regular $f\left( \mathbf{y};\boldsymbol{\theta}\right)$ pelo método da
 Máxima Pseudo-Verossimilhança seria dado pelos passos indicados a
 seguir.
 
 
 1.  Resolver $\sum\limits_{i\in s}\pi _{i}^{-1}\mathbf{u}_{i}\left( 
-\mathbf{\theta }\right) =\mathbf{0}$ e calcular o estimador pontual $\mathbf{
-\hat{\theta}}_{\pi }$ do parâmetro $\mathbf{\theta }$\textbf{\ }no
+\boldsymbol{\theta}\right) =\mathbf{0}$ e calcular o estimador pontual $\boldsymbol{
+\hat{\theta}}_{\pi }$ do parâmetro $\boldsymbol{\theta}$\textbf{\ }no
 modelo $f\left( \mathbf{y;\theta }\right)$ (ou do pseudo-parâmetro 
-$\mathbf{\theta }_{U}$ correspondente).
+$\boldsymbol{\theta}_{U}$ correspondente).
 
 2.  Calcular a matriz de variância estimada 
-\begin{equation}
-\hat{V}_{p}\left( \mathbf{\hat{\theta}}_{\pi }\right) =\left[ \hat{J}\left( 
-\mathbf{\hat{\theta}}_{\pi }\right) \right] ^{-1}\hat{V}_{p}\left[
-\sum\limits_{i\in s}\pi _{i}^{-1}\mathbf{u}_{i}\left( \mathbf{\hat{\theta}}
-_{\pi }\right) \right] \left[ \hat{J}\left( \mathbf{\hat{\theta}}_{\pi
+$$
+\hat{V}_{p}\left( \boldsymbol{\hat{\theta}}_{\pi }\right) =\left[ \hat{J}\left( 
+\boldsymbol{\hat{\theta}}_{\pi }\right) \right] ^{-1}\hat{V}_{p}\left[
+\sum\limits_{i\in s}\pi _{i}^{-1}\mathbf{u}_{i}\left( \boldsymbol{\hat{\theta}}
+_{\pi }\right) \right] \left[ \hat{J}\left( \boldsymbol{\hat{\theta}}_{\pi
 }\right) \right] ^{-1},  
-(\#eq:modpar13)
-\end{equation}
+(\#eq:eqC5N13)
+$$
 onde
 
-\begin{equation}
+$$
 \hat{V}_{p}\left[ \sum\limits_{i\in s}\pi _{i}^{-1}\mathbf{u}_{i}\left( 
-\mathbf{\hat{\theta}}_{\pi }\right) \right] =\sum\limits_{i\in
+\boldsymbol{\hat{\theta}}_{\pi }\right) \right] =\sum\limits_{i\in
 s}\sum\limits_{j\in s}\frac{\pi _{ij}-\pi _{i}\pi _{j}}{\pi _{ij}}
-\frac{\mathbf{u}_{i}\left(\mathbf{\hat{\theta}}_{\pi }\right)}{\pi _{i}} 
-\frac{\mathbf{u}_{j}^{\prime}\left(\mathbf{\hat{\theta}}_{\pi}\right)}{\pi _{j}} 
-(\#eq:modpar14)
-\end{equation}
+\frac{\mathbf{u}_{i}\left(\boldsymbol{\hat{\theta}}_{\pi }\right)}{\pi _{i}} 
+\frac{\mathbf{u}_{j}^{\prime}\left(\boldsymbol{\hat{\theta}}_{\pi}\right)}{\pi _{j}} 
+(\#eq:eqC5N14)
+$$
 e 
 
-\begin{equation}
-\hat{J}\left( \mathbf{\hat{\theta}}_{\pi }\right) =\left. \frac{\partial 
-\widehat{T}\left( \mathbf{\theta }\right) }{\partial \mathbf{\theta }}
-\right| _{\mathbf{\theta }=\mathbf{\hat{\theta}}_{\pi }}=\sum\limits_{i\in
-s}\pi _{i}^{-1}\left. \frac{\partial \mathbf{u}_{i}\left( \mathbf{\theta }
-\right) }{\partial \mathbf{\theta }}\right| _{\mathbf{\theta }=\mathbf{\hat{
+$$
+\hat{J}\left( \boldsymbol{\hat{\theta}}_{\pi }\right) =\left. \frac{\partial 
+\widehat{T}\left( \boldsymbol{\theta}\right) }{\partial \boldsymbol{\theta}}
+\right| _{\boldsymbol{\theta}=\boldsymbol{\hat{\theta}}_{\pi }}=\sum\limits_{i\in
+s}\pi _{i}^{-1}\left. \frac{\partial \mathbf{u}_{i}\left( \boldsymbol{\theta}
+\right) }{\partial \boldsymbol{\theta}}\right| _{\boldsymbol{\theta}=\boldsymbol{\hat{
 \theta}}_{\pi }}\;\;.  
-(\#eq:modpar15)
-\end{equation}
+(\#eq:eqC5N15)
+$$
 
-3. Usar $\mathbf{\hat{\theta}}_{\pi }$ e 
-$\hat{V}_{p}\left( \mathbf{\hat{\theta}}_{\pi }\right)$ para calcular regiões ou intervalos de confiança e/ou estatísticas de teste baseadas na distribuição
+3. Usar $\boldsymbol{\hat{\theta}}_{\pi }$ e 
+$\hat{V}_{p}\left( \boldsymbol{\hat{\theta}}_{\pi }\right)$ para calcular regiões ou intervalos de confiança e/ou estatísticas de teste baseadas na distribuição
 normal e utilizá-las para fazer inferência sobre os componentes de 
-$\mathbf{\theta}$.
+$\boldsymbol{\theta}$.
 
 
 ```{remark, label="obs51" }
 No Método de Máxima Pseudo-Verossimilhança, os pesos amostrais
 são incorporados na análise através das equações de
-estimação dos parâmetros \@ref(eq:modpar7) e através das 
+estimação dos parâmetros \@ref(eq:eqC5N7) e através das 
 equações de estimação da matriz de covariância dos estimadores
-\@ref(eq:modpar13)-\@ref(eq:modpar15).
+\@ref(eq:eqC5N13)-\@ref(eq:eqC5N15).
 ```
 
 
 ```{remark, label="obs52"}
-O plano amostral é também incorporado no método de estimação MPV através da expressão para a variância do total dos escores sob o plano amostral \@ref(eq:modpar14), onde as propriedades do plano amostral estão resumidas nas probabilidades de inclusão de primeira
+O plano amostral é também incorporado no método de estimação MPV através da expressão para a variância do total dos escores sob o plano amostral \@ref(eq:eqC5N14), onde as propriedades do plano amostral estão resumidas nas probabilidades de inclusão de primeira
 e segunda ordem, isto é, os $\pi _{i}$ e os $\pi _{ij}$ respectivamente.
 ```
 
@@ -546,9 +381,9 @@ preferível aos estimadores usuais da variância baseados no modelo,
 que ignoram o plano amostral.
 
 O procedimento MPV fornece estimativas *robustas*, no sentido de que em
-muitos casos a quantidade $\mathbf{\theta }_{U}$ da população finita
+muitos casos a quantidade $\boldsymbol{\theta}_{U}$ da população finita
 permanece um alvo válido para inferência, mesmo quando o modelo
-especificado por $f\left( \mathbf{y};\mathbf{\theta }\right)$ não
+especificado por $f\left( \mathbf{y};\boldsymbol{\theta}\right)$ não
 proporciona uma descrição adequada para a distribuição das
 variáveis de pesquisa na população.
 
@@ -574,8 +409,9 @@ de modelos (tais como gráficos de resíduos) e outros procedimentos
 da inferência clássica (tais como testes estatísticos de
 Razões de Verossimilhança) não podem ser utilizados.
 
-## Robustez do Procedimento MPV
+## Robustez do Procedimento MPV {#secC5N5}
 <div style="text-align: justify">
+
 Nesta seção vamos examinar a questão da robustez dos estimadores
 obtidos pelo procedimento MPV. é essa robustez que justifica o emprego
 desses estimadores frente aos estimadores usuais de MV, pois nas situações práticas da análise de dados amostrais complexos as
@@ -595,46 +431,46 @@ robustez, vamos considerar dois casos.
 
 -  Caso 1: o modelo para a população é adequado.
 
-Então quando $N\rightarrow \infty$  a QDPC $\mathbf{\theta }_{U}$
-converge para o parâmetro $\mathbf{\theta }$, isto é, 
-$\mathbf{\theta }_{U}-\mathbf{\theta }\rightarrow \mathbf{0}$ em probabilidade,
+Então quando $N\rightarrow \infty$  a QDPC $\boldsymbol{\theta}_{U}$
+converge para o parâmetro $\boldsymbol{\theta}$, isto é, 
+$\boldsymbol{\theta}_{U}-\boldsymbol{\theta}\rightarrow \mathbf{0}$ em probabilidade,
 segundo a distribuição de probabilidades do modelo $M$. Se 
-$\mathbf{\hat{\theta}}_{MPV}$ for consistente, então quando $n\rightarrow \infty$
+$\boldsymbol{\hat{\theta}}_{MPV}$ for consistente, então quando $n\rightarrow \infty$
 temos que 
-$\mathbf{\hat{\theta}}_{MPV}-\mathbf{\theta }_{U}\rightarrow\mathbf{0}$ em probabilidade, segundo a distribuição de aleatorização $p$. Juntando essas condições obtemos que
+$\boldsymbol{\hat{\theta}}_{MPV}-\boldsymbol{\theta}_{U}\rightarrow\mathbf{0}$ em probabilidade, segundo a distribuição de aleatorização $p$. Juntando essas condições obtemos que
 
 \[
-\mathbf{\hat{\theta}}_{MPV}\stackrel{P}{\rightarrow }\mathbf{\theta } 
+\boldsymbol{\hat{\theta}}_{MPV}\stackrel{P}{\rightarrow }\boldsymbol{\theta} 
 \]
 em probabilidade segundo a mistura $Mp$. Esse resultado segue porque
 
 \begin{eqnarray*}
-\mathbf{\hat{\theta}}_{MPV}-\mathbf{\theta } &=&(\mathbf{\hat{\theta}}_{MPV}-
-\mathbf{\theta }_{U})+\left( \mathbf{\theta }_{U}-\mathbf{\theta }\right) \\
+\boldsymbol{\hat{\theta}}_{MPV}-\boldsymbol{\theta} &=&(\boldsymbol{\hat{\theta}}_{MPV}-
+\boldsymbol{\theta}_{U})+\left( \boldsymbol{\theta}_{U}-\boldsymbol{\theta}\right) \\
 &=&O_{p}(n^{-1/2})+O_{p}(N^{-1/2})=O_{p}(n^{-1/2})\;.
 \end{eqnarray*}
 
 - Caso 2: o modelo para a população não é válido.
 
 
-Nesse caso, o parâmetro $\mathbf{\theta }$ do modelo não tem
+Nesse caso, o parâmetro $\boldsymbol{\theta}$ do modelo não tem
 interpretação substantiva significante, porém a QDPC 
-$\mathbf{\theta }_{U}$ é uma entidade definida na população finita (real)
+$\boldsymbol{\theta}_{U}$ é uma entidade definida na população finita (real)
 com interpretação clara, independente da validade do modelo. Como 
-$\mathbf{\hat{\theta}}_{MPV}$ é consistente para a QDPC 
-$\mathbf{\theta}_{U}$, a inferência baseada no procedimento MPV segue válida para
+$\boldsymbol{\hat{\theta}}_{MPV}$ é consistente para a QDPC 
+$\boldsymbol{\theta}_{U}$, a inferência baseada no procedimento MPV segue válida para
 este pseudo-parâmetro, independente da inadequação do modelo
 para a população. @Sk89b, p. 81,  discute essa situação, mostrando que 
-$\mathbf{\theta }_{U}$ pode ainda ser um alvo
+$\boldsymbol{\theta}_{U}$ pode ainda ser um alvo
 válido para inferência mesmo quando o modelo 
-$f\left( \mathbf{y};\mathbf{\theta }\right)$ especificado para a população é
+$f\left( \mathbf{y};\boldsymbol{\theta}\right)$ especificado para a população é
 inadequado, ao menos no sentido de que 
-$f\left( \mathbf{y};\mathbf{\theta}_{U}\right)$ forneceria a *melhor aproximação possível*
+$f\left( \mathbf{y};\boldsymbol{\theta}_{U}\right)$ forneceria a *melhor aproximação possível*
 (em certo sentido) para o verdadeiro modelo que gera as observações
-populacionais ($f^{*}\left( \mathbf{y};\mathbf{\eta }\right)$, digamos).
+populacionais ($f^{*}\left( \mathbf{y};\boldsymbol{\eta }\right)$, digamos).
 Skinner(1989b) reconhece que a *melhor aproximação possível*
 entre um conjunto de aproximações ruins ainda seria uma aproximação ruim, e portanto que a escolha do elenco de modelos especificados
-pela distribuição $f\left( \mathbf{y};\mathbf{\theta }\right)$ deve
+pela distribuição $f\left( \mathbf{y};\boldsymbol{\theta}\right)$ deve
 seguir os cuidados necessários para garantir que esta escolha 
 forneça uma aproximação razoável da realidade.
 
@@ -651,9 +487,9 @@ $N\rightarrow \infty$. Neste caso, é preciso definir a maneira pela qual
 $N\uparrow$ e $n\uparrow$ preservando a estrutura do plano amostral.
 Para evitar um desvio indesejado que a discussão deste problema traria,
 vamos supor que $N\uparrow$ e $n\uparrow$ de uma forma bem definida. Os
-leitores interessados poderão consultar: @SSW92, p. 166, @brewer, @Isaki, @Robin, @hajek e @SHS89, p. 18-19.
+leitores interessados poderão consultar: @SSW92, p. 166, @brewer, @Isaki, @Robin, @hajek e @SHS1989, p. 18-19.
 
-## Desvantagens da Inferência de Aleatorização
+## Desvantagens da Inferência de Aleatorização {#secC5N6}
 <div style="text-align: justify">
 Se o modelo postulado para os dados amostrais for correto, o uso de
 estimadores ponderados pode resultar em perda substancial de eficiência
@@ -706,9 +542,10 @@ agências produtoras. Este é o caso, por exemplo, da PNAD, da amostra
 do Censo Demográfico e de inúmeras outras pesquisas do IBGE e de
 agências estatísticas congêneres.
 
-## Laboratório de R
+## Laboratório de R {#secC5N7}
 <div style="text-align: justify">
-Usar função svymle da library *survey*, @R-survey, para incluir exemplo de estimador MPV?
+
+Usar função *svymle* da library *survey*, @R-survey, para incluir exemplo de estimador MPV?
 
 Possibilidade: explorar o exemplo 2.1?
 
