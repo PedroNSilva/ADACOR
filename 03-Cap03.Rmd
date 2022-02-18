@@ -2,6 +2,7 @@
 
 ## Estimação de totais {#estimatotais}
 <div style="text-align: justify">
+
 Devido a sua importância para os desenvolvimentos teóricos em vários dos capítulos subsequentes, alguns resultados básicos relativos à estimação de totais da população finita numa abordagem baseada no plano amostral são relembrados nesta seção. A referência básica usada foi a Seção 2.8 de @SSW1992. O leitor pode também consultar o Capítulo 3 de @Silva2020.
 
 Consideremos o problema de estimar o vetor $\mathbf{Y} = \sum_{i \in U} \mathbf{y}_i$ de totais das $Q$ variáveis da pesquisa na população, a partir de uma amostra observada $s$. Naturalmente, qualquer estimador viável do total $\mathbf{Y}$ só pode depender dos valores das variáveis de pesquisa observados na amostra, contidos em $\mathbf{y}_{i_{1}}, \ldots , \mathbf{y}_{i_{n}}$, mas não dos valores dessas variáveis para os elementos não pesquisados ($i \in U-s$).
