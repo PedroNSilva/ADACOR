@@ -28,12 +28,11 @@ knitr::include_graphics("Figuras/Figura2.1.png")
 ```{r, echo=FALSE, label=modelclass,tab.align="center"}
 suppressMessages(library(kableExtra))
 
-l1=c('Dados Amostrais (observações) ','$y_1, \\ldots, y_n$')
-l2=c('Modelo Paramétrico/ Hipóteses', '$Y_1, \\ldots , Y_n 
-     \\text{ variáveis aleatórias IID com distribuição } f(y, \\boldsymbol{\theta}) \\text{ onde } \\boldsymbol{\theta} \\in \\boldsymbol{\Theta}$')
-l3=c('Objetivo', '$\\text{Inferir sobre } \\boldsymbol{\theta} 
-     \\text{ usando as observações } y_1, \\ldots, y_n$')      
-
+l1=c('Dados Amostrais (observações) ','$y_1, \\dots, y_n$')
+l2=c('Modelo Paramétrico/ Hipóteses', '$Y_1, \\dots, Y_n 
+       \\text{ variáveis aleatórias IID com distribuição } f(y,\\boldsymbol{\\theta}) \\text{ onde } \\boldsymbol{\\theta} \\in \\boldsymbol{\\Theta}$')
+l3=c('Objetivo', '$\\text{Inferir sobre } \\boldsymbol{\\theta} 
+     \\text{ usando as observações } y_1, \\dots, y_n$')      
 tabela=as.data.frame(t(data.frame(l1,l2,l3)))
 
 names(tabela) <-NULL
@@ -175,8 +174,8 @@ suppressMessages(library(kableExtra))
 
 l1=c('Dados Amostrais','$y_{i_1}, \\ldots, y_{i_n}$')
 l2=c('População e esquema de seleção','$\\text{Selecionados de } y_1, \\dots, y_N \\text{ segundo } p(s)$')
-l3=c('Modelo para população','$Y_1, \\dots, Y_N \\text{ variáveis aleatórias IID com distribuição } f(y, \\boldsymbol{\theta}),\\text { onde } \\boldsymbol{\theta} \\in \\boldsymbol{\Theta}$')
-l4=c('Parâmetro-alvo','$\\text{Associar } \\boldsymbol{\theta} \\Leftrightarrow g\\left (Y_{1},\\ldots,Y_{N}\\right)$')
+l3=c('Modelo para população','$Y_1, \\dots, Y_N \\text{ variáveis aleatórias IID com distribuição } f(y, \\boldsymbol{\\theta}),\\text { onde } \\boldsymbol{\\theta} \\in \\boldsymbol{\\Theta}$')
+l4=c('Parâmetro-alvo','$\\text{Associar } \\boldsymbol{\\theta} \\Leftrightarrow g\\left (Y_{1},\\ldots,Y_{N}\\right)$')
 l5=c('Objetivo','$\\text{Inferir sobre }g\\left( y_{1}, \\ldots , y_{N} \\right) \\text{ partir de } y_{i_1}, \\ldots, y_{i_n} \\text{ usando } p(s)$ ')
 
 tabela=as.data.frame(t(data.frame(l1,l2,l3,l4,l5)))
