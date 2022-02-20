@@ -3,7 +3,7 @@ output:
   html_document: default
   pdf_document: default
 ---
-# Testes de Qualidade de Ajuste {#testqualajust}
+# Testes de Qualidade de Ajuste {#capC8}
 
 ## Introdução
 

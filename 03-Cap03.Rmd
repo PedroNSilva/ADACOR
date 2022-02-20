@@ -9,9 +9,10 @@ Consideremos o problema de estimar o vetor $\mathbf{Y} = \sum_{i \in U} \mathbf{
 
 Um estimador usual baseado no plano amostral para o total $\mathbf{Y}$ é o estimador de Horvitz-Thompson (ver Capítulo \@ref(refinf) deste livro e Seção 3.7 de @Silva2020), dado por:
 
-\begin{equation}
+$$
 \widehat{\mathbf{Y}}_{HT} = \sum_{i \in s} \mathbf{y}_i / \pi_{i} = \sum_{i \in s} d_i \mathbf{y}_i \,\,  (\#eq:estpa1)
-\end{equation}
+$$
+
 onde $d_i = 1/\pi_i$ é o *peso básico* da unidade $i$.
 
 Na abordagem baseada no planejamento amostral, as propriedades de uma estatística ou estimador são avaliadas com respeito a sua *distribuição de aleatorização*. Denotemos por $E_p(.)$ e $V_p(.)$ os operadores de esperança e variância referentes à distribuição de probabilidades induzida pelo planejamento amostral $p(s)$, que chamaremos daqui por diante de *esperança de aleatorização* e *variância de aleatorização*.
@@ -24,21 +25,21 @@ $$
 
 Além disto, sua variância de aleatorização é dada por
 
-\begin{equation}
+$$
 V_p \left( \mathbf{\widehat{Y}}_{HT} \right) = \sum_{i \in U} \sum_{j \in U} \left( \frac{d_i d_j}{d_{ij}} - 1 \right) \mathbf{y}_i {\mathbf{y}^\prime_j}  \,\,\,  (\#eq:estpa2)
-\end{equation}
+$$
 
 Um estimador não viciado para a variância de aleatorização de $\mathbf{ \widehat{Y}}_{HT}$ é dado por:
 
-\begin{equation}
+$$
 \widehat V_p \left( \mathbf{\widehat{Y}}_{HT} \right) =\sum_{i \in s} \sum_{j \in s} \left( {d_i d_j} - d_{ij} \right) \mathbf{y}_i {\mathbf{y}^\prime_j}  \,\,\, (\#eq:estpa3)
-\end{equation}
+$$
 
 O estimador de variância em \@ref(eq:estpa3) é um estimador não viciado da variância de aleatorização de $\mathbf{\widehat{Y}}_{HT}$, isto é 
 
-\begin{equation}
+$$
 E_p \left[ \widehat V_p \left( \mathbf{\widehat{Y}}_{HT} \right) \right] = V_p \left( \mathbf{\widehat{Y}}_{HT} \right) \,\,\, (\#eq:estpa4)
-\end{equation}
+$$
 
 desde que $\pi_{ij} > 0 \quad \forall\,\, i \neq j \in U$, como vamos supor neste livro.
 
@@ -48,59 +49,59 @@ Amostragem Aleatória Simples Sem Reposição - AAS
 
 Quando o plano amostral empregado num levantamento é amostragem aleatória simples sem reposição - AAS, as expressões apresentadas para o estimador de total, sua variância e estimadores desta variância simplificam bastante, porque as probabilidades de inclusão e os pesos básicos das unidades ficam iguais a 
 
-\begin{equation}
+$$
 \pi_i = \frac{n}{N}\,\text{ e }\, d_i = \frac{N}{n} \, \,\, \forall \,\,i \in U  \,\, (\#eq:estpa5)
-\end{equation}
+$$
 
 e 
 
-\begin{equation}
+$$
 \pi_{ij} = \frac{n(n-1)}{N(N-1)} \,\, \,\,\,\text{e} \,\,  d_{ij} = \frac{N(N-1)}{n(n-1)} \,\,\, \forall \, i \neq j \in U \,\, (\#eq:estpa6) 
-\end{equation}
+$$
 
 Essas probabilidades de inclusão e pesos básicos levam às seguintes expressões simplificadas para o caso AAS: 
 
-\begin{equation}
+$$
 \widehat{\mathbf{Y}}_{AAS} = \frac{N}{n} \sum_{i \in s} \mathbf{y}_i = N \, \overline{\mathbf{y}}  \,\, (\#eq:estpa7)
-\end{equation}
+$$
 
 onde 
 
-\begin{equation}
+$$
 \overline{\mathbf{y}} = \frac{1}{n} \sum_{i \in s} \mathbf{y}_i  \,\, (\#eq:estpa8)
-\end{equation}
+$$
 
-\begin{equation}
+$$
 V_{AAS} \left( \mathbf{\widehat{Y}}_{AAS} \right) = N^{2} \left( \frac{1}{n} - \frac{1}{N} \right) \mathbf{S}_y \,\, (\#eq:estpa9)
-\end{equation}
+$$
 
 onde
 
-\begin{equation}
+$$
 \mathbf{S}_y = \frac{1}{N-1} \sum_{i \in U} \left( \mathbf{y}_i - \overline{ \mathbf{Y}} \right) \left( \mathbf{y}_i - \overline{\mathbf{Y}} \right) ^{^{\prime }}   (\#eq:estpa10)
-\end{equation}
+$$
 
-\begin{equation}
+$$
 \overline{\mathbf{Y}} = \frac{1}{N} \sum_{i \in U} \mathbf{y}_i = \frac{1}{N} \mathbf{Y} \,\,\, (\#eq:estpa11)
-\end{equation}
+$$
 
 Sob AAS, o estimador da variância do estimador de total simplifica para:
 
-\begin{equation}
+$$
 \widehat{V}_{AAS} \left( \mathbf{\widehat{Y}}_{AAS} \right) = N^{2} \left( \frac{1}{n} - \frac{1}{N} \right) \mathbf{\widehat S}_y \,\, (\#eq:estpa12)
-\end{equation}
+$$
 
 onde
 
-\begin{equation}
+$$
 \widehat{\mathbf{S}}_y = \frac{1}{n-1} \sum_{i \in s} \left( \mathbf{y}_i - \overline{\mathbf{y}} \right) \left( \mathbf{y}_i - \overline{\mathbf{y}} \right) ^{^{\prime }} \,\,\, (\#eq:estpa13) 
-\end{equation}
+$$
 
 Vários outros estimadores de totais estão disponíveis na literatura de amostragem, porém os que são comumente usados na prática são estimadores ponderados (lineares) da forma 
 
-\begin{equation}
+$$
 \mathbf{\widehat{Y}}_w = \sum\limits_{i \in s} w_i \mathbf{y}_i  \,\,\, (\#eq:estpa14)
-\end{equation}
+$$
 
 onde $w_i$ é um peso associado à unidade $i$ da amostra ($i \in s$). 
 
@@ -220,9 +221,9 @@ Quando $\mathbf{g}(\bullet)$ é uma função não linear, podemos usar a técnic
 
 Vamos considerar a expansão de $\mathbf{g} \left( \mathbf{\widehat{Y}}_{HT} \right)$ em torno de $\mathbf{Y}$, até o termo de primeira ordem, desprezando o resto, dada por:
 
-\begin{equation}
+$$
 \mathbf{\widehat{\theta} \doteq  \widehat{\theta}}_{L} = \mathbf{g(Y) + \Delta g(Y)} \left( \mathbf{\widehat{Y}}_{HT} - \mathbf{Y} \right) \,\,\, (\#eq:estpa19)
-\end{equation}
+$$
 
 onde $\mathbf{\Delta g(Y)}$ é a matriz Jacobiana $K \times Q$ cuja $q$-ésima coluna é $\mathbf{\partial g(Y)/}\partial Y_{q}$, para $q=1,\ldots, Q$.
 
@@ -246,9 +247,9 @@ Este resultado segue porque na expressão do lado direito o único termo que tem
 
 Um estimador consistente de $V_{p} \left( \mathbf{\widehat{\theta}}\right)$ é dado por:
 
-\begin{equation}
+$$
 \widehat{V}_{p} \left( \mathbf{\widehat{\theta}} \right) = \widehat{V}_{p} \left( \mathbf{\widehat{Z}}_{HT} \right)  \,\,\,  (\#eq:estpa20)
-\end{equation}
+$$
 
 onde $\widehat{V}_{p}\left( \mathbf{\widehat{Z}}_{HT}\right)$ é dado em \@ref(eq:estpa3), onde substituímos o vetor de variáveis resposta original $\mathbf{y}_i$ pelo vetor de variáveis linearizadas $\mathbf{z}_{i} = \mathbf{\Delta g(Y)} \mathbf{y}_{i}$.
 
@@ -262,15 +263,15 @@ Até aqui, falamos da estimação de totais e de parâmetros que podem ser escri
 
 Se um parâmetro populacional de interesse $\theta_U$ é uma solução única de um sistema de equações de estimação definidas como
 
-\begin{equation}
+$$
 \sum_{i \in U} \mathbf{u_i(\theta)} = \mathbf{0}  \,\,\, (\#eq:estpa21)
-\end{equation}
+$$
 
 para uma função $\mathbf{u(\bullet)}$ conhecida, então é possível estimar o parâmetro $\theta_U$ usando o estimador $\widehat \theta$ obtido resolvendo as equações de estimação amostrais:
 
-\begin{equation}
+$$
 \sum_{i \in s} d_i \, \mathbf{u_i(\theta)} = \mathbf{0}  \,\,\, (\#eq:estpa22)
-\end{equation}
+$$
 
 O estimador $\widehat \theta$ é consistente para $\theta_U$, e adiante mostraremos como o método de Linearização de Taylor pode ser usado para estimar a sua variância. Antes, porém, vamos usar alguns exemplos para ilustrar casos particulares relevantes de como aplicar essa ideia.
 
@@ -330,17 +331,17 @@ estatísticos para cálculo de variâncias considerando o plano amostral, tais c
 
 Para descrever o método, considere um plano amostral em vários estágios, no qual $n_{h}$ unidades primárias de amostragem - UPAs foram selecionadas no estrato $h$, com $h=1, \ldots, H$. Denotemos por $\pi_{hi}$ a probabilidade de inclusão na amostra da UPA (conglomerado primário) $i$ do estrato $h$, e por $\widehat{Y}_{hi}$ um estimador não viciado do total $Y_{hi}$ da variável de pesquisa $y$ na $i$-ésima UPA do estrato $h$. Então um estimador não viciado do total $Y = \sum_{h=1}^{H} \sum_{i=1}^{N_{h}} Y_{hi}$ da variável de pesquisa $y$ na população é dado por
 
-\begin{equation}
+$$
 \widehat{Y}_{CP} = \sum_{h=1}^{H} \sum_{i=1}^{n_{h}} \widehat{Y}_{hi} / \pi _{hi} \,\,\, (\#eq:estpa23) 
-\end{equation}
+$$
 
 e um estimador não viciado da variância de aleatorização correspondente por 
 
-\begin{equation}
+$$
 \widehat{V}_{p} \left( \widehat{Y}_{CP}\right) = \sum_{h=1}^{H}\frac{n_{h}}
 {n_{h}-1} \sum_{i=1}^{n_{h}} \left( \frac{\widehat{Y}_{hi}}{\pi _{hi}} -
 \frac{\widehat{Y}_{h}}{n_{h}} \right) ^{2}  (\#eq:estpa24)
-\end{equation}
+$$
 
 onde $\widehat{Y}_{h} = \sum_{i=1}^{n_{h}} \widehat{Y}_{hi} / \pi _{hi}$ para 
 $h=1,\ldots ,H$. (Ver por exemplo, @Shah1993, página 4).
@@ -362,10 +363,10 @@ $$
 
 é também um estimador não viciado de $\theta$ e 
 
-\begin{equation}
+$$
 \widehat{V}_{G} \left( \widehat{\theta }_{G}\right) = \frac{1}{G \left(
 G-1 \right)} \sum_{g=1}^{G} \left( \widehat{\theta }_{g} - \widehat{\theta}_{G} \right)^{2}  \,\, (\#eq:estpa25)
-\end{equation}
+$$
 
 é um estimador não viciado (de replicação) da variância do estimador $\widehat{\theta}_{G}$.
 
@@ -384,11 +385,11 @@ Uma pesquisa importante e de grande porte em que esta ideia é aplicada é a pes
 
 Além da modificação da interpretação das réplicas no caso de serem formadas a posteriori, é comum também nesse caso empregar um estimador para o parâmetro $\theta$ baseado na amostra completa (denotado $\widehat{\theta}$), e um estimador de variância mais conservador que o estimador $\widehat{V}_{G}\left( \widehat{\theta }_{G}\right)$ anteriormente apresentado, dado por 
 
-\begin{equation}
+$$
 \widehat{V}_{G}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
 }\sum_{g=1}^{G}\left( \widehat{\theta }_{g}-\widehat{\theta }\right) ^{2} \,\,
 (\#eq:estpa26)
-\end{equation}
+$$
 
 Um exemplo de aplicação desta técnica pode ser encontrado na forma recomendada para estimação de variâncias a partir das Amostras de Uso Público do Censo Demográfico Brasileiro de 80 (ver @IBGE1985).
 
@@ -403,18 +404,18 @@ onde $\widehat{\theta }_{g}$ é um estimador de $\theta$ obtido da amostra após
 
 A estimação da variância por esse método pode então ser feita de duas maneiras alternativas, usando um dos estimadores dados por 
 
-\begin{equation}
+$$
 \widehat{V}_{J1}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
 }\sum_{g=1}^{G}\left( \widehat{\theta }_{\left( g\right) }-\widehat{\theta }
 _{J}\right) ^{2}  (\#eq:estpa27)
-\end{equation}
+$$
 ou 
 
-\begin{equation}
+$$
 \widehat{V}_{J2}\left( \widehat{\theta }\right) =\frac{1}{G\left( G-1\right) 
 }\sum_{g=1}^{G}\left( \widehat{\theta }_{\left( g\right) }-\widehat{\theta }
 \right) ^{2} \,\,\, (\#eq:estpa28)
-\end{equation}
+$$
 
 onde $\widehat{\theta }_{J} = \frac{1}{G} \sum_{g=1}^{G} \widehat{\theta }_{\left( g\right)}$ é um estimador pontual *jackknife* para $\theta$, alternativo ao estimador da amostra inteira $\hat{\theta}$.
 
@@ -438,9 +439,9 @@ O outro método de replicação que vamos considerar é uma variante do método 
 
 3) Defina pesos *bootstrap* para as unidades da amostra selecionada em (1) usando:
 
-\begin{equation}
+$$
  w_{hik}^* = \left[ 1 - \left( \frac{m_h} {n_h - 1} \right)^{1/2} +  \left( \frac{m_h} {n_h - 1} \right)^{1/2} \times \frac{n_h} {m_h} \times m_{hi}^* \right] \times w_{hik}  \,\,\, (\#eq:estpa29)
-\end{equation}
+$$
 
 onde $w_{hik}$ é o peso da unidade $k$ da UPA $i$ do estrato $h$. Note que quando uma UPA $i$ não é selecionada, sua contagem $m_{hi}^*$ é igual a zero, e o terceiro termo dentro do colchete é nulo.
 
@@ -450,10 +451,10 @@ onde $w_{hik}$ é o peso da unidade $k$ da UPA $i$ do estrato $h$. Note que quan
 
 6) Estime a variância do estimador $\widehat \theta$ com:
 
-\begin{equation}
+$$
 \widehat{V}_{B}\left( \widehat{\theta }\right) = \frac{1}{B} \sum_{b=1}^{B} \left( \widehat \theta _b - \widehat{\theta}
 \right) ^{2} \,\,\, (\#eq:estpa30)
-\end{equation}
+$$
 
 A Pesquisa Nacional por Amostra de Domicílios Contínua - PNAD Contínua do IBGE passou a usar este método *bootstrap* para estimação da precisão dos indicadores que divulga a partir do terceiro trimestre de 2021, ver @PNADC2021.
 
