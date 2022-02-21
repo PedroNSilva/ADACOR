@@ -38,6 +38,14 @@ MINITAB          Minitab Statistical Software
 
 MPV              Método de Máxima Pseudo Verossimilhança 
 
+MQO              Mínimos Quadrados Ordinários
+
+MQP              Mínimos Quadrados Ponderados  
+
+MV               Método de Máxima Verossimilhança
+
+MPV              Método de Máxima Pseudo-Verossimilhança 
+
 NIC.br           Núcleo de Informação e Coordenação do Ponto BR
 
 PME              Pesquisa Mensal de Emprego
@@ -50,7 +58,9 @@ PO               Pessoal ocupado em 31/12/1994
 
 PPT              Probabilidades Proporcionais ao Tamanho
 
-QDPs             Quantidades Descritivas Populacionais 
+QDP              Quantidade Descritiva Populacional 
+
+QDPC             Quantidade Descritiva Populacional Correspondente
 
 R                Software Estatístico R 
 
@@ -58,7 +68,7 @@ REC              Receita no ano de 1994
 
 PO               Pessoal Ocupado em 31/12/1994
 
-RMs              Regiões Metropolitanas 
+RM               Região Metropolitana 
 
 SAL              Salários pagos no ano de 1994 
 
@@ -81,6 +91,8 @@ TIC              Tecnologias de Informação e Comunicação
 TICDOM           Pesquisa sobre o uso das Tecnologias de Informação e Comunicação nos domicílios brasileiros   
 
 TRI              Teoria da Resposta ao Item 
+
+UF               Unidade da Federação 
 
 UPA              Unidade Primária de Amostragem 
 
