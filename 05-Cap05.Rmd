@@ -226,9 +226,11 @@ Assim, um procedimento padrão para ajustar um modelo paramétrico regular $f ( 
 1.  Resolver 
 
 $$
-\sum\limits_{i\in s} w_i \, \mathbf{u}_i ( \boldsymbol{\theta} ) = \mathbf{0} \quad (\#eq:eqC5N13)
+\sum \limits_{i\in s} w_i \, \mathbf{u}_i ( \boldsymbol{\theta} ) = \mathbf{0} \quad (\#eq:eqC5N13)
 $$ 
+
 e calcular o estimador pontual $\boldsymbol{\widehat{\theta}}_{MPV}$ do parâmetro $\boldsymbol{\theta}$ no modelo $f ( \mathbf{y; \boldsymbol{\theta}} )$ ou do pseudo-parâmetro $\boldsymbol{\theta}_U$ correspondente.
+
 
 2.  Calcular a matriz de variância estimada 
 
@@ -241,11 +243,39 @@ Quando os pesos básicos tipo Horvitz-Thompson de um plano amostral probabilíst
 $$
 \widehat{V}_p \left[ \sum \limits_{i \in s} d_i \, \mathbf{u}_i \left( \boldsymbol{\widehat{\theta}}_{HT} \right) \right] = \sum \limits_{i \in s} \sum \limits_{j \in s} \left( d_i d_j - d_{ij} \right) \mathbf{u}_i \left( \boldsymbol{\widehat{\theta}}_{HT} \right) \mathbf{u}_j \left( \boldsymbol{\widehat{\theta}}_{HT} \right) \quad (\#eq:eqC5N15)
 $$
+
 onde $d_{ij} = 1 / \pi_{ij}$ e 
 
 $$
 \widehat{J} \left( \boldsymbol{\widehat{\theta}}_{HT} \right) = \left. \frac{\partial \mathbf{\widehat{T}} \left( \boldsymbol{\theta} \right)} {\partial \boldsymbol{\theta}} \right| _{\boldsymbol{\theta} = \boldsymbol{\widehat{\theta}}_{HT}} = \sum \limits_{i \in s} d_i \left. \frac{\partial \mathbf{u}_i ( \boldsymbol{\theta} )} {\partial \boldsymbol{\theta}} \right| _{\boldsymbol{\theta} = \boldsymbol{\widehat{\theta}}_{HT}} \quad (\#eq:eqC5N16)
 $$
+Quando pesos calibrados $w_i = d_i g_i$ são usados na estimação pontual dos parâmetros, é necessário ajustar o estimador de variância definido em \@ref(eq:eqC5N15). Supondo que um vetor de variáveis auxiliares $\mathbf{x}$ está disponível para uso no processo de calibração dos pesos, e seguindo @Deville1992, os fatores de calibração $g_i$ são calculados minimizando a função
+
+$$
+G = \sum _\limits{i \in s} g \left( d_i, w_i \right)
+$$
+sujeito à restrição
+
+$$
+\sum _\limits{i \in s} w_i \, \mathbf{x}_i = \sum _\limits{i \in U} \mathbf{x}_i
+$$
+
+onde $g(.)$ é uma função medindo a distância entre os pesos básicos $d_i$ e os pesos calibrados $w_i = d_i g_i$. 
+
+@Deville1992 apresentam uma variedade de propostas para tais funções de distância que geram distintos tipos de pesos calibrados. Sob as condições de regularidade enunciadas, os estimadores de calibração para totais são consistentes e normalmente distribuídos para grandes amostras. Veja o Capítulo 13 de @Silva2020 para uma discussão mais detalhada e acessível sobre estimadores de calibração.
+
+Se pesos de calibração forem usados, @Silva1996 mostrou que o estimador de variância adequado para o miolo da expressão \@ref(eq:eqC5N14) é dado por:
+
+$$
+\widehat{V}_p \left[ \sum \limits_{i \in s} d_i g_i \, \mathbf{u}_i \left( \boldsymbol{\widehat{\theta}}_C \right) \right] = \sum \limits_{i \in s} \sum \limits_{j \in s} \left( d_i d_j - d_{ij} \right) g_i \, \left[ \mathbf{u}_i \left( \boldsymbol{\widehat{\theta}}_C \right) - \mathbf{x_i}^{\prime} \widehat{\mathbf{B}} \right] g_j \, \left[ \mathbf{u}_j \left( \boldsymbol{\widehat{\theta}}_C \right) - \mathbf{x_j}^{\prime} \widehat{\mathbf{B}} \right] \quad (\#eq:eqC5N17)
+$$
+
+onde $\boldsymbol{\widehat{\theta}}_C$ é a solução de \@ref(eq:eqC5N13) quando os pesos de calibração $w_i = d_i g_i$ são usados, e 
+
+$$
+\widehat{\mathbf{B}} = \left( \sum \limits_{i \in s} d_i \, \mathbf{x_i} \, \mathbf{x_i}^{\prime} \right)^{-1} \left( \sum \limits_{i \in s} d_i \, \mathbf{x_i} \, y_i \right)
+$$
+
 
 3. Usar $\boldsymbol{\widehat{\theta}}_{HT}$ e $\widehat{V}_p \left( \boldsymbol{\widehat{\theta}}_{HT} \right)$ para calcular regiões ou intervalos de confiança e/ou estatísticas de teste baseadas na distribuição normal e utilizá-las para fazer inferência sobre os componentes de $\boldsymbol{\theta}$.
 
@@ -259,33 +289,10 @@ No Método de Máxima Pseudo-Verossimilhança, os pesos amostrais são incorpora
 O plano amostral é também incorporado no método de estimação MPV através da expressão para a variância do total dos escores sob o plano amostral \@ref(eq:eqC5N15), onde as propriedades do plano amostral estão resumidas nas probabilidades de inclusão de primeira e segunda ordem, por sua vez incorporadas através dos pesos $d_i$ e $d_{ij}$ respectivamente.
 ```
 
+
 ```{remark, label= "obsC5N3"}
 Sob probabilidades de seleção iguais, os pesos $d_i$ serão constantes e o estimador pontual $\widehat{\theta}_{HT}$ será idêntico ao estimador de Máxima Verossimilhança - MV ordinário para uma amostra de observações IID com distribuição $f \left( \mathbf{y}; \boldsymbol{\theta} \right)$. Entretanto, o mesmo não ocorre em se tratando da variância do estimador $\widehat{\theta}_{HT}$, que difere da variância sob o modelo do estimador usual de MV. O estimador de variância aqui descrito será consistente para a variância do estimador sob planos amostrais complexos, enquanto o estimador de variância ingênuo correspondente ao método MV será geralmente enviesado. \medskip 
 ```
-
-Quando pesos calibrados $w_i = d_i g_i$ são usados na estimação pontual dos parâmetros, é necessário ajustar o estimador de variância definido em \@ref(eq:eqC5N15). Supondo que um vetor de variáveis auxiliares $\mathbf{x}$ está disponível para uso no processo de calibração dos pesos, e seguindo @Deville1992, os fatores de calibração $g_i$ são calculados minimizando a função
-
-$$
-G = \sum _\limits{i \in s} g \left( d_i, w_i \right)
-$$
-sujeito à restrição
-
-$$
-\sum _\limits{i \in s} w_i \, \mathbf{x}_i = \sum _\limits{i \in U} \mathbf{x}_i
-$$
-onde $g(.)$ é uma função medindo a distância entre os pesos básicos $d_i$ e os pesos calibrados $w_i = d_i g_i$. @Deville1992 apresenta uma variedade de propostas para tais funções de distância que geram distintos tipos de pesos calibrados. Sob as condições de regularidade enunciadas, os estimadores de calibração para totais são consistentes e normalmente distribuídos para grandes amostras. Veja o Capítulo 13 de @Silva2020 para uma discussão mais detalhada e acessível sobre estimadores de calibração.
-
-Se pesos de calibração forem usados, @Silva1996 mostrou que o estimador de variância adequado para o miolo da expressão \@ref(eq:eqC5N14) é dado por:
-
-$$
-\widehat{V}_p \left[ \sum \limits_{i \in s} d_i g_i \, \mathbf{u}_i \left( \boldsymbol{\widehat{\theta}}_C \right) \right] = \sum \limits_{i \in s} \sum \limits_{j \in s} \left( d_i d_j - d_{ij} \right) g_i \, \left[ \mathbf{u}_i \left( \boldsymbol{\widehat{\theta}}_C \right) - \mathbf{x_i}^{\prime} \widehat{\mathbf{B}} \right] g_j \, \left[ \mathbf{u}_j \left( \boldsymbol{\widehat{\theta}}_C \right) - \mathbf{x_j}^{\prime} \widehat{\mathbf{B}} \right] \quad (\#eq:eqC5N17)
-$$
-
-onde $\boldsymbol{\widehat{\theta}}_C$ é a solução de \@ref(eq:eqC5N13) quando os pesos de calibração $w_i = d_i g_i$ são usados, e 
-
-$$
-\widehat{\mathbf{B}} = \left( \sum \limits_{i \in s} d_i \, \mathbf{x_i} \, \mathbf{x_i}^{\prime} \right)^{-1} \left( \sum \limits_{i \in s} d_i \, \mathbf{x_i} \, y_i \right)
-$$
 
 
 **Vantagens do procedimento de MPV**
