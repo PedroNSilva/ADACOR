@@ -1,0 +1,435 @@
+---
+output:
+  html_document: default
+editor_options: 
+  markdown: 
+    wrap: 80
+---
+
+# Modelo de Regressão Logística {#modlogist}
+<div style="text-align: justify">
+
+No modelo de regressão logística, a variável resposta $y$ é
+binária, isto é, assume os valores $0$ e $1$. Considerando um vetor $\mathbf{z}$ de variáveis explanatórias tal como o empregado no
+modelo de regressão linear discutido na Seção \@ref(modlinear), o
+modelo de superpopulação é dado por 
+\begin{equation}
+f(y_{i}|\mathbf{z}_{i},\mathbf{\beta )=}\left[ p\left( \mathbf{z}_{i}^{\prime }\mathbf{\beta }\right) \right] ^{y_{i}}\left[ 1-p\left( 
+\mathbf{z}_{i}^{\prime }\mathbf{\beta }\right) \right] ^{1-y_{i}},
+(\#eq:norm25)
+\end{equation}
+onde, 
+
+\[
+p\left( \mathbf{z}_{i}^{\prime }\mathbf{\beta }\right) =P\left( \left.
+Y_{i}=1\right| \mathbf{Z}_{i}=\mathbf{z}_{i}\right) =\exp \left( \mathbf{z}_{i}^{\prime }\mathbf{\beta }\right) /\left[ 1+\exp \left( \mathbf{z}
+_{i}^{\prime }\mathbf{\beta }\right) \right] \;. 
+\]
+
+A função escore de $\mathbf{\beta }$ é
+
+\begin{equation}
+\mathbf{u}_{i}\left( \mathbf{\beta }\right) =\partial \log (y_{i}|\mathbf{z}_{i},\mathbf{\beta )/\partial \beta =}\left[ y_{i}-p\left( \mathbf{z}
+_{i}^{\prime }\mathbf{\beta }\right) \right] \mathbf{z}_{i}  (\#eq:norm25a)
+\end{equation}
+e portanto a equação de verossimilhança do censo correspondente
+é dada por
+
+\begin{equation}
+\sum\nolimits_{i\in U}\mathbf{u}_{i}\left( \mathbf{\beta }\right)
+=\sum\nolimits_{i\in U}\left[ y_{i}-p\left( \mathbf{z}_{i}^{\prime }\mathbf{
+\beta }\right) \right] \mathbf{z}_{i}=\mathbf{0\;.}  (\#eq:norm26)
+\end{equation}
+
+O estimador de MPV do vetor de coeficientes $\mathbf{\beta }$ no modelo \@ref(eq:norm25) é a solução da equação
+
+\begin{equation}
+\sum\nolimits_{i\in s}w_{i}\mathbf{u}_{i}\left( \mathbf{\beta }\right)
+=\sum\nolimits_{i\in s}w_{i}\left[ y_{i}-p\left( \mathbf{z}_{i}^{\prime }
+\mathbf{\beta }\right) \right] \mathbf{z}_{i}=\mathbf{0},
+(\#eq:norm27)
+\end{equation}
+onde $w_{i}$ é o peso da $i$-ésima observação amostral.
+
+A matriz de covariância do estimador de MPV de $\mathbf{\beta}$ pode
+ser obtida conforme indicado na Seção \@ref(modpar3), bastando
+substituir os valores dos escores 
+$\mathbf{u}_{i}\left( \mathbf{\beta}\right) =\left[ y_{i}-p\left(\mathbf{z}_{i}^{\prime }\mathbf{\beta }\right)\right] \mathbf{z}_{i}$ e do jacobiano correspondentes. Para maiores
+detalhes, o leitor interessado pode consultar Binder(1983), que aborda o
+problema da estimação da matriz de covariância dos estimadores
+de MPV na família de modelos lineares generalizados, da qual o modelo de
+regressão logística é caso particular.
+
+Vale observar que, tal como no caso da modelagem clássica, a obtenção dos estimadores de MPV dos parâmetros no modelo de regressão
+logística depende da solução por métodos numéricos de um
+sistema de equações. Portanto é importante dispor de um pacote
+computacional adequado para efetuar os cálculos. Hoje em dia já
+estão disponíveis vários pacotes com essa funcionalidade,
+conforme se discute no Capítulo \@ref(pacotes).
+
+```{example,label="pnad6"}
+Análise do perfil sócio-econômico das pessoas
+ocupadas no setor informal da economia na área urbana do Rio de Janeiro 
+```
+
+Utilizando dados do Suplemento Trabalho da Pesquisa Nacional por Amostra
+de Domicílios (**PNAD**) de 90, Leote(1996) analisou o perfil
+sócio-econômico das pessoas ocupadas no setor informal da economia
+na área urbana do Rio de Janeiro.
+
+Os dados utilizados são relativos a pessoas que:
+
+
+-  moravam em domicílios urbanos do estado do Rio de Janeiro;
+
+-  trabalhavam em atividades mercantis (não foram incluídos
+trabalhadores domésticos);
+
+-  na semana da pesquisa estavam trabalhando ou não estavam
+trabalhando por estarem de férias, licença, etc., mas tinham
+trabalho;
+
+-  desenvolviam atividades não agrícolas.
+
+
+As pessoas que trabalhavam em locais com até cinco pessoas ocupadas
+foram classificadas no setor informal, independente da posição de
+ocupação delas, enquanto as que trabalhavam em locais com mais de
+cinco pessoas ocupadas foram classificadas no setor formal. O trabalho
+refere-se ao trabalho principal. Para a variável renda considerou-se a
+soma dos rendimentos de todos os trabalhos.
+
+Foi considerada uma amostra de $6.507$ pessoas (após a exclusão de $9$ registros considerados atípicos), classificadas de acordo com as
+variáveis descritas na Tabela \@ref(tab:varexp), todas tratadas como
+fatores na análise. A variável ht foi considerada como a soma de
+horas trabalhadas em todos os trabalhos, por semana. A variável re
+compreende a renda média mensal de todos os trabalhos, em salários
+mínimos.
+
+```{r, echo=FALSE, label=varexp}
+suppressMessages(library(kableExtra))
+
+l1= c('Sexo (sx)','sx(1)','Homens')
+l2= c('$~$','sx(2)','Mulheres')
+l3= c('Anos de Estudo (ae)','ae(1)','Até 4')
+l4= c('$~$','ae(2)','De 5 a 8')
+l5= c('$~$','ae(3)','9 ou mais')
+l6= c('Horas trabalhadas (ht)','ht(1)','Menos de 40')
+l7= c('$~$','ht(2)','De 40 a 48')
+l8= c('$~$','ht(3)','Mais de 48')
+l9= c('Idade em anos completos (id)','id(1)','Até 17')
+l10=c('$~$','id(2)','De 18 a 25')
+l11=c('$~$','id(3)','De 26 a 49')
+l12=c('$~$','id(4)','50 ou mais')
+l13=c('Rendimento Médio Mensal (re)','re(1)','Menos de 1')
+l14=c('$~$','re(2)','De 1 a 5')
+l15=c('$~$','re(3)','Mais de 5')
+
+tabela=as.data.frame(t(data.frame(l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15)))
+
+names(tabela) <-c( 'Fatores','Níveis','Descrição dos níveis')
+
+knitr::kable(tabela,align= "lcl",format.args= list(big.mark = '.',dec=','),escape = F, booktabs=T,
+caption= "$\\text{Descrição das variáveis explicativas}$", row.names=FALSE)%>% 
+kable_styling(full_width = F,latex_options = 'HOLD_position')
+```
+
+Os fatores considerados foram tomados como explicativos e a variável
+resposta foi o indicador de pertinência ao setor informal da
+economia. Foi ajustado um modelo logístico (Agresti, 1990) para
+explicar a probabilidade de uma pessoa pertencer ao setor informal da
+economia.
+
+Para a seleção do modelo foi usada a função *glm* do **S-Plus**, aplicada aos dados tabelados. O modelo final selecionado
+foi escolhido passo a passo, incluindo em cada passo as interações
+que produziam maior decréscimo do desvio residual, considerando a perda
+de graus de liberdade. O modelo selecionado foi
+
+\begin{eqnarray}
+\log \left( \frac{p_{ijklm}}{1-p_{ijklm}}\right) &=&\mu +\beta
+_{i}^{sx}+\beta _{j}^{ae}+\beta _{k}^{ht}+\beta _{l}^{id}+\beta _{m}^{re}
+(\#eq:norm28) \\
+&&+\beta _{ij}^{sx.id}+\beta _{ik}^{sx.ht}+\beta _{jk}^{ae.ht}+\beta
+_{kl}^{ht.id}+\beta _{km}^{ht.re},  \nonumber
+\end{eqnarray}
+onde $p_{ijklm}$ é a probabilidade de pertencer ao setor informal
+correspondente à combinação de níveis das variáveis
+explicativas, sendo i=1, 2 o nível de sx; j=1, 2, 3 o nível de ae;
+k=1, 2, 3 o nível de ht; l=1, 2, 3, 4 o nível de id e m=1, 2, 3 o
+nível de re.
+
+Os efeitos foram adicionados sequencialmente na ordem da Tabela \@ref(tab:varexp). Depois de introduzidos os efeitos principais, as interações
+de dois fatores foram introduzidas na ordem definida pela 
+*função step do S-Plus*.
+
+O $p$valor do teste de nulidade das interações não incluídas
+no modelo é 0,0515, aceitando-se a hipótese de nulidade destes
+efeitos ao nível $\alpha =0,05$. O modelo obtido difere do selecionado
+em Leote(1996) só pela inclusão de mais um efeito, referente à
+interação ae:ht.
+
+Uma descrição detalhada do plano amostral da PNAD 90 foi apresentada
+no Exemplo \@ref(exm:pnad). Como se pode observar dessa descrição, o
+plano amostral da PNAD apresenta todos os aspectos de um plano amostral
+complexo, incluindo estratificação (geográfica), seleção
+de unidades primárias (municípios, ou setores nos municípios
+auto-representativos) ou secundárias (setores nos municípios não
+auto-representativos) com probabilidades desiguais, conglomeração
+(de domicílios em setores, e de pessoas nos domicílios) e seleção sistemática sem reposição de unidades. Nesse caso, fica
+difícil admitir a priori com confiança as hipóteses usuais de
+modelagem das observações amostrais como IID. Por esse motivo foram
+considerados métodos alternativos de modelagem e ajuste.
+
+Apresentamos a seguir as estimativas dos efeitos principais e interações do modelo selecionado e seus respectivos desvios padrões,
+calculadas pela função *svyglm()* da library *survey*, @R-survey. 
+
+As estimativas calculadas pela função *svyglm* são feitas pelo 
+*Método de Máxima Pseudo-Verossimilhança*, resolvendo a equação \@ref(eq:norm27). As estimativas dos desvios padrões são
+obtidas das variâncias calculadas pelo método de linearização descrito na Seção \@ref(modpar3), equação \@ref(eq:modpar5),
+considerando os escores tal como apresentados na equação \@ref(eq:norm25a). Para esses cálculos, os estimadores de variância considerados
+levaram em conta os pesos das observações, mas utilizaram uma
+aproximação que consiste em considerar que as unidades primárias
+de amostragem foram selecionadas com reposição, conforme descrito na Seção .
+
+
+```{r logit, echo=FALSE, warning=FALSE, message=FALSE}
+suppressMessages(library(kableExtra))
+library(survey)
+require(anamco) # carrega dados
+# transforma variáveis sx, id, ae, ht e re em fatores
+# Fixa último nível como referência
+pnadrj90$sx<-as.factor(pnadrj90$sx)
+pnadrj90$sx<-relevel(pnadrj90$sx,ref="2")
+pnadrj90$id<-as.factor(pnadrj90$id)
+pnadrj90$id<-relevel(pnadrj90$id,ref="4")
+pnadrj90$ae<-as.factor(pnadrj90$ae)
+pnadrj90$ae<-relevel(pnadrj90$ae,ref="3")
+pnadrj90$ht<-as.factor(pnadrj90$ht)
+pnadrj90$ht<-relevel(pnadrj90$ht,ref="3")
+pnadrj90$re<-as.factor(pnadrj90$re)
+pnadrj90$re<-relevel(pnadrj90$re,ref="3")
+##transformar variável de resposta para 0,1:
+pnadrj90$informal<-ifelse(pnadrj90$informal==1,1,0)
+# cria objeto de desenho a partir do data frame pnadrj90
+pnad.des<-svydesign(id=~psu,strata=~stra,weights=~pesopes,data=pnadrj90,nest=TRUE)
+# ajusta modelo de regressão logística
+inf.logit<-svyglm(informal~sx+ae+ht+id+re+sx*id+sx*ht+ae*ht+ht*id+ht*re,
+  design=pnad.des,family=quasibinomial())
+
+tabela<-summary(inf.logit)$coefficients
+names(tabela) <-c('Fator', 'Estimativa','Erro Padrão','t valor','P(>|t|)')
+
+knitr::kable(tabela,align= "rrrrr",format.args= list(big.mark = '.',dec=','),escape = F, booktabs=T,digits=3,
+caption= "$\\text{Estmativas dos efeitos e respectivos erros padrões obtidos pela library survey do R}$")%>%
+kable_styling(full_width = F,latex_options = 'HOLD_position')
+```
+
+Na Tabela \@ref(tab:testmodlogit) são apresentadas as probabilidades de
+significância dos testes de nulidade dos efeitos do modelo. Todos os
+efeitos incluídos no modelo são significativos, nos níveis
+usuais de significância. A **PROC LOGISTIC** do pacote 
+**SUDAAN** não inclui testes para os efeitos principais, por não ser
+possível separar tais efeitos das interações. A coluna de $p$
+valores da Tabela \@ref(tab:testmodlogit), obtida pela função *svyglm()* do pacote *survey*,
+utiliza a estatística de *Wald* baseada no plano amostral com correção. 
+
+Os testes da Tabela \@ref(tab:testmodlogit) indicam a significância de todas as
+interações de 2 fatores que entraram no modelo selecionado. O teste
+de qualidade global de ajuste, na primeira linha da Tabela \@ref(tab:testmodlogit), indica a necessidade de serem introduzidas novas interações.
+
+
+```{r testmodlogit, echo=FALSE}
+# testa nulidade da interação ht:re
+testa_ht_re <- regTermTest(inf.logit,"ht:re")
+# testa nulidade da interação ht:id
+testa_ht_id <- regTermTest(inf.logit,"ht:id")
+# testa nulidade da interação sx:id
+testa_sx_id <- regTermTest(inf.logit,"sx:id")
+# testa nulidade da interação sx:ht
+testa_sx_ht <- regTermTest(inf.logit,"sx:ht")
+# testa nulidade da interação ae:ht
+testa_ae_ht <- regTermTest(inf.logit,"ae:ht")
+# organiza resultados
+res.test <- data.frame(
+ Contraste = c(testa_ht_re$test.terms,testa_ht_id$test.terms,testa_sx_id$test.terms,
+testa_sx_ht$test.terms,testa_ae_ht$test.terms ),
+  gl_num = c(testa_ht_re$df,testa_ht_id$df,testa_sx_id$df,
+testa_sx_ht$df,testa_ae_ht$df),
+  gl_den = c(testa_ht_re$ddf,testa_ht_id$ddf,testa_sx_id$ddf,
+testa_sx_ht$ddf,testa_ae_ht$ddf),
+  Estatística_F= c(testa_ht_re$Ftest,testa_ht_id$Ftest,testa_sx_id$Ftest,
+testa_sx_ht$Ftest,testa_ae_ht$Ftest),
+  valor_p = c(testa_ht_re$p,testa_ht_id$p,testa_sx_id$p,
+testa_sx_ht$p,testa_ae_ht$p)
+)
+knitr::kable(res.test, booktabs=TRUE, digits=c(0,0,0,3,3),
+caption="Testes de hipóteses de Wald de nulidade dos efeitos do modelo"  
+  )
+
+```
+
+
+Para comparação, apresentamos na Tabela \@ref(tab:razvant) algumas
+estimativas de razões de vantagens, relevantes na análise,
+calculadas pela função *svyglm()* do pacote *survey* e, na 
+Tabela \@ref(tab:icvant) os correspondentes intervalos de confiança de $95\%$. Na
+construção destes intervalos foi necessário utilizar estimativas
+pontuais dos efeitos bem como a matriz de covariância estimada dos
+estimadores dos efeitos do modelo. Deste modo, estes intervalos sumarizam,
+ao mesmo tempo, discrepâncias existentes tanto nas estimativas pontuais
+dos efeitos como nas variâncias e covariâncias das estimativas.
+
+
+```{r razvant, echo=FALSE}
+est_coef <- coef(inf.logit)
+one <- rep(0, length(coef(inf.logit)))
+names(one)<- names(coef(inf.logit))
+# razão de vantagem quando ht=1 e ae passa de 1 para 2
+raz112<- one
+raz112["ae2"]<-1; raz112["ae1"]<--1; raz112["ae2:ht1"]<- 1; raz112["ae1:ht1"]<- -1
+ht1_ae1_ae2 <- exp(sum(raz112*coef(inf.logit)))
+# razão de vantagem quando ht=1 e ae passa de 2 para 3
+raz123 <- one
+raz123["ae2"]<- -1;  raz123["ae2:ht1"]<- -1
+ht1_ae2_ae3 <- exp(sum(raz123*coef(inf.logit)))
+# razão de vantagem quando ht=2 e ae passa de 1 para 2
+raz212 <- one
+raz212["ae2"]<- 1;raz212["ae1"]<- -1;   raz212["ae2:ht2"]<- 1; raz212["ae1:ht2"]<- -1
+ht2_ae1_ae2 <- exp(sum(raz212*coef(inf.logit)))
+# razão de vantagem quando ht=2 e ae passa de 2 para 3
+raz223 <- one
+raz223["ae2"]<- -1;  raz223["ae2:ht2"]<- -1
+ht2_ae2_ae3 <- exp(sum(raz223*coef(inf.logit)))
+# ht=3 ae de 1 para 2
+raz312 <- one
+raz312["ae2"]<- 1;  raz312["ae1"]<- -1
+ht3_ae1_ae2 <- exp(sum(raz312*coef(inf.logit)))
+# razão de vantagem quando ht=3 e ae passa de 2 para 3
+raz323 <- one
+raz323["ae2"]<- -1  
+ht3_ae2_ae3 <- exp(sum(raz323*coef(inf.logit)))
+
+# resumo de resultados
+raz_vant <- data.frame (ht= c(1,1,2,2,3,3), 
+  varia_ae=c("1 para 2", "2 para 3", "1 para 2", "2 para 3", "1 para 2","2 para 3"),
+  raz_vantagem = c(ht1_ae1_ae2,ht1_ae2_ae3,ht2_ae1_ae2,ht2_ae2_ae3,ht3_ae1_ae2, ht3_ae2_ae3 )
+  )
+knitr::kable(raz_vant, booktabs=TRUE, digits=c(0,0,3),
+ caption="Estimativas das razões de vantagens, variando-se os níveis de ae para níveis fixos
+  de ht" )
+```
+
+
+
+```{r icvant, echo=FALSE}
+# I.C. de 95% para razão de vantagem raz112
+var_raz112 <- matrix(raz112, nrow=1)%*% vcov(inf.logit)%*%matrix(raz112, ncol=1)
+ic_raz112 <- exp(sum(raz112*coef(inf.logit))*c(1,1)+1.96* as.vector(sqrt(var_raz112))*c(-1,1))
+names(ic_raz112)<- NULL
+
+# I.C. de 95% para razão de vantagem raz123
+var_raz123 <- matrix(raz123, nrow=1)%*% vcov(inf.logit)%*%matrix(raz123, ncol=1)
+ic_raz123 <- exp(sum(raz123*coef(inf.logit))*c(1,1)+1.96* as.vector(sqrt(var_raz123))*c(-1,1))
+names(ic_raz123)<- NULL
+
+# I.C. de 95% para razão de vantagem raz212
+var_raz212 <- matrix(raz212, nrow=1)%*% vcov(inf.logit)%*%matrix(raz212, ncol=1)
+ic_raz212 <- exp(sum(raz212*coef(inf.logit))*c(1,1)+1.96* as.vector(sqrt(var_raz212))*c(-1,1))
+names(ic_raz212)<- NULL 
+
+# I.C. de 95% para razão de vantagem raz223
+var_raz223 <- matrix(raz223, nrow=1)%*% vcov(inf.logit)%*%matrix(raz223, ncol=1)
+ic_raz223 <- exp(sum(raz223*coef(inf.logit))*c(1,1)+1.96* as.vector(sqrt(var_raz223))*c(-1,1))
+names(ic_raz223)<- NULL
+
+# I.C. de 95% para razão de vantagem raz312
+var_raz312 <- matrix(raz312, nrow=1)%*% vcov(inf.logit)%*%matrix(raz312, ncol=1)
+ic_raz312 <- exp(sum(raz223*coef(inf.logit))*c(1,1)+1.96*as.vector(sqrt(var_raz312))*c(-1,1))
+names(ic_raz312)<- NULL
+
+# I.C. de 95% para razão de vantagem raz323
+var_raz323 <- matrix(raz323, nrow=1)%*% vcov(inf.logit)%*%matrix(raz323, ncol=1)
+ic_raz323 <- exp(sum(raz323*coef(inf.logit))*c(1,1)+1.96* as.vector(sqrt(var_raz323))*c(-1,1))
+names(ic_raz323)<- NULL
+
+# resumo de resultados:
+ic_frame <- data.frame(
+  ht= c(1,1,2,2,3,3),
+  varia_ae=c("1 para 2", "2 para 3", "1 para 2", "2 para 3", "1 para 2","2 para 3"),
+  LIC <- c(ic_raz112[1],ic_raz123[1], ic_raz212[1], ic_raz223[1], ic_raz312[1], ic_raz323[1]), 
+  LSC <- c(ic_raz112[2],ic_raz123[2], ic_raz212[2], ic_raz223[2], ic_raz312[2], ic_raz323[2]) 
+  )
+names(ic_frame)<- c("ht", "varia_ae","LIC", "LSC")
+knitr::kable(ic_frame, booktabs=TRUE, digits=c(0,0,3,3),
+ caption="Intervalos de confiança de 95% para razões de vantagens, variando-se os níveis de ae para níveis fixos
+  de ht" )
+
+```
+
+
+Além dos ajustes aqui comparados, foram feitos (embora não
+apresentados) os seguintes ajustes com a utilização do 
+__S-Plus__:
+
+1) dados individuais (resposta 0-1) considerando os pesos; 
+
+2) dados da tabela estimada considerando os pesos e 
+
+3) dados individuais com pesos normalizados. 
+
+Em todas estas análises, como esperado, as estimativas
+pontuais dos efeitos coincidiram com as obtidas pela __PROC LOGISTIC__
+do pacote __SUDAAN__. Pode-se notar que, neste exemplo, há estreita
+concordância entre as estimativas pontuais obtidas pelos dois pacotes.
+
+A concordância das estimativas dos coeficientes pode ser explicada, em
+parte, pela pequena variabilidade dos pesos das unidades, tal como se pode
+verificar na Tabela \@ref(tab:pesofreq), que apresenta a distribuição de
+frequências dos pesos.
+
+
+```{r,pesofreq, echo=FALSE}
+tab_peso <-table(pnadrj90$pesopes)
+fr_peso <- data.frame (tab_peso)
+names(fr_peso)<- c("Valor do peso","Frequência")
+knitr::kable(fr_peso, booktabs=TRUE,
+caption= "Distribuição de frequências dos pesos da amostra da PNAD-90 - Parte
+Urbana do Rio de Janeiro") 
+```
+
+
+Como foi visto na Tabela \@ref(tab:logit), o impacto do plano amostral nas
+estimativas de precisão é um pouco maior. As maiores diferenças
+entre os dois métodos ocorrem na estimação dos desvios das
+estimativas dos parâmetros do primeiro nível de idade (até 17
+anos) e da interação deste com horas trabalhadas (tanto no nível
+de menos de 40 horas semanais como no nível de 40 a 48 horas semanais
+trabalhadas). Esta diferenciação maior no caso dos desvios
+padrões já era esperada. Quando não levamos em conta os pesos
+nem o plano amostral na estimação dos parâmetros, podemos
+até chegar em uma estimativa pontual dos coeficientes bem próxima de
+quando levamos ambos em conta, mas as estimativas dos desvios padrões
+são mais sensíveis a esta diferença entre as análises. A
+tendência revelada é de subestimação dos desvios padrões
+pelo __S-Plus__ ao ignorar o plano amostral e a variação dos
+pesos.
+
+Neste exemplo, foi utilizada a função glm do __S-Plus__ na seleção do modelo. Feita a seleção, o mesmo modelo foi ajustado
+através da __PROC LOGISTIC__ do  __SUDAAN__. O propósito
+foi imitar uma situação onde o modelo já tivesse sido
+selecionado e ajustado por usuário secundário dos dados, sem
+considerar os pesos e o plano amostral, tal como é usual. Outra
+possibilidade seria repetir o processo de seleção do modelo
+usando-se a **PROC LOGISTIC** do **SUDAAN**. Isto poderia ser
+feito passo a passo, incluindo efeitos e interações que melhorassem
+mais a qualidade de ajuste, tal como foi feito automaticamente pela função **step do S-Plus**. Este procedimento possibilitaria comparar a
+seleção de modelos quando são considerados os pesos e o plano
+amostral na análise.
+
+Diferentemente dos pacotes mais usados de análise estatística, tais
+como SAS, S-Plus, BMDP, etc., o SUDAAN não possui, atualmente,
+ferramentas usuais de diagnóstico de ajuste de modelos, como
+gráficos de resíduos padronizados, etc., tornando mais difícil
+seu uso na etapa de seleção de modelos. Considerando-se a maior
+dificuldade de seleção de modelos através do **SUDAAN**,
+preferiu-se usá-lo aqui apenas para ajustar um modelo já selecionado.

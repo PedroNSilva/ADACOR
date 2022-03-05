@@ -38,4 +38,6 @@ Tabela                                                                          
 [Tabela 4.6](refinf.html#tab:tabC4N6)                                                  Probabilidades de cobertura para níveis nominais de 0,95 e 0,99
 
 [Tabela 4.7](refinf.html#tab:tabC4N7)                                                  Níveis de significância verdadeiros, em porcentagem, do teste $T^2$ para o nível nominal de 5 por cento  assumindo autovalores iguais a $\delta$
+
+[Tabela 5.1](refinf.html#tab:tabC5N1)                                                  Probabilidades de seleção da amostra da PNAD da década de 1990 segundo regiões
 ----------------------------------
